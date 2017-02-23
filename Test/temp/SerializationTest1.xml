@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="13">
+<A class_id="0" tracking_level="0" version="0">
+	<mInt>10</mInt>
+	<mDouble>1.23234230000000000e+002</mDouble>
+	<mFloat>1.212300014e+001</mFloat>
+	<mString>Some string</mString>
+	<mIntVec>
+		<count>5</count>
+		<item_version>0</item_version>
+		<item>1</item>
+		<item>0</item>
+		<item>-10</item>
+		<item>-100000</item>
+		<item>12312123</item>
+	</mIntVec>
+	<mStringVec class_id="2" tracking_level="0" version="0">
+		<count>3</count>
+		<item_version>0</item_version>
+		<item>1</item>
+		<item>23234</item>
+		<item>sdfsdf</item>
+	</mStringVec>
+	<mPairVec class_id="3" tracking_level="0" version="0">
+		<count>0</count>
+		<item_version>0</item_version>
+	</mPairVec>
+</A>
+<B class_id="4" tracking_level="0" version="0">
+	<A>
+		<mInt>0</mInt>
+		<mDouble>0.00000000000000000e+000</mDouble>
+		<mFloat>0.000000000e+000</mFloat>
+		<mString></mString>
+		<mIntVec>
+			<count>0</count>
+			<item_version>0</item_version>
+		</mIntVec>
+		<mStringVec>
+			<count>0</count>
+			<item_version>0</item_version>
+		</mStringVec>
+		<mPairVec>
+			<count>0</count>
+			<item_version>0</item_version>
+		</mPairVec>
+	</A>
+	<mChar>88</mChar>
+	<mCVector class_id="7" tracking_level="0" version="0">
+		<count>5</count>
+		<item_version>0</item_version>
+		<item class_id="8" tracking_level="0" version="0">
+			<tx class_id="5" tracking_level="1" version="0" object_id="_0">
+				<mString>C1</mString>
+				<mInt>10</mInt>
+			</tx>
+		</item>
+		<item>
+			<tx class_id_reference="5" object_id="_1">
+				<mString>C2</mString>
+				<mInt>10</mInt>
+			</tx>
+		</item>
+		<item>
+			<tx class_id_reference="5" object_id="_2">
+				<mString>C3</mString>
+				<mInt>10</mInt>
+			</tx>
+		</item>
+		<item>
+			<tx class_id="6" tracking_level="1" version="0" object_id="_3">
+				<C object_id="_4">
+					<mString>D1</mString>
+					<mInt>0</mInt>
+				</C>
+			</tx>
+		</item>
+		<item>
+			<tx class_id_reference="6" object_id="_5">
+				<C object_id="_6">
+					<mString>D2</mString>
+					<mInt>0</mInt>
+				</C>
+			</tx>
+		</item>
+	</mCVector>
+</B>
+<D object_id="_7">
+	<C object_id="_8">
+		<mString>D2</mString>
+		<mInt>0</mInt>
+	</C>
+</D>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="13">
+<C1 class_id="0" tracking_level="0" version="0">
+	<name></name>
+	<objs class_id="3" tracking_level="0" version="0">
+		<count>4</count>
+		<item_version>1</item_version>
+		<item class_id="4" tracking_level="0" version="1">
+			<px class_id="1" tracking_level="1" version="0" object_id="_0">
+				<name>A1</name>
+			</px>
+		</item>
+		<item>
+			<px class_id="2" tracking_level="1" version="0" object_id="_1">
+				<A object_id="_2">
+					<name></name>
+				</A>
+			</px>
+		</item>
+		<item>
+			<px class_id_reference="1" object_id_reference="_0"></px>
+		</item>
+		<item>
+			<px class_id_reference="2" object_id_reference="_1"></px>
+		</item>
+	</objs>
+</C1>
+<C2>
+	<name></name>
+	<objs>
+		<count>4</count>
+		<item_version>1</item_version>
+		<item>
+			<px class_id_reference="1" object_id_reference="_0"></px>
+		</item>
+		<item>
+			<px class_id_reference="2" object_id_reference="_1"></px>
+		</item>
+		<item>
+			<px class_id_reference="1" object_id_reference="_0"></px>
+		</item>
+		<item>
+			<px class_id_reference="2" object_id_reference="_1"></px>
+		</item>
+	</objs>
+</C2>

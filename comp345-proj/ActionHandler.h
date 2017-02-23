@@ -1,0 +1,35 @@
+#pragma once
+
+namespace pan{
+	class Game;
+	/**
+	*	@brief Class containing the logic of validating and executing actions.
+	*	@author Hrachya Hakobyan
+	*/
+	class ActionHandler
+	{
+	public:
+		explicit ActionHandler(Game& game);
+		ActionHandler() = delete;
+		ActionHandler(const ActionHandler&) = delete;
+		~ActionHandler();
+
+		/**
+		*	Validates the given action
+		*	@param actionn a subclass of ActionImpl
+		*	@return true if the action is valid, false otherwise
+		*/
+		template<typename Action>
+		bool validate(const Action& action) const;
+
+		/**
+		*	Executes the given action
+		*	@param actionn a subclass of ActionImpl
+		*/
+		template<typename Action>
+		void execute(const Action& action) const;
+	private:
+		Game& game;
+	};
+}
+

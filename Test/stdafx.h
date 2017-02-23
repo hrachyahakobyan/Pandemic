@@ -7,27 +7,10 @@
 
 #include "targetver.h"
 
-#define _TEST_MEMLEAK 0
-
-#ifdef _DEBUG
-#include <gtest\gtest.h>
-
-#if _TEST_MEMLEAK
-#include <vld.h>
-#endif
-
-#endif
-
 #include <stdio.h>
 #include <tchar.h>
-#include <iostream>
-#include <string>
-#include <vector>
-#include <memory>
-#include <map>
-#include <set>
+#include <gtest\gtest.h>
 #include <fstream>
-#include <memory>
 #include <boost/config/user.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/nvp.hpp>
