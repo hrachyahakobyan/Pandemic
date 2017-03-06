@@ -5,7 +5,7 @@
 	<Object class_id="3" tracking_level="0" version="0"></Object>
 	<map class_id="4" tracking_level="0" version="0">
 		<Object></Object>
-	
+		<graph class_id="5" tracking_level="0" version="0">
 			<container class_id="6" tracking_level="0" version="0">
 				<V>0</V>
 				<E>0</E>

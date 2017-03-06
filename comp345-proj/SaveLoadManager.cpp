@@ -21,20 +21,36 @@ namespace pan{
 	const std::string SaveLoadManager::saveDirectory() const
 	{
 		boost::filesystem::path full_path(boost::filesystem::current_path());
-		return full_path.append(folderName).string();
+		return full_path.append(outputDirectory).string();
 	}
 
+	std::vector<SaveFile> SaveLoadManager::savedGames() const
+	{
+		using namespace boost::filesystem;
+		std::vector<SaveFile> saveFiles;
+		path saveDir = path(saveDirectory());
+		directory_iterator iter(saveDir), end;
+		for (; iter != end; ++iter)
+		{
+			if (is_regular_file(*iter)){
+				SaveFile saveFile;
+				saveFile.filename = (*iter).path().stem().string();
+				saveFiles.push_back(saveFile);
+			}
+		}
+		return saveFiles;
+	}
 
-	bool SaveLoadManager::save(const Game& game, const std::string& filename)
+	bool SaveLoadManager::save(const Game& game, const std::string& filename, bool overwrite)
 	{
 		if (filename.length() == 0)
 			return false;
 		SaveFile file;
 		file.filename = filename;
-		if (fileExists(file))
+		if (!overwrite && fileExists(file))
 			return false;
 		std::ofstream os;
-		if (!createOutputStream(file, os)){
+		if (!createOutputStream(file, os, overwrite)){
 			return false;
 		}
 		return writeGame(game, os);
@@ -96,7 +112,7 @@ namespace pan{
 	}
 
 
-	bool SaveLoadManager::createOutputStream(const SaveFile& file, std::ofstream& stream) const
+	bool SaveLoadManager::createOutputStream(const SaveFile& file, std::ofstream& stream, bool overwrite) const
 	{
 		if (file.filename.length() == 0)
 			throw std::exception("Invalid file name");
@@ -104,7 +120,7 @@ namespace pan{
 		path dir(this->saveDirectory());
 		path filePath = dir.append(file.filename);
 		// Disallow overwriting existing files for output streams
-		if (exists(filePath) && is_regular_file(filePath)){
+		if (!overwrite && exists(filePath) && is_regular_file(filePath) ){
 			return false;
 		}
 		stream.open(filePath.c_str());

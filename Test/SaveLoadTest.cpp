@@ -28,7 +28,7 @@ namespace pan{
 
 	TEST_F(SaveLoadTest, createsFile){
 		SaveLoadManager manager;
-		manager.folderName = "testCreateFile";
+		manager.outputDirectory = "testCreateFile";
 		manager.initialize();
 		using namespace pan;
 		using namespace boost::filesystem;
@@ -59,7 +59,7 @@ namespace pan{
 
 	TEST_F(SaveLoadTest, savesGame){
 		SaveLoadManager manager;
-		manager.folderName = "testSaveGame";
+		manager.outputDirectory = "testSaveGame";
 		manager.initialize();
 		using namespace pan;
 		using namespace boost::filesystem;
@@ -89,6 +89,10 @@ namespace pan{
 		// Make sure old file is still there
 		ASSERT_TRUE(manager.fileExists(file1));
 
+		// Overwrite existing file
+		ASSERT_TRUE(manager.save(game, file1.filename, true));
+		ASSERT_TRUE(manager.fileExists(file1));
+
 		// Writing with invalid file name
 		ASSERT_FALSE(manager.save(game, ""));
 		SaveFile invalidFile;
@@ -108,5 +112,63 @@ namespace pan{
 		// Read a valid game
 		ASSERT_TRUE(manager.load(file1, newGame));
 		ASSERT_EQ(newGame, game);
+
+		// Clear directory
+		for (directory_iterator end_dir_it, it(root); it != end_dir_it; ++it) {
+			remove_all(it->path());
+		}
+
+		// Save/load multiple times
+		const int n = 5;
+		for (int i = 0; i < n; i++){
+			std::string filename = "file" + std::to_string(i);
+			ASSERT_TRUE(manager.save(game, filename));
+		}
+
+		auto files = manager.savedGames();
+		ASSERT_EQ(files.size(), n);
+		for (int i = 0; i < n; i++){
+			ASSERT_TRUE(manager.load(files[i], game));
+		}
+	}
+
+	TEST_F(SaveLoadTest, getsSavedGames){
+		using namespace boost::filesystem;
+
+		SaveLoadManager manager;
+		manager.outputDirectory = "testGetSavedGames";
+		manager.initialize();
+
+		// Clear the directory
+		auto savePath = manager.saveDirectory();
+		for (directory_iterator end_dir_it, it(savePath); it != end_dir_it; ++it) {
+			remove_all(it->path());
+		}
+
+		// Check initially empty
+		auto files = manager.savedGames();
+		ASSERT_EQ(files.size(), 0);
+
+		// Check ignores directories
+		create_directory(savePath/"dir1");
+		files = manager.savedGames();
+		ASSERT_EQ(files.size(), 0);
+
+		std::ofstream of;
+		SaveFile f1;
+		f1.filename = "file1";
+		manager.createOutputStream(f1, of);
+		of.close();
+
+		// Check counts files
+		files = manager.savedGames();
+		ASSERT_EQ(files.size(), 1);
+
+		remove(savePath/"file1");
+
+		// Check no files
+		files = manager.savedGames();
+		ASSERT_EQ(files.size(), 0);
+
 	}
 }
