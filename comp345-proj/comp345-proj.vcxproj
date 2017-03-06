@@ -17,7 +17,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -90,12 +90,15 @@
     <ClInclude Include="common.h" />
     <ClInclude Include="detail\Factory.h" />
     <ClInclude Include="detail\Graph.h" />
+    <ClInclude Include="EventCard.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="InfectionCard.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBase.h" />
+    <ClInclude Include="PlayerCard.h" />
     <ClInclude Include="ReferenceCard.h" />
     <ClInclude Include="Region.h" />
     <ClInclude Include="Role.h" />
@@ -111,12 +114,15 @@
     <ClCompile Include="comp345-proj.cpp" />
     <ClCompile Include="detail\Factory.cpp" />
     <ClCompile Include="detail\Graph.cpp" />
+    <ClCompile Include="EventCard.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="InfectionCard.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBase.cpp" />
+    <ClCompile Include="PlayerCard.cpp" />
     <ClCompile Include="ReferenceCard.cpp" />
     <ClCompile Include="Region.cpp" />
     <ClCompile Include="Role.cpp" />

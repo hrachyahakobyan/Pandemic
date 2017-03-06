@@ -16,7 +16,6 @@ namespace pan{
 			return instance;
 		}
 
-	public:
 		const std::string description = "Description of the reference card";
 	private:
 		ReferenceCard(const ReferenceCard&);

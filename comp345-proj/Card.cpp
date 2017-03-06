@@ -2,12 +2,8 @@
 #include "Card.h"
 
 namespace pan{
-	Card::Card()
-	{
-	}
-
-
-	Card::~Card()
+	CardBase::CardBase(CardType type) :
+		type(type)
 	{
 	}
 }

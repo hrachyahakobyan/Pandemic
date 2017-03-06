@@ -19,6 +19,30 @@
     <Filter Include="Source Files\detail">
       <UniqueIdentifier>{eda0fbbd-cbac-4fd0-86f4-cac941c937a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\cards">
+      <UniqueIdentifier>{c30b7e26-834f-4f53-8df4-515a8e608a96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cards">
+      <UniqueIdentifier>{3e5c31b5-743f-4ed7-b1c1-e26d919aa0ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\map">
+      <UniqueIdentifier>{00c8b4d6-3e62-4cec-9b51-5f718f39693c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\map">
+      <UniqueIdentifier>{9a0efd97-9dc8-4e68-822c-6fd300652cd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\players">
+      <UniqueIdentifier>{a7cb60ac-c2cc-4baa-9a44-fdeac7370cca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\players">
+      <UniqueIdentifier>{f51befd0-d498-4ea9-8d74-e541be4f055d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\actions">
+      <UniqueIdentifier>{71fb5baf-805e-464f-b99e-c6ade33605a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\actions">
+      <UniqueIdentifier>{69b571e8-ec9d-4e22-84b9-6fd8f2916188}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -36,22 +60,7 @@
     <ClInclude Include="detail\Factory.h">
       <Filter>Header Files\detail</Filter>
     </ClInclude>
-    <ClInclude Include="Role.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SaveLoadManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ActionBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ActionHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Card.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="City.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="common.h">
@@ -60,26 +69,50 @@
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Move.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Card.h">
+      <Filter>Header Files\cards</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ReferenceCard.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Map.h">
+      <Filter>Header Files\map</Filter>
     </ClInclude>
     <ClInclude Include="Region.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\map</Filter>
+    </ClInclude>
+    <ClInclude Include="City.h">
+      <Filter>Header Files\map</Filter>
+    </ClInclude>
+    <ClInclude Include="ReferenceCard.h">
+      <Filter>Header Files\cards</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\players</Filter>
+    </ClInclude>
+    <ClInclude Include="Role.h">
+      <Filter>Header Files\players</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBase.h">
+      <Filter>Header Files\players</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionBase.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionHandler.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Move.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerCard.h">
+      <Filter>Header Files\cards</Filter>
+    </ClInclude>
+    <ClInclude Include="InfectionCard.h">
+      <Filter>Header Files\cards</Filter>
+    </ClInclude>
+    <ClInclude Include="EventCard.h">
+      <Filter>Header Files\cards</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -95,47 +128,56 @@
     <ClCompile Include="detail\Factory.cpp">
       <Filter>Source Files\detail</Filter>
     </ClCompile>
-    <ClCompile Include="ReferenceCard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Region.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Role.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SaveLoadManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ActionBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ActionHandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Card.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="City.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Move.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Card.cpp">
+      <Filter>Source Files\cards</Filter>
+    </ClCompile>
+    <ClCompile Include="City.cpp">
+      <Filter>Source Files\map</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files\map</Filter>
+    </ClCompile>
+    <ClCompile Include="Region.cpp">
+      <Filter>Source Files\map</Filter>
+    </ClCompile>
+    <ClCompile Include="ReferenceCard.cpp">
+      <Filter>Source Files\cards</Filter>
+    </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\players</Filter>
     </ClCompile>
     <ClCompile Include="PlayerBase.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\players</Filter>
+    </ClCompile>
+    <ClCompile Include="Role.cpp">
+      <Filter>Source Files\players</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionBase.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionHandler.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Move.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerCard.cpp">
+      <Filter>Source Files\cards</Filter>
+    </ClCompile>
+    <ClCompile Include="InfectionCard.cpp">
+      <Filter>Source Files\cards</Filter>
+    </ClCompile>
+    <ClCompile Include="EventCard.cpp">
+      <Filter>Source Files\cards</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
