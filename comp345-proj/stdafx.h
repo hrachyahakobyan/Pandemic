@@ -28,6 +28,8 @@
 #include <set>
 #include <fstream>
 #include <memory>
+#include <algorithm>
+#include <iterator>
 #include <boost/config/user.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/nvp.hpp>

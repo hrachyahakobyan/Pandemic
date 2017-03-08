@@ -5,5 +5,6 @@ namespace pan{
 	CardBase::CardBase(CardType type) :
 		type(type)
 	{
+		std::vector<int> v;
 	}
 }
