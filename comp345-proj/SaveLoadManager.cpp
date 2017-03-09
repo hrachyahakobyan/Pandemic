@@ -108,6 +108,7 @@ namespace pan{
 		using namespace boost::filesystem;
 		path dir(this->saveDirectory());
 		path filePath = dir.append(file.filename);
+		bool e = exists(filePath);
 		return exists(filePath) && is_regular_file(filePath);
 	}
 

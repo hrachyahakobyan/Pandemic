@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="13">
+<Game class_id="2" tracking_level="0" version="0">
+	<Object class_id="3" tracking_level="0" version="0"></Object>
+	<map class_id="4" tracking_level="0" version="0">
+		<Object></Object>
+		<graph class_id="5" tracking_level="0" version="0">
+			<container class_id="6" tracking_level="0" version="0">
+				<V>0</V>
+				<E>0</E>
+				<graph_property class_id="7" tracking_level="0" version="0"></graph_property>
+			</container>
+		</graph>
+		<regionMap class_id="8" tracking_level="0" version="0">
+			<count>1</count>
+			<item_version>0</item_version>
+			<item class_id="9" tracking_level="0" version="0">
+				<first>0</first>
+				<second class_id="10" tracking_level="0" version="0">
+					<Object></Object>
+					<name></name>
+				</second>
+			</item>
+		</regionMap>
+		<cityRegionMap class_id="11" tracking_level="0" version="0">
+			<count>0</count>
+			<item_version>0</item_version>
+		</cityRegionMap>
+	</map>
+	<players class_id="12" tracking_level="0" version="0">
+		<count>0</count>
+		<item_version>1</item_version>
+	</players>
+</Game>

@@ -106,30 +106,13 @@ namespace pan{
 		// Attempt to load corrupted game file
 		SaveFile corruptFile;
 		corruptFile.filename = "corruptGame.xml";
+
 		ASSERT_TRUE(manager.fileExists(corruptFile));
 		ASSERT_FALSE(manager.load(corruptFile, newGame));
 
 		// Read a valid game
 		ASSERT_TRUE(manager.load(file1, newGame));
 		ASSERT_EQ(newGame, game);
-
-		// Clear directory
-		for (directory_iterator end_dir_it, it(root); it != end_dir_it; ++it) {
-			remove_all(it->path());
-		}
-
-		// Save/load multiple times
-		const int n = 5;
-		for (int i = 0; i < n; i++){
-			std::string filename = "file" + std::to_string(i);
-			ASSERT_TRUE(manager.save(game, filename));
-		}
-
-		auto files = manager.savedGames();
-		ASSERT_EQ(files.size(), n);
-		for (int i = 0; i < n; i++){
-			ASSERT_TRUE(manager.load(files[i], game));
-		}
 	}
 
 	TEST_F(SaveLoadTest, getsSavedGames){
