@@ -85,6 +85,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DeckTest.h" />
     <ClInclude Include="FactoryTest.h" />
     <ClInclude Include="GameTest.h" />
     <ClInclude Include="GraphTest.h" />
@@ -97,6 +98,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DeckTest.cpp" />
     <ClCompile Include="FactoryTest.cpp" />
     <ClCompile Include="GameTest.cpp" />
     <ClCompile Include="GraphTest.cpp" />

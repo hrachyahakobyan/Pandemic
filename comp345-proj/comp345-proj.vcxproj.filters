@@ -114,8 +114,8 @@
     <ClInclude Include="EventCard.h">
       <Filter>Header Files\cards</Filter>
     </ClInclude>
-    <ClInclude Include="Deck.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="detail\Deck.h">
+      <Filter>Header Files\detail</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -182,7 +182,7 @@
     <ClCompile Include="EventCard.cpp">
       <Filter>Source Files\cards</Filter>
     </ClCompile>
-    <ClCompile Include="Deck.cpp">
+    <ClCompile Include="detail\Deck.cpp">
       <Filter>Source Files\detail</Filter>
     </ClCompile>
   </ItemGroup>

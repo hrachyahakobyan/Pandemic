@@ -32,6 +32,12 @@ namespace detail{
 		Deck& operator=(Deck&&);
 		~Deck();
 
+		friend class boost::serialization::access;
+		template<class Archive>
+		void serialize(Archive & ar, const unsigned int /* file_version */){
+			ar  & BOOST_SERIALIZATION_NVP(deck);
+		}
+
 		inline bool operator==(const Deck&) const;
 		inline bool operator!=(const Deck&) const;
 
