@@ -2,12 +2,13 @@
 #include "Role.h"
 
 namespace pan{
-	Role::Role()
+	RoleBase::RoleBase() :
+	role(Roles::Medic)
 	{
 	}
 
-
-	Role::~Role()
+	RoleBase::RoleBase(Roles role) :
+	role(role)
 	{
 	}
 }

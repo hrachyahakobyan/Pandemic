@@ -10,7 +10,7 @@ namespace pan{
 	*	by the pure virtual getter of PlayerBase.
 	*	@author Hrachya Hakobyan
 	*/
-	template<typename R>
+	template<Roles R>
 	class Player : public PlayerBase
 	{
 	public:
@@ -18,48 +18,28 @@ namespace pan{
 		Player(const std::string& name);
 		~Player();
 
-		RoleIndex roleIndex() const;
-		const Role& getRole() const;
-
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(PlayerBase);
-			ar & BOOST_SERIALIZATION_NVP(role);
 		}
-	private:
-		R role;
 	};
 
-	template<typename R>
-	Player<R>::Player()
+	template<Roles R>
+	Player<R>::Player() :
+	PlayerBase(RoleImpl<R>())
 	{
-
 	}
 
-	template<typename R>
+	template<Roles R>
 	Player<R>::Player(const std::string& name) :
-		PlayerBase(name)
+	PlayerBase(RoleImpl<R>(), name)
 	{
-
 	}
 
-	template<typename R>
+	template<Roles R>
 	Player<R>::~Player()
 	{
-
-	}
-
-	template<typename R>
-	const Role& Player<R>::getRole() const
-	{
-		return role;
-	}
-
-	template<typename R>
-	RoleIndex Player<R>::roleIndex() const
-	{
-		return R::roleIndex;
 	}
 }
 

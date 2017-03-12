@@ -59,8 +59,7 @@ namespace pan{
 	bool SaveLoadManager::writeGame(const Game& game, std::ofstream& file) const
 	{
 		boost::archive::xml_oarchive oa(file);
-		oa.template register_type<pan::Player<pan::Medic>>();
-		oa.template register_type<pan::Player<pan::Dispatcher>>();
+		registerTypes(oa);
 		try{
 			oa << boost::serialization::make_nvp("Game", game);
 		}
@@ -87,8 +86,7 @@ namespace pan{
 	bool SaveLoadManager::readGame(std::ifstream& file, Game& game) const
 	{
 		boost::archive::xml_iarchive ia(file);
-		ia.template register_type<pan::Player<pan::Medic>>();
-		ia.template register_type<pan::Player<pan::Dispatcher>>();
+		registerTypes(ia);
 		try{
 			ia >> boost::serialization::make_nvp("Game", game);
 		}

@@ -13,9 +13,6 @@ namespace pan{
 	*/
 	class PlayerBase : public Object{
 	public:
-
-		PlayerBase();
-		PlayerBase(const std::string& name);
 		virtual ~PlayerBase();
 
 		inline bool operator==(const PlayerBase&) const;
@@ -29,8 +26,7 @@ namespace pan{
 
 		std::string description() const;
 
-		virtual RoleIndex roleIndex() const = 0;
-		virtual const Role& getRole() const = 0;
+		const RoleBase role;
 		const ReferenceCard& referenceCard;
 
 		friend class boost::serialization::access;
@@ -40,6 +36,10 @@ namespace pan{
 			ar & BOOST_SERIALIZATION_NVP(name);
 		}
 	protected:
+		PlayerBase();
+		PlayerBase(const RoleBase& role);
+		PlayerBase(const RoleBase& role, const std::string& name);
+
 		std::string name;
 		Map::CityIndex location;
 #ifdef _DEBUG
@@ -52,9 +52,7 @@ namespace pan{
 
 	bool PlayerBase::operator==(const PlayerBase& o) const
 	{
-		if (typeid(o) == typeid(*this))
-			return this->name == o.name;
-		return false;
+		return (this->role == o.role && this->name == o.name);
 	}
 
 	bool PlayerBase::operator!=(const PlayerBase& o) const
@@ -81,5 +79,7 @@ namespace pan{
 	{
 		this->location = loc;
 	}
+
+	
 }
 
