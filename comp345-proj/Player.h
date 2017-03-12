@@ -5,9 +5,7 @@ namespace pan{
 	/**
 	*	@brief Initial mockup of Player class.
 	*	The Player class accepts a template parameter which must be 
-	*	a subclass of Role. Note, even though the template is generic
-	*	, the type of the template is forced to be a subclass of Role
-	*	by the pure virtual getter of PlayerBase.
+	*	a Roles enum type.
 	*	@author Hrachya Hakobyan
 	*/
 	template<Roles R>
@@ -41,5 +39,12 @@ namespace pan{
 	Player<R>::~Player()
 	{
 	}
+
+	typedef Player<Roles::Dispatcher> Dispatcher;
+	typedef Player<Roles::FOperative> FOperative;
+	typedef Player<Roles::Generalist> Generalist;
+	typedef Player<Roles::Medic> Medic;
+	typedef Player<Roles::QSpecialist> QSpecialist;
+	typedef Player<Roles::Researcher> Researcher;
 }
 

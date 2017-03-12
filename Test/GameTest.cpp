@@ -3,6 +3,7 @@
 #include "Role.h"
 #include "Map.h"
 #include "Game.h"
+#include "common.h"
 
 
 namespace pan{
@@ -23,11 +24,11 @@ namespace pan{
 		using namespace pan;
 		Game game;
 		ASSERT_EQ(game.playerCount(), 0);
-		auto p1 = game.addPlayer<Medic>("Hrachya");
+		auto p1 = game.addPlayer<Roles::Medic>("Hrachya");
 		ASSERT_TRUE(game.playerExists(p1));
 		ASSERT_EQ(game.getPlayer(p1).getLocation(), 0);
 		ASSERT_EQ(game.playerCount(), 1);
-		auto p2 = game.addPlayer<Dispatcher>("Terence");
+		auto p2 = game.addPlayer<Roles::Dispatcher>("Terence");
 		ASSERT_TRUE(game.playerExists(p2));
 		ASSERT_EQ(game.getPlayer(p2).getLocation(), 0);
 		ASSERT_EQ(game.playerCount(), 2);
@@ -50,8 +51,8 @@ namespace pan{
 		game.map[c1].population = 3310231;
 		game.map[c0].researchStation = true;
 
-		auto p1 = game.addPlayer<Medic>("Hrachya");
-		auto p2 = game.addPlayer<Dispatcher>("Terence");
+		auto p1 = game.addPlayer<Roles::Medic>("Hrachya");
+		auto p2 = game.addPlayer<Roles::Dispatcher>("Terence");
 
 		game.map[c0].addPlayer(p1);
 		game.map[c1].addPlayer(p2);
@@ -60,8 +61,7 @@ namespace pan{
 		std::ofstream ofs(filename.c_str());
 		ASSERT_TRUE(ofs.good());
 		boost::archive::xml_oarchive oa(ofs);
-		oa.template register_type<pan::Player<pan::Medic>>();
-		oa.template register_type<pan::Player<pan::Dispatcher>>();
+		registerTypes(oa);
 		ASSERT_NO_THROW(oa << boost::serialization::make_nvp("Game", game));
 		ofs.close();
 
@@ -69,8 +69,7 @@ namespace pan{
 		std::ifstream ifs(filename.c_str());
 		ASSERT_TRUE(ifs.good());
 		boost::archive::xml_iarchive ia(ifs);
-		ia.template register_type<pan::Player<pan::Medic>>();
-		ia.template register_type<pan::Player<pan::Dispatcher>>();
+		registerTypes(ia);
 		ASSERT_NO_THROW(ia >> boost::serialization::make_nvp("Game", newGame));
 		ifs.close();
 		ASSERT_TRUE(game == newGame);
@@ -79,8 +78,8 @@ namespace pan{
 	TEST_F(GameTest, executes){
 		using namespace pan;
 		Game game(Map::pandemicMap());
-		auto validP = game.addPlayer<Medic>("Hrachya");
-		auto validP2 = game.addPlayer<Dispatcher>("Liu");
+		auto validP = game.addPlayer<Roles::Medic>("Hrachya");
+		auto validP2 = game.addPlayer<Roles::Dispatcher>("Liu");
 		auto cityCount = game.map.numCities();
 		auto validCity = cityCount - 1;
 		auto validCity2 = cityCount - 2;

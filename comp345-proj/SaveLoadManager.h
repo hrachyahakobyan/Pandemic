@@ -71,20 +71,6 @@ namespace pan{
 		bool removeFile(const SaveFile& file) const;
 		bool writeGame(const Game& game, std::ofstream& file) const;
 		bool readGame(std::ifstream& file, Game& game) const;
-		
-		template<typename Archive>
-		static void registerTypes(Archive& ar);
 	};
-
-	template<typename Archive>
-	void SaveLoadManager::registerTypes(Archive& ar)
-	{
-		ar.template register_type<pan::Player<pan::Roles::Dispatcher>>();
-		ar.template register_type<pan::Player<pan::Roles::FOperative>>();
-		ar.template register_type<pan::Player<pan::Roles::Generalist>>();
-		ar.template register_type<pan::Player<pan::Roles::Medic>>();
-		ar.template register_type<pan::Player<pan::Roles::QSpecialist>>();
-		ar.template register_type<pan::Player<pan::Roles::Researcher>>();
-	}
 }
 

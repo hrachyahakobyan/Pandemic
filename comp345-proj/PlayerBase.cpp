@@ -4,26 +4,20 @@
 
 
 namespace pan{
-	PlayerBase::PlayerBase() :
+	PlayerBase::PlayerBase(const RoleBase& role) :
+	role(role),
 	referenceCard(ReferenceCard::getInstance())
 	{
 	}
 
-	PlayerBase::PlayerBase(const RoleBase& role) :
-		role(role),
-		referenceCard(ReferenceCard::getInstance())
-	{
-	}
-
 	PlayerBase::PlayerBase(const RoleBase& role,const std::string& name) :
-		role(role),
-		referenceCard(ReferenceCard::getInstance()), name(name)
+	role(role),
+	referenceCard(ReferenceCard::getInstance()), name(name)
 	{
 	}
 
 	PlayerBase::~PlayerBase()
 	{
-
 	}
 
 	std::string PlayerBase::description() const

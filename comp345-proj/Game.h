@@ -46,7 +46,7 @@ namespace pan
 		*	@param name the name of the new player
 		*	@return a unique index for the newly created players
 		*/
-		template<typename R>
+		template<Roles R>
 		PlayerIndex addPlayer(const std::string& name = "");
 
 		/**
@@ -123,7 +123,7 @@ namespace pan
 		action.execute(actionHandler);
 	}
 
-	template<typename R>
+	template<Roles R>
 	PlayerIndex Game::addPlayer(const std::string& name)
 	{
 		auto player = std::shared_ptr<PlayerBase>(new Player<R>(name));

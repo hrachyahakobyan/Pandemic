@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="13">
-<Players class_id="2" tracking_level="0" version="0">
+<Players class_id="6" tracking_level="0" version="0">
 	<count>4</count>
 	<item_version>1</item_version>
-	<item class_id="3" tracking_level="0" version="1">
-		<px class_id="0" tracking_level="1" version="0" object_id="_0">
-			<PlayerBase class_id="4" tracking_level="0" version="0">
-				<Object class_id="5" tracking_level="0" version="0"></Object>
+	<item class_id="7" tracking_level="0" version="1">
+		<px class_id="3" tracking_level="1" version="0" object_id="_0">
+			<PlayerBase class_id="8" tracking_level="1" version="0" object_id="_1">
+				<Object class_id="9" tracking_level="0" version="0"></Object>
 				<name>John</name>
+				<location>1</location>
 			</PlayerBase>
-			<role class_id="6" tracking_level="0" version="0"></role>
 		</px>
 	</item>
 	<item>
-		<px class_id_reference="0" object_id="_1">
-			<PlayerBase>
+		<px class_id_reference="3" object_id="_2">
+			<PlayerBase object_id="_3">
 				<Object></Object>
 				<name>Jack</name>
+				<location>2</location>
 			</PlayerBase>
-			<role></role>
 		</px>
 	</item>
 	<item>
-		<px class_id="1" tracking_level="1" version="0" object_id="_2">
-			<PlayerBase>
+		<px class_id="0" tracking_level="1" version="0" object_id="_4">
+			<PlayerBase object_id="_5">
 				<Object></Object>
 				<name>Eric</name>
+				<location>3</location>
 			</PlayerBase>
-			<role class_id="7" tracking_level="0" version="0"></role>
 		</px>
 	</item>
 	<item>
-		<px class_id_reference="0" object_id="_3">
-			<PlayerBase>
+		<px class_id="5" tracking_level="1" version="0" object_id="_6">
+			<PlayerBase object_id="_7">
 				<Object></Object>
 				<name>Anton</name>
+				<location>4</location>
 			</PlayerBase>
-			<role></role>
 		</px>
 	</item>
 </Players>

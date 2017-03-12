@@ -16,10 +16,10 @@ namespace pan{
 
 	/**
 	*	@brief A class to represent the Role entity in the game.
-	*	The Role is a the same as the Role card in the real game.
-	*	The role does not inherit from Player. Is-a relationship
-	*	between a player and a role is not correct.
-	*	A role is in abstract parent to concrete Roles.
+	*	The RoleBase is a the same as the Role card in the real game.
+	*	The RoleBase is a prent class to concrete Role classes.
+	*	The RolBase is not abstract, however it cannot be instantiated 
+	*	because of protected constructor.
 	*	@author Hrachya Hakobyan
 	*/
 	class RoleBase : public Object
@@ -31,7 +31,6 @@ namespace pan{
 		const Roles role;
 		inline std::string description() const;
 	protected:
-		RoleBase();
 		RoleBase(Roles role);
 	};
 
@@ -50,6 +49,10 @@ namespace pan{
 		return RolesDescriptions[role];
 	}
 
+	/**
+	*	@brief RoleImpl is a templated class for concrete Role-s.
+	*	Its template parameter is an Roles enum value.
+	*/
 	template<Roles R>
 	class RoleImpl : public RoleBase
 	{
@@ -63,11 +66,11 @@ namespace pan{
 	{
 	}
 
-	typedef RoleImpl<Roles::Dispatcher> Dispatcher;
-	typedef RoleImpl<Roles::FOperative> FOperative;
-	typedef RoleImpl<Roles::Generalist> Generalist;
-	typedef RoleImpl<Roles::Medic> Medic;
-	typedef RoleImpl<Roles::QSpecialist> QSpecialist;
-	typedef RoleImpl<Roles::Researcher> Researcher;
+	typedef RoleImpl<Roles::Dispatcher> DispatcherRole;
+	typedef RoleImpl<Roles::FOperative> FOperativeRole;
+	typedef RoleImpl<Roles::Generalist> GeneralistRole;
+	typedef RoleImpl<Roles::Medic> MedicRole;
+	typedef RoleImpl<Roles::QSpecialist> QSpecialistRole;
+	typedef RoleImpl<Roles::Researcher> ResearcherRole;
 }
 

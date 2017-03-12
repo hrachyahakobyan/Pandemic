@@ -34,9 +34,9 @@ namespace pan{
 		void serialize(Archive & ar, const unsigned int /* file_version */){
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar & BOOST_SERIALIZATION_NVP(name);
+			ar & BOOST_SERIALIZATION_NVP(location);
 		}
 	protected:
-		PlayerBase();
 		PlayerBase(const RoleBase& role);
 		PlayerBase(const RoleBase& role, const std::string& name);
 
@@ -52,7 +52,7 @@ namespace pan{
 
 	bool PlayerBase::operator==(const PlayerBase& o) const
 	{
-		return (this->role == o.role && this->name == o.name);
+		return (this->location == o.location && this->name == o.name && this->role == o.role);
 	}
 
 	bool PlayerBase::operator!=(const PlayerBase& o) const
@@ -79,7 +79,27 @@ namespace pan{
 	{
 		this->location = loc;
 	}
-
-	
 }
+
+/**
+*	Since the class does not have default constructors, we need this
+*	to avoid compilation errors when attempting to (de)serialize 
+*	types of PlayerBase*. This methods do not do anything, since
+*	we are not going to have actual PLayerBase instances in the program.
+*/
+namespace boost {
+	namespace serialization {
+		template<class Archive>
+		inline void save_construct_data(
+			Archive & ar, const pan::PlayerBase * p, const unsigned int file_version
+			){
+		}
+
+		template<class Archive>
+		inline void load_construct_data(
+			Archive & ar, pan::PlayerBase * p, const unsigned int file_version
+			){
+		}
+	}
+} 
 
