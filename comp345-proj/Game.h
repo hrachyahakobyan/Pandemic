@@ -16,7 +16,7 @@ namespace pan
 	{
 	public:
 		Game(const Settings& s = Settings::Beginner(2));
-		Game(const Settings& s, const Map& m);
+		Game(const Settings& s, const Map& m = Map::pandemicMap());
 		Game(const Game&);
 		Game(Game&&);
 		Game& operator=(const Game&);
