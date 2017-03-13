@@ -92,6 +92,7 @@
     <ClInclude Include="detail\Deck.h" />
     <ClInclude Include="detail\Factory.h" />
     <ClInclude Include="detail\Graph.h" />
+    <ClInclude Include="Disease.h" />
     <ClInclude Include="EpidemicCard.h" />
     <ClInclude Include="EventCard.h" />
     <ClInclude Include="Game.h" />
@@ -120,6 +121,7 @@
     <ClCompile Include="detail\Deck.cpp" />
     <ClCompile Include="detail\Factory.cpp" />
     <ClCompile Include="detail\Graph.cpp" />
+    <ClCompile Include="Disease.cpp" />
     <ClCompile Include="EpidemicCard.cpp" />
     <ClCompile Include="EventCard.cpp" />
     <ClCompile Include="Game.cpp" />

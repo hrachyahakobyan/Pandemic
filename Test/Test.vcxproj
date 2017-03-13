@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClInclude Include="CardTest.h" />
     <ClInclude Include="DeckTest.h" />
+    <ClInclude Include="DiseaseTest.h" />
     <ClInclude Include="FactoryTest.h" />
     <ClInclude Include="GameTest.h" />
     <ClInclude Include="GraphTest.h" />
@@ -101,6 +102,7 @@
   <ItemGroup>
     <ClCompile Include="CardTest.cpp" />
     <ClCompile Include="DeckTest.cpp" />
+    <ClCompile Include="DiseaseTest.cpp" />
     <ClCompile Include="FactoryTest.cpp" />
     <ClCompile Include="GameTest.cpp" />
     <ClCompile Include="GraphTest.cpp" />

@@ -83,6 +83,15 @@ namespace pan{
 		graph.removeVertex(i);
 	}
 
+	std::vector<RegionIndex> Map::getRegions() const
+	{
+		std::vector<RegionIndex> regions;
+		for (const auto& p : regionMap){
+			regions.push_back(p.first);
+		}
+		return regions;
+	}
+
 	RegionIndex Map::regionForCity(CityIndex i) const
 	{
 		if (!(i >= 0 && i < graph.numVertices()))

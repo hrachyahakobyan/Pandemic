@@ -108,6 +108,12 @@ namespace pan{
 		inline std::size_t numRegions() const;
 
 		/**
+		*	Returns all regions in the map.
+		*	@return vector of all regions in the map.
+		*/
+		std::vector<RegionIndex> getRegions() const;
+
+		/**
 		*	Returns the region with the specified index.
 		*	@param index the index of the Region
 		*	@throws std::exception if the index is invalid
@@ -153,7 +159,7 @@ namespace pan{
 
 		/*!	Private interface */
 		/**
-		*	Adds a new City
+		*	Adds a new City. The city will be assigned to the first Region in the map.
 		*	@param c the City object to add. Defaults to City()
 		*	@return the CityIndex of the added city
 		*/

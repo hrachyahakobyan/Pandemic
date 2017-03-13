@@ -51,6 +51,8 @@ namespace pan{
 		game.map[c0].population = 233123;
 		game.map[c1].population = 3310231;
 		game.map[c0].researchStation = true;
+		game.diseases.push_back(Disease(0));
+		game.diseases.push_back(Disease(1));
 
 		auto p1 = game.addPlayer<Roles::Medic>("Hrachya");
 		auto p2 = game.addPlayer<Roles::Dispatcher>("Terence");

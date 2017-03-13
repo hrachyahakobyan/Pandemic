@@ -4,6 +4,7 @@
 #include "Move.h"
 #include "ActionHandler.h"
 #include "Settings.h"
+#include "Disease.h"
 
 namespace pan
 {
@@ -16,7 +17,7 @@ namespace pan
 	{
 	public:
 		Game(const Settings& s = Settings::Beginner(2));
-		Game(const Settings& s, const Map& m = Map::pandemicMap());
+		Game(const Settings& s, const Map& m);
 		Game(const Game&);
 		Game(Game&&);
 		Game& operator=(const Game&);
@@ -40,6 +41,7 @@ namespace pan
 		inline void execute(const ActionBase& action);
 		inline const Map& getMap() const;
 		inline const Settings& getSettings() const;
+		inline const std::vector<Disease>& getDiseases() const;
 
 		std::string description() const;
 
@@ -78,6 +80,7 @@ namespace pan
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar & BOOST_SERIALIZATION_NVP(map);
 			ar & BOOST_SERIALIZATION_NVP(players);
+			ar & BOOST_SERIALIZATION_NVP(diseases);
 			ar & boost::serialization::make_nvp("settings", const_cast<Settings&>(settings));
 		}
 	private:
@@ -85,6 +88,7 @@ namespace pan
 		Map map;
 		ActionHandler actionHandler;
 		std::vector<std::shared_ptr<PlayerBase>> players;
+		std::vector<Disease> diseases;
 		/**
 		*	ActionHandler is a part of the logic of the game.
 		*	Friend-ing increases encapsulation by avoiding making
@@ -120,6 +124,11 @@ namespace pan
 	const Settings& Game::getSettings() const
 	{
 		return settings;
+	}
+
+	const std::vector<Disease>& Game::getDiseases() const
+	{
+		return diseases;
 	}
 
 	bool Game::validate(const ActionBase& action) const

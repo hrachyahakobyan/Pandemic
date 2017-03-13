@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="13">
+<Disease class_id="0" tracking_level="0" version="0">
+	<count>3</count>
+	<item_version>0</item_version>
+	<item class_id="1" tracking_level="0" version="0">
+		<Object class_id="2" tracking_level="0" version="0"></Object>
+		<diseaseType>1</diseaseType>
+		<isCured>1</isCured>
+		<isEradicated>0</isEradicated>
+	</item>
+	<item>
+		<Object></Object>
+		<diseaseType>2</diseaseType>
+		<isCured>1</isCured>
+		<isEradicated>1</isEradicated>
+	</item>
+	<item>
+		<Object></Object>
+		<diseaseType>3</diseaseType>
+		<isCured>0</isCured>
+		<isEradicated>0</isEradicated>
+	</item>
+</Disease>
