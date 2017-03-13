@@ -2,13 +2,16 @@
 #include "Game.h"
 
 namespace pan{
-	Game::Game() :
-		actionHandler(*this)
+
+	Game::Game(const Settings& s) :
+		actionHandler(*this),
+		settings(s)
 	{
 	}
 
-	Game::Game(const Map& m) :
+	Game::Game(const Settings& s, const Map& m) :
 		actionHandler(*this),
+		settings(s),
 		map(m)
 	{
 	}
@@ -48,9 +51,11 @@ namespace pan{
 
 	bool Game::operator==(const Game& o) const
 	{
-		if (this->map != o.map)
-			return false;
 		if (this->players.size() != o.players.size())
+			return false;
+		if (this->settings != o.settings)
+			return false;
+		if (this->map != o.map)
 			return false;
 		std::size_t size = this->players.size();
 		for (std::size_t i = 0; i < size; i++){

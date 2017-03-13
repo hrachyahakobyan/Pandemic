@@ -4,6 +4,7 @@
 #include "EpidemicCard.h"
 #include "CityCard.h"
 #include "EventCard.h"
+#include "Settings.h"
 
 template<typename Archive>
 static void registerTypes(Archive& ar)
@@ -20,6 +21,7 @@ static void registerTypes(Archive& ar)
 	ar.template register_type<EventCard>();
 	ar.template register_type<CityCard>();
 	ar.template register_type<CardBase>();
+	ar.template register_type<Settings>();
 }
 
 #define SPECIALIZE_POINTER_SAVE_LOAD(T) \

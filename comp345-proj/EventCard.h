@@ -33,6 +33,7 @@ namespace pan{
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(CardBase);
+			ar & boost::serialization::make_nvp("eventType", const_cast<EventType&>(eventType));
 		}
 	};
 

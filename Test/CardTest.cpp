@@ -63,7 +63,7 @@ namespace pan{
 		ASSERT_TRUE(ofs.good());
 		boost::archive::xml_oarchive oa(ofs);
 		registerTypes(oa);
-		oa << boost::serialization::make_nvp("Cards", cards);
+		ASSERT_NO_THROW(oa << boost::serialization::make_nvp("Cards", cards));
 		ofs.close();
 
 		std::vector<std::shared_ptr<CardBase>> newCards;
@@ -71,7 +71,7 @@ namespace pan{
 		ASSERT_TRUE(ifs.good());
 		boost::archive::xml_iarchive ia(ifs);
 		registerTypes(ia);
-		ia >> boost::serialization::make_nvp("Cards", newCards);
+		ASSERT_NO_THROW(ia >> boost::serialization::make_nvp("Cards", newCards));
 		ifs.close();
 
 		ASSERT_EQ(cards.size(), newCards.size());

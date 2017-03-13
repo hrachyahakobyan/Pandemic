@@ -78,7 +78,7 @@ namespace pan{
 
 	TEST_F(GameTest, executes){
 		using namespace pan;
-		Game game(Map::pandemicMap());
+		Game game(Settings::Beginner(2), Map::pandemicMap());
 		auto validP = game.addPlayer<Roles::Medic>("Hrachya");
 		auto validP2 = game.addPlayer<Roles::Dispatcher>("Liu");
 		auto cityCount = game.map.numCities();

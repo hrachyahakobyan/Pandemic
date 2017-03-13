@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Move.h"
 #include "ActionHandler.h"
+#include "Settings.h"
 
 namespace pan
 {
@@ -14,8 +15,8 @@ namespace pan
 	class Game : public Object
 	{
 	public:
-		Game();
-		explicit Game(const Map& m);
+		Game(const Settings& s = Settings::Beginner(2));
+		Game(const Settings& s, const Map& m);
 		Game(const Game&);
 		Game(Game&&);
 		Game& operator=(const Game&);
@@ -38,6 +39,7 @@ namespace pan
 		*/
 		inline void execute(const ActionBase& action);
 		inline const Map& getMap() const;
+		inline const Settings& getSettings() const;
 
 		std::string description() const;
 
@@ -76,8 +78,10 @@ namespace pan
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar & BOOST_SERIALIZATION_NVP(map);
 			ar & BOOST_SERIALIZATION_NVP(players);
+			ar & boost::serialization::make_nvp("settings", const_cast<Settings&>(settings));
 		}
 	private:
+		const Settings settings;
 		Map map;
 		ActionHandler actionHandler;
 		std::vector<std::shared_ptr<PlayerBase>> players;
@@ -111,6 +115,11 @@ namespace pan
 	const Map& Game::getMap() const
 	{
 		return map;
+	}
+
+	const Settings& Game::getSettings() const
+	{
+		return settings;
 	}
 
 	bool Game::validate(const ActionBase& action) const
@@ -153,6 +162,7 @@ namespace pan
 		return (i < players.size());
 	}
 }
+
 
 
 
