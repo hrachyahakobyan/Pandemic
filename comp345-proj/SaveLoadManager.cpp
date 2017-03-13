@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SaveLoadManager.h"
 #include "Player.h"
+#include "misc.h"
 #include <boost/filesystem.hpp>
 
 namespace pan{

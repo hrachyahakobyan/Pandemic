@@ -5,7 +5,7 @@
 namespace pan{
 	enum class Roles : unsigned int{Medic = 0, Dispatcher, Generalist, 
 									Researcher, QSpecialist, FOperative};
-	static std::map<Roles, const char*> RolesDescriptions{
+	static const std::map<Roles, const char*> RolesDescriptions{
 		{ Roles::Dispatcher, "Dispatcher" },
 		{ Roles::FOperative, "Field Operative" },
 		{ Roles::Generalist, "Generalist" },
@@ -46,7 +46,7 @@ namespace pan{
 
 	std::string RoleBase::description() const
 	{
-		return RolesDescriptions[role];
+		return RolesDescriptions.at(role);
 	}
 
 	/**

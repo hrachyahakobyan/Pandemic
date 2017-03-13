@@ -2,15 +2,16 @@
 #include "Card.h"
 #include "Map.h"
 
- namespace pan{
+namespace pan{
 
-	typedef CardImpl<CardType::Infection> InfectionCard;
+	typedef CardImpl<CardType::City> CityCard;
+
 	/**
-	*	@brief Represents the Infection card entity.
+	*	@brief Represents the City card entity.
 	*	@author Hrachya Hakobyan
 	*/
 	template<>
-	class CardImpl<CardType::Infection> : public CardBase
+	class CardImpl<CardType::City> : public CardBase
 	{
 	public:
 		CardImpl(Map::CityIndex index);
@@ -27,17 +28,17 @@
 		}
 	};
 
-	bool CardImpl<CardType::Infection>::operator==(const CardImpl& o) const
+	bool CardImpl<CardType::City>::operator==(const CardImpl& o) const
 	{
 		return cityIndex == o.cityIndex;
 	}
 
-	bool CardImpl<CardType::Infection>::operator!=(const CardImpl& o) const
+	bool CardImpl<CardType::City>::operator!=(const CardImpl& o) const
 	{
 		return cityIndex != o.cityIndex;
 	}
 
-	std::string CardImpl<CardType::Infection>::description() const
+	std::string CardImpl<CardType::City>::description() const
 	{
 		return CardBase::description() + ' ' + std::to_string(cityIndex);
 	}
@@ -47,18 +48,19 @@ namespace boost {
 	namespace serialization {
 		template<class Archive>
 		inline void save_construct_data(
-			Archive & ar, const pan::CardImpl<pan::CardType::Infection> * p, const unsigned int file_version
+			Archive & ar, const pan::CardImpl<pan::CardType::City> * p, const unsigned int file_version
 			){
 			ar & boost::serialization::make_nvp("cityIndex", p->cityIndex);
 		}
 
 		template<class Archive>
 		inline void load_construct_data(
-			Archive & ar, pan::CardImpl<pan::CardType::Infection> * p, const unsigned int file_version
+			Archive & ar, pan::CardImpl<pan::CardType::City> * p, const unsigned int file_version
 			){
 			pan::Map::CityIndex index;
 			ar & boost::serialization::make_nvp("cityIndex", index);
-			::new(p)pan::CardImpl<pan::CardType::Infection>(index);
+			::new(p)pan::CardImpl<pan::CardType::City>(index);
 		}
 	}
 }
+

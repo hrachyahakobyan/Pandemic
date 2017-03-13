@@ -4,6 +4,7 @@
 #include "Map.h"
 #include "Game.h"
 #include "common.h"
+#include "misc.h"
 
 
 namespace pan{

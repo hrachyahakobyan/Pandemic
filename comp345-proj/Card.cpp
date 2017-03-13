@@ -5,6 +5,10 @@ namespace pan{
 	CardBase::CardBase(CardType type) :
 		type(type)
 	{
-		std::vector<int> v;
+	}
+
+	std::string CardBase::description() const
+	{
+		return CardDescriptions.at(type);
 	}
 }

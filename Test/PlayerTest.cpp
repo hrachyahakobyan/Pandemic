@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "PlayerTest.h"
 #include "common.h"
+#include "misc.h"
 
 namespace pan{
 	/**
