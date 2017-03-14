@@ -5,12 +5,12 @@
 
 namespace pan{
 	/**
-	*	@brief Class representing a driver/ferry action.
+	*	@brief Class representing a direct flight action
 	*	@author Hrachya Hakobyan
 	*/
-	class Move : public ActionImpl<Move, ActionBase>{
+	class DirectFlight : public ActionImpl<DirectFlight, ActionBase>{
 	public:
-		Move(PlayerIndex player, Map::CityIndex city);
+		DirectFlight(PlayerIndex player, Map::CityIndex city);
 		PlayerIndex player;
 		Map::CityIndex targetCity;
 		ActionBase* clone() const;

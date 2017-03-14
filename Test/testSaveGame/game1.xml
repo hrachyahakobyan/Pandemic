@@ -92,8 +92,8 @@
 				<item_version>1</item_version>
 			</deck>
 		</g.infectionDiscardDeck>
-		<g.playerDeck>
-			<deck>
+		<g.playerDeck class_id="33" tracking_level="0" version="0">
+			<deck class_id="34" tracking_level="0" version="0">
 				<count>0</count>
 				<item_version>1</item_version>
 			</deck>

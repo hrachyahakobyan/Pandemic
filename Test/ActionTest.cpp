@@ -3,6 +3,12 @@
 #include "Game.h"
 #include "Infect.h"
 #include "Outbreak.h"
+#include "Move.h"
+#include "DirectFlight.h"
+#include "ShuttleFlight.h"
+#include "CharterFlight.h"
+#include "BuildResearchStation.h"
+#include "CityCard.h"
 
 namespace pan{
 
@@ -99,5 +105,72 @@ namespace pan{
 			// Check condition of each city
 			ASSERT_EQ(game.map[*ai].getCubes(out.infection.diseaseType), 1);
 		}
+	}
+
+	TEST_F(ActionTest, Move){
+		using namespace pan;
+		Game g(Settings::Beginner(2), Map::pandemicMap());
+		auto p1Index = g.addPlayer<Roles::Medic>("Player1");
+		auto p2Index = g.addPlayer<Roles::Dispatcher>("Player2");
+		EXPECT_TRUE(g.initialize());
+		const PlayerBase& p = static_cast<const Game&>(g).getPlayer(p1Index);
+		// Invalid move. Moving to the same location
+		Move m(0, p.getLocation());
+		ASSERT_FALSE(m.execute(g.actionHandler));
+
+		// Invalid move. Moving to a non neighbor city
+		Map::CityIndex city = g.map.numCities() - 1;
+		EXPECT_FALSE(g.map.connectionExists(city, p.getLocation()));
+		m.targetCity = city;
+		ASSERT_FALSE(m.execute(g.actionHandler));
+
+		// Valid move. Moving to a neigbor city
+		city = static_cast<Map::CityIndex>(1);
+		EXPECT_TRUE(g.map.connectionExists(city, p.getLocation()));
+
+		m.targetCity = city;
+		ASSERT_TRUE(m.execute(g.actionHandler));
+		// Check post conditions
+		ASSERT_EQ(p.getLocation(), m.targetCity);
+		ASSERT_TRUE(g.map[m.targetCity].containsPlayer(p1Index));
+	}
+
+	TEST_F(ActionTest, BuildResearchStation){
+		using namespace pan;
+		Game g(Settings::Beginner(2), Map::pandemicMap());
+		auto p1Index = g.addPlayer<Roles::Medic>("Player1");
+		auto p2Index = g.addPlayer<Roles::Dispatcher>("Player2");
+		EXPECT_TRUE(g.initialize());
+		PlayerBase& p = g.getPlayer(p1Index);
+		// Give player some cards
+		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(0)));
+
+		BuildResearchStation b(p1Index);
+		// Cannot build a research station since it is already there
+		ASSERT_FALSE(b.execute(g.actionHandler));
+
+		// Move to a city with no research station
+		Move m(p1Index, 1);
+		EXPECT_TRUE(m.execute(g.actionHandler));
+		// Cannot build because does not have a matching card
+		ASSERT_FALSE(b.execute(g.actionHandler));
+
+		// Add the required card
+		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(1)));
+		g.gameData.researchStations = g.gameData.settings.maxResearchStations;
+		// Cannot build since no more research stations can be built
+		ASSERT_FALSE(b.execute(g.actionHandler));
+
+		g.gameData.researchStations = 1;
+		// Save the number of discarded player cards before execution
+		std::size_t discardSizeBfore = g.deckData.playerDiscardDeck.size();
+		std::size_t playerCardSizeBefore = p.getCards().size();
+		// Must build
+		ASSERT_TRUE(b.execute(g.actionHandler));
+		// check post conditions
+		ASSERT_TRUE(g.map[p.getLocation()].researchStation);
+		ASSERT_EQ(g.gameData.researchStations, 2);
+		ASSERT_EQ(p.getCards().size(), playerCardSizeBefore - 1);
+		ASSERT_EQ(g.deckData.playerDiscardDeck.size(), discardSizeBfore + 1);
 	}
 }

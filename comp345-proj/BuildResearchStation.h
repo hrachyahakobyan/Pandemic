@@ -1,0 +1,16 @@
+#pragma once
+#include "ActionBase.h"
+#include "common.h"
+
+namespace pan{
+	/**
+	*	@brief Class representing a direct flight action
+	*	@author Hrachya Hakobyan
+	*/
+	class BuildResearchStation : public ActionImpl<BuildResearchStation, ActionBase>{
+	public:
+		BuildResearchStation(PlayerIndex player);
+		PlayerIndex player;
+		ActionBase* clone() const;
+	};
+}

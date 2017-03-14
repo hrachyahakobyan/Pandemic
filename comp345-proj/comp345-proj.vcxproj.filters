@@ -138,6 +138,21 @@
     <ClInclude Include="Outbreak.h">
       <Filter>Header Files\actions</Filter>
     </ClInclude>
+    <ClInclude Include="Epidemic.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectFlight.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="CharterFlight.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ShuttleFlight.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildResearchStation.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -222,6 +237,21 @@
       <Filter>Source Files\actions</Filter>
     </ClCompile>
     <ClCompile Include="Outbreak.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Epidemic.cpp">
+      <Filter>Source Files\cards</Filter>
+    </ClCompile>
+    <ClCompile Include="CharterFlight.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectFlight.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ShuttleFlight.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildResearchStation.cpp">
       <Filter>Source Files\actions</Filter>
     </ClCompile>
   </ItemGroup>

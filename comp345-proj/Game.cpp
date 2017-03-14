@@ -141,7 +141,7 @@ namespace pan{
 
 		// Add infection cards
 		for (std::size_t i = 0; i < map.numCities(); i++){
-			deckData.infectionDeck.push(std::shared_ptr<CardBase>(new InfectionCard(static_cast<Map::CityIndex>(i))));
+			deckData.infectionDeck.push(std::shared_ptr<InfectionCard>(new InfectionCard(static_cast<Map::CityIndex>(i))));
 		}
 		srand(static_cast<unsigned int>(time(NULL)));
 		deckData.infectionDeck.shuffle();
@@ -161,15 +161,11 @@ namespace pan{
 			for (std::size_t card = 0; card < 3; card++){
 				// Get top card
 				auto cardPtr = deckData.infectionDeck.top();
-#ifdef _DEBUG
-				assert(cardPtr->type == CardType::Infection && "Wrong card type");
-#endif
 				deckData.infectionDeck.pop();
-				const InfectionCard& infCard = static_cast<InfectionCard&>(*cardPtr.get());
 				// The disease type
-				DiseaseType type = map.regionForCity(infCard.cityIndex);
+				DiseaseType type = map.regionForCity(cardPtr->cityIndex);
 				// Infect
-				Infect infect(infCard.cityIndex, type, cubes);
+				Infect infect(cardPtr->cityIndex, type, cubes);
 				infect.execute(actionHandler);
 				// Add to discard pile
 				deckData.infectionDiscardDeck.push(cardPtr);

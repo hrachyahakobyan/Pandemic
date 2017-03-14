@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Role.h"
 #include "Card.h"
+#include "InfectionCard.h"
 
 namespace pan{
 	/**
@@ -67,8 +68,8 @@ namespace pan{
 		bool operator!=(const DeckData&) const;
 		std::string description() const;
 
-		detail::Deck<std::shared_ptr<CardBase>> infectionDeck;
-		detail::Deck<std::shared_ptr<CardBase>> infectionDiscardDeck;
+		detail::Deck<std::shared_ptr<InfectionCard>> infectionDeck;
+		detail::Deck<std::shared_ptr<InfectionCard>> infectionDiscardDeck;
 		detail::Deck<std::shared_ptr<CardBase>> playerDeck;
 		detail::Deck<std::shared_ptr<CardBase>> playerDiscardDeck;
 	};

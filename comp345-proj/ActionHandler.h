@@ -34,6 +34,11 @@ namespace pan{
 #ifdef _DEBUG
 		FRIEND_TEST(ActionTest, Infect);
 		FRIEND_TEST(ActionTest, Outbreak);
+		FRIEND_TEST(ActionTest, Move);
+		FRIEND_TEST(ActionTest, CharterFlight);
+		FRIEND_TEST(ActionTest, ShuttleFlight);
+		FRIEND_TEST(ActionTest, DirectFlight);
+		FRIEND_TEST(ActionTest, BuildResearchStation);
 #endif
 	};
 }

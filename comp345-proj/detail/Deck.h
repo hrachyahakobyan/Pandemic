@@ -17,6 +17,8 @@ namespace pan{
 		public:
 			typedef T value_type;
 			typedef std::vector<T> container_type;
+			typedef typename std::vector<T>::iterator iterator;
+			typedef typename std::vector<T>::const_iterator const_iterator;
 
 			Deck();
 			explicit Deck(std::size_t size);
@@ -41,6 +43,12 @@ namespace pan{
 
 			inline bool operator==(const Deck&) const;
 			inline bool operator!=(const Deck&) const;
+
+			inline const T& operator[](std::size_t i)const;
+			inline T& operator[](std::size_t i);
+
+			inline iterator begin();
+			inline const_iterator begin() const;
 
 			/**
 			*	Concatenate the current Deck to a type that can be converted
@@ -70,6 +78,8 @@ namespace pan{
 
 			inline const T& bottom() const;
 			inline void pop_bottom();
+
+			inline iterator erase(iterator position);
 
 			/**
 			*	Push a single item
@@ -173,6 +183,36 @@ namespace pan{
 		bool Deck<T>::operator!=(const Deck& d) const
 		{
 			return !((*this) == d);
+		}
+
+		template<typename T>
+		const T& Deck<T>::operator[](std::size_t i) const
+		{
+			return deck[i];
+		}
+
+		template<typename T>
+		T& Deck<T>::operator[](std::size_t i)
+		{
+			return deck[i];
+		}
+
+		template<typename T>
+		typename Deck<T>::iterator Deck<T>::begin() 
+		{
+			return deck.begin();
+		}
+
+		template<typename T>
+		typename Deck<T>::const_iterator Deck<T>::begin() const
+		{
+			return deck.begin();
+		}
+
+		template<typename T>
+		typename Deck<T>::iterator Deck<T>::erase(iterator it) 
+		{
+			return deck.erase(it);
 		}
 
 		template<typename T>
