@@ -3,6 +3,8 @@
 #include "Role.h"
 #include "Map.h"
 #include "common.h"
+#include "detail\Deck.h"
+#include "Card.h"
 
 namespace pan{
 	class ReferenceCard;
@@ -15,7 +17,7 @@ namespace pan{
 	public:
 		virtual ~PlayerBase();
 
-		inline bool operator==(const PlayerBase&) const;
+		bool operator==(const PlayerBase&) const;
 		inline bool operator!=(const PlayerBase&) const;
 
 		inline const std::string& getName() const;
@@ -23,6 +25,10 @@ namespace pan{
 
 		inline Map::CityIndex getLocation() const;
 		inline void setLocation(Map::CityIndex);
+
+		inline detail::Deck<std::shared_ptr<CardBase>>& getCards();
+		inline const detail::Deck<std::shared_ptr<CardBase>>& getCards() const;
+		inline void setCards(const detail::Deck<std::shared_ptr<CardBase>>&);
 
 		std::string description() const;
 
@@ -35,11 +41,13 @@ namespace pan{
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar & BOOST_SERIALIZATION_NVP(name);
 			ar & BOOST_SERIALIZATION_NVP(location);
+			ar & BOOST_SERIALIZATION_NVP(cards);
 		}
 	protected:
 		PlayerBase(const RoleBase& role);
 		PlayerBase(const RoleBase& role, const std::string& name);
 
+		detail::Deck<std::shared_ptr<CardBase>> cards;
 		std::string name;
 		Map::CityIndex location;
 #ifdef _DEBUG
@@ -49,11 +57,6 @@ namespace pan{
 		FRIEND_TEST(PlayerTest, serializesContainer);
 #endif
 	};
-
-	bool PlayerBase::operator==(const PlayerBase& o) const
-	{
-		return (this->location == o.location && this->name == o.name && this->role == o.role);
-	}
 
 	bool PlayerBase::operator!=(const PlayerBase& o) const
 	{
@@ -79,13 +82,28 @@ namespace pan{
 	{
 		this->location = loc;
 	}
+
+	detail::Deck<std::shared_ptr<CardBase>>& PlayerBase::getCards()
+	{
+		return cards;
+	}
+
+	const detail::Deck<std::shared_ptr<CardBase>>& PlayerBase::getCards() const
+	{
+		return cards;
+	}
+
+	void PlayerBase::setCards(const detail::Deck<std::shared_ptr<CardBase>>& cards)
+	{
+		this->cards = cards;
+	}
 }
 
 /**
 *	Since the class does not have default constructors, we need this
 *	to avoid compilation errors when attempting to (de)serialize 
 *	types of PlayerBase*. This methods do not do anything, since
-*	we are not going to have actual PLayerBase instances in the program.
+*	we are not going to have actual PlayerBase instances in the program.
 */
 namespace boost {
 	namespace serialization {

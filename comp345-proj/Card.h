@@ -12,7 +12,7 @@ namespace pan {
 		{CardType::Infection, "Infection Card"},
 		{CardType::Epidemic, "Epidemic Card"}
 	};
-	
+#pragma message("IMplement polymorphic equality comparison for cards")
 	/**
 	*	@brief Abstract class to represent Card entity in the game.
 	*	Cards contain an enum to differentiate their type.

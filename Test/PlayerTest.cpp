@@ -2,6 +2,9 @@
 #include "PlayerTest.h"
 #include "common.h"
 #include "misc.h"
+#include "EpidemicCard.h"
+#include "CityCard.h"
+#include "EventCard.h"
 
 namespace pan{
 	/**
@@ -32,6 +35,19 @@ namespace pan{
 		ASSERT_NE(medic, medic2);
 		medic2.setLocation(1);
 		ASSERT_EQ(medic, medic2);
+
+		medic.cards.push(std::shared_ptr<CardBase>(new CityCard(2)));
+		ASSERT_NE(medic, medic2);
+
+		medic2.cards.push(std::shared_ptr<CardBase>(new CityCard(2)));
+		ASSERT_EQ(medic, medic2);
+
+		medic.cards.clear();
+		medic.cards.push(std::shared_ptr<CardBase>(new EpidemicCard()));
+		ASSERT_NE(medic, medic2);
+
+		medic2.cards.clear();
+		ASSERT_NE(medic, medic2);
 	}
 
 	/**
@@ -41,14 +57,18 @@ namespace pan{
 	TEST_F(PlayerTest, serializes){
 
 		using namespace pan;
-		Medic medic;
-		medic.setName("John");
-		medic.setLocation(1);
-		
+		PlayerBase* medic = new Medic();
+		medic->setName("John");
+		medic->setLocation(1);
+		medic->cards.push(std::shared_ptr<CardBase>(new EpidemicCard()));
+		medic->cards.push(std::shared_ptr<CardBase>(new CityCard(1)));
+		medic->cards.push(std::shared_ptr<CardBase>(new EventCard(EventType::GovGrant)));
+
 		std::string filename("temp/PlayerSerialization.xml");
 		std::ofstream ofs(filename.c_str());
 		ASSERT_TRUE(ofs.good());
 		boost::archive::xml_oarchive oa(ofs);
+		registerTypes(oa);
 		ASSERT_NO_THROW(oa << boost::serialization::make_nvp("Player", medic));
 		ofs.close();
 
@@ -56,12 +76,13 @@ namespace pan{
 		std::ifstream ifs(filename.c_str());
 		ASSERT_TRUE(ifs.good());
 		boost::archive::xml_iarchive ia(ifs);
-		ia.template register_type<pan::Player<Roles::Medic>>();
-		ASSERT_NO_THROW(ia >> boost::serialization::make_nvp("Player", newPlayer));
+		registerTypes(ia);
+		ia >> boost::serialization::make_nvp("Player", newPlayer);
 		ifs.close();
 		ASSERT_TRUE(newPlayer != nullptr);
-		ASSERT_TRUE(medic == (*newPlayer));
+		ASSERT_TRUE(*medic == (*newPlayer));
 		delete newPlayer;
+		delete medic;
 	}
 
 	/**
@@ -80,6 +101,10 @@ namespace pan{
 		players[1]->setLocation(2);
 		players[2]->setLocation(3);
 		players[3]->setLocation(4);
+		players[0]->cards.push(std::shared_ptr<CardBase>(new EpidemicCard()));
+		players[1]->cards.push(std::shared_ptr<CardBase>(new CityCard(2)));
+		players[2]->cards.push(std::shared_ptr<CardBase>(new EventCard(EventType::Forecast)));
+		players[3]->cards.push(std::shared_ptr<CardBase>(new EventCard(EventType::OneQuietNight)));
 
 		std::string filename("temp/PlayerSerialization2.xml");
 		std::ofstream ofs(filename.c_str());

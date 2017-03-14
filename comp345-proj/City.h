@@ -23,7 +23,7 @@ namespace pan{
 		unsigned int population = 0;
 		bool researchStation = false;
 
-		inline std::string description() const;
+		std::string description() const;
 		inline std::size_t playerCount() const;
 		inline const std::set<PlayerIndex>& getPlayers() const;
 		inline bool containsPlayer(PlayerIndex p) const;
@@ -31,6 +31,8 @@ namespace pan{
 		inline void removePlayer(PlayerIndex p);
 		inline const std::string& getName() const;
 		inline void setName(const std::string& name);
+		std::size_t getCubes(DiseaseType r) const;
+		void setCubes(DiseaseType r, std::size_t cubes);
 
 		friend class boost::serialization::access;
 		template<class Archive>
@@ -40,20 +42,17 @@ namespace pan{
 			ar & BOOST_SERIALIZATION_NVP(population);
 			ar & BOOST_SERIALIZATION_NVP(researchStation);
 			ar & BOOST_SERIALIZATION_NVP(players);
+			ar & BOOST_SERIALIZATION_NVP(cubes);
 		}
 	private:
 		std::set<PlayerIndex> players;
 		std::string name;
+		std::vector<std::size_t> cubes;
 	};
 
 	bool City::operator!=(const City& other) const
 	{
 		return !((*this) == other);
-	}
-
-	std::string City::description() const
-	{
-		return "City: " + name + ". Population: " + std::to_string(population);
 	}
 
 	std::size_t City::playerCount() const

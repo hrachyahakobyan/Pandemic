@@ -23,16 +23,79 @@ namespace pan{
 	*/
 	TEST_F(GameTest, addsPlayers){
 		using namespace pan;
-		Game game;
+		std::size_t maxPlayers = 4;
+		Settings s = Settings::Beginner(2);
+		Game game(s);
+
 		ASSERT_EQ(game.playerCount(), 0);
 		auto p1 = game.addPlayer<Roles::Medic>("Hrachya");
+		ASSERT_NE(p1, Game::InvalidPlayerIndex);
 		ASSERT_TRUE(game.playerExists(p1));
-		ASSERT_EQ(game.getPlayer(p1).getLocation(), 0);
 		ASSERT_EQ(game.playerCount(), 1);
+
+		// Attempt to add the same role
+		auto invalidP = game.addPlayer<Roles::Medic>("Hrachya");
+		ASSERT_EQ(invalidP, Game::InvalidPlayerIndex);
+		ASSERT_FALSE(game.playerExists(invalidP));
+		ASSERT_EQ(game.playerCount(), 1);
+
 		auto p2 = game.addPlayer<Roles::Dispatcher>("Terence");
 		ASSERT_TRUE(game.playerExists(p2));
 		ASSERT_EQ(game.getPlayer(p2).getLocation(), 0);
 		ASSERT_EQ(game.playerCount(), 2);
+
+		// attempt to add 3rd player
+		invalidP = game.addPlayer<Roles::FOperative>("Invalid");
+		ASSERT_EQ(invalidP, Game::InvalidPlayerIndex);
+		ASSERT_EQ(game.playerCount(), 2);
+	}
+
+	/**
+	*	@brief tests the functionality of Game class to initialize
+	*	@author Hrachya Hakobyan
+	*/
+	TEST_F(GameTest, initializes){
+		Settings s = Settings::Beginner(2);
+		// Use the actual map
+		Game g(s, Map::pandemicMap());
+
+		ASSERT_FALSE(g.isInitialized());
+		ASSERT_FALSE(g.isOver());
+		
+		ASSERT_FALSE(g.initialize());
+
+		// add a player
+		g.addPlayer<Roles::Medic>("Player");
+		ASSERT_EQ(g.playerCount(), 1);
+
+		ASSERT_FALSE(g.initialize());
+
+		g.addPlayer<Roles::Dispatcher>("Player");
+		ASSERT_EQ(g.playerCount(), 2);
+
+		ASSERT_TRUE(g.initialize());
+
+		// Check initialization post conditions
+		// Check players' deck sizes
+		for (const auto& p : g.playerData.players){
+			ASSERT_EQ(p->getCards().size(), s.playerDrawCount);
+		}
+
+		// Check the player deck size
+		// The size equals the total number of cities + total number of events + epidemic card count - the cards dealt to players
+		std::size_t playerDeckSize = g.map.numCities() + EventTypeDescriptions.size() + g.gameData.settings.epidemicCardCount - g.playerCount() * g.gameData.settings.playerDrawCount;
+		ASSERT_EQ(g.deckData.playerDeck.size(), playerDeckSize);
+		ASSERT_TRUE(g.deckData.playerDiscardDeck.empty());
+
+		// The size of the infection card = total number of cities - 9 cards drawn at initialization
+		ASSERT_EQ(g.deckData.infectionDeck.size(), g.map.numCities() - 9);
+		// 9 drawn cards are in the discard pile
+		ASSERT_EQ(g.deckData.infectionDiscardDeck.size(), 9);
+
+		ASSERT_TRUE(g.actionData.completedActions.empty());
+		ASSERT_TRUE(g.actionData.actionQueue.empty());
+
+		ASSERT_EQ(g.gameData.researchStations, 1);
 	}
 
 	/**
@@ -41,24 +104,11 @@ namespace pan{
 	*/
 	TEST_F(GameTest, serializes){
 		using namespace pan;
-
-		Game game;
-		auto c0 = game.map.addCity();
-		game.map[c0].setName("Atlanta");
-		auto c1 = game.map.addCity();
-		game.map[c1].setName("Montreal");
-		game.map.addConnection(c0, c1);
-		game.map[c0].population = 233123;
-		game.map[c1].population = 3310231;
-		game.map[c0].researchStation = true;
-		game.diseases.push_back(Disease(0));
-		game.diseases.push_back(Disease(1));
-
-		auto p1 = game.addPlayer<Roles::Medic>("Hrachya");
-		auto p2 = game.addPlayer<Roles::Dispatcher>("Terence");
-
-		game.map[c0].addPlayer(p1);
-		game.map[c1].addPlayer(p2);
+		Settings s = Settings::Beginner(2);
+		Game game(s, Map::pandemicMap());
+		game.addPlayer<Roles::Medic>("Player");
+		game.addPlayer<Roles::Dispatcher>("Player");
+		EXPECT_TRUE(game.initialize());
 
 		std::string filename("temp/GameSerialization.xml");
 		std::ofstream ofs(filename.c_str());
@@ -80,6 +130,7 @@ namespace pan{
 
 	TEST_F(GameTest, executes){
 		using namespace pan;
+		/*
 		Game game(Settings::Beginner(2), Map::pandemicMap());
 		auto validP = game.addPlayer<Roles::Medic>("Hrachya");
 		auto validP2 = game.addPlayer<Roles::Dispatcher>("Liu");
@@ -153,5 +204,6 @@ namespace pan{
 		game.execute(m);
 		locationAfter = game.getPlayer(m.targetPlayer).getLocation();
 		ASSERT_EQ(expectedLocation, locationAfter);
+		*/
 	}
 }

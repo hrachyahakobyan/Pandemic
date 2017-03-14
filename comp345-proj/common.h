@@ -1,6 +1,6 @@
 #pragma once
 
-typedef unsigned int PlayerIndex;
+typedef int PlayerIndex;
 typedef unsigned int RegionIndex;
 typedef unsigned int RoleIndex;
 typedef RegionIndex DiseaseType;

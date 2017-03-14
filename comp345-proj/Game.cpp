@@ -1,37 +1,51 @@
 #include "stdafx.h"
 #include "Game.h"
+#include "CityCard.h"
+#include "EpidemicCard.h"
+#include "InfectionCard.h"
+#include "EventCard.h"
+#include "Infect.h"
 
 namespace pan{
 
 	Game::Game(const Settings& s) :
 		actionHandler(*this),
-		settings(s)
+		gameData(s),
+		initialized(false),
+		status(Status::InProgress)
 	{
 	}
 
 	Game::Game(const Settings& s, const Map& m) :
 		actionHandler(*this),
-		settings(s),
-		map(m)
+		gameData(s),
+		map(m),
+		initialized(false),
+		status(Status::InProgress)
 	{
-		for (auto diseaseType : map.getRegions()){
-			diseases.push_back(Disease(diseaseType));
-		}
 	}
 
 	Game::Game(const Game& o) :
 		actionHandler(*this),
+		gameData(o.gameData),
+		deckData(o.deckData),
+		playerData(o.playerData),
+		actionData(o.actionData),
 		map(o.map),
-		diseases(o.diseases),
-		players(o.players)
+		initialized(o.initialized),
+		status(o.status)		
 	{
 	}
 
 	Game::Game(Game&& o) :
 		actionHandler(*this),
-		diseases(std::move(o.diseases)),
+		gameData(std::move(o.gameData)),
+		deckData(std::move(o.deckData)),
+		playerData(std::move(o.playerData)),
+		actionData(std::move(o.actionData)),
 		map(std::move(o.map)),
-		players(std::move(o.players))
+		initialized(o.initialized),
+		status(o.status)
 	{
 	}
 
@@ -42,55 +56,176 @@ namespace pan{
 
 	Game& Game::operator=(const Game& o)
 	{
+		this->gameData = o.gameData;
+		this->deckData = o.deckData;
+		this->playerData = o.playerData;
+		this->actionData = o.actionData;
 		this->map = o.map;
-		this->players = o.players;
-		this->diseases = o.diseases;
+		this->initialized = o.initialized;
+		this->status = o.status;
 		return *this;
 	}
 
 	Game& Game::operator=(Game&& o)
 	{
+		this->gameData = std::move(o.gameData);
+		this->deckData = std::move(o.deckData);
+		this->playerData = std::move(o.playerData);
+		this->actionData = std::move(o.actionData);
 		this->map = std::move(o.map);
-		this->players = std::move(o.players);
-		this->diseases = std::move(o.diseases);
+		this->initialized = o.initialized;
+		this->status = o.status;
 		return *this;
 	}
 
+#pragma message ("Comparison does not take into account actionQueue, completedActions and occupiedRoles")
 	bool Game::operator==(const Game& o) const
 	{
-		if (this->players.size() != o.players.size())
+		if (this->initialized != o.initialized)
 			return false;
-		if (this->diseases.size() != o.diseases.size())
+		if (this->status != o.status)
 			return false;
-		if (this->settings != o.settings)
+		return (this->gameData == o.gameData
+			&& this->deckData == o.deckData
+			&& this->playerData == o.playerData
+			&& this->deckData == o.deckData
+			&& this->map == o.map);
+	}
+
+	bool Game::initialize()
+	{
+		if (isInitialized())
+			return true;
+		// Not enough players
+		if (playerData.players.size() < gameData.settings.playerCount)
 			return false;
-		if (this->map != o.map)
-			return false;
-		std::size_t size = this->players.size();
-		for (std::size_t i = 0; i < size; i++){
-			if (*(this->players[i]) != *(o.players[i]))
-				return false;
+
+		// Add the diseases based on map regions
+		for (auto diseaseType : map.getRegions()){
+			gameData.diseases.push_back(Disease(diseaseType));
 		}
-		size = this->diseases.size();
-		for (std::size_t i = 0; i < size; i++){
-			if ((this->diseases[i]) != (o.diseases[i]))
-				return false;
+
+		// Construct the disease cubes
+		for (std::size_t i = 0; i < gameData.diseases.size(); i++){
+			gameData.diseaseCubes.push_back(gameData.settings.diseaseCubesPerDisease);
+		}
+
+		// Fill in player cards
+		for (std::size_t i = 0; i < map.numCities(); i++){
+			deckData.playerDeck.push(std::shared_ptr<CardBase>(new CityCard(static_cast<Map::CityIndex>(i))));
+		}
+		for (const auto& event: EventTypeDescriptions){
+			deckData.playerDeck.push(std::shared_ptr<CardBase>(new EventCard(event.first)));
+		}
+		srand(static_cast<unsigned int>(time(NULL)));
+		deckData.playerDeck.shuffle();
+
+		// Deal player cards
+		// Iterare each player, and deal from player deck according to the draw size
+		for (auto& player : playerData.players){
+			player->setCards(deckData.playerDeck.deal(gameData.settings.playerDrawCount));
+		}
+		
+		// Add epidemic cards and shuffle
+		auto tempPlayerCards = std::move(deckData.playerDeck);
+		std::size_t chunkSize = static_cast<std::size_t>(std::ceil(double(tempPlayerCards.size()) / gameData.settings.epidemicCardCount));
+		for (std::size_t i = 0; i < gameData.settings.epidemicCardCount; i++){
+			auto temp = tempPlayerCards.deal(chunkSize);
+			temp.push(std::shared_ptr<CardBase>(new EpidemicCard()));
+			temp.shuffle();
+			deckData.playerDeck.push(std::move(temp));
+		}
+#ifdef _DEBUG
+		assert(tempPlayerCards.empty() && "Cards not dealt correctly");
+#endif
+
+		// Add infection cards
+		for (std::size_t i = 0; i < map.numCities(); i++){
+			deckData.infectionDeck.push(std::shared_ptr<CardBase>(new InfectionCard(static_cast<Map::CityIndex>(i))));
+		}
+		srand(static_cast<unsigned int>(time(NULL)));
+		deckData.infectionDeck.shuffle();
+		
+		// Add the initial research station
+		map[0].researchStation = true;
+		gameData.researchStations++;
+		
+		// Move the players to their initial positions
+		for (int i = 0; i < static_cast<int>(playerData.players.size()); i++){
+			playerData.players[i]->setLocation(0);
+			map[0].addPlayer(i);
+		}
+
+		// Infect cities
+		for (std::size_t cubes = 3; cubes > 0; cubes--){
+			for (std::size_t card = 0; card < 3; card++){
+				// Get top card
+				auto cardPtr = deckData.infectionDeck.top();
+#ifdef _DEBUG
+				assert(cardPtr->type == CardType::Infection && "Wrong card type");
+#endif
+				deckData.infectionDeck.pop();
+				const InfectionCard& infCard = static_cast<InfectionCard&>(*cardPtr.get());
+				// The disease type
+				DiseaseType type = map.regionForCity(infCard.cityIndex);
+				// Infect
+				Infect infect(infCard.cityIndex, type, cubes);
+				infect.execute(actionHandler);
+				// Add to discard pile
+				deckData.infectionDiscardDeck.push(cardPtr);
+			}
 		}
 		return true;
 	}
 
 	std::string Game::description() const
 	{
-		std::string res = "Game: \n";
-		res += "Map: \n" + map.description() + '\n';
-		res += "Players: \n";
-		for (const auto& p : players){
-			res += p->description() + '\n';
-		}
-		res += "Diseases: \n";
-		for (const auto& d : diseases){
-			res += d.description() + '\n';
-		}
+		std::string res = "Game:\n";
+		res += "Initialized: " + std::to_string(isInitialized()) + '\n';
+		res += "Status: " + std::to_string(static_cast<std::underlying_type<Game::Status>::type>(status)) + '\n';
+		res += "Map: " + map.description() + '\n';
+		res += "GameData:\n" + gameData.description() + '\n';
+		res += "DeckData:\n" + deckData.description() + '\n';
+		res += "PlayerData:\n" + playerData.description() + '\n';
 		return res;
+	}
+
+	void Game::addAction(const ActionBase& action)
+	{
+		if (!isInitialized() || isOver())
+			return;
+		actionData.actionQueue.push(std::unique_ptr<ActionBase>(action.clone()));
+	}
+
+	void Game::execute()
+	{
+		if (!isInitialized() || isOver())
+			return;
+		if (actionData.actionQueue.empty())
+			return;
+		auto action = actionData.actionQueue.front();
+		actionData.actionQueue.pop();
+		// If the action was valid, add it to the completed actions
+		if (action->execute(actionHandler))
+			actionData.completedActions.push(action);
+	}
+
+	void Game::executeAll()
+	{
+		if (!isInitialized() || isOver())
+			return;
+		while (actionData.actionQueue.empty())
+			execute();
+	}
+
+	void Game::changeStatus(Status newStatus)
+	{
+		if (!isInitialized() || isOver())
+			return;
+		if (newStatus != Status::InProgress){
+			status = newStatus;
+			// Clear all pending actions
+			actionData.actionQueue = {};
+		}
 	}
 }

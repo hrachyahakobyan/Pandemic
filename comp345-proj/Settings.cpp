@@ -7,19 +7,16 @@ namespace pan{
 		playerCount(2),
 		epidemicCardCount(4),
 		playerDrawCount(4),
-		discoverCureCardCount(5),
-		playerHandMax(7)
+		infectionRates({ 2, 2, 2, 3, 3, 4 })
 	{
 	}
 
 	Settings::Settings(unsigned int pCount, unsigned int edCardCount,
-		unsigned int playerDrawCount, unsigned int disCureCCount,
-		unsigned int playerHandMax) :
+		unsigned int playerDrawCount) :
 		playerCount(pCount),
 		epidemicCardCount(edCardCount),
 		playerDrawCount(playerDrawCount),
-		discoverCureCardCount(disCureCCount),
-		playerHandMax(playerHandMax)
+		infectionRates({ 2, 2, 2, 3, 3, 4 })
 	{
 	}
 
@@ -27,7 +24,9 @@ namespace pan{
 	{
 		return (playerCount == s.playerCount && epidemicCardCount == s.epidemicCardCount
 			&&	playerDrawCount == s.playerDrawCount && discoverCureCardCount == s.discoverCureCardCount
-			&& playerHandMax == s.playerHandMax);
+			&& playerHandMax == s.playerHandMax && diseaseCubesPerDisease == s.diseaseCubesPerDisease
+			&& maxResearchStations == s.maxResearchStations && outbreakMarkerMax == s.outbreakMarkerMax
+			&& infectionRates == s.infectionRates);
 	}
 
 	bool Settings::operator!=(const Settings& s) const

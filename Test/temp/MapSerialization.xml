@@ -18,8 +18,12 @@
 						<item_version>0</item_version>
 						<item>0</item>
 					</players>
+					<cubes>
+						<count>0</count>
+						<item_version>0</item_version>
+					</cubes>
 				</property_value>
-				<property_base class_id="7" tracking_level="0" version="0"></property_base>
+				<property_base class_id="8" tracking_level="0" version="0"></property_base>
 			</vertex_property>
 			<vertex_property>
 				<property_value>
@@ -31,6 +35,10 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</players>
+					<cubes>
+						<count>0</count>
+						<item_version>0</item_version>
+					</cubes>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -45,6 +53,10 @@
 						<item_version>0</item_version>
 						<item>1</item>
 					</players>
+					<cubes>
+						<count>0</count>
+						<item_version>0</item_version>
+					</cubes>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -57,12 +69,12 @@
 			<graph_property></graph_property>
 		</container>
 	</graph>
-	<regionMap class_id="8" tracking_level="0" version="0">
+	<regionMap class_id="9" tracking_level="0" version="0">
 		<count>3</count>
 		<item_version>0</item_version>
-		<item class_id="9" tracking_level="0" version="0">
+		<item class_id="10" tracking_level="0" version="0">
 			<first>0</first>
-			<second class_id="10" tracking_level="0" version="0">
+			<second class_id="11" tracking_level="0" version="0">
 				<Object></Object>
 				<name>North American</name>
 			</second>
@@ -82,10 +94,10 @@
 			</second>
 		</item>
 	</regionMap>
-	<cityRegionMap class_id="11" tracking_level="0" version="0">
+	<cityRegionMap class_id="12" tracking_level="0" version="0">
 		<count>3</count>
 		<item_version>0</item_version>
-		<item class_id="12" tracking_level="0" version="0">
+		<item class_id="13" tracking_level="0" version="0">
 			<first>0</first>
 			<second>0</second>
 		</item>

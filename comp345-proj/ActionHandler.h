@@ -25,9 +25,10 @@ namespace pan{
 		/**
 		*	Executes the given action
 		*	@param actionn a subclass of ActionImpl
+		*	@return true if the action was valid, false otherwise
 		*/
 		template<typename Action>
-		void execute(const Action& action) const;
+		bool execute(const Action& action) const;
 	private:
 		Game& game;
 	};

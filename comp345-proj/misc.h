@@ -5,11 +5,13 @@
 #include "CityCard.h"
 #include "EventCard.h"
 #include "Settings.h"
+#include "detail\Deck.h"
 
 template<typename Archive>
 static void registerTypes(Archive& ar)
 {
 	using namespace pan;
+	ar.template register_type<PlayerBase>();
 	ar.template register_type<Dispatcher>();
 	ar.template register_type<FOperative>();
 	ar.template register_type<Generalist>();
@@ -22,6 +24,7 @@ static void registerTypes(Archive& ar)
 	ar.template register_type<CityCard>();
 	ar.template register_type<CardBase>();
 	ar.template register_type<Settings>();
+	ar.template register_type<detail::Deck<CardBase>>();
 }
 
 #define SPECIALIZE_POINTER_SAVE_LOAD(T) \

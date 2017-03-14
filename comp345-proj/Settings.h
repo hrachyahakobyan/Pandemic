@@ -7,19 +7,22 @@ namespace pan{
 	public:
 		Settings();
 		Settings(unsigned int playerCount, unsigned int epidemicCardCount, 
-				unsigned int playerDrawCount, unsigned int discoverCureCardCount = 5,
-				unsigned int playerHandMax = 7);
+				unsigned int playerDrawCount);
 		~Settings() = default;
 
 		inline static Settings Beginner(unsigned int players);
 		inline static Settings Standard(unsigned int players);
 		inline static Settings Heroic(unsigned int players);
 
-		const unsigned int playerCount;
-		const unsigned int epidemicCardCount;
-		const unsigned int playerDrawCount;
-		const unsigned int discoverCureCardCount;
-		const unsigned int playerHandMax;
+		unsigned int playerCount;
+		unsigned int epidemicCardCount;
+		unsigned int playerDrawCount;
+		unsigned int discoverCureCardCount = 5;
+		unsigned int playerHandMax = 7;
+		unsigned int diseaseCubesPerDisease = 24;
+		unsigned int maxResearchStations = 6;
+		unsigned int outbreakMarkerMax = 8;
+		std::vector<unsigned int> infectionRates; 
 
 		inline std::string description() const;
 
@@ -31,11 +34,15 @@ namespace pan{
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
-			ar & boost::serialization::make_nvp("playerCount", const_cast<unsigned int&>(playerCount));
-			ar & boost::serialization::make_nvp("epidemicCardCount", const_cast<unsigned int&>(epidemicCardCount));
-			ar & boost::serialization::make_nvp("playerDrawCount", const_cast<unsigned int&>(playerDrawCount));
-			ar & boost::serialization::make_nvp("discoverCureCardCount", const_cast<unsigned int&>(discoverCureCardCount));
-			ar & boost::serialization::make_nvp("playerHandMax", const_cast<unsigned int&>(playerHandMax));
+			ar & BOOST_SERIALIZATION_NVP(playerCount);
+			ar & BOOST_SERIALIZATION_NVP(epidemicCardCount);
+			ar & BOOST_SERIALIZATION_NVP(playerDrawCount);
+			ar & BOOST_SERIALIZATION_NVP(discoverCureCardCount);
+			ar & BOOST_SERIALIZATION_NVP(playerHandMax);
+			ar & BOOST_SERIALIZATION_NVP(diseaseCubesPerDisease);
+			ar & BOOST_SERIALIZATION_NVP(maxResearchStations);
+			ar & BOOST_SERIALIZATION_NVP(outbreakMarkerMax);
+			ar & BOOST_SERIALIZATION_NVP(infectionRates);
 		}
 	};
 
@@ -56,7 +63,7 @@ namespace pan{
 		assert(players >= 2 && players <= 4 && "Invalid player count");
 		return Settings(players, 6, 4 - (players - 2));
 	}
-
+#pragma message ("Not all members included in description")
 	std::string Settings::description() const
 	{
 		return "Number of cards drawn by a player: " + std::to_string(playerDrawCount) + "\n Epidemic Card Count: " + std::to_string(epidemicCardCount)

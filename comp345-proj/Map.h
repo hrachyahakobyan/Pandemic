@@ -158,6 +158,8 @@ namespace pan{
 		typedef detail::Graph<City>::EdgeDescriptor ConnectionDescriptor;
 
 		Graph graph;
+#pragma message ("Replace cityRegionMap with vector.")
+#pragma message ("Guarantee contiguous region indices.")
 		std::map<RegionIndex, Region> regionMap;
 		std::map<CityIndex, RegionIndex> cityRegionMap;
 

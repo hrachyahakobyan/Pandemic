@@ -4,12 +4,15 @@
 namespace pan{
 
 	enum EventType : unsigned int{
-		Airlift = 0, GovGrant
+		Airlift = 0, GovGrant, ResilientPopulation, OneQuietNight, Forecast
 	};
 
 	static const std::map<EventType, const char*> EventTypeDescriptions{
 		{EventType::Airlift, "Airlift"},
-		{EventType::GovGrant, "Government Grant" }
+		{EventType::GovGrant, "Government Grant" },
+		{EventType::ResilientPopulation, "Resilient Population"},
+		{ EventType::OneQuietNight, "One quiet night" },
+		{EventType::Forecast, "Forecast"}
 	};
 
 	typedef CardImpl<CardType::Event> EventCard;

@@ -89,6 +89,7 @@
     <ClInclude Include="City.h" />
     <ClInclude Include="CityCard.h" />
     <ClInclude Include="common.h" />
+    <ClInclude Include="Data.h" />
     <ClInclude Include="detail\Deck.h" />
     <ClInclude Include="detail\Factory.h" />
     <ClInclude Include="detail\Graph.h" />
@@ -96,11 +97,13 @@
     <ClInclude Include="EpidemicCard.h" />
     <ClInclude Include="EventCard.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Infect.h" />
     <ClInclude Include="InfectionCard.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Outbreak.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBase.h" />
     <ClInclude Include="ReferenceCard.h" />
@@ -118,6 +121,7 @@
     <ClCompile Include="City.cpp" />
     <ClCompile Include="CityCard.cpp" />
     <ClCompile Include="comp345-proj.cpp" />
+    <ClCompile Include="Data.cpp" />
     <ClCompile Include="detail\Deck.cpp" />
     <ClCompile Include="detail\Factory.cpp" />
     <ClCompile Include="detail\Graph.cpp" />
@@ -125,10 +129,12 @@
     <ClCompile Include="EpidemicCard.cpp" />
     <ClCompile Include="EventCard.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Infect.cpp" />
     <ClCompile Include="InfectionCard.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Outbreak.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBase.cpp" />
     <ClCompile Include="ReferenceCard.cpp" />

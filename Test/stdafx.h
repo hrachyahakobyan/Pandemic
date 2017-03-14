@@ -11,6 +11,8 @@
 #include <tchar.h>
 #include <gtest\gtest.h>
 #include <fstream>
+#include <queue>
+#include <stack>
 #include <boost/config/user.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/nvp.hpp>

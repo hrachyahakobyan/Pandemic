@@ -6,7 +6,6 @@
 namespace pan{
 	/**
 	*	@brief Class representing a driver/ferry action.
-	*	
 	*	@author Hrachya Hakobyan
 	*/
 	class Move : public ActionImpl<Move, ActionBase>{
