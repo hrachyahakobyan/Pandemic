@@ -10,7 +10,7 @@ namespace pan{
 	class City : public Object{
 	public:
 		City();
-		City(const std::string& name);
+		City(const std::string& name, unsigned int population = 0);
 		City(const City&);
 		City(City&& o);
 		City& operator=(const City&);

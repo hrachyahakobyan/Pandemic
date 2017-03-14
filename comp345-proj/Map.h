@@ -22,6 +22,10 @@ namespace pan{
 		typedef detail::Graph<City>::AdjacencyIterator ConnectedCityIterator;
 		typedef detail::Graph<City>::AdjacencyRange ConnectedCityRange;
 
+		/**
+		*	@brief default constructor for Map.
+		*	Will create an initial region with index 0.
+		*/
 		Map();
 		explicit Map(const Region& r);
 		Map(const Map&);
@@ -164,6 +168,14 @@ namespace pan{
 		*	@return the CityIndex of the added city
 		*/
 		CityIndex addCity(const City& c = City());
+
+		/**
+		*	Adds a new city to the specified region.
+		*	If the region is invalid, the city will not be added.
+		*	@throws std::exception if the region index is invalid
+		*	@return the index of the newly created city
+		*/
+		CityIndex addCity(RegionIndex region, const City& c = City());
 
 		/**
 		*	Removes a city.

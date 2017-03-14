@@ -75,6 +75,21 @@ namespace pan{
 		return ci;
 	}
 
+	/**
+	*	Adds a new city to the specified region.
+	*	@throws std::exception if the region index is invalid
+	*	@return the index of the newly created city
+	*/
+	Map::CityIndex Map::addCity(RegionIndex region, const City& c)
+	{
+		auto regionIt = regionMap.find(region);
+		if (regionIt == regionMap.end())
+			throw std::exception("ERROR pan::Map::CityIndex addCity(RegionIndex region, const City&). Invalid region");
+		auto cityIndex = addCity(c);
+		addCityToRegion(cityIndex, region);
+		return cityIndex;
+	}
+
 	void Map::removeCity(Map::CityIndex i)
 	{
 		if (graph.vertexExists(i)){
@@ -163,26 +178,112 @@ namespace pan{
 	Map Map::pandemicMap()
 	{
 		Map m;
-		City atlanta("Atlanta");
-		atlanta.researchStation = true;
-		auto iAtlanta = m.addCity(atlanta);
-		City chicago("Chicago");
-		auto iChicago = m.addCity(chicago);
+		RegionIndex regionBlue = 0;
+		RegionIndex regionYellow = m.addRegion();
+		RegionIndex regionBlack = m.addRegion();
+		RegionIndex regionRed = m.addRegion();
+
+		// City name and population
+		auto iAtlanta = m.addCity(regionBlue, City("Atlanta", 123123));
+		auto iChicago = m.addCity(regionBlue, City("Chicago", 123123));
+		// Connect cities.
 		m.addConnection(iAtlanta, iChicago);
+
+		/*
 		City washington("Washington");
-		auto iWashington = m.addCity(washington);
-		m.addConnection(iAtlanta, iWashington);
 		City miami("Miami");
-		auto iMiami = m.addCity(miami);
-		m.addConnection(iAtlanta, iMiami);
 		City montreal("Montreal");
+		City newyork("New-York");
+		City sf("San Francisco");
+		City LA("Los Angeles");
+		City mexico("Mexico");
+		City bogota("Bogota");
+		City lima("Lima");
+		City sPaulo("San Paulo");
+		City santiago("Santiago");
+		City bAires("Buenos Aires");
+		City london("London");
+		City madird("Madrid");
+		City paris("Paris");
+		City essem("Essem");
+		City milan("Milan");
+		City stpeter("St. Petersburg");
+		City istanbul("Istanbul");
+		City algiers("Algiers");
+		City cairo("Cairo");
+		City moscow("Moscow");
+		City riyadh("Riyadh");
+		City baghdad("Baghdad");
+		City karachi("Karachi");
+		City tehran("Tehran");
+		City delhi("Delhi");
+		City mumbai("Mumbai");
+		City chennai("Chennai");
+		City koulkata("Koulkata");
+		City bangkok("Bangkok");
+		City jakarta("Jakarta");
+		City hochi("Ho Chi Minh");
+		City hk("Hong Kong");
+		City shanghai("Shanghai");
+		City beijing("Beijing");
+		City taipei("Taipei");
+		City seoul("Seoul");
+		City tokyo("Tokyo");
+		City osaka("Osaka");
+		City manila("Manila");
+		City sydney("Sydney");
+		City lagos("Lagos");
+		City khartolim("Khartolim");
+		City kinshasa("Kinshasa");
+		City jb("Johannesburg");
+
+		auto iDelhi = m.addCity(delhi);
+		auto iMumbai = m.addCity(mumbai);
+		auto iChennai = m.addCity(chennai);
+		auto iKoulkata = m.addCity(koulkata);
+		auto iBangkok = m.addCity(bangkok);
+		auto iJakarta = m.addCity(jakarta);
+		auto iHochi = m.addCity(hochi);
+		auto iHK = m.addCity(hk);
+		auto iShanghai = m.addCity(shanghai);
+		auto iAtlanta = m.addCity(atlanta);
+		auto iChicago = m.addCity(chicago);
+		auto iMiami = m.addCity(miami);
+		auto iWashington = m.addCity(washington);
 		auto iMontreal = m.addCity(montreal);
+		auto iNewYork = m.addCity(newyork);
+		auto iSF = m.addCity(sf);
+		auto iLA = m.addCity(LA);
+		auto iMexico = m.addCity(mexico);
+		auto iBogota = m.addCity(bogota);
+		auto iLima = m.addCity(lima);
+		auto iSpaulo = m.addCity(sPaulo);
+		auto iSantiago = m.addCity(santiago);
+		auto iBAires = m.addCity(bAires);
+		auto iLondon = m.addCity(london);
+		auto iMadird = m.addCity(madird);
+		auto iParis = m.addCity(paris);
+		auto iEssem = m.addCity(essem);
+		auto iMilan = m.addCity(milan);
+		auto iStPeter = m.addCity(stpeter);
+		auto iIstanbul = m.addCity(istanbul);
+		auto iAlgiers = m.addCity(algiers);
+		auto iCairo = m.addCity(cairo);
+		auto iMoscow = m.addCity(moscow);
+		auto iRiyadh = m.addCity(riyadh);
+		auto iBaghdad = m.addCity(baghdad);
+		auto iKarachi = m.addCity(karachi);
+		auto iTehran = m.addCity(tehran);
+
+
+		m.addConnection(iAtlanta, iWashington);
+		m.addConnection(iAtlanta, iChicago);
+		m.addConnection(iAtlanta, iMiami);
 		m.addConnection(iMontreal, iChicago);
 		m.addConnection(iMontreal, iWashington);
-		City newyork("New-York");
-		auto iNewYork = m.addCity(newyork);
 		m.addConnection(iNewYork, iMontreal);
 		m.addConnection(iNewYork, iWashington);
+		*/
 		return m;
 	}
 }

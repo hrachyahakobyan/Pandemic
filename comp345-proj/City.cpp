@@ -9,8 +9,8 @@ namespace pan{
 	{
 	}
 
-	City::City(const std::string& name) :
-		population(0),
+	City::City(const std::string& name, unsigned int population) :
+		population(population),
 		researchStation(false),
 		name(name)
 	{
