@@ -55,6 +55,9 @@ namespace pan{
 
 	template<>
 	bool ActionHandler::execute<Outbreak>(const Outbreak& a) const{
+		if (!a.validate(*this)){
+			return false;
+		}
 		// The current city has already suffered an outbreak due to the same infection
 		if (a.infection.outbreakedCities.find(a.infection.city) != a.infection.outbreakedCities.end()){
 			return true;
@@ -65,6 +68,8 @@ namespace pan{
 			game.changeStatus(Game::Status::Defeat);
 			return true;
 		}
+		// Increase outbreak marker
+		game.gameData.outbreakMarker++;
 		// Otherwise, infect each neighbor
 		Map::ConnectedCityIterator ai, ai_end;
 		bool result = true;
@@ -83,6 +88,16 @@ namespace pan{
 
 	template<>
 	bool ActionHandler::validate<Infect>(const Infect& a) const{
+		// Check the valid number of cubes
+		if (!(a.cubes > 0 && a.cubes < 4))
+			return false;
+		// A city cannot receive more than 1 cube of a disease that is different from the city's
+		// region
+		// Different diseases
+		if (game.map.regionForCity(a.city) != a.diseaseType){
+			if (a.cubes != 1)
+				return false;
+		}
 		return true;
 	}
 

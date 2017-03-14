@@ -57,6 +57,9 @@
     <ClInclude Include="DiseaseTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ActionTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -96,6 +99,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DiseaseTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

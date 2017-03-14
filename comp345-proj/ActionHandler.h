@@ -31,6 +31,10 @@ namespace pan{
 		bool execute(const Action& action) const;
 	private:
 		Game& game;
+#ifdef _DEBUG
+		FRIEND_TEST(ActionTest, Infect);
+		FRIEND_TEST(ActionTest, Outbreak);
+#endif
 	};
 }
 

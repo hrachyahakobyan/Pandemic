@@ -85,6 +85,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActionTest.h" />
     <ClInclude Include="CardTest.h" />
     <ClInclude Include="DeckTest.h" />
     <ClInclude Include="DiseaseTest.h" />
@@ -100,6 +101,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ActionTest.cpp" />
     <ClCompile Include="CardTest.cpp" />
     <ClCompile Include="DeckTest.cpp" />
     <ClCompile Include="DiseaseTest.cpp" />

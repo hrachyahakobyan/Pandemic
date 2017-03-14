@@ -94,7 +94,8 @@ namespace pan{
 
 		ASSERT_TRUE(g.actionData.completedActions.empty());
 		ASSERT_TRUE(g.actionData.actionQueue.empty());
-
+		// The initialization infection step cannot cause outbreaks
+		ASSERT_EQ(g.gameData.outbreakMarker, 0);
 		ASSERT_EQ(g.gameData.researchStations, 1);
 	}
 

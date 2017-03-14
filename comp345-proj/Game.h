@@ -152,11 +152,14 @@ namespace pan
 
 #ifdef _DEBUG
 		friend class GameTest;
+		friend class ActionTest;
 		FRIEND_TEST(GameTest, addsPlayers);
 		FRIEND_TEST(GameTest, serializes);
 		FRIEND_TEST(GameTest, validates);
 		FRIEND_TEST(GameTest, executes);
 		FRIEND_TEST(GameTest, initializes);
+		FRIEND_TEST(ActionTest, Infect);
+		FRIEND_TEST(ActionTest, Outbreak);
 #endif
 	};
 
