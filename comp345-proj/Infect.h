@@ -1,6 +1,5 @@
 #pragma once
 #include "ActionBase.h"
-#include "Map.h"
 
 namespace pan{
 	/**
@@ -10,11 +9,11 @@ namespace pan{
 	class Infect : public ActionImpl<Infect, ActionBase>
 	{
 	public:
-		Infect(Map::CityIndex city, DiseaseType diseaseType, std::size_t cubes);
+		Infect(CityIndex city, DiseaseType diseaseType, std::size_t cubes);
 		/**
 		*	The city to infect
 		*/
-		Map::CityIndex city;
+		CityIndex city;
 		/**
 		*	How many cubes to put
 		*/
@@ -26,7 +25,7 @@ namespace pan{
 		/**
 		*	Stores the cities which suffered an outbreaked caused by this infection.
 		*/
-		std::set<Map::CityIndex> outbreakedCities;
+		std::set<CityIndex> outbreakedCities;
 	};
 }
 

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "MapTest.h"
+#include "Map.h"
 
 namespace pan{
 	/**

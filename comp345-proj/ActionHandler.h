@@ -44,6 +44,7 @@ namespace pan{
 		FRIEND_TEST(ActionTest, DirectFlight);
 		FRIEND_TEST(ActionTest, BuildResearchStation);
 #endif
+
 		bool isPlayersTurn(PlayerIndex i) const;
 		/**
 		*	@brief Tells whether the given player can act, i.e. perform one of 4 actions.

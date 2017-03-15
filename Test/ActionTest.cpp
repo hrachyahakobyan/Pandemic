@@ -119,13 +119,13 @@ namespace pan{
 		ASSERT_FALSE(m.execute(g.actionHandler));
 
 		// Invalid move. Moving to a non neighbor city
-		Map::CityIndex city = g.map.numCities() - 1;
+		CityIndex city = g.map.numCities() - 1;
 		EXPECT_FALSE(g.map.connectionExists(city, p.getLocation()));
 		m.targetCity = city;
 		ASSERT_FALSE(m.execute(g.actionHandler));
 
 		// Valid move. Moving to a neigbor city
-		city = static_cast<Map::CityIndex>(1);
+		city = static_cast<CityIndex>(1);
 		EXPECT_TRUE(g.map.connectionExists(city, p.getLocation()));
 
 		m.targetCity = city;

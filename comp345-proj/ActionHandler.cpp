@@ -16,6 +16,15 @@ namespace pan{
 	{
 	}
 
+
+	/**
+	*	Validates Move action. A move action is valid if the following hold
+	*	1.The player exists.
+	*	2. It is the player's turn.
+	*	3. The player can make an action.
+	*	4. The target city is not the same as the player's city.
+	*	5. The target city is a neighbor of the player's city.
+	*/
 	template<>
 	bool ActionHandler::validate<Move>(const Move& m) const{
 		// Check if parameters are valid
@@ -29,17 +38,8 @@ namespace pan{
 		if (player.getLocation() == m.targetCity){
 			return false;
 		}
-		// Check if the target city is within single step reach
-		Map::ConnectedCityIterator ai, ai_end;
-		bool isReachable = false;
-		for (boost::tie(ai, ai_end) = game.map.connectedCities(player.getLocation());
-			ai != ai_end; ++ai){
-			if (*ai == m.targetCity){
-				isReachable = true;
-				break;
-			}
-		}
-		return isReachable;
+		// Check if the destination is a neighbor of the players location
+		return game.map.connectionExists(m.targetCity, player.getLocation());
 	}
 
 	template<>

@@ -1,6 +1,6 @@
 #pragma once
 #include "Object.h"
-#include "common.h"
+
 
 namespace pan{
 	/** @brief Represents a single city on the map.

@@ -1,7 +1,5 @@
 #pragma once
 #include "ActionBase.h"
-#include "Map.h"
-#include "common.h"
 
 namespace pan{
 	/**

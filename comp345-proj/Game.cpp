@@ -97,7 +97,7 @@ namespace pan{
 
 		// Fill in player cards
 		for (std::size_t i = 0; i < map.numCities(); i++){
-			deckData.playerDeck.push(std::shared_ptr<CardBase>(new CityCard(static_cast<Map::CityIndex>(i))));
+			deckData.playerDeck.push(std::shared_ptr<CardBase>(new CityCard(static_cast<CityIndex>(i))));
 		}
 		for (const auto& event: EventTypeDescriptions){
 			deckData.playerDeck.push(std::shared_ptr<CardBase>(new EventCard(event.first)));
@@ -126,7 +126,7 @@ namespace pan{
 
 		// Add infection cards
 		for (std::size_t i = 0; i < map.numCities(); i++){
-			deckData.infectionDeck.push(std::shared_ptr<InfectionCard>(new InfectionCard(static_cast<Map::CityIndex>(i))));
+			deckData.infectionDeck.push(std::shared_ptr<InfectionCard>(new InfectionCard(static_cast<CityIndex>(i))));
 		}
 		srand(static_cast<unsigned int>(time(NULL)));
 		deckData.infectionDeck.shuffle();

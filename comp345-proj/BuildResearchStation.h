@@ -1,6 +1,5 @@
 #pragma once
 #include "ActionBase.h"
-#include "common.h"
 
 namespace pan{
 	/**

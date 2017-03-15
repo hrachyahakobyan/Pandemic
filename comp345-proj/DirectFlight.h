@@ -1,7 +1,5 @@
 #pragma once
 #include "ActionBase.h"
-#include "Map.h"
-#include "common.h"
 
 namespace pan{
 	/**
@@ -10,8 +8,8 @@ namespace pan{
 	*/
 	class DirectFlight : public ActionImpl<DirectFlight, ActionBase>{
 	public:
-		DirectFlight(PlayerIndex player, Map::CityIndex city);
+		DirectFlight(PlayerIndex player, CityIndex city);
 		PlayerIndex player;
-		Map::CityIndex targetCity;
+		CityIndex targetCity;
 	};
 }

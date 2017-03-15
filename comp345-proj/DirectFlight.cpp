@@ -3,7 +3,7 @@
 
 
 namespace pan{
-	DirectFlight::DirectFlight(PlayerIndex player, Map::CityIndex city) :
+	DirectFlight::DirectFlight(PlayerIndex player, CityIndex city) :
 		player(player), targetCity(city)
 	{
 	}

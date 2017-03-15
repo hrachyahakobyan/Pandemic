@@ -1,9 +1,6 @@
 #pragma once
 #include "Player.h"
-#include "InfectionCard.h"
-#include "EpidemicCard.h"
-#include "CityCard.h"
-#include "EventCard.h"
+#include "Cards.h"
 #include "Settings.h"
 #include "detail\Deck.h"
 

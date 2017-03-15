@@ -6,7 +6,7 @@
 #include "Role.h"
 #include "Move.h"
 
-PlayerIndex addPlayer(pan::Roles role, pan::Game& g, const std::string& name)
+pan::PlayerIndex addPlayer(pan::Roles role, pan::Game& g, const std::string& name)
 {
 	using pan::Roles;
 	if (role == Roles::CPlanner) return g.addPlayer<Roles::Dispatcher>(name);

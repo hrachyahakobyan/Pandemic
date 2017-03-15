@@ -2,7 +2,7 @@
 #include "Object.h"
 #include "City.h"
 #include "Region.h"
-#include "common.h"
+
 #include "detail\Graph.h"
 
 namespace pan{
@@ -17,7 +17,6 @@ namespace pan{
 	class Map : public Object
 	{
 	public:
-		typedef detail::Graph<City>::VertexDescriptor CityIndex;
 		typedef detail::Graph<City>::VertexIterator CityIterator;
 		typedef detail::Graph<City>::AdjacencyIterator ConnectedCityIterator;
 		typedef detail::Graph<City>::AdjacencyRange ConnectedCityRange;
@@ -140,7 +139,7 @@ namespace pan{
 		*	@throws std::exception if the index is invalid
 		*	@return the set of CityIndex-s of the region
 		*/
-		 std::set<Map::CityIndex> regionCities(RegionIndex index) const;
+		 std::set<CityIndex> regionCities(RegionIndex index) const;
 		
 	private:
 #ifdef _DEBUG

@@ -1,8 +1,6 @@
 #pragma once
 #include "Object.h"
 #include "Role.h"
-#include "Map.h"
-#include "common.h"
 #include "detail\Deck.h"
 #include "Card.h"
 #include "ReferenceCard.h"
@@ -22,8 +20,8 @@ namespace pan{
 		inline const std::string& getName() const;
 		inline void setName(const std::string& name);
 
-		inline Map::CityIndex getLocation() const;
-		inline void setLocation(Map::CityIndex);
+		inline CityIndex getLocation() const;
+		inline void setLocation(CityIndex);
 
 		inline detail::Deck<std::shared_ptr<CardBase>>& getCards();
 		inline const detail::Deck<std::shared_ptr<CardBase>>& getCards() const;
@@ -48,7 +46,7 @@ namespace pan{
 
 		detail::Deck<std::shared_ptr<CardBase>> cards;
 		std::string name;
-		Map::CityIndex location;
+		CityIndex location;
 #ifdef _DEBUG
 		friend class PlayerTest;
 		FRIEND_TEST(PlayerTest, compares);
@@ -72,12 +70,12 @@ namespace pan{
 		this->name = name;
 	}
 
-	Map::CityIndex PlayerBase::getLocation() const
+	CityIndex PlayerBase::getLocation() const
 	{
 		return location;
 	}
 
-	void PlayerBase::setLocation(Map::CityIndex loc)
+	void PlayerBase::setLocation(CityIndex loc)
 	{
 		this->location = loc;
 	}

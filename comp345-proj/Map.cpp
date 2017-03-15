@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Map.h"
 
-
 namespace pan{
 
 	Map::Map()
@@ -68,12 +67,12 @@ namespace pan{
 		return res;
 	}
 
-	Map::CityIndex Map::addCity(const City& city)
+	CityIndex Map::addCity(const City& city)
 	{
 		auto ci = graph.addVertex(city);
 		bool addRegion = addCityToRegion(ci, regionMap.begin()->first);
 #ifdef _DEBUG
-		assert(addRegion && "ERROR pan::Map::CityIndex addCity(const City&): Could not add city to region");
+		assert(addRegion && "ERROR pan::CityIndex addCity(const City&): Could not add city to region");
 #endif
 		return ci;
 	}
@@ -83,17 +82,17 @@ namespace pan{
 	*	@throws std::exception if the region index is invalid
 	*	@return the index of the newly created city
 	*/
-	Map::CityIndex Map::addCity(RegionIndex region, const City& c)
+	CityIndex Map::addCity(RegionIndex region, const City& c)
 	{
 		auto regionIt = regionMap.find(region);
 		if (regionIt == regionMap.end())
-			throw std::exception("ERROR pan::Map::CityIndex addCity(RegionIndex region, const City&). Invalid region");
+			throw std::exception("ERROR pan::CityIndex addCity(RegionIndex region, const City&). Invalid region");
 		auto cityIndex = addCity(c);
 		addCityToRegion(cityIndex, region);
 		return cityIndex;
 	}
 
-	void Map::removeCity(Map::CityIndex i)
+	void Map::removeCity(CityIndex i)
 	{
 		if (graph.vertexExists(i)){
 			cityRegions.erase(cityRegions.begin() + i);
@@ -115,13 +114,13 @@ namespace pan{
 		return cityRegions[i];
 	}
 
-	std::set<Map::CityIndex> Map::regionCities(RegionIndex index) const
+	std::set<CityIndex> Map::regionCities(RegionIndex index) const
 	{
 		auto regionIt = regionMap.find(index);
 		if (regionIt == regionMap.end())
 			throw std::exception("ERROR pan::Map::std::set<CityIndex>& Map::regionCities(RegionIndex). Invalid index");
 		std::set<CityIndex> s;
-		for (Map::CityIndex i = 0; i < cityRegions.size(); i++){
+		for (CityIndex i = 0; i < cityRegions.size(); i++){
 			if (cityRegions[i] == index){
 				s.insert(i);
 			}

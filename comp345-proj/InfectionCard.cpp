@@ -2,7 +2,7 @@
 #include "InfectionCard.h"
 
 namespace pan{
-	CardImpl<CardType::Infection>::CardImpl(Map::CityIndex index) :
+	CardImpl<CardType::Infection>::CardImpl(CityIndex index) :
 		CardBase(CardType::Infection),
 		cityIndex(index)
 	{

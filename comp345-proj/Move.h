@@ -1,7 +1,5 @@
 #pragma once
 #include "ActionBase.h"
-#include "Map.h"
-#include "common.h"
 
 namespace pan{
 	/**
@@ -10,8 +8,8 @@ namespace pan{
 	*/
 	class Move : public ActionImpl<Move, ActionBase>{
 	public:
-		Move(PlayerIndex player, Map::CityIndex city);
+		Move(PlayerIndex player, CityIndex city);
 		PlayerIndex player;
-		Map::CityIndex targetCity;
+		CityIndex targetCity;
 	};
 }

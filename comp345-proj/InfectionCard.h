@@ -1,6 +1,5 @@
 #pragma once
 #include "Card.h"
-#include "Map.h"
 
  namespace pan{
 
@@ -13,9 +12,9 @@
 	class CardImpl<CardType::Infection> : public CardBase
 	{
 	public:
-		CardImpl(Map::CityIndex index);
+		CardImpl(CityIndex index);
 		~CardImpl() = default;
-		const Map::CityIndex cityIndex;
+		const CityIndex cityIndex;
 		inline std::string description() const;
 		inline bool operator==(const CardImpl&) const;
 		inline bool operator!=(const CardImpl&) const;
@@ -24,7 +23,7 @@
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(CardBase);
-			ar & boost::serialization::make_nvp("cityIndex", const_cast<Map::CityIndex&>(cityIndex));
+			ar & boost::serialization::make_nvp("cityIndex", const_cast<CityIndex&>(cityIndex));
 		}
 	};
 
@@ -57,7 +56,7 @@ namespace boost {
 		inline void load_construct_data(
 			Archive & ar, pan::CardImpl<pan::CardType::Infection> * p, const unsigned int file_version
 			){
-			pan::Map::CityIndex index;
+			pan::CityIndex index;
 			ar & boost::serialization::make_nvp("cityIndex", index);
 			::new(p)pan::CardImpl<pan::CardType::Infection>(index);
 		}

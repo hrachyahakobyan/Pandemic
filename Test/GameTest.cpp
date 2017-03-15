@@ -3,7 +3,7 @@
 #include "Role.h"
 #include "Map.h"
 #include "Game.h"
-#include "common.h"
+
 #include "misc.h"
 
 
