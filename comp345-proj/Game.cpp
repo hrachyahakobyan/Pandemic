@@ -5,23 +5,20 @@
 #include "InfectionCard.h"
 #include "EventCard.h"
 #include "Infect.h"
+#include "SaveLoadManager.h"
 
 namespace pan{
 
 	Game::Game(const Settings& s) :
 		actionHandler(*this),
-		gameData(s),
-		initialized(false),
-		status(Status::InProgress)
+		gameData(s)
 	{
 	}
 
 	Game::Game(const Settings& s, const Map& m) :
 		actionHandler(*this),
 		gameData(s),
-		map(m),
-		initialized(false),
-		status(Status::InProgress)
+		map(m)
 	{
 	}
 
@@ -31,9 +28,7 @@ namespace pan{
 		deckData(o.deckData),
 		playerData(o.playerData),
 		actionData(o.actionData),
-		map(o.map),
-		initialized(o.initialized),
-		status(o.status)		
+		map(o.map)		
 	{
 	}
 
@@ -43,9 +38,7 @@ namespace pan{
 		deckData(std::move(o.deckData)),
 		playerData(std::move(o.playerData)),
 		actionData(std::move(o.actionData)),
-		map(std::move(o.map)),
-		initialized(o.initialized),
-		status(o.status)
+		map(std::move(o.map))
 	{
 	}
 
@@ -61,8 +54,6 @@ namespace pan{
 		this->playerData = o.playerData;
 		this->actionData = o.actionData;
 		this->map = o.map;
-		this->initialized = o.initialized;
-		this->status = o.status;
 		return *this;
 	}
 
@@ -73,18 +64,11 @@ namespace pan{
 		this->playerData = std::move(o.playerData);
 		this->actionData = std::move(o.actionData);
 		this->map = std::move(o.map);
-		this->initialized = o.initialized;
-		this->status = o.status;
 		return *this;
 	}
 
-#pragma message ("Comparison does not take into account actionQueue, completedActions and occupiedRoles")
 	bool Game::operator==(const Game& o) const
 	{
-		if (this->initialized != o.initialized)
-			return false;
-		if (this->status != o.status)
-			return false;
 		return (this->gameData == o.gameData
 			&& this->deckData == o.deckData
 			&& this->playerData == o.playerData
@@ -108,6 +92,7 @@ namespace pan{
 		// Construct the disease cubes
 		for (std::size_t i = 0; i < gameData.diseases.size(); i++){
 			gameData.diseaseCubes.push_back(gameData.settings.diseaseCubesPerDisease);
+			gameData.removedDiseasesCubes.push_back(0);
 		}
 
 		// Fill in player cards
@@ -171,14 +156,17 @@ namespace pan{
 				deckData.infectionDiscardDeck.push(cardPtr);
 			}
 		}
+
+		// Set the player turn and stage
+		playerData.turn = 0;
+		playerData.stage = PlayerStage::Act;
+
 		return true;
 	}
 
 	std::string Game::description() const
 	{
 		std::string res = "Game:\n";
-		res += "Initialized: " + std::to_string(isInitialized()) + '\n';
-		res += "Status: " + std::to_string(static_cast<std::underlying_type<Game::Status>::type>(status)) + '\n';
 		res += "Map: " + map.description() + '\n';
 		res += "GameData:\n" + gameData.description() + '\n';
 		res += "DeckData:\n" + deckData.description() + '\n';
@@ -214,14 +202,24 @@ namespace pan{
 			execute();
 	}
 
-	void Game::changeStatus(Status newStatus)
+	void Game::changeState(GameState newState)
 	{
 		if (!isInitialized() || isOver())
 			return;
-		if (newStatus != Status::InProgress){
-			status = newStatus;
+		if (newState != GameState::InProgress){
+			gameData.state = newState;
 			// Clear all pending actions
 			actionData.actionQueue = {};
 		}
+	}
+
+	bool Game::save(const std::string& name) const
+	{
+		return SaveLoadManager::getInstance().save(*this, name);
+	}
+
+	bool Game::load(const SaveFile& file, Game& game)
+	{
+		return SaveLoadManager::getInstance().load(file, game);
 	}
 }

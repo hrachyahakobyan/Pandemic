@@ -153,6 +153,21 @@
     <ClInclude Include="BuildResearchStation.h">
       <Filter>Header Files\actions</Filter>
     </ClInclude>
+    <ClInclude Include="TreatDisease.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="DiscoverCure.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawPlayerCards.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInfect.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="DiscardCard.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -252,6 +267,21 @@
       <Filter>Source Files\actions</Filter>
     </ClCompile>
     <ClCompile Include="BuildResearchStation.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="TreatDisease.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="DiscoverCure.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawPlayerCards.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="DiscardCard.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerInfect.cpp">
       <Filter>Source Files\actions</Filter>
     </ClCompile>
   </ItemGroup>

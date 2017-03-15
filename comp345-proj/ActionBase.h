@@ -4,7 +4,7 @@
 namespace pan{
 	/**
 	*	@brief Top level abstraction of the Action entity.
-	*	Modified implementation of Command pattern. All actions that modify the state
+	*	Store the Command in the Command pattern. All actions that modify the state
 	*	of the game, are encapsulated as subclasses of ActionBase.
 	*	@author Hrachya Hakobyan
 	*/
@@ -14,12 +14,13 @@ namespace pan{
 		ActionBase(){}
 		virtual ~ActionBase(){};
 		virtual bool validate(const ActionHandler& h) const = 0;
-		virtual bool execute(const ActionHandler& h) const = 0;
+		virtual bool execute(ActionHandler& h) const = 0;
 		virtual ActionBase* clone() const = 0;
 	};
 
 	/**
-	*	@brief A class containing the implementation of abstract methods of ActionBase
+	*	@brief A class containing the implementation of abstract methods of ActionBase.
+	*	Subclasses may modify the methods for custom implementation, however it is not needed.
 	*	@author Hrachya Hakobyan
 	*/
 	template<typename Derived, typename Base>
@@ -30,7 +31,7 @@ namespace pan{
 			return h.validate<Derived>(static_cast<const Derived&>(*this));
 		}
 
-		virtual bool execute(const ActionHandler& h) const {
+		virtual bool execute(ActionHandler& h) const {
 			return h.execute<Derived>(static_cast<const Derived&>(*this));
 		}
 	};

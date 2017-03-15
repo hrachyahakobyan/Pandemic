@@ -1,14 +1,20 @@
 #pragma once
 #include "Map.h"
 #include "Data.h"
-#include "Move.h"
-#include "ActionHandler.h"
-#include "InfectionCard.h"
+#include "ActionBase.h"
 
 namespace pan
 {
 	/**
-	*	@brief Initial mock-up of the Game object which is responsible for
+	*	@brief struct to store save file metadata.
+	*	@author Hrachya Hakobyan
+	*/
+	struct SaveFile{
+		std::string filename;
+	};
+
+	/**
+	*	@brief Game entity which is responsible for
 	*	connecting different pieces of the game logic together.
 	*	@author Hrachya Hakobyan
 	*/
@@ -16,13 +22,6 @@ namespace pan
 	{
 	public:
 		static const int InvalidPlayerIndex = -1;
-		/**
-		*	@brief describes the game status.
-		*	@author Hrachya Hakobyan
-		*/
-		enum class Status : unsigned int{
-			InProgress = 0, Victory, Defeat
-		};
 
 		Game(const Settings& s = Settings::Beginner(2));
 		Game(const Settings& s, const Map& m);
@@ -31,6 +30,14 @@ namespace pan
 		Game& operator=(const Game&);
 		Game& operator=(Game&& o);
 		~Game();
+
+		/**
+		*	load a game from a file.
+		*	@param file the save file
+		*	@param game the object to where the game will be loaded
+		*	@return true if the load was successful.
+		*/
+		static bool load(const SaveFile& file, Game& game);
 
 		bool operator==(const Game&) const;
 		inline bool operator!=(const Game&) const;
@@ -50,7 +57,13 @@ namespace pan
 		*	The game is over if the status is either Victory or Defeat
 		*/
 		inline bool isOver() const;
-		inline Status getStatus() const;
+		/**
+		*	@brief get the current state of the game.
+		*	The game can either be running, or over.
+		*	A game that is over either has a state of Victory or Defeat
+		*	@return the current state of the game
+		*/
+		inline GameState getState() const;
 
 		inline const Map& getMap() const;
 		inline const GameData& getGameData() const;
@@ -112,6 +125,13 @@ namespace pan
 		template<Roles R>
 		PlayerIndex addPlayer(const std::string& name = "");
 
+		/**
+		*	Saves the game with given a save file name
+		*	@param name the name under which to save the game
+		*	@return true if the save was successful
+		*/
+		bool save(const std::string& name) const;
+
 	private:
 		struct ActionData{
 			// Holds the pending actions
@@ -120,33 +140,38 @@ namespace pan
 			std::stack<std::shared_ptr<ActionBase>> completedActions;
 		};
 	private:
-		bool initialized;
-		Status status;
 		Map map;
 		ActionHandler actionHandler;
 		DeckData deckData;
 		PlayerData playerData;
 		GameData gameData;
 		ActionData actionData;
-
 		friend class ActionHandler;
 	private:
 		/* Private Interface */
+		/**
+		*	@brief returns the player at index
+		*	@param i the index of the player to return
+		*	@return a reference to the underlying player object
+		*/
 		inline PlayerBase& getPlayer(PlayerIndex i);
-		void changeStatus(Status newStatus);
 
-#pragma message("Not all members included in serialization")
+		/**
+		*	@brief attempt to alter the state of the game
+		*	The games state can be changed from inProgress to Either Defeat or Victory
+		*	but not the other way
+		*	@param newState the new state of the game
+		*/
+		void changeState(GameState newState);
+
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
-			ar & BOOST_SERIALIZATION_NVP(initialized);
-			ar & BOOST_SERIALIZATION_NVP(status);
 			ar & BOOST_SERIALIZATION_NVP(map);
 			ar & BOOST_SERIALIZATION_NVP(playerData);
 			ar & BOOST_SERIALIZATION_NVP(gameData);
 			ar & BOOST_SERIALIZATION_NVP(deckData);
-			//ar & BOOST_SERIALIZATION_NVP(actionData);
 		}
 
 #ifdef _DEBUG
@@ -179,17 +204,17 @@ namespace pan
 
 	bool Game::isInitialized() const
 	{
-		return initialized;
+		return gameData.initialized;
 	}
 
 	bool Game::isOver() const
 	{
-		return status != Status::InProgress;
+		return gameData.state != GameState::InProgress;
 	}
 
-	Game::Status Game::getStatus() const
+	GameState Game::getState() const
 	{
-		return status;
+		return gameData.state;
 	}
 
 	const Map& Game::getMap() const

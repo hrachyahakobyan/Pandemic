@@ -3,7 +3,7 @@
 
 namespace pan{
 	/**
-	*	@brief Initial mockup of Player class.
+	*	@brief Concrete subclass of PlayerBase
 	*	The Player class accepts a template parameter which must be 
 	*	a Roles enum type.
 	*	@author Hrachya Hakobyan

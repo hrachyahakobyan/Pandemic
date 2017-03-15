@@ -2,6 +2,10 @@
 #include "Object.h"
 
 namespace pan{
+	/**
+	*	@brief encapsulates all game related parameters.
+	*	@author Hrachya Hakobyan
+	*/
 	class Settings : public Object
 	{
 	public:
@@ -14,14 +18,41 @@ namespace pan{
 		inline static Settings Standard(unsigned int players);
 		inline static Settings Heroic(unsigned int players);
 
+		/**
+		*	Number of players
+		*/
 		unsigned int playerCount;
+		/**
+		*	Number of epidemic cards
+		*/
 		unsigned int epidemicCardCount;
+		/**
+		*	Number of cards to be drawn by each player
+		*/
 		unsigned int playerDrawCount;
+		/**
+		*	Default number of matching cards required to cure a disease
+		*/
 		unsigned int discoverCureCardCount = 5;
+		/**
+		*	Size of the player hand
+		*/
 		unsigned int playerHandMax = 7;
+		/**
+		*	Number of disease cubes per disease
+		*/
 		unsigned int diseaseCubesPerDisease = 24;
+		/**
+		*	Maximum number of research stations
+		*/
 		unsigned int maxResearchStations = 6;
+		/**
+		*	Maximum value of the outbreak marker
+		*/
 		unsigned int outbreakMarkerMax = 8;
+		/**
+		*	The infection rates for a give infection rate marker
+		*/
 		std::vector<unsigned int> infectionRates; 
 
 		inline std::string description() const;

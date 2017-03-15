@@ -3,6 +3,9 @@
 
 namespace pan{
 
+	/**
+	*	@brief describes the different event cards present in the game.
+	*/
 	enum EventType : unsigned int{
 		Airlift = 0, GovGrant, ResilientPopulation, OneQuietNight, Forecast
 	};

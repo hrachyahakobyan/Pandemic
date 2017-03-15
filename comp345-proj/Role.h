@@ -3,8 +3,11 @@
 #include "common.h"
 
 namespace pan{
+	/**
+	*	@brief describes different roles present in the game
+	*/
 	enum class Roles : unsigned int{Medic = 0, Dispatcher, Generalist, 
-									Researcher, QSpecialist, FOperative};
+									Researcher, QSpecialist, FOperative, CPlanner};
 	static const int RoleCount = 6;
 	static const std::map<Roles, const char*> RolesDescriptions{
 		{ Roles::Dispatcher, "Dispatcher" },
@@ -12,7 +15,8 @@ namespace pan{
 		{ Roles::Generalist, "Generalist" },
 		{ Roles::Medic, "Medic" },
 		{ Roles::QSpecialist, "Quarantine Specialist" },
-		{ Roles::Researcher, "Researcher" }
+		{ Roles::Researcher, "Researcher" },
+		{ Roles::CPlanner, "Contingency Planner" }
 	};
 
 	/**

@@ -5,7 +5,7 @@
 
 namespace pan{
 	/**
-	*	@brief Class representing a direct flight action
+	*	@brief Class representing a shuttle flight action
 	*	@author Hrachya Hakobyan
 	*/
 	class ShuttleFlight : public ActionImpl<ShuttleFlight, ActionBase>{

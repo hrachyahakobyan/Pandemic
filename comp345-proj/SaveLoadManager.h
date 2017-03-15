@@ -2,13 +2,6 @@
 #include "Game.h"
 
 namespace pan{
-	/**
-	*	@brief struct to store save file metadata
-	*	@author Hrachya Hakobyan
-	*/
-	struct SaveFile{
-		std::string filename;
-	};
 
 	/**
 	*	@brief Abstracts away the save/load of the Game object.

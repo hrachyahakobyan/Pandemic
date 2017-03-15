@@ -3,8 +3,6 @@
 <boost_serialization signature="serialization::archive" version="13">
 <Game class_id="14" tracking_level="0" version="0">
 	<Object class_id="15" tracking_level="0" version="0"></Object>
-	<initialized>0</initialized>
-	<status>0</status>
 	<map class_id="16" tracking_level="0" version="0">
 		<Object></Object>
 		<graph class_id="17" tracking_level="0" version="0">
@@ -31,6 +29,9 @@
 		</cityRegionMap>
 	</map>
 	<playerData class_id="24" tracking_level="0" version="0">
+		<g.actionCounter>0</g.actionCounter>
+		<g.turn>0</g.turn>
+		<g.stage>0</g.stage>
 		<g.players class_id="25" tracking_level="0" version="0">
 			<count>0</count>
 			<item_version>1</item_version>
@@ -78,6 +79,12 @@
 			<count>0</count>
 			<item_version>0</item_version>
 		</g.diseaseCubes>
+		<g.removedDiseasesCubes>
+			<count>0</count>
+			<item_version>0</item_version>
+		</g.removedDiseasesCubes>
+		<g.state>0</g.state>
+		<g.initialized>0</g.initialized>
 	</gameData>
 	<deckData class_id="30" tracking_level="0" version="0">
 		<g.infectionDeck class_id="31" tracking_level="0" version="0">

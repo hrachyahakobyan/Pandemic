@@ -4,7 +4,7 @@
 
 namespace pan{
 	/**
-	*	@brief Class representing a direct flight action
+	*	@brief Class representing a build research station action.
 	*	@author Hrachya Hakobyan
 	*/
 	class BuildResearchStation : public ActionImpl<BuildResearchStation, ActionBase>{

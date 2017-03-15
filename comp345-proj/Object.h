@@ -3,7 +3,7 @@
 namespace pan{
 	/**
 	*	@brief Abstract parent class to all entities directly
-	*	connected with the game state and have to be saved and loaded.
+	*	connected with the game state that have to be serialized.
 	*/
 	class Object 
 	{

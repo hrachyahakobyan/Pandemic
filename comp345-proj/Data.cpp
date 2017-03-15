@@ -2,19 +2,26 @@
 #include "Data.h"
 
 namespace pan{
-	GameData::GameData(const Settings& s) : settings(s),
-		infectionRateMarker(0), outbreakMarker(0),
+	GameData::GameData(const Settings& s) : 
+		settings(s),
+		initialized(false),
+		state(GameState::InProgress),
+		infectionRateMarker(0), 
+		outbreakMarker(0),
 		researchStations(0)
 	{
 	}
 
 	GameData::GameData(const GameData& o):
 		settings(o.settings),
+		initialized(o.initialized),
+		state(o.state),
 		infectionRateMarker(o.infectionRateMarker),
 		outbreakMarker(o.outbreakMarker),
 		researchStations(o.researchStations),
 		diseases(o.diseases),
-		diseaseCubes(o.diseaseCubes)
+		diseaseCubes(o.diseaseCubes),
+		removedDiseasesCubes(o.removedDiseasesCubes)
 	{
 	}
 
@@ -25,42 +32,55 @@ namespace pan{
 	GameData& GameData::operator=(const GameData& o)
 	{
 		this->settings = o.settings;
+		this->initialized = o.initialized;
+		this->state = o.state;
 		this->infectionRateMarker = o.infectionRateMarker;
 		this->outbreakMarker = o.outbreakMarker;
 		this->researchStations = o.researchStations;
 		this->diseases = o.diseases;
 		this->diseaseCubes = o.diseaseCubes;
+		this->removedDiseasesCubes = o.removedDiseasesCubes;
 		return *this;
 	}
 
 	GameData::GameData(GameData&& o) :
 		settings(o.settings),
+		initialized(o.initialized),
+		state(o.state),
 		infectionRateMarker(o.infectionRateMarker),
 		outbreakMarker(o.outbreakMarker),
 		researchStations(o.researchStations),
 		diseases(std::move(o.diseases)),
-		diseaseCubes(std::move(o.diseaseCubes))
+		diseaseCubes(std::move(o.diseaseCubes)),
+		removedDiseasesCubes(std::move(o.removedDiseasesCubes))
 	{
 	}
 
 	GameData& GameData::operator=(GameData&& o)
 	{
 		this->settings = o.settings;
+		this->initialized = o.initialized;
+		this->state = o.state;
 		this->infectionRateMarker = o.infectionRateMarker;
 		this->outbreakMarker = o.outbreakMarker;
 		this->researchStations = o.researchStations;
 		this->diseases = std::move(o.diseases);
 		this->diseaseCubes = std::move(o.diseaseCubes);
+		this->removedDiseasesCubes = std::move(o.removedDiseasesCubes);
 		return *this;
 	}
 
 	bool GameData::operator==(const GameData& o) const
 	{
-		bool equal = (infectionRateMarker == o.infectionRateMarker
+		bool equal = (settings == o.settings
+			&& initialized == o.initialized
+			&& state == o.state
+			&& infectionRateMarker == o.infectionRateMarker
 			&& outbreakMarker == o.outbreakMarker
 			&& researchStations == o.researchStations
 			&& diseases.size() == o.diseases.size()
-			&& diseaseCubes == o.diseaseCubes);
+			&& diseaseCubes == o.diseaseCubes
+			&& removedDiseasesCubes == o.removedDiseasesCubes);
 		if (!equal) return false;
 		for (std::size_t i = 0; i < diseases.size(); i++){
 			if (diseases[i] != o.diseases[i])
@@ -77,6 +97,8 @@ namespace pan{
 	std::string GameData::description() const
 	{
 		std::string res = "Settings: " + settings.description() +
+			"\nInitialized " + std::to_string(initialized) +
+			"\nState " + GameStateDescriptions.at(state) + 
 			"\nInfection Rate Marker: " + std::to_string(infectionRateMarker) +
 			"\nOutbreak Marker: " + std::to_string(outbreakMarker) +
 			"\nResearch Stations: " + std::to_string(researchStations) +
@@ -88,17 +110,27 @@ namespace pan{
 		for (std::size_t i = 0; i < diseaseCubes.size(); i++){
 			res += "DiseaseType: " + std::to_string(i) + " cubes: " + std::to_string(diseaseCubes[i]) + '\n';
 		}
+		res += "RemovedCubes:\n";
+			for (std::size_t i = 0; i < removedDiseasesCubes.size(); i++){
+				res += "DiseaseType: " + std::to_string(i) + " cubes: " + std::to_string(removedDiseasesCubes[i]) + '\n';
+			}
 		return res;
 	}
 
 	PlayerData::PlayerData() : 
-		occupiedRoles(RoleCount, false)
+		occupiedRoles(RoleCount, false),
+		stage(PlayerStage::Act),
+		turn(0),
+		actionCounter(0)
 	{
 	}
 
 	PlayerData::PlayerData(const PlayerData& o) :
 		players(o.players),
-		occupiedRoles(o.occupiedRoles)
+		occupiedRoles(o.occupiedRoles),
+		stage(o.stage),
+		turn(o.turn),
+		actionCounter(0)
 	{
 	}
 
@@ -110,12 +142,18 @@ namespace pan{
 	{
 		this->players = o.players;
 		this->occupiedRoles = o.occupiedRoles;
+		this->stage = o.stage;
+		this->turn = o.turn;
+		this->actionCounter = o.actionCounter;
 		return *this;
 	}
 
 	PlayerData::PlayerData(PlayerData&& o) :
 		players(std::move(o.players)),
-		occupiedRoles(std::move(o.occupiedRoles))
+		occupiedRoles(std::move(o.occupiedRoles)),
+		stage(o.stage),
+		turn(o.turn),
+		actionCounter(o.actionCounter)
 	{
 	}
 
@@ -123,12 +161,17 @@ namespace pan{
 	{
 		this->players = std::move(o.players);
 		this->occupiedRoles = std::move(o.occupiedRoles);
+		this->stage = o.stage;
+		this->turn = o.turn;
+		this->actionCounter = o.actionCounter;
 		return *this;
 	}
 
 	bool PlayerData::operator==(const PlayerData& o) const
 	{
-		bool equal = (occupiedRoles == o.occupiedRoles);
+		bool equal = (occupiedRoles == o.occupiedRoles && 
+					stage == o.stage && turn == o.turn
+					&& actionCounter == o.actionCounter);
 		if (!equal)
 			return false;
 		for (std::size_t i = 0; i < players.size(); i++){
@@ -149,6 +192,7 @@ namespace pan{
 		for (const auto& p : players){
 			res += p->description() + '\n';
 		}
+		res += "Turn: " + std::to_string(turn);
 		return res;
 	}
 

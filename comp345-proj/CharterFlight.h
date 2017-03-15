@@ -5,7 +5,7 @@
 
 namespace pan{
 	/**
-	*	@brief Class representing a direct flight action
+	*	@brief Class representing a charter flight action
 	*	@author Hrachya Hakobyan
 	*/
 	class CharterFlight : public ActionImpl<CharterFlight, ActionBase>{

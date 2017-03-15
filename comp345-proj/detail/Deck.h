@@ -50,6 +50,9 @@ namespace pan{
 			inline iterator begin();
 			inline const_iterator begin() const;
 
+			inline iterator end();
+			inline const_iterator end() const;
+
 			/**
 			*	Concatenate the current Deck to a type that can be converted
 			*	to a concatanable type. Can be T, Deck<T>, or a container of value type T providing const iterators
@@ -207,6 +210,18 @@ namespace pan{
 		typename Deck<T>::const_iterator Deck<T>::begin() const
 		{
 			return deck.begin();
+		}
+
+		template<typename T>
+		typename Deck<T>::iterator Deck<T>::end()
+		{
+			return deck.end();
+		}
+
+		template<typename T>
+		typename Deck<T>::const_iterator Deck<T>::end() const
+		{
+			return deck.end();
 		}
 
 		template<typename T>

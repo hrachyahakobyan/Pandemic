@@ -2,6 +2,9 @@
 #include "Object.h"
 
 namespace pan {
+	/**
+	*	@brief Describes different cards present in the game.
+	*/
 	enum class CardType : unsigned int{
 		City = 0, Event, Epidemic, Infection
 	};

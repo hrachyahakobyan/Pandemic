@@ -9,6 +9,20 @@
 
 namespace pan{
 	/**
+	*	@brief describes the game state.
+	*	@author Hrachya Hakobyan
+	*/
+	enum class GameState : unsigned int{
+		InProgress = 0, Victory, Defeat
+	};
+
+	static const std::map<GameState, std::string> GameStateDescriptions{
+		{GameState::InProgress, "In Progress"},
+		{GameState::Victory, "Victory"},
+		{GameState::Defeat, "Defeat"}
+	};
+
+	/**
 	*	@brief container for game related data
 	*	@author Hrachya Hakobyan
 	*/
@@ -24,12 +38,41 @@ namespace pan{
 		bool operator!=(const GameData&) const;
 		std::string description() const;
 
+		/**
+		*	The game settings
+		*/
 		Settings settings;
+		/**
+		*	Whether the game was initialized
+		*/
+		bool initialized;
+		/**
+		*	The current state of the game
+		*/
+		GameState state;
 		unsigned int infectionRateMarker;
 		unsigned int outbreakMarker;
 		unsigned int researchStations;
 		std::vector<Disease> diseases;
+		/**
+		*	The available disease cubes
+		*/
 		std::vector<RegionIndex> diseaseCubes;
+		/**
+		*	The disease cubes that have been removed from the game
+		*/
+		std::vector<RegionIndex> removedDiseasesCubes;
+	};
+
+	/**
+	*	@brief describes the current stage of the player turn.
+	*	Act = the player still needs to perform actions
+	*	Draw = the player needs to draw cards
+	*	Infect = the player needs to infect cities
+	*	Discard = the player has to discard some cards
+	*/
+	enum class PlayerStage : unsigned int{
+		Act = 0, Draw, Infect, Discard
 	};
 
 	/**
@@ -48,7 +91,23 @@ namespace pan{
 		bool operator!=(const PlayerData&) const;
 		std::string description() const;
 
+		/**
+		*	The current player turn
+		*/
+		PlayerIndex turn;
+		/**
+		*	The current player stage
+		*/
+		PlayerStage stage;
+		/**
+		*	How many actions the player has already committed in the Act stage
+		*/
+		unsigned int actionCounter;
 		std::vector<std::shared_ptr<PlayerBase>> players;
+		/**
+		*	Stores information about roles being occupied.
+		*	If i-the value is true, then the i-th role has already been taken
+		*/
 		std::vector<bool> occupiedRoles;
 	};
 
@@ -89,6 +148,9 @@ namespace boost {
 			ar & BOOST_SERIALIZATION_NVP(g.researchStations);
 			ar & BOOST_SERIALIZATION_NVP(g.diseases);
 			ar & BOOST_SERIALIZATION_NVP(g.diseaseCubes);
+			ar & BOOST_SERIALIZATION_NVP(g.removedDiseasesCubes);
+			ar & BOOST_SERIALIZATION_NVP(g.state);
+			ar & BOOST_SERIALIZATION_NVP(g.initialized);
 		}
 
 		template<class Archive>
@@ -103,6 +165,9 @@ namespace boost {
 		template<class Archive>
 		void serialize(Archive & ar, pan::PlayerData & g, const unsigned int version)
 		{
+			ar & BOOST_SERIALIZATION_NVP(g.actionCounter);
+			ar & BOOST_SERIALIZATION_NVP(g.turn);
+			ar & BOOST_SERIALIZATION_NVP(g.stage);
 			ar & BOOST_SERIALIZATION_NVP(g.players);
 			ar & BOOST_SERIALIZATION_NVP(g.occupiedRoles);
 		}

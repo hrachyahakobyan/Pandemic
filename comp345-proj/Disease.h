@@ -10,7 +10,6 @@ namespace pan{
 	class Disease : public Object
 	{
 	public:
-		// Not good. I know.
 		Disease(DiseaseType diseaseType = 0);
 		Disease(const Disease&);
 		Disease& operator=(const Disease&);
