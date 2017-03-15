@@ -50,17 +50,17 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SFML_STATIC;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)\comp345-proj;C:\googletest-master\googletest\include;C:\boost\boost_1_59_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\libs\SFML-2.4.2\include;$(SolutionDir)/debug;$(SolutionDir)/gtest/include;$(SolutionDir)/comp345-proj;C:\boost\googletest-master\googletest\include;C:\boost\boost_1_59_0;C:\boost\boost_1_59_0\stage\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\googletest-master\googletest\lib\msvc13\Debug;C:\boost\boost_1_59_0\lib32-msvc-12.0;$(SolutionDir)\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>gtest.lib;comp345-proj.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\libs\SFML-2.4.2\lib\debug;$(SolutionDir)/gtest/lib/msvc13/Debug;$(SolutionDir)/comp345-proj;$(SolutionDir)/debug;C:\boost\boost_1_59_0\stage\lib;C:\boost\googletest-master\googletest\msvc\gtest\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gdi32.lib;winmm.lib;jpeg.lib;freetype.lib;opengl32.lib;sfml-system-s-d.lib;sfml-graphics-s-d.lib;sfml-window-s-d.lib;gtest.lib;comp345-proj.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OptimizeReferences>false</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
@@ -91,6 +91,7 @@
     <ClInclude Include="FactoryTest.h" />
     <ClInclude Include="GameTest.h" />
     <ClInclude Include="GraphTest.h" />
+    <ClInclude Include="GuiTest.h" />
     <ClInclude Include="MapTest.h" />
     <ClInclude Include="PlayerTest.h" />
     <ClInclude Include="SaveLoadTest.h" />
@@ -106,6 +107,7 @@
     <ClCompile Include="FactoryTest.cpp" />
     <ClCompile Include="GameTest.cpp" />
     <ClCompile Include="GraphTest.cpp" />
+    <ClCompile Include="GuiTest.cpp" />
     <ClCompile Include="MapTest.cpp" />
     <ClCompile Include="PlayerTest.cpp" />
     <ClCompile Include="SaveLoadTest.cpp" />

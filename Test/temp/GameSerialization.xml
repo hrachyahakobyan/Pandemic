@@ -90,6 +90,22 @@
 			</px>
 		</item>
 	</players>
+	<diseases class_id="29" tracking_level="0" version="0">
+		<count>2</count>
+		<item_version>0</item_version>
+		<item class_id="30" tracking_level="0" version="0">
+			<Object></Object>
+			<diseaseType>0</diseaseType>
+			<isCured>0</isCured>
+			<isEradicated>0</isEradicated>
+		</item>
+		<item>
+			<Object></Object>
+			<diseaseType>1</diseaseType>
+			<isCured>0</isCured>
+			<isEradicated>0</isEradicated>
+		</item>
+	</diseases>
 	<settings class_id="11" tracking_level="1" version="0" object_id="_4">
 		<Object></Object>
 		<playerCount>2</playerCount>

@@ -32,6 +32,10 @@
 		<count>0</count>
 		<item_version>1</item_version>
 	</players>
+	<diseases class_id="23" tracking_level="0" version="0">
+		<count>0</count>
+		<item_version>0</item_version>
+	</diseases>
 	<settings class_id="11" tracking_level="1" version="0" object_id="_0">
 		<Object></Object>
 		<playerCount>2</playerCount>
