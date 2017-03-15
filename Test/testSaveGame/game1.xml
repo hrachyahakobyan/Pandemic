@@ -49,9 +49,10 @@
 	<gameData class_id="27" tracking_level="0" version="0">
 		<g.settings class_id="12" tracking_level="1" version="0" object_id="_0">
 			<Object></Object>
+			<initialCards>4</initialCards>
 			<playerCount>2</playerCount>
 			<epidemicCardCount>4</epidemicCardCount>
-			<playerDrawCount>4</playerDrawCount>
+			<playerDrawCount>2</playerDrawCount>
 			<discoverCureCardCount>5</discoverCureCardCount>
 			<playerHandMax>7</playerHandMax>
 			<diseaseCubesPerDisease>24</diseaseCubesPerDisease>

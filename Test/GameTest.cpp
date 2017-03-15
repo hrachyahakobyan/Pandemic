@@ -78,12 +78,12 @@ namespace pan{
 		// Check initialization post conditions
 		// Check players' deck sizes
 		for (const auto& p : g.playerData.players){
-			ASSERT_EQ(p->getCards().size(), s.playerDrawCount);
+			ASSERT_EQ(p->getCards().size(), s.initialCards);
 		}
 
 		// Check the player deck size
 		// The size equals the total number of cities + total number of events + epidemic card count - the cards dealt to players
-		std::size_t playerDeckSize = g.map.numCities() + EventTypeDescriptions.size() + g.gameData.settings.epidemicCardCount - g.playerCount() * g.gameData.settings.playerDrawCount;
+		std::size_t playerDeckSize = g.map.numCities() + EventTypeDescriptions.size() + g.gameData.settings.epidemicCardCount - g.playerCount() * g.gameData.settings.initialCards;
 		ASSERT_EQ(g.deckData.playerDeck.size(), playerDeckSize);
 		ASSERT_TRUE(g.deckData.playerDiscardDeck.empty());
 

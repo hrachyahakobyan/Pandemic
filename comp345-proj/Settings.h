@@ -11,7 +11,7 @@ namespace pan{
 	public:
 		Settings();
 		Settings(unsigned int playerCount, unsigned int epidemicCardCount, 
-				unsigned int playerDrawCount);
+			unsigned int initialCards);
 		~Settings() = default;
 
 		inline static Settings Beginner(unsigned int players);
@@ -27,9 +27,13 @@ namespace pan{
 		*/
 		unsigned int epidemicCardCount;
 		/**
+		*	Initial number of cards of each player
+		*/
+		unsigned int initialCards;
+		/**
 		*	Number of cards to be drawn by each player
 		*/
-		unsigned int playerDrawCount;
+		unsigned int playerDrawCount = 2;
 		/**
 		*	Default number of matching cards required to cure a disease
 		*/
@@ -65,6 +69,7 @@ namespace pan{
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
+			ar & BOOST_SERIALIZATION_NVP(initialCards);
 			ar & BOOST_SERIALIZATION_NVP(playerCount);
 			ar & BOOST_SERIALIZATION_NVP(epidemicCardCount);
 			ar & BOOST_SERIALIZATION_NVP(playerDrawCount);
@@ -97,9 +102,9 @@ namespace pan{
 #pragma message ("Not all members included in description")
 	std::string Settings::description() const
 	{
-		return "Number of cards drawn by a player: " + std::to_string(playerDrawCount) + "\n Epidemic Card Count: " + std::to_string(epidemicCardCount)
+		return "Initial cards: " + std::to_string(initialCards) + "\n Epidemic Card Count: " + std::to_string(epidemicCardCount)
 			+ "\n Player Count: " + std::to_string(playerCount) + "\n Cards required to discover a cure: " + std::to_string(discoverCureCardCount)
-			+ "Maximum allowed cards in a hand: " + std::to_string(playerHandMax);
+			+ "\n Maximum allowed cards in a hand: " + std::to_string(playerHandMax);
 	}
 }
 

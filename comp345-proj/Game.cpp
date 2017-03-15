@@ -108,7 +108,7 @@ namespace pan{
 		// Deal player cards
 		// Iterare each player, and deal from player deck according to the draw size
 		for (auto& player : playerData.players){
-			player->setCards(deckData.playerDeck.deal(gameData.settings.playerDrawCount));
+			player->setCards(deckData.playerDeck.deal(gameData.settings.initialCards));
 		}
 		
 		// Add epidemic cards and shuffle
