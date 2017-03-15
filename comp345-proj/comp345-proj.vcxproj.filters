@@ -168,6 +168,12 @@
     <ClInclude Include="DiscardCard.h">
       <Filter>Header Files\actions</Filter>
     </ClInclude>
+    <ClInclude Include="Actions.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Cards.h">
+      <Filter>Header Files\cards</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

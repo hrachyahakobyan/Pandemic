@@ -6,10 +6,4 @@ namespace pan{
 		player(player), targetCity(city)
 	{
 	}
-
-
-	ActionBase* ShuttleFlight::clone() const
-	{
-		return new ShuttleFlight(*this);
-	}
 }

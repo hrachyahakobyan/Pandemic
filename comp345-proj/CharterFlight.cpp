@@ -6,9 +6,4 @@ namespace pan{
 		player(player), targetCity(city)
 	{
 	}
-
-	ActionBase* CharterFlight::clone() const
-	{
-		return new CharterFlight(*this);
-	}
 }

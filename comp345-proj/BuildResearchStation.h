@@ -11,6 +11,5 @@ namespace pan{
 	public:
 		BuildResearchStation(PlayerIndex player);
 		PlayerIndex player;
-		ActionBase* clone() const;
 	};
 }

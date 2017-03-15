@@ -85,8 +85,10 @@
   <ItemGroup>
     <ClInclude Include="ActionBase.h" />
     <ClInclude Include="ActionHandler.h" />
+    <ClInclude Include="Actions.h" />
     <ClInclude Include="BuildResearchStation.h" />
     <ClInclude Include="Card.h" />
+    <ClInclude Include="Cards.h" />
     <ClInclude Include="CharterFlight.h" />
     <ClInclude Include="City.h" />
     <ClInclude Include="CityCard.h" />

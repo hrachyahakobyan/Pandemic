@@ -8,7 +8,6 @@ namespace pan{
 	*	of the game, are encapsulated as subclasses of ActionBase.
 	*	@author Hrachya Hakobyan
 	*/
-#pragma message("Action clone. Use CRTP")
 	class ActionBase{
 	public:
 		ActionBase(){}
@@ -33,6 +32,10 @@ namespace pan{
 
 		virtual bool execute(ActionHandler& h) const {
 			return h.execute<Derived>(static_cast<const Derived&>(*this));
+		}
+		virtual Base* clone() const
+		{
+			return new Derived(static_cast<Derived const &>(*this));
 		}
 	};
 }

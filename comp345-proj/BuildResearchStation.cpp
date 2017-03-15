@@ -6,9 +6,4 @@ namespace pan{
 		player(player)
 	{
 	}
-
-	ActionBase* BuildResearchStation::clone() const
-	{
-		return new BuildResearchStation(*this);
-	}
 }

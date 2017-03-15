@@ -7,9 +7,4 @@ namespace pan{
 		player(player)
 	{
 	}
-
-	ActionBase* PlayerInfect::clone() const
-	{
-		return new PlayerInfect(*this);
-	}
 }

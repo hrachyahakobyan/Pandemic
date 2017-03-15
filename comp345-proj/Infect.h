@@ -27,7 +27,6 @@ namespace pan{
 		*	Stores the cities which suffered an outbreaked caused by this infection.
 		*/
 		std::set<Map::CityIndex> outbreakedCities;
-		ActionBase* clone() const;
 	};
 }
 

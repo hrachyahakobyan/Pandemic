@@ -6,9 +6,4 @@ namespace pan{
 		player(player), targetCity(city)
 	{
 	}
-
-	ActionBase* Move::clone() const
-	{
-		return new Move(*this);
-	}
 }

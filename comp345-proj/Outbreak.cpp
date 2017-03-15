@@ -6,9 +6,4 @@ namespace pan{
 		infection(inf)
 	{
 	}
-
-	ActionBase* Outbreak::clone() const
-	{
-		return new Outbreak(*this);
-	}
 }

@@ -11,6 +11,5 @@ namespace pan{
 	public:
 		DrawPlayerCards(PlayerIndex player);
 		PlayerIndex player;
-		ActionBase* clone() const;
 	};
 }

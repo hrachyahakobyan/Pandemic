@@ -13,6 +13,5 @@ namespace pan{
 		DirectFlight(PlayerIndex player, Map::CityIndex city);
 		PlayerIndex player;
 		Map::CityIndex targetCity;
-		ActionBase* clone() const;
 	};
 }

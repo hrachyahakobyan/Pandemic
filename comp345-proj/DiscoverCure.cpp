@@ -6,9 +6,4 @@ namespace pan{
 		player(player), diseaseType(dType)
 	{
 	}
-
-	ActionBase* DiscoverCure::clone() const
-	{
-		return new DiscoverCure(*this);
-	}
 }

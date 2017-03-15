@@ -7,9 +7,4 @@ namespace pan{
 		player(player), targetCity(city)
 	{
 	}
-
-	ActionBase* DirectFlight::clone() const
-	{
-		return new DirectFlight(*this);
-	}
 }

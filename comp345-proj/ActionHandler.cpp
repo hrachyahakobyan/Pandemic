@@ -1,20 +1,9 @@
 #include "stdafx.h"
 #include "ActionHandler.h"
-#include "Move.h"
 #include "Game.h"
-#include "Infect.h"
-#include "Outbreak.h"
-#include "Epidemic.h"
-#include "DirectFlight.h"
-#include "CityCard.h"
-#include "CharterFlight.h"
-#include "ShuttleFlight.h"
-#include "BuildResearchStation.h"
-#include "TreatDisease.h"
-#include "DiscoverCure.h"
-#include "DrawPlayerCards.h"
-#include "PlayerInfect.h"
-#include "DiscardCard.h"
+#include "Actions.h"
+#include "Cards.h"
+
 
 namespace pan{
 

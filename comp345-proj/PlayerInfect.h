@@ -14,6 +14,5 @@ namespace pan{
 	public:
 		PlayerInfect(PlayerIndex player);
 		PlayerIndex player;
-		ActionBase* clone() const;
 	};
 }

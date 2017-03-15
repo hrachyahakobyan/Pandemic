@@ -12,7 +12,6 @@ namespace pan{
 		Outbreak(const Infect&);
 		// The infection that caused the outbreak.
 		Infect infection;
-		ActionBase* clone() const;
 	};
 }
 

@@ -7,9 +7,4 @@ namespace pan{
 		player(player), index(index)
 	{
 	}
-
-	ActionBase* DiscardCard::clone() const
-	{
-		return new DiscardCard(*this);
-	}
 }

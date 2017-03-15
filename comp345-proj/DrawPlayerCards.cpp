@@ -6,9 +6,4 @@ namespace pan{
 		player(player)
 	{
 	}
-
-	ActionBase* DrawPlayerCards::clone() const
-	{
-		return new DrawPlayerCards(*this);
-	}
 }

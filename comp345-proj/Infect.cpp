@@ -6,9 +6,4 @@ namespace pan{
 		: city(c), cubes(cubes), diseaseType(diseaseType)
 	{
 	}
-
-	ActionBase* Infect::clone() const
-	{
-		return new Infect(*this);
-	}
 }

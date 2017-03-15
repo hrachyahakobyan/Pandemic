@@ -12,6 +12,5 @@ namespace pan{
 		DiscoverCure(PlayerIndex player, DiseaseType dType);
 		PlayerIndex player;
 		DiseaseType diseaseType;
-		ActionBase* clone() const;
 	};
 }

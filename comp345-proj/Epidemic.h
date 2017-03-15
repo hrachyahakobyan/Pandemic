@@ -8,8 +8,6 @@ namespace pan{
 	*/
 	class Epidemic : public ActionImpl<Epidemic, ActionBase>
 	{
-	public:
-		ActionBase* clone() const;
 	};
 }
 

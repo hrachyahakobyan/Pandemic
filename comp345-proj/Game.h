@@ -2,6 +2,7 @@
 #include "Map.h"
 #include "Data.h"
 #include "ActionBase.h"
+#include "ActionHandler.h"
 
 namespace pan
 {
