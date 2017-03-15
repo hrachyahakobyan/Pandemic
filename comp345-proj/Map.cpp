@@ -17,14 +17,14 @@ namespace pan{
 	Map::Map(Map&& o) :
 		graph(std::move(o.graph)),
 		regionMap(std::move(o.regionMap)),
-		cityRegionMap(std::move(o.cityRegionMap))
+		cityRegions(std::move(o.cityRegions))
 	{
 	}
 
 	Map::Map(const Map& o) :
 		graph(o.graph),
 		regionMap(o.regionMap),
-		cityRegionMap(o.cityRegionMap)
+		cityRegions(o.cityRegions)
 	{
 	}
 
@@ -32,7 +32,7 @@ namespace pan{
 	{
 		this->graph = o.graph;
 		this->regionMap = o.regionMap;
-		this->cityRegionMap = o.cityRegionMap;
+		this->cityRegions = o.cityRegions;
 		return *this;
 	}
 
@@ -40,14 +40,14 @@ namespace pan{
 	{
 		this->graph = std::move(o.graph);
 		this->regionMap = std::move(o.regionMap);
-		this->cityRegionMap = std::move(o.cityRegionMap);
+		this->cityRegions = std::move(o.cityRegions);
 		return *this;
 	}
 
 	bool Map::operator==(const Map& other) const
 	{
 		if (!(graph == other.graph && regionMap == other.regionMap 
-			&& cityRegionMap == other.cityRegionMap && regionMap == other.regionMap))
+			&& cityRegions == other.cityRegions && regionMap == other.regionMap))
 			return false;
 		std::size_t cityCount = numCities();
 		for (std::size_t i = 0; i < cityCount; i++){
@@ -96,7 +96,7 @@ namespace pan{
 	void Map::removeCity(Map::CityIndex i)
 	{
 		if (graph.vertexExists(i)){
-			cityRegionMap.erase(cityRegionMap.find(i));
+			cityRegions.erase(cityRegions.begin() + i);
 		}
 		graph.removeVertex(i);
 	}
@@ -112,12 +112,7 @@ namespace pan{
 
 	RegionIndex Map::regionForCity(CityIndex i) const
 	{
-		if (!(i >= 0 && i < graph.numVertices()))
-			throw std::exception("ERROR pan::Map::const Region& region(CityIndex). Invalid index");
-		auto cityIt = cityRegionMap.find(i);
-		if (cityIt == cityRegionMap.end())
-			throw std::exception("ERROR pan::Map::const Region& region(CityIndex). RegionIndex not found");
-		return cityIt->second;
+		return cityRegions[i];
 	}
 
 	std::set<Map::CityIndex> Map::regionCities(RegionIndex index) const
@@ -126,9 +121,10 @@ namespace pan{
 		if (regionIt == regionMap.end())
 			throw std::exception("ERROR pan::Map::std::set<CityIndex>& Map::regionCities(RegionIndex). Invalid index");
 		std::set<CityIndex> s;
-		for (const auto& pair : cityRegionMap){
-			if (pair.second == index)
-				s.insert(pair.first);
+		for (Map::CityIndex i = 0; i < cityRegions.size(); i++){
+			if (cityRegions[i] == index){
+				s.insert(i);
+			}
 		}
 		return s;
 	}
@@ -144,13 +140,10 @@ namespace pan{
 		// Invalid region
 		if (region == regionMap.end())
 			return false;
-		// Check if city is in the region
-		auto city = cityRegionMap.find(cIndex);
-		// City yet unassigned
-		if (city == cityRegionMap.end())
-			cityRegionMap.insert(std::make_pair(cIndex, rIndex));
+		if (cIndex == cityRegions.size())
+			cityRegions.push_back(rIndex);
 		else 
-			city->second = rIndex;
+			cityRegions[cIndex] = rIndex;
 		return true;
 	}
 

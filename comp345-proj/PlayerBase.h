@@ -5,10 +5,9 @@
 #include "common.h"
 #include "detail\Deck.h"
 #include "Card.h"
+#include "ReferenceCard.h"
 
 namespace pan{
-	class ReferenceCard;
-
 	/**
 	*	@brief Base class for player objects.
 	*	@author Hrachya Hakobyan
@@ -33,7 +32,7 @@ namespace pan{
 		std::string description() const;
 
 		const RoleBase role;
-		const ReferenceCard& referenceCard;
+		const ReferenceCard referenceCard;
 
 		friend class boost::serialization::access;
 		template<class Archive>

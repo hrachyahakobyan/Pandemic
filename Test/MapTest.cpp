@@ -119,7 +119,6 @@ namespace pan{
 		ASSERT_EQ(map.regionCities(r0).size(), vCount - 1);
 		// Remove cities
 		map.removeCity(0);
-		ASSERT_THROW(map.regionForCity(0), std::exception);
 		ASSERT_EQ(map.regionCities(r0).size() + map.regionCities(r1).size(), map.numCities());
 	}
 

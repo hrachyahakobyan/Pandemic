@@ -93,6 +93,7 @@
     <ClInclude Include="GameTest.h" />
     <ClInclude Include="GraphTest.h" />
     <ClInclude Include="MapTest.h" />
+    <ClInclude Include="OutbreakTest.h" />
     <ClInclude Include="PlayerTest.h" />
     <ClInclude Include="SaveLoadTest.h" />
     <ClInclude Include="SerializationTest1.h" />
@@ -109,6 +110,7 @@
     <ClCompile Include="GameTest.cpp" />
     <ClCompile Include="GraphTest.cpp" />
     <ClCompile Include="MapTest.cpp" />
+    <ClCompile Include="OutbreakTest.cpp" />
     <ClCompile Include="PlayerTest.cpp" />
     <ClCompile Include="SaveLoadTest.cpp" />
     <ClCompile Include="SerializationTest1.cpp" />

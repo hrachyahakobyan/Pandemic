@@ -190,6 +190,7 @@ namespace pan
 		FRIEND_TEST(ActionTest, ShuttleFlight);
 		FRIEND_TEST(ActionTest, DirectFlight);
 		FRIEND_TEST(ActionTest, BuildResearchStation);
+		FRIEND_TEST(OutbreakTest, Test1);
 #endif
 	};
 

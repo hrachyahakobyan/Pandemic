@@ -23,10 +23,10 @@
 				</second>
 			</item>
 		</regionMap>
-		<cityRegionMap class_id="23" tracking_level="0" version="0">
+		<cityRegions>
 			<count>0</count>
 			<item_version>0</item_version>
-		</cityRegionMap>
+		</cityRegions>
 	</map>
 	<playerData class_id="24" tracking_level="0" version="0">
 		<g.actionCounter>0</g.actionCounter>
@@ -72,7 +72,7 @@
 		<g.infectionRateMarker>0</g.infectionRateMarker>
 		<g.outbreakMarker>0</g.outbreakMarker>
 		<g.researchStations>0</g.researchStations>
-		<g.diseases class_id="29" tracking_level="0" version="0">
+		<g.diseases class_id="28" tracking_level="0" version="0">
 			<count>0</count>
 			<item_version>0</item_version>
 		</g.diseases>
@@ -87,9 +87,9 @@
 		<g.state>0</g.state>
 		<g.initialized>0</g.initialized>
 	</gameData>
-	<deckData class_id="30" tracking_level="0" version="0">
-		<g.infectionDeck class_id="31" tracking_level="0" version="0">
-			<deck class_id="32" tracking_level="0" version="0">
+	<deckData class_id="29" tracking_level="0" version="0">
+		<g.infectionDeck class_id="30" tracking_level="0" version="0">
+			<deck class_id="31" tracking_level="0" version="0">
 				<count>0</count>
 				<item_version>1</item_version>
 			</deck>
@@ -100,8 +100,8 @@
 				<item_version>1</item_version>
 			</deck>
 		</g.infectionDiscardDeck>
-		<g.playerDeck class_id="33" tracking_level="0" version="0">
-			<deck class_id="34" tracking_level="0" version="0">
+		<g.playerDeck class_id="32" tracking_level="0" version="0">
+			<deck class_id="33" tracking_level="0" version="0">
 				<count>0</count>
 				<item_version>1</item_version>
 			</deck>

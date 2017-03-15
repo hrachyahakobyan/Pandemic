@@ -5,14 +5,13 @@
 
 namespace pan{
 	PlayerBase::PlayerBase(const RoleBase& role) :
-	role(role),
-	referenceCard(ReferenceCard::getInstance())
+	role(role)
 	{
 	}
 
 	PlayerBase::PlayerBase(const RoleBase& role,const std::string& name) :
 	role(role),
-	referenceCard(ReferenceCard::getInstance()), name(name)
+    name(name)
 	{
 	}
 

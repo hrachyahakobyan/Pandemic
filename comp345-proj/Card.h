@@ -15,7 +15,6 @@ namespace pan {
 		{CardType::Infection, "Infection Card"},
 		{CardType::Epidemic, "Epidemic Card"}
 	};
-#pragma message("IMplement polymorphic equality comparison for cards")
 	/**
 	*	@brief Abstract class to represent Card entity in the game.
 	*	Cards contain an enum to differentiate their type.
@@ -25,7 +24,7 @@ namespace pan {
 	{
 	public:
 		virtual ~CardBase() = default;
-		inline bool operator==(const CardBase&) const;
+		bool operator==(const CardBase&) const;
 		inline bool operator!=(const CardBase&) const;
 		const CardType type;
 		virtual std::string description() const;
@@ -39,13 +38,6 @@ namespace pan {
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 		}
 	};
-
-	bool CardBase::operator==(const CardBase& o) const
-	{
-		if (type != o.type)
-			return false;
-		return true;
-	}
 
 	bool CardBase::operator!=(const CardBase& o) const
 	{

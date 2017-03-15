@@ -99,7 +99,7 @@ namespace pan{
 		assert(players >= 2 && players <= 4 && "Invalid player count");
 		return Settings(players, 6, 4 - (players - 2));
 	}
-#pragma message ("Not all members included in description")
+
 	std::string Settings::description() const
 	{
 		return "Initial cards: " + std::to_string(initialCards) + "\n Epidemic Card Count: " + std::to_string(epidemicCardCount)

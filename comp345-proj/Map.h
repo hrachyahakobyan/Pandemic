@@ -50,7 +50,7 @@ namespace pan{
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar  & BOOST_SERIALIZATION_NVP(graph);
 			ar  & BOOST_SERIALIZATION_NVP(regionMap);
-			ar  & BOOST_SERIALIZATION_NVP(cityRegionMap);
+			ar  & BOOST_SERIALIZATION_NVP(cityRegions);
 		}
 
 		/*!	Public Interaface */
@@ -152,16 +152,15 @@ namespace pan{
 		FRIEND_TEST(MapTest, compares);
 		FRIEND_TEST(MapTest, serializes);
 		FRIEND_TEST(GameTest, serializes);
+		FRIEND_TEST(OutbreakTest, Test1);
 #endif
 
 		typedef detail::Graph<City> Graph;
 		typedef detail::Graph<City>::EdgeDescriptor ConnectionDescriptor;
 
 		Graph graph;
-#pragma message ("Replace cityRegionMap with vector.")
-#pragma message ("Guarantee contiguous region indices.")
 		std::map<RegionIndex, Region> regionMap;
-		std::map<CityIndex, RegionIndex> cityRegionMap;
+		std::vector<RegionIndex> cityRegions;
 
 		/*!	Private interface */
 		/**
@@ -183,7 +182,7 @@ namespace pan{
 		*	Removes a city.
 		*	CAUTION.
 		*	Invalidates all other CityIndeces, ConnectionDescriptors
-		*	and cityRegionMap. Use with extreme caution. The invalidations
+		*	and cityRegions. Use with extreme caution. The invalidations
 		*	are not handled.
 		*	@param i the index of the city to be removed
 		*/
