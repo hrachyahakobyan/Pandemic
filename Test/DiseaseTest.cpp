@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "DiseaseTest.h"
-#include "Disease.h"
 
 TEST_F(DiseaseTest, changesState){
 	using namespace pan;

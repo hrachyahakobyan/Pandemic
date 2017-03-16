@@ -1,11 +1,6 @@
 #include "stdafx.h"
 #include "PlayerTest.h"
 
-#include "misc.h"
-#include "EpidemicCard.h"
-#include "CityCard.h"
-#include "EventCard.h"
-
 namespace pan{
 	/**
 	*	@brief tests the functionality of Player objects to compare against other Player objects

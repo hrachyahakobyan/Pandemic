@@ -143,6 +143,7 @@ namespace pan{
 		
 	private:
 #ifdef _DEBUG
+#ifndef DISABLE_TESTS
 		friend class MapTest;
 		FRIEND_TEST(MapTest, addsRemovesCity);
 		FRIEND_TEST(MapTest, addsRemovesConnections);
@@ -152,6 +153,7 @@ namespace pan{
 		FRIEND_TEST(MapTest, serializes);
 		FRIEND_TEST(GameTest, serializes);
 		FRIEND_TEST(OutbreakTest, Test1);
+#endif
 #endif
 
 		typedef detail::Graph<City> Graph;

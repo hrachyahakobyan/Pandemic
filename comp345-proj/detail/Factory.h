@@ -62,9 +62,11 @@ namespace pan{
 			Factory(){}
 
 #ifdef _DEBUG
+#ifndef DISABLE_TESTS
 			friend class FactoryTest;
 			FRIEND_TEST(FactoryTest, registers);
 			FRIEND_TEST(FactoryTest, constructs);
+#endif
 #endif
 
 			typedef T *(*CreateObjectFunc)(Us... args);

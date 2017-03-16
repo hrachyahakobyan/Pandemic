@@ -176,6 +176,7 @@ namespace pan
 		}
 
 #ifdef _DEBUG
+#ifndef DISABLE_TESTS
 		friend class GameTest;
 		friend class ActionTest;
 		FRIEND_TEST(GameTest, addsPlayers);
@@ -191,6 +192,7 @@ namespace pan
 		FRIEND_TEST(ActionTest, DirectFlight);
 		FRIEND_TEST(ActionTest, BuildResearchStation);
 		FRIEND_TEST(OutbreakTest, Test1);
+#endif
 #endif
 	};
 

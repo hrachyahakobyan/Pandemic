@@ -22,6 +22,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
+					<xpos>0.00000000000000000e+000</xpos>
+					<ypos>0.00000000000000000e+000</ypos>
 				</property_value>
 				<property_base class_id="8" tracking_level="0" version="0"></property_base>
 			</vertex_property>
@@ -39,6 +41,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
+					<xpos>0.00000000000000000e+000</xpos>
+					<ypos>0.00000000000000000e+000</ypos>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -57,6 +61,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
+					<xpos>0.00000000000000000e+000</xpos>
+					<ypos>0.00000000000000000e+000</ypos>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>

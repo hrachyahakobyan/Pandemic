@@ -1,8 +1,5 @@
 #pragma once
 #include <boost\graph\adjacency_list.hpp>
-#ifdef _DEBUG
-#include <gtest\gtest.h>
-#endif
 
 enum vertex_properties_t { vertex_properties };
 
@@ -151,6 +148,7 @@ namespace pan{
 		private:
 			GraphContainer container;
 #ifdef _DEBUG
+#ifndef DISABLE_TESTS
 			friend class GraphTest;
 			FRIEND_TEST(GraphTest, inserts);
 			FRIEND_TEST(GraphTest, removes);
@@ -158,6 +156,7 @@ namespace pan{
 			FRIEND_TEST(GraphTest, edges);
 			FRIEND_TEST(GraphTest, neighbors);
 			FRIEND_TEST(GraphTest, serializes);
+#endif
 #endif
 		};
 

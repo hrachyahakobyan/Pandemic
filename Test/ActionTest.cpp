@@ -1,14 +1,5 @@
 #include "stdafx.h"
 #include "ActionTest.h"
-#include "Game.h"
-#include "Infect.h"
-#include "Outbreak.h"
-#include "Move.h"
-#include "DirectFlight.h"
-#include "ShuttleFlight.h"
-#include "CharterFlight.h"
-#include "BuildResearchStation.h"
-#include "CityCard.h"
 
 namespace pan{
 

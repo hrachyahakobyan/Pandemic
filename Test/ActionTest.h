@@ -1,5 +1,4 @@
 #pragma once
-#include "Game.h"
 
 namespace pan{
 	class ActionTest : public ::testing::Test

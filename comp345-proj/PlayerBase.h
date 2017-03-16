@@ -48,10 +48,12 @@ namespace pan{
 		std::string name;
 		CityIndex location;
 #ifdef _DEBUG
+#ifndef DISABLE_TESTS
 		friend class PlayerTest;
 		FRIEND_TEST(PlayerTest, compares);
 		FRIEND_TEST(PlayerTest, serializes);
 		FRIEND_TEST(PlayerTest, serializesContainer);
+#endif
 #endif
 	};
 

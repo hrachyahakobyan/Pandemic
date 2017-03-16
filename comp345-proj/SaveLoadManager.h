@@ -45,11 +45,13 @@ namespace pan{
 		std::vector<SaveFile> savedGames() const;
 	private:
 #ifdef _DEBUG
+#ifndef DISABLE_TESTS
 		friend class SaveLoadTest;
 		FRIEND_TEST(SaveLoadTest, createsDirectory);
 		FRIEND_TEST(SaveLoadTest, createsFile);
 		FRIEND_TEST(SaveLoadTest, savesGame);
 		FRIEND_TEST(SaveLoadTest, getsSavedGames);
+#endif
 #endif
 		SaveLoadManager();
 		SaveLoadManager(const SaveLoadManager&) = delete;

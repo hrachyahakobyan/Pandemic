@@ -36,6 +36,7 @@ namespace pan{
 	private:
 		Game& game;
 #ifdef _DEBUG
+#ifndef DISABLE_TESTS
 		FRIEND_TEST(ActionTest, Infect);
 		FRIEND_TEST(ActionTest, Outbreak);
 		FRIEND_TEST(ActionTest, Move);
@@ -43,6 +44,7 @@ namespace pan{
 		FRIEND_TEST(ActionTest, ShuttleFlight);
 		FRIEND_TEST(ActionTest, DirectFlight);
 		FRIEND_TEST(ActionTest, BuildResearchStation);
+#endif
 #endif
 
 		bool isPlayersTurn(PlayerIndex i) const;

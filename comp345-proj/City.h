@@ -11,6 +11,7 @@ namespace pan{
 	public:
 		City();
 		City(const std::string& name, unsigned int population = 0);
+		City(const std::string& name, unsigned int population, double xpos, double ypos);
 		City(const City&);
 		City(City&& o);
 		City& operator=(const City&);
@@ -43,11 +44,15 @@ namespace pan{
 			ar & BOOST_SERIALIZATION_NVP(researchStation);
 			ar & BOOST_SERIALIZATION_NVP(players);
 			ar & BOOST_SERIALIZATION_NVP(cubes);
+			ar & BOOST_SERIALIZATION_NVP(xpos);
+			ar & BOOST_SERIALIZATION_NVP(ypos);
 		}
 	private:
 		std::set<PlayerIndex> players;
 		std::string name;
 		std::vector<std::size_t> cubes;
+		double xpos;
+		double ypos;
 	};
 
 	bool City::operator!=(const City& other) const

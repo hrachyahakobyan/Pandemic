@@ -43,12 +43,6 @@
     <Filter Include="Source Files\actions">
       <UniqueIdentifier>{69b571e8-ec9d-4e22-84b9-6fd8f2916188}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui">
-      <UniqueIdentifier>{7ef96c7b-80bb-4ae2-be01-795ee713e5c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui">
-      <UniqueIdentifier>{69f49d23-28ee-4f8d-a25d-010c09732cd6}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -180,17 +174,8 @@
     <ClInclude Include="Cards.h">
       <Filter>Header Files\cards</Filter>
     </ClInclude>
-    <ClInclude Include="MapView.h">
-      <Filter>Header Files\gui</Filter>
-    </ClInclude>
-    <ClInclude Include="CityView.h">
-      <Filter>Header Files\gui</Filter>
-    </ClInclude>
-    <ClInclude Include="Pawn.h">
-      <Filter>Header Files\gui</Filter>
-    </ClInclude>
-    <ClInclude Include="ResearchStation.h">
-      <Filter>Header Files\gui</Filter>
+    <ClInclude Include="Core.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -307,18 +292,6 @@
     </ClCompile>
     <ClCompile Include="PlayerInfect.cpp">
       <Filter>Source Files\actions</Filter>
-    </ClCompile>
-    <ClCompile Include="CityView.cpp">
-      <Filter>Source Files\gui</Filter>
-    </ClCompile>
-    <ClCompile Include="MapView.cpp">
-      <Filter>Source Files\gui</Filter>
-    </ClCompile>
-    <ClCompile Include="Pawn.cpp">
-      <Filter>Source Files\gui</Filter>
-    </ClCompile>
-    <ClCompile Include="ResearchStation.cpp">
-      <Filter>Source Files\gui</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

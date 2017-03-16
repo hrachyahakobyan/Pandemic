@@ -25,6 +25,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base class_id="23" tracking_level="0" version="0"></property_base>
 				</vertex_property>
@@ -39,10 +41,11 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>1</count>
+							<count>0</count>
 							<item_version>0</item_version>
-							<item>3</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -60,6 +63,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -77,6 +82,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -91,10 +98,11 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>1</count>
+							<count>0</count>
 							<item_version>0</item_version>
-							<item>1</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -112,6 +120,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -126,9 +136,12 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>0</count>
+							<count>1</count>
 							<item_version>0</item_version>
+							<item>2</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -143,9 +156,12 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>0</count>
+							<count>1</count>
 							<item_version>0</item_version>
+							<item>3</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -160,9 +176,12 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>0</count>
+							<count>1</count>
 							<item_version>0</item_version>
+							<item>1</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -180,6 +199,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -197,6 +218,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -211,10 +234,11 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>1</count>
+							<count>0</count>
 							<item_version>0</item_version>
-							<item>2</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -232,6 +256,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -249,6 +275,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -266,6 +294,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -280,12 +310,11 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>3</count>
+							<count>0</count>
 							<item_version>0</item_version>
-							<item>0</item>
-							<item>0</item>
-							<item>3</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -303,6 +332,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -317,12 +348,11 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>3</count>
+							<count>0</count>
 							<item_version>0</item_version>
-							<item>0</item>
-							<item>0</item>
-							<item>1</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -337,9 +367,14 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>0</count>
+							<count>3</count>
 							<item_version>0</item_version>
+							<item>0</item>
+							<item>0</item>
+							<item>2</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -357,6 +392,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -374,6 +411,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -391,6 +430,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -408,6 +449,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -425,6 +468,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -442,6 +487,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -456,9 +503,13 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>0</count>
+							<count>2</count>
 							<item_version>0</item_version>
+							<item>0</item>
+							<item>1</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -476,6 +527,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -493,6 +546,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -510,6 +565,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -527,6 +584,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -544,6 +603,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -558,11 +619,11 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>2</count>
+							<count>0</count>
 							<item_version>0</item_version>
-							<item>0</item>
-							<item>3</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -580,6 +641,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -594,11 +657,11 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>2</count>
+							<count>0</count>
 							<item_version>0</item_version>
-							<item>0</item>
-							<item>2</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -613,9 +676,13 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>0</count>
+							<count>2</count>
 							<item_version>0</item_version>
+							<item>0</item>
+							<item>1</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -633,6 +700,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -650,6 +719,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -667,6 +738,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -684,6 +757,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -698,9 +773,15 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>0</count>
+							<count>4</count>
 							<item_version>0</item_version>
+							<item>0</item>
+							<item>0</item>
+							<item>0</item>
+							<item>3</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -718,6 +799,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -732,9 +815,15 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>0</count>
+							<count>4</count>
 							<item_version>0</item_version>
+							<item>0</item>
+							<item>0</item>
+							<item>0</item>
+							<item>3</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -752,6 +841,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -771,8 +862,10 @@
 							<item>0</item>
 							<item>0</item>
 							<item>0</item>
-							<item>1</item>
+							<item>2</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -790,6 +883,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -804,13 +899,11 @@
 							<item_version>0</item_version>
 						</players>
 						<cubes>
-							<count>4</count>
+							<count>0</count>
 							<item_version>0</item_version>
-							<item>0</item>
-							<item>0</item>
-							<item>0</item>
-							<item>2</item>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -828,6 +921,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -845,6 +940,8 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</cubes>
+						<xpos>0.00000000000000000e+000</xpos>
+						<ypos>0.00000000000000000e+000</ypos>
 					</property_value>
 					<property_base></property_base>
 				</vertex_property>
@@ -1228,38 +1325,38 @@
 								<item_version>1</item_version>
 								<item class_id="32" tracking_level="0" version="1">
 									<px class_id="10" tracking_level="1" version="0" object_id="_2">
-										<cityIndex>2</cityIndex>
+										<cityIndex>34</cityIndex>
 										<CardBase class_id="11" tracking_level="1" version="0" object_id="_3">
 											<Object></Object>
 										</CardBase>
-										<cityIndex>2</cityIndex>
+										<cityIndex>34</cityIndex>
 									</px>
 								</item>
 								<item>
 									<px class_id_reference="10" object_id="_4">
-										<cityIndex>18</cityIndex>
+										<cityIndex>11</cityIndex>
 										<CardBase object_id="_5">
 											<Object></Object>
 										</CardBase>
-										<cityIndex>18</cityIndex>
+										<cityIndex>11</cityIndex>
 									</px>
 								</item>
 								<item>
 									<px class_id_reference="10" object_id="_6">
-										<cityIndex>20</cityIndex>
+										<cityIndex>12</cityIndex>
 										<CardBase object_id="_7">
 											<Object></Object>
 										</CardBase>
-										<cityIndex>20</cityIndex>
+										<cityIndex>12</cityIndex>
 									</px>
 								</item>
 								<item>
 									<px class_id_reference="10" object_id="_8">
-										<cityIndex>45</cityIndex>
+										<cityIndex>33</cityIndex>
 										<CardBase object_id="_9">
 											<Object></Object>
 										</CardBase>
-										<cityIndex>45</cityIndex>
+										<cityIndex>33</cityIndex>
 									</px>
 								</item>
 							</deck>
@@ -1279,38 +1376,38 @@
 								<item_version>1</item_version>
 								<item>
 									<px class_id_reference="10" object_id="_12">
-										<cityIndex>31</cityIndex>
+										<cityIndex>39</cityIndex>
 										<CardBase object_id="_13">
 											<Object></Object>
 										</CardBase>
-										<cityIndex>31</cityIndex>
+										<cityIndex>39</cityIndex>
 									</px>
 								</item>
 								<item>
 									<px class_id_reference="10" object_id="_14">
-										<cityIndex>1</cityIndex>
+										<cityIndex>7</cityIndex>
 										<CardBase object_id="_15">
 											<Object></Object>
 										</CardBase>
-										<cityIndex>1</cityIndex>
+										<cityIndex>7</cityIndex>
 									</px>
 								</item>
 								<item>
 									<px class_id_reference="10" object_id="_16">
-										<cityIndex>15</cityIndex>
+										<cityIndex>41</cityIndex>
 										<CardBase object_id="_17">
 											<Object></Object>
 										</CardBase>
-										<cityIndex>15</cityIndex>
+										<cityIndex>41</cityIndex>
 									</px>
 								</item>
 								<item>
 									<px class_id_reference="10" object_id="_18">
-										<cityIndex>23</cityIndex>
+										<cityIndex>47</cityIndex>
 										<CardBase object_id="_19">
 											<Object></Object>
 										</CardBase>
-										<cityIndex>23</cityIndex>
+										<cityIndex>47</cityIndex>
 									</px>
 								</item>
 							</deck>
@@ -1387,9 +1484,9 @@
 			<count>4</count>
 			<item_version>0</item_version>
 			<item>18</item>
-			<item>19</item>
-			<item>20</item>
-			<item>21</item>
+			<item>22</item>
+			<item>22</item>
+			<item>16</item>
 		</g.diseaseCubes>
 		<g.removedDiseasesCubes>
 			<count>4</count>
@@ -1409,110 +1506,110 @@
 				<item_version>1</item_version>
 				<item class_id="40" tracking_level="0" version="1">
 					<px class_id="7" tracking_level="1" version="0" object_id="_21">
-						<cityIndex>42</cityIndex>
+						<cityIndex>3</cityIndex>
 						<CardBase object_id="_22">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>42</cityIndex>
+						<cityIndex>3</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_23">
-						<cityIndex>0</cityIndex>
+						<cityIndex>20</cityIndex>
 						<CardBase object_id="_24">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>0</cityIndex>
+						<cityIndex>20</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_25">
-						<cityIndex>2</cityIndex>
+						<cityIndex>10</cityIndex>
 						<CardBase object_id="_26">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>2</cityIndex>
+						<cityIndex>10</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_27">
-						<cityIndex>21</cityIndex>
+						<cityIndex>5</cityIndex>
 						<CardBase object_id="_28">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>21</cityIndex>
+						<cityIndex>5</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_29">
-						<cityIndex>7</cityIndex>
+						<cityIndex>32</cityIndex>
 						<CardBase object_id="_30">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>7</cityIndex>
+						<cityIndex>32</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_31">
-						<cityIndex>39</cityIndex>
+						<cityIndex>4</cityIndex>
 						<CardBase object_id="_32">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>39</cityIndex>
+						<cityIndex>4</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_33">
-						<cityIndex>38</cityIndex>
+						<cityIndex>36</cityIndex>
 						<CardBase object_id="_34">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>38</cityIndex>
+						<cityIndex>36</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_35">
-						<cityIndex>37</cityIndex>
+						<cityIndex>9</cityIndex>
 						<CardBase object_id="_36">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>37</cityIndex>
+						<cityIndex>9</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_37">
-						<cityIndex>44</cityIndex>
+						<cityIndex>24</cityIndex>
 						<CardBase object_id="_38">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>44</cityIndex>
+						<cityIndex>24</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_39">
-						<cityIndex>29</cityIndex>
+						<cityIndex>13</cityIndex>
 						<CardBase object_id="_40">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>29</cityIndex>
+						<cityIndex>13</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_41">
-						<cityIndex>32</cityIndex>
+						<cityIndex>17</cityIndex>
 						<CardBase object_id="_42">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>32</cityIndex>
+						<cityIndex>17</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_43">
-						<cityIndex>10</cityIndex>
+						<cityIndex>33</cityIndex>
 						<CardBase object_id="_44">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>10</cityIndex>
+						<cityIndex>33</cityIndex>
 					</px>
 				</item>
 				<item>
@@ -1526,47 +1623,47 @@
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_47">
-						<cityIndex>30</cityIndex>
+						<cityIndex>37</cityIndex>
 						<CardBase object_id="_48">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>30</cityIndex>
+						<cityIndex>37</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_49">
-						<cityIndex>28</cityIndex>
+						<cityIndex>12</cityIndex>
 						<CardBase object_id="_50">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>28</cityIndex>
+						<cityIndex>12</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_51">
-						<cityIndex>25</cityIndex>
+						<cityIndex>44</cityIndex>
 						<CardBase object_id="_52">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>25</cityIndex>
+						<cityIndex>44</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_53">
-						<cityIndex>36</cityIndex>
+						<cityIndex>21</cityIndex>
 						<CardBase object_id="_54">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>36</cityIndex>
+						<cityIndex>21</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_55">
-						<cityIndex>24</cityIndex>
+						<cityIndex>30</cityIndex>
 						<CardBase object_id="_56">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>24</cityIndex>
+						<cityIndex>30</cityIndex>
 					</px>
 				</item>
 				<item>
@@ -1580,182 +1677,182 @@
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_59">
-						<cityIndex>6</cityIndex>
+						<cityIndex>0</cityIndex>
 						<CardBase object_id="_60">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>6</cityIndex>
+						<cityIndex>0</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_61">
-						<cityIndex>13</cityIndex>
+						<cityIndex>1</cityIndex>
 						<CardBase object_id="_62">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>13</cityIndex>
+						<cityIndex>1</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_63">
-						<cityIndex>8</cityIndex>
+						<cityIndex>40</cityIndex>
 						<CardBase object_id="_64">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>8</cityIndex>
+						<cityIndex>40</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_65">
-						<cityIndex>34</cityIndex>
+						<cityIndex>31</cityIndex>
 						<CardBase object_id="_66">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>34</cityIndex>
+						<cityIndex>31</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_67">
-						<cityIndex>22</cityIndex>
+						<cityIndex>14</cityIndex>
 						<CardBase object_id="_68">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>22</cityIndex>
+						<cityIndex>14</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_69">
-						<cityIndex>18</cityIndex>
+						<cityIndex>38</cityIndex>
 						<CardBase object_id="_70">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>18</cityIndex>
+						<cityIndex>38</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_71">
-						<cityIndex>3</cityIndex>
+						<cityIndex>29</cityIndex>
 						<CardBase object_id="_72">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>3</cityIndex>
+						<cityIndex>29</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_73">
-						<cityIndex>47</cityIndex>
+						<cityIndex>16</cityIndex>
 						<CardBase object_id="_74">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>47</cityIndex>
+						<cityIndex>16</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_75">
-						<cityIndex>41</cityIndex>
+						<cityIndex>2</cityIndex>
 						<CardBase object_id="_76">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>41</cityIndex>
+						<cityIndex>2</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_77">
-						<cityIndex>12</cityIndex>
+						<cityIndex>11</cityIndex>
 						<CardBase object_id="_78">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>12</cityIndex>
+						<cityIndex>11</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_79">
-						<cityIndex>14</cityIndex>
+						<cityIndex>28</cityIndex>
 						<CardBase object_id="_80">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>14</cityIndex>
+						<cityIndex>28</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_81">
-						<cityIndex>5</cityIndex>
+						<cityIndex>35</cityIndex>
 						<CardBase object_id="_82">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>5</cityIndex>
+						<cityIndex>35</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_83">
-						<cityIndex>9</cityIndex>
+						<cityIndex>45</cityIndex>
 						<CardBase object_id="_84">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>9</cityIndex>
+						<cityIndex>45</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_85">
-						<cityIndex>16</cityIndex>
+						<cityIndex>15</cityIndex>
 						<CardBase object_id="_86">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>16</cityIndex>
+						<cityIndex>15</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_87">
-						<cityIndex>19</cityIndex>
+						<cityIndex>23</cityIndex>
 						<CardBase object_id="_88">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>19</cityIndex>
+						<cityIndex>23</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_89">
-						<cityIndex>35</cityIndex>
+						<cityIndex>22</cityIndex>
 						<CardBase object_id="_90">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>35</cityIndex>
+						<cityIndex>22</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_91">
-						<cityIndex>40</cityIndex>
+						<cityIndex>26</cityIndex>
 						<CardBase object_id="_92">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>40</cityIndex>
+						<cityIndex>26</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_93">
-						<cityIndex>26</cityIndex>
+						<cityIndex>47</cityIndex>
 						<CardBase object_id="_94">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>26</cityIndex>
+						<cityIndex>47</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_95">
-						<cityIndex>23</cityIndex>
+						<cityIndex>42</cityIndex>
 						<CardBase object_id="_96">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>23</cityIndex>
+						<cityIndex>42</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_97">
-						<cityIndex>20</cityIndex>
+						<cityIndex>19</cityIndex>
 						<CardBase object_id="_98">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>20</cityIndex>
+						<cityIndex>19</cityIndex>
 					</px>
 				</item>
 			</deck>
@@ -1766,83 +1863,83 @@
 				<item_version>1</item_version>
 				<item>
 					<px class_id_reference="7" object_id="_99">
-						<cityIndex>15</cityIndex>
+						<cityIndex>41</cityIndex>
 						<CardBase object_id="_100">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>15</cityIndex>
+						<cityIndex>41</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_101">
-						<cityIndex>1</cityIndex>
+						<cityIndex>7</cityIndex>
 						<CardBase object_id="_102">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>1</cityIndex>
+						<cityIndex>7</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_103">
-						<cityIndex>31</cityIndex>
+						<cityIndex>39</cityIndex>
 						<CardBase object_id="_104">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>31</cityIndex>
+						<cityIndex>39</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_105">
-						<cityIndex>33</cityIndex>
+						<cityIndex>6</cityIndex>
 						<CardBase object_id="_106">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>33</cityIndex>
+						<cityIndex>6</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_107">
-						<cityIndex>11</cityIndex>
+						<cityIndex>18</cityIndex>
 						<CardBase object_id="_108">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>11</cityIndex>
+						<cityIndex>18</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_109">
-						<cityIndex>45</cityIndex>
+						<cityIndex>43</cityIndex>
 						<CardBase object_id="_110">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>45</cityIndex>
+						<cityIndex>43</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_111">
-						<cityIndex>43</cityIndex>
+						<cityIndex>25</cityIndex>
 						<CardBase object_id="_112">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>43</cityIndex>
+						<cityIndex>25</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_113">
-						<cityIndex>4</cityIndex>
+						<cityIndex>34</cityIndex>
 						<CardBase object_id="_114">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>4</cityIndex>
+						<cityIndex>34</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="7" object_id="_115">
-						<cityIndex>17</cityIndex>
+						<cityIndex>8</cityIndex>
 						<CardBase object_id="_116">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>17</cityIndex>
+						<cityIndex>8</cityIndex>
 					</px>
 				</item>
 			</deck>
@@ -1852,436 +1949,436 @@
 				<count>49</count>
 				<item_version>1</item_version>
 				<item>
-					<px class_id_reference="10" object_id="_117">
-						<cityIndex>33</cityIndex>
+					<px class_id="8" tracking_level="1" version="0" object_id="_117">
 						<CardBase object_id="_118">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>33</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_119">
-						<cityIndex>43</cityIndex>
+						<cityIndex>25</cityIndex>
 						<CardBase object_id="_120">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>43</cityIndex>
+						<cityIndex>25</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id="8" tracking_level="1" version="0" object_id="_121">
+					<px class_id_reference="10" object_id="_121">
+						<cityIndex>22</cityIndex>
 						<CardBase object_id="_122">
 							<Object></Object>
 						</CardBase>
+						<cityIndex>22</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id="9" tracking_level="1" version="0" object_id="_123">
-						<eventType>3</eventType>
+					<px class_id_reference="10" object_id="_123">
+						<cityIndex>19</cityIndex>
 						<CardBase object_id="_124">
 							<Object></Object>
 						</CardBase>
-						<eventType>3</eventType>
+						<cityIndex>19</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="9" object_id="_125">
-						<eventType>0</eventType>
+					<px class_id_reference="10" object_id="_125">
+						<cityIndex>23</cityIndex>
 						<CardBase object_id="_126">
 							<Object></Object>
 						</CardBase>
-						<eventType>0</eventType>
+						<cityIndex>23</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_127">
-						<cityIndex>11</cityIndex>
+						<cityIndex>26</cityIndex>
 						<CardBase object_id="_128">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>11</cityIndex>
+						<cityIndex>26</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="10" object_id="_129">
-						<cityIndex>26</cityIndex>
+					<px class_id="9" tracking_level="1" version="0" object_id="_129">
+						<eventType>1</eventType>
 						<CardBase object_id="_130">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>26</cityIndex>
+						<eventType>1</eventType>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_131">
-						<cityIndex>35</cityIndex>
+						<cityIndex>6</cityIndex>
 						<CardBase object_id="_132">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>35</cityIndex>
+						<cityIndex>6</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="10" object_id="_133">
-						<cityIndex>19</cityIndex>
+					<px class_id_reference="9" object_id="_133">
+						<eventType>0</eventType>
 						<CardBase object_id="_134">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>19</cityIndex>
+						<eventType>0</eventType>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_135">
-						<cityIndex>40</cityIndex>
+						<cityIndex>42</cityIndex>
 						<CardBase object_id="_136">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>40</cityIndex>
+						<cityIndex>42</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_137">
-						<cityIndex>17</cityIndex>
+						<cityIndex>43</cityIndex>
 						<CardBase object_id="_138">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>17</cityIndex>
+						<cityIndex>43</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="9" object_id="_139">
-						<eventType>4</eventType>
+					<px class_id_reference="10" object_id="_139">
+						<cityIndex>8</cityIndex>
 						<CardBase object_id="_140">
 							<Object></Object>
 						</CardBase>
-						<eventType>4</eventType>
+						<cityIndex>8</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_141">
-						<cityIndex>4</cityIndex>
+						<cityIndex>18</cityIndex>
 						<CardBase object_id="_142">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>4</cityIndex>
+						<cityIndex>18</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_143">
-						<cityIndex>9</cityIndex>
+						<cityIndex>14</cityIndex>
 						<CardBase object_id="_144">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>9</cityIndex>
+						<cityIndex>14</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_145">
-						<cityIndex>22</cityIndex>
+						<cityIndex>2</cityIndex>
 						<CardBase object_id="_146">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>22</cityIndex>
+						<cityIndex>2</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_147">
-						<cityIndex>5</cityIndex>
+						<cityIndex>16</cityIndex>
 						<CardBase object_id="_148">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>5</cityIndex>
+						<cityIndex>16</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="10" object_id="_149">
-						<cityIndex>47</cityIndex>
+					<px class_id_reference="8" object_id="_149">
 						<CardBase object_id="_150">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>47</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="10" object_id="_151">
-						<cityIndex>14</cityIndex>
+					<px class_id_reference="9" object_id="_151">
+						<eventType>2</eventType>
 						<CardBase object_id="_152">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>14</cityIndex>
+						<eventType>2</eventType>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_153">
-						<cityIndex>34</cityIndex>
+						<cityIndex>29</cityIndex>
 						<CardBase object_id="_154">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>34</cityIndex>
+						<cityIndex>29</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_155">
-						<cityIndex>12</cityIndex>
+						<cityIndex>28</cityIndex>
 						<CardBase object_id="_156">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>12</cityIndex>
+						<cityIndex>28</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_157">
-						<cityIndex>41</cityIndex>
+						<cityIndex>31</cityIndex>
 						<CardBase object_id="_158">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>41</cityIndex>
+						<cityIndex>31</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="9" object_id="_159">
-						<eventType>2</eventType>
+					<px class_id_reference="10" object_id="_159">
+						<cityIndex>45</cityIndex>
 						<CardBase object_id="_160">
 							<Object></Object>
 						</CardBase>
-						<eventType>2</eventType>
+						<cityIndex>45</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="8" object_id="_161">
+					<px class_id_reference="10" object_id="_161">
+						<cityIndex>15</cityIndex>
 						<CardBase object_id="_162">
 							<Object></Object>
 						</CardBase>
+						<cityIndex>15</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_163">
-						<cityIndex>16</cityIndex>
+						<cityIndex>40</cityIndex>
 						<CardBase object_id="_164">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>16</cityIndex>
+						<cityIndex>40</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_165">
-						<cityIndex>3</cityIndex>
+						<cityIndex>38</cityIndex>
 						<CardBase object_id="_166">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>3</cityIndex>
+						<cityIndex>38</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_167">
-						<cityIndex>8</cityIndex>
+						<cityIndex>35</cityIndex>
 						<CardBase object_id="_168">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>8</cityIndex>
+						<cityIndex>35</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="10" object_id="_169">
-						<cityIndex>46</cityIndex>
+					<px class_id_reference="9" object_id="_169">
+						<eventType>3</eventType>
 						<CardBase object_id="_170">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>46</cityIndex>
+						<eventType>3</eventType>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_171">
-						<cityIndex>25</cityIndex>
+						<cityIndex>13</cityIndex>
 						<CardBase object_id="_172">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>25</cityIndex>
+						<cityIndex>13</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_173">
-						<cityIndex>27</cityIndex>
+						<cityIndex>21</cityIndex>
 						<CardBase object_id="_174">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>27</cityIndex>
+						<cityIndex>21</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="10" object_id="_175">
-						<cityIndex>13</cityIndex>
+					<px class_id_reference="9" object_id="_175">
+						<eventType>4</eventType>
 						<CardBase object_id="_176">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>13</cityIndex>
+						<eventType>4</eventType>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_177">
-						<cityIndex>6</cityIndex>
+						<cityIndex>27</cityIndex>
 						<CardBase object_id="_178">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>6</cityIndex>
+						<cityIndex>27</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_179">
-						<cityIndex>30</cityIndex>
+						<cityIndex>46</cityIndex>
 						<CardBase object_id="_180">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>30</cityIndex>
+						<cityIndex>46</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_181">
-						<cityIndex>28</cityIndex>
+						<cityIndex>17</cityIndex>
 						<CardBase object_id="_182">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>28</cityIndex>
+						<cityIndex>17</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_183">
-						<cityIndex>36</cityIndex>
+						<cityIndex>44</cityIndex>
 						<CardBase object_id="_184">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>36</cityIndex>
+						<cityIndex>44</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="8" object_id="_185">
+					<px class_id_reference="10" object_id="_185">
+						<cityIndex>30</cityIndex>
 						<CardBase object_id="_186">
 							<Object></Object>
 						</CardBase>
+						<cityIndex>30</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_187">
-						<cityIndex>32</cityIndex>
+						<cityIndex>1</cityIndex>
 						<CardBase object_id="_188">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>32</cityIndex>
+						<cityIndex>1</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="10" object_id="_189">
-						<cityIndex>29</cityIndex>
+					<px class_id_reference="8" object_id="_189">
 						<CardBase object_id="_190">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>29</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_191">
-						<cityIndex>10</cityIndex>
+						<cityIndex>0</cityIndex>
 						<CardBase object_id="_192">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>10</cityIndex>
+						<cityIndex>0</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_193">
-						<cityIndex>24</cityIndex>
+						<cityIndex>37</cityIndex>
 						<CardBase object_id="_194">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>24</cityIndex>
+						<cityIndex>37</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="9" object_id="_195">
-						<eventType>1</eventType>
+					<px class_id_reference="10" object_id="_195">
+						<cityIndex>3</cityIndex>
 						<CardBase object_id="_196">
 							<Object></Object>
 						</CardBase>
-						<eventType>1</eventType>
+						<cityIndex>3</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="10" object_id="_197">
-						<cityIndex>38</cityIndex>
+					<px class_id_reference="8" object_id="_197">
 						<CardBase object_id="_198">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>38</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_199">
-						<cityIndex>0</cityIndex>
+						<cityIndex>10</cityIndex>
 						<CardBase object_id="_200">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>0</cityIndex>
+						<cityIndex>10</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_201">
-						<cityIndex>21</cityIndex>
+						<cityIndex>36</cityIndex>
 						<CardBase object_id="_202">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>21</cityIndex>
+						<cityIndex>36</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_203">
-						<cityIndex>42</cityIndex>
+						<cityIndex>24</cityIndex>
 						<CardBase object_id="_204">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>42</cityIndex>
+						<cityIndex>24</cityIndex>
 					</px>
 				</item>
 				<item>
-					<px class_id_reference="8" object_id="_205">
+					<px class_id_reference="10" object_id="_205">
+						<cityIndex>20</cityIndex>
 						<CardBase object_id="_206">
 							<Object></Object>
 						</CardBase>
+						<cityIndex>20</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_207">
-						<cityIndex>37</cityIndex>
+						<cityIndex>32</cityIndex>
 						<CardBase object_id="_208">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>37</cityIndex>
+						<cityIndex>32</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_209">
-						<cityIndex>39</cityIndex>
+						<cityIndex>4</cityIndex>
 						<CardBase object_id="_210">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>39</cityIndex>
+						<cityIndex>4</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_211">
-						<cityIndex>7</cityIndex>
+						<cityIndex>5</cityIndex>
 						<CardBase object_id="_212">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>7</cityIndex>
+						<cityIndex>5</cityIndex>
 					</px>
 				</item>
 				<item>
 					<px class_id_reference="10" object_id="_213">
-						<cityIndex>44</cityIndex>
+						<cityIndex>9</cityIndex>
 						<CardBase object_id="_214">
 							<Object></Object>
 						</CardBase>
-						<cityIndex>44</cityIndex>
+						<cityIndex>9</cityIndex>
 					</px>
 				</item>
 			</deck>

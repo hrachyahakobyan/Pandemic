@@ -1,13 +1,16 @@
 #include "stdafx.h"
 #include "FactoryTest.h"
+#include <core\detail\Factory.h>
 
 namespace pan{
 	namespace detail{
+	
 		/**
 		*	@brief tests the register functionality of the Factory
 		*	@author Hrachya Hakobyan
 		*/
 		TEST_F(FactoryTest, registers){
+			typedef pan::detail::Factory<std::string, A, const D&> Factory;
 			Factory fac;
 			ASSERT_EQ(fac.mObjectCreator.size(), 0);
 			const std::string aKey("A");
@@ -27,6 +30,7 @@ namespace pan{
 		*	@author Hrachya Hakobyan
 		*/
 		TEST_F(FactoryTest, constructs){
+			typedef pan::detail::Factory<std::string, A, const D&> Factory;
 			Factory fac;
 			const D d;
 			const std::string aKey("A");

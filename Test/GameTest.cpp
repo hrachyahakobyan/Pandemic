@@ -1,10 +1,5 @@
 #include "stdafx.h"
 #include "GameTest.h"
-#include "Role.h"
-#include "Map.h"
-#include "Game.h"
-
-#include "misc.h"
 
 
 namespace pan{
