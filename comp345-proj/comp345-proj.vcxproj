@@ -17,7 +17,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -52,14 +52,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)/gtest/include;C:\boost\boost_1_59_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/gtest/include;C:\boost\boost_1_59_0;$(SolutionDir)/sfml/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)/gtest/lib/msvc13/Debug;C:\boost\boost_1_59_0\lib32-msvc-12.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>gtest.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/gtest/lib/msvc13/Debug;C:\boost\boost_1_59_0\lib32-msvc-12.0;$(SolutionDir)/sfml/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtest.lib;sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -92,6 +92,7 @@
     <ClInclude Include="CharterFlight.h" />
     <ClInclude Include="City.h" />
     <ClInclude Include="CityCard.h" />
+    <ClInclude Include="CityView.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="detail\Deck.h" />
@@ -109,15 +110,18 @@
     <ClInclude Include="Infect.h" />
     <ClInclude Include="InfectionCard.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapView.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Outbreak.h" />
+    <ClInclude Include="Pawn.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBase.h" />
     <ClInclude Include="PlayerInfect.h" />
     <ClInclude Include="ReferenceCard.h" />
     <ClInclude Include="Region.h" />
+    <ClInclude Include="ResearchStation.h" />
     <ClInclude Include="Role.h" />
     <ClInclude Include="SaveLoadManager.h" />
     <ClInclude Include="Settings.h" />
@@ -134,6 +138,7 @@
     <ClCompile Include="CharterFlight.cpp" />
     <ClCompile Include="City.cpp" />
     <ClCompile Include="CityCard.cpp" />
+    <ClCompile Include="CityView.cpp" />
     <ClCompile Include="comp345-proj.cpp" />
     <ClCompile Include="Data.cpp" />
     <ClCompile Include="detail\Deck.cpp" />
@@ -151,14 +156,17 @@
     <ClCompile Include="Infect.cpp" />
     <ClCompile Include="InfectionCard.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapView.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Outbreak.cpp" />
+    <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBase.cpp" />
     <ClCompile Include="PlayerInfect.cpp" />
     <ClCompile Include="ReferenceCard.cpp" />
     <ClCompile Include="Region.cpp" />
+    <ClCompile Include="ResearchStation.cpp" />
     <ClCompile Include="Role.cpp" />
     <ClCompile Include="SaveLoadManager.cpp" />
     <ClCompile Include="Settings.cpp" />
