@@ -1,5 +1,4 @@
 #pragma once
-#include "detail\Factory.h"
 
 namespace pan{
 	namespace detail{
@@ -8,7 +7,6 @@ namespace pan{
 		protected:
 			class A;
 			class D;
-			typedef pan::detail::Factory<std::string, A, const D&> Factory;
 			class D{};
 			class A {
 			public:

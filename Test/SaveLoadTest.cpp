@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "SaveLoadTest.h"
-#include "SaveLoadManager.h"
 #include <boost\filesystem.hpp>
+#include <core\SaveLoadManager.h>
 
 namespace pan{
 	TEST_F(SaveLoadTest, createsDirectory){

@@ -1,7 +1,5 @@
 #include "stdafx.h"
 #include "OutbreakTest.h"
-#include "Game.h"
-#include "Actions.h"
 
 namespace pan{
 	TEST_F(OutbreakTest, Test1)

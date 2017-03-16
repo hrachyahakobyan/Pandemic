@@ -5,14 +5,27 @@ namespace pan{
 
 	City::City() :
 		population(0),
-		researchStation(false)
+		researchStation(false),
+		xpos(0),
+		ypos(0)
 	{
 	}
 
 	City::City(const std::string& name, unsigned int population) :
 		population(population),
 		researchStation(false),
-		name(name)
+		name(name),
+		xpos(0),
+		ypos(0)
+	{
+	}
+
+	City::City(const std::string& name, unsigned int population, double xpos, double ypos) :
+		population(population),
+		researchStation(false),
+		name(name),
+		xpos(xpos),
+		ypos(ypos)
 	{
 	}
 
@@ -21,7 +34,9 @@ namespace pan{
 		researchStation(other.researchStation),
 		players(other.players),
 		name(other.name),
-		cubes(other.cubes)
+		cubes(other.cubes),
+		xpos(other.xpos),
+		ypos(other.ypos)
 	{
 	}
 
@@ -30,7 +45,9 @@ namespace pan{
 		researchStation(o.researchStation),
 		name(std::move(o.name)),
 		players(std::move(o.players)),
-		cubes(std::move(o.cubes))
+		cubes(std::move(o.cubes)),
+		xpos(o.xpos),
+		ypos(o.ypos)
 	{
 	}
 
@@ -41,6 +58,8 @@ namespace pan{
 		this->name = o.name;
 		this->players = o.players;
 		this->cubes = o.cubes;
+		this->xpos = o.xpos;
+		this->ypos = o.ypos;
 		return *this;
 	}
 
@@ -51,6 +70,8 @@ namespace pan{
 		this->name = std::move(o.name);
 		this->players = std::move(o.players);
 		this->cubes = std::move(o.cubes);
+		this->xpos = o.xpos;
+		this->ypos = o.ypos;
 		return *this;
 	}
 

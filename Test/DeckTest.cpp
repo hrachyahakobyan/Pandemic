@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "DeckTest.h"
-#include "detail\Deck.h"
 
 namespace pan{
 	namespace detail{

@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "CardTest.h"
-#include "misc.h"
 
 namespace pan{
 	TEST_F(CardTest, compares)

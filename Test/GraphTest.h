@@ -1,6 +1,4 @@
 #pragma once
-#include "detail\Graph.h"
-
 namespace pan{
 	namespace detail{
 		class GraphTest : public  ::testing::Test

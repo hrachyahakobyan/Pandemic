@@ -47,6 +47,5 @@
 #include <boost/graph/adj_list_serialize.hpp>
 #include <boost/archive/xml_iarchive.hpp>
 #include <boost/archive/xml_oarchive.hpp>
-
 #include "common.h"
 // TODO: reference additional headers your program requires here

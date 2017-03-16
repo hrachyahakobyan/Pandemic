@@ -1,0 +1,81 @@
+#pragma once
+#include "Object.h"
+
+
+namespace pan{
+	/**
+	*	@brief describes different roles present in the game
+	*/
+	enum class Roles : unsigned int{Medic = 0, Dispatcher, Generalist, 
+									Researcher, QSpecialist, FOperative, CPlanner};
+	static const int RoleCount = 6;
+	static const std::map<Roles, const char*> RolesDescriptions{
+		{ Roles::Dispatcher, "Dispatcher" },
+		{ Roles::FOperative, "Field Operative" },
+		{ Roles::Generalist, "Generalist" },
+		{ Roles::Medic, "Medic" },
+		{ Roles::QSpecialist, "Quarantine Specialist" },
+		{ Roles::Researcher, "Researcher" },
+		{ Roles::CPlanner, "Contingency Planner" }
+	};
+
+	/**
+	*	@brief A class to represent the Role entity in the game.
+	*	The RoleBase is a the same as the Role card in the real game.
+	*	The RoleBase is a prent class to concrete Role classes.
+	*	The RolBase is not abstract, however it cannot be instantiated 
+	*	because of protected constructor.
+	*	@author Hrachya Hakobyan
+	*/
+	class RoleBase : public Object
+	{
+	public:
+		virtual ~RoleBase();
+		inline bool operator==(const RoleBase&) const;
+		inline bool operator!=(const RoleBase&) const;
+		const Roles role;
+		inline std::string description() const;
+	protected:
+		RoleBase(Roles role);
+	};
+
+	bool RoleBase::operator==(const RoleBase& r) const
+	{
+		return this->role == r.role;
+	}
+
+	bool RoleBase::operator!=(const RoleBase& r) const
+	{
+		return this->role != r.role;
+	}
+
+	std::string RoleBase::description() const
+	{
+		return RolesDescriptions.at(role);
+	}
+
+	/**
+	*	@brief RoleImpl is a templated class for concrete Role-s.
+	*	Its template parameter is an Roles enum value.
+	*/
+	template<Roles R>
+	class RoleImpl : public RoleBase
+	{
+	public:
+		RoleImpl();
+	};
+
+	template<Roles R>
+	RoleImpl<R>::RoleImpl() :
+	RoleBase(R)
+	{
+	}
+
+	typedef RoleImpl<Roles::Dispatcher> DispatcherRole;
+	typedef RoleImpl<Roles::FOperative> FOperativeRole;
+	typedef RoleImpl<Roles::Generalist> GeneralistRole;
+	typedef RoleImpl<Roles::Medic> MedicRole;
+	typedef RoleImpl<Roles::QSpecialist> QSpecialistRole;
+	typedef RoleImpl<Roles::Researcher> ResearcherRole;
+}
+
