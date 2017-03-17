@@ -2,6 +2,8 @@
 #include "PlayerBase.h"
 
 namespace pan{
+
+	std::shared_ptr<PlayerBase> player(Roles role, const std::string& name = "");
 	/**
 	*	@brief Concrete subclass of PlayerBase
 	*	The Player class accepts a template parameter which must be 

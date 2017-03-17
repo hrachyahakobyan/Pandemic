@@ -5,7 +5,7 @@
 namespace pan{
 
 	/**
-	*	@brief Abstracts away the save/load of the Game object.
+	*	@brief Abstracts away the save/load of game objects.
 	*	The details of the save/load, i.e. the filesystem, fileformat
 	*	will vary depending on the platform.
 	*	@author Hrachya Hakobyan

@@ -222,4 +222,20 @@ namespace pan{
 	{
 		return FileManager::getInstance().load(game, name, "save");
 	}
+
+	PlayerIndex Game::addRandomPlayer(const std::string& name)
+	{
+		if (playerCount() >= gameData.settings.playerCount)
+			return InvalidPlayerIndex;
+		std::vector<Roles> validRoles;
+		for (unsigned int i = 0; i < playerData.occupiedRoles.size(); i++){
+			if (!playerData.occupiedRoles[i]) validRoles.push_back(static_cast<Roles>(i));
+		}
+		if (validRoles.empty()) return InvalidPlayerIndex;
+		srand(static_cast<unsigned int>(time(NULL)));
+		Roles role = validRoles[(rand() % (int)(validRoles.size()))];
+		playerData.occupiedRoles[static_cast<std::underlying_type<Roles>::type>(role)] = true;
+		playerData.players.push_back(player(role, name));
+		return static_cast<PlayerIndex>(playerData.players.size() - 1);
+	}
 }

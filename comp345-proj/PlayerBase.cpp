@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "PlayerBase.h"
 #include "ReferenceCard.h"
+#include "Player.h"
 
 
 namespace pan{

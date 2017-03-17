@@ -118,7 +118,7 @@ namespace pan{
 	}
 
 	PlayerData::PlayerData() : 
-		occupiedRoles(RoleCount, false),
+		occupiedRoles(RolesDescriptions.size(), false),
 		stage(PlayerStage::Act),
 		turn(0),
 		actionCounter(0)

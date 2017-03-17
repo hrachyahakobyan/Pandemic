@@ -119,6 +119,15 @@ namespace pan
 		PlayerIndex addPlayer(const std::string& name = "");
 
 		/**
+		*	Adds a new player with a random role.
+		*	If all roles are occupied or if the maximum number of players is reached
+		*	will return InvalidPlayerIndex
+		*	@param name of the player
+		*	@return a unique index for the newly created players
+		*/
+		PlayerIndex addRandomPlayer(const std::string& name = "");
+
+		/**
 		*	Saves the game with given a save file name
 		*	@param name the name under which to save the game
 		*	@return true if the save was successful

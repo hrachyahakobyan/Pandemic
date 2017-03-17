@@ -8,7 +8,6 @@ namespace pan{
 	*/
 	enum class Roles : unsigned int{Medic = 0, Dispatcher, Generalist, 
 									Researcher, QSpecialist, FOperative, CPlanner};
-	static const int RoleCount = 6;
 	static const std::map<Roles, const char*> RolesDescriptions{
 		{ Roles::Dispatcher, "Dispatcher" },
 		{ Roles::FOperative, "Field Operative" },
