@@ -2,6 +2,8 @@
 
 namespace pan{
 	class Game;
+	class Outbreak;
+	class Infect;
 	/**
 	*	@brief Class containing the logic of validating and executing actions.
 	*	Directly connected to a Game object through a reference.
@@ -63,6 +65,12 @@ namespace pan{
 		*	@return true if the player is allowed to act
 		*/
 		void commitAction(PlayerIndex i);
+
+		/**
+		*
+		*/
+		bool outBreakImpl(const Outbreak& out, std::set<CityIndex>& infected);
+		bool infectImpl(const Infect& inf, std::set<CityIndex>& infected);
 	};
 }
 

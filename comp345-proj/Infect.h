@@ -22,10 +22,6 @@ namespace pan{
 		*	The disease type of the cubes
 		*/
 		DiseaseType diseaseType;
-		/**
-		*	Stores the cities which suffered an outbreaked caused by this infection.
-		*/
-		std::set<CityIndex> outbreakedCities;
 	};
 }
 

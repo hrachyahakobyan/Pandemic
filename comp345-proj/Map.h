@@ -155,6 +155,9 @@ namespace pan{
 		FRIEND_TEST(MapTest, serializes);
 		FRIEND_TEST(GameTest, serializes);
 		FRIEND_TEST(OutbreakTest, Test1);
+		FRIEND_TEST(OutbreakTest, Test2);
+		FRIEND_TEST(OutbreakTest, Test3);
+		FRIEND_TEST(GameplayTest, Test1);
 #endif
 #endif
 

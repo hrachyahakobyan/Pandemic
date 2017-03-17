@@ -533,54 +533,12 @@ namespace pan{
 
 	template<>
 	bool ActionHandler::execute<Outbreak>(const Outbreak& a){
-		if (!a.validate(*this)){
-			return false;
-		}
-		// The current city has already suffered an outbreak due to the same infection
-		if (a.infection.outbreakedCities.find(a.infection.city) != a.infection.outbreakedCities.end()){
-			return true;
-		}
-		// Check the outbreak marker
-		// If it is on max, the game is lost
-		if (game.gameData.outbreakMarker == game.gameData.settings.outbreakMarkerMax){
-			game.changeState(GameState::Defeat);
-			return true;
-		}
-		// Increase outbreak marker
-		game.gameData.outbreakMarker++;
-		// Otherwise, infect each neighbor
-		Map::ConnectedCityIterator ai, ai_end;
-		bool result = true;
-		for (boost::tie(ai, ai_end) = game.map.connectedCities(a.infection.city);
-			ai != ai_end; ++ai){
-			// Create a new infection whose target is the neighbor
-			Infect infect(*ai, a.infection.diseaseType, 1);
-			infect.outbreakedCities = a.infection.outbreakedCities;
-			// Add the currently outbreaked city to the set of outbreaked cities
-			// of the new infection
-			infect.outbreakedCities.insert(a.infection.city);
-			result = result && infect.execute(*this);
-		}
-		return result;
+		return outBreakImpl(a, std::set<CityIndex>());
 	}
 
-	template<>
-	bool ActionHandler::validate<Infect>(const Infect& a) const{
-		// Check the valid number of cubes
-		if (!(a.cubes > 0 && a.cubes < 4))
-			return false;
-		// A city cannot receive more than 1 cube of a disease that is different from the city's
-		// region
-		// Different diseases
-		if (game.map.regionForCity(a.city) != a.diseaseType){
-			if (a.cubes != 1)
-				return false;
-		}
-		return true;
-	}
 
-	template<>
-	bool ActionHandler::execute<Infect>(const Infect& a){
+	bool ActionHandler::infectImpl(const Infect& a, std::set<CityIndex>& outbreakedCities)
+	{
 		if (!a.validate(*this)){
 			return false;
 		}
@@ -613,9 +571,61 @@ namespace pan{
 		// Outbreak if there city took less cubes than it should have
 		if (willTake < a.cubes){
 			Outbreak out(a);
-			return out.execute(*this);
+			return outBreakImpl(out, outbreakedCities);
 		}
 		return true;
+	}
+
+	bool ActionHandler::outBreakImpl(const Outbreak& a, std::set<CityIndex>& outbreakedCities)
+	{
+		if (!a.validate(*this)){
+			return false;
+		}
+		// The current city has already suffered an outbreak due to the same infection
+		if (outbreakedCities.find(a.infection.city) != outbreakedCities.end()){
+			return true;
+		}
+		// Check the outbreak marker
+		// If it is on max, the game is lost
+		if (game.gameData.outbreakMarker == game.gameData.settings.outbreakMarkerMax){
+			game.changeState(GameState::Defeat);
+			return true;
+		}
+		// Increase outbreak marker
+		game.gameData.outbreakMarker++;
+		// Otherwise, infect each neighbor
+		Map::ConnectedCityIterator ai, ai_end;
+		bool result = true;
+		for (boost::tie(ai, ai_end) = game.map.connectedCities(a.infection.city);
+			ai != ai_end; ++ai){
+			// Create a new infection whose target is the neighbor
+			Infect infect(*ai, a.infection.diseaseType, 1);
+			// Add the currently outbreaked city to the set of outbreaked cities
+			// of the new infection
+			outbreakedCities.insert(a.infection.city);
+			result = result && infectImpl(infect, outbreakedCities);
+		}
+		return result;
+	}
+
+	template<>
+	bool ActionHandler::validate<Infect>(const Infect& a) const{
+		// Check the valid number of cubes
+		if (!(a.cubes > 0 && a.cubes < 4))
+			return false;
+		// A city cannot receive more than 1 cube of a disease that is different from the city's
+		// region
+		// Different diseases
+		if (game.map.regionForCity(a.city) != a.diseaseType){
+			if (a.cubes != 1)
+				return false;
+		}
+		return true;
+	}
+
+	template<>
+	bool ActionHandler::execute<Infect>(const Infect& a){
+		return infectImpl(a, std::set<CityIndex>());
 	}
 
 	template<>
