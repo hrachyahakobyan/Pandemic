@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="13">
+<object class_id="14" tracking_level="0" version="0">
+	<container class_id="15" tracking_level="0" version="0">
+		<V>2</V>
+		<E>2</E>
+		<vertex_property class_id="16" tracking_level="0" version="0">
+			<property_value class_id="17" tracking_level="0" version="0">
+				<index>0</index>
+				<name>0</name>
+				<intVec>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>1</item>
+					<item>2</item>
+					<item>3</item>
+					<item>4</item>
+				</intVec>
+				<someBool>1</someBool>
+			</property_value>
+			<property_base class_id="19" tracking_level="0" version="0"></property_base>
+		</vertex_property>
+		<vertex_property>
+			<property_value>
+				<index>1</index>
+				<name>1</name>
+				<intVec>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>-1</item>
+					<item>-10</item>
+					<item>0</item>
+				</intVec>
+				<someBool>1</someBool>
+			</property_value>
+			<property_base></property_base>
+		</vertex_property>
+		<u>0</u>
+		<v>1</v>
+		<edge_property></edge_property>
+		<u>0</u>
+		<v>0</v>
+		<edge_property></edge_property>
+		<graph_property></graph_property>
+	</container>
+</object>

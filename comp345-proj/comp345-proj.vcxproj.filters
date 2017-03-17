@@ -60,9 +60,6 @@
     <ClInclude Include="detail\Factory.h">
       <Filter>Header Files\detail</Filter>
     </ClInclude>
-    <ClInclude Include="SaveLoadManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -177,6 +174,9 @@
     <ClInclude Include="Core.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -190,9 +190,6 @@
     </ClCompile>
     <ClCompile Include="detail\Factory.cpp">
       <Filter>Source Files\detail</Filter>
-    </ClCompile>
-    <ClCompile Include="SaveLoadManager.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
@@ -292,6 +289,9 @@
     </ClCompile>
     <ClCompile Include="PlayerInfect.cpp">
       <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -142,6 +142,8 @@ namespace pan{
 		 std::set<CityIndex> regionCities(RegionIndex index) const;
 		
 	private:
+		static Map panMap;
+
 #ifdef _DEBUG
 #ifndef DISABLE_TESTS
 		friend class MapTest;

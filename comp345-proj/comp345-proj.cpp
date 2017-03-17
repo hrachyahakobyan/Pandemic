@@ -2,9 +2,12 @@
 //
 
 #include "stdafx.h"
+#include "Game.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	using namespace pan;
+	Map::pandemicMap();
 	return 0;
 }
 

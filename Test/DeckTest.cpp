@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "DeckTest.h"
+#include  <core/FileManager.h>
 
 namespace pan{
 	namespace detail{
@@ -86,21 +87,11 @@ namespace pan{
 			Deck<int> deck;
 			for (int i = 0; i < 100; i++) deck.push(i);
 
-			std::string filename("temp/DeckSerialization.xml");
-			std::ofstream ofs(filename.c_str());
-			ASSERT_TRUE(ofs.good());
-			boost::archive::xml_oarchive oa(ofs);
-			oa.template register_type<detail::Deck<int>>();
-			ASSERT_NO_THROW(oa << boost::serialization::make_nvp("Deck", deck));
-			ofs.close();
-
+			ASSERT_TRUE(FileManager::getInstance().save(deck, "DeckSerialization.xml", "temp", true));
 			Deck<int> deckNew;
-			std::ifstream ifs(filename.c_str());
-			ASSERT_TRUE(ifs.good());
-			boost::archive::xml_iarchive ia(ifs);
-			ia.template register_type<detail::Deck<int>>();
-			ASSERT_NO_THROW(ia >> boost::serialization::make_nvp("Deck", deckNew));
-			ifs.close();
+			ASSERT_TRUE(FileManager::getInstance().load(deckNew, "DeckSerialization.xml", "temp"));
+			
+
 			ASSERT_TRUE(deckNew == deck);
 		}
 	}

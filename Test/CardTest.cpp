@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "CardTest.h"
-
+#include <core/FileManager.h>
 namespace pan{
+
+
 	TEST_F(CardTest, compares)
 	{
 		using namespace pan;
@@ -57,25 +59,13 @@ namespace pan{
 		cards.push_back(std::make_shared<EventCard>(EventType::Airlift));
 		cards.push_back(std::make_shared<EventCard>(EventType::GovGrant));
 
-		std::string filename("temp/CardSerialization.xml");
-		std::ofstream ofs(filename.c_str());
-		ASSERT_TRUE(ofs.good());
-		boost::archive::xml_oarchive oa(ofs);
-		registerTypes(oa);
-		ASSERT_NO_THROW(oa << boost::serialization::make_nvp("Cards", cards));
-		ofs.close();
-
+		ASSERT_TRUE(FileManager::getInstance().save(cards, "CardSerialization.xml", "temp", true));
 		std::vector<std::shared_ptr<CardBase>> newCards;
-		std::ifstream ifs(filename.c_str());
-		ASSERT_TRUE(ifs.good());
-		boost::archive::xml_iarchive ia(ifs);
-		registerTypes(ia);
-		ASSERT_NO_THROW(ia >> boost::serialization::make_nvp("Cards", newCards));
-		ifs.close();
+		ASSERT_TRUE(FileManager::getInstance().load(newCards, "CardSerialization.xml", "temp"));
 
 		ASSERT_EQ(cards.size(), newCards.size());
-		//for (std::size_t i = 0; i < cards.size(); i++){
-		//		ASSERT_EQ(*cards[i], *newCards[i]);
-		//}
+		for (std::size_t i = 0; i < cards.size(); i++){
+				ASSERT_EQ(*cards[i], *newCards[i]);
+		}
 	}
 }

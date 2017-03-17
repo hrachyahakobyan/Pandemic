@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "GraphTest.h"
+#include <core/FileManager.h>
 
 namespace pan{
 	namespace detail{
@@ -190,10 +191,7 @@ namespace pan{
 		*/
 		TEST_F(GraphTest, serializes){
 			using namespace detail;
-			std::string filename("temp/GraphSerialization.xml");
-			std::ofstream ofs(filename.c_str());
-			ASSERT_TRUE(ofs.good());
-			boost::archive::xml_oarchive oa(ofs);
+
 			Graph<Node> gInitial;
 			Node n1(0, "0");
 			Node n2(1, "1");
@@ -203,16 +201,10 @@ namespace pan{
 			auto n2Index = gInitial.addVertex(n2);
 			gInitial.addEdge(n1Index, n2Index);
 			gInitial.addEdge(n1Index, n1Index);
-			oa << boost::serialization::make_nvp("Graph", gInitial);
-			ofs.close();
 
+			ASSERT_TRUE(FileManager::getInstance().save(gInitial, "GraphSerialization.xml", "temp", true));
 			Graph<Node> gNew;;
-			std::ifstream ifs(filename.c_str());
-			ASSERT_TRUE(ifs.good());
-			boost::archive::xml_iarchive ia(ifs);
-			ia >> boost::serialization::make_nvp("Graph", gNew);
-			ifs.close();
-
+			ASSERT_TRUE(FileManager::getInstance().load(gNew, "GraphSerialization.xml", "temp"));
 			ASSERT_EQ(gInitial, gNew);
 		}
 	}

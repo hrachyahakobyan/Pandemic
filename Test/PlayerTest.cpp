@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "PlayerTest.h"
+#include <core/FileManager.h>
 
 namespace pan{
 	/**
@@ -59,21 +60,10 @@ namespace pan{
 		medic->cards.push(std::shared_ptr<CardBase>(new CityCard(1)));
 		medic->cards.push(std::shared_ptr<CardBase>(new EventCard(EventType::GovGrant)));
 
-		std::string filename("temp/PlayerSerialization.xml");
-		std::ofstream ofs(filename.c_str());
-		ASSERT_TRUE(ofs.good());
-		boost::archive::xml_oarchive oa(ofs);
-		registerTypes(oa);
-		ASSERT_NO_THROW(oa << boost::serialization::make_nvp("Player", medic));
-		ofs.close();
+		ASSERT_TRUE(FileManager::getInstance().save(medic, "PlayerSerialization.xml", "temp", true));
 
 		PlayerBase* newPlayer = nullptr;
-		std::ifstream ifs(filename.c_str());
-		ASSERT_TRUE(ifs.good());
-		boost::archive::xml_iarchive ia(ifs);
-		registerTypes(ia);
-		ia >> boost::serialization::make_nvp("Player", newPlayer);
-		ifs.close();
+		ASSERT_TRUE(FileManager::getInstance().load(newPlayer, "PlayerSerialization.xml", "temp"));
 		ASSERT_TRUE(newPlayer != nullptr);
 		ASSERT_TRUE(*medic == (*newPlayer));
 		delete newPlayer;
@@ -101,22 +91,10 @@ namespace pan{
 		players[2]->cards.push(std::shared_ptr<CardBase>(new EventCard(EventType::Forecast)));
 		players[3]->cards.push(std::shared_ptr<CardBase>(new EventCard(EventType::OneQuietNight)));
 
-		std::string filename("temp/PlayerSerialization2.xml");
-		std::ofstream ofs(filename.c_str());
-		ASSERT_TRUE(ofs.good());
-		boost::archive::xml_oarchive oa(ofs);
-		registerTypes(oa);
-		ASSERT_NO_THROW(oa << boost::serialization::make_nvp("Players", players));
-		ofs.close();
-
+		ASSERT_TRUE(FileManager::getInstance().save(players, "PlayerSerializationContainer.xml", "temp", true));
 		std::vector<std::shared_ptr<PlayerBase>> newPlayers;
-		std::ifstream ifs(filename.c_str());
-		ASSERT_TRUE(ifs.good());
-		boost::archive::xml_iarchive ia(ifs);
-		registerTypes(ia);
-		ASSERT_NO_THROW(ia >> boost::serialization::make_nvp("Players", newPlayers));
-		ifs.close();
-		
+		ASSERT_TRUE(FileManager::getInstance().load(newPlayers, "PlayerSerializationContainer.xml", "temp"));
+
 		ASSERT_EQ(players.size(), newPlayers.size());
 		for (std::size_t i = 0; i < players.size(); i++){
 			ASSERT_EQ(*players[i], *newPlayers[i]);

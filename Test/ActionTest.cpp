@@ -116,7 +116,7 @@ namespace pan{
 		ASSERT_FALSE(m.execute(g.actionHandler));
 
 		// Valid move. Moving to a neigbor city
-		city = static_cast<CityIndex>(1);
+		city = getNeighbor(p.getLocation(), g.map);
 		EXPECT_TRUE(g.map.connectionExists(city, p.getLocation()));
 
 		m.targetCity = city;
@@ -141,13 +141,13 @@ namespace pan{
 		ASSERT_FALSE(b.execute(g.actionHandler));
 
 		// Move to a city with no research station
-		Move m(p1Index, 1);
+		Move m(p1Index, getNeighbor(p.getLocation(), g.map));
 		EXPECT_TRUE(m.execute(g.actionHandler));
 		// Cannot build because does not have a matching card
 		ASSERT_FALSE(b.execute(g.actionHandler));
 
 		// Add the required card
-		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(1)));
+		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(p.getLocation())));
 		g.gameData.researchStations = g.gameData.settings.maxResearchStations;
 		// Cannot build since no more research stations can be built
 		ASSERT_FALSE(b.execute(g.actionHandler));
@@ -163,5 +163,16 @@ namespace pan{
 		ASSERT_EQ(g.gameData.researchStations, 2);
 		ASSERT_EQ(p.getCards().size(), playerCardSizeBefore - 1);
 		ASSERT_EQ(g.deckData.playerDiscardDeck.size(), discardSizeBfore + 1);
+	}
+
+
+	pan::CityIndex ActionTest::getNeighbor(CityIndex i, const pan::Map& m) const
+	{
+		Map::ConnectedCityIterator ai, ai_end;
+		for (boost::tie(ai, ai_end) = game.map.connectedCities(i);  ai != ai_end; ++ai){
+			return *ai;
+		}
+		// return invalid index 
+		return m.numCities() + 1;
 	}
 }

@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "Map.h"
+#include "FileManager.h"
 
 namespace pan{
+	Map Map::panMap;
 
 	Map::Map()
 	{
@@ -172,64 +174,71 @@ namespace pan{
 
 	Map Map::pandemicMap()
 	{
-		Map m;
+		static bool load;
+		if (!load){
+			FileManager::getInstance().load(panMap, "pandemic_map.xml", "resources");
+		}
+		load = true;
+		return panMap;
+
+		/*
 		RegionIndex regionBlue = 0;
 		RegionIndex regionYellow = m.addRegion();
 		RegionIndex regionBlack = m.addRegion();
 		RegionIndex regionRed = m.addRegion();
 
 		// City name and population
-		auto iAtlanta = m.addCity(regionBlue, City("Atlanta", 447841));
-		auto iChicago = m.addCity(regionBlue, City("Chicago", 2719000));
-		auto iEssen = m.addCity(regionBlue, City("Essen", 566862));
-		auto iLondon = m.addCity(regionBlue, City("London", 8674000));
-		auto iMadrid = m.addCity(regionBlue, City("Madrid", 3165000));
-		auto iMilan = m.addCity(regionBlue, City("Milan", 1251000));
-		auto iMontreal = m.addCity(regionBlue, City("Montreal", 1650000));
-		auto iNewYork = m.addCity(regionBlue, City("NewYork", 8406000));
-		auto iParis = m.addCity(regionBlue, City("Paris", 2244000));
-		auto iSanFrancisco = m.addCity(regionBlue, City("SanFrancisco", 837442));
-		auto iStPetersburg = m.addCity(regionBlue, City("StPetersburg", 4991000));
-		auto iWashington = m.addCity(regionBlue, City("Washington", 7062000));
+		auto iAtlanta = m.addCity(regionBlue, City("Atlanta", 447841, 0.239, 0.435));
+		auto iSanFrancisco = m.addCity(regionBlue, City("San Francisco", 837442, 0.144, 0.439));
+		auto iChicago = m.addCity(regionBlue, City("Chicago", 2719000, 0.236, 0.376));
+		auto iMontreal = m.addCity(regionBlue, City("Montreal", 1650000, 0.297, 0.375));
+		auto iNewYork = m.addCity(regionBlue, City("New York", 8406000, 0.287, 0.410));
+		auto iWashington = m.addCity(regionBlue, City("Washington", 658893, 0.273, 0.415));
+		auto iLondon = m.addCity(regionBlue, City("London", 8674000, 0.474, 0.363));
+		auto iMadrid = m.addCity(regionBlue, City("Madrid", 3615000, 0.467, 0.424));
+		auto iParis = m.addCity(regionBlue, City("Paris", 2244000, 0.487, 0.375));
+		auto iEssen = m.addCity(regionBlue, City("Essen", 566862, 0.499, 0.359));
+		auto iMilan = m.addCity(regionBlue, City("Milan", 1251000, 0.502, 0.395));
+		auto iStPetersburg = m.addCity(regionBlue, City("Saint-Petersburg", 4991000, 0.551, 0.304));
 
-		auto iAlgiers = m.addCity(regionBlack, City("Algiers", 3416000));
-		auto iBaghdad = m.addCity(regionBlack, City("Baghdad", 7665000));
-		auto iCairo = m.addCity(regionBlack, City("Cairo", 9120000));
-		auto iChennai = m.addCity(regionBlack, City("Chennai", 7088000));
-		auto iDelhi = m.addCity(regionBlack, City("Delhi", 18980000));
-		auto iIstanbul = m.addCity(regionBlack, City("Istanbul", 14800000));
-		auto iKarachi = m.addCity(regionBlack, City("Karachi", 25300000));
-		auto iKolkata = m.addCity(regionBlack, City("Kolkata", 4497000));
-		auto iMoscow = m.addCity(regionBlack, City("Moscow", 11920000));
-		auto iMumbai = m.addCity(regionBlack, City("Mumbai", 18410000));
-		auto iRiyadh = m.addCity(regionBlack, City("Riyadh", 8000000));
-		auto iTehran = m.addCity(regionBlack, City("Tehran", 8154000));
+		auto iAlgiers = m.addCity(regionBlack, City("Algiers", 3416000, 0.488, 0.442));
+		auto iBaghdad = m.addCity(regionBlack, City("Baghdad", 7665000, 0.602, 0.477));
+		auto iCairo = m.addCity(regionBlack, City("Cairo", 9120000, 0.558, 0.475));
+		auto iChennai = m.addCity(regionBlack, City("Chennai", 7088000, 0.706, 0.552));
+		auto iDelhi = m.addCity(regionBlack, City("Delhi", 18980000, 0.701, 0.488));
+		auto iIstanbul = m.addCity(regionBlack, City("Istanbul", 14800000, 0.557, 0.419));
+		auto iKarachi = m.addCity(regionBlack, City("Karachi", 25300000, 0.671, 0.504));
+		auto iKolkata = m.addCity(regionBlack, City("Kolkata", 4497000, 0.731, 0.513));
+		auto iMoscow = m.addCity(regionBlack, City("Moscow", 11920000, 0.571, 0.328));
+		auto iMumbai = m.addCity(regionBlack, City("Mumbai", 18410000, 0.691, 0.533));
+		auto iRiyadh = m.addCity(regionBlack, City("Riyadh", 8000000, 0.607, 0.497));
+		auto iTehran = m.addCity(regionBlack, City("Tehran", 8154000, 0.618, 0.442));
 
-		auto iBogota = m.addCity(regionYellow, City("Bogota", 8081000));
-		auto iBuenosAries = m.addCity(regionYellow, City("BuenosAries", 2891000));
-		auto iJohannesburg = m.addCity(regionYellow, City("Johannesburg", 4435000));
-		auto iKhartoum = m.addCity(regionYellow, City("Khartoum", 5185000));
-		auto iKinshasa = m.addCity(regionYellow, City("Kinshasa", 10120000));
-		auto iLagos = m.addCity(regionYellow, City("Lagos", 21000000));
-		auto iLima = m.addCity(regionYellow, City("Lima", 8473000));
-		auto iLosAngeles = m.addCity(regionYellow, City("LosAngeles", 3884000));
-		auto iMexicoCity = m.addCity(regionYellow, City("MexicoCity", 8851000));
-		auto iMiami = m.addCity(regionYellow, City("Miami", 417650));
-		auto iSantiago = m.addCity(regionYellow, City("Santiago", 5128000));
-		auto iSaoPaulo = m.addCity(regionYellow, City("SaoPaulo", 12040000));
+		auto iLosAngeles = m.addCity(regionYellow, City("Los Angeles", 3884000, 0.155, 0.450));
+		auto iMexicoCity = m.addCity(regionYellow, City("Mexico City", 8851000, 0.196, 0.521));
+		auto iMiami = m.addCity(regionYellow, City("Miami", 417650, 0.250, 0.494));
+		auto iBogota = m.addCity(regionYellow, City("Bogota", 8081000, 0.275, 0.6));
+		auto iLima = m.addCity(regionYellow, City("Lima", 8473000, 0.264, 0.675));
+		auto iSantiago = m.addCity(regionYellow, City("Santiago", 5128000, 0.287, 0.769));
+		auto iBuenosAries = m.addCity(regionYellow, City("Buenos Aires", 2891000, 0.324, 0.783));
+		auto iSaoPaulo = m.addCity(regionYellow, City("Sao Pauolo", 12040000, 0.356, 0.724));
+		auto iLagos = m.addCity(regionYellow, City("Lagos", 21000000, 0.484, 0.587));
+		auto iKinshasa = m.addCity(regionYellow, City("Kinshasa", 10120000, 0.527, 0.635));
+		auto iJohannesburg = m.addCity(regionYellow, City("Johannesburg", 4435000, 0.552, 0.745));
+		auto iKhartoum = m.addCity(regionYellow, City("Khartoum", 5185000, 0.570, 0.545));
 
-		auto iBangkok = m.addCity(regionRed, City("Bangkok", 8281000));
-		auto iBeijing = m.addCity(regionRed, City("Beijing", 21500000));
+		auto iBangkok = m.addCity(regionRed, City("Bangkok", 8281000, 0.773, 0.556));
+		auto iBeijing = m.addCity(regionRed, City("Beijing", 21500000, 0.792, 0.403));
 		auto iHoChiMinhCity = m.addCity(regionRed, City("HoChiMinhCity", 8426000));
-		auto iHongKong = m.addCity(regionRed, City("HongKong", 7188000));
-		auto iJakarta = m.addCity(regionRed, City("Jakarta", 9608000));
-		auto iManila = m.addCity(regionRed, City("Manila", 1652000));
-		auto iOsaka = m.addCity(regionRed, City("Osaka", 2665000));
-		auto iSeoul = m.addCity(regionRed, City("Seoul", 10010000));
-		auto iShanghai = m.addCity(regionRed, City("Shanghai", 24150000));
-		auto iSydney = m.addCity(regionRed, City("Sydney", 4293000));
-		auto iTaipei = m.addCity(regionRed, City("Taipei", 2705000));
-		auto iTokyo = m.addCity(regionRed, City("Tokyo", 13620000));
+		auto iHongKong = m.addCity(regionRed, City("HongKong", 7188000, 0.800, 0.502));
+		auto iJakarta = m.addCity(regionRed, City("Jakarta", 9608000, 0.792, 0.645));
+		auto iManila = m.addCity(regionRed, City("Manila", 1652000, 0.824, 0.550));
+		auto iOsaka = m.addCity(regionRed, City("Osaka", 2665000, 0.853, 0.434));
+		auto iSeoul = m.addCity(regionRed, City("Seoul", 10010000, 0.829, 0.420));
+		auto iShanghai = m.addCity(regionRed, City("Shanghai", 24150000, 0.818, 0.461));
+		auto iSydney = m.addCity(regionRed, City("Sydney", 4293000, 0.907, 0.775));
+		auto iTaipei = m.addCity(regionRed, City("Taipei", 2705000, 0.819, 0.495));
+		auto iTokyo = m.addCity(regionRed, City("Tokyo", 13620000, 0.864, 0.427));
 
 		// Connect cities.
 		m.addConnection(iAtlanta, iChicago);
@@ -324,6 +333,8 @@ namespace pan{
 		m.addConnection(iSydney, iJakarta);
 		m.addConnection(iSydney, iLosAngeles);
 
-		return m;
+		auto b = SaveLoadManager::getInstance().save(m, pandemicMapPath);
+
+		return m*/;
 	}
 }

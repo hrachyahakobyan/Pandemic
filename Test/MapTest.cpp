@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "MapTest.h"
+#include <core/FileManager.h>
 
 namespace pan{
 	/**
@@ -198,20 +199,9 @@ namespace pan{
 		m.addCityToRegion(mv1, mr1);
 		m.addCityToRegion(mv2, mr2);
 
-		std::string filename("temp/MapSerialization.xml");
-		std::ofstream ofs(filename.c_str());
-		ASSERT_TRUE(ofs.good());
-		boost::archive::xml_oarchive oa(ofs);
-		ASSERT_NO_THROW(oa << boost::serialization::make_nvp("Map", m));
-		ofs.close();
-	
-
+		ASSERT_TRUE(FileManager::getInstance().save(m, "MapSerialization.xml", "temp", true));
 		Map mNew;
-		std::ifstream ifs(filename.c_str());
-		ASSERT_TRUE(ifs.good());
-		boost::archive::xml_iarchive ia(ifs);
-		ASSERT_NO_THROW(ia >> boost::serialization::make_nvp("Map", mNew));
-		ifs.close();
+		ASSERT_TRUE(FileManager::getInstance().load(mNew, "MapSerialization.xml", "temp"));
 		ASSERT_TRUE(mNew == m);
 	}
 

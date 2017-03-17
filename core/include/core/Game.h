@@ -7,14 +7,6 @@
 namespace pan
 {
 	/**
-	*	@brief struct to store save file metadata.
-	*	@author Hrachya Hakobyan
-	*/
-	struct SaveFile{
-		std::string filename;
-	};
-
-	/**
 	*	@brief Game entity which is responsible for
 	*	connecting different pieces of the game logic together.
 	*	@author Hrachya Hakobyan
@@ -38,7 +30,7 @@ namespace pan
 		*	@param game the object to where the game will be loaded
 		*	@return true if the load was successful.
 		*/
-		static bool load(const SaveFile& file, Game& game);
+		static bool load(const std::string& file, Game& game);
 
 		bool operator==(const Game&) const;
 		inline bool operator!=(const Game&) const;

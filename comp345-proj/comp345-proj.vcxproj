@@ -17,7 +17,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -61,6 +61,9 @@
       <AdditionalLibraryDirectories>$(SolutionDir)/gtest/lib/msvc13/Debug;C:\boost\boost_1_59_0\lib32-msvc-12.0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)\Debug\comp345-proj.lib" "$(SolutionDir)\core\lib" /s /i /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -108,6 +111,7 @@
     <ClInclude Include="Epidemic.h" />
     <ClInclude Include="EpidemicCard.h" />
     <ClInclude Include="EventCard.h" />
+    <ClInclude Include="FileManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Infect.h" />
     <ClInclude Include="InfectionCard.h" />
@@ -122,7 +126,6 @@
     <ClInclude Include="ReferenceCard.h" />
     <ClInclude Include="Region.h" />
     <ClInclude Include="Role.h" />
-    <ClInclude Include="SaveLoadManager.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="ShuttleFlight.h" />
     <ClInclude Include="stdafx.h" />
@@ -150,6 +153,7 @@
     <ClCompile Include="Epidemic.cpp" />
     <ClCompile Include="EpidemicCard.cpp" />
     <ClCompile Include="EventCard.cpp" />
+    <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Infect.cpp" />
     <ClCompile Include="InfectionCard.cpp" />
@@ -163,7 +167,6 @@
     <ClCompile Include="ReferenceCard.cpp" />
     <ClCompile Include="Region.cpp" />
     <ClCompile Include="Role.cpp" />
-    <ClCompile Include="SaveLoadManager.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="ShuttleFlight.cpp" />
     <ClCompile Include="stdafx.cpp">

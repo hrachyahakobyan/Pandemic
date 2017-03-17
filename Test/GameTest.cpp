@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "GameTest.h"
-
+#include <core/FileManager.h>
 
 namespace pan{
 	GameTest::GameTest()
@@ -105,22 +105,9 @@ namespace pan{
 		game.addPlayer<Roles::Medic>("Player");
 		game.addPlayer<Roles::Dispatcher>("Player");
 		EXPECT_TRUE(game.initialize());
-
-		std::string filename("temp/GameSerialization.xml");
-		std::ofstream ofs(filename.c_str());
-		ASSERT_TRUE(ofs.good());
-		boost::archive::xml_oarchive oa(ofs);
-		registerTypes(oa);
-		ASSERT_NO_THROW(oa << boost::serialization::make_nvp("Game", game));
-		ofs.close();
-
+		ASSERT_TRUE(FileManager::getInstance().save(game, "GameSerialization.xml", "temp", true));
 		Game newGame;
-		std::ifstream ifs(filename.c_str());
-		ASSERT_TRUE(ifs.good());
-		boost::archive::xml_iarchive ia(ifs);
-		registerTypes(ia);
-		ASSERT_NO_THROW(ia >> boost::serialization::make_nvp("Game", newGame));
-		ifs.close();
+		ASSERT_TRUE(FileManager::getInstance().load(newGame, "GameSerialization.xml", "temp"));
 		ASSERT_TRUE(game == newGame);
 	}
 

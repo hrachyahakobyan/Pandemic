@@ -5,7 +5,7 @@
 #include "InfectionCard.h"
 #include "EventCard.h"
 #include "Infect.h"
-#include "SaveLoadManager.h"
+#include "FileManager.h"
 
 namespace pan{
 
@@ -215,11 +215,11 @@ namespace pan{
 
 	bool Game::save(const std::string& name) const
 	{
-		return SaveLoadManager::getInstance().save(*this, name);
+		return FileManager::getInstance().save(*this, name, "save");
 	}
 
-	bool Game::load(const SaveFile& file, Game& game)
+	bool Game::load(const std::string& name, Game& game)
 	{
-		return SaveLoadManager::getInstance().load(file, game);
+		return FileManager::getInstance().load(game, name, "save");
 	}
 }

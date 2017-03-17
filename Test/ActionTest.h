@@ -17,6 +17,8 @@ namespace pan{
 				game.gameData.diseaseCubes.push_back(game.gameData.settings.diseaseCubesPerDisease);
 			}
 		}
+
+		pan::CityIndex getNeighbor(CityIndex i, const pan::Map& m) const;
 	};
 }
 
