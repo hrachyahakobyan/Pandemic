@@ -1,0 +1,85 @@
+\hypertarget{classpan_1_1_object}{}\section{pan\+:\+:Object Class Reference}
+\label{classpan_1_1_object}\index{pan\+::\+Object@{pan\+::\+Object}}
+
+
+Abstract parent class to all entities directly connected with the game state that have to be serialized.  
+
+
+
+
+{\ttfamily \#include $<$Object.\+h$>$}
+
+Inheritance diagram for pan\+:\+:Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{classpan_1_1_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpan_1_1_object_a2ee7680fdf1f046d5f6f4a8bd5529725}{Object} ()
+\item 
+virtual \hyperlink{classpan_1_1_object_a88ddecef476f026deda410f3b95fe9ca}{$\sim$\+Object} ()
+\item 
+virtual std\+::string \hyperlink{classpan_1_1_object_a2bb6d3117bb32f5774657c83f118ed8b}{description} () const =0
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{classpan_1_1_object_aa69aa8f0aaf6b5b1cd8cd574a00b5b56}{serialize} (Archive \&ar, const unsigned int)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpan_1_1_object_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract parent class to all entities directly connected with the game state that have to be serialized. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpan_1_1_object_a2ee7680fdf1f046d5f6f4a8bd5529725}\label{classpan_1_1_object_a2ee7680fdf1f046d5f6f4a8bd5529725}} 
+\index{pan\+::\+Object@{pan\+::\+Object}!Object@{Object}}
+\index{Object@{Object}!pan\+::\+Object@{pan\+::\+Object}}
+\subsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily pan\+::\+Object\+::\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1_object_a88ddecef476f026deda410f3b95fe9ca}\label{classpan_1_1_object_a88ddecef476f026deda410f3b95fe9ca}} 
+\index{pan\+::\+Object@{pan\+::\+Object}!````~Object@{$\sim$\+Object}}
+\index{````~Object@{$\sim$\+Object}!pan\+::\+Object@{pan\+::\+Object}}
+\subsubsection{\texorpdfstring{$\sim$\+Object()}{~Object()}}
+{\footnotesize\ttfamily virtual pan\+::\+Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpan_1_1_object_a2bb6d3117bb32f5774657c83f118ed8b}\label{classpan_1_1_object_a2bb6d3117bb32f5774657c83f118ed8b}} 
+\index{pan\+::\+Object@{pan\+::\+Object}!description@{description}}
+\index{description@{description}!pan\+::\+Object@{pan\+::\+Object}}
+\subsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily virtual std\+::string pan\+::\+Object\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classpan_1_1_game_a463480ea3f29b34629059134c416ffa0}{pan\+::\+Game}, \hyperlink{classpan_1_1_settings_ac88db54a696993babc9c495d54fc89c3}{pan\+::\+Settings}, \hyperlink{classpan_1_1_map_a9d08be170f445bbef11ea0d38ba8c531}{pan\+::\+Map}, \hyperlink{classpan_1_1_role_base_a6f4774e52750478d865c4627fc4d4460}{pan\+::\+Role\+Base}, \hyperlink{classpan_1_1_card_impl_3_01_card_type_1_1_event_01_4_aa5c7d2729e0bfb141a0d8487a590a580}{pan\+::\+Card\+Impl$<$ Card\+Type\+::\+Event $>$}, \hyperlink{classpan_1_1_card_base_ad004c502404a958eaf4ecae7e73cc8cf}{pan\+::\+Card\+Base}, \hyperlink{classpan_1_1_player_base_a9b3e10457a0d749d97d91b6461882ac6}{pan\+::\+Player\+Base}, \hyperlink{classpan_1_1_city_a0232df988764b10f50570e335e8237c2}{pan\+::\+City}, \hyperlink{classpan_1_1_disease_a56ea3e8918baf355ad2d1aa253fd9f65}{pan\+::\+Disease}, \hyperlink{classpan_1_1_card_impl_3_01_card_type_1_1_city_01_4_a326c3eaac225bd758f19abb152deffe4}{pan\+::\+Card\+Impl$<$ Card\+Type\+::\+City $>$}, \hyperlink{classpan_1_1_card_impl_3_01_card_type_1_1_infection_01_4_a5e31904120b655ce59633433a4d4c17c}{pan\+::\+Card\+Impl$<$ Card\+Type\+::\+Infection $>$}, and \hyperlink{classpan_1_1_region_abc67a788365510bfad231939713106cb}{pan\+::\+Region}.
+
+\mbox{\Hypertarget{classpan_1_1_object_aa69aa8f0aaf6b5b1cd8cd574a00b5b56}\label{classpan_1_1_object_aa69aa8f0aaf6b5b1cd8cd574a00b5b56}} 
+\index{pan\+::\+Object@{pan\+::\+Object}!serialize@{serialize}}
+\index{serialize@{serialize}!pan\+::\+Object@{pan\+::\+Object}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void pan\+::\+Object\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned}]{int }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classpan_1_1_object_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classpan_1_1_object_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{pan\+::\+Object@{pan\+::\+Object}!boost\+::serialization\+::access@{boost\+::serialization\+::access}}
+\index{boost\+::serialization\+::access@{boost\+::serialization\+::access}!pan\+::\+Object@{pan\+::\+Object}}
+\subsubsection{\texorpdfstring{boost\+::serialization\+::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_object_8h}{Object.\+h}\end{DoxyCompactItemize}

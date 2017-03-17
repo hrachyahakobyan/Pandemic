@@ -1,0 +1,50 @@
+\hypertarget{_data_8h}{}\section{Data.\+h File Reference}
+\label{_data_8h}\index{Data.\+h@{Data.\+h}}
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Disease.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}detail\textbackslash{}\+Deck.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Role.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Card.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Infection\+Card.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpan_1_1_game_data}{pan\+::\+Game\+Data}
+\begin{DoxyCompactList}\small\item\em container for game related data \end{DoxyCompactList}\item 
+struct \hyperlink{structpan_1_1_player_data}{pan\+::\+Player\+Data}
+\begin{DoxyCompactList}\small\item\em container for player related data \end{DoxyCompactList}\item 
+struct \hyperlink{structpan_1_1_deck_data}{pan\+::\+Deck\+Data}
+\begin{DoxyCompactList}\small\item\em container for card related data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacepan}{pan}
+\item 
+ \hyperlink{namespaceboost}{boost}
+\item 
+ \hyperlink{namespaceboost_1_1serialization}{boost\+::serialization}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespacepan_a6f99370eda3b27c2bbe19b2dacea9212}{pan\+::\+Game\+State} \+: unsigned int \{ \hyperlink{namespacepan_a6f99370eda3b27c2bbe19b2dacea9212a12d868c18cb29bf58f02b504be9033fd}{pan\+::\+Game\+State\+::\+In\+Progress} = 0, 
+\hyperlink{namespacepan_a6f99370eda3b27c2bbe19b2dacea9212a1f5c647d9066bc9e350b70aa2d16aec4}{pan\+::\+Game\+State\+::\+Victory}, 
+\hyperlink{namespacepan_a6f99370eda3b27c2bbe19b2dacea9212a570e9d24849e2161b5a969599fb03446}{pan\+::\+Game\+State\+::\+Defeat}
+ \}\begin{DoxyCompactList}\small\item\em describes the game state. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespacepan_a5c203ea0600f2bca14baf8f38e5bac5d}{pan\+::\+Player\+Stage} \+: unsigned int \{ \hyperlink{namespacepan_a5c203ea0600f2bca14baf8f38e5bac5da4711d7a59429b7f23fa17419be23bf94}{pan\+::\+Player\+Stage\+::\+Act} = 0, 
+\hyperlink{namespacepan_a5c203ea0600f2bca14baf8f38e5bac5da2d03c2d5a7ec65ef4619e0582c272ec2}{pan\+::\+Player\+Stage\+::\+Draw}, 
+\hyperlink{namespacepan_a5c203ea0600f2bca14baf8f38e5bac5dae34d464b3689cee2a87f67e78532749a}{pan\+::\+Player\+Stage\+::\+Infect}, 
+\hyperlink{namespacepan_a5c203ea0600f2bca14baf8f38e5bac5dad94b42030b9785fd754d5c1754961269}{pan\+::\+Player\+Stage\+::\+Discard}
+ \}\begin{DoxyCompactList}\small\item\em describes the current stage of the player turn. Act = the player still needs to perform actions Draw = the player needs to draw cards Infect = the player needs to infect cities Discard = the player has to discard some cards \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{namespaceboost_1_1serialization_a61458ca4ff4153850af0c3adb4a322e5}{boost\+::serialization\+::serialize} (Archive \&ar, \hyperlink{structpan_1_1_game_data}{pan\+::\+Game\+Data} \&g, const unsigned int version)
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{namespaceboost_1_1serialization_abdc673b3465f1623bbcb5147b157d017}{boost\+::serialization\+::serialize} (Archive \&ar, \hyperlink{structpan_1_1_deck_data}{pan\+::\+Deck\+Data} \&g, const unsigned int version)
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{namespaceboost_1_1serialization_af7995dd0297acbf25eed2a5de6f7b1ba}{boost\+::serialization\+::serialize} (Archive \&ar, \hyperlink{structpan_1_1_player_data}{pan\+::\+Player\+Data} \&g, const unsigned int version)
+\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\hypertarget{_event_card_8h}{}\section{Event\+Card.\+h File Reference}
+\label{_event_card_8h}\index{Event\+Card.\+h@{Event\+Card.\+h}}
+{\ttfamily \#include \char`\"{}Card.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpan_1_1_card_impl_3_01_card_type_1_1_event_01_4}{pan\+::\+Card\+Impl$<$ Card\+Type\+::\+Event $>$}
+\begin{DoxyCompactList}\small\item\em Represents the Event Card entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacepan}{pan}
+\item 
+ \hyperlink{namespaceboost}{boost}
+\item 
+ \hyperlink{namespaceboost_1_1serialization}{boost\+::serialization}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Card\+Impl$<$ Card\+Type\+::\+Event $>$ \hyperlink{namespacepan_ab3f94f87c22e9ba090564fe9bba65b98}{pan\+::\+Event\+Card}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespacepan_a9221a73b34e019e6b8fe6f84e6417513}{pan\+::\+Event\+Type} \+: unsigned int \{ \newline
+\hyperlink{namespacepan_a9221a73b34e019e6b8fe6f84e6417513a4d83f184b10ed4c47d6a870a2a4e6d70}{pan\+::\+Airlift} = 0, 
+\hyperlink{namespacepan_a9221a73b34e019e6b8fe6f84e6417513a977c2c35d6409d01572a7c9488a2b37d}{pan\+::\+Gov\+Grant}, 
+\hyperlink{namespacepan_a9221a73b34e019e6b8fe6f84e6417513aa78611025144b70c6f550645196ab0a5}{pan\+::\+Resilient\+Population}, 
+\hyperlink{namespacepan_a9221a73b34e019e6b8fe6f84e6417513a42efb031a64c66ce03a9694dc8aaf8fd}{pan\+::\+One\+Quiet\+Night}, 
+\newline
+\hyperlink{namespacepan_a9221a73b34e019e6b8fe6f84e6417513a724312814497ba102c07b7c35b9a1a66}{pan\+::\+Forecast}
+ \}\begin{DoxyCompactList}\small\item\em describes the different event cards present in the game. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{namespaceboost_1_1serialization_aa5da5003acf4fa37f8c3b0f7c210f45f}{boost\+::serialization\+::save\+\_\+construct\+\_\+data} (Archive \&ar, const \hyperlink{classpan_1_1_card_impl}{pan\+::\+Card\+Impl}$<$ \hyperlink{namespacepan_a1f7350bfd0421afeabe9fa95c16fa811aa4ecfc70574394990cf17bd83df499f7}{pan\+::\+Card\+Type\+::\+Event} $>$ $\ast$p, const unsigned int file\+\_\+version)
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{namespaceboost_1_1serialization_a9d377eba228f523e12084976fe9a094a}{boost\+::serialization\+::load\+\_\+construct\+\_\+data} (Archive \&ar, \hyperlink{classpan_1_1_card_impl}{pan\+::\+Card\+Impl}$<$ \hyperlink{namespacepan_a1f7350bfd0421afeabe9fa95c16fa811aa4ecfc70574394990cf17bd83df499f7}{pan\+::\+Card\+Type\+::\+Event} $>$ $\ast$p, const unsigned int file\+\_\+version)
+\end{DoxyCompactItemize}

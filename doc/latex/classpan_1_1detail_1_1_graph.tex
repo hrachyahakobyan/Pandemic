@@ -1,0 +1,450 @@
+\hypertarget{classpan_1_1detail_1_1_graph}{}\section{pan\+:\+:detail\+:\+:Graph$<$ N $>$ Class Template Reference}
+\label{classpan_1_1detail_1_1_graph}\index{pan\+::detail\+::\+Graph$<$ N $>$@{pan\+::detail\+::\+Graph$<$ N $>$}}
+
+
+Adapter around boost\+::adjacency\+\_\+list.  
+
+
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ Graph\+Container $>$\+::vertex\+\_\+descriptor \hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ Graph\+Container $>$\+::edge\+\_\+descriptor \hyperlink{classpan_1_1detail_1_1_graph_a21d6fe3d33512e98e8578df1f4d8b810}{Edge\+Descriptor}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ Graph\+Container $>$\+::vertex\+\_\+iterator \hyperlink{classpan_1_1detail_1_1_graph_a70f42d6ae8c952de395c7fe665182e5c}{Vertex\+Iterator}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ Graph\+Container $>$\+::edge\+\_\+iterator \hyperlink{classpan_1_1detail_1_1_graph_abf1033eeaf577f4c099f3e56164a0439}{Edge\+Iterator}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ Graph\+Container $>$\+::adjacency\+\_\+iterator \hyperlink{classpan_1_1detail_1_1_graph_a3cec4963078d7a19e05fbd038525ac17}{Adjacency\+Iterator}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ Graph\+Container $>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{classpan_1_1detail_1_1_graph_ab020b117f26b3d19039491ecb5ff5130}{Out\+Edge\+Iterator}
+\item 
+typedef boost\+::graph\+\_\+traits$<$ Graph\+Container $>$\+::degree\+\_\+size\+\_\+type \hyperlink{classpan_1_1detail_1_1_graph_a4f48579e58569a6607cdc95f80a001ea}{Vertex\+Degree\+Iterator}
+\item 
+typedef boost\+::property\+\_\+map$<$ Graph\+Container, boost\+::vertex\+\_\+index\+\_\+t $>$\+::type \hyperlink{classpan_1_1detail_1_1_graph_a5c24f583c13faceb000758f24389728c}{Index\+Map}
+\item 
+typedef boost\+::property\+\_\+map$<$ Graph\+Container, \hyperlink{_graph_8h_ac353e55313080132b9a44c66de25ab8d}{vertex\+\_\+properties\+\_\+t} $>$\+::const\+\_\+type \hyperlink{classpan_1_1detail_1_1_graph_a4ae877190ca2507e8c2f557b5cdaf759}{Const\+V\+Property\+Iterator}
+\item 
+typedef std\+::pair$<$ \hyperlink{classpan_1_1detail_1_1_graph_a3cec4963078d7a19e05fbd038525ac17}{Adjacency\+Iterator}, \hyperlink{classpan_1_1detail_1_1_graph_a3cec4963078d7a19e05fbd038525ac17}{Adjacency\+Iterator} $>$ \hyperlink{classpan_1_1detail_1_1_graph_abcc5afe3ac75ffca9c7d845a1a2217a5}{Adjacency\+Range}
+\item 
+typedef std\+::pair$<$ \hyperlink{classpan_1_1detail_1_1_graph_ab020b117f26b3d19039491ecb5ff5130}{Out\+Edge\+Iterator}, \hyperlink{classpan_1_1detail_1_1_graph_ab020b117f26b3d19039491ecb5ff5130}{Out\+Edge\+Iterator} $>$ \hyperlink{classpan_1_1detail_1_1_graph_a6a455005d606a7ead0feba1c84156bc7}{Out\+Edge\+Range}
+\item 
+typedef std\+::pair$<$ \hyperlink{classpan_1_1detail_1_1_graph_a70f42d6ae8c952de395c7fe665182e5c}{Vertex\+Iterator}, \hyperlink{classpan_1_1detail_1_1_graph_a70f42d6ae8c952de395c7fe665182e5c}{Vertex\+Iterator} $>$ \hyperlink{classpan_1_1detail_1_1_graph_a5b49d7bed177c89e2a5d7cc59df1fb13}{Vertex\+Range}
+\item 
+typedef std\+::pair$<$ \hyperlink{classpan_1_1detail_1_1_graph_abf1033eeaf577f4c099f3e56164a0439}{Edge\+Iterator}, \hyperlink{classpan_1_1detail_1_1_graph_abf1033eeaf577f4c099f3e56164a0439}{Edge\+Iterator} $>$ \hyperlink{classpan_1_1detail_1_1_graph_af7c5ed956d483a3bf26469b7698f5689}{Edge\+Range}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpan_1_1detail_1_1_graph_a162f4615aa554b1455e54234108da5e6}{Graph} ()
+\item 
+\hyperlink{classpan_1_1detail_1_1_graph_ac4d4d53acd9e6637ade9c3f026fd63d6}{Graph} (std\+::size\+\_\+t vertex\+Count)
+\item 
+\hyperlink{classpan_1_1detail_1_1_graph_a33d07cc94ec5936885da57f01e151253}{Graph} (const \hyperlink{classpan_1_1detail_1_1_graph}{Graph} \&g)
+\item 
+\hyperlink{classpan_1_1detail_1_1_graph_a5103d7c5ead98cac2306d1c3ca482e8e}{Graph} (\hyperlink{classpan_1_1detail_1_1_graph}{Graph} \&\&)
+\item 
+\hyperlink{classpan_1_1detail_1_1_graph}{Graph} \& \hyperlink{classpan_1_1detail_1_1_graph_aed16e054462d1f7d7d063e3be862a11a}{operator=} (const \hyperlink{classpan_1_1detail_1_1_graph}{Graph} \&rhs)
+\item 
+\hyperlink{classpan_1_1detail_1_1_graph}{Graph} \& \hyperlink{classpan_1_1detail_1_1_graph_a620d5389f1c950b960ce9b9053bed628}{operator=} (\hyperlink{classpan_1_1detail_1_1_graph}{Graph} \&\&)
+\item 
+\hyperlink{classpan_1_1detail_1_1_graph_a08789a6050c651e8ff2f99a390f5ad31}{$\sim$\+Graph} ()
+\item 
+bool \hyperlink{classpan_1_1detail_1_1_graph_abfeef8f9146709aae343974ae595f080}{operator==} (const \hyperlink{classpan_1_1detail_1_1_graph}{Graph} \&other) const
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{classpan_1_1detail_1_1_graph_aefa6b97b33eae8917b3d48820a2cf519}{serialize} (Archive \&ar, const unsigned int)
+\item 
+void \hyperlink{classpan_1_1detail_1_1_graph_ac24a809b242786e3b5e32fe55227b4e3}{clear} ()
+\item 
+std\+::size\+\_\+t \hyperlink{classpan_1_1detail_1_1_graph_acf43df485b16aa0eb0f22f1ce30dffaf}{num\+Vertices} () const
+\item 
+std\+::size\+\_\+t \hyperlink{classpan_1_1detail_1_1_graph_a0be37954bf6f8c814b3e9ba7b1727995}{num\+Edges} () const
+\item 
+bool \hyperlink{classpan_1_1detail_1_1_graph_ad46610d729b56f7f899458cc5021c0f3}{vertex\+Exists} (\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} v) const
+\item 
+\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} \hyperlink{classpan_1_1detail_1_1_graph_a3848d9e9acbfeff14634de5cc0395614}{add\+Vertex} (const N \&n=N())
+\item 
+void \hyperlink{classpan_1_1detail_1_1_graph_ad2e6731b123860e589849f965e42ec8f}{remove\+Vertex} (\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} v)
+\item 
+const N \& \hyperlink{classpan_1_1detail_1_1_graph_a912822dad64cd9df929011c45e5a532d}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} v) const
+\item 
+N \& \hyperlink{classpan_1_1detail_1_1_graph_a5e902bbe95d75a0af812af3fd95314c2}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} i)
+\item 
+\hyperlink{classpan_1_1detail_1_1_graph_abcc5afe3ac75ffca9c7d845a1a2217a5}{Adjacency\+Range} \hyperlink{classpan_1_1detail_1_1_graph_a858109b2a94a386e74717f23be2a0754}{neighbors} (\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} v) const
+\item 
+bool \hyperlink{classpan_1_1detail_1_1_graph_accd48ccab28236e9f0107beea6ae4119}{edge\+Exists} (\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} v1, \hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} v2) const
+\item 
+std\+::pair$<$ \hyperlink{classpan_1_1detail_1_1_graph_a21d6fe3d33512e98e8578df1f4d8b810}{Edge\+Descriptor}, bool $>$ \hyperlink{classpan_1_1detail_1_1_graph_a581e01f695352af2a25dd2547f586c51}{add\+Edge} (\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} v1, \hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} v2)
+\item 
+void \hyperlink{classpan_1_1detail_1_1_graph_a809fe9551538da78d405b1d9ead964f5}{remove\+Edge} (\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} v1, \hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} v2)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpan_1_1detail_1_1_graph_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename N$>$\newline
+class pan\+::detail\+::\+Graph$<$ N $>$}
+
+Adapter around boost\+::adjacency\+\_\+list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & template paramater. set\+::S to disallow multigraph \\
+\hline
+{\em second} & template parameter. vec\+::S to access vertices using indeces \\
+\hline
+{\em third} & template parameter. undirectedS for undirected graphs. \\
+\hline
+{\em forth} & template parameter. The type to store as the vertex. Current configuration of the Class allows represents a simple, undirected graph. It allows self loop, however the self-\/edges are not created automatically. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Hrachya Hakobyan 
+\end{DoxyAuthor}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a3cec4963078d7a19e05fbd038525ac17}\label{classpan_1_1detail_1_1_graph_a3cec4963078d7a19e05fbd038525ac17}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Adjacency\+Iterator@{Adjacency\+Iterator}}
+\index{Adjacency\+Iterator@{Adjacency\+Iterator}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Adjacency\+Iterator}{AdjacencyIterator}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef boost\+::graph\+\_\+traits$<$Graph\+Container$>$\+::adjacency\+\_\+iterator \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a3cec4963078d7a19e05fbd038525ac17}{Adjacency\+Iterator}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_abcc5afe3ac75ffca9c7d845a1a2217a5}\label{classpan_1_1detail_1_1_graph_abcc5afe3ac75ffca9c7d845a1a2217a5}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Adjacency\+Range@{Adjacency\+Range}}
+\index{Adjacency\+Range@{Adjacency\+Range}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Adjacency\+Range}{AdjacencyRange}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef std\+::pair$<$\hyperlink{classpan_1_1detail_1_1_graph_a3cec4963078d7a19e05fbd038525ac17}{Adjacency\+Iterator}, \hyperlink{classpan_1_1detail_1_1_graph_a3cec4963078d7a19e05fbd038525ac17}{Adjacency\+Iterator}$>$ \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_abcc5afe3ac75ffca9c7d845a1a2217a5}{Adjacency\+Range}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a4ae877190ca2507e8c2f557b5cdaf759}\label{classpan_1_1detail_1_1_graph_a4ae877190ca2507e8c2f557b5cdaf759}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Const\+V\+Property\+Iterator@{Const\+V\+Property\+Iterator}}
+\index{Const\+V\+Property\+Iterator@{Const\+V\+Property\+Iterator}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Const\+V\+Property\+Iterator}{ConstVPropertyIterator}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef boost\+::property\+\_\+map$<$Graph\+Container, \hyperlink{_graph_8h_ac353e55313080132b9a44c66de25ab8d}{vertex\+\_\+properties\+\_\+t}$>$\+::const\+\_\+type \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a4ae877190ca2507e8c2f557b5cdaf759}{Const\+V\+Property\+Iterator}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a21d6fe3d33512e98e8578df1f4d8b810}\label{classpan_1_1detail_1_1_graph_a21d6fe3d33512e98e8578df1f4d8b810}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Edge\+Descriptor@{Edge\+Descriptor}}
+\index{Edge\+Descriptor@{Edge\+Descriptor}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Edge\+Descriptor}{EdgeDescriptor}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef boost\+::graph\+\_\+traits$<$Graph\+Container$>$\+::edge\+\_\+descriptor \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a21d6fe3d33512e98e8578df1f4d8b810}{Edge\+Descriptor}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_abf1033eeaf577f4c099f3e56164a0439}\label{classpan_1_1detail_1_1_graph_abf1033eeaf577f4c099f3e56164a0439}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Edge\+Iterator@{Edge\+Iterator}}
+\index{Edge\+Iterator@{Edge\+Iterator}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Edge\+Iterator}{EdgeIterator}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef boost\+::graph\+\_\+traits$<$Graph\+Container$>$\+::edge\+\_\+iterator \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_abf1033eeaf577f4c099f3e56164a0439}{Edge\+Iterator}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_af7c5ed956d483a3bf26469b7698f5689}\label{classpan_1_1detail_1_1_graph_af7c5ed956d483a3bf26469b7698f5689}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Edge\+Range@{Edge\+Range}}
+\index{Edge\+Range@{Edge\+Range}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Edge\+Range}{EdgeRange}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef std\+::pair$<$\hyperlink{classpan_1_1detail_1_1_graph_abf1033eeaf577f4c099f3e56164a0439}{Edge\+Iterator}, \hyperlink{classpan_1_1detail_1_1_graph_abf1033eeaf577f4c099f3e56164a0439}{Edge\+Iterator}$>$ \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_af7c5ed956d483a3bf26469b7698f5689}{Edge\+Range}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a5c24f583c13faceb000758f24389728c}\label{classpan_1_1detail_1_1_graph_a5c24f583c13faceb000758f24389728c}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Index\+Map@{Index\+Map}}
+\index{Index\+Map@{Index\+Map}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Index\+Map}{IndexMap}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef boost\+::property\+\_\+map$<$Graph\+Container, boost\+::vertex\+\_\+index\+\_\+t$>$\+::type \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a5c24f583c13faceb000758f24389728c}{Index\+Map}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_ab020b117f26b3d19039491ecb5ff5130}\label{classpan_1_1detail_1_1_graph_ab020b117f26b3d19039491ecb5ff5130}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Out\+Edge\+Iterator@{Out\+Edge\+Iterator}}
+\index{Out\+Edge\+Iterator@{Out\+Edge\+Iterator}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Out\+Edge\+Iterator}{OutEdgeIterator}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef boost\+::graph\+\_\+traits$<$Graph\+Container$>$\+::out\+\_\+edge\+\_\+iterator \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_ab020b117f26b3d19039491ecb5ff5130}{Out\+Edge\+Iterator}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a6a455005d606a7ead0feba1c84156bc7}\label{classpan_1_1detail_1_1_graph_a6a455005d606a7ead0feba1c84156bc7}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Out\+Edge\+Range@{Out\+Edge\+Range}}
+\index{Out\+Edge\+Range@{Out\+Edge\+Range}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Out\+Edge\+Range}{OutEdgeRange}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef std\+::pair$<$\hyperlink{classpan_1_1detail_1_1_graph_ab020b117f26b3d19039491ecb5ff5130}{Out\+Edge\+Iterator}, \hyperlink{classpan_1_1detail_1_1_graph_ab020b117f26b3d19039491ecb5ff5130}{Out\+Edge\+Iterator}$>$ \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a6a455005d606a7ead0feba1c84156bc7}{Out\+Edge\+Range}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a4f48579e58569a6607cdc95f80a001ea}\label{classpan_1_1detail_1_1_graph_a4f48579e58569a6607cdc95f80a001ea}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Vertex\+Degree\+Iterator@{Vertex\+Degree\+Iterator}}
+\index{Vertex\+Degree\+Iterator@{Vertex\+Degree\+Iterator}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Vertex\+Degree\+Iterator}{VertexDegreeIterator}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef boost\+::graph\+\_\+traits$<$Graph\+Container$>$\+::degree\+\_\+size\+\_\+type \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a4f48579e58569a6607cdc95f80a001ea}{Vertex\+Degree\+Iterator}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}\label{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Vertex\+Descriptor@{Vertex\+Descriptor}}
+\index{Vertex\+Descriptor@{Vertex\+Descriptor}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Vertex\+Descriptor}{VertexDescriptor}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef boost\+::graph\+\_\+traits$<$Graph\+Container$>$\+::vertex\+\_\+descriptor \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a70f42d6ae8c952de395c7fe665182e5c}\label{classpan_1_1detail_1_1_graph_a70f42d6ae8c952de395c7fe665182e5c}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Vertex\+Iterator@{Vertex\+Iterator}}
+\index{Vertex\+Iterator@{Vertex\+Iterator}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Vertex\+Iterator}{VertexIterator}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef boost\+::graph\+\_\+traits$<$Graph\+Container$>$\+::vertex\+\_\+iterator \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a70f42d6ae8c952de395c7fe665182e5c}{Vertex\+Iterator}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a5b49d7bed177c89e2a5d7cc59df1fb13}\label{classpan_1_1detail_1_1_graph_a5b49d7bed177c89e2a5d7cc59df1fb13}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Vertex\+Range@{Vertex\+Range}}
+\index{Vertex\+Range@{Vertex\+Range}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Vertex\+Range}{VertexRange}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+typedef std\+::pair$<$\hyperlink{classpan_1_1detail_1_1_graph_a70f42d6ae8c952de395c7fe665182e5c}{Vertex\+Iterator}, \hyperlink{classpan_1_1detail_1_1_graph_a70f42d6ae8c952de395c7fe665182e5c}{Vertex\+Iterator}$>$ \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a5b49d7bed177c89e2a5d7cc59df1fb13}{Vertex\+Range}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a162f4615aa554b1455e54234108da5e6}\label{classpan_1_1detail_1_1_graph_a162f4615aa554b1455e54234108da5e6}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+\hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph}{Graph} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_ac4d4d53acd9e6637ade9c3f026fd63d6}\label{classpan_1_1detail_1_1_graph_ac4d4d53acd9e6637ade9c3f026fd63d6}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+\hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph}{Graph} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{vertex\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a33d07cc94ec5936885da57f01e151253}\label{classpan_1_1detail_1_1_graph_a33d07cc94ec5936885da57f01e151253}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+\hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph}{Graph} (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1detail_1_1_graph}{Graph}$<$ N $>$ \&}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a5103d7c5ead98cac2306d1c3ca482e8e}\label{classpan_1_1detail_1_1_graph_a5103d7c5ead98cac2306d1c3ca482e8e}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{Graph()}{Graph()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+\hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph}{Graph} (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_graph}{Graph}$<$ N $>$ \&\&}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a08789a6050c651e8ff2f99a390f5ad31}\label{classpan_1_1detail_1_1_graph_a08789a6050c651e8ff2f99a390f5ad31}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!````~Graph@{$\sim$\+Graph}}
+\index{````~Graph@{$\sim$\+Graph}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{$\sim$\+Graph()}{~Graph()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+\hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::$\sim$\hyperlink{classpan_1_1detail_1_1_graph}{Graph} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a581e01f695352af2a25dd2547f586c51}\label{classpan_1_1detail_1_1_graph_a581e01f695352af2a25dd2547f586c51}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!add\+Edge@{add\+Edge}}
+\index{add\+Edge@{add\+Edge}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{add\+Edge()}{addEdge()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+std\+::pair$<$ typename \hyperlink{classpan_1_1detail_1_1_graph}{Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a21d6fe3d33512e98e8578df1f4d8b810}{Edge\+Descriptor}, bool $>$ \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::add\+Edge (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{v1,  }\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add a new edge. Will return false if either of vertices is invalid. (The default implementation of boost will create a new vertex if the index is invalid). 
+\begin{DoxyParams}{Parameters}
+{\em v1} & the first vertex \\
+\hline
+{\em v2} & the second vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair of edge descriptor and boolean flag. The flag is true if the edge was successfully added. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a3848d9e9acbfeff14634de5cc0395614}\label{classpan_1_1detail_1_1_graph_a3848d9e9acbfeff14634de5cc0395614}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!add\+Vertex@{add\+Vertex}}
+\index{add\+Vertex@{add\+Vertex}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{add\+Vertex()}{addVertex()}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+\hyperlink{classpan_1_1detail_1_1_graph}{Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor} \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::add\+Vertex (\begin{DoxyParamCaption}\item[{const N \&}]{n = {\ttfamily N()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a new vertex. 
+\begin{DoxyParams}{Parameters}
+{\em n} & the vertex data to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the vertex descriptor of the newly created vertex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_ac24a809b242786e3b5e32fe55227b4e3}\label{classpan_1_1detail_1_1_graph_ac24a809b242786e3b5e32fe55227b4e3}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!clear@{clear}}
+\index{clear@{clear}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+void \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears the graph. Removes edges and vertices. \mbox{\Hypertarget{classpan_1_1detail_1_1_graph_accd48ccab28236e9f0107beea6ae4119}\label{classpan_1_1detail_1_1_graph_accd48ccab28236e9f0107beea6ae4119}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!edge\+Exists@{edge\+Exists}}
+\index{edge\+Exists@{edge\+Exists}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{edge\+Exists()}{edgeExists()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+bool \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::edge\+Exists (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{v1,  }\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{v2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if edge exists between two vertices. Will return false if either of vertices is invalid. (The default implementation of boost will crash if either of vertices is invalid and is not the next vertex to be added and will add the vertices if it can). 
+\begin{DoxyParams}{Parameters}
+{\em v1} & the first vertex \\
+\hline
+{\em v2} & the second vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if edge exists, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a858109b2a94a386e74717f23be2a0754}\label{classpan_1_1detail_1_1_graph_a858109b2a94a386e74717f23be2a0754}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!neighbors@{neighbors}}
+\index{neighbors@{neighbors}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{neighbors()}{neighbors()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+\hyperlink{classpan_1_1detail_1_1_graph}{Graph}$<$ N $>$\+::\hyperlink{classpan_1_1detail_1_1_graph_abcc5afe3ac75ffca9c7d845a1a2217a5}{Adjacency\+Range} \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::neighbors (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the neighbor of the current vertex. 
+\begin{DoxyParams}{Parameters}
+{\em v} & the vertex descriptor to get the neighbors of. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if the index is invalid \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the pair of adjacency iterators for the current vertex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a0be37954bf6f8c814b3e9ba7b1727995}\label{classpan_1_1detail_1_1_graph_a0be37954bf6f8c814b3e9ba7b1727995}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!num\+Edges@{num\+Edges}}
+\index{num\+Edges@{num\+Edges}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{num\+Edges()}{numEdges()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+std\+::size\+\_\+t \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::num\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of edges. \begin{DoxyReturn}{Returns}
+the number of edges 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_acf43df485b16aa0eb0f22f1ce30dffaf}\label{classpan_1_1detail_1_1_graph_acf43df485b16aa0eb0f22f1ce30dffaf}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!num\+Vertices@{num\+Vertices}}
+\index{num\+Vertices@{num\+Vertices}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{num\+Vertices()}{numVertices()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+std\+::size\+\_\+t \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::num\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of vertices. \begin{DoxyReturn}{Returns}
+the number of vertices 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_aed16e054462d1f7d7d063e3be862a11a}\label{classpan_1_1detail_1_1_graph_aed16e054462d1f7d7d063e3be862a11a}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!operator=@{operator=}}
+\index{operator=@{operator=}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+\hyperlink{classpan_1_1detail_1_1_graph}{Graph}$<$ N $>$ \& \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1detail_1_1_graph}{Graph}$<$ N $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a620d5389f1c950b960ce9b9053bed628}\label{classpan_1_1detail_1_1_graph_a620d5389f1c950b960ce9b9053bed628}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!operator=@{operator=}}
+\index{operator=@{operator=}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+\hyperlink{classpan_1_1detail_1_1_graph}{Graph}$<$ N $>$ \& \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_graph}{Graph}$<$ N $>$ \&\&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_abfeef8f9146709aae343974ae595f080}\label{classpan_1_1detail_1_1_graph_abfeef8f9146709aae343974ae595f080}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!operator==@{operator==}}
+\index{operator==@{operator==}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+bool \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1detail_1_1_graph}{Graph}$<$ N $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks for graph equality. Isomorphic check is computationally infeasible. This only checks the number of vertices and edges. \mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a912822dad64cd9df929011c45e5a532d}\label{classpan_1_1detail_1_1_graph_a912822dad64cd9df929011c45e5a532d}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+const N \& \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Access a vertex data. 
+\begin{DoxyParams}{Parameters}
+{\em v} & the vertex descriptor to access. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if the index is invalid \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the reference to the data of the vertex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a5e902bbe95d75a0af812af3fd95314c2}\label{classpan_1_1detail_1_1_graph_a5e902bbe95d75a0af812af3fd95314c2}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+N \& \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_a809fe9551538da78d405b1d9ead964f5}\label{classpan_1_1detail_1_1_graph_a809fe9551538da78d405b1d9ead964f5}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!remove\+Edge@{remove\+Edge}}
+\index{remove\+Edge@{remove\+Edge}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{remove\+Edge()}{removeEdge()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+void \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::remove\+Edge (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{v1,  }\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Removes an edge. 
+\begin{DoxyParams}{Parameters}
+{\em v1} & the first vertex \\
+\hline
+{\em v2} & the second vertex \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_ad2e6731b123860e589849f965e42ec8f}\label{classpan_1_1detail_1_1_graph_ad2e6731b123860e589849f965e42ec8f}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!remove\+Vertex@{remove\+Vertex}}
+\index{remove\+Vertex@{remove\+Vertex}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{remove\+Vertex()}{removeVertex()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+void \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::remove\+Vertex (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Removes a vertex. The operation will not throw if the vertex is invalid. 
+\begin{DoxyParams}{Parameters}
+{\em v} & the vertex descriptor to be removed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_aefa6b97b33eae8917b3d48820a2cf519}\label{classpan_1_1detail_1_1_graph_aefa6b97b33eae8917b3d48820a2cf519}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!serialize@{serialize}}
+\index{serialize@{serialize}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+template$<$class Archive $>$ \\
+void \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned}]{int }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_ad46610d729b56f7f899458cc5021c0f3}\label{classpan_1_1detail_1_1_graph_ad46610d729b56f7f899458cc5021c0f3}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!vertex\+Exists@{vertex\+Exists}}
+\index{vertex\+Exists@{vertex\+Exists}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{vertex\+Exists()}{vertexExists()}}
+{\footnotesize\ttfamily template$<$typename N $>$ \\
+bool \hyperlink{classpan_1_1detail_1_1_graph}{pan\+::detail\+::\+Graph}$<$ N $>$\+::vertex\+Exists (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_graph_a462f566d2f6cb0e51c85c8e9fa5382ab}{Vertex\+Descriptor}}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if vertex exists. The vertex exists if its in the range \mbox{[}0, \hyperlink{classpan_1_1detail_1_1_graph_acf43df485b16aa0eb0f22f1ce30dffaf}{num\+Vertices()}) \begin{DoxyReturn}{Returns}
+true if vertex exists, false otherwise 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_graph_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classpan_1_1detail_1_1_graph_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}!boost\+::serialization\+::access@{boost\+::serialization\+::access}}
+\index{boost\+::serialization\+::access@{boost\+::serialization\+::access}!pan\+::detail\+::\+Graph@{pan\+::detail\+::\+Graph}}
+\subsubsection{\texorpdfstring{boost\+::serialization\+::access}{boost::serialization::access}}
+{\footnotesize\ttfamily template$<$typename N$>$ \\
+friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+detail/\hyperlink{_graph_8h}{Graph.\+h}\end{DoxyCompactItemize}

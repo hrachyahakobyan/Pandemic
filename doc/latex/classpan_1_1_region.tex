@@ -1,0 +1,103 @@
+\hypertarget{classpan_1_1_region}{}\section{pan\+:\+:Region Class Reference}
+\label{classpan_1_1_region}\index{pan\+::\+Region@{pan\+::\+Region}}
+
+
+Class to represent a region on the map. Must be default constructible and assignable.  
+
+
+
+
+{\ttfamily \#include $<$Region.\+h$>$}
+
+Inheritance diagram for pan\+:\+:Region\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpan_1_1_region}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \hyperlink{classpan_1_1_region_a7ebfab047a556e5c95f9a7ea10eb71ba}{get\+Name} () const
+\item 
+void \hyperlink{classpan_1_1_region_a0138c13e4ba5d07029dd9bb641c8b1ef}{set\+Name} (const std\+::string \&name)
+\item 
+std\+::string \hyperlink{classpan_1_1_region_abc67a788365510bfad231939713106cb}{description} () const
+\item 
+bool \hyperlink{classpan_1_1_region_a6f65b58194c83c1c1ec666c6b14c983e}{operator==} (const \hyperlink{classpan_1_1_region}{Region} \&other) const
+\item 
+bool \hyperlink{classpan_1_1_region_aab9e2291f838d7cf87b2518fa2c1b8a0}{operator!=} (const \hyperlink{classpan_1_1_region}{Region} \&other) const
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{classpan_1_1_region_af273dea05ea12be85b8bcdec0e3c22d2}{serialize} (Archive \&ar, const unsigned int)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpan_1_1_region_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to represent a region on the map. Must be default constructible and assignable. 
+
+\begin{DoxyAuthor}{Author}
+Hrachya Hakobyan 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpan_1_1_region_abc67a788365510bfad231939713106cb}\label{classpan_1_1_region_abc67a788365510bfad231939713106cb}} 
+\index{pan\+::\+Region@{pan\+::\+Region}!description@{description}}
+\index{description@{description}!pan\+::\+Region@{pan\+::\+Region}}
+\subsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string pan\+::\+Region\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classpan_1_1_object_a2bb6d3117bb32f5774657c83f118ed8b}{pan\+::\+Object}.
+
+\mbox{\Hypertarget{classpan_1_1_region_a7ebfab047a556e5c95f9a7ea10eb71ba}\label{classpan_1_1_region_a7ebfab047a556e5c95f9a7ea10eb71ba}} 
+\index{pan\+::\+Region@{pan\+::\+Region}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!pan\+::\+Region@{pan\+::\+Region}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily const std\+::string \& pan\+::\+Region\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1_region_aab9e2291f838d7cf87b2518fa2c1b8a0}\label{classpan_1_1_region_aab9e2291f838d7cf87b2518fa2c1b8a0}} 
+\index{pan\+::\+Region@{pan\+::\+Region}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!pan\+::\+Region@{pan\+::\+Region}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool pan\+::\+Region\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_region}{Region} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1_region_a6f65b58194c83c1c1ec666c6b14c983e}\label{classpan_1_1_region_a6f65b58194c83c1c1ec666c6b14c983e}} 
+\index{pan\+::\+Region@{pan\+::\+Region}!operator==@{operator==}}
+\index{operator==@{operator==}!pan\+::\+Region@{pan\+::\+Region}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool pan\+::\+Region\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_region}{Region} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1_region_af273dea05ea12be85b8bcdec0e3c22d2}\label{classpan_1_1_region_af273dea05ea12be85b8bcdec0e3c22d2}} 
+\index{pan\+::\+Region@{pan\+::\+Region}!serialize@{serialize}}
+\index{serialize@{serialize}!pan\+::\+Region@{pan\+::\+Region}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void pan\+::\+Region\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned}]{int }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1_region_a0138c13e4ba5d07029dd9bb641c8b1ef}\label{classpan_1_1_region_a0138c13e4ba5d07029dd9bb641c8b1ef}} 
+\index{pan\+::\+Region@{pan\+::\+Region}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!pan\+::\+Region@{pan\+::\+Region}}
+\subsubsection{\texorpdfstring{set\+Name()}{setName()}}
+{\footnotesize\ttfamily void pan\+::\+Region\+::set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classpan_1_1_region_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classpan_1_1_region_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{pan\+::\+Region@{pan\+::\+Region}!boost\+::serialization\+::access@{boost\+::serialization\+::access}}
+\index{boost\+::serialization\+::access@{boost\+::serialization\+::access}!pan\+::\+Region@{pan\+::\+Region}}
+\subsubsection{\texorpdfstring{boost\+::serialization\+::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_region_8h}{Region.\+h}\end{DoxyCompactItemize}

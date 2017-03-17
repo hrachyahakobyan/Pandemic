@@ -1,0 +1,184 @@
+\hypertarget{structpan_1_1_game_data}{}\section{pan\+:\+:Game\+Data Struct Reference}
+\label{structpan_1_1_game_data}\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+
+
+container for game related data  
+
+
+
+
+{\ttfamily \#include $<$Data.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structpan_1_1_game_data_a4bd1e9348e4dc118d1345f25eb297006}{Game\+Data} (const \hyperlink{classpan_1_1_settings}{Settings} \&s)
+\item 
+\hyperlink{structpan_1_1_game_data_a7931bdb39d312dff7d9ba82e33e060f2}{Game\+Data} (const \hyperlink{structpan_1_1_game_data}{Game\+Data} \&)
+\item 
+\hyperlink{structpan_1_1_game_data}{Game\+Data} \& \hyperlink{structpan_1_1_game_data_a9668ac0f1009efc28e566fcf309ac8c8}{operator=} (const \hyperlink{structpan_1_1_game_data}{Game\+Data} \&)
+\item 
+\hyperlink{structpan_1_1_game_data_ac7446b6f725f4ac01c9b4ab264ef9459}{Game\+Data} (\hyperlink{structpan_1_1_game_data}{Game\+Data} \&\&)
+\item 
+\hyperlink{structpan_1_1_game_data}{Game\+Data} \& \hyperlink{structpan_1_1_game_data_a5552551e90f6b03fea9f94817ad6fe48}{operator=} (\hyperlink{structpan_1_1_game_data}{Game\+Data} \&\&)
+\item 
+\hyperlink{structpan_1_1_game_data_a70e8f41de449796ee998738e92968ba3}{$\sim$\+Game\+Data} ()
+\item 
+bool \hyperlink{structpan_1_1_game_data_a0c532468ff2f6ea4566f9cb6751769a3}{operator==} (const \hyperlink{structpan_1_1_game_data}{Game\+Data} \&) const
+\item 
+bool \hyperlink{structpan_1_1_game_data_a494ea898e63dcdb3bcdeef7953a05f06}{operator!=} (const \hyperlink{structpan_1_1_game_data}{Game\+Data} \&) const
+\item 
+std\+::string \hyperlink{structpan_1_1_game_data_a088e7f86c555691e29ccbeb31e742567}{description} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpan_1_1_settings}{Settings} \hyperlink{structpan_1_1_game_data_ab907cda56d6df33bedbf6d3c617d6a64}{settings}
+\item 
+bool \hyperlink{structpan_1_1_game_data_aad23d9b004b01784e7bb2c980beb02e9}{initialized}
+\item 
+\hyperlink{namespacepan_a6f99370eda3b27c2bbe19b2dacea9212}{Game\+State} \hyperlink{structpan_1_1_game_data_a5a1dace14546bf80cac4a00e7b55d603}{state}
+\item 
+unsigned int \hyperlink{structpan_1_1_game_data_a4ede59b5ced4fccdeb01471a07bd8128}{infection\+Rate\+Marker}
+\item 
+unsigned int \hyperlink{structpan_1_1_game_data_aa7c3194057a3cb4c5d827b93c6eab7fc}{outbreak\+Marker}
+\item 
+unsigned int \hyperlink{structpan_1_1_game_data_a9dde961d902c84df7e6e0bba551bf858}{research\+Stations}
+\item 
+std\+::vector$<$ \hyperlink{classpan_1_1_disease}{Disease} $>$ \hyperlink{structpan_1_1_game_data_ad0126298791b791dd3b1f83bf6e2109d}{diseases}
+\item 
+std\+::vector$<$ \hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index} $>$ \hyperlink{structpan_1_1_game_data_acf99f80b705995e55eacfb79baadb749}{disease\+Cubes}
+\item 
+std\+::vector$<$ \hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index} $>$ \hyperlink{structpan_1_1_game_data_a84dbb9125cd228c57da05a732ef6f18f}{removed\+Diseases\+Cubes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+container for game related data 
+
+\begin{DoxyAuthor}{Author}
+Hrachya Hakobyan 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structpan_1_1_game_data_a4bd1e9348e4dc118d1345f25eb297006}\label{structpan_1_1_game_data_a4bd1e9348e4dc118d1345f25eb297006}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!Game\+Data@{Game\+Data}}
+\index{Game\+Data@{Game\+Data}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{Game\+Data()}{GameData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily pan\+::\+Game\+Data\+::\+Game\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_settings}{Settings} \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_a7931bdb39d312dff7d9ba82e33e060f2}\label{structpan_1_1_game_data_a7931bdb39d312dff7d9ba82e33e060f2}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!Game\+Data@{Game\+Data}}
+\index{Game\+Data@{Game\+Data}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{Game\+Data()}{GameData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily pan\+::\+Game\+Data\+::\+Game\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{structpan_1_1_game_data}{Game\+Data} \&}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_ac7446b6f725f4ac01c9b4ab264ef9459}\label{structpan_1_1_game_data_ac7446b6f725f4ac01c9b4ab264ef9459}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!Game\+Data@{Game\+Data}}
+\index{Game\+Data@{Game\+Data}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{Game\+Data()}{GameData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily pan\+::\+Game\+Data\+::\+Game\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structpan_1_1_game_data}{Game\+Data} \&\&}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_a70e8f41de449796ee998738e92968ba3}\label{structpan_1_1_game_data_a70e8f41de449796ee998738e92968ba3}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!````~Game\+Data@{$\sim$\+Game\+Data}}
+\index{````~Game\+Data@{$\sim$\+Game\+Data}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{$\sim$\+Game\+Data()}{~GameData()}}
+{\footnotesize\ttfamily pan\+::\+Game\+Data\+::$\sim$\+Game\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structpan_1_1_game_data_a088e7f86c555691e29ccbeb31e742567}\label{structpan_1_1_game_data_a088e7f86c555691e29ccbeb31e742567}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!description@{description}}
+\index{description@{description}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string pan\+::\+Game\+Data\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_a494ea898e63dcdb3bcdeef7953a05f06}\label{structpan_1_1_game_data_a494ea898e63dcdb3bcdeef7953a05f06}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool pan\+::\+Game\+Data\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{structpan_1_1_game_data}{Game\+Data} \&}]{o }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_a9668ac0f1009efc28e566fcf309ac8c8}\label{structpan_1_1_game_data_a9668ac0f1009efc28e566fcf309ac8c8}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!operator=@{operator=}}
+\index{operator=@{operator=}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{structpan_1_1_game_data}{Game\+Data} \& pan\+::\+Game\+Data\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{structpan_1_1_game_data}{Game\+Data} \&}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_a5552551e90f6b03fea9f94817ad6fe48}\label{structpan_1_1_game_data_a5552551e90f6b03fea9f94817ad6fe48}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!operator=@{operator=}}
+\index{operator=@{operator=}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{structpan_1_1_game_data}{Game\+Data} \& pan\+::\+Game\+Data\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{structpan_1_1_game_data}{Game\+Data} \&\&}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_a0c532468ff2f6ea4566f9cb6751769a3}\label{structpan_1_1_game_data_a0c532468ff2f6ea4566f9cb6751769a3}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!operator==@{operator==}}
+\index{operator==@{operator==}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool pan\+::\+Game\+Data\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{structpan_1_1_game_data}{Game\+Data} \&}]{o }\end{DoxyParamCaption}) const}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structpan_1_1_game_data_acf99f80b705995e55eacfb79baadb749}\label{structpan_1_1_game_data_acf99f80b705995e55eacfb79baadb749}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!disease\+Cubes@{disease\+Cubes}}
+\index{disease\+Cubes@{disease\+Cubes}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{disease\+Cubes}{diseaseCubes}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index}$>$ pan\+::\+Game\+Data\+::disease\+Cubes}
+
+The available disease cubes \mbox{\Hypertarget{structpan_1_1_game_data_ad0126298791b791dd3b1f83bf6e2109d}\label{structpan_1_1_game_data_ad0126298791b791dd3b1f83bf6e2109d}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!diseases@{diseases}}
+\index{diseases@{diseases}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{diseases}{diseases}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classpan_1_1_disease}{Disease}$>$ pan\+::\+Game\+Data\+::diseases}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_a4ede59b5ced4fccdeb01471a07bd8128}\label{structpan_1_1_game_data_a4ede59b5ced4fccdeb01471a07bd8128}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!infection\+Rate\+Marker@{infection\+Rate\+Marker}}
+\index{infection\+Rate\+Marker@{infection\+Rate\+Marker}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{infection\+Rate\+Marker}{infectionRateMarker}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Game\+Data\+::infection\+Rate\+Marker}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_aad23d9b004b01784e7bb2c980beb02e9}\label{structpan_1_1_game_data_aad23d9b004b01784e7bb2c980beb02e9}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!initialized@{initialized}}
+\index{initialized@{initialized}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool pan\+::\+Game\+Data\+::initialized}
+
+Whether the game was initialized \mbox{\Hypertarget{structpan_1_1_game_data_aa7c3194057a3cb4c5d827b93c6eab7fc}\label{structpan_1_1_game_data_aa7c3194057a3cb4c5d827b93c6eab7fc}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!outbreak\+Marker@{outbreak\+Marker}}
+\index{outbreak\+Marker@{outbreak\+Marker}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{outbreak\+Marker}{outbreakMarker}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Game\+Data\+::outbreak\+Marker}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_a84dbb9125cd228c57da05a732ef6f18f}\label{structpan_1_1_game_data_a84dbb9125cd228c57da05a732ef6f18f}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!removed\+Diseases\+Cubes@{removed\+Diseases\+Cubes}}
+\index{removed\+Diseases\+Cubes@{removed\+Diseases\+Cubes}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{removed\+Diseases\+Cubes}{removedDiseasesCubes}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index}$>$ pan\+::\+Game\+Data\+::removed\+Diseases\+Cubes}
+
+The disease cubes that have been removed from the game \mbox{\Hypertarget{structpan_1_1_game_data_a9dde961d902c84df7e6e0bba551bf858}\label{structpan_1_1_game_data_a9dde961d902c84df7e6e0bba551bf858}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!research\+Stations@{research\+Stations}}
+\index{research\+Stations@{research\+Stations}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{research\+Stations}{researchStations}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Game\+Data\+::research\+Stations}
+
+\mbox{\Hypertarget{structpan_1_1_game_data_ab907cda56d6df33bedbf6d3c617d6a64}\label{structpan_1_1_game_data_ab907cda56d6df33bedbf6d3c617d6a64}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!settings@{settings}}
+\index{settings@{settings}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{settings}{settings}}
+{\footnotesize\ttfamily \hyperlink{classpan_1_1_settings}{Settings} pan\+::\+Game\+Data\+::settings}
+
+The game settings \mbox{\Hypertarget{structpan_1_1_game_data_a5a1dace14546bf80cac4a00e7b55d603}\label{structpan_1_1_game_data_a5a1dace14546bf80cac4a00e7b55d603}} 
+\index{pan\+::\+Game\+Data@{pan\+::\+Game\+Data}!state@{state}}
+\index{state@{state}!pan\+::\+Game\+Data@{pan\+::\+Game\+Data}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \hyperlink{namespacepan_a6f99370eda3b27c2bbe19b2dacea9212}{Game\+State} pan\+::\+Game\+Data\+::state}
+
+The current state of the game 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_data_8h}{Data.\+h}\item 
+\hyperlink{_data_8cpp}{Data.\+cpp}\end{DoxyCompactItemize}

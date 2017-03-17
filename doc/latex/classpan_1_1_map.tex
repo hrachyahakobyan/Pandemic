@@ -1,0 +1,396 @@
+\hypertarget{classpan_1_1_map}{}\section{pan\+:\+:Map Class Reference}
+\label{classpan_1_1_map}\index{pan\+::\+Map@{pan\+::\+Map}}
+
+
+A class representing the game \hyperlink{classpan_1_1_map}{Map}, i.\+e. the board. Note, by the rules of the game the \hyperlink{classpan_1_1_map}{Map} requries at least one \hyperlink{classpan_1_1_region}{Region}. If one is not given, a default one will be constructed. The regions are implemented as a mapping between City\+Index-\/s and Region\+Index-\/s and Region\+Index-\/s and \hyperlink{classpan_1_1_region}{Region} objects.  
+
+
+
+
+{\ttfamily \#include $<$Map.\+h$>$}
+
+Inheritance diagram for pan\+:\+:Map\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpan_1_1_map}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classpan_1_1detail_1_1_graph}{detail\+::\+Graph}$<$ \hyperlink{classpan_1_1_city}{City} $>$\+::Vertex\+Iterator \hyperlink{classpan_1_1_map_a13baf12f486c6c3b823696266f06202c}{City\+Iterator}
+\item 
+typedef \hyperlink{classpan_1_1detail_1_1_graph}{detail\+::\+Graph}$<$ \hyperlink{classpan_1_1_city}{City} $>$\+::Adjacency\+Iterator \hyperlink{classpan_1_1_map_a616bc40b1a3f76f046be7ddf44ba90df}{Connected\+City\+Iterator}
+\item 
+typedef \hyperlink{classpan_1_1detail_1_1_graph}{detail\+::\+Graph}$<$ \hyperlink{classpan_1_1_city}{City} $>$\+::Adjacency\+Range \hyperlink{classpan_1_1_map_a6b1e81229ca2ed5c67202254948bde9b}{Connected\+City\+Range}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpan_1_1_map_a11ad1a3ad71e540b3f0c99f345e03e48}{Map} ()
+\begin{DoxyCompactList}\small\item\em default constructor for \hyperlink{classpan_1_1_map}{Map}. Will create an initial region with index 0. \end{DoxyCompactList}\item 
+\hyperlink{classpan_1_1_map_a60ce8e428c334ae75778774a46459128}{Map} (const \hyperlink{classpan_1_1_region}{Region} \&r)
+\item 
+\hyperlink{classpan_1_1_map_afe804f21ecea59695d8baabfb562026a}{Map} (const \hyperlink{classpan_1_1_map}{Map} \&)
+\item 
+\hyperlink{classpan_1_1_map_ac3348e336efab6436758eaa28c04db1a}{Map} (\hyperlink{classpan_1_1_map}{Map} \&\&)
+\item 
+\hyperlink{classpan_1_1_map}{Map} \& \hyperlink{classpan_1_1_map_af9d36a347d38a376d5da72bf85e95f68}{operator=} (const \hyperlink{classpan_1_1_map}{Map} \&)
+\item 
+\hyperlink{classpan_1_1_map}{Map} \& \hyperlink{classpan_1_1_map_a3413513964774303b47161eb8ed922f8}{operator=} (\hyperlink{classpan_1_1_map}{Map} \&\&)
+\item 
+\hyperlink{classpan_1_1_map_a91d7bff34d75bc416ec7e6bdc4a497ab}{$\sim$\+Map} ()=default
+\item 
+bool \hyperlink{classpan_1_1_map_a7b06691976776c099e60890b15b4eb99}{operator==} (const \hyperlink{classpan_1_1_map}{Map} \&other) const
+\item 
+bool \hyperlink{classpan_1_1_map_a7f5b4f8589dd3a4951e35d198b4f8048}{operator!=} (const \hyperlink{classpan_1_1_map}{Map} \&other) const
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{classpan_1_1_map_a0afa3368bc2f5fbd85b4b2c3205f0996}{serialize} (Archive \&ar, const unsigned int)
+\item 
+std\+::string \hyperlink{classpan_1_1_map_a9d08be170f445bbef11ea0d38ba8c531}{description} () const
+\item 
+std\+::size\+\_\+t \hyperlink{classpan_1_1_map_aa39642daa76646a3229fd5f92572b242}{num\+Cities} () const
+\item 
+std\+::size\+\_\+t \hyperlink{classpan_1_1_map_a70b6a65dc76e8911beb524062a2d09a9}{num\+Connections} () const
+\item 
+bool \hyperlink{classpan_1_1_map_a331d27d9fe199aea61b6ed76b4950d55}{city\+Exists} (\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index} i) const
+\item 
+const \hyperlink{classpan_1_1_city}{City} \& \hyperlink{classpan_1_1_map_a0f7820b581ca27511a687618f01dce2d}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index} i) const
+\item 
+\hyperlink{classpan_1_1_city}{City} \& \hyperlink{classpan_1_1_map_ab9e03b7854710fdbd279e62c2494ef06}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index} i)
+\item 
+bool \hyperlink{classpan_1_1_map_ae6644155d9ddd28d82ab393e62024637}{connection\+Exists} (\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index} i, \hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index} j) const
+\item 
+\hyperlink{classpan_1_1_map_a6b1e81229ca2ed5c67202254948bde9b}{Connected\+City\+Range} \hyperlink{classpan_1_1_map_a1cb8308c1ddac316a683be688277a25a}{connected\+Cities} (\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index} i) const
+\item 
+std\+::size\+\_\+t \hyperlink{classpan_1_1_map_a7e61225a4309562a5b8df58acb325276}{num\+Regions} () const
+\item 
+std\+::vector$<$ \hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index} $>$ \hyperlink{classpan_1_1_map_a580c57ef43aaf9c4c964d18340754d3c}{get\+Regions} () const
+\item 
+const \hyperlink{classpan_1_1_region}{Region} \& \hyperlink{classpan_1_1_map_ac0597ceffd926725744a6518c7773421}{region\+At} (\hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index} index) const
+\item 
+\hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index} \hyperlink{classpan_1_1_map_af477415a73c3e1fed14f1bd3753da6b1}{region\+For\+City} (\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index} i) const
+\item 
+std\+::set$<$ \hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index} $>$ \hyperlink{classpan_1_1_map_a6c28ef7bcc328fa4260309aa14f50f8a}{region\+Cities} (\hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index} index) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classpan_1_1_map}{Map} \hyperlink{classpan_1_1_map_afc16b42064eca43b341cd4a555bed092}{pandemic\+Map} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpan_1_1_map_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class representing the game \hyperlink{classpan_1_1_map}{Map}, i.\+e. the board. Note, by the rules of the game the \hyperlink{classpan_1_1_map}{Map} requries at least one \hyperlink{classpan_1_1_region}{Region}. If one is not given, a default one will be constructed. The regions are implemented as a mapping between City\+Index-\/s and Region\+Index-\/s and Region\+Index-\/s and \hyperlink{classpan_1_1_region}{Region} objects. 
+
+\begin{DoxyAuthor}{Author}
+Hrachya Hakobyan 
+\end{DoxyAuthor}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classpan_1_1_map_a13baf12f486c6c3b823696266f06202c}\label{classpan_1_1_map_a13baf12f486c6c3b823696266f06202c}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!City\+Iterator@{City\+Iterator}}
+\index{City\+Iterator@{City\+Iterator}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{City\+Iterator}{CityIterator}}
+{\footnotesize\ttfamily typedef \hyperlink{classpan_1_1detail_1_1_graph}{detail\+::\+Graph}$<$\hyperlink{classpan_1_1_city}{City}$>$\+::Vertex\+Iterator \hyperlink{classpan_1_1_map_a13baf12f486c6c3b823696266f06202c}{pan\+::\+Map\+::\+City\+Iterator}}
+
+\mbox{\Hypertarget{classpan_1_1_map_a616bc40b1a3f76f046be7ddf44ba90df}\label{classpan_1_1_map_a616bc40b1a3f76f046be7ddf44ba90df}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!Connected\+City\+Iterator@{Connected\+City\+Iterator}}
+\index{Connected\+City\+Iterator@{Connected\+City\+Iterator}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{Connected\+City\+Iterator}{ConnectedCityIterator}}
+{\footnotesize\ttfamily typedef \hyperlink{classpan_1_1detail_1_1_graph}{detail\+::\+Graph}$<$\hyperlink{classpan_1_1_city}{City}$>$\+::Adjacency\+Iterator \hyperlink{classpan_1_1_map_a616bc40b1a3f76f046be7ddf44ba90df}{pan\+::\+Map\+::\+Connected\+City\+Iterator}}
+
+\mbox{\Hypertarget{classpan_1_1_map_a6b1e81229ca2ed5c67202254948bde9b}\label{classpan_1_1_map_a6b1e81229ca2ed5c67202254948bde9b}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!Connected\+City\+Range@{Connected\+City\+Range}}
+\index{Connected\+City\+Range@{Connected\+City\+Range}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{Connected\+City\+Range}{ConnectedCityRange}}
+{\footnotesize\ttfamily typedef \hyperlink{classpan_1_1detail_1_1_graph}{detail\+::\+Graph}$<$\hyperlink{classpan_1_1_city}{City}$>$\+::Adjacency\+Range \hyperlink{classpan_1_1_map_a6b1e81229ca2ed5c67202254948bde9b}{pan\+::\+Map\+::\+Connected\+City\+Range}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpan_1_1_map_a11ad1a3ad71e540b3f0c99f345e03e48}\label{classpan_1_1_map_a11ad1a3ad71e540b3f0c99f345e03e48}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!Map@{Map}}
+\index{Map@{Map}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily pan\+::\+Map\+::\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor for \hyperlink{classpan_1_1_map}{Map}. Will create an initial region with index 0. 
+
+\mbox{\Hypertarget{classpan_1_1_map_a60ce8e428c334ae75778774a46459128}\label{classpan_1_1_map_a60ce8e428c334ae75778774a46459128}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!Map@{Map}}
+\index{Map@{Map}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily pan\+::\+Map\+::\+Map (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_region}{Region} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classpan_1_1_map_afe804f21ecea59695d8baabfb562026a}\label{classpan_1_1_map_afe804f21ecea59695d8baabfb562026a}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!Map@{Map}}
+\index{Map@{Map}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily pan\+::\+Map\+::\+Map (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_map}{Map} \&}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_map_ac3348e336efab6436758eaa28c04db1a}\label{classpan_1_1_map_ac3348e336efab6436758eaa28c04db1a}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!Map@{Map}}
+\index{Map@{Map}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily pan\+::\+Map\+::\+Map (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1_map}{Map} \&\&}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_map_a91d7bff34d75bc416ec7e6bdc4a497ab}\label{classpan_1_1_map_a91d7bff34d75bc416ec7e6bdc4a497ab}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!````~Map@{$\sim$\+Map}}
+\index{````~Map@{$\sim$\+Map}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{$\sim$\+Map()}{~Map()}}
+{\footnotesize\ttfamily pan\+::\+Map\+::$\sim$\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpan_1_1_map_a331d27d9fe199aea61b6ed76b4950d55}\label{classpan_1_1_map_a331d27d9fe199aea61b6ed76b4950d55}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!city\+Exists@{city\+Exists}}
+\index{city\+Exists@{city\+Exists}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{city\+Exists()}{cityExists()}}
+{\footnotesize\ttfamily bool pan\+::\+Map\+::city\+Exists (\begin{DoxyParamCaption}\item[{\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if a city exists. 
+\begin{DoxyParams}{Parameters}
+{\em index} & the City\+Index to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the city exists, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_a1cb8308c1ddac316a683be688277a25a}\label{classpan_1_1_map_a1cb8308c1ddac316a683be688277a25a}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!connected\+Cities@{connected\+Cities}}
+\index{connected\+Cities@{connected\+Cities}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{connected\+Cities()}{connectedCities()}}
+{\footnotesize\ttfamily \hyperlink{classpan_1_1_map_a6b1e81229ca2ed5c67202254948bde9b}{Map\+::\+Connected\+City\+Range} pan\+::\+Map\+::connected\+Cities (\begin{DoxyParamCaption}\item[{\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the connected cities. 
+\begin{DoxyParams}{Parameters}
+{\em i} & the city index \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if index is invalid \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+iterator pair for the neighbor cities of i 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_ae6644155d9ddd28d82ab393e62024637}\label{classpan_1_1_map_ae6644155d9ddd28d82ab393e62024637}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!connection\+Exists@{connection\+Exists}}
+\index{connection\+Exists@{connection\+Exists}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{connection\+Exists()}{connectionExists()}}
+{\footnotesize\ttfamily bool pan\+::\+Map\+::connection\+Exists (\begin{DoxyParamCaption}\item[{\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index}}]{i,  }\item[{\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if cities at specified indeces are connected/ 
+\begin{DoxyParams}{Parameters}
+{\em i} & the index of the first \hyperlink{classpan_1_1_city}{City} \\
+\hline
+{\em j} & the index of the second \hyperlink{classpan_1_1_city}{City} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a connection between the cities exists, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_a9d08be170f445bbef11ea0d38ba8c531}\label{classpan_1_1_map_a9d08be170f445bbef11ea0d38ba8c531}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!description@{description}}
+\index{description@{description}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string pan\+::\+Map\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Public Interaface 
+
+Implements \hyperlink{classpan_1_1_object_a2bb6d3117bb32f5774657c83f118ed8b}{pan\+::\+Object}.
+
+\mbox{\Hypertarget{classpan_1_1_map_a580c57ef43aaf9c4c964d18340754d3c}\label{classpan_1_1_map_a580c57ef43aaf9c4c964d18340754d3c}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!get\+Regions@{get\+Regions}}
+\index{get\+Regions@{get\+Regions}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{get\+Regions()}{getRegions()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index} $>$ pan\+::\+Map\+::get\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns all regions in the map. \begin{DoxyReturn}{Returns}
+vector of all regions in the map. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_aa39642daa76646a3229fd5f92572b242}\label{classpan_1_1_map_aa39642daa76646a3229fd5f92572b242}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!num\+Cities@{num\+Cities}}
+\index{num\+Cities@{num\+Cities}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{num\+Cities()}{numCities()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t pan\+::\+Map\+::num\+Cities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter for the number of cities. \begin{DoxyReturn}{Returns}
+the number of cities on the map
+\end{DoxyReturn}
+Public Interface \mbox{\Hypertarget{classpan_1_1_map_a70b6a65dc76e8911beb524062a2d09a9}\label{classpan_1_1_map_a70b6a65dc76e8911beb524062a2d09a9}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!num\+Connections@{num\+Connections}}
+\index{num\+Connections@{num\+Connections}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{num\+Connections()}{numConnections()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t pan\+::\+Map\+::num\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter for the number of connections. \begin{DoxyReturn}{Returns}
+the number of connections, i.\+e. edges on the map. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_a7e61225a4309562a5b8df58acb325276}\label{classpan_1_1_map_a7e61225a4309562a5b8df58acb325276}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!num\+Regions@{num\+Regions}}
+\index{num\+Regions@{num\+Regions}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{num\+Regions()}{numRegions()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t pan\+::\+Map\+::num\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of regions in the map. \begin{DoxyReturn}{Returns}
+the number of regions on the map 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_a7f5b4f8589dd3a4951e35d198b4f8048}\label{classpan_1_1_map_a7f5b4f8589dd3a4951e35d198b4f8048}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool pan\+::\+Map\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_map}{Map} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1_map_af9d36a347d38a376d5da72bf85e95f68}\label{classpan_1_1_map_af9d36a347d38a376d5da72bf85e95f68}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!operator=@{operator=}}
+\index{operator=@{operator=}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classpan_1_1_map}{Map} \& pan\+::\+Map\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_map}{Map} \&}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_map_a3413513964774303b47161eb8ed922f8}\label{classpan_1_1_map_a3413513964774303b47161eb8ed922f8}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!operator=@{operator=}}
+\index{operator=@{operator=}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classpan_1_1_map}{Map} \& pan\+::\+Map\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1_map}{Map} \&\&}]{o }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_map_a7b06691976776c099e60890b15b4eb99}\label{classpan_1_1_map_a7b06691976776c099e60890b15b4eb99}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!operator==@{operator==}}
+\index{operator==@{operator==}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool pan\+::\+Map\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_map}{Map} \&}]{other }\end{DoxyParamCaption}) const}
+
+Comparison operators. Note, full fledged comparison is not feasible (i.\+e. graph isomorphism). The comparison does not take into account edge connectivity of the cities. \mbox{\Hypertarget{classpan_1_1_map_a0f7820b581ca27511a687618f01dce2d}\label{classpan_1_1_map_a0f7820b581ca27511a687618f01dce2d}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classpan_1_1_city}{City} \& pan\+::\+Map\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the const reference of the \hyperlink{classpan_1_1_city}{City} object at the corresponding index. 
+\begin{DoxyParams}{Parameters}
+{\em i} & the City\+Index of the reference of the object to be returned \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if the index in invalid \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the constant reference of the \hyperlink{classpan_1_1_city}{City} object at the specified index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_ab9e03b7854710fdbd279e62c2494ef06}\label{classpan_1_1_map_ab9e03b7854710fdbd279e62c2494ef06}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classpan_1_1_city}{City} \& pan\+::\+Map\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the reference of the \hyperlink{classpan_1_1_city}{City} object at the corresponding index. 
+\begin{DoxyParams}{Parameters}
+{\em i} & the City\+Index of the reference of the object to be returned \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if the index is invalid \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the reference of the \hyperlink{classpan_1_1_city}{City} object at the specified index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_afc16b42064eca43b341cd4a555bed092}\label{classpan_1_1_map_afc16b42064eca43b341cd4a555bed092}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!pandemic\+Map@{pandemic\+Map}}
+\index{pandemic\+Map@{pandemic\+Map}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{pandemic\+Map()}{pandemicMap()}}
+{\footnotesize\ttfamily \hyperlink{classpan_1_1_map}{Map} pan\+::\+Map\+::pandemic\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpan_1_1_map_ac0597ceffd926725744a6518c7773421}\label{classpan_1_1_map_ac0597ceffd926725744a6518c7773421}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!region\+At@{region\+At}}
+\index{region\+At@{region\+At}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{region\+At()}{regionAt()}}
+{\footnotesize\ttfamily const \hyperlink{classpan_1_1_region}{Region} \& pan\+::\+Map\+::region\+At (\begin{DoxyParamCaption}\item[{\hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index}}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the region with the specified index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & the index of the \hyperlink{classpan_1_1_region}{Region} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if the index is invalid \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the const reference to the specified \hyperlink{classpan_1_1_region}{Region} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_a6c28ef7bcc328fa4260309aa14f50f8a}\label{classpan_1_1_map_a6c28ef7bcc328fa4260309aa14f50f8a}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!region\+Cities@{region\+Cities}}
+\index{region\+Cities@{region\+Cities}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{region\+Cities()}{regionCities()}}
+{\footnotesize\ttfamily std\+::set$<$ \hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index} $>$ pan\+::\+Map\+::region\+Cities (\begin{DoxyParamCaption}\item[{\hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index}}]{index }\end{DoxyParamCaption}) const}
+
+Returns the City\+Index-\/s of the specified \hyperlink{classpan_1_1_region}{Region} Caution, O(\+N) operation on the number of vertices. 
+\begin{DoxyParams}{Parameters}
+{\em index} & the index of the region \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if the index is invalid \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the set of City\+Index-\/s of the region 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_af477415a73c3e1fed14f1bd3753da6b1}\label{classpan_1_1_map_af477415a73c3e1fed14f1bd3753da6b1}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!region\+For\+City@{region\+For\+City}}
+\index{region\+For\+City@{region\+For\+City}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{region\+For\+City()}{regionForCity()}}
+{\footnotesize\ttfamily \hyperlink{namespacepan_a648dcc32a76222a9e4cd4a3e80bda642}{Region\+Index} pan\+::\+Map\+::region\+For\+City (\begin{DoxyParamCaption}\item[{\hyperlink{namespacepan_afaed28aa6603153dcc062a028602d697}{City\+Index}}]{i }\end{DoxyParamCaption}) const}
+
+Returns the region of the city with the specified City\+Index 
+\begin{DoxyParams}{Parameters}
+{\em index} & the index of the city \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if the index is invalid \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+the const reference to the \hyperlink{classpan_1_1_region}{Region} of the city 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_map_a0afa3368bc2f5fbd85b4b2c3205f0996}\label{classpan_1_1_map_a0afa3368bc2f5fbd85b4b2c3205f0996}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!serialize@{serialize}}
+\index{serialize@{serialize}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void pan\+::\+Map\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned}]{int }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classpan_1_1_map_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classpan_1_1_map_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{pan\+::\+Map@{pan\+::\+Map}!boost\+::serialization\+::access@{boost\+::serialization\+::access}}
+\index{boost\+::serialization\+::access@{boost\+::serialization\+::access}!pan\+::\+Map@{pan\+::\+Map}}
+\subsubsection{\texorpdfstring{boost\+::serialization\+::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_map_8h}{Map.\+h}\item 
+\hyperlink{_map_8cpp}{Map.\+cpp}\end{DoxyCompactItemize}

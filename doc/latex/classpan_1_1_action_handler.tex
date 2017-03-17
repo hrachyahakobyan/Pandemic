@@ -1,0 +1,378 @@
+\hypertarget{classpan_1_1_action_handler}{}\section{pan\+:\+:Action\+Handler Class Reference}
+\label{classpan_1_1_action_handler}\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+
+
+Class containing the logic of validating and executing actions. Directly connected to a \hyperlink{classpan_1_1_game}{Game} object through a reference. Does not store any state, is free from serialization.  
+
+
+
+
+{\ttfamily \#include $<$Action\+Handler.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpan_1_1_action_handler_a5aeb269dae11a6bd190fafd945a508a1}{Action\+Handler} (\hyperlink{classpan_1_1_game}{Game} \&game)
+\item 
+\hyperlink{classpan_1_1_action_handler_a56b3a54ca19b9d071adffa0a9ac7b266}{Action\+Handler} ()=delete
+\item 
+\hyperlink{classpan_1_1_action_handler_a403ff5c81573b682a5dfc9d476be8e4e}{Action\+Handler} (const \hyperlink{classpan_1_1_action_handler}{Action\+Handler} \&)=delete
+\item 
+\hyperlink{classpan_1_1_action_handler_a5bf64631c974765b04def48c0df0fcd7}{$\sim$\+Action\+Handler} ()
+\item 
+{\footnotesize template$<$typename Action $>$ }\\bool \hyperlink{classpan_1_1_action_handler_ae2a8bd5ae0560677aeafe7b6c068adb7}{validate} (const Action \&action) const
+\item 
+{\footnotesize template$<$typename Action $>$ }\\bool \hyperlink{classpan_1_1_action_handler_a7c5cefcd45fe538da04762de3cac0dbd}{execute} (const Action \&action)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a3e2fc1b454ace0dd42b3b4bacc22eb0d}{validate} (const \hyperlink{classpan_1_1_move}{Move} \&m) const
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a97f0f5801dedcbc42396f185686083bb}{execute} (const \hyperlink{classpan_1_1_move}{Move} \&m)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_aa3788249f03ad2eaa4cdaf375b7da3d2}{validate} (const \hyperlink{classpan_1_1_direct_flight}{Direct\+Flight} \&m) const
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_ad72cd3c55d494ca5941e1b9f46e6d6b7}{execute} (const \hyperlink{classpan_1_1_direct_flight}{Direct\+Flight} \&m)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a6eade14ec30fec3d40adf7b3ddbf1ed5}{validate} (const \hyperlink{classpan_1_1_charter_flight}{Charter\+Flight} \&m) const
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a2f471e252e4cff4e06e9f95309f2049a}{execute} (const \hyperlink{classpan_1_1_charter_flight}{Charter\+Flight} \&m)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a3b8964b9b1888df96c71da3447967656}{validate} (const \hyperlink{classpan_1_1_shuttle_flight}{Shuttle\+Flight} \&m) const
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_ae5962fc9522e37b575fe9922cb28e040}{execute} (const \hyperlink{classpan_1_1_shuttle_flight}{Shuttle\+Flight} \&m)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_ad55077a791011a4af860f67793d0e3e5}{validate} (const \hyperlink{classpan_1_1_build_research_station}{Build\+Research\+Station} \&m) const
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a82301269ae5559636bdd1e41373757d6}{execute} (const \hyperlink{classpan_1_1_build_research_station}{Build\+Research\+Station} \&m)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a9d0117592a8ef88cbb945e82b0676f58}{validate} (const \hyperlink{classpan_1_1_treat_disease}{Treat\+Disease} \&m) const
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_adcbd9a954dcbaa6b968facd6395797a6}{execute} (const \hyperlink{classpan_1_1_treat_disease}{Treat\+Disease} \&m)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a148408970391d77cc793b5e33fe55789}{validate} (const \hyperlink{classpan_1_1_discover_cure}{Discover\+Cure} \&m) const
+\begin{DoxyCompactList}\small\item\em validates the discover cure action The action is valid if the following hold \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_aa39cbd76ffdebb15c21890730a79606d}{execute} (const \hyperlink{classpan_1_1_discover_cure}{Discover\+Cure} \&m)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a6e4ee30f39708e81fa435d13d3b27919}{validate} (const \hyperlink{classpan_1_1_draw_player_cards}{Draw\+Player\+Cards} \&a) const
+\begin{DoxyCompactList}\small\item\em validates Drawplayer\+Cards action the action is valid if the following hold \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a1dbb4c4c6404625a9660d1d5f7b94dc5}{execute} (const \hyperlink{classpan_1_1_draw_player_cards}{Draw\+Player\+Cards} \&a)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_af6d6407b345efff7c1d2ecb50a0af563}{validate} (const \hyperlink{classpan_1_1_player_infect}{Player\+Infect} \&a) const
+\begin{DoxyCompactList}\small\item\em validates \hyperlink{classpan_1_1_player_infect}{Player\+Infect} action The action is valid if the following hold. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a1ebea9d9a8bb894945e1ad0ecc7821c9}{execute} (const \hyperlink{classpan_1_1_player_infect}{Player\+Infect} \&a)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_af6175819ceeba99896279c04401a5393}{validate} (const \hyperlink{classpan_1_1_discard_card}{Discard\+Card} \&a) const
+\begin{DoxyCompactList}\small\item\em validates \hyperlink{classpan_1_1_discard_card}{Discard\+Card} action The action is valid if the following hold. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a829a5d84e0fd082391be32ed3a680ae4}{execute} (const \hyperlink{classpan_1_1_discard_card}{Discard\+Card} \&a)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a628fc9ae167c2d421644a12e93b8137c}{validate} (const \hyperlink{classpan_1_1_outbreak}{Outbreak} \&a) const
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_ad2119c276b50e56a42553671fc6e1e70}{execute} (const \hyperlink{classpan_1_1_outbreak}{Outbreak} \&a)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a0dc0214533aeb931e6c119e15caaee6a}{validate} (const \hyperlink{classpan_1_1_infect}{Infect} \&a) const
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_ade755aaadb764489a68634811314bee2}{execute} (const \hyperlink{classpan_1_1_infect}{Infect} \&a)
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a28ed770b339cba18d970a153c82d3c45}{validate} (const \hyperlink{classpan_1_1_epidemic}{Epidemic} \&a) const
+\item 
+{\footnotesize template$<$$>$ }\\bool \hyperlink{classpan_1_1_action_handler_a469f04bd874aca38c9b3792aee209703}{execute} (const \hyperlink{classpan_1_1_epidemic}{Epidemic} \&a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class containing the logic of validating and executing actions. Directly connected to a \hyperlink{classpan_1_1_game}{Game} object through a reference. Does not store any state, is free from serialization. 
+
+\begin{DoxyAuthor}{Author}
+Hrachya Hakobyan 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpan_1_1_action_handler_a5aeb269dae11a6bd190fafd945a508a1}\label{classpan_1_1_action_handler_a5aeb269dae11a6bd190fafd945a508a1}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!Action\+Handler@{Action\+Handler}}
+\index{Action\+Handler@{Action\+Handler}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{Action\+Handler()}{ActionHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily pan\+::\+Action\+Handler\+::\+Action\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1_game}{Game} \&}]{game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a56b3a54ca19b9d071adffa0a9ac7b266}\label{classpan_1_1_action_handler_a56b3a54ca19b9d071adffa0a9ac7b266}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!Action\+Handler@{Action\+Handler}}
+\index{Action\+Handler@{Action\+Handler}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{Action\+Handler()}{ActionHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily pan\+::\+Action\+Handler\+::\+Action\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a403ff5c81573b682a5dfc9d476be8e4e}\label{classpan_1_1_action_handler_a403ff5c81573b682a5dfc9d476be8e4e}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!Action\+Handler@{Action\+Handler}}
+\index{Action\+Handler@{Action\+Handler}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{Action\+Handler()}{ActionHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily pan\+::\+Action\+Handler\+::\+Action\+Handler (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_action_handler}{Action\+Handler} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a5bf64631c974765b04def48c0df0fcd7}\label{classpan_1_1_action_handler_a5bf64631c974765b04def48c0df0fcd7}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!````~Action\+Handler@{$\sim$\+Action\+Handler}}
+\index{````~Action\+Handler@{$\sim$\+Action\+Handler}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{$\sim$\+Action\+Handler()}{~ActionHandler()}}
+{\footnotesize\ttfamily pan\+::\+Action\+Handler\+::$\sim$\+Action\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpan_1_1_action_handler_a7c5cefcd45fe538da04762de3cac0dbd}\label{classpan_1_1_action_handler_a7c5cefcd45fe538da04762de3cac0dbd}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/14]}}
+{\footnotesize\ttfamily template$<$typename Action $>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const Action \&}]{action }\end{DoxyParamCaption})}
+
+Executes the given action. The action is validated before execution. A valid action will always execute. 
+\begin{DoxyParams}{Parameters}
+{\em action} & a subclass of \hyperlink{classpan_1_1_action_impl}{Action\+Impl} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the action was valid, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_action_handler_a97f0f5801dedcbc42396f185686083bb}\label{classpan_1_1_action_handler_a97f0f5801dedcbc42396f185686083bb}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_move}{Move} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_ad72cd3c55d494ca5941e1b9f46e6d6b7}\label{classpan_1_1_action_handler_ad72cd3c55d494ca5941e1b9f46e6d6b7}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_direct_flight}{Direct\+Flight} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a2f471e252e4cff4e06e9f95309f2049a}\label{classpan_1_1_action_handler_a2f471e252e4cff4e06e9f95309f2049a}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [4/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_charter_flight}{Charter\+Flight} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_ae5962fc9522e37b575fe9922cb28e040}\label{classpan_1_1_action_handler_ae5962fc9522e37b575fe9922cb28e040}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [5/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_shuttle_flight}{Shuttle\+Flight} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a82301269ae5559636bdd1e41373757d6}\label{classpan_1_1_action_handler_a82301269ae5559636bdd1e41373757d6}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [6/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_build_research_station}{Build\+Research\+Station} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_adcbd9a954dcbaa6b968facd6395797a6}\label{classpan_1_1_action_handler_adcbd9a954dcbaa6b968facd6395797a6}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [7/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_treat_disease}{Treat\+Disease} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_aa39cbd76ffdebb15c21890730a79606d}\label{classpan_1_1_action_handler_aa39cbd76ffdebb15c21890730a79606d}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [8/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_discover_cure}{Discover\+Cure} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a1dbb4c4c6404625a9660d1d5f7b94dc5}\label{classpan_1_1_action_handler_a1dbb4c4c6404625a9660d1d5f7b94dc5}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [9/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_draw_player_cards}{Draw\+Player\+Cards} \&}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a1ebea9d9a8bb894945e1ad0ecc7821c9}\label{classpan_1_1_action_handler_a1ebea9d9a8bb894945e1ad0ecc7821c9}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [10/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_player_infect}{Player\+Infect} \&}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a829a5d84e0fd082391be32ed3a680ae4}\label{classpan_1_1_action_handler_a829a5d84e0fd082391be32ed3a680ae4}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [11/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_discard_card}{Discard\+Card} \&}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_ad2119c276b50e56a42553671fc6e1e70}\label{classpan_1_1_action_handler_ad2119c276b50e56a42553671fc6e1e70}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [12/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_outbreak}{Outbreak} \&}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_ade755aaadb764489a68634811314bee2}\label{classpan_1_1_action_handler_ade755aaadb764489a68634811314bee2}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [13/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_infect}{Infect} \&}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a469f04bd874aca38c9b3792aee209703}\label{classpan_1_1_action_handler_a469f04bd874aca38c9b3792aee209703}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [14/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::execute (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_epidemic}{Epidemic} \&}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_ae2a8bd5ae0560677aeafe7b6c068adb7}\label{classpan_1_1_action_handler_ae2a8bd5ae0560677aeafe7b6c068adb7}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/14]}}
+{\footnotesize\ttfamily template$<$typename Action $>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const Action \&}]{action }\end{DoxyParamCaption}) const}
+
+Validates the given action 
+\begin{DoxyParams}{Parameters}
+{\em action} & a subclass of \hyperlink{classpan_1_1_action_impl}{Action\+Impl} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the action is valid, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1_action_handler_a3e2fc1b454ace0dd42b3b4bacc22eb0d}\label{classpan_1_1_action_handler_a3e2fc1b454ace0dd42b3b4bacc22eb0d}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_move}{Move} \&}]{m }\end{DoxyParamCaption}) const}
+
+Validates \hyperlink{classpan_1_1_move}{Move} action. A move action is valid if the following hold 1.\+The player exists.
+\begin{DoxyEnumerate}
+\item It is the player\textquotesingle{}s turn.
+\item The player can make an action.
+\item The target city is not the same as the player\textquotesingle{}s city.
+\item The target city is a neighbor of the player\textquotesingle{}s city. 
+\end{DoxyEnumerate}\mbox{\Hypertarget{classpan_1_1_action_handler_aa3788249f03ad2eaa4cdaf375b7da3d2}\label{classpan_1_1_action_handler_aa3788249f03ad2eaa4cdaf375b7da3d2}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_direct_flight}{Direct\+Flight} \&}]{m }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a6eade14ec30fec3d40adf7b3ddbf1ed5}\label{classpan_1_1_action_handler_a6eade14ec30fec3d40adf7b3ddbf1ed5}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_charter_flight}{Charter\+Flight} \&}]{m }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a3b8964b9b1888df96c71da3447967656}\label{classpan_1_1_action_handler_a3b8964b9b1888df96c71da3447967656}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [5/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_shuttle_flight}{Shuttle\+Flight} \&}]{m }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_ad55077a791011a4af860f67793d0e3e5}\label{classpan_1_1_action_handler_ad55077a791011a4af860f67793d0e3e5}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [6/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_build_research_station}{Build\+Research\+Station} \&}]{m }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a9d0117592a8ef88cbb945e82b0676f58}\label{classpan_1_1_action_handler_a9d0117592a8ef88cbb945e82b0676f58}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [7/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_treat_disease}{Treat\+Disease} \&}]{m }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a148408970391d77cc793b5e33fe55789}\label{classpan_1_1_action_handler_a148408970391d77cc793b5e33fe55789}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [8/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_discover_cure}{Discover\+Cure} \&}]{m }\end{DoxyParamCaption}) const}
+
+
+
+validates the discover cure action The action is valid if the following hold 
+
+
+\begin{DoxyEnumerate}
+\item The initiating player exists.
+\item The initiating player may perform an action.
+\item The initiating player is located in a city that has a research station
+\item The initiating player has enough city cards of the same color as the disease he/she attempts to cure. 
+\end{DoxyEnumerate}\mbox{\Hypertarget{classpan_1_1_action_handler_a6e4ee30f39708e81fa435d13d3b27919}\label{classpan_1_1_action_handler_a6e4ee30f39708e81fa435d13d3b27919}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [9/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_draw_player_cards}{Draw\+Player\+Cards} \&}]{a }\end{DoxyParamCaption}) const}
+
+
+
+validates Drawplayer\+Cards action the action is valid if the following hold 
+
+
+\begin{DoxyEnumerate}
+\item The initiating player exists
+\item It\textquotesingle{}s the initiating player\textquotesingle{}s turn
+\item The current player stage is Draw 
+\end{DoxyEnumerate}\mbox{\Hypertarget{classpan_1_1_action_handler_af6d6407b345efff7c1d2ecb50a0af563}\label{classpan_1_1_action_handler_af6d6407b345efff7c1d2ecb50a0af563}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [10/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_player_infect}{Player\+Infect} \&}]{a }\end{DoxyParamCaption}) const}
+
+
+
+validates \hyperlink{classpan_1_1_player_infect}{Player\+Infect} action The action is valid if the following hold. 
+
+
+\begin{DoxyEnumerate}
+\item The initiating player exists.
+\item It is the initiating player\textquotesingle{}s turn.
+\item The current stage is \hyperlink{classpan_1_1_infect}{Infect}. 
+\end{DoxyEnumerate}\mbox{\Hypertarget{classpan_1_1_action_handler_af6175819ceeba99896279c04401a5393}\label{classpan_1_1_action_handler_af6175819ceeba99896279c04401a5393}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [11/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_discard_card}{Discard\+Card} \&}]{a }\end{DoxyParamCaption}) const}
+
+
+
+validates \hyperlink{classpan_1_1_discard_card}{Discard\+Card} action The action is valid if the following hold. 
+
+
+\begin{DoxyEnumerate}
+\item The initiating player exists.
+\item It is the initiating player\textquotesingle{}s turn.
+\item The current stage is Discard.
+\item The index is a valid card in the players hand. 
+\end{DoxyEnumerate}\mbox{\Hypertarget{classpan_1_1_action_handler_a628fc9ae167c2d421644a12e93b8137c}\label{classpan_1_1_action_handler_a628fc9ae167c2d421644a12e93b8137c}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [12/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_outbreak}{Outbreak} \&}]{a }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a0dc0214533aeb931e6c119e15caaee6a}\label{classpan_1_1_action_handler_a0dc0214533aeb931e6c119e15caaee6a}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [13/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_infect}{Infect} \&}]{a }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classpan_1_1_action_handler_a28ed770b339cba18d970a153c82d3c45}\label{classpan_1_1_action_handler_a28ed770b339cba18d970a153c82d3c45}} 
+\index{pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Handler@{pan\+::\+Action\+Handler}}
+\subsubsection{\texorpdfstring{validate()}{validate()}\hspace{0.1cm}{\footnotesize\ttfamily [14/14]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+bool pan\+::\+Action\+Handler\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_epidemic}{Epidemic} \&}]{a }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_action_handler_8h}{Action\+Handler.\+h}\item 
+\hyperlink{_action_handler_8cpp}{Action\+Handler.\+cpp}\end{DoxyCompactItemize}

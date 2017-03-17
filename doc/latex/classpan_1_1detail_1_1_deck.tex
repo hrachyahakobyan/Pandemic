@@ -1,0 +1,462 @@
+\hypertarget{classpan_1_1detail_1_1_deck}{}\section{pan\+:\+:detail\+:\+:Deck$<$ T $>$ Class Template Reference}
+\label{classpan_1_1detail_1_1_deck}\index{pan\+::detail\+::\+Deck$<$ T $>$@{pan\+::detail\+::\+Deck$<$ T $>$}}
+
+
+Class to hold a logic of a deck. The actual type of the contained object is a template parameter. The container could also be templatized, but it adds too much complexity to the code and not too much flexibility. The only containers that could possibly be used are std\+::vector and std\+::deque, since they are contiguous and provide random access iterator required for random shuffling.  
+
+
+
+
+{\ttfamily \#include $<$Deck.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \hyperlink{classpan_1_1detail_1_1_deck_ac5564d75421f0eb701a2b0b6f4220337}{value\+\_\+type}
+\item 
+typedef std\+::vector$<$ T $>$ \hyperlink{classpan_1_1detail_1_1_deck_a847d973e0469dd7aef881b3863c37cff}{container\+\_\+type}
+\item 
+typedef std\+::vector$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator} \hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator}
+\item 
+typedef std\+::vector$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_addc18d2f40aa396f6358bb019d088728}{const\+\_\+iterator} \hyperlink{classpan_1_1detail_1_1_deck_addc18d2f40aa396f6358bb019d088728}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck_a022f77a6a1618e8ab2aa938859873e96}{Deck} ()
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck_a6038518a1177afd95ed05d93ed90aa52}{Deck} (std\+::size\+\_\+t \hyperlink{classpan_1_1detail_1_1_deck_a4ccde71b3fae9ce2ea3da99ad500c9ba}{size})
+\item 
+{\footnotesize template$<$typename C $>$ }\\\hyperlink{classpan_1_1detail_1_1_deck_a40c6e297b96eea183986fae9e1441a74}{Deck} (const C \&)
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck_a297086e3603a1960541f748c63af8ced}{Deck} (const \hyperlink{classpan_1_1detail_1_1_deck}{Deck} \&)
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck} \& \hyperlink{classpan_1_1detail_1_1_deck_a8a33b4bc1c46e71b918c39e088d5dee9}{operator=} (const \hyperlink{classpan_1_1detail_1_1_deck}{Deck} \&)
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck_a051b16fa5c1c5a40703dc1e8e1d9700e}{Deck} (\hyperlink{classpan_1_1detail_1_1_deck}{Deck} \&\&)
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck} \& \hyperlink{classpan_1_1detail_1_1_deck_a1c8b3bed015f5dce938b22b6cc7c53d9}{operator=} (\hyperlink{classpan_1_1detail_1_1_deck}{Deck} \&\&)
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck_a1ba732dffcccfdf0be1eb2481dc56421}{$\sim$\+Deck} ()
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{classpan_1_1detail_1_1_deck_a92252be8ce9a2f0ec7604c6471c1bf81}{serialize} (Archive \&ar, const unsigned int)
+\item 
+bool \hyperlink{classpan_1_1detail_1_1_deck_a0037b1f2bd8d60577b2943f9fefa5417}{operator==} (const \hyperlink{classpan_1_1detail_1_1_deck}{Deck} \&) const
+\item 
+bool \hyperlink{classpan_1_1detail_1_1_deck_ad63bb7177e7e051fec7beae3a3989cf7}{operator!=} (const \hyperlink{classpan_1_1detail_1_1_deck}{Deck} \&) const
+\item 
+const T \& \hyperlink{classpan_1_1detail_1_1_deck_a49faca6aade745781eeaa048902c3045}{operator\mbox{[}$\,$\mbox{]}} (std\+::size\+\_\+t i) const
+\item 
+T \& \hyperlink{classpan_1_1detail_1_1_deck_ab9d32067fc206985aa116c47cb061809}{operator\mbox{[}$\,$\mbox{]}} (std\+::size\+\_\+t i)
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator} \hyperlink{classpan_1_1detail_1_1_deck_a32ce67b19c19b9760a939197f32bdbd7}{begin} ()
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck_addc18d2f40aa396f6358bb019d088728}{const\+\_\+iterator} \hyperlink{classpan_1_1detail_1_1_deck_aa2a28d431e67eb803c7812e8893c1fdf}{begin} () const
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator} \hyperlink{classpan_1_1detail_1_1_deck_a05820009bdfba814a1a2bc56bce9cbb8}{end} ()
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck_addc18d2f40aa396f6358bb019d088728}{const\+\_\+iterator} \hyperlink{classpan_1_1detail_1_1_deck_a612c8366fcec0ee40c617d7585a57726}{end} () const
+\item 
+{\footnotesize template$<$typename C $>$ }\\\hyperlink{classpan_1_1detail_1_1_deck}{Deck} \& \hyperlink{classpan_1_1detail_1_1_deck_a51483b834bcae54ce386de8dbd646f11}{operator+=} (const C \&c)
+\item 
+std\+::size\+\_\+t \hyperlink{classpan_1_1detail_1_1_deck_a4ccde71b3fae9ce2ea3da99ad500c9ba}{size} () const
+\item 
+bool \hyperlink{classpan_1_1detail_1_1_deck_a23b456cde20b1a67c894cff73a4d67ee}{empty} () const
+\item 
+void \hyperlink{classpan_1_1detail_1_1_deck_afbcc141b70fe8cf56f66b1e4d11bd4f4}{clear} ()
+\item 
+const \hyperlink{classpan_1_1detail_1_1_deck_a847d973e0469dd7aef881b3863c37cff}{container\+\_\+type} \& \hyperlink{classpan_1_1detail_1_1_deck_a7ab128dae3cf7c12cda581a129163948}{\+\_\+\+Get\+\_\+container} () const
+\item 
+const T \& \hyperlink{classpan_1_1detail_1_1_deck_a12ce80897ff102e94279a81584b29e2d}{top} () const
+\item 
+void \hyperlink{classpan_1_1detail_1_1_deck_ae40b687cc780fbff6411d4679e54b872}{pop} ()
+\item 
+const T \& \hyperlink{classpan_1_1detail_1_1_deck_a44054712651d2f78a7c6c238be9dbdcb}{bottom} () const
+\item 
+void \hyperlink{classpan_1_1detail_1_1_deck_a4d5fc95df8f273d0ec51078acd7df69c}{pop\+\_\+bottom} ()
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator} \hyperlink{classpan_1_1detail_1_1_deck_ade33e6822a72ec2031def23a7a4d6cfc}{erase} (\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator} position)
+\item 
+void \hyperlink{classpan_1_1detail_1_1_deck_a540b0f1829a2783f76dcda346871ec19}{push} (const T \&t)
+\item 
+void \hyperlink{classpan_1_1detail_1_1_deck_a27a12aa62ddf019a33922fc8c78425b2}{push} (const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&deck)
+\item 
+{\footnotesize template$<$typename C $>$ }\\void \hyperlink{classpan_1_1detail_1_1_deck_aa0bb14b1318470b4c84d02a8f531242d}{push} (const C \&c)
+\item 
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \hyperlink{classpan_1_1detail_1_1_deck_a2b430f618af32aa3c3d5fff16133ebda}{deal} (std\+::size\+\_\+t \hyperlink{classpan_1_1detail_1_1_deck_a4ccde71b3fae9ce2ea3da99ad500c9ba}{size})
+\item 
+void \hyperlink{classpan_1_1detail_1_1_deck_af6f9182fc5bb8c77f50ebd9a3a3a3606}{shuffle} ()
+\item 
+void \hyperlink{classpan_1_1detail_1_1_deck_a51a44400a7614735bcb5e560ea48da48}{insert} (const T \&val)
+\item 
+{\footnotesize template$<$typename C $>$ }\\\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \& \hyperlink{classpan_1_1detail_1_1_deck_af541a86b4d96c99ca748a80a4ccf4196}{operator+=} (const C \&c)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpan_1_1detail_1_1_deck_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \hyperlink{classpan_1_1detail_1_1_deck_a6a019fd327e92f2f97cb25e9efdf95e2}{operator+} (const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&\hyperlink{classpan_1_1detail_1_1_deck_a44054712651d2f78a7c6c238be9dbdcb}{bottom}, const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&\hyperlink{classpan_1_1detail_1_1_deck_a12ce80897ff102e94279a81584b29e2d}{top})
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \hyperlink{classpan_1_1detail_1_1_deck_ab8b4a9b9c08e387099a284faf9b15281}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&d)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class pan\+::detail\+::\+Deck$<$ T $>$}
+
+Class to hold a logic of a deck. The actual type of the contained object is a template parameter. The container could also be templatized, but it adds too much complexity to the code and not too much flexibility. The only containers that could possibly be used are std\+::vector and std\+::deque, since they are contiguous and provide random access iterator required for random shuffling. 
+
+\begin{DoxyAuthor}{Author}
+Hrachya Hakobyan 
+\end{DoxyAuthor}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_addc18d2f40aa396f6358bb019d088728}\label{classpan_1_1detail_1_1_deck_addc18d2f40aa396f6358bb019d088728}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{const\+\_\+iterator}{const\_iterator}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef std\+::vector$<$T$>$\+::\hyperlink{classpan_1_1detail_1_1_deck_addc18d2f40aa396f6358bb019d088728}{const\+\_\+iterator} \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_addc18d2f40aa396f6358bb019d088728}{const\+\_\+iterator}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a847d973e0469dd7aef881b3863c37cff}\label{classpan_1_1detail_1_1_deck_a847d973e0469dd7aef881b3863c37cff}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!container\+\_\+type@{container\+\_\+type}}
+\index{container\+\_\+type@{container\+\_\+type}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{container\+\_\+type}{container\_type}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef std\+::vector$<$T$>$ \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_a847d973e0469dd7aef881b3863c37cff}{container\+\_\+type}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}\label{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!iterator@{iterator}}
+\index{iterator@{iterator}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef std\+::vector$<$T$>$\+::\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator} \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_ac5564d75421f0eb701a2b0b6f4220337}\label{classpan_1_1detail_1_1_deck_ac5564d75421f0eb701a2b0b6f4220337}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{value\+\_\+type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+typedef T \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_ac5564d75421f0eb701a2b0b6f4220337}{value\+\_\+type}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a022f77a6a1618e8ab2aa938859873e96}\label{classpan_1_1detail_1_1_deck_a022f77a6a1618e8ab2aa938859873e96}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!Deck@{Deck}}
+\index{Deck@{Deck}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{Deck()}{Deck()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck}{Deck} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a6038518a1177afd95ed05d93ed90aa52}\label{classpan_1_1detail_1_1_deck_a6038518a1177afd95ed05d93ed90aa52}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!Deck@{Deck}}
+\index{Deck@{Deck}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{Deck()}{Deck()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck}{Deck} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a40c6e297b96eea183986fae9e1441a74}\label{classpan_1_1detail_1_1_deck_a40c6e297b96eea183986fae9e1441a74}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!Deck@{Deck}}
+\index{Deck@{Deck}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{Deck()}{Deck()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename C $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck}{Deck} (\begin{DoxyParamCaption}\item[{const C \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Construct using arbitrary container providing const iterators. \mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a297086e3603a1960541f748c63af8ced}\label{classpan_1_1detail_1_1_deck_a297086e3603a1960541f748c63af8ced}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!Deck@{Deck}}
+\index{Deck@{Deck}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{Deck()}{Deck()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck}{Deck} (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&}]{d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a051b16fa5c1c5a40703dc1e8e1d9700e}\label{classpan_1_1detail_1_1_deck_a051b16fa5c1c5a40703dc1e8e1d9700e}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!Deck@{Deck}}
+\index{Deck@{Deck}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{Deck()}{Deck()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck}{Deck} (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&\&}]{d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a1ba732dffcccfdf0be1eb2481dc56421}\label{classpan_1_1detail_1_1_deck_a1ba732dffcccfdf0be1eb2481dc56421}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!````~Deck@{$\sim$\+Deck}}
+\index{````~Deck@{$\sim$\+Deck}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{$\sim$\+Deck()}{~Deck()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::$\sim$\hyperlink{classpan_1_1detail_1_1_deck}{Deck} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a7ab128dae3cf7c12cda581a129163948}\label{classpan_1_1detail_1_1_deck_a7ab128dae3cf7c12cda581a129163948}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!\+\_\+\+Get\+\_\+container@{\+\_\+\+Get\+\_\+container}}
+\index{\+\_\+\+Get\+\_\+container@{\+\_\+\+Get\+\_\+container}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{\+\_\+\+Get\+\_\+container()}{\_Get\_container()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_a847d973e0469dd7aef881b3863c37cff}{container\+\_\+type} \& \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::\+\_\+\+Get\+\_\+container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a32ce67b19c19b9760a939197f32bdbd7}\label{classpan_1_1detail_1_1_deck_a32ce67b19c19b9760a939197f32bdbd7}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!begin@{begin}}
+\index{begin@{begin}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator} \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_aa2a28d431e67eb803c7812e8893c1fdf}\label{classpan_1_1detail_1_1_deck_aa2a28d431e67eb803c7812e8893c1fdf}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!begin@{begin}}
+\index{begin@{begin}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_addc18d2f40aa396f6358bb019d088728}{const\+\_\+iterator} \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a44054712651d2f78a7c6c238be9dbdcb}\label{classpan_1_1detail_1_1_deck_a44054712651d2f78a7c6c238be9dbdcb}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!bottom@{bottom}}
+\index{bottom@{bottom}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{bottom()}{bottom()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::bottom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_afbcc141b70fe8cf56f66b1e4d11bd4f4}\label{classpan_1_1detail_1_1_deck_afbcc141b70fe8cf56f66b1e4d11bd4f4}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!clear@{clear}}
+\index{clear@{clear}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a2b430f618af32aa3c3d5fff16133ebda}\label{classpan_1_1detail_1_1_deck_a2b430f618af32aa3c3d5fff16133ebda}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!deal@{deal}}
+\index{deal@{deal}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{deal()}{deal()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::deal (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Returns a new deck containing at most size number of items from the top of the original deck. 
+\begin{DoxyParams}{Parameters}
+{\em size} & of the dealed deck \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a23b456cde20b1a67c894cff73a4d67ee}\label{classpan_1_1detail_1_1_deck_a23b456cde20b1a67c894cff73a4d67ee}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!empty@{empty}}
+\index{empty@{empty}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a05820009bdfba814a1a2bc56bce9cbb8}\label{classpan_1_1detail_1_1_deck_a05820009bdfba814a1a2bc56bce9cbb8}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!end@{end}}
+\index{end@{end}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator} \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a612c8366fcec0ee40c617d7585a57726}\label{classpan_1_1detail_1_1_deck_a612c8366fcec0ee40c617d7585a57726}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!end@{end}}
+\index{end@{end}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_addc18d2f40aa396f6358bb019d088728}{const\+\_\+iterator} \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_ade33e6822a72ec2031def23a7a4d6cfc}\label{classpan_1_1detail_1_1_deck_ade33e6822a72ec2031def23a7a4d6cfc}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!erase@{erase}}
+\index{erase@{erase}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$\+::\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator} \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_deck_a8b4adeae73d035d2bbe3fdfcb65ed1b1}{iterator}}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a51a44400a7614735bcb5e560ea48da48}\label{classpan_1_1detail_1_1_deck_a51a44400a7614735bcb5e560ea48da48}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!insert@{insert}}
+\index{insert@{insert}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption})}
+
+Inserts the element to a randomly selected position in the deck \mbox{\Hypertarget{classpan_1_1detail_1_1_deck_ad63bb7177e7e051fec7beae3a3989cf7}\label{classpan_1_1detail_1_1_deck_ad63bb7177e7e051fec7beae3a3989cf7}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&}]{d }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a51483b834bcae54ce386de8dbd646f11}\label{classpan_1_1detail_1_1_deck_a51483b834bcae54ce386de8dbd646f11}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+template$<$typename C $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}\& \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const C \&}]{c }\end{DoxyParamCaption})}
+
+Concatenate the current \hyperlink{classpan_1_1detail_1_1_deck}{Deck} to a type that can be converted to a concatanable type. Can be T, Deck$<$\+T$>$, or a container of value type T providing const iterators 
+\begin{DoxyParams}{Parameters}
+{\em c} & the item to concatenate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to the original deck 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_af541a86b4d96c99ca748a80a4ccf4196}\label{classpan_1_1detail_1_1_deck_af541a86b4d96c99ca748a80a4ccf4196}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+template$<$typename C $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$T$>$\& \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const C \&}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a8a33b4bc1c46e71b918c39e088d5dee9}\label{classpan_1_1detail_1_1_deck_a8a33b4bc1c46e71b918c39e088d5dee9}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!operator=@{operator=}}
+\index{operator=@{operator=}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \& \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&}]{d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a1c8b3bed015f5dce938b22b6cc7c53d9}\label{classpan_1_1detail_1_1_deck_a1c8b3bed015f5dce938b22b6cc7c53d9}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!operator=@{operator=}}
+\index{operator=@{operator=}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \& \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&\&}]{d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a0037b1f2bd8d60577b2943f9fefa5417}\label{classpan_1_1detail_1_1_deck_a0037b1f2bd8d60577b2943f9fefa5417}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!operator==@{operator==}}
+\index{operator==@{operator==}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&}]{d }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a49faca6aade745781eeaa048902c3045}\label{classpan_1_1detail_1_1_deck_a49faca6aade745781eeaa048902c3045}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_ab9d32067fc206985aa116c47cb061809}\label{classpan_1_1detail_1_1_deck_ab9d32067fc206985aa116c47cb061809}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_ae40b687cc780fbff6411d4679e54b872}\label{classpan_1_1detail_1_1_deck_ae40b687cc780fbff6411d4679e54b872}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!pop@{pop}}
+\index{pop@{pop}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a4d5fc95df8f273d0ec51078acd7df69c}\label{classpan_1_1detail_1_1_deck_a4d5fc95df8f273d0ec51078acd7df69c}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!pop\+\_\+bottom@{pop\+\_\+bottom}}
+\index{pop\+\_\+bottom@{pop\+\_\+bottom}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{pop\+\_\+bottom()}{pop\_bottom()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::pop\+\_\+bottom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a540b0f1829a2783f76dcda346871ec19}\label{classpan_1_1detail_1_1_deck_a540b0f1829a2783f76dcda346871ec19}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!push@{push}}
+\index{push@{push}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{const T \&}]{t }\end{DoxyParamCaption})}
+
+Push a single item 
+\begin{DoxyParams}{Parameters}
+{\em t} & the item to push \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a27a12aa62ddf019a33922fc8c78425b2}\label{classpan_1_1detail_1_1_deck_a27a12aa62ddf019a33922fc8c78425b2}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!push@{push}}
+\index{push@{push}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&}]{deck }\end{DoxyParamCaption})}
+
+Push a new deck. 
+\begin{DoxyParams}{Parameters}
+{\em deck} & the deck to push \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_aa0bb14b1318470b4c84d02a8f531242d}\label{classpan_1_1detail_1_1_deck_aa0bb14b1318470b4c84d02a8f531242d}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!push@{push}}
+\index{push@{push}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename C $>$ \\
+void \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{const C \&}]{c }\end{DoxyParamCaption})}
+
+Push a container of value type T providing iterators 
+\begin{DoxyParams}{Parameters}
+{\em c} & the container \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a92252be8ce9a2f0ec7604c6471c1bf81}\label{classpan_1_1detail_1_1_deck_a92252be8ce9a2f0ec7604c6471c1bf81}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!serialize@{serialize}}
+\index{serialize@{serialize}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+template$<$class Archive $>$ \\
+void \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{const unsigned}]{int }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_af6f9182fc5bb8c77f50ebd9a3a3a3606}\label{classpan_1_1detail_1_1_deck_af6f9182fc5bb8c77f50ebd9a3a3a3606}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!shuffle@{shuffle}}
+\index{shuffle@{shuffle}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{shuffle()}{shuffle()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::shuffle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Randomly shuffle the deck. Does not set the seed. \mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a4ccde71b3fae9ce2ea3da99ad500c9ba}\label{classpan_1_1detail_1_1_deck_a4ccde71b3fae9ce2ea3da99ad500c9ba}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!size@{size}}
+\index{size@{size}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::size\+\_\+t \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a12ce80897ff102e94279a81584b29e2d}\label{classpan_1_1detail_1_1_deck_a12ce80897ff102e94279a81584b29e2d}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!top@{top}}
+\index{top@{top}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{top()}{top()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \hyperlink{classpan_1_1detail_1_1_deck}{pan\+::detail\+::\+Deck}$<$ T $>$\+::top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classpan_1_1detail_1_1_deck_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!boost\+::serialization\+::access@{boost\+::serialization\+::access}}
+\index{boost\+::serialization\+::access@{boost\+::serialization\+::access}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{boost\+::serialization\+::access}{boost::serialization::access}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_a6a019fd327e92f2f97cb25e9efdf95e2}\label{classpan_1_1detail_1_1_deck_a6a019fd327e92f2f97cb25e9efdf95e2}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!operator+@{operator+}}
+\index{operator+@{operator+}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{operator+}{operator+}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+template$<$typename T $>$ \\
+\hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$T$>$ operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&}]{bottom,  }\item[{const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&}]{top }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Merge two decks. 
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the deck that will contribute to the bottom part of the new deck \\
+\hline
+{\em top} & the deck that will contribute to the top part of the new deck \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new deck consisting of bottom and top decks 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpan_1_1detail_1_1_deck_ab8b4a9b9c08e387099a284faf9b15281}\label{classpan_1_1detail_1_1_deck_ab8b4a9b9c08e387099a284faf9b15281}} 
+\index{pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!pan\+::detail\+::\+Deck@{pan\+::detail\+::\+Deck}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+template$<$typename T $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classpan_1_1detail_1_1_deck}{Deck}$<$ T $>$ \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+detail/\hyperlink{_deck_8h}{Deck.\+h}\end{DoxyCompactItemize}

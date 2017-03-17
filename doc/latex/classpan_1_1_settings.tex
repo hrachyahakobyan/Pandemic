@@ -1,0 +1,219 @@
+\hypertarget{classpan_1_1_settings}{}\section{pan\+:\+:Settings Class Reference}
+\label{classpan_1_1_settings}\index{pan\+::\+Settings@{pan\+::\+Settings}}
+
+
+encapsulates all game related parameters.  
+
+
+
+
+{\ttfamily \#include $<$Settings.\+h$>$}
+
+Inheritance diagram for pan\+:\+:Settings\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpan_1_1_settings}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpan_1_1_settings_af5bdfa4c3ed9460b0290d9f3d0aee02a}{Settings} ()
+\item 
+\hyperlink{classpan_1_1_settings_a88e5d34527d110fd6391df762199c405}{Settings} (unsigned int \hyperlink{classpan_1_1_settings_a4a7c2963d63bd768b9e64ffb8461333f}{player\+Count}, unsigned int \hyperlink{classpan_1_1_settings_a61569c8a2fcccdf9409d5467625ee788}{epidemic\+Card\+Count}, unsigned int \hyperlink{classpan_1_1_settings_adf8144ec33fa2217b8fc422e7b4806be}{initial\+Cards})
+\item 
+\hyperlink{classpan_1_1_settings_a73b85e961b1be7a48d5cca58c9a61f41}{$\sim$\+Settings} ()=default
+\item 
+std\+::string \hyperlink{classpan_1_1_settings_ac88db54a696993babc9c495d54fc89c3}{description} () const
+\item 
+bool \hyperlink{classpan_1_1_settings_a5a068817d5e6f48ac72b9f2706f185a8}{operator==} (const \hyperlink{classpan_1_1_settings}{Settings} \&) const
+\item 
+bool \hyperlink{classpan_1_1_settings_a47b2bc896ccc1de8ab00f734555b4cdc}{operator!=} (const \hyperlink{classpan_1_1_settings}{Settings} \&) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classpan_1_1_settings}{Settings} \hyperlink{classpan_1_1_settings_a908b6305091cf8d02bb4179dcbbe4ad1}{Beginner} (unsigned int players)
+\item 
+static \hyperlink{classpan_1_1_settings}{Settings} \hyperlink{classpan_1_1_settings_a272d0e01c6e60dcfa1958c9ae54ff69f}{Standard} (unsigned int players)
+\item 
+static \hyperlink{classpan_1_1_settings}{Settings} \hyperlink{classpan_1_1_settings_af0212489163b1d55fc5e661ad85a0b1e}{Heroic} (unsigned int players)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classpan_1_1_settings_a4a7c2963d63bd768b9e64ffb8461333f}{player\+Count}
+\item 
+unsigned int \hyperlink{classpan_1_1_settings_a61569c8a2fcccdf9409d5467625ee788}{epidemic\+Card\+Count}
+\item 
+unsigned int \hyperlink{classpan_1_1_settings_adf8144ec33fa2217b8fc422e7b4806be}{initial\+Cards}
+\item 
+unsigned int \hyperlink{classpan_1_1_settings_adb30d858a479ca96e0f7d3591bf77746}{player\+Draw\+Count} = 2
+\item 
+unsigned int \hyperlink{classpan_1_1_settings_a6702806d498f37822811241a2a8f7ab3}{discover\+Cure\+Card\+Count} = 5
+\item 
+unsigned int \hyperlink{classpan_1_1_settings_a189fdd9a58dc25ca3f8766be031eba99}{player\+Hand\+Max} = 7
+\item 
+unsigned int \hyperlink{classpan_1_1_settings_a85ce29ab84bb000a19f31eb00c7134ed}{disease\+Cubes\+Per\+Disease} = 24
+\item 
+unsigned int \hyperlink{classpan_1_1_settings_ab3fc24065a6f74fc63a6f171ffc8fea2}{max\+Research\+Stations} = 6
+\item 
+unsigned int \hyperlink{classpan_1_1_settings_a437e7eaf47786919ebd3504100d5ac68}{outbreak\+Marker\+Max} = 8
+\item 
+std\+::vector$<$ unsigned int $>$ \hyperlink{classpan_1_1_settings_a9b9d37ca162c63ab759271fd21e7b15f}{infection\+Rates}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpan_1_1_settings_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+encapsulates all game related parameters. 
+
+\begin{DoxyAuthor}{Author}
+Hrachya Hakobyan 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpan_1_1_settings_af5bdfa4c3ed9460b0290d9f3d0aee02a}\label{classpan_1_1_settings_af5bdfa4c3ed9460b0290d9f3d0aee02a}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!Settings@{Settings}}
+\index{Settings@{Settings}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{Settings()}{Settings()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily pan\+::\+Settings\+::\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_settings_a88e5d34527d110fd6391df762199c405}\label{classpan_1_1_settings_a88e5d34527d110fd6391df762199c405}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!Settings@{Settings}}
+\index{Settings@{Settings}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{Settings()}{Settings()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily pan\+::\+Settings\+::\+Settings (\begin{DoxyParamCaption}\item[{unsigned int}]{player\+Count,  }\item[{unsigned int}]{epidemic\+Card\+Count,  }\item[{unsigned int}]{initial\+Cards }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpan_1_1_settings_a73b85e961b1be7a48d5cca58c9a61f41}\label{classpan_1_1_settings_a73b85e961b1be7a48d5cca58c9a61f41}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!````~Settings@{$\sim$\+Settings}}
+\index{````~Settings@{$\sim$\+Settings}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{$\sim$\+Settings()}{~Settings()}}
+{\footnotesize\ttfamily pan\+::\+Settings\+::$\sim$\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpan_1_1_settings_a908b6305091cf8d02bb4179dcbbe4ad1}\label{classpan_1_1_settings_a908b6305091cf8d02bb4179dcbbe4ad1}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!Beginner@{Beginner}}
+\index{Beginner@{Beginner}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{Beginner()}{Beginner()}}
+{\footnotesize\ttfamily \hyperlink{classpan_1_1_settings}{Settings} pan\+::\+Settings\+::\+Beginner (\begin{DoxyParamCaption}\item[{unsigned int}]{players }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpan_1_1_settings_ac88db54a696993babc9c495d54fc89c3}\label{classpan_1_1_settings_ac88db54a696993babc9c495d54fc89c3}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!description@{description}}
+\index{description@{description}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily std\+::string pan\+::\+Settings\+::description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classpan_1_1_object_a2bb6d3117bb32f5774657c83f118ed8b}{pan\+::\+Object}.
+
+\mbox{\Hypertarget{classpan_1_1_settings_af0212489163b1d55fc5e661ad85a0b1e}\label{classpan_1_1_settings_af0212489163b1d55fc5e661ad85a0b1e}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!Heroic@{Heroic}}
+\index{Heroic@{Heroic}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{Heroic()}{Heroic()}}
+{\footnotesize\ttfamily \hyperlink{classpan_1_1_settings}{Settings} pan\+::\+Settings\+::\+Heroic (\begin{DoxyParamCaption}\item[{unsigned int}]{players }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpan_1_1_settings_a47b2bc896ccc1de8ab00f734555b4cdc}\label{classpan_1_1_settings_a47b2bc896ccc1de8ab00f734555b4cdc}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool pan\+::\+Settings\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_settings}{Settings} \&}]{s }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classpan_1_1_settings_a5a068817d5e6f48ac72b9f2706f185a8}\label{classpan_1_1_settings_a5a068817d5e6f48ac72b9f2706f185a8}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!operator==@{operator==}}
+\index{operator==@{operator==}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool pan\+::\+Settings\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_settings}{Settings} \&}]{s }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classpan_1_1_settings_a272d0e01c6e60dcfa1958c9ae54ff69f}\label{classpan_1_1_settings_a272d0e01c6e60dcfa1958c9ae54ff69f}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!Standard@{Standard}}
+\index{Standard@{Standard}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{Standard()}{Standard()}}
+{\footnotesize\ttfamily \hyperlink{classpan_1_1_settings}{Settings} pan\+::\+Settings\+::\+Standard (\begin{DoxyParamCaption}\item[{unsigned int}]{players }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classpan_1_1_settings_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classpan_1_1_settings_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!boost\+::serialization\+::access@{boost\+::serialization\+::access}}
+\index{boost\+::serialization\+::access@{boost\+::serialization\+::access}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{boost\+::serialization\+::access}{boost::serialization::access}}
+{\footnotesize\ttfamily friend class boost\+::serialization\+::access\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpan_1_1_settings_a6702806d498f37822811241a2a8f7ab3}\label{classpan_1_1_settings_a6702806d498f37822811241a2a8f7ab3}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!discover\+Cure\+Card\+Count@{discover\+Cure\+Card\+Count}}
+\index{discover\+Cure\+Card\+Count@{discover\+Cure\+Card\+Count}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{discover\+Cure\+Card\+Count}{discoverCureCardCount}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Settings\+::discover\+Cure\+Card\+Count = 5}
+
+Default number of matching cards required to cure a disease \mbox{\Hypertarget{classpan_1_1_settings_a85ce29ab84bb000a19f31eb00c7134ed}\label{classpan_1_1_settings_a85ce29ab84bb000a19f31eb00c7134ed}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!disease\+Cubes\+Per\+Disease@{disease\+Cubes\+Per\+Disease}}
+\index{disease\+Cubes\+Per\+Disease@{disease\+Cubes\+Per\+Disease}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{disease\+Cubes\+Per\+Disease}{diseaseCubesPerDisease}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Settings\+::disease\+Cubes\+Per\+Disease = 24}
+
+Number of disease cubes per disease \mbox{\Hypertarget{classpan_1_1_settings_a61569c8a2fcccdf9409d5467625ee788}\label{classpan_1_1_settings_a61569c8a2fcccdf9409d5467625ee788}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!epidemic\+Card\+Count@{epidemic\+Card\+Count}}
+\index{epidemic\+Card\+Count@{epidemic\+Card\+Count}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{epidemic\+Card\+Count}{epidemicCardCount}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Settings\+::epidemic\+Card\+Count}
+
+Number of epidemic cards \mbox{\Hypertarget{classpan_1_1_settings_a9b9d37ca162c63ab759271fd21e7b15f}\label{classpan_1_1_settings_a9b9d37ca162c63ab759271fd21e7b15f}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!infection\+Rates@{infection\+Rates}}
+\index{infection\+Rates@{infection\+Rates}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{infection\+Rates}{infectionRates}}
+{\footnotesize\ttfamily std\+::vector$<$unsigned int$>$ pan\+::\+Settings\+::infection\+Rates}
+
+The infection rates for a give infection rate marker \mbox{\Hypertarget{classpan_1_1_settings_adf8144ec33fa2217b8fc422e7b4806be}\label{classpan_1_1_settings_adf8144ec33fa2217b8fc422e7b4806be}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!initial\+Cards@{initial\+Cards}}
+\index{initial\+Cards@{initial\+Cards}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{initial\+Cards}{initialCards}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Settings\+::initial\+Cards}
+
+Initial number of cards of each player \mbox{\Hypertarget{classpan_1_1_settings_ab3fc24065a6f74fc63a6f171ffc8fea2}\label{classpan_1_1_settings_ab3fc24065a6f74fc63a6f171ffc8fea2}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!max\+Research\+Stations@{max\+Research\+Stations}}
+\index{max\+Research\+Stations@{max\+Research\+Stations}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{max\+Research\+Stations}{maxResearchStations}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Settings\+::max\+Research\+Stations = 6}
+
+Maximum number of research stations \mbox{\Hypertarget{classpan_1_1_settings_a437e7eaf47786919ebd3504100d5ac68}\label{classpan_1_1_settings_a437e7eaf47786919ebd3504100d5ac68}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!outbreak\+Marker\+Max@{outbreak\+Marker\+Max}}
+\index{outbreak\+Marker\+Max@{outbreak\+Marker\+Max}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{outbreak\+Marker\+Max}{outbreakMarkerMax}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Settings\+::outbreak\+Marker\+Max = 8}
+
+Maximum value of the outbreak marker \mbox{\Hypertarget{classpan_1_1_settings_a4a7c2963d63bd768b9e64ffb8461333f}\label{classpan_1_1_settings_a4a7c2963d63bd768b9e64ffb8461333f}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!player\+Count@{player\+Count}}
+\index{player\+Count@{player\+Count}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{player\+Count}{playerCount}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Settings\+::player\+Count}
+
+Number of players \mbox{\Hypertarget{classpan_1_1_settings_adb30d858a479ca96e0f7d3591bf77746}\label{classpan_1_1_settings_adb30d858a479ca96e0f7d3591bf77746}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!player\+Draw\+Count@{player\+Draw\+Count}}
+\index{player\+Draw\+Count@{player\+Draw\+Count}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{player\+Draw\+Count}{playerDrawCount}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Settings\+::player\+Draw\+Count = 2}
+
+Number of cards to be drawn by each player \mbox{\Hypertarget{classpan_1_1_settings_a189fdd9a58dc25ca3f8766be031eba99}\label{classpan_1_1_settings_a189fdd9a58dc25ca3f8766be031eba99}} 
+\index{pan\+::\+Settings@{pan\+::\+Settings}!player\+Hand\+Max@{player\+Hand\+Max}}
+\index{player\+Hand\+Max@{player\+Hand\+Max}!pan\+::\+Settings@{pan\+::\+Settings}}
+\subsubsection{\texorpdfstring{player\+Hand\+Max}{playerHandMax}}
+{\footnotesize\ttfamily unsigned int pan\+::\+Settings\+::player\+Hand\+Max = 7}
+
+Size of the player hand 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_settings_8h}{Settings.\+h}\item 
+\hyperlink{_settings_8cpp}{Settings.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,91 @@
+\hypertarget{classpan_1_1_action_base}{}\section{pan\+:\+:Action\+Base Class Reference}
+\label{classpan_1_1_action_base}\index{pan\+::\+Action\+Base@{pan\+::\+Action\+Base}}
+
+
+Top level abstraction of the Action entity. Store the Command in the Command pattern. All actions that modify the state of the game, are encapsulated as subclasses of \hyperlink{classpan_1_1_action_base}{Action\+Base}.  
+
+
+
+
+{\ttfamily \#include $<$Action\+Base.\+h$>$}
+
+Inheritance diagram for pan\+:\+:Action\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classpan_1_1_action_base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpan_1_1_action_base_af413c6b934cf5a26e8fc3af5eebad773}{Action\+Base} ()
+\item 
+virtual \hyperlink{classpan_1_1_action_base_aac947bf1ed49830f4082727a54989420}{$\sim$\+Action\+Base} ()
+\item 
+virtual bool \hyperlink{classpan_1_1_action_base_adf042004e303511c8948de5502a59708}{validate} (const \hyperlink{classpan_1_1_action_handler}{Action\+Handler} \&h) const =0
+\item 
+virtual bool \hyperlink{classpan_1_1_action_base_aba9691736fd1f5ef40a523e988eef6fa}{execute} (\hyperlink{classpan_1_1_action_handler}{Action\+Handler} \&h) const =0
+\item 
+virtual \hyperlink{classpan_1_1_action_base}{Action\+Base} $\ast$ \hyperlink{classpan_1_1_action_base_a437f541998e59225ab13096a3c8f01c1}{clone} () const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Top level abstraction of the Action entity. Store the Command in the Command pattern. All actions that modify the state of the game, are encapsulated as subclasses of \hyperlink{classpan_1_1_action_base}{Action\+Base}. 
+
+\begin{DoxyAuthor}{Author}
+Hrachya Hakobyan 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpan_1_1_action_base_af413c6b934cf5a26e8fc3af5eebad773}\label{classpan_1_1_action_base_af413c6b934cf5a26e8fc3af5eebad773}} 
+\index{pan\+::\+Action\+Base@{pan\+::\+Action\+Base}!Action\+Base@{Action\+Base}}
+\index{Action\+Base@{Action\+Base}!pan\+::\+Action\+Base@{pan\+::\+Action\+Base}}
+\subsubsection{\texorpdfstring{Action\+Base()}{ActionBase()}}
+{\footnotesize\ttfamily pan\+::\+Action\+Base\+::\+Action\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classpan_1_1_action_base_aac947bf1ed49830f4082727a54989420}\label{classpan_1_1_action_base_aac947bf1ed49830f4082727a54989420}} 
+\index{pan\+::\+Action\+Base@{pan\+::\+Action\+Base}!````~Action\+Base@{$\sim$\+Action\+Base}}
+\index{````~Action\+Base@{$\sim$\+Action\+Base}!pan\+::\+Action\+Base@{pan\+::\+Action\+Base}}
+\subsubsection{\texorpdfstring{$\sim$\+Action\+Base()}{~ActionBase()}}
+{\footnotesize\ttfamily virtual pan\+::\+Action\+Base\+::$\sim$\+Action\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpan_1_1_action_base_a437f541998e59225ab13096a3c8f01c1}\label{classpan_1_1_action_base_a437f541998e59225ab13096a3c8f01c1}} 
+\index{pan\+::\+Action\+Base@{pan\+::\+Action\+Base}!clone@{clone}}
+\index{clone@{clone}!pan\+::\+Action\+Base@{pan\+::\+Action\+Base}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \hyperlink{classpan_1_1_action_base}{Action\+Base}$\ast$ pan\+::\+Action\+Base\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Outbreak, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Move, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Direct\+Flight, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Draw\+Player\+Cards, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Shuttle\+Flight, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Build\+Research\+Station, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Treat\+Disease, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Player\+Infect, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Infect, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Epidemic, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Discard\+Card, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Charter\+Flight, Action\+Base $>$}, and \hyperlink{classpan_1_1_action_impl_af94569c5a40d1de5c161282000c1a4c7}{pan\+::\+Action\+Impl$<$ Discover\+Cure, Action\+Base $>$}.
+
+\mbox{\Hypertarget{classpan_1_1_action_base_aba9691736fd1f5ef40a523e988eef6fa}\label{classpan_1_1_action_base_aba9691736fd1f5ef40a523e988eef6fa}} 
+\index{pan\+::\+Action\+Base@{pan\+::\+Action\+Base}!execute@{execute}}
+\index{execute@{execute}!pan\+::\+Action\+Base@{pan\+::\+Action\+Base}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual bool pan\+::\+Action\+Base\+::execute (\begin{DoxyParamCaption}\item[{\hyperlink{classpan_1_1_action_handler}{Action\+Handler} \&}]{h }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Outbreak, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Move, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Direct\+Flight, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Draw\+Player\+Cards, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Shuttle\+Flight, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Build\+Research\+Station, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Treat\+Disease, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Player\+Infect, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Infect, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Epidemic, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Discard\+Card, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Charter\+Flight, Action\+Base $>$}, and \hyperlink{classpan_1_1_action_impl_a14d72469bea6d60603d49e4815accb54}{pan\+::\+Action\+Impl$<$ Discover\+Cure, Action\+Base $>$}.
+
+\mbox{\Hypertarget{classpan_1_1_action_base_adf042004e303511c8948de5502a59708}\label{classpan_1_1_action_base_adf042004e303511c8948de5502a59708}} 
+\index{pan\+::\+Action\+Base@{pan\+::\+Action\+Base}!validate@{validate}}
+\index{validate@{validate}!pan\+::\+Action\+Base@{pan\+::\+Action\+Base}}
+\subsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily virtual bool pan\+::\+Action\+Base\+::validate (\begin{DoxyParamCaption}\item[{const \hyperlink{classpan_1_1_action_handler}{Action\+Handler} \&}]{h }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Outbreak, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Move, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Direct\+Flight, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Draw\+Player\+Cards, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Shuttle\+Flight, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Build\+Research\+Station, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Treat\+Disease, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Player\+Infect, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Infect, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Epidemic, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Discard\+Card, Action\+Base $>$}, \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Charter\+Flight, Action\+Base $>$}, and \hyperlink{classpan_1_1_action_impl_acea764a5b41d2fd21717089e21d0c6f4}{pan\+::\+Action\+Impl$<$ Discover\+Cure, Action\+Base $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_action_base_8h}{Action\+Base.\+h}\end{DoxyCompactItemize}
