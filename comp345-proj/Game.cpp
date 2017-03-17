@@ -87,6 +87,7 @@ namespace pan{
 		initCards();
 		initPlayers();
 		initInfect();
+		gameData.initialized = true;
 		return true;
 	}
 
@@ -157,6 +158,7 @@ namespace pan{
 		// Set the player turn and stage
 		playerData.turn = 0;
 		playerData.stage = PlayerStage::Act;
+		playerData.actionCounter = 0;
 	}
 
 	void Game::initInfect()

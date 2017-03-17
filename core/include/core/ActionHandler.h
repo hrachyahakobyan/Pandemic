@@ -66,6 +66,9 @@ namespace pan{
 		*/
 		void commitAction(PlayerIndex i);
 
+		/**
+		*
+		*/
 		bool outBreakImpl(const Outbreak& out, std::set<CityIndex>& infected);
 		bool infectImpl(const Infect& inf, std::set<CityIndex>& infected);
 	};

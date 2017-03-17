@@ -19,9 +19,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	sf::VideoMode desktopMode = sf::VideoMode::getDesktopMode();
 	sf::RenderWindow window(sf::VideoMode(desktopMode), "Pandemic", sf::Style::Default);
 
-	sf::View view(sf::FloatRect(0, 0, 3440, 1440));
+	//sf::View view(sf::FloatRect(0, 0, 3440, 1440));
 
-	window.setView(view);
+	//window.setView(view);
 
 	sf::Texture mapG;
 	mapG.loadFromFile("resources\\map.png");

@@ -110,7 +110,6 @@
     <ClCompile Include="FactoryTest.cpp" />
     <ClCompile Include="FileManagerTest.cpp" />
     <ClCompile Include="GameplayTest.cpp" />
-    <ClCompile Include="GameTest.cpp" />
     <ClCompile Include="GraphTest.cpp" />
     <ClCompile Include="MapTest.cpp" />
     <ClCompile Include="OutbreakTest.cpp" />

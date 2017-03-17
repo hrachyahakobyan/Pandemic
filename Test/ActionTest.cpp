@@ -143,8 +143,6 @@ namespace pan{
 		// Move to a city with no research station
 		Move m(p1Index, getNeighbor(p.getLocation(), g.map));
 		EXPECT_TRUE(m.execute(g.actionHandler));
-		// Cannot build because does not have a matching card
-		ASSERT_FALSE(b.execute(g.actionHandler));
 
 		// Add the required card
 		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(p.getLocation())));
