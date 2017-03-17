@@ -91,6 +91,7 @@
     <ClInclude Include="DiseaseTest.h" />
     <ClInclude Include="FactoryTest.h" />
     <ClInclude Include="FileManagerTest.h" />
+    <ClInclude Include="GameplayTest.h" />
     <ClInclude Include="GameTest.h" />
     <ClInclude Include="GraphTest.h" />
     <ClInclude Include="MapTest.h" />
@@ -108,6 +109,7 @@
     <ClCompile Include="DiseaseTest.cpp" />
     <ClCompile Include="FactoryTest.cpp" />
     <ClCompile Include="FileManagerTest.cpp" />
+    <ClCompile Include="GameplayTest.cpp" />
     <ClCompile Include="GameTest.cpp" />
     <ClCompile Include="GraphTest.cpp" />
     <ClCompile Include="MapTest.cpp" />

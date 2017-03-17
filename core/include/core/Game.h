@@ -36,7 +36,7 @@ namespace pan
 		inline bool operator!=(const Game&) const;
 
 		/**
-		*	@brief attempt to initialize the game.
+		*	attempt to initialize the game.
 		*	The game will be initialized only once.
 		*	The game will be initialized if all preconditions are met,
 		*	e.g. the game has the required number of players and/or any other precondition.
@@ -46,12 +46,12 @@ namespace pan
 		inline bool isInitialized() const;	
 
 		/**
-		*	@brief whether the game is over.
+		*	whether the game is over.
 		*	The game is over if the status is either Victory or Defeat
 		*/
 		inline bool isOver() const;
 		/**
-		*	@brief get the current state of the game.
+		*	get the current state of the game.
 		*	The game can either be running, or over.
 		*	A game that is over either has a state of Victory or Defeat
 		*	@return the current state of the game
@@ -86,14 +86,14 @@ namespace pan
 		inline bool playerExists(PlayerIndex i) const;
 
 		/**
-		*	@brief Adds a new action to the action queue
+		*	Adds a new action to the action queue
 		*	If the game is not initialized or is over, the method will have no effect.
 		*	@param action the action to be added.
 		*/
 		void addAction(const ActionBase& action);
 
 		/**
-		*	@brief Executes actions in the action queue.
+		*	Executes actions in the action queue.
 		*	If the game is not initialized or is over, the method will have no effect.
 		*	If the action is invalid, it will be removed from the action queue.
 		*	If there are no action, the method will have no effect.
@@ -101,7 +101,7 @@ namespace pan
 		void execute();
 
 		/**
-		*	@brief Executes all actions in the action queue.
+		*	Executes all actions in the action queue.
 		*	If the game is not initialized or is over, the method will have no effect.
 		*	If there are no action, the method will have no effect.
 		*/
@@ -152,19 +152,39 @@ namespace pan
 	private:
 		/* Private Interface */
 		/**
-		*	@brief returns the player at index
+		*	returns the player at index
 		*	@param i the index of the player to return
 		*	@return a reference to the underlying player object
 		*/
 		inline PlayerBase& getPlayer(PlayerIndex i);
 
 		/**
-		*	@brief attempt to alter the state of the game
+		*   attempt to alter the state of the game
 		*	The games state can be changed from inProgress to Either Defeat or Victory
 		*	but not the other way
 		*	@param newState the new state of the game
 		*/
 		void changeState(GameState newState);
+
+		/**
+		*	initializes the diseases
+		*/
+		void initDiseases();
+
+		/**
+		*	initializes the cards
+		*/
+		void initCards();
+
+		/**
+		*	performs initial infections
+		*/
+		void initInfect();
+
+		/**
+		*	initializes the players
+		*/
+		void initPlayers();
 
 		friend class boost::serialization::access;
 		template<class Archive>
@@ -193,6 +213,9 @@ namespace pan
 		FRIEND_TEST(ActionTest, DirectFlight);
 		FRIEND_TEST(ActionTest, BuildResearchStation);
 		FRIEND_TEST(OutbreakTest, Test1);
+		FRIEND_TEST(OutbreakTest, Test2);
+		FRIEND_TEST(OutbreakTest, Test3);
+		FRIEND_TEST(GameplayTest, Test1);
 #endif
 #endif
 	};

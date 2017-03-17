@@ -83,7 +83,15 @@ namespace pan{
 		// Not enough players
 		if (playerData.players.size() < gameData.settings.playerCount)
 			return false;
+		initDiseases();
+		initCards();
+		initPlayers();
+		initInfect();
+		return true;
+	}
 
+	void Game::initDiseases()
+	{
 		// Add the diseases based on map regions
 		for (auto diseaseType : map.getRegions()){
 			gameData.diseases.push_back(Disease(diseaseType));
@@ -94,12 +102,15 @@ namespace pan{
 			gameData.diseaseCubes.push_back(gameData.settings.diseaseCubesPerDisease);
 			gameData.removedDiseasesCubes.push_back(0);
 		}
+	}
 
+	void Game::initCards()
+	{
 		// Fill in player cards
 		for (std::size_t i = 0; i < map.numCities(); i++){
 			deckData.playerDeck.push(std::shared_ptr<CardBase>(new CityCard(static_cast<CityIndex>(i))));
 		}
-		for (const auto& event: EventTypeDescriptions){
+		for (const auto& event : EventTypeDescriptions){
 			deckData.playerDeck.push(std::shared_ptr<CardBase>(new EventCard(event.first)));
 		}
 		srand(static_cast<unsigned int>(time(NULL)));
@@ -110,7 +121,7 @@ namespace pan{
 		for (auto& player : playerData.players){
 			player->setCards(deckData.playerDeck.deal(gameData.settings.initialCards));
 		}
-		
+
 		// Add epidemic cards and shuffle
 		auto tempPlayerCards = std::move(deckData.playerDeck);
 		std::size_t chunkSize = static_cast<std::size_t>(std::ceil(double(tempPlayerCards.size()) / gameData.settings.epidemicCardCount));
@@ -130,17 +141,26 @@ namespace pan{
 		}
 		srand(static_cast<unsigned int>(time(NULL)));
 		deckData.infectionDeck.shuffle();
-		
+	}
+
+	void Game::initPlayers()
+	{
 		// Add the initial research station
 		map[0].researchStation = true;
 		gameData.researchStations++;
-		
+
 		// Move the players to their initial positions
 		for (int i = 0; i < static_cast<int>(playerData.players.size()); i++){
 			playerData.players[i]->setLocation(0);
 			map[0].addPlayer(i);
 		}
+		// Set the player turn and stage
+		playerData.turn = 0;
+		playerData.stage = PlayerStage::Act;
+	}
 
+	void Game::initInfect()
+	{
 		// Infect cities
 		for (std::size_t cubes = 3; cubes > 0; cubes--){
 			for (std::size_t card = 0; card < 3; card++){
@@ -156,12 +176,6 @@ namespace pan{
 				deckData.infectionDiscardDeck.push(cardPtr);
 			}
 		}
-
-		// Set the player turn and stage
-		playerData.turn = 0;
-		playerData.stage = PlayerStage::Act;
-
-		return true;
 	}
 
 	std::string Game::description() const
