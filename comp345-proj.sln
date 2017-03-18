@@ -9,11 +9,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "comp345-gui", "comp345-gui\comp345-gui.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 EndProject
-<<<<<<< HEAD
-=======
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "comp345-gui-sfml", "comp345-gui-sfml\comp345-gui-sfml.vcxproj", "{FD0F8514-1AC8-4077-A03B-2BA33F5192A9}"
-EndProject
->>>>>>> hw2
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -32,13 +27,6 @@ Global
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.Build.0 = Debug|Win32
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.ActiveCfg = Release|Win32
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.Build.0 = Release|Win32
-<<<<<<< HEAD
-=======
-		{FD0F8514-1AC8-4077-A03B-2BA33F5192A9}.Debug|Win32.ActiveCfg = Debug|Win32
-		{FD0F8514-1AC8-4077-A03B-2BA33F5192A9}.Debug|Win32.Build.0 = Debug|Win32
-		{FD0F8514-1AC8-4077-A03B-2BA33F5192A9}.Release|Win32.ActiveCfg = Release|Win32
-		{FD0F8514-1AC8-4077-A03B-2BA33F5192A9}.Release|Win32.Build.0 = Release|Win32
->>>>>>> hw2
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
