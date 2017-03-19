@@ -1,0 +1,7 @@
+<map id="pan::ActionHandler::execute" name="pan::ActionHandler::execute">
+<area shape="rect" id="node2" href="$classpan_1_1_game.html#a23838df4cde7e8be5273ec5de03c152d" title="pan::Game::getPlayer" alt="" coords="200,5,349,32"/>
+<area shape="rect" id="node3" href="$classpan_1_1_player_base.html#ada4d9050732037e7436cb78244ec177b" title="pan::PlayerBase::getCards" alt="" coords="185,56,364,83"/>
+<area shape="rect" id="node4" href="$classpan_1_1_map.html#af477415a73c3e1fed14f1bd3753da6b1" title="pan::Map::regionForCity" alt="" coords="194,107,355,133"/>
+<area shape="rect" id="node5" href="$classpan_1_1_action_handler.html#ac44f90fd4129b3791aaf343fb074002f" title="commits a player action. If its the turn of the player in question, the current stage is Act the acti..." alt="" coords="209,158,341,199"/>
+<area shape="rect" id="node6" href="$classpan_1_1_action_handler.html#a4576fafb78b434cd4f0af17bb6f457cc" title="pan::ActionHandler\l::isPlayersTurn" alt="" coords="412,158,544,199"/>
+</map>

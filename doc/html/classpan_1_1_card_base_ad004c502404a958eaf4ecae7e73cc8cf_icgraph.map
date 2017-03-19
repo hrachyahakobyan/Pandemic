@@ -1,0 +1,5 @@
+<map id="pan::CardBase::description" name="pan::CardBase::description">
+<area shape="rect" id="node2" href="$classpan_1_1_card_impl_3_01_card_type_1_1_city_01_4.html#a326c3eaac225bd758f19abb152deffe4" title="pan::CardImpl\&lt; CardType\l::City \&gt;::description" alt="" coords="232,5,401,47"/>
+<area shape="rect" id="node3" href="$classpan_1_1_card_impl_3_01_card_type_1_1_event_01_4.html#aa5c7d2729e0bfb141a0d8487a590a580" title="pan::CardImpl\&lt; CardType\l::Event \&gt;::description" alt="" coords="232,71,401,112"/>
+<area shape="rect" id="node4" href="$classpan_1_1_card_impl_3_01_card_type_1_1_infection_01_4.html#a5e31904120b655ce59633433a4d4c17c" title="pan::CardImpl\&lt; CardType\l::Infection \&gt;::description" alt="" coords="232,136,401,177"/>
+</map>

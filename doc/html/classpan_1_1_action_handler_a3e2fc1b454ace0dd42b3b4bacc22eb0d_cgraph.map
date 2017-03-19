@@ -1,0 +1,11 @@
+<map id="pan::ActionHandler::validate" name="pan::ActionHandler::validate">
+<area shape="rect" id="node2" href="$classpan_1_1_map.html#a331d27d9fe199aea61b6ed76b4950d55" title="pan::Map::cityExists" alt="" coords="206,13,349,39"/>
+<area shape="rect" id="node4" href="$classpan_1_1_game.html#aaefd820a874069810f2e62a2d50068e1" title="pan::Game::playerExists" alt="" coords="194,63,361,90"/>
+<area shape="rect" id="node5" href="$classpan_1_1_action_handler.html#a5e5f0f3652084d544c2c2dd601522051" title="Tells whether the given player can act, i.e. perform one of 4 actions. A player can perform an action..." alt="" coords="211,115,343,156"/>
+<area shape="rect" id="node7" href="$namespacepan.html#a9cba06f35904752ede423c15355cf307" title="pan::player" alt="" coords="234,181,321,207"/>
+<area shape="rect" id="node8" href="$classpan_1_1_game.html#a23838df4cde7e8be5273ec5de03c152d" title="pan::Game::getPlayer" alt="" coords="203,231,352,258"/>
+<area shape="rect" id="node9" href="$classpan_1_1_map.html#ae6644155d9ddd28d82ab393e62024637" title="pan::Map::connectionExists" alt="" coords="185,282,369,309"/>
+<area shape="rect" id="node3" href="$classpan_1_1detail_1_1_graph.html#ad46610d729b56f7f899458cc5021c0f3" title="pan::detail::Graph\l::vertexExists" alt="" coords="421,5,546,47"/>
+<area shape="rect" id="node6" href="$classpan_1_1_action_handler.html#a4576fafb78b434cd4f0af17bb6f457cc" title="pan::ActionHandler\l::isPlayersTurn" alt="" coords="417,115,549,156"/>
+<area shape="rect" id="node10" href="$classpan_1_1detail_1_1_graph.html#accd48ccab28236e9f0107beea6ae4119" title="pan::detail::Graph\l::edgeExists" alt="" coords="421,275,546,316"/>
+</map>

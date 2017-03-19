@@ -4,6 +4,7 @@ var classpan_1_1_action_handler =
     [ "ActionHandler", "classpan_1_1_action_handler.html#a56b3a54ca19b9d071adffa0a9ac7b266", null ],
     [ "ActionHandler", "classpan_1_1_action_handler.html#a403ff5c81573b682a5dfc9d476be8e4e", null ],
     [ "~ActionHandler", "classpan_1_1_action_handler.html#a5bf64631c974765b04def48c0df0fcd7", null ],
+    [ "commitAction", "classpan_1_1_action_handler.html#ac44f90fd4129b3791aaf343fb074002f", null ],
     [ "execute", "classpan_1_1_action_handler.html#a7c5cefcd45fe538da04762de3cac0dbd", null ],
     [ "execute", "classpan_1_1_action_handler.html#a97f0f5801dedcbc42396f185686083bb", null ],
     [ "execute", "classpan_1_1_action_handler.html#ad72cd3c55d494ca5941e1b9f46e6d6b7", null ],
@@ -18,6 +19,10 @@ var classpan_1_1_action_handler =
     [ "execute", "classpan_1_1_action_handler.html#ad2119c276b50e56a42553671fc6e1e70", null ],
     [ "execute", "classpan_1_1_action_handler.html#ade755aaadb764489a68634811314bee2", null ],
     [ "execute", "classpan_1_1_action_handler.html#a469f04bd874aca38c9b3792aee209703", null ],
+    [ "infectImpl", "classpan_1_1_action_handler.html#a4bdc7875e69d983aca2e10cbc2a83b08", null ],
+    [ "isPlayersTurn", "classpan_1_1_action_handler.html#a4576fafb78b434cd4f0af17bb6f457cc", null ],
+    [ "outBreakImpl", "classpan_1_1_action_handler.html#ab5dff5eb62d07940c6643226b18ceeb0", null ],
+    [ "playerCanAct", "classpan_1_1_action_handler.html#a5e5f0f3652084d544c2c2dd601522051", null ],
     [ "validate", "classpan_1_1_action_handler.html#ae2a8bd5ae0560677aeafe7b6c068adb7", null ],
     [ "validate", "classpan_1_1_action_handler.html#a3e2fc1b454ace0dd42b3b4bacc22eb0d", null ],
     [ "validate", "classpan_1_1_action_handler.html#aa3788249f03ad2eaa4cdaf375b7da3d2", null ],
@@ -31,5 +36,6 @@ var classpan_1_1_action_handler =
     [ "validate", "classpan_1_1_action_handler.html#af6175819ceeba99896279c04401a5393", null ],
     [ "validate", "classpan_1_1_action_handler.html#a628fc9ae167c2d421644a12e93b8137c", null ],
     [ "validate", "classpan_1_1_action_handler.html#a0dc0214533aeb931e6c119e15caaee6a", null ],
-    [ "validate", "classpan_1_1_action_handler.html#a28ed770b339cba18d970a153c82d3c45", null ]
+    [ "validate", "classpan_1_1_action_handler.html#a28ed770b339cba18d970a153c82d3c45", null ],
+    [ "game", "classpan_1_1_action_handler.html#af24a19d1565114a973765d98ecb86a3a", null ]
 ];

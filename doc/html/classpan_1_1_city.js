@@ -22,6 +22,11 @@ var classpan_1_1_city =
     [ "setCubes", "classpan_1_1_city.html#abd77b16cbb277ff3dd9699e4e79ed1d5", null ],
     [ "setName", "classpan_1_1_city.html#a9a25b8843ae24c9bbe36a818aa29a9d5", null ],
     [ "boost::serialization::access", "classpan_1_1_city.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
+    [ "cubes", "classpan_1_1_city.html#a3015f310ba16cc8712b359e5c667822f", null ],
+    [ "name", "classpan_1_1_city.html#a95ea5638d42b94bcd3544784d661a0ba", null ],
+    [ "players", "classpan_1_1_city.html#a498b12dd25fea90cdc769f2d38761903", null ],
     [ "population", "classpan_1_1_city.html#aedd352c6f6ecaf1c78184189cef035b7", null ],
-    [ "researchStation", "classpan_1_1_city.html#ae278568277b94033909dbf31ad8843ff", null ]
+    [ "researchStation", "classpan_1_1_city.html#ae278568277b94033909dbf31ad8843ff", null ],
+    [ "xpos", "classpan_1_1_city.html#a4a5d0caa55bb0f0de010c8662a3ae914", null ],
+    [ "ypos", "classpan_1_1_city.html#ab3d65e246a2723535140aea5df8ba2df", null ]
 ];

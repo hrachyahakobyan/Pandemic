@@ -1,0 +1,7 @@
+<map id="pan::FileManager::getInstance" name="pan::FileManager::getInstance">
+<area shape="rect" id="node2" href="$classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="273,13,393,39"/>
+<area shape="rect" id="node4" href="$classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="274,63,393,90"/>
+<area shape="rect" id="node5" href="$classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="251,114,416,141"/>
+<area shape="rect" id="node3" href="$classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="464,5,596,47"/>
+<area shape="rect" id="node6" href="$comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="499,114,561,141"/>
+</map>

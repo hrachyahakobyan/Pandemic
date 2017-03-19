@@ -1,0 +1,8 @@
+<map id="pan::ActionHandler::validate" name="pan::ActionHandler::validate">
+<area shape="rect" id="node2" href="$classpan_1_1_game.html#aaefd820a874069810f2e62a2d50068e1" title="pan::Game::playerExists" alt="" coords="199,5,365,32"/>
+<area shape="rect" id="node3" href="$classpan_1_1_action_handler.html#a5e5f0f3652084d544c2c2dd601522051" title="Tells whether the given player can act, i.e. perform one of 4 actions. A player can perform an action..." alt="" coords="216,57,348,98"/>
+<area shape="rect" id="node5" href="$namespacepan.html#a9cba06f35904752ede423c15355cf307" title="pan::player" alt="" coords="239,123,325,149"/>
+<area shape="rect" id="node6" href="$classpan_1_1_game.html#a23838df4cde7e8be5273ec5de03c152d" title="pan::Game::getPlayer" alt="" coords="207,173,357,200"/>
+<area shape="rect" id="node7" href="$classpan_1_1_player_base.html#aa4bc65b9e86fa2b506f5191be751cfea" title="pan::PlayerBase::getLocation" alt="" coords="185,224,379,251"/>
+<area shape="rect" id="node4" href="$classpan_1_1_action_handler.html#a4576fafb78b434cd4f0af17bb6f457cc" title="pan::ActionHandler\l::isPlayersTurn" alt="" coords="427,57,559,98"/>
+</map>

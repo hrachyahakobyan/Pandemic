@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['occupiedroles',['occupiedRoles',['../structpan_1_1_player_data.html#aa79e564016ca865b17e4bf1b241fc827',1,'pan::PlayerData']]],
-  ['outbreakmarker',['outbreakMarker',['../structpan_1_1_game_data.html#aa7c3194057a3cb4c5d827b93c6eab7fc',1,'pan::GameData']]],
-  ['outbreakmarkermax',['outbreakMarkerMax',['../classpan_1_1_settings.html#a437e7eaf47786919ebd3504100d5ac68',1,'pan::Settings']]]
+  ['name',['name',['../classpan_1_1_city.html#a95ea5638d42b94bcd3544784d661a0ba',1,'pan::City::name()'],['../classpan_1_1_player_base.html#a95bf8887210003d8780dec9d84743a64',1,'pan::PlayerBase::name()'],['../classpan_1_1_region.html#a86aac1f7136d93486512b97d5e8b3af7',1,'pan::Region::name()']]]
 ];

@@ -1,0 +1,7 @@
+<map id="pan::detail::Graph::numEdges" name="pan::detail::Graph::numEdges">
+<area shape="rect" id="node2" href="$classpan_1_1detail_1_1_graph.html#abfeef8f9146709aae343974ae595f080" title="pan::detail::Graph\l\&lt; City \&gt;::operator==" alt="" coords="199,5,339,47"/>
+<area shape="rect" id="node3" href="$classpan_1_1_map.html#a70b6a65dc76e8911beb524062a2d09a9" title="pan::Map::numConnections" alt="" coords="179,71,360,98"/>
+<area shape="rect" id="node4" href="$classpan_1_1_map.html#a9d08be170f445bbef11ea0d38ba8c531" title="pan::Map::description" alt="" coords="408,46,555,73"/>
+<area shape="rect" id="node6" href="$classpan_1_1_map.html#a0afa3368bc2f5fbd85b4b2c3205f0996" title="pan::Map::serialize" alt="" coords="615,97,747,123"/>
+<area shape="rect" id="node5" href="$classpan_1_1_game.html#a463480ea3f29b34629059134c416ffa0" title="pan::Game::description" alt="" coords="603,46,760,73"/>
+</map>

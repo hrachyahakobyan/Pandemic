@@ -1,0 +1,4 @@
+<map id="pan::PlayerBase" name="pan::PlayerBase">
+<area shape="rect" id="node3" href="$classpan_1_1_player.html" title="Concrete subclass of PlayerBase The Player class accepts a template parameter which must be a Roles e..." alt="" coords="5,549,127,671"/>
+<area shape="rect" id="node2" href="$classpan_1_1_object.html" title="Abstract parent class to all entities directly connected with the game state that have to be serializ..." alt="" coords="13,5,119,127"/>
+</map>

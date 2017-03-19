@@ -1,0 +1,6 @@
+<map id="pan::Outbreak" name="pan::Outbreak">
+<area shape="rect" id="node2" href="$classpan_1_1_action_impl.html" title="{pan::ActionImpl\&lt; Outbreak,\l ActionBase \&gt;\n||+ ~ActionImpl()\l+ validate()\l+ execute()\l+ clone()\l}" alt="" coords="5,351,187,487"/>
+<area shape="rect" id="node3" href="$classpan_1_1_action_base.html" title="Top level abstraction of the Action entity. Store the Command in the Command pattern. All actions that modify the state of the game, are encapsulated as subclasses of ActionBase. " alt="" coords="73,5,191,141"/>
+<area shape="rect" id="node5" href="$classpan_1_1_action_impl.html" title="{pan::ActionImpl\&lt; Infect,\l ActionBase \&gt;\n||+ ~ActionImpl()\l+ validate()\l+ execute()\l+ clone()\l}" alt="" coords="133,191,291,327"/>
+<area shape="rect" id="node4" href="$classpan_1_1_infect.html" title="Encapsulates the parameters of Infect call. " alt="" coords="148,511,255,617"/>
+</map>

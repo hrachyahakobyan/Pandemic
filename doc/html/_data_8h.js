@@ -16,5 +16,6 @@ var _data_8h =
     ] ],
     [ "serialize", "_data_8h.html#a61458ca4ff4153850af0c3adb4a322e5", null ],
     [ "serialize", "_data_8h.html#abdc673b3465f1623bbcb5147b157d017", null ],
-    [ "serialize", "_data_8h.html#af7995dd0297acbf25eed2a5de6f7b1ba", null ]
+    [ "serialize", "_data_8h.html#af7995dd0297acbf25eed2a5de6f7b1ba", null ],
+    [ "GameStateDescriptions", "_data_8h.html#af27fcb3dae156a7a404130ea37ecc165", null ]
 ];

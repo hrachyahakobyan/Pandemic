@@ -1,0 +1,20 @@
+<map id="comp345&#45;proj/FileManager.cpp" name="comp345&#45;proj/FileManager.cpp">
+<area shape="rect" id="node2" href="$stdafx_8h.html" title="stdafx.h" alt="" coords="1517,80,1585,107"/>
+<area shape="rect" id="node34" href="$_file_manager_8h.html" title="FileManager.h" alt="" coords="3754,80,3858,107"/>
+<area shape="rect" id="node3" href="$targetver_8h.html" title="targetver.h" alt="" coords="3583,162,3666,189"/>
+<area shape="rect" id="node33" href="$common_8h.html" title="common.h" alt="" coords="3477,162,3559,189"/>
+<area shape="rect" id="node35" href="$misc_8h.html" title="misc.h" alt="" coords="3775,162,3837,189"/>
+<area shape="rect" id="node36" href="$_player_8h.html" title="Player.h" alt="" coords="3769,244,3840,271"/>
+<area shape="rect" id="node40" href="$_deck_8h.html" title="detail\\Deck.h" alt="" coords="3667,393,3766,420"/>
+<area shape="rect" id="node43" href="$_cards_8h.html" title="Cards.h" alt="" coords="4003,244,4070,271"/>
+<area shape="rect" id="node48" href="$_settings_8h.html" title="Settings.h" alt="" coords="4276,244,4357,271"/>
+<area shape="rect" id="node37" href="$_player_base_8h.html" title="PlayerBase.h" alt="" coords="3753,319,3853,345"/>
+<area shape="rect" id="node38" href="$_object_8h.html" title="Object.h" alt="" coords="3948,468,4019,495"/>
+<area shape="rect" id="node39" href="$_role_8h.html" title="Role.h" alt="" coords="3841,393,3899,420"/>
+<area shape="rect" id="node41" href="$_card_8h.html" title="Card.h" alt="" coords="4068,393,4128,420"/>
+<area shape="rect" id="node42" href="$_reference_card_8h.html" title="ReferenceCard.h" alt="" coords="3924,393,4043,420"/>
+<area shape="rect" id="node44" href="$_city_card_8h.html" title="CityCard.h" alt="" coords="4178,319,4261,345"/>
+<area shape="rect" id="node45" href="$_epidemic_card_8h.html" title="EpidemicCard.h" alt="" coords="4285,319,4399,345"/>
+<area shape="rect" id="node46" href="$_event_card_8h.html" title="EventCard.h" alt="" coords="3929,319,4021,345"/>
+<area shape="rect" id="node47" href="$_infection_card_8h.html" title="InfectionCard.h" alt="" coords="4045,319,4153,345"/>
+</map>

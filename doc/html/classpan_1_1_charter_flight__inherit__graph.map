@@ -1,0 +1,4 @@
+<map id="pan::CharterFlight" name="pan::CharterFlight">
+<area shape="rect" id="node2" href="$classpan_1_1_action_impl.html" title="{pan::ActionImpl\&lt; Charter\lFlight, ActionBase \&gt;\n||+ ~ActionImpl()\l+ validate()\l+ execute()\l+ clone()\l}" alt="" coords="5,189,172,325"/>
+<area shape="rect" id="node3" href="$classpan_1_1_action_base.html" title="Top level abstraction of the Action entity. Store the Command in the Command pattern. All actions that modify the state of the game, are encapsulated as subclasses of ActionBase. " alt="" coords="29,5,148,141"/>
+</map>

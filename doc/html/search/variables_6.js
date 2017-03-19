@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maxresearchstations',['maxResearchStations',['../classpan_1_1_settings.html#ab3fc24065a6f74fc63a6f171ffc8fea2',1,'pan::Settings']]]
+  ['location',['location',['../classpan_1_1_player_base.html#ad5b88869afb5740cf34f226fe36c5f27',1,'pan::PlayerBase']]]
 ];

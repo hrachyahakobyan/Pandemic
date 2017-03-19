@@ -40,5 +40,6 @@ var classpan_1_1detail_1_1_deck =
     [ "top", "classpan_1_1detail_1_1_deck.html#a12ce80897ff102e94279a81584b29e2d", null ],
     [ "boost::serialization::access", "classpan_1_1detail_1_1_deck.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
     [ "operator+", "classpan_1_1detail_1_1_deck.html#a6a019fd327e92f2f97cb25e9efdf95e2", null ],
-    [ "operator<<", "classpan_1_1detail_1_1_deck.html#ab8b4a9b9c08e387099a284faf9b15281", null ]
+    [ "operator<<", "classpan_1_1detail_1_1_deck.html#ab8b4a9b9c08e387099a284faf9b15281", null ],
+    [ "deck", "classpan_1_1detail_1_1_deck.html#ae9ba25e38ed2b683916425ef34d591b3", null ]
 ];

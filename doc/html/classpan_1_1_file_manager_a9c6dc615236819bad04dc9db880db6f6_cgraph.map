@@ -1,0 +1,17 @@
+<map id="pan::FileManager::getInstance" name="pan::FileManager::getInstance">
+<area shape="rect" id="node2" href="$classpan_1_1_file_manager.html#a774e1a8ea3b85f47f55a2d568a5eb1fa" title="pan::FileManager::initialize" alt="" coords="263,63,440,89"/>
+<area shape="rect" id="node3" href="$classpan_1_1_file_manager.html#a60d96d40ae8dd600397a819c269906b2" title="pan::FileManager::outputPath" alt="" coords="500,33,693,60"/>
+<area shape="rect" id="node4" href="$classpan_1_1_file_manager.html#ab897366e9055e7e251a67d82b1cefcaa" title="pan::FileManager::save" alt="" coords="273,164,429,191"/>
+<area shape="rect" id="node11" href="$classpan_1_1_file_manager.html#ac0112a350779701a11110042bd053458" title="pan::FileManager::load" alt="" coords="274,215,429,241"/>
+<area shape="rect" id="node14" href="$classpan_1_1_file_manager.html#af9d8a64e6bd6cae23ee56af2f13a8124" title="pan::FileManager::allFiles" alt="" coords="266,12,437,39"/>
+<area shape="rect" id="node15" href="$classpan_1_1_file_manager.html#a9353d822382f9a1fabfbb2707db1f0e3" title="pan::FileManager::FileManager" alt="" coords="251,265,452,292"/>
+<area shape="rect" id="node16" href="$classpan_1_1_file_manager.html#abbe3630c1cabaa1937dca7092a427b7f" title="pan::FileManager::operator=" alt="" coords="259,316,444,343"/>
+<area shape="rect" id="node5" href="$classpan_1_1_file_manager.html#a9e99ba269178d9891e9e7400e5ceed5c" title="pan::FileManager::directory\lExists" alt="" coords="741,77,921,118"/>
+<area shape="rect" id="node6" href="$classpan_1_1_file_manager.html#ac532c61bac0eaa1ea533cc67c41330fe" title="pan::FileManager::create\lDirectory" alt="" coords="513,135,680,177"/>
+<area shape="rect" id="node7" href="$classpan_1_1_file_manager.html#a8161cc9a9bdda20c76f5d0113c101792" title="pan::FileManager::fileExists" alt="" coords="505,317,688,344"/>
+<area shape="rect" id="node8" href="$classpan_1_1_file_manager.html#a56843183cfbaa19d6d8217afc284c45b" title="pan::FileManager::create\lOutputStream" alt="" coords="513,201,680,242"/>
+<area shape="rect" id="node9" href="$classpan_1_1_file_manager.html#a2f5d0b6203dcd54bd3dcfaf9fc10988f" title="pan::FileManager::write" alt="" coords="518,267,675,293"/>
+<area shape="rect" id="node10" href="$misc_8h.html#a589f5ec7cd58630eb03918e5065270dc" title="registerTypes" alt="" coords="781,351,881,377"/>
+<area shape="rect" id="node12" href="$classpan_1_1_file_manager.html#a1cf54f169d88d6264ef9df8bc1a6b763" title="pan::FileManager::create\lInputStream" alt="" coords="513,369,680,410"/>
+<area shape="rect" id="node13" href="$classpan_1_1_file_manager.html#a819bd15b683417b451786fc7792b9195" title="pan::FileManager::read" alt="" coords="519,435,674,461"/>
+</map>

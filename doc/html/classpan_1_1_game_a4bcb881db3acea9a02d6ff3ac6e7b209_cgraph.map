@@ -1,0 +1,5 @@
+<map id="pan::Game::addAction" name="pan::Game::addAction">
+<area shape="rect" id="node2" href="$classpan_1_1_game.html#a145be880607e15e9ca91ceb36a012de1" title="pan::Game::isInitialized" alt="" coords="205,5,364,32"/>
+<area shape="rect" id="node3" href="$classpan_1_1_game.html#aa662e441f8910685ef4eb61f76f22354" title="pan::Game::isOver" alt="" coords="219,56,350,83"/>
+<area shape="rect" id="node4" href="$classpan_1_1_action_base.html#a437f541998e59225ab13096a3c8f01c1" title="pan::ActionBase::clone" alt="" coords="206,107,363,133"/>
+</map>

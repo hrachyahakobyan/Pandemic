@@ -1,0 +1,25 @@
+<map id="comp345&#45;proj/Core.hpp" name="comp345&#45;proj/Core.hpp">
+<area shape="rect" id="node28" href="$common_8h.html" title="common.h" alt="" coords="3389,87,3472,114"/>
+<area shape="rect" id="node29" href="$_game_8h.html" title="Game.h" alt="" coords="3598,87,3666,114"/>
+<area shape="rect" id="node30" href="$_map_8h.html" title="Map.h" alt="" coords="3420,169,3479,196"/>
+<area shape="rect" id="node36" href="$_player_8h.html" title="Player.h" alt="" coords="3647,244,3718,271"/>
+<area shape="rect" id="node40" href="$_cards_8h.html" title="Cards.h" alt="" coords="3883,169,3949,196"/>
+<area shape="rect" id="node45" href="$_actions_8h.html" title="Actions.h" alt="" coords="4265,87,4343,114"/>
+<area shape="rect" id="node50" href="$misc_8h.html" title="misc.h" alt="" coords="3719,87,3780,114"/>
+<area shape="rect" id="node35" href="$_data_8h.html" title="Data.h" alt="" coords="3651,169,3711,196"/>
+<area shape="rect" id="node38" href="$_action_base_8h.html" title="ActionBase.h" alt="" coords="4379,244,4479,271"/>
+<area shape="rect" id="node39" href="$_action_handler_8h.html" title="ActionHandler.h" alt="" coords="3961,319,4076,345"/>
+<area shape="rect" id="node31" href="$_object_8h.html" title="Object.h" alt="" coords="3283,319,3354,345"/>
+<area shape="rect" id="node32" href="$_city_8h.html" title="City.h" alt="" coords="3291,244,3347,271"/>
+<area shape="rect" id="node33" href="$_region_8h.html" title="Region.h" alt="" coords="3371,244,3445,271"/>
+<area shape="rect" id="node34" href="$_graph_8h.html" title="detail\\Graph.h" alt="" coords="3469,244,3571,271"/>
+<area shape="rect" id="node37" href="$_infection_card_8h.html" title="InfectionCard.h" alt="" coords="3742,244,3850,271"/>
+<area shape="rect" id="node41" href="$_city_card_8h.html" title="CityCard.h" alt="" coords="3875,244,3957,271"/>
+<area shape="rect" id="node42" href="$_epidemic_card_8h.html" title="EpidemicCard.h" alt="" coords="3981,244,4096,271"/>
+<area shape="rect" id="node43" href="$_event_card_8h.html" title="EventCard.h" alt="" coords="4121,244,4213,271"/>
+<area shape="rect" id="node44" href="$_reference_card_8h.html" title="ReferenceCard.h" alt="" coords="4237,244,4355,271"/>
+<area shape="rect" id="node46" href="$_build_research_station_8h.html" title="BuildResearchStation.h" alt="" coords="4506,169,4665,196"/>
+<area shape="rect" id="node47" href="$_charter_flight_8h.html" title="CharterFlight.h" alt="" coords="4124,169,4231,196"/>
+<area shape="rect" id="node48" href="$_direct_flight_8h.html" title="DirectFlight.h" alt="" coords="4255,169,4353,196"/>
+<area shape="rect" id="node49" href="$_discard_card_8h.html" title="DiscardCard.h" alt="" coords="4377,169,4481,196"/>
+</map>

@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['game',['Game',['../classpan_1_1_game.html',1,'pan::Game'],['../classpan_1_1_game.html#a2c186c7ecac0fded27c7a9db4981a733',1,'pan::Game::Game(const Settings &amp;s=Settings::Beginner(2))'],['../classpan_1_1_game.html#a9dac7dcdc205455639eede641780b701',1,'pan::Game::Game(const Settings &amp;s, const Map &amp;m)'],['../classpan_1_1_game.html#a95d70ce4840b773525736ee5019433c6',1,'pan::Game::Game(const Game &amp;)'],['../classpan_1_1_game.html#aedf6e96723a924c772d88f8e7bbee4d8',1,'pan::Game::Game(Game &amp;&amp;)']]],
+  ['game',['Game',['../classpan_1_1_game.html',1,'pan::Game'],['../classpan_1_1_action_handler.html#af24a19d1565114a973765d98ecb86a3a',1,'pan::ActionHandler::game()'],['../classpan_1_1_game.html#a2c186c7ecac0fded27c7a9db4981a733',1,'pan::Game::Game(const Settings &amp;s=Settings::Beginner(2))'],['../classpan_1_1_game.html#a9dac7dcdc205455639eede641780b701',1,'pan::Game::Game(const Settings &amp;s, const Map &amp;m)'],['../classpan_1_1_game.html#a95d70ce4840b773525736ee5019433c6',1,'pan::Game::Game(const Game &amp;)'],['../classpan_1_1_game.html#aedf6e96723a924c772d88f8e7bbee4d8',1,'pan::Game::Game(Game &amp;&amp;)']]],
   ['game_2ecpp',['Game.cpp',['../_game_8cpp.html',1,'']]],
   ['game_2eh',['Game.h',['../_game_8h.html',1,'']]],
-  ['gamedata',['GameData',['../structpan_1_1_game_data.html',1,'pan::GameData'],['../structpan_1_1_game_data.html#a4bd1e9348e4dc118d1345f25eb297006',1,'pan::GameData::GameData(const Settings &amp;s)'],['../structpan_1_1_game_data.html#a7931bdb39d312dff7d9ba82e33e060f2',1,'pan::GameData::GameData(const GameData &amp;)'],['../structpan_1_1_game_data.html#ac7446b6f725f4ac01c9b4ab264ef9459',1,'pan::GameData::GameData(GameData &amp;&amp;)']]],
+  ['gamedata',['GameData',['../structpan_1_1_game_data.html',1,'pan::GameData'],['../structpan_1_1_game_data.html#a4bd1e9348e4dc118d1345f25eb297006',1,'pan::GameData::GameData(const Settings &amp;s)'],['../structpan_1_1_game_data.html#a7931bdb39d312dff7d9ba82e33e060f2',1,'pan::GameData::GameData(const GameData &amp;)'],['../structpan_1_1_game_data.html#ac7446b6f725f4ac01c9b4ab264ef9459',1,'pan::GameData::GameData(GameData &amp;&amp;)'],['../classpan_1_1_game.html#a658bd63d21bfb7a0d51c92e9fc5e8ff4',1,'pan::Game::gameData()']]],
   ['gamestate',['GameState',['../namespacepan.html#a6f99370eda3b27c2bbe19b2dacea9212',1,'pan']]],
+  ['gamestatedescriptions',['GameStateDescriptions',['../namespacepan.html#af27fcb3dae156a7a404130ea37ecc165',1,'pan']]],
   ['generalist',['Generalist',['../namespacepan.html#a14b9d4ed4f5f1fd23e2b1ddbe4694af1',1,'pan::Generalist()'],['../namespacepan.html#a5017f84fa51152eae453759537d1ced6a824390b43737bdd9821c864af71f1f86',1,'pan::Generalist()']]],
   ['generalistrole',['GeneralistRole',['../namespacepan.html#aea2d78776fac8fe1832de0f89c365d6a',1,'pan']]],
   ['getcards',['getCards',['../classpan_1_1_player_base.html#ada4d9050732037e7436cb78244ec177b',1,'pan::PlayerBase::getCards()'],['../classpan_1_1_player_base.html#a8c23e4d5910f85c0e942f3b0819743af',1,'pan::PlayerBase::getCards() const']]],
@@ -18,14 +19,15 @@ var searchData=
   ['getlocation',['getLocation',['../classpan_1_1_player_base.html#aa4bc65b9e86fa2b506f5191be751cfea',1,'pan::PlayerBase']]],
   ['getmap',['getMap',['../classpan_1_1_game.html#a8700fef57be33a7388ef9532dcb30f0c',1,'pan::Game']]],
   ['getname',['getName',['../classpan_1_1_city.html#a5b6f8e81d190dcddd6d78445cba7f694',1,'pan::City::getName()'],['../classpan_1_1_player_base.html#a427d73fde6596033fbe0ebd511d1e7c1',1,'pan::PlayerBase::getName()'],['../classpan_1_1_region.html#a7ebfab047a556e5c95f9a7ea10eb71ba',1,'pan::Region::getName()']]],
-  ['getplayer',['getPlayer',['../classpan_1_1_game.html#a23838df4cde7e8be5273ec5de03c152d',1,'pan::Game']]],
+  ['getplayer',['getPlayer',['../classpan_1_1_game.html#a23838df4cde7e8be5273ec5de03c152d',1,'pan::Game::getPlayer(PlayerIndex i) const'],['../classpan_1_1_game.html#a895337bc4e99a586651f87ff42139b28',1,'pan::Game::getPlayer(PlayerIndex i)']]],
   ['getplayerdata',['getPlayerData',['../classpan_1_1_game.html#a97050486b97c861c3d9d684bc95f0454',1,'pan::Game']]],
   ['getplayers',['getPlayers',['../classpan_1_1_city.html#af141a83daaa0521bbad892ba9c7fd6c3',1,'pan::City']]],
   ['getregions',['getRegions',['../classpan_1_1_map.html#a580c57ef43aaf9c4c964d18340754d3c',1,'pan::Map']]],
   ['getstate',['getState',['../classpan_1_1_game.html#a1cfa652ea64fb2cb16ded47cec2ea471',1,'pan::Game']]],
   ['govgrant',['GovGrant',['../namespacepan.html#a9221a73b34e019e6b8fe6f84e6417513a977c2c35d6409d01572a7c9488a2b37d',1,'pan']]],
-  ['graph',['Graph',['../classpan_1_1detail_1_1_graph.html',1,'pan::detail::Graph&lt; N &gt;'],['../classpan_1_1detail_1_1_graph.html#a162f4615aa554b1455e54234108da5e6',1,'pan::detail::Graph::Graph()'],['../classpan_1_1detail_1_1_graph.html#ac4d4d53acd9e6637ade9c3f026fd63d6',1,'pan::detail::Graph::Graph(std::size_t vertexCount)'],['../classpan_1_1detail_1_1_graph.html#a33d07cc94ec5936885da57f01e151253',1,'pan::detail::Graph::Graph(const Graph &amp;g)'],['../classpan_1_1detail_1_1_graph.html#a5103d7c5ead98cac2306d1c3ca482e8e',1,'pan::detail::Graph::Graph(Graph &amp;&amp;)']]],
+  ['graph',['Graph',['../classpan_1_1detail_1_1_graph.html',1,'pan::detail::Graph&lt; N &gt;'],['../classpan_1_1_map.html#a30faa337344405968f5b218a0a4089aa',1,'pan::Map::graph()'],['../classpan_1_1_map.html#a91883ca668884128b057dd7947e8b027',1,'pan::Map::Graph()'],['../classpan_1_1detail_1_1_graph.html#a162f4615aa554b1455e54234108da5e6',1,'pan::detail::Graph::Graph()'],['../classpan_1_1detail_1_1_graph.html#ac4d4d53acd9e6637ade9c3f026fd63d6',1,'pan::detail::Graph::Graph(std::size_t vertexCount)'],['../classpan_1_1detail_1_1_graph.html#a33d07cc94ec5936885da57f01e151253',1,'pan::detail::Graph::Graph(const Graph &amp;g)'],['../classpan_1_1detail_1_1_graph.html#a5103d7c5ead98cac2306d1c3ca482e8e',1,'pan::detail::Graph::Graph(Graph &amp;&amp;)']]],
   ['graph_2ecpp',['Graph.cpp',['../_graph_8cpp.html',1,'']]],
   ['graph_2eh',['Graph.h',['../_graph_8h.html',1,'']]],
-  ['graph_3c_20city_20_3e',['Graph&lt; City &gt;',['../classpan_1_1detail_1_1_graph.html',1,'pan::detail']]]
+  ['graph_3c_20city_20_3e',['Graph&lt; City &gt;',['../classpan_1_1detail_1_1_graph.html',1,'pan::detail']]],
+  ['graphcontainer',['GraphContainer',['../classpan_1_1detail_1_1_graph.html#a04f924cfffdd3d49d4624a429c0e11d9',1,'pan::detail::Graph']]]
 ];

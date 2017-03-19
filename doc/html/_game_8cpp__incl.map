@@ -1,0 +1,21 @@
+<map id="comp345&#45;proj/Game.cpp" name="comp345&#45;proj/Game.cpp">
+<area shape="rect" id="node2" href="$stdafx_8h.html" title="stdafx.h" alt="" coords="1421,80,1489,107"/>
+<area shape="rect" id="node34" href="$_game_8h.html" title="Game.h" alt="" coords="4002,80,4070,107"/>
+<area shape="rect" id="node41" href="$_infection_card_8h.html" title="InfectionCard.h" alt="" coords="3835,244,3943,271"/>
+<area shape="rect" id="node44" href="$_city_card_8h.html" title="CityCard.h" alt="" coords="3728,244,3811,271"/>
+<area shape="rect" id="node45" href="$_epidemic_card_8h.html" title="EpidemicCard.h" alt="" coords="4157,244,4272,271"/>
+<area shape="rect" id="node46" href="$_event_card_8h.html" title="EventCard.h" alt="" coords="4253,80,4345,107"/>
+<area shape="rect" id="node47" href="$_infect_8h.html" title="Infect.h" alt="" coords="4095,80,4159,107"/>
+<area shape="rect" id="node48" href="$_file_manager_8h.html" title="FileManager.h" alt="" coords="4369,80,4473,107"/>
+<area shape="rect" id="node3" href="$targetver_8h.html" title="targetver.h" alt="" coords="17,162,100,189"/>
+<area shape="rect" id="node33" href="$common_8h.html" title="common.h" alt="" coords="3681,162,3764,189"/>
+<area shape="rect" id="node35" href="$_map_8h.html" title="Map.h" alt="" coords="3645,244,3704,271"/>
+<area shape="rect" id="node39" href="$_data_8h.html" title="Data.h" alt="" coords="3941,162,4001,189"/>
+<area shape="rect" id="node42" href="$_action_base_8h.html" title="ActionBase.h" alt="" coords="4077,162,4177,189"/>
+<area shape="rect" id="node43" href="$_action_handler_8h.html" title="ActionHandler.h" alt="" coords="4019,244,4133,271"/>
+<area shape="rect" id="node36" href="$_object_8h.html" title="Object.h" alt="" coords="3715,393,3786,420"/>
+<area shape="rect" id="node37" href="$_city_8h.html" title="City.h" alt="" coords="3679,319,3735,345"/>
+<area shape="rect" id="node38" href="$_region_8h.html" title="Region.h" alt="" coords="3759,319,3833,345"/>
+<area shape="rect" id="node40" href="$_card_8h.html" title="Card.h" alt="" coords="3905,319,3965,345"/>
+<area shape="rect" id="node49" href="$misc_8h.html" title="misc.h" alt="" coords="4369,162,4431,189"/>
+</map>

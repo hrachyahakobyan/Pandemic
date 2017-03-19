@@ -41,6 +41,7 @@ var hierarchy =
         [ "pan::TreatDisease", "classpan_1_1_treat_disease.html", null ]
       ] ]
     ] ],
+    [ "pan::Game::ActionData", "structpan_1_1_game_1_1_action_data.html", null ],
     [ "pan::ActionHandler", "classpan_1_1_action_handler.html", null ],
     [ "pan::detail::Deck< T >", "classpan_1_1detail_1_1_deck.html", null ],
     [ "pan::detail::Deck< std::shared_ptr< pan::CardBase > >", "classpan_1_1detail_1_1_deck.html", null ],

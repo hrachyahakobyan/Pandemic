@@ -29,7 +29,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Pandemic
-   &#160;<span id="projectnumber">Build1</span>
+   &#160;<span id="projectnumber">build1</span>
    </div>
   </td>
  </tr>
@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('classpan_1_1_reference_card.html','');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classpan_1_1_reference_card-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pan::ReferenceCard Class Reference</div>  </div>
@@ -93,6 +94,13 @@ $(document).ready(function(){initNavTree('classpan_1_1_reference_card.html','');
  <a href="classpan_1_1_reference_card.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_reference_card_8h_source.html">ReferenceCard.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for pan::ReferenceCard:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_reference_card__coll__graph.png" border="0" usemap="#pan_1_1_reference_card_coll__map" alt="Collaboration graph"/></div>
+<map name="pan_1_1_reference_card_coll__map" id="pan_1_1_reference_card_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -103,6 +111,11 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a770a4188e98004fab2b13218f29bde26"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_reference_card.html#a770a4188e98004fab2b13218f29bde26">description</a></td></tr>
 <tr class="separator:a770a4188e98004fab2b13218f29bde26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a73fc57827b89c830214d261cff4266e7"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_reference_card.html#a73fc57827b89c830214d261cff4266e7">descriptionText</a></td></tr>
+<tr class="separator:a73fc57827b89c830214d261cff4266e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing the <a class="el" href="classpan_1_1_reference_card.html" title="Class representing the ReferenceCard. Note it is not derived from the base Card class since it does n...">ReferenceCard</a>. Note it is not derived from the base Card class since it does not play any role in the game mechanics. </p>
@@ -139,9 +152,31 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a73fc57827b89c830214d261cff4266e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73fc57827b89c830214d261cff4266e7">&#9670;&nbsp;</a></span>descriptionText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string pan::ReferenceCard::descriptionText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <span class="stringliteral">&quot;1. Drive/Ferry \n Move to a city connected by a white line. \n\</span></div><div class="line"><span class="stringliteral">                2. Direct flight \n Discard a city card to move to the city named on the card. \n\</span></div><div class="line"><span class="stringliteral">                3. Charter flight \n Discard a city card that matches the city you are in to move to any city. \n\</span></div><div class="line"><span class="stringliteral">                4. Shuttle flight \n Move from a city with a research station to any other city with a research stationc.&quot;</span></div></div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_reference_card_8h_source.html">ReferenceCard.h</a></li>
-<li><a class="el" href="_reference_card_8cpp.html">ReferenceCard.cpp</a></li>
+<li>comp345-proj/<a class="el" href="_reference_card_8h_source.html">ReferenceCard.h</a></li>
+<li>comp345-proj/<a class="el" href="_reference_card_8cpp.html">ReferenceCard.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
