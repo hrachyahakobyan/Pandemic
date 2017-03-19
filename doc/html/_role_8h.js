@@ -16,5 +16,6 @@ var _role_8h =
       [ "QSpecialist", "_role_8h.html#a5017f84fa51152eae453759537d1ced6ae0f77fedb512beb1711d43d21dc3aa47", null ],
       [ "FOperative", "_role_8h.html#a5017f84fa51152eae453759537d1ced6a97b293ec5041fbbf87730876a2d388c5", null ],
       [ "CPlanner", "_role_8h.html#a5017f84fa51152eae453759537d1ced6a700cdc83d708e11cb7a564a8f47f06f2", null ]
-    ] ]
+    ] ],
+    [ "RolesDescriptions", "_role_8h.html#a79f362d1502bb091ce38afb105cf780e", null ]
 ];

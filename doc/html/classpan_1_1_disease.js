@@ -13,5 +13,8 @@ var classpan_1_1_disease =
     [ "serialize", "classpan_1_1_disease.html#a6fcfb95df953d991c96188ea2966583a", null ],
     [ "setIsCured", "classpan_1_1_disease.html#ac6363817626fee5081df5ff3c4be2b68", null ],
     [ "setIsEradicated", "classpan_1_1_disease.html#a21c70c565e8a186f699696159231a767", null ],
-    [ "boost::serialization::access", "classpan_1_1_disease.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ]
+    [ "boost::serialization::access", "classpan_1_1_disease.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
+    [ "diseaseType", "classpan_1_1_disease.html#a282fe01b76732abcfa0cc93d6269db84", null ],
+    [ "isCured", "classpan_1_1_disease.html#a53bdf6c13140222ed6b9e3a6513ba453", null ],
+    [ "isEradicated", "classpan_1_1_disease.html#ab0507eacae409f5f837068ebcc58f6e0", null ]
 ];

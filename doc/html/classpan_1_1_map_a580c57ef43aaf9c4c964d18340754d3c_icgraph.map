@@ -1,0 +1,5 @@
+<map id="pan::Map::getRegions" name="pan::Map::getRegions">
+<area shape="rect" id="node2" href="$classpan_1_1_game.html#aefdc4f171a44a4a6455a856b1128e1cb" title="pan::Game::initDiseases" alt="" coords="203,5,368,32"/>
+<area shape="rect" id="node4" href="$classpan_1_1_map.html#a0afa3368bc2f5fbd85b4b2c3205f0996" title="pan::Map::serialize" alt="" coords="219,56,351,83"/>
+<area shape="rect" id="node3" href="$classpan_1_1_game.html#a164829a91c20f0f1f7b2d32e76e370f2" title="pan::Game::initialize" alt="" coords="416,5,557,32"/>
+</map>

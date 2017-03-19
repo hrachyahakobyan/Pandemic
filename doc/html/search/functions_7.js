@@ -13,7 +13,7 @@ var searchData=
   ['getlocation',['getLocation',['../classpan_1_1_player_base.html#aa4bc65b9e86fa2b506f5191be751cfea',1,'pan::PlayerBase']]],
   ['getmap',['getMap',['../classpan_1_1_game.html#a8700fef57be33a7388ef9532dcb30f0c',1,'pan::Game']]],
   ['getname',['getName',['../classpan_1_1_city.html#a5b6f8e81d190dcddd6d78445cba7f694',1,'pan::City::getName()'],['../classpan_1_1_player_base.html#a427d73fde6596033fbe0ebd511d1e7c1',1,'pan::PlayerBase::getName()'],['../classpan_1_1_region.html#a7ebfab047a556e5c95f9a7ea10eb71ba',1,'pan::Region::getName()']]],
-  ['getplayer',['getPlayer',['../classpan_1_1_game.html#a23838df4cde7e8be5273ec5de03c152d',1,'pan::Game']]],
+  ['getplayer',['getPlayer',['../classpan_1_1_game.html#a23838df4cde7e8be5273ec5de03c152d',1,'pan::Game::getPlayer(PlayerIndex i) const'],['../classpan_1_1_game.html#a895337bc4e99a586651f87ff42139b28',1,'pan::Game::getPlayer(PlayerIndex i)']]],
   ['getplayerdata',['getPlayerData',['../classpan_1_1_game.html#a97050486b97c861c3d9d684bc95f0454',1,'pan::Game']]],
   ['getplayers',['getPlayers',['../classpan_1_1_city.html#af141a83daaa0521bbad892ba9c7fd6c3',1,'pan::City']]],
   ['getregions',['getRegions',['../classpan_1_1_map.html#a580c57ef43aaf9c4c964d18340754d3c',1,'pan::Map']]],

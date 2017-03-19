@@ -1,0 +1,9 @@
+<map id="pan::Map::description" name="pan::Map::description">
+<area shape="rect" id="node2" href="$classpan_1_1_map.html#aa39642daa76646a3229fd5f92572b242" title="pan::Map::numCities" alt="" coords="219,19,362,46"/>
+<area shape="rect" id="node4" href="$classpan_1_1_map.html#a70b6a65dc76e8911beb524062a2d09a9" title="pan::Map::numConnections" alt="" coords="200,74,381,101"/>
+<area shape="rect" id="node6" href="$classpan_1_1_map.html#a7e61225a4309562a5b8df58acb325276" title="pan::Map::numRegions" alt="" coords="213,125,369,151"/>
+<area shape="rect" id="node7" href="$classpan_1_1_map.html#a0f7820b581ca27511a687618f01dce2d" title="pan::Map::operator[]" alt="" coords="221,175,360,202"/>
+<area shape="rect" id="node8" href="$classpan_1_1_city.html#a0232df988764b10f50570e335e8237c2" title="pan::City::description" alt="" coords="218,226,363,253"/>
+<area shape="rect" id="node3" href="$classpan_1_1detail_1_1_graph.html#acf43df485b16aa0eb0f22f1ce30dffaf" title="pan::detail::Graph\l::numVertices" alt="" coords="429,5,555,47"/>
+<area shape="rect" id="node5" href="$classpan_1_1detail_1_1_graph.html#a0be37954bf6f8c814b3e9ba7b1727995" title="pan::detail::Graph\l::numEdges" alt="" coords="429,71,555,112"/>
+</map>

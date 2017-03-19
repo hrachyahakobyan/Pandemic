@@ -1,0 +1,9 @@
+<map id="pan::ActionHandler::outBreakImpl" name="pan::ActionHandler::outBreakImpl">
+<area shape="rect" id="node2" href="$classpan_1_1_action_impl.html#acea764a5b41d2fd21717089e21d0c6f4" title="pan::ActionImpl::validate" alt="" coords="413,5,575,32"/>
+<area shape="rect" id="node3" href="$classpan_1_1_game.html#a76f471edc1b5678fe83f9a6c84117e96" title="pan::Game::changeState" alt="" coords="411,71,577,97"/>
+<area shape="rect" id="node6" href="$classpan_1_1_map.html#a1cb8308c1ddac316a683be688277a25a" title="pan::Map::connectedCities" alt="" coords="185,144,363,171"/>
+<area shape="rect" id="node8" href="$classpan_1_1_action_handler.html#a4bdc7875e69d983aca2e10cbc2a83b08" title="pan::ActionHandler\l::infectImpl" alt="" coords="208,27,340,69"/>
+<area shape="rect" id="node4" href="$classpan_1_1_game.html#a145be880607e15e9ca91ceb36a012de1" title="pan::Game::isInitialized" alt="" coords="625,45,784,72"/>
+<area shape="rect" id="node5" href="$classpan_1_1_game.html#aa662e441f8910685ef4eb61f76f22354" title="pan::Game::isOver" alt="" coords="639,96,770,123"/>
+<area shape="rect" id="node7" href="$classpan_1_1detail_1_1_graph.html#a858109b2a94a386e74717f23be2a0754" title="pan::detail::Graph\l::neighbors" alt="" coords="431,137,557,178"/>
+</map>

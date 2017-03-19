@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Pandemic: EventCard.h File Reference</title>
+<title>Pandemic: comp345-proj/EventCard.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Pandemic
-   &#160;<span id="projectnumber">Build1</span>
+   &#160;<span id="projectnumber">build1</span>
    </div>
   </td>
  </tr>
@@ -85,12 +85,39 @@ $(document).ready(function(){initNavTree('_event_card_8h.html','');});
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">EventCard.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_card_8h_source.html">Card.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for EventCard.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="_event_card_8h__incl.png" border="0" usemap="#comp345-proj_2_event_card_8h" alt=""/></div>
+<map name="comp345-proj_2_event_card_8h" id="comp345-proj_2_event_card_8h">
+<area shape="rect" id="node2" href="_card_8h.html" title="Card.h" alt="" coords="63,80,123,107"/>
+<area shape="rect" id="node3" href="_object_8h.html" title="Object.h" alt="" coords="57,155,128,181"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="_event_card_8h__dep__incl.png" border="0" usemap="#comp345-proj_2_event_card_8hdep" alt=""/></div>
+<map name="comp345-proj_2_event_card_8hdep" id="comp345-proj_2_event_card_8hdep">
+<area shape="rect" id="node2" href="_cards_8h.html" title="comp345&#45;proj/Cards.h" alt="" coords="360,80,509,107"/>
+<area shape="rect" id="node9" href="_game_8cpp.html" title="comp345&#45;proj/Game.cpp" alt="" coords="675,304,839,331"/>
+<area shape="rect" id="node11" href="_event_card_8cpp.html" title="comp345&#45;proj/EventCard.cpp" alt="" coords="782,80,970,107"/>
+<area shape="rect" id="node3" href="_action_handler_8cpp.html" title="comp345&#45;proj/ActionHandler.cpp" alt="" coords="5,155,216,181"/>
+<area shape="rect" id="node4" href="_card_8cpp.html" title="comp345&#45;proj/Card.cpp" alt="" coords="241,155,397,181"/>
+<area shape="rect" id="node5" href="_core_8hpp.html" title="comp345&#45;proj/Core.hpp" alt="" coords="313,229,469,256"/>
+<area shape="rect" id="node6" href="misc_8h.html" title="comp345&#45;proj/misc.h" alt="" coords="473,155,615,181"/>
+<area shape="rect" id="node7" href="_file_manager_8h.html" title="comp345&#45;proj/FileManager.h" alt="" coords="493,229,680,256"/>
+<area shape="rect" id="node8" href="_file_manager_8cpp.html" title="comp345&#45;proj/FileManager.cpp" alt="" coords="272,304,472,331"/>
+<area shape="rect" id="node10" href="_map_8cpp.html" title="comp345&#45;proj/Map.cpp" alt="" coords="496,304,651,331"/>
+</map>
+</div>
 </div>
 <p><a href="_event_card_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -136,13 +163,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a9d377eba228f523e12084976fe9a094a"><td class="memTemplParams" colspan="2">template&lt;class Archive &gt; </td></tr>
 <tr class="memitem:a9d377eba228f523e12084976fe9a094a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1serialization.html#a9d377eba228f523e12084976fe9a094a">boost::serialization::load_construct_data</a> (Archive &amp;ar, <a class="el" href="classpan_1_1_card_impl.html">pan::CardImpl</a>&lt; <a class="el" href="namespacepan.html#a1f7350bfd0421afeabe9fa95c16fa811aa4ecfc70574394990cf17bd83df499f7">pan::CardType::Event</a> &gt; *p, const unsigned int file_version)</td></tr>
 <tr class="separator:a9d377eba228f523e12084976fe9a094a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a4da63514fc7584651576d2e81df42165"><td class="memItemLeft" align="right" valign="top">static const std::map&lt; EventType, const char * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepan.html#a4da63514fc7584651576d2e81df42165">pan::EventTypeDescriptions</a></td></tr>
+<tr class="separator:a4da63514fc7584651576d2e81df42165"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="_event_card_8h.html">EventCard.h</a></li>
+    <li class="navelem"><a class="el" href="dir_0780246879f99bae3f8eebba8098c081.html">comp345-proj</a></li><li class="navelem"><a class="el" href="_event_card_8h.html">EventCard.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['actionbase',['ActionBase',['../classpan_1_1_action_base.html',1,'pan']]],
+  ['actiondata',['ActionData',['../structpan_1_1_game_1_1_action_data.html',1,'pan::Game']]],
   ['actionhandler',['ActionHandler',['../classpan_1_1_action_handler.html',1,'pan']]],
   ['actionimpl',['ActionImpl',['../classpan_1_1_action_impl.html',1,'pan']]],
   ['actionimpl_3c_20buildresearchstation_2c_20actionbase_20_3e',['ActionImpl&lt; BuildResearchStation, ActionBase &gt;',['../classpan_1_1_action_impl.html',1,'pan']]],

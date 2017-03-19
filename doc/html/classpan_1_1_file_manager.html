@@ -29,7 +29,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Pandemic
-   &#160;<span id="projectnumber">Build1</span>
+   &#160;<span id="projectnumber">build1</span>
    </div>
   </td>
  </tr>
@@ -83,6 +83,8 @@ $(document).ready(function(){initNavTree('classpan_1_1_file_manager.html','');})
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classpan_1_1_file_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pan::FileManager Class Reference</div>  </div>
@@ -93,6 +95,13 @@ $(document).ready(function(){initNavTree('classpan_1_1_file_manager.html','');})
  <a href="classpan_1_1_file_manager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_file_manager_8h_source.html">FileManager.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for pan::FileManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager__coll__graph.png" border="0" usemap="#pan_1_1_file_manager_coll__map" alt="Collaboration graph"/></div>
+<map name="pan_1_1_file_manager_coll__map" id="pan_1_1_file_manager_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -111,6 +120,42 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c6dc615236819bad04dc9db880db6f6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classpan_1_1_file_manager.html">FileManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6">getInstance</a> ()</td></tr>
 <tr class="separator:a9c6dc615236819bad04dc9db880db6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9353d822382f9a1fabfbb2707db1f0e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a9353d822382f9a1fabfbb2707db1f0e3">FileManager</a> ()</td></tr>
+<tr class="separator:a9353d822382f9a1fabfbb2707db1f0e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a932eaa110ef8fdaae61ffbb56de2bb8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a932eaa110ef8fdaae61ffbb56de2bb8b">FileManager</a> (const <a class="el" href="classpan_1_1_file_manager.html">FileManager</a> &amp;)=delete</td></tr>
+<tr class="separator:a932eaa110ef8fdaae61ffbb56de2bb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbe3630c1cabaa1937dca7092a427b7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpan_1_1_file_manager.html">FileManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#abbe3630c1cabaa1937dca7092a427b7f">operator=</a> (const <a class="el" href="classpan_1_1_file_manager.html">FileManager</a> &amp;)=delete</td></tr>
+<tr class="separator:abbe3630c1cabaa1937dca7092a427b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774e1a8ea3b85f47f55a2d568a5eb1fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a774e1a8ea3b85f47f55a2d568a5eb1fa">initialize</a> () const</td></tr>
+<tr class="separator:a774e1a8ea3b85f47f55a2d568a5eb1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60d96d40ae8dd600397a819c269906b2"><td class="memItemLeft" align="right" valign="top">boost::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a60d96d40ae8dd600397a819c269906b2">outputPath</a> () const</td></tr>
+<tr class="separator:a60d96d40ae8dd600397a819c269906b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f5d0b6203dcd54bd3dcfaf9fc10988f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2f5d0b6203dcd54bd3dcfaf9fc10988f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a2f5d0b6203dcd54bd3dcfaf9fc10988f">write</a> (const T &amp;t, std::ofstream &amp;file) const</td></tr>
+<tr class="separator:a2f5d0b6203dcd54bd3dcfaf9fc10988f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819bd15b683417b451786fc7792b9195"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a819bd15b683417b451786fc7792b9195"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a819bd15b683417b451786fc7792b9195">read</a> (std::ifstream &amp;file, T &amp;t) const</td></tr>
+<tr class="separator:a819bd15b683417b451786fc7792b9195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cf54f169d88d6264ef9df8bc1a6b763"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a1cf54f169d88d6264ef9df8bc1a6b763">createInputStream</a> (const boost::filesystem::path &amp;file, std::ifstream &amp;stream) const</td></tr>
+<tr class="separator:a1cf54f169d88d6264ef9df8bc1a6b763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56843183cfbaa19d6d8217afc284c45b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a56843183cfbaa19d6d8217afc284c45b">createOutputStream</a> (const boost::filesystem::path &amp;file, std::ofstream &amp;stream, bool overwrite=false) const</td></tr>
+<tr class="separator:a56843183cfbaa19d6d8217afc284c45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac532c61bac0eaa1ea533cc67c41330fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#ac532c61bac0eaa1ea533cc67c41330fe">createDirectory</a> (const boost::filesystem::path &amp;dir) const</td></tr>
+<tr class="separator:ac532c61bac0eaa1ea533cc67c41330fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be376266a462a36ce08fdb44193ba9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a7be376266a462a36ce08fdb44193ba9a">removeFile</a> (const boost::filesystem::path &amp;file) const</td></tr>
+<tr class="separator:a7be376266a462a36ce08fdb44193ba9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8161cc9a9bdda20c76f5d0113c101792"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a8161cc9a9bdda20c76f5d0113c101792">fileExists</a> (const boost::filesystem::path &amp;file) const</td></tr>
+<tr class="separator:a8161cc9a9bdda20c76f5d0113c101792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e99ba269178d9891e9e7400e5ceed5c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a9e99ba269178d9891e9e7400e5ceed5c">directoryExists</a> (const boost::filesystem::path &amp;dir) const</td></tr>
+<tr class="separator:a9e99ba269178d9891e9e7400e5ceed5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3b6eb7cab79d47968095ad4705a62ede"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1_file_manager.html#a3b6eb7cab79d47968095ad4705a62ede">outputFolder</a></td></tr>
+<tr class="separator:a3b6eb7cab79d47968095ad4705a62ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstracts away the save/load of game objects. The details of the save/load, i.e. the filesystem, fileformat will vary depending on the platform. </p>
@@ -141,6 +186,70 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9353d822382f9a1fabfbb2707db1f0e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9353d822382f9a1fabfbb2707db1f0e3">&#9670;&nbsp;</a></span>FileManager() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pan::FileManager::FileManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a9353d822382f9a1fabfbb2707db1f0e3_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_a9353d822382f9a1fabfbb2707db1f0e3_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a9353d822382f9a1fabfbb2707db1f0e3_icgraph" id="classpan_1_1_file_manager_a9353d822382f9a1fabfbb2707db1f0e3_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="255,63,452,90"/>
+<area shape="rect" id="node3" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="523,13,643,39"/>
+<area shape="rect" id="node5" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="523,63,642,90"/>
+<area shape="rect" id="node6" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="500,114,665,141"/>
+<area shape="rect" id="node4" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="713,5,845,47"/>
+<area shape="rect" id="node7" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="749,114,810,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a932eaa110ef8fdaae61ffbb56de2bb8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a932eaa110ef8fdaae61ffbb56de2bb8b">&#9670;&nbsp;</a></span>FileManager() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pan::FileManager::FileManager </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpan_1_1_file_manager.html">FileManager</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="af9d8a64e6bd6cae23ee56af2f13a8124"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9d8a64e6bd6cae23ee56af2f13a8124">&#9670;&nbsp;</a></span>allFiles()</h2>
@@ -158,6 +267,266 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Returns a vector of all save files </p><dl class="section return"><dt>Returns</dt><dd>a vector of SaveFile objects </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_af9d8a64e6bd6cae23ee56af2f13a8124_cgraph.png" border="0" usemap="#classpan_1_1_file_manager_af9d8a64e6bd6cae23ee56af2f13a8124_cgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_af9d8a64e6bd6cae23ee56af2f13a8124_cgraph" id="classpan_1_1_file_manager_af9d8a64e6bd6cae23ee56af2f13a8124_cgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a60d96d40ae8dd600397a819c269906b2" title="pan::FileManager::outputPath" alt="" coords="224,5,417,32"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#a9e99ba269178d9891e9e7400e5ceed5c" title="pan::FileManager::directory\lExists" alt="" coords="231,57,411,98"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_af9d8a64e6bd6cae23ee56af2f13a8124_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_af9d8a64e6bd6cae23ee56af2f13a8124_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_af9d8a64e6bd6cae23ee56af2f13a8124_icgraph" id="classpan_1_1_file_manager_af9d8a64e6bd6cae23ee56af2f13a8124_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="224,63,421,90"/>
+<area shape="rect" id="node3" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="492,13,612,39"/>
+<area shape="rect" id="node5" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="493,63,611,90"/>
+<area shape="rect" id="node6" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="469,114,635,141"/>
+<area shape="rect" id="node4" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="683,5,815,47"/>
+<area shape="rect" id="node7" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="718,114,779,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac532c61bac0eaa1ea533cc67c41330fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac532c61bac0eaa1ea533cc67c41330fe">&#9670;&nbsp;</a></span>createDirectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pan::FileManager::createDirectory </td>
+          <td>(</td>
+          <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>dir</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_ac532c61bac0eaa1ea533cc67c41330fe_cgraph.png" border="0" usemap="#classpan_1_1_file_manager_ac532c61bac0eaa1ea533cc67c41330fe_cgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_ac532c61bac0eaa1ea533cc67c41330fe_cgraph" id="classpan_1_1_file_manager_ac532c61bac0eaa1ea533cc67c41330fe_cgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a9e99ba269178d9891e9e7400e5ceed5c" title="pan::FileManager::directory\lExists" alt="" coords="220,5,400,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_ac532c61bac0eaa1ea533cc67c41330fe_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_ac532c61bac0eaa1ea533cc67c41330fe_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_ac532c61bac0eaa1ea533cc67c41330fe_icgraph" id="classpan_1_1_file_manager_ac532c61bac0eaa1ea533cc67c41330fe_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#ab897366e9055e7e251a67d82b1cefcaa" title="pan::FileManager::save" alt="" coords="220,38,376,65"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="424,63,621,90"/>
+<area shape="rect" id="node4" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="692,13,812,39"/>
+<area shape="rect" id="node6" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="693,63,811,90"/>
+<area shape="rect" id="node7" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="669,114,835,141"/>
+<area shape="rect" id="node5" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="883,5,1015,47"/>
+<area shape="rect" id="node8" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="918,114,979,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1cf54f169d88d6264ef9df8bc1a6b763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cf54f169d88d6264ef9df8bc1a6b763">&#9670;&nbsp;</a></span>createInputStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pan::FileManager::createInputStream </td>
+          <td>(</td>
+          <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a1cf54f169d88d6264ef9df8bc1a6b763_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_a1cf54f169d88d6264ef9df8bc1a6b763_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a1cf54f169d88d6264ef9df8bc1a6b763_icgraph" id="classpan_1_1_file_manager_a1cf54f169d88d6264ef9df8bc1a6b763_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#ac0112a350779701a11110042bd053458" title="pan::FileManager::load" alt="" coords="220,56,375,83"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="423,56,620,83"/>
+<area shape="rect" id="node6" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="691,5,810,32"/>
+<area shape="rect" id="node7" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="668,107,833,133"/>
+<area shape="rect" id="node4" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="691,56,811,83"/>
+<area shape="rect" id="node5" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="881,45,1013,86"/>
+<area shape="rect" id="node8" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="917,111,978,137"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a56843183cfbaa19d6d8217afc284c45b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56843183cfbaa19d6d8217afc284c45b">&#9670;&nbsp;</a></span>createOutputStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pan::FileManager::createOutputStream </td>
+          <td>(</td>
+          <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>overwrite</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a56843183cfbaa19d6d8217afc284c45b_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_a56843183cfbaa19d6d8217afc284c45b_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a56843183cfbaa19d6d8217afc284c45b_icgraph" id="classpan_1_1_file_manager_a56843183cfbaa19d6d8217afc284c45b_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#ab897366e9055e7e251a67d82b1cefcaa" title="pan::FileManager::save" alt="" coords="220,38,376,65"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="424,63,621,90"/>
+<area shape="rect" id="node4" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="692,13,812,39"/>
+<area shape="rect" id="node6" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="693,63,811,90"/>
+<area shape="rect" id="node7" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="669,114,835,141"/>
+<area shape="rect" id="node5" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="883,5,1015,47"/>
+<area shape="rect" id="node8" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="918,114,979,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9e99ba269178d9891e9e7400e5ceed5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e99ba269178d9891e9e7400e5ceed5c">&#9670;&nbsp;</a></span>directoryExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pan::FileManager::directoryExists </td>
+          <td>(</td>
+          <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>dir</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a9e99ba269178d9891e9e7400e5ceed5c_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_a9e99ba269178d9891e9e7400e5ceed5c_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a9e99ba269178d9891e9e7400e5ceed5c_icgraph" id="classpan_1_1_file_manager_a9e99ba269178d9891e9e7400e5ceed5c_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#ac532c61bac0eaa1ea533cc67c41330fe" title="pan::FileManager::create\lDirectory" alt="" coords="233,5,400,47"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#ab897366e9055e7e251a67d82b1cefcaa" title="pan::FileManager::save" alt="" coords="455,71,611,98"/>
+<area shape="rect" id="node10" href="classpan_1_1_file_manager.html#af9d8a64e6bd6cae23ee56af2f13a8124" title="pan::FileManager::allFiles" alt="" coords="448,122,619,149"/>
+<area shape="rect" id="node4" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="667,122,864,149"/>
+<area shape="rect" id="node5" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="935,71,1055,98"/>
+<area shape="rect" id="node7" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="935,122,1054,149"/>
+<area shape="rect" id="node8" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="912,173,1077,199"/>
+<area shape="rect" id="node6" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="1125,64,1257,105"/>
+<area shape="rect" id="node9" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="1161,173,1222,199"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8161cc9a9bdda20c76f5d0113c101792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8161cc9a9bdda20c76f5d0113c101792">&#9670;&nbsp;</a></span>fileExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pan::FileManager::fileExists </td>
+          <td>(</td>
+          <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a8161cc9a9bdda20c76f5d0113c101792_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_a8161cc9a9bdda20c76f5d0113c101792_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a8161cc9a9bdda20c76f5d0113c101792_icgraph" id="classpan_1_1_file_manager_a8161cc9a9bdda20c76f5d0113c101792_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a7be376266a462a36ce08fdb44193ba9a" title="pan::FileManager::removeFile" alt="" coords="236,5,428,32"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#ab897366e9055e7e251a67d82b1cefcaa" title="pan::FileManager::save" alt="" coords="254,56,410,83"/>
+<area shape="rect" id="node10" href="classpan_1_1_file_manager.html#ac0112a350779701a11110042bd053458" title="pan::FileManager::load" alt="" coords="255,107,409,133"/>
+<area shape="rect" id="node4" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="476,56,673,83"/>
+<area shape="rect" id="node5" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="744,31,864,57"/>
+<area shape="rect" id="node7" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="745,81,863,108"/>
+<area shape="rect" id="node8" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="721,132,887,159"/>
+<area shape="rect" id="node6" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="935,23,1067,65"/>
+<area shape="rect" id="node9" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="970,132,1031,159"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -183,6 +552,86 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a9c6dc615236819bad04dc9db880db6f6_cgraph.png" border="0" usemap="#classpan_1_1_file_manager_a9c6dc615236819bad04dc9db880db6f6_cgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a9c6dc615236819bad04dc9db880db6f6_cgraph" id="classpan_1_1_file_manager_a9c6dc615236819bad04dc9db880db6f6_cgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a774e1a8ea3b85f47f55a2d568a5eb1fa" title="pan::FileManager::initialize" alt="" coords="263,63,440,89"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#a60d96d40ae8dd600397a819c269906b2" title="pan::FileManager::outputPath" alt="" coords="500,33,693,60"/>
+<area shape="rect" id="node4" href="classpan_1_1_file_manager.html#ab897366e9055e7e251a67d82b1cefcaa" title="pan::FileManager::save" alt="" coords="273,164,429,191"/>
+<area shape="rect" id="node11" href="classpan_1_1_file_manager.html#ac0112a350779701a11110042bd053458" title="pan::FileManager::load" alt="" coords="274,215,429,241"/>
+<area shape="rect" id="node14" href="classpan_1_1_file_manager.html#af9d8a64e6bd6cae23ee56af2f13a8124" title="pan::FileManager::allFiles" alt="" coords="266,12,437,39"/>
+<area shape="rect" id="node15" href="classpan_1_1_file_manager.html#a9353d822382f9a1fabfbb2707db1f0e3" title="pan::FileManager::FileManager" alt="" coords="251,265,452,292"/>
+<area shape="rect" id="node16" href="classpan_1_1_file_manager.html#abbe3630c1cabaa1937dca7092a427b7f" title="pan::FileManager::operator=" alt="" coords="259,316,444,343"/>
+<area shape="rect" id="node5" href="classpan_1_1_file_manager.html#a9e99ba269178d9891e9e7400e5ceed5c" title="pan::FileManager::directory\lExists" alt="" coords="741,77,921,118"/>
+<area shape="rect" id="node6" href="classpan_1_1_file_manager.html#ac532c61bac0eaa1ea533cc67c41330fe" title="pan::FileManager::create\lDirectory" alt="" coords="513,135,680,177"/>
+<area shape="rect" id="node7" href="classpan_1_1_file_manager.html#a8161cc9a9bdda20c76f5d0113c101792" title="pan::FileManager::fileExists" alt="" coords="505,317,688,344"/>
+<area shape="rect" id="node8" href="classpan_1_1_file_manager.html#a56843183cfbaa19d6d8217afc284c45b" title="pan::FileManager::create\lOutputStream" alt="" coords="513,201,680,242"/>
+<area shape="rect" id="node9" href="classpan_1_1_file_manager.html#a2f5d0b6203dcd54bd3dcfaf9fc10988f" title="pan::FileManager::write" alt="" coords="518,267,675,293"/>
+<area shape="rect" id="node10" href="misc_8h.html#a589f5ec7cd58630eb03918e5065270dc" title="registerTypes" alt="" coords="781,351,881,377"/>
+<area shape="rect" id="node12" href="classpan_1_1_file_manager.html#a1cf54f169d88d6264ef9df8bc1a6b763" title="pan::FileManager::create\lInputStream" alt="" coords="513,369,680,410"/>
+<area shape="rect" id="node13" href="classpan_1_1_file_manager.html#a819bd15b683417b451786fc7792b9195" title="pan::FileManager::read" alt="" coords="519,435,674,461"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a9c6dc615236819bad04dc9db880db6f6_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_a9c6dc615236819bad04dc9db880db6f6_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a9c6dc615236819bad04dc9db880db6f6_icgraph" id="classpan_1_1_file_manager_a9c6dc615236819bad04dc9db880db6f6_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="273,13,393,39"/>
+<area shape="rect" id="node4" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="274,63,393,90"/>
+<area shape="rect" id="node5" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="251,114,416,141"/>
+<area shape="rect" id="node3" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="464,5,596,47"/>
+<area shape="rect" id="node6" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="499,114,561,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a774e1a8ea3b85f47f55a2d568a5eb1fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774e1a8ea3b85f47f55a2d568a5eb1fa">&#9670;&nbsp;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pan::FileManager::initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a774e1a8ea3b85f47f55a2d568a5eb1fa_cgraph.png" border="0" usemap="#classpan_1_1_file_manager_a774e1a8ea3b85f47f55a2d568a5eb1fa_cgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a774e1a8ea3b85f47f55a2d568a5eb1fa_cgraph" id="classpan_1_1_file_manager_a774e1a8ea3b85f47f55a2d568a5eb1fa_cgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a60d96d40ae8dd600397a819c269906b2" title="pan::FileManager::outputPath" alt="" coords="231,5,424,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a774e1a8ea3b85f47f55a2d568a5eb1fa_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_a774e1a8ea3b85f47f55a2d568a5eb1fa_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a774e1a8ea3b85f47f55a2d568a5eb1fa_icgraph" id="classpan_1_1_file_manager_a774e1a8ea3b85f47f55a2d568a5eb1fa_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="231,63,428,90"/>
+<area shape="rect" id="node3" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="499,13,619,39"/>
+<area shape="rect" id="node5" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="499,63,618,90"/>
+<area shape="rect" id="node6" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="476,114,641,141"/>
+<area shape="rect" id="node4" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="689,5,821,47"/>
+<area shape="rect" id="node7" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="725,114,786,141"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -227,6 +676,206 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the load was successful, false otherwise </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_ac0112a350779701a11110042bd053458_cgraph.png" border="0" usemap="#classpan_1_1_file_manager_ac0112a350779701a11110042bd053458_cgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_ac0112a350779701a11110042bd053458_cgraph" id="classpan_1_1_file_manager_ac0112a350779701a11110042bd053458_cgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a60d96d40ae8dd600397a819c269906b2" title="pan::FileManager::outputPath" alt="" coords="208,5,401,32"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#a8161cc9a9bdda20c76f5d0113c101792" title="pan::FileManager::fileExists" alt="" coords="213,56,396,83"/>
+<area shape="rect" id="node4" href="classpan_1_1_file_manager.html#a1cf54f169d88d6264ef9df8bc1a6b763" title="pan::FileManager::create\lInputStream" alt="" coords="221,107,388,149"/>
+<area shape="rect" id="node5" href="classpan_1_1_file_manager.html#a819bd15b683417b451786fc7792b9195" title="pan::FileManager::read" alt="" coords="227,173,382,200"/>
+<area shape="rect" id="node6" href="misc_8h.html#a589f5ec7cd58630eb03918e5065270dc" title="registerTypes" alt="" coords="449,173,549,200"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_ac0112a350779701a11110042bd053458_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_ac0112a350779701a11110042bd053458_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_ac0112a350779701a11110042bd053458_icgraph" id="classpan_1_1_file_manager_ac0112a350779701a11110042bd053458_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="208,56,405,83"/>
+<area shape="rect" id="node5" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="477,5,595,32"/>
+<area shape="rect" id="node6" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="453,107,619,133"/>
+<area shape="rect" id="node3" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="476,56,596,83"/>
+<area shape="rect" id="node4" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="667,45,799,86"/>
+<area shape="rect" id="node7" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="702,111,763,137"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abbe3630c1cabaa1937dca7092a427b7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbe3630c1cabaa1937dca7092a427b7f">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpan_1_1_file_manager.html">FileManager</a>&amp; pan::FileManager::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpan_1_1_file_manager.html">FileManager</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_abbe3630c1cabaa1937dca7092a427b7f_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_abbe3630c1cabaa1937dca7092a427b7f_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_abbe3630c1cabaa1937dca7092a427b7f_icgraph" id="classpan_1_1_file_manager_abbe3630c1cabaa1937dca7092a427b7f_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="239,63,436,90"/>
+<area shape="rect" id="node3" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="507,13,627,39"/>
+<area shape="rect" id="node5" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="507,63,626,90"/>
+<area shape="rect" id="node6" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="484,114,649,141"/>
+<area shape="rect" id="node4" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="697,5,829,47"/>
+<area shape="rect" id="node7" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="733,114,794,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a60d96d40ae8dd600397a819c269906b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60d96d40ae8dd600397a819c269906b2">&#9670;&nbsp;</a></span>outputPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">path pan::FileManager::outputPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a60d96d40ae8dd600397a819c269906b2_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_a60d96d40ae8dd600397a819c269906b2_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a60d96d40ae8dd600397a819c269906b2_icgraph" id="classpan_1_1_file_manager_a60d96d40ae8dd600397a819c269906b2_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a774e1a8ea3b85f47f55a2d568a5eb1fa" title="pan::FileManager::initialize" alt="" coords="247,157,424,184"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="472,107,669,133"/>
+<area shape="rect" id="node9" href="classpan_1_1_file_manager.html#af9d8a64e6bd6cae23ee56af2f13a8124" title="pan::FileManager::allFiles" alt="" coords="250,56,421,83"/>
+<area shape="rect" id="node10" href="classpan_1_1_file_manager.html#ab897366e9055e7e251a67d82b1cefcaa" title="pan::FileManager::save" alt="" coords="257,5,413,32"/>
+<area shape="rect" id="node11" href="classpan_1_1_file_manager.html#ac0112a350779701a11110042bd053458" title="pan::FileManager::load" alt="" coords="258,208,413,235"/>
+<area shape="rect" id="node4" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="740,51,860,77"/>
+<area shape="rect" id="node6" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="741,139,859,165"/>
+<area shape="rect" id="node7" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="717,189,883,216"/>
+<area shape="rect" id="node5" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="931,43,1063,85"/>
+<area shape="rect" id="node8" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="966,189,1027,216"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a819bd15b683417b451786fc7792b9195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a819bd15b683417b451786fc7792b9195">&#9670;&nbsp;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pan::FileManager::read </td>
+          <td>(</td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a819bd15b683417b451786fc7792b9195_cgraph.png" border="0" usemap="#classpan_1_1_file_manager_a819bd15b683417b451786fc7792b9195_cgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a819bd15b683417b451786fc7792b9195_cgraph" id="classpan_1_1_file_manager_a819bd15b683417b451786fc7792b9195_cgraph">
+<area shape="rect" id="node2" href="misc_8h.html#a589f5ec7cd58630eb03918e5065270dc" title="registerTypes" alt="" coords="208,5,308,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a819bd15b683417b451786fc7792b9195_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_a819bd15b683417b451786fc7792b9195_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a819bd15b683417b451786fc7792b9195_icgraph" id="classpan_1_1_file_manager_a819bd15b683417b451786fc7792b9195_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#ac0112a350779701a11110042bd053458" title="pan::FileManager::load" alt="" coords="208,56,363,83"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="411,56,608,83"/>
+<area shape="rect" id="node6" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="679,5,798,32"/>
+<area shape="rect" id="node7" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="656,107,821,133"/>
+<area shape="rect" id="node4" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="679,56,799,83"/>
+<area shape="rect" id="node5" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="869,45,1001,86"/>
+<area shape="rect" id="node8" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="905,111,966,137"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7be376266a462a36ce08fdb44193ba9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7be376266a462a36ce08fdb44193ba9a">&#9670;&nbsp;</a></span>removeFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pan::FileManager::removeFile </td>
+          <td>(</td>
+          <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a7be376266a462a36ce08fdb44193ba9a_cgraph.png" border="0" usemap="#classpan_1_1_file_manager_a7be376266a462a36ce08fdb44193ba9a_cgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a7be376266a462a36ce08fdb44193ba9a_cgraph" id="classpan_1_1_file_manager_a7be376266a462a36ce08fdb44193ba9a_cgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a8161cc9a9bdda20c76f5d0113c101792" title="pan::FileManager::fileExists" alt="" coords="245,5,428,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -278,12 +927,122 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if save was successful, false otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_ab897366e9055e7e251a67d82b1cefcaa_cgraph.png" border="0" usemap="#classpan_1_1_file_manager_ab897366e9055e7e251a67d82b1cefcaa_cgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_ab897366e9055e7e251a67d82b1cefcaa_cgraph" id="classpan_1_1_file_manager_ab897366e9055e7e251a67d82b1cefcaa_cgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a60d96d40ae8dd600397a819c269906b2" title="pan::FileManager::outputPath" alt="" coords="209,5,403,32"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#a9e99ba269178d9891e9e7400e5ceed5c" title="pan::FileManager::directory\lExists" alt="" coords="451,78,631,119"/>
+<area shape="rect" id="node4" href="classpan_1_1_file_manager.html#ac532c61bac0eaa1ea533cc67c41330fe" title="pan::FileManager::create\lDirectory" alt="" coords="223,107,389,149"/>
+<area shape="rect" id="node5" href="classpan_1_1_file_manager.html#a8161cc9a9bdda20c76f5d0113c101792" title="pan::FileManager::fileExists" alt="" coords="215,173,397,200"/>
+<area shape="rect" id="node6" href="classpan_1_1_file_manager.html#a56843183cfbaa19d6d8217afc284c45b" title="pan::FileManager::create\lOutputStream" alt="" coords="223,225,389,266"/>
+<area shape="rect" id="node7" href="classpan_1_1_file_manager.html#a2f5d0b6203dcd54bd3dcfaf9fc10988f" title="pan::FileManager::write" alt="" coords="227,291,385,317"/>
+<area shape="rect" id="node8" href="misc_8h.html#a589f5ec7cd58630eb03918e5065270dc" title="registerTypes" alt="" coords="491,291,591,317"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_ab897366e9055e7e251a67d82b1cefcaa_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_ab897366e9055e7e251a67d82b1cefcaa_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_ab897366e9055e7e251a67d82b1cefcaa_icgraph" id="classpan_1_1_file_manager_ab897366e9055e7e251a67d82b1cefcaa_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="209,63,407,90"/>
+<area shape="rect" id="node3" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="477,13,597,39"/>
+<area shape="rect" id="node5" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="478,63,597,90"/>
+<area shape="rect" id="node6" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="455,114,620,141"/>
+<area shape="rect" id="node4" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="668,5,800,47"/>
+<area shape="rect" id="node7" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="703,114,765,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2f5d0b6203dcd54bd3dcfaf9fc10988f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f5d0b6203dcd54bd3dcfaf9fc10988f">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pan::FileManager::write </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a2f5d0b6203dcd54bd3dcfaf9fc10988f_cgraph.png" border="0" usemap="#classpan_1_1_file_manager_a2f5d0b6203dcd54bd3dcfaf9fc10988f_cgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a2f5d0b6203dcd54bd3dcfaf9fc10988f_cgraph" id="classpan_1_1_file_manager_a2f5d0b6203dcd54bd3dcfaf9fc10988f_cgraph">
+<area shape="rect" id="node2" href="misc_8h.html#a589f5ec7cd58630eb03918e5065270dc" title="registerTypes" alt="" coords="211,5,311,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1_file_manager_a2f5d0b6203dcd54bd3dcfaf9fc10988f_icgraph.png" border="0" usemap="#classpan_1_1_file_manager_a2f5d0b6203dcd54bd3dcfaf9fc10988f_icgraph" alt=""/></div>
+<map name="classpan_1_1_file_manager_a2f5d0b6203dcd54bd3dcfaf9fc10988f_icgraph" id="classpan_1_1_file_manager_a2f5d0b6203dcd54bd3dcfaf9fc10988f_icgraph">
+<area shape="rect" id="node2" href="classpan_1_1_file_manager.html#ab897366e9055e7e251a67d82b1cefcaa" title="pan::FileManager::save" alt="" coords="211,38,367,65"/>
+<area shape="rect" id="node3" href="classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="415,63,612,90"/>
+<area shape="rect" id="node4" href="classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="683,13,803,39"/>
+<area shape="rect" id="node6" href="classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="683,63,802,90"/>
+<area shape="rect" id="node7" href="classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="660,114,825,141"/>
+<area shape="rect" id="node5" href="classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="873,5,1005,47"/>
+<area shape="rect" id="node8" href="comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="909,114,970,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3b6eb7cab79d47968095ad4705a62ede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b6eb7cab79d47968095ad4705a62ede">&#9670;&nbsp;</a></span>outputFolder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string pan::FileManager::outputFolder</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_file_manager_8h_source.html">FileManager.h</a></li>
-<li><a class="el" href="_file_manager_8cpp.html">FileManager.cpp</a></li>
+<li>comp345-proj/<a class="el" href="_file_manager_8h_source.html">FileManager.h</a></li>
+<li>comp345-proj/<a class="el" href="_file_manager_8cpp.html">FileManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

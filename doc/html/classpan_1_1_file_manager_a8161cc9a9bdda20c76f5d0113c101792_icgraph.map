@@ -1,0 +1,11 @@
+<map id="pan::FileManager::fileExists" name="pan::FileManager::fileExists">
+<area shape="rect" id="node2" href="$classpan_1_1_file_manager.html#a7be376266a462a36ce08fdb44193ba9a" title="pan::FileManager::removeFile" alt="" coords="236,5,428,32"/>
+<area shape="rect" id="node3" href="$classpan_1_1_file_manager.html#ab897366e9055e7e251a67d82b1cefcaa" title="pan::FileManager::save" alt="" coords="254,56,410,83"/>
+<area shape="rect" id="node10" href="$classpan_1_1_file_manager.html#ac0112a350779701a11110042bd053458" title="pan::FileManager::load" alt="" coords="255,107,409,133"/>
+<area shape="rect" id="node4" href="$classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="476,56,673,83"/>
+<area shape="rect" id="node5" href="$classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="744,31,864,57"/>
+<area shape="rect" id="node7" href="$classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="745,81,863,108"/>
+<area shape="rect" id="node8" href="$classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="721,132,887,159"/>
+<area shape="rect" id="node6" href="$classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="935,23,1067,65"/>
+<area shape="rect" id="node9" href="$comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="970,132,1031,159"/>
+</map>

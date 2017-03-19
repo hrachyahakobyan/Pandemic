@@ -6,6 +6,7 @@ var classpan_1_1detail_1_1_graph =
     [ "EdgeDescriptor", "classpan_1_1detail_1_1_graph.html#a21d6fe3d33512e98e8578df1f4d8b810", null ],
     [ "EdgeIterator", "classpan_1_1detail_1_1_graph.html#abf1033eeaf577f4c099f3e56164a0439", null ],
     [ "EdgeRange", "classpan_1_1detail_1_1_graph.html#af7c5ed956d483a3bf26469b7698f5689", null ],
+    [ "GraphContainer", "classpan_1_1detail_1_1_graph.html#a04f924cfffdd3d49d4624a429c0e11d9", null ],
     [ "IndexMap", "classpan_1_1detail_1_1_graph.html#a5c24f583c13faceb000758f24389728c", null ],
     [ "OutEdgeIterator", "classpan_1_1detail_1_1_graph.html#ab020b117f26b3d19039491ecb5ff5130", null ],
     [ "OutEdgeRange", "classpan_1_1detail_1_1_graph.html#a6a455005d606a7ead0feba1c84156bc7", null ],
@@ -34,5 +35,6 @@ var classpan_1_1detail_1_1_graph =
     [ "removeVertex", "classpan_1_1detail_1_1_graph.html#ad2e6731b123860e589849f965e42ec8f", null ],
     [ "serialize", "classpan_1_1detail_1_1_graph.html#aefa6b97b33eae8917b3d48820a2cf519", null ],
     [ "vertexExists", "classpan_1_1detail_1_1_graph.html#ad46610d729b56f7f899458cc5021c0f3", null ],
-    [ "boost::serialization::access", "classpan_1_1detail_1_1_graph.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ]
+    [ "boost::serialization::access", "classpan_1_1detail_1_1_graph.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
+    [ "container", "classpan_1_1detail_1_1_graph.html#aa618a282989d07531fee21d15babb5ad", null ]
 ];

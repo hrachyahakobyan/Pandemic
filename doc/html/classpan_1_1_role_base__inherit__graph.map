@@ -1,0 +1,4 @@
+<map id="pan::RoleBase" name="pan::RoleBase">
+<area shape="rect" id="node3" href="$classpan_1_1_role_impl.html" title="RoleImpl is a templated class for concrete Role&#45;s. Its template parameter is an Roles enum value..." alt="" coords="5,359,140,436"/>
+<area shape="rect" id="node2" href="$classpan_1_1_object.html" title="Abstract parent class to all entities directly connected with the game state that have to be serializ..." alt="" coords="20,5,125,127"/>
+</map>

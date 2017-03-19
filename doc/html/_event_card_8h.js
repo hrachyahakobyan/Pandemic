@@ -10,5 +10,6 @@ var _event_card_8h =
       [ "Forecast", "_event_card_8h.html#a9221a73b34e019e6b8fe6f84e6417513a724312814497ba102c07b7c35b9a1a66", null ]
     ] ],
     [ "load_construct_data", "_event_card_8h.html#a9d377eba228f523e12084976fe9a094a", null ],
-    [ "save_construct_data", "_event_card_8h.html#aa5da5003acf4fa37f8c3b0f7c210f45f", null ]
+    [ "save_construct_data", "_event_card_8h.html#aa5da5003acf4fa37f8c3b0f7c210f45f", null ],
+    [ "EventTypeDescriptions", "_event_card_8h.html#a4da63514fc7584651576d2e81df42165", null ]
 ];

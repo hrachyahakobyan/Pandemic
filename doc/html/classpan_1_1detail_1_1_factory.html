@@ -29,7 +29,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Pandemic
-   &#160;<span id="projectnumber">Build1</span>
+   &#160;<span id="projectnumber">build1</span>
    </div>
   </td>
  </tr>
@@ -83,6 +83,10 @@ $(document).ready(function(){initNavTree('classpan_1_1detail_1_1_factory.html','
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classpan_1_1detail_1_1_factory-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pan::detail::Factory&lt; K, T, Us &gt; Class Template Reference</div>  </div>
@@ -93,6 +97,13 @@ $(document).ready(function(){initNavTree('classpan_1_1detail_1_1_factory.html','
  <a href="classpan_1_1detail_1_1_factory.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_factory_8h_source.html">Factory.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for pan::detail::Factory&lt; K, T, Us &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpan_1_1detail_1_1_factory__coll__graph.png" border="0" usemap="#pan_1_1detail_1_1_factory_3_01_k_00_01_t_00_01_us_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="pan_1_1detail_1_1_factory_3_01_k_00_01_t_00_01_us_01_4_coll__map" id="pan_1_1detail_1_1_factory_3_01_k_00_01_t_00_01_us_01_4_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -112,6 +123,27 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a8c96fc8688874e5e8dd4532368a562ea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classpan_1_1detail_1_1_factory.html">Factory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1detail_1_1_factory.html#a8c96fc8688874e5e8dd4532368a562ea">getInstance</a> ()</td></tr>
 <tr class="separator:a8c96fc8688874e5e8dd4532368a562ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a1ed2622db3fdb6cafa1ea5824dd79d1a"><td class="memItemLeft" align="right" valign="top">typedef T *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1detail_1_1_factory.html#a1ed2622db3fdb6cafa1ea5824dd79d1a">CreateObjectFunc</a>) (Us... args)</td></tr>
+<tr class="separator:a1ed2622db3fdb6cafa1ea5824dd79d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8225e12ae07dbe89b38d2b92f374a9d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1detail_1_1_factory.html#a8225e12ae07dbe89b38d2b92f374a9d1">Factory</a> ()</td></tr>
+<tr class="separator:a8225e12ae07dbe89b38d2b92f374a9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ad3c104de2d508ea0455c886f6dff0956"><td class="memTemplParams" colspan="2">template&lt;typename S &gt; </td></tr>
+<tr class="memitem:ad3c104de2d508ea0455c886f6dff0956"><td class="memTemplItemLeft" align="right" valign="top">static T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classpan_1_1detail_1_1_factory.html#ad3c104de2d508ea0455c886f6dff0956">createObject</a> (Us... args)</td></tr>
+<tr class="separator:ad3c104de2d508ea0455c886f6dff0956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a17631dae18db090470675678c1d10f3e"><td class="memItemLeft" align="right" valign="top">std::map&lt; K, <a class="el" href="classpan_1_1detail_1_1_factory.html#a1ed2622db3fdb6cafa1ea5824dd79d1a">CreateObjectFunc</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpan_1_1detail_1_1_factory.html#a17631dae18db090470675678c1d10f3e">mObjectCreator</a></td></tr>
+<tr class="separator:a17631dae18db090470675678c1d10f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename K, typename T, typename ... Us&gt;<br />
@@ -119,9 +151,34 @@ class pan::detail::Factory&lt; K, T, Us &gt;</h3>
 
 <p>a modified templated factory with variadic constructor arguments </p>
 <dl class="section author"><dt>Author</dt><dd>Hrachya Hakobyan </dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a1ed2622db3fdb6cafa1ea5824dd79d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed2622db3fdb6cafa1ea5824dd79d1a">&#9670;&nbsp;</a></span>CreateObjectFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename T , typename ... Us&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef T*(* <a class="el" href="classpan_1_1detail_1_1_factory.html">pan::detail::Factory</a>&lt; K, T, Us &gt;::CreateObjectFunc) (Us... args)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8bede97b9ebe191c4f44d3f466f479b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bede97b9ebe191c4f44d3f466f479b3">&#9670;&nbsp;</a></span>Factory()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bede97b9ebe191c4f44d3f466f479b3">&#9670;&nbsp;</a></span>Factory() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,9 +205,36 @@ template&lt;typename K , typename T , typename ... Us&gt; </div>
 
 </div>
 </div>
+<a id="a8225e12ae07dbe89b38d2b92f374a9d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8225e12ae07dbe89b38d2b92f374a9d1">&#9670;&nbsp;</a></span>Factory() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename T , typename ... Us&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpan_1_1detail_1_1_factory.html">pan::detail::Factory</a>&lt; K, T, Us &gt;::<a class="el" href="classpan_1_1detail_1_1_factory.html">Factory</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a30fe3b9f6541e9f611edb51bd54584e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30fe3b9f6541e9f611edb51bd54584e5">&#9670;&nbsp;</a></span>createObject()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a30fe3b9f6541e9f611edb51bd54584e5">&#9670;&nbsp;</a></span>createObject() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,6 +276,44 @@ template&lt;typename K , typename T , typename ... Us&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the new object or null if the object id doesn't exist </dd></dl>
+
+</div>
+</div>
+<a id="ad3c104de2d508ea0455c886f6dff0956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3c104de2d508ea0455c886f6dff0956">&#9670;&nbsp;</a></span>createObject() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename T , typename ... Us&gt; </div>
+<div class="memtemplate">
+template&lt;typename S &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T* <a class="el" href="classpan_1_1detail_1_1_factory.html">pan::detail::Factory</a>&lt; K, T, Us &gt;::createObject </td>
+          <td>(</td>
+          <td class="paramtype">Us...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Pointers to this function are inserted into the map and called when creating objects</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S</td><td>the type of class to create </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a object with the type of S </dd></dl>
 
 </div>
 </div>
@@ -323,8 +445,34 @@ template&lt;typename S &gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a17631dae18db090470675678c1d10f3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17631dae18db090470675678c1d10f3e">&#9670;&nbsp;</a></span>mObjectCreator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename T , typename ... Us&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;K, <a class="el" href="classpan_1_1detail_1_1_factory.html#a1ed2622db3fdb6cafa1ea5824dd79d1a">CreateObjectFunc</a>&gt; <a class="el" href="classpan_1_1detail_1_1_factory.html">pan::detail::Factory</a>&lt; K, T, Us &gt;::mObjectCreator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A map keys (K) to functions (CreateObjectFunc) When creating a new type, we simply call the function with the required key </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>detail/<a class="el" href="_factory_8h_source.html">Factory.h</a></li>
+<li>comp345-proj/detail/<a class="el" href="_factory_8h_source.html">Factory.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
