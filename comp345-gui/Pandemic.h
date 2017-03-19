@@ -1,19 +1,15 @@
-#ifndef PANDEMIC_H
-#define PANDEMIC_H
+#pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ui_pandemic.h"
+#include "ui_Pandemic.h"
 
 class Pandemic : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	Pandemic(QWidget *parent = 0);
-	~Pandemic();
+	Pandemic(QWidget *parent = Q_NULLPTR);
 
 private:
 	Ui::PandemicClass ui;
 };
-
-#endif // PANDEMIC_H
