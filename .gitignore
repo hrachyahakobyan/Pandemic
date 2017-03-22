@@ -213,3 +213,8 @@ Makefile*
 
 # QtCtreator CMake
 CMakeLists.txt.user*
+
+# Custom
+doc/*
+# Don't need to copy the lib
+core/lib/*
