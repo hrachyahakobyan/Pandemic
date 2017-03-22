@@ -1,13 +1,10 @@
 #pragma once
-#include "Object.h"
-
-
 namespace pan{
 	/**
 	*	@brief Stores disease state.
 	*	@author Hrachya Hakobyan
 	*/
-	class Disease : public Object
+	class Disease 
 	{
 	public:
 		Disease(DiseaseType diseaseType = 0);
@@ -22,7 +19,7 @@ namespace pan{
 		void setIsCured(bool isCured);
 		void setIsEradicated(bool isEradicated);
 
-		inline std::string description() const;
+		std::string description() const;
 
 		inline bool operator==(const Disease&) const;
 		inline bool operator!=(const Disease&) const;
@@ -30,7 +27,6 @@ namespace pan{
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
-			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar  & boost::serialization::make_nvp("diseaseType", const_cast<DiseaseType&>(diseaseType));
 			ar  & BOOST_SERIALIZATION_NVP(isCured);
 			ar  & BOOST_SERIALIZATION_NVP(isEradicated);
@@ -65,13 +61,5 @@ namespace pan{
 	{
 		return diseaseType;
 	}
-
-	std::string Disease::description() const
-	{
-		return "Disease type: " + std::to_string(diseaseType) +
-			". Is Cured: " + std::to_string(isCured) + ". Is eradicated: " + std::to_string(isEradicated);
-	}
-
-
 }
 

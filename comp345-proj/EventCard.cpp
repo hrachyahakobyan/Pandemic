@@ -7,4 +7,9 @@ namespace pan{
 		eventType(eventType)
 	{
 	}
+
+	std::string CardImpl<CardType::Event>::description() const
+	{
+		return CardBase::description() + ' ' + EventTypeDescriptions.at(eventType);
+	}
 }

@@ -16,7 +16,7 @@ namespace pan{
 		CardImpl(CityIndex index);
 		~CardImpl() = default;
 		const CityIndex cityIndex;
-		inline std::string description() const;
+		std::string description() const;
 		inline bool operator==(const CardImpl&) const;
 		inline bool operator!=(const CardImpl&) const;
 	private:
@@ -36,11 +36,6 @@ namespace pan{
 	bool CardImpl<CardType::City>::operator!=(const CardImpl& o) const
 	{
 		return cityIndex != o.cityIndex;
-	}
-
-	std::string CardImpl<CardType::City>::description() const
-	{
-		return CardBase::description() + ' ' + std::to_string(cityIndex);
 	}
 }
 

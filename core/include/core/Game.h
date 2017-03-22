@@ -11,7 +11,7 @@ namespace pan
 	*	connecting different pieces of the game logic together.
 	*	@author Hrachya Hakobyan
 	*/
-	class Game : public Object
+	class Game 
 	{
 	public:
 		static const int InvalidPlayerIndex = -1;
@@ -189,7 +189,6 @@ namespace pan
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
-			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar & BOOST_SERIALIZATION_NVP(map);
 			ar & BOOST_SERIALIZATION_NVP(playerData);
 			ar & BOOST_SERIALIZATION_NVP(gameData);

@@ -2,14 +2,12 @@
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="13">
 <object class_id="14" tracking_level="0" version="0">
-	<Object class_id="15" tracking_level="0" version="0"></Object>
-	<graph class_id="16" tracking_level="0" version="0">
-		<container class_id="17" tracking_level="0" version="0">
+	<graph class_id="15" tracking_level="0" version="0">
+		<container class_id="16" tracking_level="0" version="0">
 			<V>48</V>
 			<E>91</E>
-			<vertex_property class_id="18" tracking_level="0" version="0">
-				<property_value class_id="19" tracking_level="0" version="0">
-					<Object></Object>
+			<vertex_property class_id="17" tracking_level="0" version="0">
+				<property_value class_id="18" tracking_level="0" version="0">
 					<name>Atlanta</name>
 					<population>447841</population>
 					<researchStation>0</researchStation>
@@ -24,11 +22,10 @@
 					<xpos>2.38999999999999990e-001</xpos>
 					<ypos>4.35000000000000000e-001</ypos>
 				</property_value>
-				<property_base class_id="22" tracking_level="0" version="0"></property_base>
+				<property_base class_id="21" tracking_level="0" version="0"></property_base>
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>San Francisco</name>
 					<population>837442</population>
 					<researchStation>0</researchStation>
@@ -47,7 +44,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Chicago</name>
 					<population>2719000</population>
 					<researchStation>0</researchStation>
@@ -66,7 +62,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Montreal</name>
 					<population>1650000</population>
 					<researchStation>0</researchStation>
@@ -85,7 +80,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>New York</name>
 					<population>8406000</population>
 					<researchStation>0</researchStation>
@@ -104,7 +98,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Washington</name>
 					<population>658893</population>
 					<researchStation>0</researchStation>
@@ -123,7 +116,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>London</name>
 					<population>8674000</population>
 					<researchStation>0</researchStation>
@@ -142,7 +134,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Madrid</name>
 					<population>3615000</population>
 					<researchStation>0</researchStation>
@@ -161,7 +152,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Paris</name>
 					<population>2244000</population>
 					<researchStation>0</researchStation>
@@ -180,7 +170,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Essen</name>
 					<population>566862</population>
 					<researchStation>0</researchStation>
@@ -199,7 +188,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Milan</name>
 					<population>1251000</population>
 					<researchStation>0</researchStation>
@@ -218,7 +206,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Saint-Petersburg</name>
 					<population>4991000</population>
 					<researchStation>0</researchStation>
@@ -237,7 +224,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Algiers</name>
 					<population>3416000</population>
 					<researchStation>0</researchStation>
@@ -256,7 +242,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Baghdad</name>
 					<population>7665000</population>
 					<researchStation>0</researchStation>
@@ -275,7 +260,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Cairo</name>
 					<population>9120000</population>
 					<researchStation>0</researchStation>
@@ -294,7 +278,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Chennai</name>
 					<population>7088000</population>
 					<researchStation>0</researchStation>
@@ -313,7 +296,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Delhi</name>
 					<population>18980000</population>
 					<researchStation>0</researchStation>
@@ -332,7 +314,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Istanbul</name>
 					<population>14800000</population>
 					<researchStation>0</researchStation>
@@ -351,7 +332,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Karachi</name>
 					<population>25300000</population>
 					<researchStation>0</researchStation>
@@ -370,7 +350,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Kolkata</name>
 					<population>4497000</population>
 					<researchStation>0</researchStation>
@@ -389,7 +368,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Moscow</name>
 					<population>11920000</population>
 					<researchStation>0</researchStation>
@@ -408,7 +386,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Mumbai</name>
 					<population>18410000</population>
 					<researchStation>0</researchStation>
@@ -427,7 +404,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Riyadh</name>
 					<population>8000000</population>
 					<researchStation>0</researchStation>
@@ -446,7 +422,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Tehran</name>
 					<population>8154000</population>
 					<researchStation>0</researchStation>
@@ -465,7 +440,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Los Angeles</name>
 					<population>3884000</population>
 					<researchStation>0</researchStation>
@@ -484,7 +458,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Mexico City</name>
 					<population>8851000</population>
 					<researchStation>0</researchStation>
@@ -503,7 +476,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Miami</name>
 					<population>417650</population>
 					<researchStation>0</researchStation>
@@ -522,7 +494,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Bogota</name>
 					<population>8081000</population>
 					<researchStation>0</researchStation>
@@ -541,7 +512,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Lima</name>
 					<population>8473000</population>
 					<researchStation>0</researchStation>
@@ -560,7 +530,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Santiago</name>
 					<population>5128000</population>
 					<researchStation>0</researchStation>
@@ -579,7 +548,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Buenos Aires</name>
 					<population>2891000</population>
 					<researchStation>0</researchStation>
@@ -598,7 +566,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Sao Pauolo</name>
 					<population>12040000</population>
 					<researchStation>0</researchStation>
@@ -617,7 +584,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Lagos</name>
 					<population>21000000</population>
 					<researchStation>0</researchStation>
@@ -636,7 +602,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Kinshasa</name>
 					<population>10120000</population>
 					<researchStation>0</researchStation>
@@ -655,7 +620,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Johannesburg</name>
 					<population>4435000</population>
 					<researchStation>0</researchStation>
@@ -674,7 +638,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Khartoum</name>
 					<population>5185000</population>
 					<researchStation>0</researchStation>
@@ -693,7 +656,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Bangkok</name>
 					<population>8281000</population>
 					<researchStation>0</researchStation>
@@ -712,7 +674,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Beijing</name>
 					<population>21500000</population>
 					<researchStation>0</researchStation>
@@ -731,7 +692,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>HoChiMinhCity</name>
 					<population>8426000</population>
 					<researchStation>0</researchStation>
@@ -750,7 +710,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>HongKong</name>
 					<population>7188000</population>
 					<researchStation>0</researchStation>
@@ -769,7 +728,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Jakarta</name>
 					<population>9608000</population>
 					<researchStation>0</researchStation>
@@ -788,7 +746,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Manila</name>
 					<population>1652000</population>
 					<researchStation>0</researchStation>
@@ -807,7 +764,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Osaka</name>
 					<population>2665000</population>
 					<researchStation>0</researchStation>
@@ -826,7 +782,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Seoul</name>
 					<population>10010000</population>
 					<researchStation>0</researchStation>
@@ -845,7 +800,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Shanghai</name>
 					<population>24150000</population>
 					<researchStation>0</researchStation>
@@ -864,7 +818,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Sydney</name>
 					<population>4293000</population>
 					<researchStation>0</researchStation>
@@ -883,7 +836,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Taipei</name>
 					<population>2705000</population>
 					<researchStation>0</researchStation>
@@ -902,7 +854,6 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<Object></Object>
 					<name>Tokyo</name>
 					<population>13620000</population>
 					<researchStation>0</researchStation>
@@ -1195,34 +1146,30 @@
 			<graph_property></graph_property>
 		</container>
 	</graph>
-	<regionMap class_id="23" tracking_level="0" version="0">
+	<regionMap class_id="22" tracking_level="0" version="0">
 		<count>4</count>
 		<item_version>0</item_version>
-		<item class_id="24" tracking_level="0" version="0">
+		<item class_id="23" tracking_level="0" version="0">
 			<first>0</first>
-			<second class_id="25" tracking_level="0" version="0">
-				<Object></Object>
+			<second class_id="24" tracking_level="0" version="0">
 				<name></name>
 			</second>
 		</item>
 		<item>
 			<first>1</first>
 			<second>
-				<Object></Object>
 				<name></name>
 			</second>
 		</item>
 		<item>
 			<first>2</first>
 			<second>
-				<Object></Object>
 				<name></name>
 			</second>
 		</item>
 		<item>
 			<first>3</first>
 			<second>
-				<Object></Object>
 				<name></name>
 			</second>
 		</item>

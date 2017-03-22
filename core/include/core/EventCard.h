@@ -31,7 +31,7 @@ namespace pan{
 		CardImpl(EventType eventType);
 		~CardImpl() = default;
 		const EventType eventType;
-		inline std::string description() const;
+		std::string description() const;
 		inline bool operator==(const CardImpl&) const;
 		inline bool operator!=(const CardImpl&) const;
 	private:
@@ -51,11 +51,6 @@ namespace pan{
 	bool CardImpl<CardType::Event>::operator!=(const CardImpl& o) const
 	{
 		return eventType != o.eventType;
-	}
-
-	std::string CardImpl<CardType::Event>::description() const
-	{
-		return CardBase::description() + ' ' + EventTypeDescriptions.at(eventType);
 	}
 }
 

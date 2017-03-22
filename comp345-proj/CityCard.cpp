@@ -7,4 +7,9 @@ namespace pan{
 	cityIndex(index)
 	{
 	}
+
+	std::string CardImpl<CardType::City>::description() const
+	{
+		return CardBase::description() + ' ' + std::to_string(cityIndex);
+	}
 }

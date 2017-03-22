@@ -180,8 +180,9 @@ namespace pan{
 		}
 		load = true;
 		return panMap;
-
+		
 		/*
+		Map m;
 		RegionIndex regionBlue = 0;
 		RegionIndex regionYellow = m.addRegion();
 		RegionIndex regionBlack = m.addRegion();
@@ -333,8 +334,8 @@ namespace pan{
 		m.addConnection(iSydney, iJakarta);
 		m.addConnection(iSydney, iLosAngeles);
 
-		auto b = SaveLoadManager::getInstance().save(m, pandemicMapPath);
-
-		return m*/;
+		auto b = FileManager::getInstance().save(m, "pandemic_map.xml", "resources", true);
+	
+		return m;*/
 	}
 }

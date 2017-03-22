@@ -118,7 +118,6 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="Move.h" />
-    <ClInclude Include="Object.h" />
     <ClInclude Include="Outbreak.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBase.h" />
@@ -159,7 +158,6 @@
     <ClCompile Include="InfectionCard.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Move.cpp" />
-    <ClCompile Include="Object.cpp" />
     <ClCompile Include="Outbreak.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBase.cpp" />

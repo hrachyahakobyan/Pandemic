@@ -1,5 +1,4 @@
 #pragma once
-#include "Object.h"
 
 
 namespace pan{
@@ -7,7 +6,7 @@ namespace pan{
 	*	Is default constructible, copyable and assignable to allow usage with containers.
 	*	@author Hrachya Hakobyan
 	*/
-	class City : public Object{
+	class City {
 	public:
 		City();
 		City(const std::string& name, unsigned int population = 0);
@@ -38,7 +37,6 @@ namespace pan{
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
-			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar & BOOST_SERIALIZATION_NVP(name);
 			ar & BOOST_SERIALIZATION_NVP(population);
 			ar & BOOST_SERIALIZATION_NVP(researchStation);

@@ -1,14 +1,10 @@
 #pragma once
-#include "Object.h"
-
-
 namespace pan{
 	/**
 	*	@brief describes different roles present in the game
 	*/
 	enum class Roles : unsigned int{Medic = 0, Dispatcher, Generalist, 
 									Researcher, QSpecialist, FOperative, CPlanner};
-	static const int RoleCount = 6;
 	static const std::map<Roles, const char*> RolesDescriptions{
 		{ Roles::Dispatcher, "Dispatcher" },
 		{ Roles::FOperative, "Field Operative" },
@@ -27,14 +23,14 @@ namespace pan{
 	*	because of protected constructor.
 	*	@author Hrachya Hakobyan
 	*/
-	class RoleBase : public Object
+	class RoleBase 
 	{
 	public:
 		virtual ~RoleBase();
 		inline bool operator==(const RoleBase&) const;
 		inline bool operator!=(const RoleBase&) const;
 		const Roles role;
-		inline std::string description() const;
+		virtual std::string description() const;
 	protected:
 		RoleBase(Roles role);
 	};
@@ -47,11 +43,6 @@ namespace pan{
 	bool RoleBase::operator!=(const RoleBase& r) const
 	{
 		return this->role != r.role;
-	}
-
-	std::string RoleBase::description() const
-	{
-		return RolesDescriptions.at(role);
 	}
 
 	/**

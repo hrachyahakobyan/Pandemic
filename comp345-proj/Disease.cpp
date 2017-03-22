@@ -42,4 +42,10 @@ namespace pan{
 		else if (!isEradicated)
 			this->isEradicated = false;
 	}
+
+	std::string Disease::description() const
+	{
+		return "Disease type: " + std::to_string(diseaseType) +
+			". Is Cured: " + std::to_string(isCured) + ". Is eradicated: " + std::to_string(isEradicated);
+	}
 }

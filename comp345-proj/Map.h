@@ -1,5 +1,4 @@
 #pragma once
-#include "Object.h"
 #include "City.h"
 #include "Region.h"
 
@@ -14,7 +13,7 @@ namespace pan{
 	*	RegionIndex-s and RegionIndex-s and Region objects.
 	*	@author Hrachya Hakobyan
 	*/
-	class Map : public Object
+	class Map 
 	{
 	public:
 		typedef detail::Graph<City>::VertexIterator CityIterator;
@@ -46,10 +45,9 @@ namespace pan{
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
-			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
-			ar  & BOOST_SERIALIZATION_NVP(graph);
-			ar  & BOOST_SERIALIZATION_NVP(regionMap);
-			ar  & BOOST_SERIALIZATION_NVP(cityRegions);
+			ar & BOOST_SERIALIZATION_NVP(graph);
+			ar & BOOST_SERIALIZATION_NVP(regionMap);
+			ar & BOOST_SERIALIZATION_NVP(cityRegions);
 		}
 
 		/*!	Public Interaface */

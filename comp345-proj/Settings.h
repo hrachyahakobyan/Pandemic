@@ -1,12 +1,11 @@
 #pragma once
-#include "Object.h"
 
 namespace pan{
 	/**
 	*	@brief encapsulates all game related parameters.
 	*	@author Hrachya Hakobyan
 	*/
-	class Settings : public Object
+	class Settings 
 	{
 	public:
 		Settings();
@@ -68,7 +67,6 @@ namespace pan{
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
-			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar & BOOST_SERIALIZATION_NVP(initialCards);
 			ar & BOOST_SERIALIZATION_NVP(playerCount);
 			ar & BOOST_SERIALIZATION_NVP(epidemicCardCount);

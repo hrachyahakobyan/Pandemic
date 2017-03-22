@@ -1,7 +1,4 @@
 #pragma once
-#include "Object.h"
-
-
 namespace pan{
 	/**
 	*	@brief describes different roles present in the game
@@ -26,14 +23,14 @@ namespace pan{
 	*	because of protected constructor.
 	*	@author Hrachya Hakobyan
 	*/
-	class RoleBase : public Object
+	class RoleBase 
 	{
 	public:
 		virtual ~RoleBase();
 		inline bool operator==(const RoleBase&) const;
 		inline bool operator!=(const RoleBase&) const;
 		const Roles role;
-		inline std::string description() const;
+		virtual std::string description() const;
 	protected:
 		RoleBase(Roles role);
 	};
@@ -46,11 +43,6 @@ namespace pan{
 	bool RoleBase::operator!=(const RoleBase& r) const
 	{
 		return this->role != r.role;
-	}
-
-	std::string RoleBase::description() const
-	{
-		return RolesDescriptions.at(role);
 	}
 
 	/**

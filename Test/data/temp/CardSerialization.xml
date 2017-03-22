@@ -7,43 +7,33 @@
 	<item class_id="15" tracking_level="0" version="1">
 		<px class_id="7" tracking_level="1" version="0" object_id="_0">
 			<cityIndex>0</cityIndex>
-			<CardBase class_id="11" tracking_level="1" version="0" object_id="_1">
-				<Object class_id="16" tracking_level="0" version="0"></Object>
-			</CardBase>
+			<CardBase class_id="11" tracking_level="1" version="0" object_id="_1"></CardBase>
 			<cityIndex>0</cityIndex>
 		</px>
 	</item>
 	<item>
 		<px class_id="8" tracking_level="1" version="0" object_id="_2">
-			<CardBase object_id="_3">
-				<Object></Object>
-			</CardBase>
+			<CardBase object_id="_3"></CardBase>
 		</px>
 	</item>
 	<item>
 		<px class_id="10" tracking_level="1" version="0" object_id="_4">
 			<cityIndex>1</cityIndex>
-			<CardBase object_id="_5">
-				<Object></Object>
-			</CardBase>
+			<CardBase object_id="_5"></CardBase>
 			<cityIndex>1</cityIndex>
 		</px>
 	</item>
 	<item>
 		<px class_id="9" tracking_level="1" version="0" object_id="_6">
 			<eventType>0</eventType>
-			<CardBase object_id="_7">
-				<Object></Object>
-			</CardBase>
+			<CardBase object_id="_7"></CardBase>
 			<eventType>0</eventType>
 		</px>
 	</item>
 	<item>
 		<px class_id_reference="9" object_id="_8">
 			<eventType>1</eventType>
-			<CardBase object_id="_9">
-				<Object></Object>
-			</CardBase>
+			<CardBase object_id="_9"></CardBase>
 			<eventType>1</eventType>
 		</px>
 	</item>

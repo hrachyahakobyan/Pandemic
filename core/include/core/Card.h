@@ -1,5 +1,4 @@
 #pragma once
-#include "Object.h"
 
 namespace pan {
 	/**
@@ -20,7 +19,7 @@ namespace pan {
 	*	Cards contain an enum to differentiate their type.
 	*	@author Hrachya Hakobyan
 	*/
-	class CardBase : public Object
+	class CardBase 
 	{
 	public:
 		virtual ~CardBase() = default;
@@ -35,7 +34,6 @@ namespace pan {
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
-			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 		}
 	};
 

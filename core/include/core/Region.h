@@ -1,5 +1,4 @@
 #pragma once
-#include "Object.h"
 
 namespace pan
 {
@@ -8,7 +7,7 @@ namespace pan
 	*	Must be default constructible and assignable.
 	*	@author Hrachya Hakobyan
 	*/
-	class Region : public Object{
+	class Region {
 	public:
 		inline const std::string& getName() const;
 		inline void setName(const std::string& name);
@@ -20,7 +19,6 @@ namespace pan
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
-			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar & BOOST_SERIALIZATION_NVP(name);
 		}
 	private:

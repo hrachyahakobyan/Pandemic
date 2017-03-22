@@ -1,5 +1,4 @@
 #pragma once
-#include "Object.h"
 #include "Role.h"
 #include "detail\Deck.h"
 #include "Card.h"
@@ -10,7 +9,7 @@ namespace pan{
 	*	@brief Base class for player objects.
 	*	@author Hrachya Hakobyan
 	*/
-	class PlayerBase : public Object{
+	class PlayerBase {
 	public:
 		virtual ~PlayerBase();
 
@@ -35,7 +34,6 @@ namespace pan{
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
-			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(Object);
 			ar & BOOST_SERIALIZATION_NVP(name);
 			ar & BOOST_SERIALIZATION_NVP(location);
 			ar & BOOST_SERIALIZATION_NVP(cards);

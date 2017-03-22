@@ -10,4 +10,9 @@ namespace pan{
 	RoleBase::~RoleBase()
 	{
 	}
+
+	std::string RoleBase::description() const
+	{
+		return RolesDescriptions.at(role);
+	}
 }

@@ -29,7 +29,7 @@ namespace pan{
 		*	@return true if save was successful, false otherwise.
 		*/
 		template<typename T>
-		bool save(const T& t, const std::string& filename, const std::string& dir, bool overwrite = false) const;
+		bool save(const T& t, const std::string& filename, const std::string& dir, bool overwrite = true) const;
 
 		/**
 		*	Loads a saved object.

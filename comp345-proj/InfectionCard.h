@@ -15,7 +15,7 @@
 		CardImpl(CityIndex index);
 		~CardImpl() = default;
 		const CityIndex cityIndex;
-		inline std::string description() const;
+		std::string description() const;
 		inline bool operator==(const CardImpl&) const;
 		inline bool operator!=(const CardImpl&) const;
 	private:
@@ -35,11 +35,6 @@
 	bool CardImpl<CardType::Infection>::operator!=(const CardImpl& o) const
 	{
 		return cityIndex != o.cityIndex;
-	}
-
-	std::string CardImpl<CardType::Infection>::description() const
-	{
-		return CardBase::description() + ' ' + std::to_string(cityIndex);
 	}
 }
 
