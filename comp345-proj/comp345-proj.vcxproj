@@ -118,6 +118,10 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="Move.h" />
+    <ClInclude Include="Notification.h" />
+    <ClInclude Include="NotificationCenter.h" />
+    <ClInclude Include="Observer.h" />
+    <ClInclude Include="ObserverBase.h" />
     <ClInclude Include="Outbreak.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBase.h" />
@@ -158,6 +162,9 @@
     <ClCompile Include="InfectionCard.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Move.cpp" />
+    <ClCompile Include="Notification.cpp" />
+    <ClCompile Include="NotificationCenter.cpp" />
+    <ClCompile Include="ObserverBase.cpp" />
     <ClCompile Include="Outbreak.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBase.cpp" />
