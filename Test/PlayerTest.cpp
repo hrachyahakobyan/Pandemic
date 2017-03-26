@@ -32,10 +32,10 @@ namespace pan{
 		medic2.setLocation(1);
 		ASSERT_EQ(medic, medic2);
 
-		medic.cards.push(std::shared_ptr<CardBase>(new CityCard(2)));
+		medic.cards.push(std::shared_ptr<CardBase>(new CityCard(2, 0)));
 		ASSERT_NE(medic, medic2);
 
-		medic2.cards.push(std::shared_ptr<CardBase>(new CityCard(2)));
+		medic2.cards.push(std::shared_ptr<CardBase>(new CityCard(2, 0)));
 		ASSERT_EQ(medic, medic2);
 
 		medic.cards.clear();
@@ -57,7 +57,7 @@ namespace pan{
 		medic->setName("John");
 		medic->setLocation(1);
 		medic->cards.push(std::shared_ptr<CardBase>(new EpidemicCard()));
-		medic->cards.push(std::shared_ptr<CardBase>(new CityCard(1)));
+		medic->cards.push(std::shared_ptr<CardBase>(new CityCard(1, 0)));
 		medic->cards.push(std::shared_ptr<CardBase>(new EventCard(EventType::GovGrant)));
 
 		ASSERT_TRUE(FileManager::getInstance().save(medic, "PlayerSerialization.xml", "temp", true));
@@ -87,7 +87,7 @@ namespace pan{
 		players[2]->setLocation(3);
 		players[3]->setLocation(4);
 		players[0]->cards.push(std::shared_ptr<CardBase>(new EpidemicCard()));
-		players[1]->cards.push(std::shared_ptr<CardBase>(new CityCard(2)));
+		players[1]->cards.push(std::shared_ptr<CardBase>(new CityCard(2, 0)));
 		players[2]->cards.push(std::shared_ptr<CardBase>(new EventCard(EventType::Forecast)));
 		players[3]->cards.push(std::shared_ptr<CardBase>(new EventCard(EventType::OneQuietNight)));
 

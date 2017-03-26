@@ -55,7 +55,7 @@ namespace pan{
 		std::vector<std::shared_ptr<CardBase>> cards;
 		cards.push_back(std::make_shared<InfectionCard>(0));
 		cards.push_back(std::make_shared<EpidemicCard>());
-		cards.push_back(std::shared_ptr<CityCard>(new CityCard(1)));
+		cards.push_back(std::shared_ptr<CityCard>(new CityCard(1, 0)));
 		cards.push_back(std::make_shared<EventCard>(EventType::Airlift));
 		cards.push_back(std::make_shared<EventCard>(EventType::GovGrant));
 

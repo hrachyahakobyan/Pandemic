@@ -1,8 +1,8 @@
 #pragma once
 #include "Role.h"
 #include "detail\Deck.h"
-#include "Card.h"
 #include "ReferenceCard.h"
+#include "CityCard.h"
 
 namespace pan{
 	/**
@@ -30,6 +30,12 @@ namespace pan{
 
 		const RoleBase role;
 		const ReferenceCard referenceCard;
+
+		bool hasCityCard(CityIndex) const;
+		std::shared_ptr<CityCard> removeCityCard(CityIndex index);
+		std::size_t countCardsMatching(const CardBase& card) const;
+		std::size_t countCardsMatchingRegion(RegionIndex index) const;
+		detail::Deck<std::shared_ptr<CityCard>> removeCardsMatchingRegion(RegionIndex region, std::size_t count);
 
 		friend class boost::serialization::access;
 		template<class Archive>

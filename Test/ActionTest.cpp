@@ -16,7 +16,7 @@ namespace pan{
 
 		// Valid infection, 2 cubes
 		// Check the city's region coincides with the disease type
-		EXPECT_EQ(game.map.regionForCity(infect.city), infect.diseaseType);
+		EXPECT_EQ(game.map[infect.city].getRegion(), infect.diseaseType);
 		infect.cubes = 2;
 		std::size_t cubesBefore = game.gameData.diseaseCubes[infect.diseaseType];
 		ASSERT_TRUE(infect.execute(game.actionHandler));
@@ -32,7 +32,7 @@ namespace pan{
 		infect.cubes = 2;
 		// Change the city
 		infect.city = 1;
-		EXPECT_EQ(game.map.regionForCity(infect.city), infect.diseaseType);
+		EXPECT_EQ(game.map[infect.city].getRegion(), infect.diseaseType);
 		cubesBefore = game.gameData.diseaseCubes[infect.diseaseType];
 		ASSERT_TRUE(infect.execute(game.actionHandler));
 		// Check post conditions
@@ -44,7 +44,7 @@ namespace pan{
 		infect.diseaseType = 1;
 		infect.cubes = 2;
 		infect.city = 0;
-		EXPECT_NE(game.map.regionForCity(infect.city), infect.diseaseType);
+		EXPECT_NE(game.map[infect.city].getRegion(), infect.diseaseType);
 		ASSERT_FALSE(infect.execute(game.actionHandler));
 
 		// Valid infection
@@ -134,7 +134,7 @@ namespace pan{
 		EXPECT_TRUE(g.initialize());
 		PlayerBase& p = g.getPlayer(p1Index);
 		// Give player some cards
-		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(0)));
+		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(0, 0)));
 
 		BuildResearchStation b(p1Index);
 		// Cannot build a research station since it is already there
@@ -145,7 +145,9 @@ namespace pan{
 		EXPECT_TRUE(m.execute(g.actionHandler));
 
 		// Add the required card
-		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(p.getLocation())));
+		auto cityIndex = p.getLocation();
+		auto regionIndex = game.map[cityIndex].getRegion();
+		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(cityIndex, regionIndex)));
 		g.gameData.researchStations = g.gameData.settings.maxResearchStations;
 		// Cannot build since no more research stations can be built
 		ASSERT_FALSE(b.execute(g.actionHandler));

@@ -21,6 +21,7 @@
 					</cubes>
 					<xpos>2.38999999999999990e-001</xpos>
 					<ypos>4.35000000000000000e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base class_id="21" tracking_level="0" version="0"></property_base>
 			</vertex_property>
@@ -39,6 +40,7 @@
 					</cubes>
 					<xpos>1.43999999999999990e-001</xpos>
 					<ypos>4.39000000000000000e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -57,6 +59,7 @@
 					</cubes>
 					<xpos>2.35999999999999990e-001</xpos>
 					<ypos>3.76000000000000000e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -75,6 +78,7 @@
 					</cubes>
 					<xpos>2.96999999999999990e-001</xpos>
 					<ypos>3.75000000000000000e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -93,6 +97,7 @@
 					</cubes>
 					<xpos>2.86999999999999980e-001</xpos>
 					<ypos>4.09999999999999980e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -111,6 +116,7 @@
 					</cubes>
 					<xpos>2.73000000000000020e-001</xpos>
 					<ypos>4.14999999999999980e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -129,6 +135,7 @@
 					</cubes>
 					<xpos>4.73999999999999980e-001</xpos>
 					<ypos>3.62999999999999990e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -147,6 +154,7 @@
 					</cubes>
 					<xpos>4.67000000000000030e-001</xpos>
 					<ypos>4.23999999999999990e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -165,6 +173,7 @@
 					</cubes>
 					<xpos>4.86999999999999990e-001</xpos>
 					<ypos>3.75000000000000000e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -183,6 +192,7 @@
 					</cubes>
 					<xpos>4.99000000000000000e-001</xpos>
 					<ypos>3.58999999999999990e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -201,6 +211,7 @@
 					</cubes>
 					<xpos>5.02000000000000000e-001</xpos>
 					<ypos>3.95000000000000020e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -219,6 +230,7 @@
 					</cubes>
 					<xpos>5.51000000000000050e-001</xpos>
 					<ypos>3.03999999999999990e-001</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -237,6 +249,7 @@
 					</cubes>
 					<xpos>4.87999999999999990e-001</xpos>
 					<ypos>4.42000000000000000e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -255,6 +268,7 @@
 					</cubes>
 					<xpos>6.01999999999999980e-001</xpos>
 					<ypos>4.76999999999999980e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -273,6 +287,7 @@
 					</cubes>
 					<xpos>5.58000000000000050e-001</xpos>
 					<ypos>4.74999999999999980e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -291,6 +306,7 @@
 					</cubes>
 					<xpos>7.05999999999999960e-001</xpos>
 					<ypos>5.52000000000000050e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -309,6 +325,7 @@
 					</cubes>
 					<xpos>7.00999999999999960e-001</xpos>
 					<ypos>4.87999999999999990e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -327,6 +344,7 @@
 					</cubes>
 					<xpos>5.57000000000000050e-001</xpos>
 					<ypos>4.18999999999999980e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -345,6 +363,7 @@
 					</cubes>
 					<xpos>6.71000000000000040e-001</xpos>
 					<ypos>5.04000000000000000e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -363,6 +382,7 @@
 					</cubes>
 					<xpos>7.30999999999999980e-001</xpos>
 					<ypos>5.13000000000000010e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -381,6 +401,7 @@
 					</cubes>
 					<xpos>5.70999999999999950e-001</xpos>
 					<ypos>3.28000000000000010e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -399,6 +420,7 @@
 					</cubes>
 					<xpos>6.90999999999999950e-001</xpos>
 					<ypos>5.33000000000000030e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -417,6 +439,7 @@
 					</cubes>
 					<xpos>6.06999999999999980e-001</xpos>
 					<ypos>4.97000000000000000e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -435,6 +458,7 @@
 					</cubes>
 					<xpos>6.17999999999999990e-001</xpos>
 					<ypos>4.42000000000000000e-001</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -453,6 +477,7 @@
 					</cubes>
 					<xpos>1.55000000000000000e-001</xpos>
 					<ypos>4.50000000000000010e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -471,6 +496,7 @@
 					</cubes>
 					<xpos>1.96000000000000010e-001</xpos>
 					<ypos>5.21000000000000020e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -489,6 +515,7 @@
 					</cubes>
 					<xpos>2.50000000000000000e-001</xpos>
 					<ypos>4.93999999999999990e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -507,6 +534,7 @@
 					</cubes>
 					<xpos>2.75000000000000020e-001</xpos>
 					<ypos>5.99999999999999980e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -525,6 +553,7 @@
 					</cubes>
 					<xpos>2.64000000000000010e-001</xpos>
 					<ypos>6.75000000000000040e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -543,6 +572,7 @@
 					</cubes>
 					<xpos>2.86999999999999980e-001</xpos>
 					<ypos>7.69000000000000020e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -561,6 +591,7 @@
 					</cubes>
 					<xpos>3.24000000000000010e-001</xpos>
 					<ypos>7.83000000000000030e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -579,6 +610,7 @@
 					</cubes>
 					<xpos>3.55999999999999980e-001</xpos>
 					<ypos>7.23999999999999980e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -597,6 +629,7 @@
 					</cubes>
 					<xpos>4.83999999999999990e-001</xpos>
 					<ypos>5.86999999999999970e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -615,6 +648,7 @@
 					</cubes>
 					<xpos>5.27000000000000020e-001</xpos>
 					<ypos>6.35000000000000010e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -633,6 +667,7 @@
 					</cubes>
 					<xpos>5.52000000000000050e-001</xpos>
 					<ypos>7.45000000000000000e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -651,6 +686,7 @@
 					</cubes>
 					<xpos>5.69999999999999950e-001</xpos>
 					<ypos>5.45000000000000040e-001</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -669,6 +705,7 @@
 					</cubes>
 					<xpos>7.73000000000000020e-001</xpos>
 					<ypos>5.56000000000000050e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -687,6 +724,7 @@
 					</cubes>
 					<xpos>7.92000000000000040e-001</xpos>
 					<ypos>4.03000000000000020e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -705,6 +743,7 @@
 					</cubes>
 					<xpos>0.00000000000000000e+000</xpos>
 					<ypos>0.00000000000000000e+000</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -723,6 +762,7 @@
 					</cubes>
 					<xpos>8.00000000000000040e-001</xpos>
 					<ypos>5.02000000000000000e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -741,6 +781,7 @@
 					</cubes>
 					<xpos>7.92000000000000040e-001</xpos>
 					<ypos>6.45000000000000020e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -759,6 +800,7 @@
 					</cubes>
 					<xpos>8.23999999999999950e-001</xpos>
 					<ypos>5.50000000000000040e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -777,6 +819,7 @@
 					</cubes>
 					<xpos>8.52999999999999980e-001</xpos>
 					<ypos>4.34000000000000000e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -795,6 +838,7 @@
 					</cubes>
 					<xpos>8.28999999999999960e-001</xpos>
 					<ypos>4.19999999999999980e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -813,6 +857,7 @@
 					</cubes>
 					<xpos>8.17999999999999950e-001</xpos>
 					<ypos>4.61000000000000020e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -831,6 +876,7 @@
 					</cubes>
 					<xpos>9.07000000000000030e-001</xpos>
 					<ypos>7.75000000000000020e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -849,6 +895,7 @@
 					</cubes>
 					<xpos>8.18999999999999950e-001</xpos>
 					<ypos>4.95000000000000000e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -867,6 +914,7 @@
 					</cubes>
 					<xpos>8.63999999999999990e-001</xpos>
 					<ypos>4.26999999999999990e-001</ypos>
+					<region>3</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -1174,56 +1222,4 @@
 			</second>
 		</item>
 	</regionMap>
-	<cityRegions>
-		<count>48</count>
-		<item_version>0</item_version>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>2</item>
-		<item>2</item>
-		<item>2</item>
-		<item>2</item>
-		<item>2</item>
-		<item>2</item>
-		<item>2</item>
-		<item>2</item>
-		<item>2</item>
-		<item>2</item>
-		<item>2</item>
-		<item>2</item>
-		<item>1</item>
-		<item>1</item>
-		<item>1</item>
-		<item>1</item>
-		<item>1</item>
-		<item>1</item>
-		<item>1</item>
-		<item>1</item>
-		<item>1</item>
-		<item>1</item>
-		<item>1</item>
-		<item>1</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-		<item>3</item>
-	</cityRegions>
 </object>

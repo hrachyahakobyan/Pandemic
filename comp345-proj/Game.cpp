@@ -108,9 +108,11 @@ namespace pan{
 	void Game::initCards()
 	{
 		// Fill in player cards
-		for (std::size_t i = 0; i < map.numCities(); i++){
-			deckData.playerDeck.push(std::shared_ptr<CardBase>(new CityCard(static_cast<CityIndex>(i))));
+		Map::CityIndexIterator ci, ci_end;
+		for (boost::tie(ci, ci_end) = map.cities(); ci != ci_end; ++ci){
+			deckData.playerDeck.push(std::shared_ptr<CardBase>(new CityCard(*ci, map[*ci].getRegion())));
 		}
+
 		for (const auto& event : EventTypeDescriptions){
 			deckData.playerDeck.push(std::shared_ptr<CardBase>(new EventCard(event.first)));
 		}
@@ -170,7 +172,7 @@ namespace pan{
 				auto cardPtr = deckData.infectionDeck.top();
 				deckData.infectionDeck.pop();
 				// The disease type
-				DiseaseType type = map.regionForCity(cardPtr->cityIndex);
+				DiseaseType type = map[cardPtr->cityIndex].getRegion();
 				// Infect
 				Infect infect(cardPtr->cityIndex, type, cubes);
 				infect.execute(actionHandler);

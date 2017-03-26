@@ -5,7 +5,7 @@
 namespace pan{
 
 	/**
-	*	@brief Abstracts away the save/load of the Game object.
+	*	@brief Abstracts away the save/load of game objects.
 	*	The details of the save/load, i.e. the filesystem, fileformat
 	*	will vary depending on the platform.
 	*	@author Hrachya Hakobyan
@@ -29,7 +29,7 @@ namespace pan{
 		*	@return true if save was successful, false otherwise.
 		*/
 		template<typename T>
-		bool save(const T& t, const std::string& filename, const std::string& dir, bool overwrite = false) const;
+		bool save(const T& t, const std::string& filename, const std::string& dir, bool overwrite = true) const;
 
 		/**
 		*	Loads a saved object.

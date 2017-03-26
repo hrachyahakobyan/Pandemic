@@ -51,14 +51,14 @@ namespace pan{
 
 		bool isPlayersTurn(PlayerIndex i) const;
 		/**
-		*	@brief Tells whether the given player can act, i.e. perform one of 4 actions.
+		*	Tells whether the given player can act, i.e. perform one of 4 actions.
 		*	A player can perform an action if it is his/her turn, the current stage
 		*	is Act and the player has not yet exhausted all his/her action
 		*	@return true if it is the players turn
 		*/
 		bool playerCanAct(PlayerIndex i) const;
 		/**
-		*	@brief commits a player action.
+		*	commits a player action.
 		*	If its the turn of the player in question, the current stage is Act
 		*	the action counter will be incremented. If by doing so the player exhausts
 		*	his/her actions, the stage of the game will be changed to draw
@@ -67,10 +67,26 @@ namespace pan{
 		void commitAction(PlayerIndex i);
 
 		/**
-		*
+		*	Actual implementation of outbreak
+		*	@param out the Outbreak action object
+		*	@param infected the set of all infected cities caused by the initial infection and its chain reactions if any
+		*	@return true if the action was successfully executed
 		*/
 		bool outBreakImpl(const Outbreak& out, std::set<CityIndex>& infected);
+		/**
+		*	Actual implementation of an infection
+		*	@param inf the Infect action object
+		*	@param infected the set of all infected cities caused by the initial infection and its chain reactions if any
+		*	@return true if the action was successfully executed
+		*/
 		bool infectImpl(const Infect& inf, std::set<CityIndex>& infected);
+
+		/**
+		*	Moves a player to the specified location
+		*	@param player the player to be moved
+		*	@target the target city
+		*/
+		void moveImpl(PlayerIndex player, CityIndex target);
 	};
 }
 

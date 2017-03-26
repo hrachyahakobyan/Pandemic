@@ -13,9 +13,10 @@ namespace pan{
 	class CardImpl<CardType::City> : public CardBase
 	{
 	public:
-		CardImpl(CityIndex index);
+		CardImpl(CityIndex index, RegionIndex region);
 		~CardImpl() = default;
 		const CityIndex cityIndex;
+		const RegionIndex regionIndex;
 		std::string description() const;
 		inline bool operator==(const CardImpl&) const;
 		inline bool operator!=(const CardImpl&) const;
@@ -25,17 +26,18 @@ namespace pan{
 		void serialize(Archive & ar, const unsigned int /* file_version */){
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(CardBase);
 			ar & boost::serialization::make_nvp("cityIndex", const_cast<CityIndex&>(cityIndex));
+			ar & boost::serialization::make_nvp("regionIndex", const_cast<CityIndex&>(regionIndex));
 		}
 	};
 
 	bool CardImpl<CardType::City>::operator==(const CardImpl& o) const
 	{
-		return cityIndex == o.cityIndex;
+		return cityIndex == o.cityIndex && regionIndex == o.regionIndex;
 	}
 
 	bool CardImpl<CardType::City>::operator!=(const CardImpl& o) const
 	{
-		return cityIndex != o.cityIndex;
+		return !(*this == o);
 	}
 }
 
@@ -46,15 +48,18 @@ namespace boost {
 			Archive & ar, const pan::CardImpl<pan::CardType::City> * p, const unsigned int file_version
 			){
 			ar & boost::serialization::make_nvp("cityIndex", p->cityIndex);
+			ar & boost::serialization::make_nvp("regionIndex", p->regionIndex);
 		}
 
 		template<class Archive>
 		inline void load_construct_data(
 			Archive & ar, pan::CardImpl<pan::CardType::City> * p, const unsigned int file_version
 			){
-			pan::CityIndex index;
-			ar & boost::serialization::make_nvp("cityIndex", index);
-			::new(p)pan::CardImpl<pan::CardType::City>(index);
+			pan::CityIndex cityIndex;
+			pan::RegionIndex regionIndex;
+			ar & boost::serialization::make_nvp("cityIndex", cityIndex);
+			ar & boost::serialization::make_nvp("regionIndex", regionIndex);
+			::new(p)pan::CardImpl<pan::CardType::City>(cityIndex, regionIndex);
 		}
 	}
 }

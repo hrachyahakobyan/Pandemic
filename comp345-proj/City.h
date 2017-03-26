@@ -31,6 +31,8 @@ namespace pan{
 		inline void removePlayer(PlayerIndex p);
 		inline const std::string& getName() const;
 		inline void setName(const std::string& name);
+		inline RegionIndex getRegion() const;
+		inline void setRegion(RegionIndex region);
 		std::size_t getCubes(DiseaseType r) const;
 		void setCubes(DiseaseType r, std::size_t cubes);
 
@@ -44,6 +46,7 @@ namespace pan{
 			ar & BOOST_SERIALIZATION_NVP(cubes);
 			ar & BOOST_SERIALIZATION_NVP(xpos);
 			ar & BOOST_SERIALIZATION_NVP(ypos);
+			ar & BOOST_SERIALIZATION_NVP(region);
 		}
 	private:
 		std::set<PlayerIndex> players;
@@ -51,6 +54,7 @@ namespace pan{
 		std::vector<std::size_t> cubes;
 		double xpos;
 		double ypos;
+		RegionIndex region;
 	};
 
 	bool City::operator!=(const City& other) const
@@ -91,6 +95,16 @@ namespace pan{
 	void City::setName(const std::string& name)
 	{
 		this->name = name;
+	}
+
+	RegionIndex City::getRegion() const
+	{
+		return region;
+	}
+
+	void City::setRegion(RegionIndex region)
+	{
+		this->region = region;
 	}
 }
 

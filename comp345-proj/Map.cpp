@@ -17,15 +17,13 @@ namespace pan{
 
 	Map::Map(Map&& o) :
 		graph(std::move(o.graph)),
-		regionMap(std::move(o.regionMap)),
-		cityRegions(std::move(o.cityRegions))
+		regionMap(std::move(o.regionMap))
 	{
 	}
 
 	Map::Map(const Map& o) :
 		graph(o.graph),
-		regionMap(o.regionMap),
-		cityRegions(o.cityRegions)
+		regionMap(o.regionMap)
 	{
 	}
 
@@ -33,7 +31,6 @@ namespace pan{
 	{
 		this->graph = o.graph;
 		this->regionMap = o.regionMap;
-		this->cityRegions = o.cityRegions;
 		return *this;
 	}
 
@@ -41,14 +38,13 @@ namespace pan{
 	{
 		this->graph = std::move(o.graph);
 		this->regionMap = std::move(o.regionMap);
-		this->cityRegions = std::move(o.cityRegions);
 		return *this;
 	}
 
 	bool Map::operator==(const Map& other) const
 	{
 		if (!(graph == other.graph && regionMap == other.regionMap 
-			&& cityRegions == other.cityRegions && regionMap == other.regionMap))
+			 && regionMap == other.regionMap))
 			return false;
 		std::size_t cityCount = numCities();
 		for (std::size_t i = 0; i < cityCount; i++){
@@ -96,9 +92,6 @@ namespace pan{
 
 	void Map::removeCity(CityIndex i)
 	{
-		if (graph.vertexExists(i)){
-			cityRegions.erase(cityRegions.begin() + i);
-		}
 		graph.removeVertex(i);
 	}
 
@@ -111,20 +104,17 @@ namespace pan{
 		return regions;
 	}
 
-	RegionIndex Map::regionForCity(CityIndex i) const
-	{
-		return cityRegions[i];
-	}
-
-	std::set<CityIndex> Map::regionCities(RegionIndex index) const
+	std::set<CityIndex> Map::citiesOfRegion(RegionIndex index) const
 	{
 		auto regionIt = regionMap.find(index);
 		if (regionIt == regionMap.end())
 			throw std::exception("ERROR pan::Map::std::set<CityIndex>& Map::regionCities(RegionIndex). Invalid index");
 		std::set<CityIndex> s;
-		for (CityIndex i = 0; i < cityRegions.size(); i++){
-			if (cityRegions[i] == index){
-				s.insert(i);
+		CityIndexIterator ci, ci_end;
+		for (boost::tie(ci, ci_end) = cities();
+			ci != ci_end; ++ci){
+			if (this->operator[](*ci).getRegion() == index){
+				s.insert(*ci);
 			}
 		}
 		return s;
@@ -141,10 +131,7 @@ namespace pan{
 		// Invalid region
 		if (region == regionMap.end())
 			return false;
-		if (cIndex == cityRegions.size())
-			cityRegions.push_back(rIndex);
-		else 
-			cityRegions[cIndex] = rIndex;
+		this->operator[](cIndex).setRegion(rIndex);
 		return true;
 	}
 

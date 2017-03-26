@@ -22,6 +22,7 @@
 					</cubes>
 					<xpos>0.00000000000000000e+000</xpos>
 					<ypos>0.00000000000000000e+000</ypos>
+					<region>0</region>
 				</property_value>
 				<property_base class_id="21" tracking_level="0" version="0"></property_base>
 			</vertex_property>
@@ -40,6 +41,7 @@
 					</cubes>
 					<xpos>0.00000000000000000e+000</xpos>
 					<ypos>0.00000000000000000e+000</ypos>
+					<region>1</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -59,6 +61,7 @@
 					</cubes>
 					<xpos>0.00000000000000000e+000</xpos>
 					<ypos>0.00000000000000000e+000</ypos>
+					<region>2</region>
 				</property_value>
 				<property_base></property_base>
 			</vertex_property>
@@ -93,11 +96,4 @@
 			</second>
 		</item>
 	</regionMap>
-	<cityRegions>
-		<count>3</count>
-		<item_version>0</item_version>
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-	</cityRegions>
 </object>

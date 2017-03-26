@@ -32,7 +32,9 @@ namespace pan{
 		// Build a research station
 		// Add a card so he can build a station
 		game.getPlayer(p1).getCards().pop();
-		game.getPlayer(p1).getCards().push(std::shared_ptr<CardBase>(new CityCard(game.getPlayer(p1).getLocation())));
+		auto cityIndex = game.getPlayer(p1).getLocation();
+		auto regionIndex = game.map[cityIndex].getRegion();
+		game.getPlayer(p1).getCards().push(std::shared_ptr<CardBase>(new CityCard(cityIndex, regionIndex)));
 
 		std::size_t cardsBefore = game.getPlayer(p1).getCards().size();
 		BuildResearchStation b(p1);
@@ -47,7 +49,9 @@ namespace pan{
 		// Add a city card matching the location and move somewhere else
 		// Charter flight
 		game.getPlayer(p1).getCards().pop();
-		game.getPlayer(p1).getCards().push(std::shared_ptr<CardBase>(new CityCard(game.getPlayer(p1).getLocation())));
+		cityIndex = game.getPlayer(p1).getLocation();
+		regionIndex = game.map[cityIndex].getRegion();
+		game.getPlayer(p1).getCards().push(std::shared_ptr<CardBase>(new CityCard(cityIndex, regionIndex)));
 		cardsBefore = game.getPlayer(p1).getCards().size();
 		CityIndex destC = game.map.numCities() - 1;
 		CharterFlight ch(p1, destC);
@@ -61,7 +65,7 @@ namespace pan{
 		// Add a new card
 		// Let the player make a direct flight to the initial city
 		game.getPlayer(p1).getCards().pop();
-		game.getPlayer(p1).getCards().push(std::shared_ptr<CardBase>(new CityCard(0)));
+		game.getPlayer(p1).getCards().push(std::shared_ptr<CardBase>(new CityCard(0, 0)));
 		cardsBefore = game.getPlayer(p1).getCards().size();
 
 		DirectFlight df(p1, 0);

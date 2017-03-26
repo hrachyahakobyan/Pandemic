@@ -61,7 +61,7 @@ namespace pan{
 		ASSERT_TRUE(manager.fileExists(root/"save"/file1));
 
 		// Writing to existing file
-		ASSERT_FALSE(manager.save(game, file1, "save"));
+		ASSERT_FALSE(manager.save(game, file1, "save", false));
 		// Make sure old file is still there
 		ASSERT_TRUE(manager.fileExists(root/"save"/file1));
 

@@ -109,7 +109,13 @@ namespace pan{
 			inline N& operator[](VertexDescriptor i);
 
 			/**
-			*	Get the neighbor of the current vertex.
+			*	Iterate all vertices.
+			*	@return the pair of vertex iterators
+			*/
+			inline VertexRange vertices() const;
+
+			/**
+			*	Get the neighbors of the current vertex.
 			*	@param v the vertex descriptor to get the neighbors of.
 			*	@throws std::exception if the index is invalid
 			*	@return the pair of adjacency iterators for the current vertex
@@ -288,6 +294,12 @@ namespace pan{
 				throw std::exception("ERROR: pan::Graph::N& operator[](VertexDescriptor)::invalid index");
 			boost::property_map<GraphContainer, vertex_properties_t>::type param = boost::get(vertex_properties, container);
 			return param[v];
+		}
+
+		template<typename N>
+		typename Graph<N>::VertexRange Graph<N>::vertices() const
+		{
+			return boost::vertices(container);
 		}
 
 		template<typename N>

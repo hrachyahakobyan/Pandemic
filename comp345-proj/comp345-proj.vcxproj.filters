@@ -174,16 +174,16 @@
     <ClInclude Include="FileManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ObserverBase.h">
+    <ClInclude Include="detail\NotificationCenter.h">
       <Filter>Header Files\detail</Filter>
     </ClInclude>
-    <ClInclude Include="Notification.h">
+    <ClInclude Include="detail\Observer.h">
       <Filter>Header Files\detail</Filter>
     </ClInclude>
-    <ClInclude Include="Observer.h">
+    <ClInclude Include="detail\ObserverBase.h">
       <Filter>Header Files\detail</Filter>
     </ClInclude>
-    <ClInclude Include="NotificationCenter.h">
+    <ClInclude Include="detail\Notification.h">
       <Filter>Header Files\detail</Filter>
     </ClInclude>
   </ItemGroup>
@@ -299,13 +299,13 @@
     <ClCompile Include="FileManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NotificationCenter.cpp">
+    <ClCompile Include="detail\ObserverBase.cpp">
       <Filter>Source Files\detail</Filter>
     </ClCompile>
-    <ClCompile Include="Notification.cpp">
+    <ClCompile Include="detail\Notification.cpp">
       <Filter>Source Files\detail</Filter>
     </ClCompile>
-    <ClCompile Include="ObserverBase.cpp">
+    <ClCompile Include="detail\NotificationCenter.cpp">
       <Filter>Source Files\detail</Filter>
     </ClCompile>
   </ItemGroup>

@@ -47,14 +47,7 @@ namespace pan{
 		if (!m.validate(*this)){
 			return false;
 		}
-		// Get the player
-		PlayerBase& player = game.getPlayer(m.player);
-		// Remove from previous city
-		game.map[player.getLocation()].removePlayer(m.player);
-		// Add to the target city
-		game.map[m.targetCity].addPlayer(m.player);
-		// Update the player's location
-		player.setLocation(m.targetCity);
+		moveImpl(m.player, m.targetCity);
 		commitAction(m.player);
 		return true;
 	}
@@ -73,17 +66,7 @@ namespace pan{
 			return false;
 		}
 		// Check if the player has a matching card
-		bool hasMatchingCard = false;
-		for (const auto& card : player.getCards()._Get_container()){
-			if (card->type == CardType::City)
-			{
-				if (static_cast<const CityCard*>(card.get())->cityIndex == m.targetCity){
-					hasMatchingCard = true;
-					break;
-				}
-			}
-		}
-		return hasMatchingCard;
+		return player.hasCityCard(m.targetCity);
 	}
 
 	template<>
@@ -94,23 +77,9 @@ namespace pan{
 		// Get the player
 		PlayerBase& player = game.getPlayer(m.player);
 		// Remove the city card and put into discard pile
-		auto& cards = player.getCards();
-		for (std::size_t i = 0; i < cards.size(); i++){
-			if (cards[i]->type == CardType::City)
-			{
-				if (static_cast<const CityCard*>(cards[i].get())->cityIndex == m.targetCity){
-					game.deckData.playerDiscardDeck.push(cards[i]);
-					cards.erase(cards.begin() + i);
-					break;
-				}
-			}
-		}
-		// Remove from previous city
-		game.map[player.getLocation()].removePlayer(m.player);
-		// Add to the target city
-		game.map[m.targetCity].addPlayer(m.player);
-		// Update the player's location
-		player.setLocation(m.targetCity);
+		std::shared_ptr<CardBase> cardToRemove = player.removeCityCard(m.targetCity);
+		game.deckData.playerDiscardDeck.push(cardToRemove);
+		moveImpl(m.player, m.targetCity);
 		commitAction(m.player);
 		return true;
 	}
@@ -128,19 +97,7 @@ namespace pan{
 		if (player.getLocation() == m.targetCity){
 			return false;
 		}
-		// Check if the player has a matching card to the city he is in
-		bool hasMatchingCard = false;
-		for (const auto& card : player.getCards()._Get_container()){
-			if (card->type == CardType::City)
-			{
-				if (static_cast<const CityCard*>(card.get())->cityIndex == 
-					player.getLocation()){
-					hasMatchingCard = true;
-					break;
-				}
-			}
-		}
-		return hasMatchingCard;
+		return player.hasCityCard(player.getLocation());
 	}
 
 	template<>
@@ -151,26 +108,10 @@ namespace pan{
 		// Get the player
 		PlayerBase& player = game.getPlayer(m.player);
 		// Remove the city card and put it in the discard pile
-		auto& cards = player.getCards();
-		for (std::size_t i = 0; i < cards.size(); i++){
-			if (cards[i]->type == CardType::City)
-			{
-				if (static_cast<const CityCard*>(cards[i].get())->cityIndex ==
-					player.getLocation()){
-					// Put to the discard pile 
-					game.deckData.playerDiscardDeck.push(cards[i]);
-					// Erase from player
-					cards.erase(cards.begin() + i);
-					break;
-				}
-			}
-		}
-		// Remove from previous city
-		game.map[player.getLocation()].removePlayer(m.player);
-		// Add to the target city
-		game.map[m.targetCity].addPlayer(m.player);
-		// Update the player's location
-		player.setLocation(m.targetCity);
+		std::shared_ptr<CardBase> cardToRemove = player.removeCityCard(player.getLocation());
+		game.deckData.playerDiscardDeck.push(cardToRemove);
+		// Move the player
+		moveImpl(m.player, m.targetCity);
 		commitAction(m.player);
 		return true;
 	}
@@ -199,14 +140,7 @@ namespace pan{
 		if (!m.validate(*this)){
 			return false;
 		}
-		// Get the player
-		PlayerBase& player = game.getPlayer(m.player);
-		// Remove from previous city
-		game.map[player.getLocation()].removePlayer(m.player);
-		// Add to the target city
-		game.map[m.targetCity].addPlayer(m.player);
-		// Update the player's location
-		player.setLocation(m.targetCity);
+		moveImpl(m.player, m.targetCity);
 		commitAction(m.player);
 		return true;
 	}
@@ -226,18 +160,7 @@ namespace pan{
 		if (game.map[player.getLocation()].researchStation)
 			return false;
 		// Check if the player has a matching card to the city he is in
-		bool hasMatchingCard = false;
-		for (const auto& card : player.getCards()._Get_container()){
-			if (card->type == CardType::City)
-			{
-				if (static_cast<const CityCard*>(card.get())->cityIndex ==
-					player.getLocation()){
-					hasMatchingCard = true;
-					break;
-				}
-			}
-		}
-		return hasMatchingCard;
+		return player.hasCityCard(player.getLocation());
 	}
 
 	template<>
@@ -247,21 +170,8 @@ namespace pan{
 		}
 		// Get the player
 		PlayerBase& player = game.getPlayer(m.player);
-		// Remove the city card and put it in the discard pile
-		auto& cards = player.getCards();
-		for (std::size_t i = 0; i < cards.size(); i++){
-			if (cards[i]->type == CardType::City)
-			{
-				if (static_cast<const CityCard*>(cards[i].get())->cityIndex ==
-					player.getLocation()){
-					// Put to the discard pile 
-					game.deckData.playerDiscardDeck.push(cards[i]);
-					// Erase from player
-					cards.erase(cards.begin() + i);
-					break;
-				}
-			}
-		}
+		std::shared_ptr<CardBase> cardToRemove = player.removeCityCard(player.getLocation());
+		game.deckData.playerDiscardDeck.push(cardToRemove);
 		// add research station to the city
 		game.map[player.getLocation()].researchStation = true;
 		// Increment research stations
@@ -346,17 +256,7 @@ namespace pan{
 		const PlayerBase& p = game.getPlayer(m.player);
 		if (!game.map[p.getLocation()].researchStation)
 			return false;
-		std::size_t matchingCards = 0;
-		const auto& cards = p.getCards();
-		for (std::size_t i = 0; i < cards.size(); i++){
-			if (cards[i]->type == CardType::City){
-				auto cityIndex = static_cast<const CityCard*>(cards[i].get())->cityIndex;
-				if (game.map.regionForCity(cityIndex) == m.diseaseType)
-					matchingCards++;
-			}
-		}
-		// check if enough cards
-		return matchingCards >= game.gameData.settings.discoverCureCardCount;
+		return p.countCardsMatchingRegion(m.diseaseType) >= game.gameData.settings.discoverCureCardCount;
 	}
 
 	template<>
@@ -365,23 +265,8 @@ namespace pan{
 			return false;
 		}
 		PlayerBase& p = game.getPlayer(m.player);
-		// Remove the required cards from the player deck
-		// and put in the discard pile
-		auto& cards = p.getCards();
-		std::size_t deleted = 0;
-		for (auto iter = cards.begin(); iter != cards.end();) {
-			auto cityIndex = static_cast<const CityCard*>(iter->get())->cityIndex;
-			// Check fi the card region matches the 
-			if (game.map.regionForCity(cityIndex) == m.diseaseType){
-				game.deckData.playerDiscardDeck.push(*iter);
-				iter = cards.erase(iter);
-				deleted++;
-				if (deleted == game.gameData.settings.discoverCureCardCount)
-					break;
-			} else {
-				++iter;
-			}
-		}
+		auto removedCards = p.removeCardsMatchingRegion(m.diseaseType, game.gameData.settings.discoverCureCardCount);
+		game.deckData.playerDiscardDeck.push(removedCards);
 		// cure the disease
 		game.gameData.diseases[m.diseaseType].setIsCured(true);
 		// check if we eradicated the disease
@@ -470,7 +355,7 @@ namespace pan{
 			auto infCard = game.deckData.infectionDeck.top();
 			game.deckData.infectionDeck.pop();
 			game.deckData.infectionDiscardDeck.push(infCard);
-			Infect inf(infCard->cityIndex, game.map.regionForCity(infCard->cityIndex), 1);
+			Infect inf(infCard->cityIndex, game.map[infCard->cityIndex].getRegion(), 1);
 			inf.execute(*this);
 			// Check for game over condition
 			// No point to continue
@@ -616,7 +501,7 @@ namespace pan{
 		// A city cannot receive more than 1 cube of a disease that is different from the city's
 		// region
 		// Different diseases
-		if (game.map.regionForCity(a.city) != a.diseaseType){
+		if (game.map[a.city].getRegion() != a.diseaseType){
 			if (a.cubes != 1)
 				return false;
 		}
@@ -647,7 +532,7 @@ namespace pan{
 			// Get the card and infect
 			auto infectionCard = game.deckData.infectionDeck.bottom();
 			game.deckData.infectionDeck.pop_bottom();
-			Infect infect(infectionCard->cityIndex, game.map.regionForCity(infectionCard->cityIndex), 3);
+			Infect infect(infectionCard->cityIndex, game.map[infectionCard->cityIndex].getRegion(), 3);
 			infect.execute(*this);
 			// Put the card on the discard pile
 			game.deckData.infectionDiscardDeck.push(infectionCard);
@@ -681,5 +566,15 @@ namespace pan{
 				game.playerData.stage = PlayerStage::Draw;
 			}
 		}
+	}
+
+	void ActionHandler::moveImpl(PlayerIndex player, CityIndex target){
+		PlayerBase& playerRef = game.getPlayer(player);
+		// Remove from previous city
+		game.map[playerRef.getLocation()].removePlayer(player);
+		// Add to the target city
+		game.map[target].addPlayer(player);
+		// Update the player's location
+		playerRef.setLocation(target);
 	}
 }

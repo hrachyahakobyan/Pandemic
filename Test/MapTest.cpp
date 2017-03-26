@@ -102,25 +102,25 @@ namespace pan{
 		const RoleIndex r0 = 0;
 		for (int i = 0; i < vCount; i++){
 			auto c = map.addCity();
-			ASSERT_EQ(map.regionForCity(c), r0);
+			ASSERT_EQ(map[c].getRegion(), r0);
 		}
-		ASSERT_EQ(map.regionCities(r0).size(), vCount);
+		ASSERT_EQ(map.citiesOfRegion(r0).size(), vCount);
 		// Add city to nonexistent region
 		ASSERT_FALSE(map.addCityToRegion(0, 1));
-		ASSERT_EQ(map.regionForCity(0), r0);
+		ASSERT_EQ(map[0].getRegion(), r0);
 		// Add new region
 		const auto r1 = map.addRegion();
 		ASSERT_FALSE(r1 == r0);
 		ASSERT_EQ(map.numRegions(), 2);
-		ASSERT_EQ(map.regionCities(r1).size(), 0);
+		ASSERT_EQ(map.citiesOfRegion(r1).size(), 0);
 		// Add city to new region
 		ASSERT_TRUE(map.addCityToRegion(0, r1));
-		ASSERT_EQ(map.regionForCity(0), r1);
-		ASSERT_EQ(map.regionCities(r1).size(), 1);
-		ASSERT_EQ(map.regionCities(r0).size(), vCount - 1);
+		ASSERT_EQ(map[0].getRegion(), r1);
+		ASSERT_EQ(map.citiesOfRegion(r1).size(), 1);
+		ASSERT_EQ(map.citiesOfRegion(r0).size(), vCount - 1);
 		// Remove cities
 		map.removeCity(0);
-		ASSERT_EQ(map.regionCities(r0).size() + map.regionCities(r1).size(), map.numCities());
+		ASSERT_EQ(map.citiesOfRegion(r0).size() + map.citiesOfRegion(r1).size(), map.numCities());
 	}
 
 	/**

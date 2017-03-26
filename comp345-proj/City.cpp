@@ -7,7 +7,8 @@ namespace pan{
 		population(0),
 		researchStation(false),
 		xpos(0),
-		ypos(0)
+		ypos(0),
+		region(0)
 	{
 	}
 
@@ -16,7 +17,8 @@ namespace pan{
 		researchStation(false),
 		name(name),
 		xpos(0),
-		ypos(0)
+		ypos(0),
+		region(0)
 	{
 	}
 
@@ -25,7 +27,8 @@ namespace pan{
 		researchStation(false),
 		name(name),
 		xpos(xpos),
-		ypos(ypos)
+		ypos(ypos),
+		region(0)
 	{
 	}
 
@@ -36,7 +39,8 @@ namespace pan{
 		name(other.name),
 		cubes(other.cubes),
 		xpos(other.xpos),
-		ypos(other.ypos)
+		ypos(other.ypos),
+		region(other.region)
 	{
 	}
 
@@ -47,7 +51,8 @@ namespace pan{
 		players(std::move(o.players)),
 		cubes(std::move(o.cubes)),
 		xpos(o.xpos),
-		ypos(o.ypos)
+		ypos(o.ypos),
+		region(o.region)
 	{
 	}
 
@@ -60,6 +65,7 @@ namespace pan{
 		this->cubes = o.cubes;
 		this->xpos = o.xpos;
 		this->ypos = o.ypos;
+		this->region = o.region;
 		return *this;
 	}
 
@@ -72,6 +78,7 @@ namespace pan{
 		this->cubes = std::move(o.cubes);
 		this->xpos = o.xpos;
 		this->ypos = o.ypos;
+		this->region = o.region;
 		return *this;
 	}
 
@@ -81,6 +88,7 @@ namespace pan{
 			population == other.population &&
 			name == other.name &&
 			players == other.players &&
+			region == other.region &&
 			cubes == other.cubes;
 	}
 
@@ -104,7 +112,7 @@ namespace pan{
 
 	std::string City::description() const
 	{
-		std::string result = "City: " + name + ".\nPopulation: " + std::to_string(population)
+		std::string result = "City: " + name + ".\nRegion " + std::to_string(region) + ".\nPopulation: " + std::to_string(population)
 			+ "\nResearch station: " + std::to_string(researchStation) + "\nCubes: ";
 		for (std::size_t i = 0; i < cubes.size(); i++){
 			result += "\t Region: " + std::to_string(i) + " cubes: " + std::to_string(cubes[i]) + '\n';

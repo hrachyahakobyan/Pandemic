@@ -35,8 +35,10 @@
 						<item>
 							<px class_id="10" tracking_level="1" version="0" object_id="_6">
 								<cityIndex>2</cityIndex>
+								<regionIndex>0</regionIndex>
 								<CardBase object_id="_7"></CardBase>
 								<cityIndex>2</cityIndex>
+								<regionIndex>0</regionIndex>
 							</px>
 						</item>
 					</deck>

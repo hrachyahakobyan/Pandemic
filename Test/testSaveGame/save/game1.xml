@@ -20,16 +20,12 @@
 				</second>
 			</item>
 		</regionMap>
-		<cityRegions>
-			<count>0</count>
-			<item_version>0</item_version>
-		</cityRegions>
 	</map>
-	<playerData class_id="23" tracking_level="0" version="0">
+	<playerData class_id="22" tracking_level="0" version="0">
 		<g.actionCounter>0</g.actionCounter>
 		<g.turn>0</g.turn>
 		<g.stage>0</g.stage>
-		<g.players class_id="24" tracking_level="0" version="0">
+		<g.players class_id="23" tracking_level="0" version="0">
 			<count>0</count>
 			<item_version>1</item_version>
 		</g.players>
@@ -44,7 +40,7 @@
 			<item>0</item>
 		</g.occupiedRoles>
 	</playerData>
-	<gameData class_id="26" tracking_level="0" version="0">
+	<gameData class_id="25" tracking_level="0" version="0">
 		<g.settings class_id="12" tracking_level="1" version="0" object_id="_0">
 			<initialCards>4</initialCards>
 			<playerCount>2</playerCount>

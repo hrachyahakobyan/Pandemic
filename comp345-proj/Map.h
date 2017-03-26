@@ -16,7 +16,8 @@ namespace pan{
 	class Map 
 	{
 	public:
-		typedef detail::Graph<City>::VertexIterator CityIterator;
+		typedef detail::Graph<City>::VertexIterator CityIndexIterator;
+		typedef detail::Graph<City>::VertexRange CityIndexRange;
 		typedef detail::Graph<City>::AdjacencyIterator ConnectedCityIterator;
 		typedef detail::Graph<City>::AdjacencyRange ConnectedCityRange;
 
@@ -47,7 +48,6 @@ namespace pan{
 		void serialize(Archive & ar, const unsigned int /* file_version */){
 			ar & BOOST_SERIALIZATION_NVP(graph);
 			ar & BOOST_SERIALIZATION_NVP(regionMap);
-			ar & BOOST_SERIALIZATION_NVP(cityRegions);
 		}
 
 		/*!	Public Interaface */
@@ -87,6 +87,12 @@ namespace pan{
 		inline City& operator[](CityIndex i);
 
 		/**
+		*	Iterate all ciites.
+		*	@return a pait of city iterators
+		*/
+		inline CityIndexRange cities() const;
+
+		/**
 		*	Checks if cities at specified indeces are connected/
 		*	@param i the index of the first City
 		*	@param j the index of the second City
@@ -123,21 +129,13 @@ namespace pan{
 		inline const Region& regionAt(RegionIndex index) const;
 
 		/**
-		*	Returns the region of the city with the specified CityIndex
-		*	@param index the index of the city
-		*	@throws std::exception if the index is invalid
-		*	@return the const reference to the Region of the city
-		*/
-		RegionIndex regionForCity(CityIndex i) const;
-
-		/**
 		*	Returns the CityIndex-s of the specified Region
 		*	Caution, O(N) operation on the number of vertices.
 		*	@param index the index of the region
 		*	@throws std::exception if the index is invalid
 		*	@return the set of CityIndex-s of the region
 		*/
-		 std::set<CityIndex> regionCities(RegionIndex index) const;
+		 std::set<CityIndex> citiesOfRegion(RegionIndex index) const;
 		
 	private:
 		static Map panMap;
@@ -164,7 +162,6 @@ namespace pan{
 
 		Graph graph;
 		std::map<RegionIndex, Region> regionMap;
-		std::vector<RegionIndex> cityRegions;
 
 		/*!	Private interface */
 		/**
@@ -186,7 +183,7 @@ namespace pan{
 		*	Removes a city.
 		*	CAUTION.
 		*	Invalidates all other CityIndeces, ConnectionDescriptors
-		*	and cityRegions. Use with extreme caution. The invalidations
+		*	Use with extreme caution. The invalidations
 		*	are not handled.
 		*	@param i the index of the city to be removed
 		*/
@@ -275,6 +272,11 @@ namespace pan{
 	City& Map::operator[](CityIndex i)
 	{
 		return graph[i];
+	}
+
+	Map::CityIndexRange Map::cities() const
+	{
+		return graph.vertices();
 	}
 
 	bool Map::connectionExists(CityIndex i, CityIndex j) const

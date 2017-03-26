@@ -103,6 +103,10 @@
     <ClInclude Include="detail\Deck.h" />
     <ClInclude Include="detail\Factory.h" />
     <ClInclude Include="detail\Graph.h" />
+    <ClInclude Include="detail\Notification.h" />
+    <ClInclude Include="detail\NotificationCenter.h" />
+    <ClInclude Include="detail\Observer.h" />
+    <ClInclude Include="detail\ObserverBase.h" />
     <ClInclude Include="DirectFlight.h" />
     <ClInclude Include="DiscardCard.h" />
     <ClInclude Include="DiscoverCure.h" />
@@ -118,10 +122,6 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="Move.h" />
-    <ClInclude Include="Notification.h" />
-    <ClInclude Include="NotificationCenter.h" />
-    <ClInclude Include="Observer.h" />
-    <ClInclude Include="ObserverBase.h" />
     <ClInclude Include="Outbreak.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBase.h" />
@@ -148,6 +148,9 @@
     <ClCompile Include="detail\Deck.cpp" />
     <ClCompile Include="detail\Factory.cpp" />
     <ClCompile Include="detail\Graph.cpp" />
+    <ClCompile Include="detail\Notification.cpp" />
+    <ClCompile Include="detail\NotificationCenter.cpp" />
+    <ClCompile Include="detail\ObserverBase.cpp" />
     <ClCompile Include="DirectFlight.cpp" />
     <ClCompile Include="DiscardCard.cpp" />
     <ClCompile Include="DiscoverCure.cpp" />
@@ -162,9 +165,6 @@
     <ClCompile Include="InfectionCard.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Move.cpp" />
-    <ClCompile Include="Notification.cpp" />
-    <ClCompile Include="NotificationCenter.cpp" />
-    <ClCompile Include="ObserverBase.cpp" />
     <ClCompile Include="Outbreak.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBase.cpp" />

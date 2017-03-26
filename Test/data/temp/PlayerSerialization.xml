@@ -17,8 +17,10 @@
 				<item>
 					<px class_id="10" tracking_level="1" version="0" object_id="_4">
 						<cityIndex>1</cityIndex>
+						<regionIndex>0</regionIndex>
 						<CardBase object_id="_5"></CardBase>
 						<cityIndex>1</cityIndex>
+						<regionIndex>0</regionIndex>
 					</px>
 				</item>
 				<item>
