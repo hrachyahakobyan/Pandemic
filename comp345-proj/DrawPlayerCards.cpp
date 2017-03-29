@@ -3,7 +3,8 @@
 
 namespace pan{
 	DrawPlayerCards::DrawPlayerCards(PlayerIndex player) :
-		player(player)
+	ActionImpl(ActionType::Draw),
+	player(player)
 	{
 	}
 }

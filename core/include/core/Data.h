@@ -4,8 +4,7 @@
 #include "detail\Deck.h"
 #include "Player.h"
 #include "Role.h"
-#include "Card.h"
-#include "InfectionCard.h"
+#include "Cards.h"
 
 namespace pan{
 	/**
@@ -27,6 +26,7 @@ namespace pan{
 	*	@author Hrachya Hakobyan
 	*/
 	struct GameData{
+		GameData();
 		GameData(const Settings& s);
 		GameData(const GameData&);
 		GameData& operator=(const GameData&);
@@ -129,8 +129,8 @@ namespace pan{
 
 		detail::Deck<std::shared_ptr<InfectionCard>> infectionDeck;
 		detail::Deck<std::shared_ptr<InfectionCard>> infectionDiscardDeck;
-		detail::Deck<std::shared_ptr<CardBase>> playerDeck;
-		detail::Deck<std::shared_ptr<CardBase>> playerDiscardDeck;
+		detail::Deck<CardBasePtr> playerDeck;
+		detail::Deck<CardBasePtr> playerDiscardDeck;
 	};
 }
 
@@ -142,6 +142,8 @@ namespace boost {
 		template<class Archive>
 		void serialize(Archive & ar, pan::GameData & g, const unsigned int version)
 		{
+			ar.template register_type<pan::Settings>();
+			ar.template register_type<pan::Disease>();
 			ar & BOOST_SERIALIZATION_NVP(g.settings);
 			ar & BOOST_SERIALIZATION_NVP(g.infectionRateMarker);
 			ar & BOOST_SERIALIZATION_NVP(g.outbreakMarker);
@@ -156,6 +158,11 @@ namespace boost {
 		template<class Archive>
 		void serialize(Archive & ar, pan::DeckData & g, const unsigned int version)
 		{
+			ar.template register_type<pan::Settings>();
+			ar.template register_type<pan::InfectionCard>(); 
+			ar.template register_type<pan::EpidemicCard>(); 
+			ar.template register_type<pan::EventCard>(); 
+			ar.template register_type<pan::CityCard>(); 
 			ar & BOOST_SERIALIZATION_NVP(g.infectionDeck);
 			ar & BOOST_SERIALIZATION_NVP(g.infectionDiscardDeck);
 			ar & BOOST_SERIALIZATION_NVP(g.playerDeck);
@@ -165,6 +172,13 @@ namespace boost {
 		template<class Archive>
 		void serialize(Archive & ar, pan::PlayerData & g, const unsigned int version)
 		{
+			ar.template register_type<pan::Dispatcher>();
+			ar.template register_type<pan::FOperative>();
+			ar.template register_type<pan::Generalist>();
+			ar.template register_type<pan::Medic>();
+			ar.template register_type<pan::QSpecialist>();
+			ar.template register_type<pan::Researcher>();
+			ar.template register_type<pan::CPlanner>();
 			ar & BOOST_SERIALIZATION_NVP(g.actionCounter);
 			ar & BOOST_SERIALIZATION_NVP(g.turn);
 			ar & BOOST_SERIALIZATION_NVP(g.stage);

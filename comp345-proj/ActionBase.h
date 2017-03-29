@@ -2,6 +2,10 @@
 #include "ActionHandler.h"
 
 namespace pan{
+	enum class ActionType{
+		Regular = 0, Event, Special, Draw, Discard, Infect
+	};
+
 	/**
 	*	@brief Top level abstraction of the Action entity.
 	*	Store the Command in the Command pattern. All actions that modify the state
@@ -10,11 +14,14 @@ namespace pan{
 	*/
 	class ActionBase{
 	public:
-		ActionBase(){}
+		ActionBase(ActionType type) : type(type) {}
 		virtual ~ActionBase(){};
 		virtual bool validate(const ActionHandler& h) const = 0;
 		virtual bool execute(ActionHandler& h) const = 0;
 		virtual ActionBase* clone() const = 0;
+		ActionType getActionType() const { return type; }
+	protected:
+		ActionType type;
 	};
 
 	/**
@@ -25,6 +32,7 @@ namespace pan{
 	template<typename Derived, typename Base>
 	class ActionImpl : public Base{
 	public:
+		ActionImpl(ActionType type) : Base(type){}
 		virtual ~ActionImpl(){};
 		virtual bool validate(const ActionHandler& h) const {
 			return h.validate<Derived>(static_cast<const Derived&>(*this));

@@ -117,10 +117,10 @@
     <ClInclude Include="EventCard.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameStateMachine.h" />
     <ClInclude Include="Infect.h" />
     <ClInclude Include="InfectionCard.h" />
     <ClInclude Include="Map.h" />
-    <ClInclude Include="misc.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Outbreak.h" />
     <ClInclude Include="Player.h" />
@@ -145,9 +145,6 @@
     <ClCompile Include="CityCard.cpp" />
     <ClCompile Include="comp345-proj.cpp" />
     <ClCompile Include="Data.cpp" />
-    <ClCompile Include="detail\Deck.cpp" />
-    <ClCompile Include="detail\Factory.cpp" />
-    <ClCompile Include="detail\Graph.cpp" />
     <ClCompile Include="detail\Notification.cpp" />
     <ClCompile Include="detail\NotificationCenter.cpp" />
     <ClCompile Include="detail\ObserverBase.cpp" />
@@ -161,6 +158,7 @@
     <ClCompile Include="EventCard.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameStateMachine.cpp" />
     <ClCompile Include="Infect.cpp" />
     <ClCompile Include="InfectionCard.cpp" />
     <ClCompile Include="Map.cpp" />

@@ -28,9 +28,9 @@ namespace pan{
 	template<>
 	bool ActionHandler::validate<Move>(const Move& m) const{
 		// Check if parameters are valid
-		if (!game.map.cityExists(m.targetCity) ||
-			!game.playerExists(m.player) ||
-			!playerCanAct(m.player)){
+		if (!game.stateMachine.getMap().cityExists(m.targetCity) ||
+			!game.stateMachine.playerExists(m.player) ||
+			!game.stateMachine.playerCanAct(m.player)){
 			return false;
 		}
 		// Check if the player is already in the target city
@@ -39,7 +39,7 @@ namespace pan{
 			return false;
 		}
 		// Check if the destination is a neighbor of the players location
-		return game.map.connectionExists(m.targetCity, player.getLocation());
+		return game.stateMachine.getMap().connectionExists(m.targetCity, player.getLocation());
 	}
 
 	template<>
@@ -47,17 +47,17 @@ namespace pan{
 		if (!m.validate(*this)){
 			return false;
 		}
-		moveImpl(m.player, m.targetCity);
-		commitAction(m.player);
+		game.stateMachine.movePlayer(m.player, m.targetCity);
+		game.stateMachine.playerDidAct(m.player, m.getActionType());
 		return true;
 	}
 
 	template<>
 	bool ActionHandler::validate<DirectFlight>(const DirectFlight& m) const{
 		// Check if parameters are valid
-		if (!game.map.cityExists(m.targetCity) ||
-			!game.playerExists(m.player) || 
-			!playerCanAct(m.player)){
+		if (!game.stateMachine.getMap().cityExists(m.targetCity) ||
+			!game.stateMachine.playerExists(m.player) || 
+			!game.stateMachine.playerCanAct(m.player)){
 			return false;
 		}
 		// Check if the player is already in the target city
@@ -75,21 +75,21 @@ namespace pan{
 			return false;
 		}
 		// Get the player
-		PlayerBase& player = game.getPlayer(m.player);
+		PlayerBase& player = game.stateMachine.getPlayer(m.player);
 		// Remove the city card and put into discard pile
-		std::shared_ptr<CardBase> cardToRemove = player.removeCityCard(m.targetCity);
-		game.deckData.playerDiscardDeck.push(cardToRemove);
-		moveImpl(m.player, m.targetCity);
-		commitAction(m.player);
+		CardBasePtr cardToRemove = player.removeCityCard(m.targetCity);
+		game.stateMachine.discardPlayerCard(cardToRemove);
+		game.stateMachine.movePlayer(m.player, m.targetCity);
+		game.stateMachine.playerDidAct(m.player, m.getActionType());
 		return true;
 	}
 
 	template<>
 	bool ActionHandler::validate<CharterFlight>(const CharterFlight& m) const{
 		// Check if parameters are valid
-		if (!game.map.cityExists(m.targetCity) ||
-			!game.playerExists(m.player) ||
-			!playerCanAct(m.player)){
+		if (!game.stateMachine.getMap().cityExists(m.targetCity) ||
+			!game.stateMachine.playerExists(m.player) ||
+			!game.stateMachine.playerCanAct(m.player)){
 			return false;
 		}
 		// Check if the player is already in the target city
@@ -106,22 +106,22 @@ namespace pan{
 			return false;
 		}
 		// Get the player
-		PlayerBase& player = game.getPlayer(m.player);
+		PlayerBase& player = game.stateMachine.getPlayer(m.player);
 		// Remove the city card and put it in the discard pile
-		std::shared_ptr<CardBase> cardToRemove = player.removeCityCard(player.getLocation());
-		game.deckData.playerDiscardDeck.push(cardToRemove);
+		CardBasePtr cardToRemove = player.removeCityCard(player.getLocation());
+		game.stateMachine.discardPlayerCard(cardToRemove);
 		// Move the player
-		moveImpl(m.player, m.targetCity);
-		commitAction(m.player);
+		game.stateMachine.movePlayer(m.player, m.targetCity);
+		game.stateMachine.playerDidAct(m.player, m.getActionType());
 		return true;
 	}
 
 	template<>
 	bool ActionHandler::validate<ShuttleFlight>(const ShuttleFlight& m) const{
 		// Check if parameters are valid
-		if (!game.map.cityExists(m.targetCity) ||
-			!game.playerExists(m.player) ||
-			!playerCanAct(m.player)){
+		if (!game.stateMachine.getMap().cityExists(m.targetCity) ||
+			!game.stateMachine.playerExists(m.player) ||
+			!game.stateMachine.playerCanAct(m.player)){
 			return false;
 		}
 		// Check if the player is already in the target city
@@ -131,8 +131,8 @@ namespace pan{
 		}
 		// Check if the player both the player's location
 		// and the target location have research stations
-		return (game.map[player.getLocation()].researchStation &&
-				game.map[m.targetCity].researchStation);
+		return (game.stateMachine.getMap()[player.getLocation()].researchStation &&
+				game.stateMachine.getMap()[m.targetCity].researchStation);
 	}
 
 	template<>
@@ -140,24 +140,24 @@ namespace pan{
 		if (!m.validate(*this)){
 			return false;
 		}
-		moveImpl(m.player, m.targetCity);
-		commitAction(m.player);
+		game.stateMachine.movePlayer(m.player, m.targetCity);
+		game.stateMachine.playerDidAct(m.player, m.getActionType());
 		return true;
 	}
 
 	template<>
 	bool ActionHandler::validate<BuildResearchStation>(const BuildResearchStation& m) const{
 		// Check if parameters are valid
-		if (!game.playerExists(m.player)
-			|| !playerCanAct(m.player)){
+		if (!game.stateMachine.playerExists(m.player)
+			|| !game.stateMachine.playerCanAct(m.player)){
 			return false;
 		}
 		// Check if maximum research stations is reached
-		if (game.gameData.researchStations == game.gameData.settings.maxResearchStations)
+		if (game.stateMachine.researchStationsMaxedOut())
 			return false;
 		// Check if the city already has a research station
 		const auto& player = game.getPlayer(m.player);
-		if (game.map[player.getLocation()].researchStation)
+		if (game.stateMachine.getMap()[player.getLocation()].researchStation)
 			return false;
 		// Check if the player has a matching card to the city he is in
 		return player.hasCityCard(player.getLocation());
@@ -169,14 +169,11 @@ namespace pan{
 			return false;
 		}
 		// Get the player
-		PlayerBase& player = game.getPlayer(m.player);
-		std::shared_ptr<CardBase> cardToRemove = player.removeCityCard(player.getLocation());
-		game.deckData.playerDiscardDeck.push(cardToRemove);
-		// add research station to the city
-		game.map[player.getLocation()].researchStation = true;
-		// Increment research stations
-		game.gameData.researchStations++;
-		commitAction(m.player);
+		PlayerBase& player = game.stateMachine.getPlayer(m.player);
+		CardBasePtr cardToRemove = player.removeCityCard(player.getLocation());
+		game.stateMachine.discardPlayerCard(cardToRemove);
+		game.stateMachine.addResearchStation(player.getLocation());
+		game.stateMachine.playerDidAct(m.player, m.getActionType());
 		return true;
 	}
 
@@ -184,14 +181,14 @@ namespace pan{
 	template<>
 	bool ActionHandler::validate<TreatDisease>(const TreatDisease& m) const{
 		// Check if parameters are valid
-		if (!game.playerExists(m.player) ||
-			!playerCanAct(m.player)){
+		if (!game.stateMachine.playerExists(m.player) ||
+			!game.stateMachine.playerCanAct(m.player)){
 			return false;
 		}
 		const PlayerBase& player = game.getPlayer(m.player);
 		// Check if the city the player is in has a disease cube
 		// of the specified type
-		std::size_t cityCubes = game.map[player.getLocation()].getCubes(m.diseaseType);
+		std::size_t cityCubes = game.stateMachine.getMap()[player.getLocation()].getCubes(m.diseaseType);
 		if (cityCubes == 0)
 			return false;
 		return true;
@@ -203,33 +200,15 @@ namespace pan{
 			return false;
 		}
 		const PlayerBase& player = game.getPlayer(m.player);
-		auto& city = game.map[player.getLocation()];
+		auto& city = game.stateMachine.getMap()[player.getLocation()];
 		std::size_t cityCubes = city.getCubes(m.diseaseType);
 		// whether the disease is cured
-		bool isCured = game.gameData.diseases[m.diseaseType].getIsCured();
+		bool isCured = game.stateMachine.getGameData().diseases[m.diseaseType].getIsCured();
 		// If the disease is cured, remove all cubes of the specified type
 		std::size_t toRemove = (isCured ? cityCubes : 1);
 		// Remove cubes from the city
-		city.setCubes(m.diseaseType, cityCubes - toRemove);
-		// Add the cubes to the removed cubes 
-		game.gameData.removedDiseasesCubes[m.diseaseType] += toRemove;
-
-		// Check if the disease was eradicated
-		if (isCured && game.gameData.removedDiseasesCubes[m.diseaseType] ==
-			game.gameData.settings.diseaseCubesPerDisease){
-			game.gameData.diseases[m.diseaseType].setIsEradicated(true);
-		}
-
-		// Check if all diseases have been cured
-		bool allCured = true;
-		for (const auto& d : game.gameData.diseases){
-			allCured = allCured && d.getIsCured();
-		}
-		// Victory!
-		if (allCured){
-			game.changeState(GameState::Victory);
-		}
-		commitAction(m.player);
+		game.stateMachine.removeDiseaseCubesOfType(m.diseaseType, toRemove, player.getLocation());
+		game.stateMachine.playerDidAct(m.player, m.getActionType());
 		return true;
 	}
 
@@ -245,18 +224,18 @@ namespace pan{
 	template<>
 	bool ActionHandler::validate<DiscoverCure>(const DiscoverCure& m) const{
 		// Check if parameters are valid
-		if (!game.playerExists(m.player) ||
-			!playerCanAct(m.player)){
+		if (!game.stateMachine.playerExists(m.player) ||
+			!game.stateMachine.playerCanAct(m.player)){
 			return false;
 		}
 		// Check if the disease is already cured
-		if (game.gameData.diseases[m.diseaseType].getIsCured())
+		if (game.stateMachine.getGameData().diseases[m.diseaseType].getIsCured())
 			return false;
 		// Check if has a research station
 		const PlayerBase& p = game.getPlayer(m.player);
-		if (!game.map[p.getLocation()].researchStation)
+		if (!game.stateMachine.getMap()[p.getLocation()].researchStation)
 			return false;
-		return p.countCardsMatchingRegion(m.diseaseType) >= game.gameData.settings.discoverCureCardCount;
+		return p.countCardsMatchingRegion(m.diseaseType) >= game.stateMachine.getGameData().settings.discoverCureCardCount;
 	}
 
 	template<>
@@ -264,15 +243,12 @@ namespace pan{
 		if (!m.validate(*this)){
 			return false;
 		}
-		PlayerBase& p = game.getPlayer(m.player);
-		auto removedCards = p.removeCardsMatchingRegion(m.diseaseType, game.gameData.settings.discoverCureCardCount);
-		game.deckData.playerDiscardDeck.push(removedCards);
+		PlayerBase& p = game.stateMachine.getPlayer(m.player);
+		auto removedCards = p.removeCardsMatchingRegion(m.diseaseType, game.stateMachine.getGameData().settings.discoverCureCardCount);
+		game.stateMachine.discardPlayerCards(removedCards);
 		// cure the disease
-		game.gameData.diseases[m.diseaseType].setIsCured(true);
-		// check if we eradicated the disease
-		if (game.gameData.removedDiseasesCubes[m.diseaseType] == game.gameData.settings.diseaseCubesPerDisease)
-			game.gameData.diseases[m.diseaseType].setIsEradicated(true);
-		commitAction(m.player);
+		game.stateMachine.cureDisease(m.diseaseType);
+		game.stateMachine.playerDidAct(m.player, m.getActionType());
 		return true;
 	}
 
@@ -285,9 +261,9 @@ namespace pan{
 	*/
 	template<>
 	bool ActionHandler::validate<DrawPlayerCards>(const DrawPlayerCards& a) const{
-		return (game.playerExists(a.player) && 
-			    isPlayersTurn(a.player) &&
-				game.playerData.stage == PlayerStage::Draw);
+		return (game.stateMachine.playerExists(a.player) && 
+			    game.stateMachine.isPlayersTurn(a.player) &&
+				game.stateMachine.getPlayerData().stage == PlayerStage::Draw);
 	}
 
 	template<>
@@ -295,16 +271,12 @@ namespace pan{
 		if (!a.validate(*this)){
 			return false;
 		}
-		// If there are not enough player cards, the game is lot
-		if (game.deckData.playerDeck.size() < game.gameData.settings.playerDrawCount){
-			game.changeState(GameState::Defeat);
+		auto cards = game.stateMachine.drawPlayerDeckTop(game.stateMachine.getGameData().settings.playerDrawCount);
+		// Check for game over in case not enough cards were drawn
+		if (game.stateMachine.getGameData().state == GameState::Defeat)
 			return true;
-		}
-		auto& player = game.getPlayer(a.player);
-		for (std::size_t i = 0; i < game.gameData.settings.playerDrawCount; i++){
-			auto card = game.deckData.playerDeck.top();
-			game.deckData.playerDeck.pop();
-			// Epidemic card, resolve
+		PlayerBase& player = game.stateMachine.getPlayer(a.player);
+		for (const auto& card : cards){
 			if (card->type == CardType::Epidemic){
 				Epidemic e;
 				e.execute(*this);
@@ -317,14 +289,7 @@ namespace pan{
 				player.getCards().push(card);
 			}
 		}
-		// If the player ends up having more cards than he/she must
-		// the next stage is set to Discard.
-		// Otherwise, the next stage is Infect
-		if (player.getCards().size() > game.gameData.settings.playerHandMax){
-			game.playerData.stage = PlayerStage::Discard;
-		} else {
-			game.playerData.stage = PlayerStage::Infect;
-		}
+		game.stateMachine.playerDidAct(a.player, a.getActionType());
 		return true;
 	}
 
@@ -337,9 +302,9 @@ namespace pan{
 	*/
 	template<>
 	bool ActionHandler::validate<PlayerInfect>(const PlayerInfect& a) const{
-		return (game.playerExists(a.player) &&
-			isPlayersTurn(a.player) &&
-			game.playerData.stage == PlayerStage::Infect);
+		return (game.stateMachine.playerExists(a.player) &&
+			game.stateMachine.isPlayersTurn(a.player) &&
+			game.stateMachine.getPlayerData().stage == PlayerStage::Infect);
 	}
 
 	template<>
@@ -347,27 +312,16 @@ namespace pan{
 		if (!a.validate(*this)){
 			return false;
 		}
-		// How many infection cards should be drawn
-		std::size_t shouldInfect = game.gameData.settings.infectionRates[game.gameData.infectionRateMarker];
-		// How many can actually be drawn
-		std::size_t actualInfect = std::min(shouldInfect, game.deckData.infectionDeck.size());
-		for (std::size_t i = 0; i < actualInfect; i++){
-			auto infCard = game.deckData.infectionDeck.top();
-			game.deckData.infectionDeck.pop();
-			game.deckData.infectionDiscardDeck.push(infCard);
-			Infect inf(infCard->cityIndex, game.map[infCard->cityIndex].getRegion(), 1);
+		auto cards = game.stateMachine.drawInfectionDeckTop(game.stateMachine.getInfectCount());
+		for (const auto& card : cards){
+			Infect inf(card->cityIndex, game.stateMachine.getMap()[card->cityIndex].getRegion(), 1);
 			inf.execute(*this);
 			// Check for game over condition
 			// No point to continue
 			if (game.isOver())
 				return true;
 		}
-		// Change the player's turn and the stage
-		game.playerData.turn = (game.playerData.turn + 1) % game.playerCount();
-		game.playerData.stage = PlayerStage::Act;
-		// Save the game state
-#pragma message("Change this...")
-		game.save("build1demo");
+		game.stateMachine.playerDidAct(a.player, a.getActionType());
 		return true;
 	}
 
@@ -381,9 +335,9 @@ namespace pan{
 	*/
 	template<>
 	bool ActionHandler::validate<DiscardCard>(const DiscardCard& a) const{
-		if (!(game.playerExists(a.player) &&
-			isPlayersTurn(a.player) &&
-			game.playerData.stage == PlayerStage::Discard))
+		if (!(game.stateMachine.playerExists(a.player) &&
+			game.stateMachine.isPlayersTurn(a.player) &&
+			game.stateMachine.getPlayerData().stage == PlayerStage::Discard))
 			return false;
 		const PlayerBase& p = game.getPlayer(a.player);
 		return p.getCards().size() > a.index;
@@ -395,19 +349,18 @@ namespace pan{
 			return false;
 		}
 		// Remove the card to the discard pile
-		auto& player = game.getPlayer(a.player);
-		auto& cards = player.getCards();
-		game.deckData.playerDiscardDeck.push(cards[a.index]);
+		PlayerBase& player = game.stateMachine.getPlayer(a.player);
+		detail::Deck<CardBasePtr>& cards = player.getCards();
+		game.stateMachine.discardPlayerCard(cards[a.index]);
 		cards.erase(cards.begin() + a.index);
 		// Check if the player has the required number of cards
-		if (cards.size() == game.gameData.settings.playerHandMax)
-			game.playerData.stage = PlayerStage::Infect;
+		game.stateMachine.playerDidAct(a.player, a.getActionType());
 		return true;
 	}
 
 	template<>
 	bool ActionHandler::validate<Outbreak>(const Outbreak& a) const{
-		const auto& city = game.map[a.infection.city];
+		const auto& city = game.stateMachine.getMap()[a.infection.city];
 		// If the city does not have 3 cubes of the specified type,
 		// the outbreak will not take place
 		if (city.getCubes(a.infection.diseaseType) != 3){
@@ -427,32 +380,18 @@ namespace pan{
 		if (!a.validate(*this)){
 			return false;
 		}
-		// If the disease was eradicated, simple discard
-		if (game.gameData.diseases[a.diseaseType].getIsEradicated())
+		// If the disease was eradicated, simply discard
+		if (game.stateMachine.getGameData().diseases[a.diseaseType].getIsEradicated())
 			return true;
-
-		// Get the city reference
-		auto& city = game.map[a.city];
-		// The current cubes of the city of the givem diseaseType
+		auto& city = game.stateMachine.getMap()[a.city];
 		std::size_t currentCubes = city.getCubes(a.diseaseType);
-		// How many more the city is able to take
-		std::size_t canTake = 3 - currentCubes;
-		// How many cubes are left in the game
-		std::size_t cubesLeft = game.gameData.diseaseCubes[a.diseaseType];
-		// How many the city will actually take
-		// The minimum of how many it can actually take, and how many it is required to take
+		std::size_t canTake = 3 - currentCubes;	
+		std::size_t cubesLeft = game.stateMachine.getGameData().diseaseCubes[a.diseaseType];
 		std::size_t willTake = std::min(canTake, a.cubes);
-		// If there are less cubes left than the city will actually take
-		// automatically the game is lost.
-		if (willTake > cubesLeft){
-			game.changeState(GameState::Defeat);
+		// Add cubes
+		game.stateMachine.addDiseaseCubesOfType(a.diseaseType, a.cubes, a.city);
+		if (game.isOver())
 			return true;
-		}
-		// Otherwise, increase the number of cubes in the city
-		city.setCubes(a.diseaseType, currentCubes + willTake);
-		// And decrease from cubes left
-		game.gameData.diseaseCubes[a.diseaseType] = cubesLeft - willTake;
-
 		// Outbreak if there city took less cubes than it should have
 		if (willTake < a.cubes){
 			Outbreak out(a);
@@ -470,18 +409,13 @@ namespace pan{
 		if (outbreakedCities.find(a.infection.city) != outbreakedCities.end()){
 			return true;
 		}
-		// Check the outbreak marker
-		// If it is on max, the game is lost
-		if (game.gameData.outbreakMarker == game.gameData.settings.outbreakMarkerMax){
-			game.changeState(GameState::Defeat);
+		game.stateMachine.increaseOutbreakMarker();
+		if (game.isOver())
 			return true;
-		}
-		// Increase outbreak marker
-		game.gameData.outbreakMarker++;
 		// Otherwise, infect each neighbor
 		Map::ConnectedCityIterator ai, ai_end;
 		bool result = true;
-		for (boost::tie(ai, ai_end) = game.map.connectedCities(a.infection.city);
+		for (boost::tie(ai, ai_end) = game.stateMachine.getMap().connectedCities(a.infection.city);
 			ai != ai_end; ++ai){
 			// Create a new infection whose target is the neighbor
 			Infect infect(*ai, a.infection.diseaseType, 1);
@@ -501,7 +435,7 @@ namespace pan{
 		// A city cannot receive more than 1 cube of a disease that is different from the city's
 		// region
 		// Different diseases
-		if (game.map[a.city].getRegion() != a.diseaseType){
+		if (game.stateMachine.getMap()[a.city].getRegion() != a.diseaseType){
 			if (a.cubes != 1)
 				return false;
 		}
@@ -523,58 +457,18 @@ namespace pan{
 		if (!a.validate(*this)){
 			return false;
 		}
-		// Increase the infection rate if possible
-		if (game.gameData.infectionRateMarker + 1 < game.gameData.settings.infectionRates.size()){
-			game.gameData.infectionRateMarker++;
-		}
+		game.stateMachine.increaseInfectionRateMarker();
 		// Infect if possible
-		if (!game.deckData.infectionDeck.empty()){
+		if (!game.stateMachine.getDeckData().infectionDeck.empty()){
 			// Get the card and infect
-			auto infectionCard = game.deckData.infectionDeck.bottom();
-			game.deckData.infectionDeck.pop_bottom();
-			Infect infect(infectionCard->cityIndex, game.map[infectionCard->cityIndex].getRegion(), 3);
+			auto infectionCard = game.stateMachine.drawInfectionDeckBottom();
+			Infect infect(infectionCard->cityIndex, game.stateMachine.getMap()[infectionCard->cityIndex].getRegion(), 3);
 			infect.execute(*this);
-			// Put the card on the discard pile
-			game.deckData.infectionDiscardDeck.push(infectionCard);
 			// Check the game condition. Might have lost prematurely
 			if (game.isOver())
 				return true;
 		}
-		// Intensify
-		auto discardedCards = std::move(game.deckData.infectionDiscardDeck);
-		srand(static_cast<unsigned int>(time(NULL)));
-		discardedCards.shuffle();
-		game.deckData.infectionDeck.push(discardedCards);
+		game.stateMachine.mergeInfectionDecks();
 		return true;
-	}
-
-	bool ActionHandler::isPlayersTurn(PlayerIndex i) const
-	{
-		return game.playerData.turn == i;
-	}
-
-	bool ActionHandler::playerCanAct(PlayerIndex i) const
-	{
-		return isPlayersTurn(i) && game.playerData.stage == PlayerStage::Act && game.playerData.actionCounter < 4;
-	}
-
-	void ActionHandler::commitAction(PlayerIndex i)
-	{
-		if (isPlayersTurn(i) && game.playerData.stage == PlayerStage::Act) {
-			game.playerData.actionCounter = (game.playerData.actionCounter + 1) % 4;
-			if (game.playerData.actionCounter == 0){
-				game.playerData.stage = PlayerStage::Draw;
-			}
-		}
-	}
-
-	void ActionHandler::moveImpl(PlayerIndex player, CityIndex target){
-		PlayerBase& playerRef = game.getPlayer(player);
-		// Remove from previous city
-		game.map[playerRef.getLocation()].removePlayer(player);
-		// Add to the target city
-		game.map[target].addPlayer(player);
-		// Update the player's location
-		playerRef.setLocation(target);
 	}
 }

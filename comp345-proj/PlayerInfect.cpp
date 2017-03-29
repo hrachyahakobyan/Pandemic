@@ -4,7 +4,8 @@
 
 namespace pan{
 	PlayerInfect::PlayerInfect(PlayerIndex player) :
-		player(player)
+	ActionImpl(ActionType::Infect),
+	player(player)
 	{
 	}
 }

@@ -28,12 +28,9 @@
 #include <boost/archive/xml_iarchive.hpp>
 #include <boost/archive/xml_oarchive.hpp>
 
-#define DISABLE_TESTS
-
 #include "common.h"
 #include "Game.h"
 #include "Map.h"
 #include "Cards.h"
 #include "Actions.h"
 #include "Player.h"
-#include "misc.h"

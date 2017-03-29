@@ -57,19 +57,17 @@ namespace pan{
 				}
 				//calls the required createObject() function
 				return ((*iter).second)(args...);
-			}
-		private:
+			}	
 			Factory(){}
+private:
+			typedef T *(*CreateObjectFunc)(Us... args);
 
 #ifdef _DEBUG
 #ifndef DISABLE_TESTS
-			friend class FactoryTest;
-			FRIEND_TEST(FactoryTest, registers);
 			FRIEND_TEST(FactoryTest, constructs);
+			FRIEND_TEST(FactoryTest, registers);
 #endif
 #endif
-
-			typedef T *(*CreateObjectFunc)(Us... args);
 
 			/**
 			* A map keys (K) to functions (CreateObjectFunc)

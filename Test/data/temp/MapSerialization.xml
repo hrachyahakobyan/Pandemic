@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="13">
-<object class_id="14" tracking_level="0" version="0">
-	<graph class_id="15" tracking_level="0" version="0">
-		<container class_id="16" tracking_level="0" version="0">
+<object class_id="0" tracking_level="0" version="0">
+	<graph class_id="1" tracking_level="1" version="0" object_id="_0">
+		<container class_id="2" tracking_level="0" version="0">
 			<V>3</V>
 			<E>2</E>
-			<vertex_property class_id="17" tracking_level="0" version="0">
-				<property_value class_id="18" tracking_level="0" version="0">
+			<vertex_property class_id="3" tracking_level="0" version="0">
+				<property_value class_id="4" tracking_level="0" version="0">
 					<name>Atlanta</name>
 					<population>1282341</population>
 					<researchStation>1</researchStation>
@@ -24,7 +24,7 @@
 					<ypos>0.00000000000000000e+000</ypos>
 					<region>0</region>
 				</property_value>
-				<property_base class_id="21" tracking_level="0" version="0"></property_base>
+				<property_base class_id="7" tracking_level="0" version="0"></property_base>
 			</vertex_property>
 			<vertex_property>
 				<property_value>
@@ -74,12 +74,12 @@
 			<graph_property></graph_property>
 		</container>
 	</graph>
-	<regionMap class_id="22" tracking_level="0" version="0">
+	<regionMap class_id="8" tracking_level="0" version="0">
 		<count>3</count>
 		<item_version>0</item_version>
-		<item class_id="23" tracking_level="0" version="0">
+		<item class_id="9" tracking_level="0" version="0">
 			<first>0</first>
-			<second class_id="24" tracking_level="0" version="0">
+			<second class_id="10" tracking_level="0" version="0">
 				<name>North American</name>
 			</second>
 		</item>

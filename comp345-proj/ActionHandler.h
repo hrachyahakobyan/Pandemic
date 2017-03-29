@@ -39,24 +39,18 @@ namespace pan{
 		Game& game;
 #ifdef _DEBUG
 #ifndef DISABLE_TESTS
-		FRIEND_TEST(ActionTest, Infect);
-		FRIEND_TEST(ActionTest, Outbreak);
-		FRIEND_TEST(ActionTest, Move);
-		FRIEND_TEST(ActionTest, CharterFlight);
-		FRIEND_TEST(ActionTest, ShuttleFlight);
-		FRIEND_TEST(ActionTest, DirectFlight);
-		FRIEND_TEST(ActionTest, BuildResearchStation);
+		FRIEND_TESTS
 #endif
 #endif
 
-		bool isPlayersTurn(PlayerIndex i) const;
+		//bool isPlayersTurn(PlayerIndex i) const;
 		/**
 		*	Tells whether the given player can act, i.e. perform one of 4 actions.
 		*	A player can perform an action if it is his/her turn, the current stage
 		*	is Act and the player has not yet exhausted all his/her action
 		*	@return true if it is the players turn
 		*/
-		bool playerCanAct(PlayerIndex i) const;
+		//bool playerCanAct(PlayerIndex i) const;
 		/**
 		*	commits a player action.
 		*	If its the turn of the player in question, the current stage is Act
@@ -64,7 +58,7 @@ namespace pan{
 		*	his/her actions, the stage of the game will be changed to draw
 		*	@return true if the player is allowed to act
 		*/
-		void commitAction(PlayerIndex i);
+		//void commitAction(PlayerIndex i);
 
 		/**
 		*	Actual implementation of outbreak
@@ -86,7 +80,7 @@ namespace pan{
 		*	@param player the player to be moved
 		*	@target the target city
 		*/
-		void moveImpl(PlayerIndex player, CityIndex target);
+		//void moveImpl(PlayerIndex player, CityIndex target);
 	};
 }
 

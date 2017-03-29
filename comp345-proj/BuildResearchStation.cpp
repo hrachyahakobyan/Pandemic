@@ -3,7 +3,8 @@
 
 namespace pan{
 	BuildResearchStation::BuildResearchStation(PlayerIndex player) :
-		player(player)
+	ActionImpl(ActionType::Regular),
+	player(player)
 	{
 	}
 }

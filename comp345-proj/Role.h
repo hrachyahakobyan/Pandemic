@@ -68,5 +68,6 @@ namespace pan{
 	typedef RoleImpl<Roles::Medic> MedicRole;
 	typedef RoleImpl<Roles::QSpecialist> QSpecialistRole;
 	typedef RoleImpl<Roles::Researcher> ResearcherRole;
+	typedef RoleImpl<Roles::CPlanner> CPlannerRole;
 }
 

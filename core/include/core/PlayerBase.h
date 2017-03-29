@@ -1,8 +1,8 @@
 #pragma once
 #include "Role.h"
 #include "detail\Deck.h"
-#include "Card.h"
 #include "ReferenceCard.h"
+#include "CityCard.h"
 
 namespace pan{
 	/**
@@ -22,18 +22,30 @@ namespace pan{
 		inline CityIndex getLocation() const;
 		inline void setLocation(CityIndex);
 
-		inline detail::Deck<std::shared_ptr<CardBase>>& getCards();
-		inline const detail::Deck<std::shared_ptr<CardBase>>& getCards() const;
-		inline void setCards(const detail::Deck<std::shared_ptr<CardBase>>&);
+		inline detail::Deck<CardBasePtr>& getCards();
+		inline const detail::Deck<CardBasePtr>& getCards() const;
+		inline void setCards(const detail::Deck<CardBasePtr>&);
 
 		std::string description() const;
 
 		const RoleBase role;
 		const ReferenceCard referenceCard;
 
+		bool hasCityCard(CityIndex) const;
+		std::shared_ptr<CityCard> removeCityCard(CityIndex index);
+		std::size_t countCardsMatching(const CardBase& card) const;
+		std::size_t countCardsMatchingRegion(RegionIndex index) const;
+		detail::Deck<std::shared_ptr<CityCard>> removeCardsMatchingRegion(RegionIndex region, std::size_t count);
+
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
+			ar.template register_type<pan::CardBase>();
+			ar.template register_type<pan::detail::Deck<pan::CardBasePtr>>();
+			ar.template register_type<pan::InfectionCard>();
+			ar.template register_type<pan::EpidemicCard>();
+			ar.template register_type<pan::EventCard>();
+			ar.template register_type<pan::CityCard>();
 			ar & BOOST_SERIALIZATION_NVP(name);
 			ar & BOOST_SERIALIZATION_NVP(location);
 			ar & BOOST_SERIALIZATION_NVP(cards);
@@ -42,15 +54,12 @@ namespace pan{
 		PlayerBase(const RoleBase& role);
 		PlayerBase(const RoleBase& role, const std::string& name);
 
-		detail::Deck<std::shared_ptr<CardBase>> cards;
+		detail::Deck<CardBasePtr> cards;
 		std::string name;
 		CityIndex location;
 #ifdef _DEBUG
 #ifndef DISABLE_TESTS
-		friend class PlayerTest;
-		FRIEND_TEST(PlayerTest, compares);
-		FRIEND_TEST(PlayerTest, serializes);
-		FRIEND_TEST(PlayerTest, serializesContainer);
+		FRIEND_TESTS
 #endif
 #endif
 	};
@@ -80,17 +89,17 @@ namespace pan{
 		this->location = loc;
 	}
 
-	detail::Deck<std::shared_ptr<CardBase>>& PlayerBase::getCards()
+	detail::Deck<CardBasePtr>& PlayerBase::getCards()
 	{
 		return cards;
 	}
 
-	const detail::Deck<std::shared_ptr<CardBase>>& PlayerBase::getCards() const
+	const detail::Deck<CardBasePtr>& PlayerBase::getCards() const
 	{
 		return cards;
 	}
 
-	void PlayerBase::setCards(const detail::Deck<std::shared_ptr<CardBase>>& cards)
+	void PlayerBase::setCards(const detail::Deck<CardBasePtr>& cards)
 	{
 		this->cards = cards;
 	}

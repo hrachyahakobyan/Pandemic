@@ -4,7 +4,8 @@
 
 namespace pan{
 	DiscardCard::DiscardCard(PlayerIndex player, unsigned int index) :
-		player(player), index(index)
+	ActionImpl(ActionType::Discard),
+	player(player), index(index)
 	{
 	}
 }

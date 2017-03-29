@@ -24,6 +24,7 @@ namespace pan{
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
+			ar.template register_type<pan::CardBase>();
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(CardBase);
 			ar & boost::serialization::make_nvp("cityIndex", const_cast<CityIndex&>(cityIndex));
 			ar & boost::serialization::make_nvp("regionIndex", const_cast<CityIndex&>(regionIndex));

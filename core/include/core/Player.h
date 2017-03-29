@@ -21,6 +21,7 @@ namespace pan{
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
+			ar.template register_type<pan::PlayerBase>();
 			ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(PlayerBase);
 		}
 	};
@@ -48,5 +49,6 @@ namespace pan{
 	typedef Player<Roles::Medic> Medic;
 	typedef Player<Roles::QSpecialist> QSpecialist;
 	typedef Player<Roles::Researcher> Researcher;
+	typedef Player<Roles::CPlanner> CPlanner;
 }
 

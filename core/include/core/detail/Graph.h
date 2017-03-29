@@ -155,13 +155,7 @@ namespace pan{
 			GraphContainer container;
 #ifdef _DEBUG
 #ifndef DISABLE_TESTS
-			friend class GraphTest;
-			FRIEND_TEST(GraphTest, inserts);
-			FRIEND_TEST(GraphTest, removes);
-			FRIEND_TEST(GraphTest, clears);
-			FRIEND_TEST(GraphTest, edges);
-			FRIEND_TEST(GraphTest, neighbors);
-			FRIEND_TEST(GraphTest, serializes);
+		FRIEND_TESTS
 #endif
 #endif
 		};

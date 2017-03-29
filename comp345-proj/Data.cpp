@@ -2,6 +2,15 @@
 #include "Data.h"
 
 namespace pan{
+	GameData::GameData() :
+		initialized(false),
+		state(GameState::InProgress),
+		infectionRateMarker(0),
+		outbreakMarker(0),
+		researchStations(0)
+	{
+	}
+
 	GameData::GameData(const Settings& s) : 
 		settings(s),
 		initialized(false),

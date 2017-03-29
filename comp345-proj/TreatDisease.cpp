@@ -3,7 +3,8 @@
 
 namespace pan{
 	TreatDisease::TreatDisease(PlayerIndex player, DiseaseType dType) :
-		player(player), diseaseType(dType)
+	ActionImpl(ActionType::Regular),
+	player(player), diseaseType(dType)
 	{
 	}
 }

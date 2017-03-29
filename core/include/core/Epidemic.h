@@ -8,6 +8,8 @@ namespace pan{
 	*/
 	class Epidemic : public ActionImpl<Epidemic, ActionBase>
 	{
+	public:
+		Epidemic();
 	};
 }
 

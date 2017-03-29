@@ -4,17 +4,17 @@
 <Disease class_id="0" tracking_level="0" version="0">
 	<count>3</count>
 	<item_version>0</item_version>
-	<item class_id="1" tracking_level="0" version="0">
+	<item class_id="1" tracking_level="1" version="0" object_id="_0">
 		<diseaseType>1</diseaseType>
 		<isCured>1</isCured>
 		<isEradicated>0</isEradicated>
 	</item>
-	<item>
+	<item object_id="_1">
 		<diseaseType>2</diseaseType>
 		<isCured>1</isCured>
 		<isEradicated>1</isEradicated>
 	</item>
-	<item>
+	<item object_id="_2">
 		<diseaseType>3</diseaseType>
 		<isCured>0</isCured>
 		<isEradicated>0</isEradicated>

@@ -7,14 +7,15 @@ namespace pan{
 		Game game;
 		virtual void SetUp(){
 			game = Game(Settings::Beginner(2), Map::pandemicMap());
-			// Add the diseases based on map regions
-			for (auto diseaseType : game.map.getRegions()){
-				game.gameData.diseases.push_back(Disease(diseaseType));
+			// Add the diseases based on.stateMachine.getMap() regions
+			for (auto diseaseType : game.stateMachine.getMap().getRegions()){
+				game.stateMachine.gameData.diseases.push_back(Disease(diseaseType));
 			}
 
 			// Construct the disease cubes
-			for (std::size_t i = 0; i < game.gameData.diseases.size(); i++){
-				game.gameData.diseaseCubes.push_back(game.gameData.settings.diseaseCubesPerDisease);
+			for (std::size_t i = 0; i < game.stateMachine.getGameData().diseases.size(); i++){
+				game.stateMachine.gameData.diseaseCubes.push_back(game.stateMachine.getGameData().settings.diseaseCubesPerDisease);
+				game.stateMachine.gameData.removedDiseasesCubes.push_back(0);
 			}
 		}
 

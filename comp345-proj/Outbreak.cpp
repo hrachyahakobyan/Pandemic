@@ -3,7 +3,8 @@
 
 namespace pan{
 	Outbreak::Outbreak(const Infect& inf):
-		infection(inf)
+	ActionImpl(ActionType::Regular),
+	infection(inf)
 	{
 	}
 }

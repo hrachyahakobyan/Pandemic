@@ -1,7 +1,5 @@
 #pragma once
-#include "Map.h"
-#include "Data.h"
-#include "ActionBase.h"
+#include "GameStateMachine.h"
 #include "ActionHandler.h"
 
 namespace pan
@@ -14,8 +12,6 @@ namespace pan
 	class Game 
 	{
 	public:
-		static const int InvalidPlayerIndex = -1;
-
 		Game(const Settings& s = Settings::Beginner(2));
 		Game(const Settings& s, const Map& m);
 		Game(const Game&);
@@ -43,6 +39,11 @@ namespace pan
 		*	@return true if the game successfully initialzed, false otherwise
 		*/
 		bool initialize();
+
+		/**
+		*	get whether the game is initialized
+		*	@return true if the game is initialized
+		*/
 		inline bool isInitialized() const;	
 
 		/**
@@ -50,6 +51,7 @@ namespace pan
 		*	The game is over if the status is either Victory or Defeat
 		*/
 		inline bool isOver() const;
+
 		/**
 		*	get the current state of the game.
 		*	The game can either be running, or over.
@@ -58,10 +60,17 @@ namespace pan
 		*/
 		inline GameState getState() const;
 
+		/**
+		*	get the current stage of a player
+		*	@return the stage of the current player
+		*/
+		inline PlayerStage getStage() const;
+
 		inline const Map& getMap() const;
 		inline const GameData& getGameData() const;
 		inline const PlayerData& getPlayerData() const;
 		inline const DeckData& getDeckData() const;
+
 		std::string description() const;
 
 		/**
@@ -77,13 +86,6 @@ namespace pan
 		*	@throws out_of_range if the index is invalid
 		*/
 		inline const PlayerBase& getPlayer(PlayerIndex i) const;
-
-		/**
-		*	Whether a player with the given index exists
-		*	@param index index of the player
-		*	@return true if the player exists, false otherwise
-		*/
-		inline bool playerExists(PlayerIndex i) const;
 
 		/**
 		*	Adds a new action to the action queue
@@ -142,86 +144,31 @@ namespace pan
 			std::stack<std::shared_ptr<ActionBase>> completedActions;
 		};
 	private:
-		Map map;
 		ActionHandler actionHandler;
-		DeckData deckData;
-		PlayerData playerData;
-		GameData gameData;
+		GameStateMachine stateMachine;
 		ActionData actionData;
 		friend class ActionHandler;
+		friend class GameStateMachine;
 	private:
-		/* Private Interface */
-		/**
-		*	returns the player at index
-		*	@param i the index of the player to return
-		*	@return a reference to the underlying player object
-		*/
-		inline PlayerBase& getPlayer(PlayerIndex i);
-
-		/**
-		*   attempt to alter the state of the game
-		*	The games state can be changed from inProgress to Either Defeat or Victory
-		*	but not the other way
-		*	@param newState the new state of the game
-		*/
-		void changeState(GameState newState);
-
-		/**
-		*	initializes the diseases
-		*/
-		void initDiseases();
-
-		/**
-		*	initializes the cards
-		*/
-		void initCards();
-
-		/**
-		*	performs initial infections
-		*/
-		void initInfect();
-
-		/**
-		*	initializes the players
-		*/
-		void initPlayers();
-
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
-			ar & BOOST_SERIALIZATION_NVP(map);
-			ar & BOOST_SERIALIZATION_NVP(playerData);
-			ar & BOOST_SERIALIZATION_NVP(gameData);
-			ar & BOOST_SERIALIZATION_NVP(deckData);
+			ar.template register_type<pan::GameStateMachine>();
+			ar & BOOST_SERIALIZATION_NVP(stateMachine);
 		}
+
+		void initialInfections();
 
 #ifdef _DEBUG
 #ifndef DISABLE_TESTS
-		friend class GameTest;
-		friend class ActionTest;
-		FRIEND_TEST(GameTest, addsPlayers);
-		FRIEND_TEST(GameTest, serializes);
-		FRIEND_TEST(GameTest, validates);
-		FRIEND_TEST(GameTest, executes);
-		FRIEND_TEST(GameTest, initializes);
-		FRIEND_TEST(ActionTest, Infect);
-		FRIEND_TEST(ActionTest, Outbreak);
-		FRIEND_TEST(ActionTest, Move);
-		FRIEND_TEST(ActionTest, CharterFlight);
-		FRIEND_TEST(ActionTest, ShuttleFlight);
-		FRIEND_TEST(ActionTest, DirectFlight);
-		FRIEND_TEST(ActionTest, BuildResearchStation);
-		FRIEND_TEST(OutbreakTest, Test1);
-		FRIEND_TEST(OutbreakTest, Test2);
-		FRIEND_TEST(OutbreakTest, Test3);
-		FRIEND_TEST(GameplayTest, Test1);
+		FRIEND_TESTS
 #endif
 #endif
 	};
 
 	std::size_t Game::playerCount() const
 	{
-		return playerData.players.size();
+		return getPlayerData().players.size();
 	}
 
 	bool Game::operator!=(const Game& o) const
@@ -231,66 +178,47 @@ namespace pan
 
 	bool Game::isInitialized() const
 	{
-		return gameData.initialized;
+		return stateMachine.getGameData().initialized;
 	}
 
 	bool Game::isOver() const
 	{
-		return gameData.state != GameState::InProgress;
+		return stateMachine.getGameData().state != GameState::InProgress;
 	}
 
 	GameState Game::getState() const
 	{
-		return gameData.state;
+		return stateMachine.getGameData().state;
 	}
 
 	const Map& Game::getMap() const
 	{
-		return map;
+		return stateMachine.getMap();;
 	}
 
 	const PlayerData& Game::getPlayerData() const
 	{
-		return playerData;
+		return stateMachine.getPlayerData();
 	}
 
 	const GameData& Game::getGameData() const
 	{
-		return gameData;
+		return stateMachine.getGameData();
 	}
 
 	const DeckData& Game::getDeckData() const
 	{
-		return deckData;
+		return stateMachine.getDeckData();
 	}
 
 	template<Roles R>
 	PlayerIndex Game::addPlayer(const std::string& name)
 	{
-		// Maximum number of players exceeded
-		if (playerCount() >= gameData.settings.playerCount)
-			return InvalidPlayerIndex;
-		// If the role is occupied
-		if (playerData.occupiedRoles[static_cast<std::underlying_type<Roles>::type>(R)])
-			return InvalidPlayerIndex;
-		playerData.occupiedRoles[static_cast<std::underlying_type<Roles>::type>(R)] = true;
-		auto player = std::shared_ptr<PlayerBase>(new Player<R>(name));
-		playerData.players.push_back(player);
-		return static_cast<PlayerIndex>(playerData.players.size() - 1);;
+		return stateMachine.addPlayer<R>(name);
 	}
 
 	const PlayerBase& Game::getPlayer(PlayerIndex i) const
 	{
-		return *playerData.players[i];
-	}
-
-	PlayerBase& Game::getPlayer(PlayerIndex i)
-	{
-		return *playerData.players[i];
-	}
-
-	bool Game::playerExists(PlayerIndex i) const
-	{
-		return (i < static_cast<PlayerIndex>(playerData.players.size()) && i >= 0);
+		return *stateMachine.getPlayerData().players[i];
 	}
 }

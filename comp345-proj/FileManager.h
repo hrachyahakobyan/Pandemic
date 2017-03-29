@@ -1,5 +1,4 @@
 #pragma once
-#include "misc.h"
 #include <boost/filesystem.hpp>
 
 namespace pan{
@@ -49,11 +48,7 @@ namespace pan{
 	private:
 #ifdef _DEBUG
 #ifndef DISABLE_TESTS
-		FRIEND_TEST(FileManagerTest, createsDirectory);
-		FRIEND_TEST(FileManagerTest, createsFile);
-		FRIEND_TEST(FileManagerTest, savesGame);
-		FRIEND_TEST(FileManagerTest, getsSavedGames);
-		friend class FriendManagerTest;
+		FRIEND_TESTS
 #endif
 #endif
 		FileManager();
@@ -114,7 +109,6 @@ namespace pan{
 	bool FileManager::read(std::ifstream& file, T& t) const
 	{
 		boost::archive::xml_iarchive ia(file);
-		registerTypes(ia);
 		try{
 			ia >> boost::serialization::make_nvp("object", t);
 		}
@@ -131,7 +125,6 @@ namespace pan{
 	bool FileManager::write(const T& t, std::ofstream& file) const
 	{
 		boost::archive::xml_oarchive oa(file);
-		registerTypes(oa);
 		try{
 			oa << boost::serialization::make_nvp("object", t);
 		}

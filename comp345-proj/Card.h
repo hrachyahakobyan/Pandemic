@@ -37,6 +37,8 @@ namespace pan {
 		}
 	};
 
+	typedef std::shared_ptr<CardBase> CardBasePtr;
+
 	bool CardBase::operator!=(const CardBase& o) const
 	{
 		return !((*this) == o);
@@ -46,4 +48,12 @@ namespace pan {
 	class CardImpl : public CardBase{};
 }
 
+namespace boost {
+	namespace serialization {
+		template<class Archive>
+		inline void save_construct_data(Archive & ar, const pan::CardBase * p, const unsigned int file_version){}
+		template<class Archive>
+		inline void load_construct_data(Archive & ar, pan::CardBase * p, const unsigned int file_version){}
+	}
+}
 

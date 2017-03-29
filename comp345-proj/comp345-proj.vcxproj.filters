@@ -111,9 +111,6 @@
     <ClInclude Include="EpidemicCard.h">
       <Filter>Header Files\cards</Filter>
     </ClInclude>
-    <ClInclude Include="misc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Settings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -186,6 +183,9 @@
     <ClInclude Include="detail\Notification.h">
       <Filter>Header Files\detail</Filter>
     </ClInclude>
+    <ClInclude Include="GameStateMachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -193,12 +193,6 @@
     </ClCompile>
     <ClCompile Include="comp345-proj.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="detail\Graph.cpp">
-      <Filter>Source Files\detail</Filter>
-    </ClCompile>
-    <ClCompile Include="detail\Factory.cpp">
-      <Filter>Source Files\detail</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
@@ -239,9 +233,6 @@
     <ClCompile Include="EventCard.cpp">
       <Filter>Source Files\cards</Filter>
     </ClCompile>
-    <ClCompile Include="detail\Deck.cpp">
-      <Filter>Source Files\detail</Filter>
-    </ClCompile>
     <ClCompile Include="CityCard.cpp">
       <Filter>Source Files\cards</Filter>
     </ClCompile>
@@ -265,9 +256,6 @@
     </ClCompile>
     <ClCompile Include="Outbreak.cpp">
       <Filter>Source Files\actions</Filter>
-    </ClCompile>
-    <ClCompile Include="Epidemic.cpp">
-      <Filter>Source Files\cards</Filter>
     </ClCompile>
     <ClCompile Include="CharterFlight.cpp">
       <Filter>Source Files\actions</Filter>
@@ -307,6 +295,12 @@
     </ClCompile>
     <ClCompile Include="detail\NotificationCenter.cpp">
       <Filter>Source Files\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Epidemic.cpp">
+      <Filter>Source Files\actions</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

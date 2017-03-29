@@ -16,45 +16,45 @@ namespace pan{
 
 		// Valid infection, 2 cubes
 		// Check the city's region coincides with the disease type
-		EXPECT_EQ(game.map[infect.city].getRegion(), infect.diseaseType);
+		EXPECT_EQ(game.stateMachine.getMap()[infect.city].getRegion(), infect.diseaseType);
 		infect.cubes = 2;
-		std::size_t cubesBefore = game.gameData.diseaseCubes[infect.diseaseType];
+		std::size_t cubesBefore = game.stateMachine.getGameData().diseaseCubes[infect.diseaseType];
 		ASSERT_TRUE(infect.execute(game.actionHandler));
 		// Check post conditions
 		// The outbreak should not have occured
-		ASSERT_EQ(game.gameData.outbreakMarker, 0);
+		ASSERT_EQ(game.stateMachine.getGameData().outbreakMarker, 0);
 		// The cubes must have decreased by the amount of infected cubes
-		ASSERT_EQ(game.gameData.diseaseCubes[infect.diseaseType] + infect.cubes, cubesBefore);
+		ASSERT_EQ(game.stateMachine.getGameData().diseaseCubes[infect.diseaseType] + infect.cubes, cubesBefore);
 		// Check the cubes of the city
-		ASSERT_EQ(game.map[infect.city].getCubes(infect.diseaseType), infect.cubes);
+		ASSERT_EQ(game.stateMachine.getMap()[infect.city].getCubes(infect.diseaseType), infect.cubes);
 
 		// Valid infection, 3 cubes
 		infect.cubes = 2;
 		// Change the city
 		infect.city = 1;
-		EXPECT_EQ(game.map[infect.city].getRegion(), infect.diseaseType);
-		cubesBefore = game.gameData.diseaseCubes[infect.diseaseType];
+		EXPECT_EQ(game.stateMachine.getMap()[infect.city].getRegion(), infect.diseaseType);
+		cubesBefore = game.stateMachine.getGameData().diseaseCubes[infect.diseaseType];
 		ASSERT_TRUE(infect.execute(game.actionHandler));
 		// Check post conditions
-		ASSERT_EQ(game.gameData.outbreakMarker, 0);
-		ASSERT_EQ(game.gameData.diseaseCubes[infect.diseaseType] + infect.cubes, cubesBefore);
-		ASSERT_EQ(game.map[infect.city].getCubes(infect.diseaseType), infect.cubes);
+		ASSERT_EQ(game.stateMachine.getGameData().outbreakMarker, 0);
+		ASSERT_EQ(game.stateMachine.getGameData().diseaseCubes[infect.diseaseType] + infect.cubes, cubesBefore);
+		ASSERT_EQ(game.stateMachine.getMap()[infect.city].getCubes(infect.diseaseType), infect.cubes);
 
 		// Invalid infection, more than one cube for a city with different region than the disease
 		infect.diseaseType = 1;
 		infect.cubes = 2;
 		infect.city = 0;
-		EXPECT_NE(game.map[infect.city].getRegion(), infect.diseaseType);
+		EXPECT_NE(game.stateMachine.getMap()[infect.city].getRegion(), infect.diseaseType);
 		ASSERT_FALSE(infect.execute(game.actionHandler));
 
 		// Valid infection
 		infect.cubes = 1;
-		cubesBefore = game.gameData.diseaseCubes[infect.diseaseType];
+		cubesBefore = game.stateMachine.getGameData().diseaseCubes[infect.diseaseType];
 		ASSERT_TRUE(infect.execute(game.actionHandler));
 		// Check post conditions
-		ASSERT_EQ(game.gameData.outbreakMarker, 0);
-		ASSERT_EQ(game.gameData.diseaseCubes[infect.diseaseType] + infect.cubes, cubesBefore);
-		ASSERT_EQ(game.map[infect.city].getCubes(infect.diseaseType), infect.cubes);
+		ASSERT_EQ(game.stateMachine.getGameData().outbreakMarker, 0);
+		ASSERT_EQ(game.stateMachine.getGameData().diseaseCubes[infect.diseaseType] + infect.cubes, cubesBefore);
+		ASSERT_EQ(game.stateMachine.getMap()[infect.city].getCubes(infect.diseaseType), infect.cubes);
 
 	}
 
@@ -86,15 +86,15 @@ namespace pan{
 		out = Outbreak(infect);
 		ASSERT_TRUE(out.execute(game.actionHandler));
 		// Check post conditions
-		ASSERT_EQ(game.gameData.outbreakMarker, 1);
+		ASSERT_EQ(game.stateMachine.getGameData().outbreakMarker, 1);
 		// the number of cubes of the source city should not have changed
-		ASSERT_EQ(game.map[out.infection.city].getCubes(out.infection.diseaseType), 3);
+		ASSERT_EQ(game.stateMachine.getMap()[out.infection.city].getCubes(out.infection.diseaseType), 3);
 		// Check all neighbors of the source city
 		Map::ConnectedCityIterator ai, ai_end;
-		for (boost::tie(ai, ai_end) = game.map.connectedCities(out.infection.city);
+		for (boost::tie(ai, ai_end) = game.stateMachine.getMap().connectedCities(out.infection.city);
 			ai != ai_end; ++ai){
 			// Check condition of each city
-			ASSERT_EQ(game.map[*ai].getCubes(out.infection.diseaseType), 1);
+			ASSERT_EQ(game.stateMachine.getMap()[*ai].getCubes(out.infection.diseaseType), 1);
 		}
 	}
 
@@ -110,20 +110,20 @@ namespace pan{
 		ASSERT_FALSE(m.execute(g.actionHandler));
 
 		// Invalid move. Moving to a non neighbor city
-		CityIndex city = g.map.numCities() - 1;
-		EXPECT_FALSE(g.map.connectionExists(city, p.getLocation()));
+		CityIndex city = g.stateMachine.getMap().numCities() - 1;
+		EXPECT_FALSE(g.stateMachine.getMap().connectionExists(city, p.getLocation()));
 		m.targetCity = city;
 		ASSERT_FALSE(m.execute(g.actionHandler));
 
 		// Valid move. Moving to a neigbor city
-		city = getNeighbor(p.getLocation(), g.map);
-		EXPECT_TRUE(g.map.connectionExists(city, p.getLocation()));
+		city = getNeighbor(p.getLocation(), g.stateMachine.getMap());
+		EXPECT_TRUE(g.stateMachine.getMap().connectionExists(city, p.getLocation()));
 
 		m.targetCity = city;
 		ASSERT_TRUE(m.execute(g.actionHandler));
 		// Check post conditions
 		ASSERT_EQ(p.getLocation(), m.targetCity);
-		ASSERT_TRUE(g.map[m.targetCity].containsPlayer(p1Index));
+		ASSERT_TRUE(g.stateMachine.getMap()[m.targetCity].containsPlayer(p1Index));
 	}
 
 	TEST_F(ActionTest, BuildResearchStation){
@@ -132,7 +132,7 @@ namespace pan{
 		auto p1Index = g.addPlayer<Roles::Medic>("Player1");
 		auto p2Index = g.addPlayer<Roles::Dispatcher>("Player2");
 		EXPECT_TRUE(g.initialize());
-		PlayerBase& p = g.getPlayer(p1Index);
+		PlayerBase& p = g.stateMachine.getPlayer(p1Index);
 		// Give player some cards
 		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(0, 0)));
 
@@ -141,35 +141,35 @@ namespace pan{
 		ASSERT_FALSE(b.execute(g.actionHandler));
 
 		// Move to a city with no research station
-		Move m(p1Index, getNeighbor(p.getLocation(), g.map));
+		Move m(p1Index, getNeighbor(p.getLocation(), g.stateMachine.getMap()));
 		EXPECT_TRUE(m.execute(g.actionHandler));
 
 		// Add the required card
 		auto cityIndex = p.getLocation();
-		auto regionIndex = game.map[cityIndex].getRegion();
+		auto regionIndex = game.stateMachine.getMap()[cityIndex].getRegion();
 		p.getCards().push(std::shared_ptr<CardBase>(new CityCard(cityIndex, regionIndex)));
-		g.gameData.researchStations = g.gameData.settings.maxResearchStations;
+		g.stateMachine.gameData.researchStations = g.stateMachine.getGameData().settings.maxResearchStations;
 		// Cannot build since no more research stations can be built
 		ASSERT_FALSE(b.execute(g.actionHandler));
 
-		g.gameData.researchStations = 1;
+		g.stateMachine.gameData.researchStations = 1;
 		// Save the number of discarded player cards before execution
-		std::size_t discardSizeBfore = g.deckData.playerDiscardDeck.size();
+		std::size_t discardSizeBfore = g.stateMachine.getDeckData().playerDiscardDeck.size();
 		std::size_t playerCardSizeBefore = p.getCards().size();
 		// Must build
 		ASSERT_TRUE(b.execute(g.actionHandler));
 		// check post conditions
-		ASSERT_TRUE(g.map[p.getLocation()].researchStation);
-		ASSERT_EQ(g.gameData.researchStations, 2);
+		ASSERT_TRUE(g.stateMachine.getMap()[p.getLocation()].researchStation);
+		ASSERT_EQ(g.stateMachine.getGameData().researchStations, 2);
 		ASSERT_EQ(p.getCards().size(), playerCardSizeBefore - 1);
-		ASSERT_EQ(g.deckData.playerDiscardDeck.size(), discardSizeBfore + 1);
+		ASSERT_EQ(g.stateMachine.getDeckData().playerDiscardDeck.size(), discardSizeBfore + 1);
 	}
 
 
 	pan::CityIndex ActionTest::getNeighbor(CityIndex i, const pan::Map& m) const
 	{
 		Map::ConnectedCityIterator ai, ai_end;
-		for (boost::tie(ai, ai_end) = game.map.connectedCities(i);  ai != ai_end; ++ai){
+		for (boost::tie(ai, ai_end) = game.stateMachine.getMap().connectedCities(i);  ai != ai_end; ++ai){
 			return *ai;
 		}
 		// return invalid index 

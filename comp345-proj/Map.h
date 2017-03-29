@@ -46,6 +46,7 @@ namespace pan{
 		friend class boost::serialization::access;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
+			ar.template register_type<pan::detail::Graph<pan::City>>();
 			ar & BOOST_SERIALIZATION_NVP(graph);
 			ar & BOOST_SERIALIZATION_NVP(regionMap);
 		}
@@ -142,18 +143,7 @@ namespace pan{
 
 #ifdef _DEBUG
 #ifndef DISABLE_TESTS
-		friend class MapTest;
-		FRIEND_TEST(MapTest, addsRemovesCity);
-		FRIEND_TEST(MapTest, addsRemovesConnections);
-		FRIEND_TEST(MapTest, addsRemovesRegions);
-		FRIEND_TEST(MapTest, assignsRegions);
-		FRIEND_TEST(MapTest, compares);
-		FRIEND_TEST(MapTest, serializes);
-		FRIEND_TEST(GameTest, serializes);
-		FRIEND_TEST(OutbreakTest, Test1);
-		FRIEND_TEST(OutbreakTest, Test2);
-		FRIEND_TEST(OutbreakTest, Test3);
-		FRIEND_TEST(GameplayTest, Test1);
+		FRIEND_TESTS
 #endif
 #endif
 
