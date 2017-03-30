@@ -115,6 +115,15 @@ namespace pan{
 			inline VertexRange vertices() const;
 
 			/**
+			*	Iterate all edges
+			*	@return a pair of edge iterators
+			*/
+			inline EdgeRange edges() const;
+
+			inline VertexDescriptor source(EdgeIterator) const;
+			inline VertexDescriptor target(EdgeIterator) const;
+
+			/**
 			*	Get the neighbors of the current vertex.
 			*	@param v the vertex descriptor to get the neighbors of.
 			*	@throws std::exception if the index is invalid
@@ -294,6 +303,24 @@ namespace pan{
 		typename Graph<N>::VertexRange Graph<N>::vertices() const
 		{
 			return boost::vertices(container);
+		}
+
+		template<typename N>
+		typename Graph<N>::EdgeRange Graph<N>::edges() const
+		{
+			return boost::edges(container);
+		}
+
+		template<typename N>
+		typename Graph<N>::VertexDescriptor Graph<N>::source(EdgeIterator e) const
+		{
+			return boost::source(*e, container);
+		}
+
+		template<typename N>
+		typename Graph<N>::VertexDescriptor Graph<N>::target(EdgeIterator e) const
+		{
+			return boost::target(*e, container);
 		}
 
 		template<typename N>

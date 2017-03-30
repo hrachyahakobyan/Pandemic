@@ -33,6 +33,10 @@ namespace pan{
 		inline void setName(const std::string& name);
 		inline RegionIndex getRegion() const;
 		inline void setRegion(RegionIndex region);
+		inline double getXpos() const { return xpos; }
+		inline double getYpos() const { return ypos; }
+		void setXpos(double x) { xpos = x; }
+		void setYpos(double y) { ypos = y; }
 		std::size_t getCubes(DiseaseType r) const;
 		void setCubes(DiseaseType r, std::size_t cubes);
 

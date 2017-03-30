@@ -20,6 +20,8 @@ namespace pan{
 		typedef detail::Graph<City>::VertexRange CityIndexRange;
 		typedef detail::Graph<City>::AdjacencyIterator ConnectedCityIterator;
 		typedef detail::Graph<City>::AdjacencyRange ConnectedCityRange;
+		typedef detail::Graph<City>::EdgeIterator ConnectionIterator;
+		typedef detail::Graph<City>::EdgeRange ConnectionRange;
 
 		/**
 		*	@brief default constructor for Map.
@@ -89,9 +91,18 @@ namespace pan{
 
 		/**
 		*	Iterate all ciites.
-		*	@return a pait of city iterators
+		*	@return a pair of city iterators
 		*/
 		inline CityIndexRange cities() const;
+
+		/**
+		*	Iterate all connections
+		*	@return a pair of connection iterators
+		*/
+		inline ConnectionRange connections() const;
+
+		inline CityIndex source(ConnectionIterator) const;
+		inline CityIndex target(ConnectionIterator) const;
 
 		/**
 		*	Checks if cities at specified indeces are connected/
@@ -267,6 +278,21 @@ namespace pan{
 	Map::CityIndexRange Map::cities() const
 	{
 		return graph.vertices();
+	}
+
+	Map::ConnectionRange Map::connections() const
+	{
+		return graph.edges();
+	}
+
+	CityIndex Map::source(ConnectionIterator e) const
+	{
+		return graph.source(e);
+	}
+
+	CityIndex Map::target(ConnectionIterator e) const
+	{
+		return graph.target(e);
 	}
 
 	bool Map::connectionExists(CityIndex i, CityIndex j) const
