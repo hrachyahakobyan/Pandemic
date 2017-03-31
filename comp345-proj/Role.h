@@ -3,12 +3,13 @@ namespace pan{
 	/**
 	*	@brief describes different roles present in the game
 	*/
-	enum class Roles : unsigned int{Medic = 0, Dispatcher, Generalist, 
-									Researcher, QSpecialist, FOperative, CPlanner};
+	enum class Roles : unsigned int{Medic = 0, Dispatcher, Scientist, 
+		Researcher, QSpecialist, OperationsExpert, CPlanner
+	};
 	static const std::map<Roles, const char*> RolesDescriptions{
 		{ Roles::Dispatcher, "Dispatcher" },
-		{ Roles::FOperative, "Field Operative" },
-		{ Roles::Generalist, "Generalist" },
+		{ Roles::OperationsExpert, "Operations Expert" },
+		{ Roles::Scientist, "Scientist" },
 		{ Roles::Medic, "Medic" },
 		{ Roles::QSpecialist, "Quarantine Specialist" },
 		{ Roles::Researcher, "Researcher" },
@@ -63,8 +64,8 @@ namespace pan{
 	}
 
 	typedef RoleImpl<Roles::Dispatcher> DispatcherRole;
-	typedef RoleImpl<Roles::FOperative> FOperativeRole;
-	typedef RoleImpl<Roles::Generalist> GeneralistRole;
+	typedef RoleImpl<Roles::OperationsExpert> OperationsExpertRole;
+	typedef RoleImpl<Roles::Scientist> ScientistRole;
 	typedef RoleImpl<Roles::Medic> MedicRole;
 	typedef RoleImpl<Roles::QSpecialist> QSpecialistRole;
 	typedef RoleImpl<Roles::Researcher> ResearcherRole;

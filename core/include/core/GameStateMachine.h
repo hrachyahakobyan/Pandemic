@@ -6,6 +6,11 @@
 namespace pan{
 	class Game;
 
+	/**
+	*	@brief class represents the state machine of the Game.
+	*	Is responsible for switching between game states and keeping the data consistent.
+	*	@author Hrachya Hakobyan
+	*/
 	class GameStateMachine
 	{
 	public:
@@ -22,31 +27,73 @@ namespace pan{
 		std::string description() const;
 
 		bool operator==(const GameStateMachine&) const;
-		inline bool operator!=(const GameStateMachine&) const;
+		bool operator!=(const GameStateMachine& o) const { return !(*this == o); }
+
+		/**
+		*	Attempt to initialize the state machine
+		*	@return true if initialization was successful
+		*/
 		bool initialize();
 
-		// Game
+		/**
+		*	Get the current infection rate value
+		*	@return the current infection rate value
+		*/
 		std::size_t getInfectCount() const {return gameData.settings.infectionRates[gameData.infectionRateMarker];}
+		/**
+		*	Attempt to increase the outbreak marker.
+		*	If it is already at the maximum, nothing will happen.
+		*	If it reached the maximum due to this call, the game will transition to the state "Defeat"
+		*/
 		void increaseOutbreakMarker();
+		/**
+		*	Attempt to increase the infection rate marker.
+		*	If it is already at the maximum, nothing will happen.
+		*/
 		void increaseInfectionRateMarker();
 
-		// Players
-		inline const PlayerData& getPlayerData() const;
-		inline bool playerExists(PlayerIndex i) const;
+		const PlayerData& getPlayerData() const { return playerData; }
+		/**
+		*	Check if a player with the specified index exists
+		*	@param i the index of the player to check
+		*	@return true if the player exists
+		*/
+		bool playerExists(PlayerIndex i) const { return i >= 0 && i < static_cast<int>(playerData.players.size()); }
+		/**
+		*	Moves the player to the specified city 
+		*	@param i the player index to be moved
+		*	@param target the target city
+		*/
 		void movePlayer(PlayerIndex i, CityIndex target);
-		bool playerCanAct(PlayerIndex) const;
-		bool isPlayersTurn(PlayerIndex) const;
-		void playerDidAct(PlayerIndex, ActionType);
+		/**
+		*	Find out if the specified player is allowed to act.
+		*	@param i the index of the player to be checked
+		*	@return true of the player is allowed to perform an action
+		*/
+		bool playerCanAct(PlayerIndex i) const;
+		/**
+		*	Find out if it is the specified player's turn to play
+		*	@param i the index of the player to be checked
+		*	@return true of it is the player's turn tu play
+		*/
+		bool isPlayersTurn(PlayerIndex i) const;
+		/**
+		*	Inform the state machine that the player has performed an action
+		*	The state machine will change the state of the game based on the current player stage and the action type.
+		*	@param i the index of the player
+		*	@param a the action type performed
+		*/
+		void playerDidAct(PlayerIndex i, ActionType a);
 
-		const PlayerBase& getPlayer(PlayerIndex i) const;
-		PlayerBase& getPlayer(PlayerIndex i);
+		inline const PlayerBase& getPlayer(PlayerIndex i) const { return *playerData.players[i]; }
+		inline PlayerBase& getPlayer(PlayerIndex i) { return *playerData.players[i]; }
 
 		template<Roles R>
 		PlayerIndex addPlayer(const std::string& name = "");
 		PlayerIndex addRandomPlayer(const std::string& name = "");
 
 		// Deck
-		inline const DeckData& getDeckData() const;
+		const DeckData& getDeckData() const { return deckData; }
 		CardBasePtr drawPlayerDeckTop();
 		detail::Deck<CardBasePtr> drawPlayerDeckTop(std::size_t);
 		std::shared_ptr<InfectionCard> drawInfectionDeckTop();
@@ -58,8 +105,8 @@ namespace pan{
 		void mergeInfectionDecks();
 
 		// GameStateMachine Data
-		inline const GameData& getGameData() const;
-		bool researchStationsMaxedOut() const;
+		const GameData& getGameData() const { return gameData; }
+		bool researchStationsMaxedOut() const { return gameData.researchStations == gameData.settings.maxResearchStations; }
 		bool addResearchStation(CityIndex);
 		bool allDiseasesAreCured() const;
 		bool allDiseasesAreEradicated() const;
@@ -71,7 +118,7 @@ namespace pan{
 	
 
 		// Map
-		inline const Map& getMap() const;
+		inline const Map& getMap() const { return map; }
 
 	private:
 		GameData gameData;
@@ -102,6 +149,11 @@ namespace pan{
 #endif
 	};
 
+	template<typename T>
+	void GameStateMachine::discardPlayerCards(const detail::Deck<T>& cards)
+	{
+		deckData.playerDiscardDeck.push(cards);
+	}
 
 	template<Roles R>
 	PlayerIndex GameStateMachine::addPlayer(const std::string& name)

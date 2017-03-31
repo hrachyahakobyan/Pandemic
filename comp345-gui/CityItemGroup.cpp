@@ -1,12 +1,12 @@
 #include "stdafx.h"
-#include "CityItem.h"
+#include "CityItemGroup.h"
 
-QRectF CityItem::boundingRect() const
+QRectF CityItemGroup::boundingRect() const
 {
 	return QRectF(0, 0, 75, 75);
 }
 
-void CityItem::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
+void CityItemGroup::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 {
 	QRectF rect = boundingRect();
 	QBrush brush(RegionColors[city.getRegion()]);
@@ -32,28 +32,28 @@ void CityItem::paint(QPainter * painter, const QStyleOptionGraphicsItem * option
 }
 
 
-void CityItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
+void CityItemGroup::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
 	Q_EMIT cityItemSelected(index);
 }
 
-void CityItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
+void CityItemGroup::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
 	QGraphicsItem::mouseReleaseEvent(event);
 }
 
-void CityItem::update(const pan::City& city)
+void CityItemGroup::update(const pan::City& city)
 {
 	this->city = city;
 	QGraphicsItem::update();
 }
 
-void CityItem::setIndex(pan::CityIndex index)
+void CityItemGroup::setIndex(pan::CityIndex index)
 {
 	this->index = index;
 }
 
-QPointF CityItem::center() const
+QPointF CityItemGroup::center() const
 {
 	QPointF pos = this->pos();
 	pos.setX(pos.x() + this->boundingRect().width() / 2.0);
@@ -61,7 +61,7 @@ QPointF CityItem::center() const
 	return pos;
 }
 
-QPainterPath CityItem::circle(QPointF center, int radius) const
+QPainterPath CityItemGroup::circle(QPointF center, int radius) const
 {
 	QPainterPath ellipsePath(QPoint(0, 0));
 	ellipsePath.addEllipse(center, radius, radius);

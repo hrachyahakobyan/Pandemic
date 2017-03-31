@@ -13,12 +13,12 @@ public:
 	~CityDetailsView();
 
 	void update(const pan::City& city);
-
+public Q_SLOTS:
+	void on_okButton_clicked();
 private:
 	Ui::CityDetailsView ui;
 	QPixmap researchOkPixmap;
 	QPixmap researchNoPixamp;
-	QVector<QPixmap> regionPixmaps;
 };
 
 #endif // CITYDETAILSVIEW_H

@@ -3,6 +3,9 @@
 
 #include "ui_MapView.h"
 #include "CityItem.h"
+#include "CityItemGroup.h"
+
+class CityDetailsView;
 
 class MapView : public QWidget
 {
@@ -24,9 +27,11 @@ private:
 	QGraphicsScene* mapScene;
 	QImage mapImage;
 	std::size_t currentCity;
-	QMap<pan::CityIndex, CityItem*> cityItems;
+	QMap<pan::CityIndex, CityItemGroup*> cityItems;
 	QMap<pan::CityIndex, QVector<QGraphicsLineItem*>> cityConnections;
 	pan::CityIndex selectedCityIndex;
+	CityDetailsView* cityDetailsView;
+	void deselectCity();
 };
 
 #endif // MAPVIEW_H

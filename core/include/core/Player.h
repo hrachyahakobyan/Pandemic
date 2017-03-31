@@ -44,8 +44,8 @@ namespace pan{
 	}
 
 	typedef Player<Roles::Dispatcher> Dispatcher;
-	typedef Player<Roles::FOperative> FOperative;
-	typedef Player<Roles::Generalist> Generalist;
+	typedef Player<Roles::OperationsExpert> OperationsExpert;
+	typedef Player<Roles::Scientist> Scientist;
 	typedef Player<Roles::Medic> Medic;
 	typedef Player<Roles::QSpecialist> QSpecialist;
 	typedef Player<Roles::Researcher> Researcher;

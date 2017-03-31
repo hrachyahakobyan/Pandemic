@@ -173,8 +173,8 @@ namespace boost {
 		void serialize(Archive & ar, pan::PlayerData & g, const unsigned int version)
 		{
 			ar.template register_type<pan::Dispatcher>();
-			ar.template register_type<pan::FOperative>();
-			ar.template register_type<pan::Generalist>();
+			ar.template register_type<pan::OperationsExpert>();
+			ar.template register_type<pan::Scientist>();
 			ar.template register_type<pan::Medic>();
 			ar.template register_type<pan::QSpecialist>();
 			ar.template register_type<pan::Researcher>();

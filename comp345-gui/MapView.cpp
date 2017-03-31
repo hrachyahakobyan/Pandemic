@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "MapView.h"
-#include <core\FileManager.h>
+#include "CityDetailsView.h"
 
 MapView::MapView(QWidget *parent)
 	: QWidget(parent)
@@ -14,27 +14,33 @@ MapView::MapView(QWidget *parent)
 	ui.mapGraphicsView->setScene(mapScene);
 	ui.mapGraphicsView->scale(0.5, 0.5);
 	selectedCityIndex = 0;
+	cityDetailsView = new CityDetailsView(this);
+	cityDetailsView->hide();
 }
 
 
 void MapView::mouseMoveEvent(QMouseEvent *event)
 {
+
 }
 
 void MapView::mousePressEvent(QMouseEvent *event)
 {
+	deselectCity();
 }
 
 
 void MapView::update(const pan::Map& map)
 {
 	using namespace pan;
-	for (auto items : cityItems){
-		mapScene->removeItem(items);
+	for (auto item : cityItems){
+		mapScene->removeItem(item);
+		delete item;
 	}
 	for (auto lines : cityConnections){
 		for (auto line : lines){
 			mapScene->removeItem(line);
+			delete line;
 		}
 	}
 	cityConnections.clear();
@@ -42,7 +48,7 @@ void MapView::update(const pan::Map& map)
 	Map::CityIndexIterator ai, ai_end;
 	for (boost::tie(ai, ai_end) = map.cities(); ai != ai_end; ++ai){
 		const City& c = map[*ai];
-		CityItem* item = new CityItem();
+		CityItemGroup* item = new CityItemGroup();
 		item->setIndex(*ai);
 		mapScene->addItem(item);
 		cityItems[*ai] = item;
@@ -55,8 +61,8 @@ void MapView::update(const pan::Map& map)
 	for (boost::tie(ei, ei_end) = map.connections(); ei != ei_end; ++ei){
 		CityIndex sourceIndex = map.source(ei);
 		CityIndex targetIndex = map.target(ei);
-		CityItem* sourceItem = cityItems[sourceIndex];
-		CityItem* targetItem = cityItems[targetIndex];
+		CityItemGroup* sourceItem = cityItems[sourceIndex];
+		CityItemGroup* targetItem = cityItems[targetIndex];
 		QLineF line(sourceItem->center(), targetItem->center());
 		QGraphicsLineItem* lineItem = new QGraphicsLineItem(line);
 		lineItem->setPen(QPen(QBrush(Qt::gray), 3.0));
@@ -66,17 +72,26 @@ void MapView::update(const pan::Map& map)
 	}
 }
 
-void MapView::on_cityItemSelected(pan::CityIndex index)
+void MapView::deselectCity()
 {
-	qDebug() << "Selected " << index;
 	for (auto line : cityConnections[selectedCityIndex]){
 		line->setPen(QPen(QBrush(Qt::gray), 3.0));
 	}
+	cityDetailsView->hide();
+}
+
+void MapView::on_cityItemSelected(pan::CityIndex index)
+{
+	qDebug() << "Selected " << index;
+	deselectCity();
 	selectedCityIndex = index;
 	for (auto line : cityConnections[selectedCityIndex]){
 		line->setPen(QPen(QBrush(Qt::green), 8.0));
 	}
 	Q_EMIT cityItemSelected(index);
+	cityDetailsView->update(cityItems[index]->getCity());
+	cityDetailsView->setWindowFlags(Qt::WindowStaysOnTopHint);
+	cityDetailsView->show();
 }
 
 MapView::~MapView()

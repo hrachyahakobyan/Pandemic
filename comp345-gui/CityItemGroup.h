@@ -1,7 +1,8 @@
-#ifndef CITYITEM_H
-#define CITYITEM_H
+#pragma once
 
-class CityItem : public QGraphicsObject
+#include <QObject>
+
+class CityItemGroup : public QObject, public QGraphicsItemGroup
 {
 	Q_OBJECT
 public:
@@ -22,5 +23,3 @@ private:
 	pan::CityIndex index;
 	QPainterPath circle(QPointF center, int radius) const;
 };
-
-#endif // CITYITEM_H
