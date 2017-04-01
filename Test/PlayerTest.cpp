@@ -9,18 +9,18 @@ namespace pan{
 	*/
 	TEST_F(PlayerTest, compares){
 		using namespace pan;
-		Medic medic;
+		Medic medic(0);
 		medic.setName("John");
 		ASSERT_EQ(medic, medic);
 		PlayerBase& medicRef = medic;
 		ASSERT_EQ(medicRef, medic);
 		ASSERT_EQ(medicRef, medicRef);
-		Medic medic2;
+		Medic medic2(0);
 		ASSERT_NE(medic, medic2);
 		medic2.setName("John");
 		ASSERT_EQ(medic2, medic);
 
-		Dispatcher dispatcher;
+		Dispatcher dispatcher(0);
 		ASSERT_NE(dispatcher, medic);
 		PlayerBase& dispatcherRef = dispatcher;
 		ASSERT_NE(dispatcherRef, medicRef);

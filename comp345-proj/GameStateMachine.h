@@ -165,9 +165,10 @@ namespace pan{
 		if (playerData.occupiedRoles[static_cast<std::underlying_type<Roles>::type>(R)])
 			return InvalidPlayerIndex;
 		playerData.occupiedRoles[static_cast<std::underlying_type<Roles>::type>(R)] = true;
-		auto player = std::shared_ptr<PlayerBase>(new Player<R>(name));
+		PlayerIndex index = static_cast<PlayerIndex>(playerData.players.size());
+		auto player = std::shared_ptr<PlayerBase>(new Player<R>(index, name));
 		playerData.players.push_back(player);
-		return static_cast<PlayerIndex>(playerData.players.size() - 1);
+		return index;
 	}
 }
 

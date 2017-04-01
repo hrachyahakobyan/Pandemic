@@ -3,7 +3,7 @@
 
 namespace pan{
 
-	std::shared_ptr<PlayerBase> player(Roles role, const std::string& name = "");
+	std::shared_ptr<PlayerBase> player(Roles role, PlayerIndex index, const std::string& name = "");
 	/**
 	*	@brief Concrete subclass of PlayerBase
 	*	The Player class accepts a template parameter which must be 
@@ -14,11 +14,12 @@ namespace pan{
 	class Player : public PlayerBase
 	{
 	public:
-		Player();
-		Player(const std::string& name);
+		Player(PlayerIndex index);
+		Player(PlayerIndex index, const std::string& name);
 		~Player();
-
 		friend class boost::serialization::access;
+		const RoleBase& getRole() const;
+		const RoleImpl<R> role;
 		template<class Archive>
 		void serialize(Archive & ar, const unsigned int /* file_version */){
 			ar.template register_type<pan::PlayerBase>();
@@ -27,14 +28,20 @@ namespace pan{
 	};
 
 	template<Roles R>
-	Player<R>::Player() :
-	PlayerBase(RoleImpl<R>())
+	const pan::RoleBase& Player<R>::getRole() const
+	{
+		return role;
+	}
+
+	template<Roles R>
+	Player<R>::Player(PlayerIndex index) :
+	PlayerBase(index)
 	{
 	}
 
 	template<Roles R>
-	Player<R>::Player(const std::string& name) :
-	PlayerBase(RoleImpl<R>(), name)
+	Player<R>::Player(PlayerIndex index, const std::string& name) :
+	PlayerBase(index, name)
 	{
 	}
 
@@ -52,3 +59,33 @@ namespace pan{
 	typedef Player<Roles::CPlanner> CPlanner;
 }
 
+#define BOOST_PTR_SERIALIZE(PlayerType) \
+template<class Archive> \
+inline void save_construct_data( \
+	Archive & ar, const PlayerType * p, const unsigned int file_version \
+	){ \
+	ar & boost::serialization::make_nvp("index", p->index); \
+	ar & boost::serialization::make_nvp("name", p->getName()); \
+} \
+template<class Archive> \
+inline void load_construct_data( \
+	Archive & ar, PlayerType * p, const unsigned int file_version \
+	){ \
+	pan::PlayerIndex index; \
+	ar & boost::serialization::make_nvp("index", index); \
+	std::string name; \
+	ar & boost::serialization::make_nvp("name", name); \
+	::new(p)PlayerType(index, name); \
+}
+
+namespace boost {
+	namespace serialization {
+		BOOST_PTR_SERIALIZE(pan::Player<pan::Roles::Dispatcher>);
+		BOOST_PTR_SERIALIZE(pan::Player<pan::Roles::OperationsExpert>);
+		BOOST_PTR_SERIALIZE(pan::Player<pan::Roles::Scientist>);
+		BOOST_PTR_SERIALIZE(pan::Player<pan::Roles::Medic>);
+		BOOST_PTR_SERIALIZE(pan::Player<pan::Roles::QSpecialist>);
+		BOOST_PTR_SERIALIZE(pan::Player<pan::Roles::Researcher>);
+		BOOST_PTR_SERIALIZE(pan::Player<pan::Roles::CPlanner>);
+	}
+}

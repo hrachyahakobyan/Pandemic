@@ -6,13 +6,12 @@
 
 
 namespace pan{
-	PlayerBase::PlayerBase(const RoleBase& role) :
-	role(role)
+	PlayerBase::PlayerBase(PlayerIndex index) : index(index)
 	{
 	}
 
-	PlayerBase::PlayerBase(const RoleBase& role,const std::string& name) :
-	role(role),
+	PlayerBase::PlayerBase(PlayerIndex index, const std::string& name) :
+	index(index),
     name(name)
 	{
 	}
@@ -23,8 +22,8 @@ namespace pan{
 
 	bool PlayerBase::operator==(const PlayerBase& o) const
 	{
-		bool equals = (this->location == o.location && this->name == o.name && this->role == o.role
-			&& this->cards.size() == o.cards.size());
+		bool equals = (this->location == o.location && this->name == o.name && this->getRole() == o.getRole()
+			&& this->cards.size() == o.cards.size() && this->index == o.index);
 		if (!equals)
 			return false;
 		for (std::size_t i = 0; i < cards.size(); i++){
@@ -101,7 +100,7 @@ namespace pan{
 
 	std::string PlayerBase::description() const
 	{
-		std::string result = "Player: " + name + "\nRole: " + role.description() +
+		std::string result = "Player: " + name + "\nRole: " + getRole().description() +
 			"\nLocation: " + std::to_string(this->location) + "\nCards:\n";
 		for (const auto& c : cards._Get_container()){
 			result += c->description() + '\n';

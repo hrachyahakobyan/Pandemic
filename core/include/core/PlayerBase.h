@@ -26,9 +26,11 @@ namespace pan{
 		inline const detail::Deck<CardBasePtr>& getCards() const;
 		inline void setCards(const detail::Deck<CardBasePtr>&);
 
+		virtual const RoleBase& getRole() const = 0;
+
 		std::string description() const;
 
-		const RoleBase role;
+		const PlayerIndex index;
 		const ReferenceCard referenceCard;
 
 		bool hasCityCard(CityIndex) const;
@@ -49,10 +51,11 @@ namespace pan{
 			ar & BOOST_SERIALIZATION_NVP(name);
 			ar & BOOST_SERIALIZATION_NVP(location);
 			ar & BOOST_SERIALIZATION_NVP(cards);
+			ar & boost::serialization::make_nvp("index", const_cast<PlayerIndex&>(index));
 		}
 	protected:
-		PlayerBase(const RoleBase& role);
-		PlayerBase(const RoleBase& role, const std::string& name);
+		PlayerBase(PlayerIndex index);
+		PlayerBase(PlayerIndex index, const std::string& name);
 
 		detail::Deck<CardBasePtr> cards;
 		std::string name;
@@ -125,5 +128,5 @@ namespace boost {
 			){
 		}
 	}
-} 
+}
 

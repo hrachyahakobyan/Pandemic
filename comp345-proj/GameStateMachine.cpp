@@ -175,8 +175,9 @@ namespace pan{
 		srand(static_cast<unsigned int>(time(NULL)));
 		Roles role = validRoles[(rand() % (int)(validRoles.size()))];
 		playerData.occupiedRoles[static_cast<std::underlying_type<Roles>::type>(role)] = true;
-		playerData.players.push_back(player(role, name));
-		return static_cast<PlayerIndex>(playerData.players.size() - 1);
+		PlayerIndex index = static_cast<PlayerIndex>(playerData.players.size());
+		playerData.players.push_back(player(role, index, name));
+		return index;
 	}
 
 	void GameStateMachine::increaseInfectionRateMarker()
