@@ -15,6 +15,21 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item row="1" column="0">
      <widget class="MapView" name="mapView" native="true">
       <property name="layoutDirection">
@@ -83,6 +98,16 @@
         </item>
        </layout>
       </widget>
+      <widget class="DiseaseDetailsView" name="diseaseDetailsView" native="true">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>670</y>
+         <width>220</width>
+         <height>120</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -101,6 +126,12 @@
    <class>GameDataView</class>
    <extends>QWidget</extends>
    <header>GameDataView.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DiseaseDetailsView</class>
+   <extends>QWidget</extends>
+   <header>DiseaseDetailsView.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

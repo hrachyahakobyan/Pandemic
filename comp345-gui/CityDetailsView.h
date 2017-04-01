@@ -19,6 +19,7 @@ private:
 	Ui::CityDetailsView ui;
 	QPixmap researchOkPixmap;
 	QPixmap researchNoPixamp;
+	QVector<QLabel*> avatarLabels;
 };
 
 #endif // CITYDETAILSVIEW_H
