@@ -155,7 +155,7 @@ namespace pan{
 		// Move the players to their initial positions
 		for (int i = 0; i < static_cast<int>(playerData.players.size()); i++){
 			playerData.players[i]->setLocation(0);
-			map[0].addPlayer(i);
+			map[0].addPlayer(playerData.players[i]);
 		}
 		// Set the player turn and stage
 		playerData.turn = 0;
@@ -367,9 +367,9 @@ namespace pan{
 	void GameStateMachine::movePlayer(PlayerIndex player, CityIndex target){
 		PlayerBase& playerRef = getPlayer(player);
 		// Remove from previous city
-		map[playerRef.getLocation()].removePlayer(player);
+		map[playerRef.getLocation()].removePlayer(playerData.players[player]);
 		// Add to the target city
-		map[target].addPlayer(player);
+		map[target].addPlayer(playerData.players[player]);
 		// Update the player's location
 		playerRef.setLocation(target);
 	}

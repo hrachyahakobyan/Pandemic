@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="13">
+<object class_id="0" tracking_level="0" version="0">
+	<name>Atlanta</name>
+	<population>123123</population>
+	<researchStation>1</researchStation>
+	<players class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>1</item_version>
+		<item class_id="2" tracking_level="0" version="1">
+			<px class_id="3" class_name="pan::Player&lt;pan::Roles::Dispatcher&gt;" tracking_level="1" version="0" object_id="_0">
+				<index>0</index>
+				<name>Potato</name>
+				<PlayerBase class_id="4" tracking_level="1" version="0" object_id="_1">
+					<name>Potato</name>
+					<location>0</location>
+					<cards class_id="6" tracking_level="1" version="0" object_id="_2">
+						<deck class_id="11" tracking_level="0" version="0">
+							<count>0</count>
+							<item_version>1</item_version>
+						</deck>
+					</cards>
+					<index>0</index>
+				</PlayerBase>
+			</px>
+		</item>
+	</players>
+	<cubes>
+		<count>4</count>
+		<item_version>0</item_version>
+		<item>3</item>
+		<item>2</item>
+		<item>0</item>
+		<item>3</item>
+	</cubes>
+	<xpos>0.00000000000000000e+000</xpos>
+	<ypos>0.00000000000000000e+000</ypos>
+	<region>0</region>
+</object>

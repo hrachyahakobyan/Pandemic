@@ -59,6 +59,16 @@ namespace pan{
 	typedef Player<Roles::CPlanner> CPlanner;
 }
 
+BOOST_CLASS_EXPORT_KEY(pan::PlayerBase);
+BOOST_CLASS_EXPORT_KEY(pan::Player<pan::Roles::Dispatcher>);
+BOOST_CLASS_EXPORT_KEY(pan::Player<pan::Roles::OperationsExpert>);
+BOOST_CLASS_EXPORT_KEY(pan::Player<pan::Roles::Scientist>);
+BOOST_CLASS_EXPORT_KEY(pan::Player<pan::Roles::Medic>);
+BOOST_CLASS_EXPORT_KEY(pan::Player<pan::Roles::QSpecialist>);
+BOOST_CLASS_EXPORT_KEY(pan::Player<pan::Roles::Researcher>);
+BOOST_CLASS_EXPORT_KEY(pan::Player<pan::Roles::CPlanner>);
+
+
 #define BOOST_PTR_SERIALIZE(PlayerType) \
 template<class Archive> \
 inline void save_construct_data( \

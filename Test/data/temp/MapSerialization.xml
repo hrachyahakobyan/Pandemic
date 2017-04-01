@@ -11,10 +11,26 @@
 					<name>Atlanta</name>
 					<population>1282341</population>
 					<researchStation>1</researchStation>
-					<players>
+					<players class_id="5" tracking_level="0" version="0">
 						<count>1</count>
-						<item_version>0</item_version>
-						<item>0</item>
+						<item_version>1</item_version>
+						<item class_id="6" tracking_level="0" version="1">
+							<px class_id="7" class_name="pan::Player&lt;pan::Roles::Dispatcher&gt;" tracking_level="1" version="0" object_id="_1">
+								<index>0</index>
+								<name>Potato</name>
+								<PlayerBase class_id="8" tracking_level="1" version="0" object_id="_2">
+									<name>Potato</name>
+									<location>0</location>
+									<cards class_id="10" tracking_level="1" version="0" object_id="_3">
+										<deck class_id="15" tracking_level="0" version="0">
+											<count>0</count>
+											<item_version>1</item_version>
+										</deck>
+									</cards>
+									<index>0</index>
+								</PlayerBase>
+							</px>
+						</item>
 					</players>
 					<cubes>
 						<count>0</count>
@@ -24,7 +40,7 @@
 					<ypos>0.00000000000000000e+000</ypos>
 					<region>0</region>
 				</property_value>
-				<property_base class_id="7" tracking_level="0" version="0"></property_base>
+				<property_base class_id="17" tracking_level="0" version="0"></property_base>
 			</vertex_property>
 			<vertex_property>
 				<property_value>
@@ -33,7 +49,7 @@
 					<researchStation>0</researchStation>
 					<players>
 						<count>0</count>
-						<item_version>0</item_version>
+						<item_version>1</item_version>
 					</players>
 					<cubes>
 						<count>0</count>
@@ -52,8 +68,24 @@
 					<researchStation>1</researchStation>
 					<players>
 						<count>1</count>
-						<item_version>0</item_version>
-						<item>1</item>
+						<item_version>1</item_version>
+						<item>
+							<px class_id="18" class_name="pan::Player&lt;pan::Roles::Medic&gt;" tracking_level="1" version="0" object_id="_4">
+								<index>0</index>
+								<name>Cabbage</name>
+								<PlayerBase object_id="_5">
+									<name>Cabbage</name>
+									<location>0</location>
+									<cards object_id="_6">
+										<deck>
+											<count>0</count>
+											<item_version>1</item_version>
+										</deck>
+									</cards>
+									<index>0</index>
+								</PlayerBase>
+							</px>
+						</item>
 					</players>
 					<cubes>
 						<count>0</count>
@@ -74,12 +106,12 @@
 			<graph_property></graph_property>
 		</container>
 	</graph>
-	<regionMap class_id="8" tracking_level="0" version="0">
+	<regionMap class_id="19" tracking_level="0" version="0">
 		<count>3</count>
 		<item_version>0</item_version>
-		<item class_id="9" tracking_level="0" version="0">
+		<item class_id="20" tracking_level="0" version="0">
 			<first>0</first>
-			<second class_id="10" tracking_level="0" version="0">
+			<second class_id="21" tracking_level="0" version="0">
 				<name>North American</name>
 			</second>
 		</item>

@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="13">
-<object class_id="1"
+<object class_id="0" class_name="pan::Player&lt;pan::Roles::Medic&gt;" tracking_level="1" version="0" object_id="_0">
+	<index>0</index>
+	<name>John</name>
+	<PlayerBase class_id="1" tracking_level="1" version="0" object_id="_1">
+		<name>John</name>
+		<location>1</location>
+		<cards class_id="3" tracking_level="1" version="0" object_id="_2">
+			<deck class_id="8" tracking_level="0" version="0">
+				<count>3</count>
+				<item_version>1</item_version>
+				<item class_id="9" tracking_level="0" version="1">
+					<px class_id="5" tracking_level="1" version="0" object_id="_3">
+						<CardBase class_id="2" tracking_level="1" version="0" object_id="_4"></CardBase>
+					</px>
+				</item>
+				<item>
+					<px class_id="7" tracking_level="1" version="0" object_id="_5">
+						<cityIndex>1</cityIndex>
+						<regionIndex>0</regionIndex>
+						<CardBase object_id="_6"></CardBase>
+						<cityIndex>1</cityIndex>
+						<regionIndex>0</regionIndex>
+					</px>
+				</item>
+				<item>
+					<px class_id="6" tracking_level="1" version="0" object_id="_7">
+						<eventType>1</eventType>
+						<CardBase object_id="_8"></CardBase>
+						<eventType>1</eventType>
+					</px>
+				</item>
+			</deck>
+		</cards>
+		<index>0</index>
+	</PlayerBase>
+</object>

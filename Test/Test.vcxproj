@@ -55,6 +55,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)\core\include;$(SolutionDir)\gtest\include;C:\boost\boost_1_59_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalOptions>-Zm116 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -87,6 +88,7 @@
   <ItemGroup>
     <ClInclude Include="ActionTest.h" />
     <ClInclude Include="CardTest.h" />
+    <ClInclude Include="CityTest.h" />
     <ClInclude Include="DeckTest.h" />
     <ClInclude Include="DiseaseTest.h" />
     <ClInclude Include="FactoryTest.h" />
@@ -106,6 +108,7 @@
   <ItemGroup>
     <ClCompile Include="ActionTest.cpp" />
     <ClCompile Include="CardTest.cpp" />
+    <ClCompile Include="CityTest.cpp" />
     <ClCompile Include="DeckTest.cpp" />
     <ClCompile Include="DiseaseTest.cpp" />
     <ClCompile Include="FactoryTest.cpp" />

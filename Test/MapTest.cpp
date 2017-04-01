@@ -175,11 +175,13 @@ namespace pan{
 		using namespace pan;
 		using namespace detail;
 		Map m;
+		PlayerPtr player1(new Dispatcher(0, "Potato"));
+		PlayerPtr player2(new Medic(0, "Cabbage"));
 		auto mv0 = m.addCity();
 		m[mv0].setName("Atlanta");
 		m[mv0].population = 1282341;
 		m[mv0].researchStation = true;
-		m[mv0].addPlayer(0);
+		m[mv0].addPlayer(player1);
 		auto mv1 = m.addCity();
 		m[mv1].setName("Montreal");
 		m[mv1].population = 3134341;
@@ -188,7 +190,7 @@ namespace pan{
 		m[mv2].setName("London");
 		m[mv2].population = 2981232;
 		m[mv2].researchStation = true;
-		m[mv2].addPlayer(1);
+		m[mv2].addPlayer(player2);
 		m.addConnection(mv1, mv2);
 		RoleIndex mr0 = 0;
 		m.regionAt(mr0).setName("North American");

@@ -53,7 +53,7 @@ namespace pan{
 	TEST_F(PlayerTest, serializes){
 
 		using namespace pan;
-		/*PlayerBase* medic = new Medic();
+		PlayerBase* medic = new Medic(0);
 		medic->setName("John");
 		medic->setLocation(1);
 		medic->cards.push(std::shared_ptr<CardBase>(new EpidemicCard()));
@@ -67,7 +67,7 @@ namespace pan{
 		ASSERT_TRUE(newPlayer != nullptr);
 		ASSERT_TRUE(*medic == (*newPlayer));
 		delete newPlayer;
-		delete medic;*/
+		delete medic;
 	}
 
 	/**

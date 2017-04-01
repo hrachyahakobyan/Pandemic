@@ -1,5 +1,7 @@
 #pragma once
-
+#include <boost/archive/xml_iarchive.hpp>
+#include <boost/archive/xml_oarchive.hpp>
+#include "Player.h"
 
 namespace pan{
 	/** @brief Represents a single city on the map.
@@ -25,10 +27,10 @@ namespace pan{
 
 		std::string description() const;
 		inline std::size_t playerCount() const;
-		inline const std::set<PlayerIndex>& getPlayers() const;
-		inline bool containsPlayer(PlayerIndex p) const;
-		inline void addPlayer(PlayerIndex p);
-		inline void removePlayer(PlayerIndex p);
+		inline const std::set<pan::PlayerPtr>& getPlayers() const;
+		inline bool containsPlayer(const pan::PlayerPtr p) const;
+		inline void addPlayer(pan::PlayerPtr p);
+		inline void removePlayer(const pan::PlayerPtr p);
 		inline const std::string& getName() const;
 		inline void setName(const std::string& name);
 		inline RegionIndex getRegion() const;
@@ -53,7 +55,7 @@ namespace pan{
 			ar & BOOST_SERIALIZATION_NVP(region);
 		}
 	private:
-		std::set<PlayerIndex> players;
+		std::set<pan::PlayerPtr> players;
 		std::string name;
 		std::vector<std::size_t> cubes;
 		double xpos;
@@ -71,22 +73,22 @@ namespace pan{
 		return players.size();
 	}
 
-	const std::set<PlayerIndex>& City::getPlayers() const
+	const std::set<pan::PlayerPtr>& City::getPlayers() const
 	{
 		return players;
 	}
 
-	bool City::containsPlayer(PlayerIndex p) const
+	bool City::containsPlayer(const pan::PlayerPtr p) const
 	{
 		return (players.find(p) != players.end());
 	}
 
-	void City::addPlayer(PlayerIndex p)
+	void City::addPlayer(pan::PlayerPtr p)
 	{
 		players.insert(p);
 	}
 
-	void City::removePlayer(PlayerIndex p)
+	void City::removePlayer(const pan::PlayerPtr p)
 	{
 		players.erase(p);
 	}
@@ -111,4 +113,3 @@ namespace pan{
 		this->region = region;
 	}
 }
-

@@ -1,6 +1,14 @@
 #include "stdafx.h"
 #include "Player.h"
 
+BOOST_CLASS_EXPORT_IMPLEMENT(pan::Player<pan::Roles::Dispatcher>);
+BOOST_CLASS_EXPORT_IMPLEMENT(pan::Player<pan::Roles::OperationsExpert>);
+BOOST_CLASS_EXPORT_IMPLEMENT(pan::Player<pan::Roles::Scientist>);
+BOOST_CLASS_EXPORT_IMPLEMENT(pan::Player<pan::Roles::Medic>);
+BOOST_CLASS_EXPORT_IMPLEMENT(pan::Player<pan::Roles::QSpecialist>);
+BOOST_CLASS_EXPORT_IMPLEMENT(pan::Player<pan::Roles::Researcher>);
+BOOST_CLASS_EXPORT_IMPLEMENT(pan::Player<pan::Roles::CPlanner>);
+
 namespace pan{
 	std::shared_ptr<PlayerBase> player(Roles role, PlayerIndex index, const std::string& name)
 	{

@@ -87,7 +87,7 @@ namespace pan{
 		return researchStation == other.researchStation &&
 			population == other.population &&
 			name == other.name &&
-			players == other.players &&
+			players.size() == other.players.size() &&
 			region == other.region &&
 			cubes == other.cubes;
 	}
@@ -119,8 +119,9 @@ namespace pan{
 		}
 		result += "\nPlayers: ";
 		for (const auto& p : players){
-			result += "\t" + p + '\n';
+			result += "\t" + p->description() + '\n';
 		}
 		return result;
 	}
 }
+

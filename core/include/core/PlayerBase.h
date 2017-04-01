@@ -2,7 +2,7 @@
 #include "Role.h"
 #include "detail\Deck.h"
 #include "ReferenceCard.h"
-#include "CityCard.h"
+#include "Cards.h"
 
 namespace pan{
 	/**
@@ -66,6 +66,8 @@ namespace pan{
 #endif
 #endif
 	};
+
+	typedef std::shared_ptr<pan::PlayerBase> PlayerPtr;
 
 	bool PlayerBase::operator!=(const PlayerBase& o) const
 	{

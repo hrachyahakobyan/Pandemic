@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!DOCTYPE boost_serialization>
 <boost_serialization signature="serialization::archive" version="13">
-<object class_id="14" tracking_level="0" version="0">
-	<graph class_id="15" tracking_level="0" version="0">
-		<container class_id="16" tracking_level="0" version="0">
+<object class_id="0" tracking_level="0" version="0">
+	<graph class_id="1" tracking_level="1" version="0" object_id="_0">
+		<container class_id="2" tracking_level="0" version="0">
 			<V>48</V>
 			<E>91</E>
-			<vertex_property class_id="17" tracking_level="0" version="0">
-				<property_value class_id="18" tracking_level="0" version="0">
+			<vertex_property class_id="3" tracking_level="0" version="0">
+				<property_value class_id="4" tracking_level="0" version="0">
 					<name>Atlanta</name>
 					<population>447841</population>
 					<researchStation>0</researchStation>
@@ -19,11 +19,11 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>2.38999999999999990e-001</xpos>
-					<ypos>4.35000000000000000e-001</ypos>
+					<xpos>2.07892882311486980e-001</xpos>
+					<ypos>4.17163289630512520e-001</ypos>
 					<region>0</region>
 				</property_value>
-				<property_base class_id="21" tracking_level="0" version="0"></property_base>
+				<property_base class_id="7" tracking_level="0" version="0"></property_base>
 			</vertex_property>
 			<vertex_property>
 				<property_value>
@@ -38,8 +38,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>1.43999999999999990e-001</xpos>
-					<ypos>4.39000000000000000e-001</ypos>
+					<xpos>1.43763213530655380e-001</xpos>
+					<ypos>3.92133492252681740e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -57,8 +57,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>2.35999999999999990e-001</xpos>
-					<ypos>3.76000000000000000e-001</ypos>
+					<xpos>1.97322057787174070e-001</xpos>
+					<ypos>3.44457687723480340e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -76,8 +76,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>2.96999999999999990e-001</xpos>
-					<ypos>3.75000000000000000e-001</ypos>
+					<xpos>2.77660324171952080e-001</xpos>
+					<ypos>3.32538736591180000e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -95,8 +95,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>2.86999999999999980e-001</xpos>
-					<ypos>4.09999999999999980e-001</ypos>
+					<xpos>3.30514446793516550e-001</xpos>
+					<ypos>3.45649582836710380e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -114,8 +114,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>2.73000000000000020e-001</xpos>
-					<ypos>4.14999999999999980e-001</ypos>
+					<xpos>3.02325581395348820e-001</xpos>
+					<ypos>3.81406436233611420e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -133,8 +133,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>4.73999999999999980e-001</xpos>
-					<ypos>3.62999999999999990e-001</ypos>
+					<xpos>4.36222692036645540e-001</xpos>
+					<ypos>2.97973778307508930e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -152,8 +152,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>4.67000000000000030e-001</xpos>
-					<ypos>4.23999999999999990e-001</ypos>
+					<xpos>4.20718816067653270e-001</xpos>
+					<ypos>4.11203814064362350e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -171,8 +171,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>4.86999999999999990e-001</xpos>
-					<ypos>3.75000000000000000e-001</ypos>
+					<xpos>4.87667371388301630e-001</xpos>
+					<ypos>3.77830750893921320e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -190,8 +190,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>4.99000000000000000e-001</xpos>
-					<ypos>3.58999999999999990e-001</ypos>
+					<xpos>4.91895701198026780e-001</xpos>
+					<ypos>2.95589988081048860e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -209,8 +209,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>5.02000000000000000e-001</xpos>
-					<ypos>3.95000000000000020e-001</ypos>
+					<xpos>5.14446793516560970e-001</xpos>
+					<ypos>3.67103694874851010e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -228,8 +228,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>5.51000000000000050e-001</xpos>
-					<ypos>3.03999999999999990e-001</ypos>
+					<xpos>5.56025369978858320e-001</xpos>
+					<ypos>2.88438617401668650e-001</ypos>
 					<region>0</region>
 				</property_value>
 				<property_base></property_base>
@@ -247,8 +247,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>4.87999999999999990e-001</xpos>
-					<ypos>4.42000000000000000e-001</ypos>
+					<xpos>4.84143763213530640e-001</xpos>
+					<ypos>4.66030989272944010e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -266,8 +266,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>6.01999999999999980e-001</xpos>
-					<ypos>4.76999999999999980e-001</ypos>
+					<xpos>6.01127554615926710e-001</xpos>
+					<ypos>4.31466030989272940e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -285,8 +285,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>5.58000000000000050e-001</xpos>
-					<ypos>4.74999999999999980e-001</ypos>
+					<xpos>5.62367864693446130e-001</xpos>
+					<ypos>4.73182359952324220e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -304,8 +304,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>7.05999999999999960e-001</xpos>
-					<ypos>5.52000000000000050e-001</ypos>
+					<xpos>7.30796335447498220e-001</xpos>
+					<ypos>5.87604290822407620e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -323,8 +323,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>7.00999999999999960e-001</xpos>
-					<ypos>4.87999999999999990e-001</ypos>
+					<xpos>7.07540521494009810e-001</xpos>
+					<ypos>4.04052443384982140e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -342,8 +342,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>5.57000000000000050e-001</xpos>
-					<ypos>4.18999999999999980e-001</ypos>
+					<xpos>5.69415081042987990e-001</xpos>
+					<ypos>3.96901072705601930e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -361,8 +361,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>6.71000000000000040e-001</xpos>
-					<ypos>5.04000000000000000e-001</ypos>
+					<xpos>6.54686398872445400e-001</xpos>
+					<ypos>4.32657926102502980e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -380,8 +380,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>7.30999999999999980e-001</xpos>
-					<ypos>5.13000000000000010e-001</ypos>
+					<xpos>7.37138830162085920e-001</xpos>
+					<ypos>4.21930870083432660e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -399,8 +399,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>5.70999999999999950e-001</xpos>
-					<ypos>3.28000000000000010e-001</ypos>
+					<xpos>5.83509513742071830e-001</xpos>
+					<ypos>3.18235995232419520e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -418,8 +418,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>6.90999999999999950e-001</xpos>
-					<ypos>5.33000000000000030e-001</ypos>
+					<xpos>6.90627202255109210e-001</xpos>
+					<ypos>5.24433849821215770e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -437,8 +437,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>6.06999999999999980e-001</xpos>
-					<ypos>4.97000000000000000e-001</ypos>
+					<xpos>6.19450317124735750e-001</xpos>
+					<ypos>5.01787842669845110e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -456,8 +456,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>6.17999999999999990e-001</xpos>
-					<ypos>4.42000000000000000e-001</ypos>
+					<xpos>6.37068357998590520e-001</xpos>
+					<ypos>3.63528009535160900e-001</ypos>
 					<region>2</region>
 				</property_value>
 				<property_base></property_base>
@@ -475,8 +475,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>1.55000000000000000e-001</xpos>
-					<ypos>4.50000000000000010e-001</ypos>
+					<xpos>1.45877378435517960e-001</xpos>
+					<ypos>4.31466030989272940e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -494,8 +494,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>1.96000000000000010e-001</xpos>
-					<ypos>5.21000000000000020e-001</ypos>
+					<xpos>1.80408738548273440e-001</xpos>
+					<ypos>4.94636471990464840e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -513,8 +513,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>2.50000000000000000e-001</xpos>
-					<ypos>4.93999999999999990e-001</ypos>
+					<xpos>2.52995066948555340e-001</xpos>
+					<ypos>4.80333730631704430e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -532,8 +532,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>2.75000000000000020e-001</xpos>
-					<ypos>5.99999999999999980e-001</ypos>
+					<xpos>2.60747004933051420e-001</xpos>
+					<ypos>5.87604290822407620e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -551,8 +551,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>2.64000000000000010e-001</xpos>
-					<ypos>6.75000000000000040e-001</ypos>
+					<xpos>2.11416490486257940e-001</xpos>
+					<ypos>6.88915375446960690e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -570,8 +570,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>2.86999999999999980e-001</xpos>
-					<ypos>7.69000000000000020e-001</ypos>
+					<xpos>2.36081747709654680e-001</xpos>
+					<ypos>8.03337306317044140e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -589,8 +589,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>3.24000000000000010e-001</xpos>
-					<ypos>7.83000000000000030e-001</ypos>
+					<xpos>3.10782241014799180e-001</xpos>
+					<ypos>7.71156138259833090e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -608,8 +608,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>3.55999999999999980e-001</xpos>
-					<ypos>7.23999999999999980e-001</ypos>
+					<xpos>3.43904157857646220e-001</xpos>
+					<ypos>6.98450536352800970e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -627,8 +627,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>4.83999999999999990e-001</xpos>
-					<ypos>5.86999999999999970e-001</ypos>
+					<xpos>4.87667371388301630e-001</xpos>
+					<ypos>5.43504171632896330e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -646,8 +646,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>5.27000000000000020e-001</xpos>
-					<ypos>6.35000000000000010e-001</ypos>
+					<xpos>5.08104298801973280e-001</xpos>
+					<ypos>5.91179976162097720e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -665,8 +665,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>5.52000000000000050e-001</xpos>
-					<ypos>7.45000000000000000e-001</ypos>
+					<xpos>5.60958421423537690e-001</xpos>
+					<ypos>7.16328963051251490e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -684,8 +684,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>5.69999999999999950e-001</xpos>
-					<ypos>5.45000000000000040e-001</ypos>
+					<xpos>5.58139534883720920e-001</xpos>
+					<ypos>5.61382598331346850e-001</ypos>
 					<region>1</region>
 				</property_value>
 				<property_base></property_base>
@@ -703,8 +703,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>7.73000000000000020e-001</xpos>
-					<ypos>5.56000000000000050e-001</ypos>
+					<xpos>7.78717406624383380e-001</xpos>
+					<ypos>5.41120381406436260e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -722,8 +722,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>7.92000000000000040e-001</xpos>
-					<ypos>4.03000000000000020e-001</ypos>
+					<xpos>7.72374911909795680e-001</xpos>
+					<ypos>2.75327771156138270e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -741,8 +741,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>0.00000000000000000e+000</xpos>
-					<ypos>0.00000000000000000e+000</ypos>
+					<xpos>8.12544045102184590e-001</xpos>
+					<ypos>5.95947556615017860e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -760,8 +760,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>8.00000000000000040e-001</xpos>
-					<ypos>5.02000000000000000e-001</ypos>
+					<xpos>8.03382663847780120e-001</xpos>
+					<ypos>4.83909415971394530e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -779,8 +779,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>7.92000000000000040e-001</xpos>
-					<ypos>6.45000000000000020e-001</ypos>
+					<xpos>7.79422128259337540e-001</xpos>
+					<ypos>6.48390941597139500e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -798,8 +798,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>8.23999999999999950e-001</xpos>
-					<ypos>5.50000000000000040e-001</ypos>
+					<xpos>8.71740662438336810e-001</xpos>
+					<ypos>5.73301549463647200e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -817,8 +817,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>8.52999999999999980e-001</xpos>
-					<ypos>4.34000000000000000e-001</ypos>
+					<xpos>8.88653981677237530e-001</xpos>
+					<ypos>4.39809296781883190e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -836,8 +836,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>8.28999999999999960e-001</xpos>
-					<ypos>4.19999999999999980e-001</ypos>
+					<xpos>8.31571529245947900e-001</xpos>
+					<ypos>2.87246722288438620e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -855,8 +855,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>8.17999999999999950e-001</xpos>
-					<ypos>4.61000000000000020e-001</ypos>
+					<xpos>8.10429880197322090e-001</xpos>
+					<ypos>3.81406436233611420e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -874,8 +874,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>9.07000000000000030e-001</xpos>
-					<ypos>7.75000000000000020e-001</ypos>
+					<xpos>9.04157857646229690e-001</xpos>
+					<ypos>7.54469606674612600e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -893,8 +893,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>8.18999999999999950e-001</xpos>
-					<ypos>4.95000000000000000e-001</ypos>
+					<xpos>8.68921775898520040e-001</xpos>
+					<ypos>4.68414779499404080e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -912,8 +912,8 @@
 						<count>0</count>
 						<item_version>0</item_version>
 					</cubes>
-					<xpos>8.63999999999999990e-001</xpos>
-					<ypos>4.26999999999999990e-001</ypos>
+					<xpos>8.86539816772374920e-001</xpos>
+					<ypos>3.19427890345649560e-001</ypos>
 					<region>3</region>
 				</property_value>
 				<property_base></property_base>
@@ -1194,12 +1194,12 @@
 			<graph_property></graph_property>
 		</container>
 	</graph>
-	<regionMap class_id="22" tracking_level="0" version="0">
+	<regionMap class_id="8" tracking_level="0" version="0">
 		<count>4</count>
 		<item_version>0</item_version>
-		<item class_id="23" tracking_level="0" version="0">
+		<item class_id="9" tracking_level="0" version="0">
 			<first>0</first>
-			<second class_id="24" tracking_level="0" version="0">
+			<second class_id="10" tracking_level="0" version="0">
 				<name></name>
 			</second>
 		</item>

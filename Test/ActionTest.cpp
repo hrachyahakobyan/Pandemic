@@ -123,7 +123,7 @@ namespace pan{
 		ASSERT_TRUE(m.execute(g.actionHandler));
 		// Check post conditions
 		ASSERT_EQ(p.getLocation(), m.targetCity);
-		ASSERT_TRUE(g.stateMachine.getMap()[m.targetCity].containsPlayer(p1Index));
+		ASSERT_TRUE(g.stateMachine.getMap()[m.targetCity].containsPlayer(g.stateMachine.playerData.players[p1Index]));
 	}
 
 	TEST_F(ActionTest, BuildResearchStation){
