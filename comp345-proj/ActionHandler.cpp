@@ -326,7 +326,7 @@ namespace pan{
 	}
 
 	/**
-	*	@brief validates DiscardCard action
+	*	validates DiscardCard action
 	*	The action is valid if the following hold.
 	*	1. The initiating player exists.
 	*	2. It is the initiating player's turn.
@@ -345,6 +345,52 @@ namespace pan{
 
 	template<>
 	bool ActionHandler::execute<DiscardCard>(const DiscardCard& a){
+		if (!a.validate(*this)){
+			return false;
+		}
+		// Remove the card to the discard pile
+		PlayerBase& player = game.stateMachine.getPlayer(a.player);
+		detail::Deck<CardBasePtr>& cards = player.getCards();
+		game.stateMachine.discardPlayerCard(cards[a.index]);
+		cards.erase(cards.begin() + a.index);
+		// Check if the player has the required number of cards
+		game.stateMachine.playerDidAct(a.player, a.getActionType());
+		return true;
+	}
+
+	/**
+	*	Validates Share knowledge action
+	*	The action is valid if the following hold.
+	*	1. The initiating player exists.
+	*	2. The target player exists
+	*	3. It is the initiating player's turn.
+	*	4. The current stage is act
+	*	5. Both players must be in the same city
+	*	6. The card index is a valid city card in the target player's hand
+	*	7. The city index of the card in the target player's hand matches his location
+	*/
+	template<>
+	bool ActionHandler::validate<ShareKnowledge>(const ShareKnowledge& a) const{
+		if (!(game.stateMachine.playerExists(a.player) &&
+			game.stateMachine.playerExists(a.target) &&
+			game.stateMachine.playerCanAct(a.player) &&
+			game.stateMachine.getPlayer(a.player).getLocation() == 
+			game.stateMachine.getPlayer(a.target).getLocation()))
+			return false;
+		// check the card index validity
+		const PlayerBase& p = game.getPlayer(a.target);
+		if (a.cardIndex < 0 || a.cardIndex >= p.getCards().size())
+			return false;
+		// check the card type validity
+		const CardBase& card = *p.getCards()[a.cardIndex];
+		if (card.type != CardType::City)
+			return false;
+		// Check the card validity
+		return static_cast<const CityCard&>(card).cityIndex == p.getLocation();
+	}
+
+	template<>
+	bool ActionHandler::execute<ShareKnowledge>(const ShareKnowledge& a){
 		if (!a.validate(*this)){
 			return false;
 		}
