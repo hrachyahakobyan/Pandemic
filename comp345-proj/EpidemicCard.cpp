@@ -6,4 +6,9 @@ namespace pan{
 	CardBase(CardType::Epidemic)
 	{
 	}
+
+	CardBase* EpidemicCard::clone() const
+	{
+		return new EpidemicCard(*this);
+	}
 }

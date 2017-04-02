@@ -87,6 +87,9 @@ namespace pan
 		*/
 		inline const PlayerBase& getPlayer(PlayerIndex i) const;
 
+		inline PlayerIndex getActivePlayerIndex() const;
+		inline const PlayerBase& getActivePlayer() const;
+
 		/**
 		*	Adds a new action to the action queue
 		*	If the game is not initialized or is over, the method will have no effect.
@@ -220,5 +223,15 @@ namespace pan
 	const PlayerBase& Game::getPlayer(PlayerIndex i) const
 	{
 		return *stateMachine.getPlayerData().players[i];
+	}
+
+	const PlayerBase& Game::getActivePlayer() const
+	{
+		return stateMachine.getPlayer(getActivePlayerIndex());
+	}
+
+	PlayerIndex Game::getActivePlayerIndex() const
+	{
+		return stateMachine.getPlayerData().turn;
 	}
 }

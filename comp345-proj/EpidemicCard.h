@@ -15,6 +15,7 @@ namespace pan{
 		~CardImpl() = default;
 		inline bool operator==(const CardImpl&)const;
 		inline bool operator!=(const CardImpl&)const;
+		CardBase* clone() const;
 	private:
 		friend class boost::serialization::access;
 		template<class Archive>

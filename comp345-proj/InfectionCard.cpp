@@ -12,4 +12,9 @@ namespace pan{
 	{
 		return CardBase::description() + ' ' + std::to_string(cityIndex);
 	}
+
+	CardBase* InfectionCard::clone() const
+	{
+		return new InfectionCard(*this);
+	}
 }

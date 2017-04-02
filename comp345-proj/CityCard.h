@@ -20,6 +20,7 @@ namespace pan{
 		std::string description() const;
 		inline bool operator==(const CardImpl&) const;
 		inline bool operator!=(const CardImpl&) const;
+		CardBase* clone() const;
 	private:
 		friend class boost::serialization::access;
 		template<class Archive>

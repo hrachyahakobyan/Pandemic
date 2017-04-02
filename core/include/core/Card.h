@@ -27,6 +27,7 @@ namespace pan {
 		inline bool operator!=(const CardBase&) const;
 		const CardType type;
 		virtual std::string description() const;
+		virtual CardBase* clone() const = 0;
 	public:
 		CardBase(CardType type);
 		virtual bool equals(const CardBase&) const{ return false; };

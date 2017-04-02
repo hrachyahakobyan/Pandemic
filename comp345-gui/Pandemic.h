@@ -15,4 +15,6 @@ public Q_SLOTS:
 private:
 	Ui::PandemicClass ui;
 	pan::Game game;
+
+	void updateActiveUser();
 };

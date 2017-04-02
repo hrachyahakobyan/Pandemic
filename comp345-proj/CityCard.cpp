@@ -13,4 +13,9 @@ namespace pan{
 	{
 		return CardBase::description() + ' ' + std::to_string(cityIndex) + ' ' + std::to_string(regionIndex);
 	}
+
+	CardBase* CityCard::clone() const
+	{
+		return new CityCard(*this);
+	}
 }

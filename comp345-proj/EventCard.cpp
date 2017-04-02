@@ -12,4 +12,9 @@ namespace pan{
 	{
 		return CardBase::description() + ' ' + EventTypeDescriptions.at(eventType);
 	}
+
+	CardBase* EventCard::clone() const
+	{
+		return new EventCard(*this);
+	}
 }

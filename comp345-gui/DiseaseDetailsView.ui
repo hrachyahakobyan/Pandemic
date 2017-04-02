@@ -6,80 +6,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>316</width>
-    <height>120</height>
+    <width>100</width>
+    <height>200</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>220</width>
-    <height>120</height>
+    <width>100</width>
+    <height>200</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>DiseaseDetailsView</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout">
-   <item>
-    <widget class="QWidget" name="widget" native="true">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <property name="spacing">
-       <number>3</number>
-      </property>
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="d0Image">
-        <property name="minimumSize">
-         <size>
-          <width>50</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>50</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="d0Vial">
-        <property name="minimumSize">
-         <size>
-          <width>50</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>50</width>
-          <height>50</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>3</number>
+   </property>
+   <property name="topMargin">
+    <number>3</number>
+   </property>
+   <property name="rightMargin">
+    <number>3</number>
+   </property>
+   <property name="bottomMargin">
+    <number>3</number>
+   </property>
+   <item row="0" column="1">
     <widget class="QWidget" name="widget_2" native="true">
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <property name="spacing">
@@ -99,6 +58,12 @@
       </property>
       <item>
        <widget class="QLabel" name="d1Image">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -107,8 +72,8 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>50</height>
+          <width>16777215</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="text">
@@ -118,6 +83,12 @@
       </item>
       <item>
        <widget class="QLabel" name="d1Vial">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -126,8 +97,8 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>50</height>
+          <width>16777215</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="text">
@@ -138,7 +109,78 @@
      </layout>
     </widget>
    </item>
-   <item>
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="d0Image">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="d0Vial">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
     <widget class="QWidget" name="widget_4" native="true">
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <property name="spacing">
@@ -158,6 +200,12 @@
       </property>
       <item>
        <widget class="QLabel" name="d2Image">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -166,8 +214,8 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>50</height>
+          <width>16777215</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="text">
@@ -177,6 +225,12 @@
       </item>
       <item>
        <widget class="QLabel" name="d2Vial">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -185,8 +239,8 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>50</height>
+          <width>16777215</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="text">
@@ -197,7 +251,7 @@
      </layout>
     </widget>
    </item>
-   <item>
+   <item row="1" column="1">
     <widget class="QWidget" name="widget_3" native="true">
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <property name="spacing">
@@ -217,6 +271,12 @@
       </property>
       <item>
        <widget class="QLabel" name="d3Image">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -225,8 +285,8 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>50</height>
+          <width>16777215</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="text">
@@ -236,6 +296,12 @@
       </item>
       <item>
        <widget class="QLabel" name="d3Vial">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -244,8 +310,8 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>50</height>
+          <width>16777215</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="text">

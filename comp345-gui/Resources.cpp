@@ -8,6 +8,10 @@ QMap<pan::Roles, QPixmap> Resources::roleCardPixmaps;
 QMap<pan::DiseaseType, QPixmap> Resources::diseaseIcons;
 QMap<pan::DiseaseType, QPixmap> Resources::diseaseVialsCured;
 QMap<pan::DiseaseType, QPixmap> Resources::diseaseVialsEradicated;
+QMap<pan::CityIndex, QPixmap> Resources::cityCardsMap;
+QMap<pan::CityIndex, QPixmap> Resources::infectionCardsMap;
+QMap<pan::EventType, QPixmap> Resources::eventCardsMap;
+std::unique_ptr<QPixmap> Resources::pandemicCard;
 std::unique_ptr<QPixmap> Resources::infection;
 std::unique_ptr<QPixmap> Resources::outbreak;
 std::unique_ptr<QPixmap> Resources::station;
@@ -256,4 +260,52 @@ QPixmap Resources::stationPixmap()
 		station.reset(new QPixmap("Resources\\station.png"));
 	}
 	return *station.get();
+}
+
+#pragma message("Add cards...")
+
+QPixmap Resources::pixmapForCard(const pan::CardBase& c)
+{
+	using namespace pan;
+	if (c.type == CardType::City){
+		CityIndex index = static_cast<const CityCard&>(c).cityIndex;
+		auto pix = cityCardsMap.find(index);
+		if (pix != cityCardsMap.end())
+			return *pix;
+		std::string fileName = "Resources\\city_card_" + std::to_string(index) + ".png";
+		fileName = "Resources\\CARD.png";
+		QPixmap pixMap(fileName.c_str());
+		cityCardsMap[index] = pixMap;
+		return pixMap;
+	}
+	else if (c.type == CardType::Event){
+		EventType type = static_cast<const EventCard&>(c).eventType;
+		auto pix = eventCardsMap.find(type);
+		if (pix != eventCardsMap.end())
+			return *pix;
+		std::string fileName = "Resources\\event_card_" + std::to_string(type) + ".png";
+		fileName = "Resources\\CARD.png";
+		QPixmap pixMap(fileName.c_str());
+		eventCardsMap[type] = pixMap;
+		return pixMap;
+	}
+	else if (c.type == CardType::Infection){
+		CityIndex index = static_cast<const InfectionCard&>(c).cityIndex;
+		auto pix = infectionCardsMap.find(index);
+		if (pix != infectionCardsMap.end())
+			return *pix;
+		std::string fileName = "Resources\\infection_card_" + std::to_string(index) + ".png";
+		fileName = "Resources\\CARD.png";
+		QPixmap pixMap(fileName.c_str());
+		infectionCardsMap[index] = pixMap;
+		return pixMap;
+	}
+	else {
+		if (pandemicCard != nullptr)
+			return *pandemicCard.get();
+		std::string fileName = "Resources\\pandemic_card.png";
+		fileName = "Resources\\CARD.png";
+		pandemicCard.reset(new QPixmap(fileName.c_str()));
+		return *pandemicCard.get();
+	}
 }

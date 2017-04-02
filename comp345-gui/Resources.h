@@ -1,4 +1,6 @@
 #pragma once
+#include <core\Cards.h>
+
 class Resources
 {
 public:
@@ -14,6 +16,7 @@ public:
 	static QPixmap diseaseIcon(pan::DiseaseType d);
 	static QPixmap diseaseVialCured(pan::DiseaseType d);
 	static QPixmap diseaseVialEradicated(pan::DiseaseType d);
+	static QPixmap pixmapForCard(const pan::CardBase& c);
 private:
 	static QMap<pan::RegionIndex, QPixmap> regionPixmaps;
 	static QMap<pan::Roles, QPixmap> pawnPixmaps;
@@ -22,6 +25,10 @@ private:
 	static QMap<pan::DiseaseType, QPixmap> diseaseIcons;
 	static QMap<pan::DiseaseType, QPixmap> diseaseVialsCured;
 	static QMap<pan::DiseaseType, QPixmap> diseaseVialsEradicated;
+	static QMap<pan::CityIndex, QPixmap> cityCardsMap;
+	static QMap<pan::CityIndex, QPixmap> infectionCardsMap;
+	static QMap<pan::EventType, QPixmap> eventCardsMap;
+	static std::unique_ptr<QPixmap> pandemicCard;
 	static std::unique_ptr<QPixmap> infection;
 	static std::unique_ptr<QPixmap> outbreak;
 	static std::unique_ptr<QPixmap> station;

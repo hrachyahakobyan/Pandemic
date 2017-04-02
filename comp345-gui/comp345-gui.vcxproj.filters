@@ -74,6 +74,33 @@
     <ClCompile Include="GeneratedFiles\Release\moc_DiseaseDetailsView.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerHandView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_PlayerHandView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_PlayerHandView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_CardView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_CardView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="CardView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionSelectView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ActionSelectView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ActionSelectView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
@@ -134,6 +161,15 @@
     <ClInclude Include="GeneratedFiles\ui_DiseaseDetailsView.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_PlayerHandView.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_CardView.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_ActionSelectView.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Pandemic.h">
@@ -173,6 +209,24 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="DiseaseDetailsView.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PlayerHandView.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="PlayerHandView.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CardView.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CardView.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ActionSelectView.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ActionSelectView.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
   </ItemGroup>
