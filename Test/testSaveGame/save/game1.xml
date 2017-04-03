@@ -26,6 +26,7 @@
 			<g.actionCounter>0</g.actionCounter>
 			<g.turn>0</g.turn>
 			<g.stage>0</g.stage>
+			<g.prevStage>0</g.prevStage>
 			<g.players class_id="17" tracking_level="0" version="0">
 				<count>0</count>
 				<item_version>1</item_version>

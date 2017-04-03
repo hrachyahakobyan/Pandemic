@@ -100,6 +100,10 @@ namespace pan{
 		*/
 		PlayerStage stage;
 		/**
+		*	The previous stage
+		*/
+		PlayerStage prevStage;
+		/**
 		*	How many actions the player has already committed in the Act stage
 		*/
 		unsigned int actionCounter;
@@ -182,6 +186,7 @@ namespace boost {
 			ar & BOOST_SERIALIZATION_NVP(g.actionCounter);
 			ar & BOOST_SERIALIZATION_NVP(g.turn);
 			ar & BOOST_SERIALIZATION_NVP(g.stage);
+			ar & BOOST_SERIALIZATION_NVP(g.prevStage);
 			ar & BOOST_SERIALIZATION_NVP(g.players);
 			ar & BOOST_SERIALIZATION_NVP(g.occupiedRoles);
 		}

@@ -186,6 +186,9 @@
     <ClInclude Include="GameStateMachine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ShareKnowledge.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -300,6 +303,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Epidemic.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="ShareKnowledge.cpp">
       <Filter>Source Files\actions</Filter>
     </ClCompile>
   </ItemGroup>

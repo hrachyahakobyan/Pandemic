@@ -129,6 +129,7 @@ namespace pan{
 	PlayerData::PlayerData() : 
 		occupiedRoles(RolesDescriptions.size(), false),
 		stage(PlayerStage::Act),
+		prevStage(PlayerStage::Act),
 		turn(0),
 		actionCounter(0)
 	{
@@ -138,6 +139,7 @@ namespace pan{
 		players(o.players),
 		occupiedRoles(o.occupiedRoles),
 		stage(o.stage),
+		prevStage(o.prevStage),
 		turn(o.turn),
 		actionCounter(0)
 	{
@@ -152,6 +154,7 @@ namespace pan{
 		this->players = o.players;
 		this->occupiedRoles = o.occupiedRoles;
 		this->stage = o.stage;
+		this->prevStage = o.prevStage;
 		this->turn = o.turn;
 		this->actionCounter = o.actionCounter;
 		return *this;
@@ -161,6 +164,7 @@ namespace pan{
 		players(std::move(o.players)),
 		occupiedRoles(std::move(o.occupiedRoles)),
 		stage(o.stage),
+		prevStage(o.prevStage),
 		turn(o.turn),
 		actionCounter(o.actionCounter)
 	{
@@ -171,6 +175,7 @@ namespace pan{
 		this->players = std::move(o.players);
 		this->occupiedRoles = std::move(o.occupiedRoles);
 		this->stage = o.stage;
+		this->prevStage = o.prevStage;
 		this->turn = o.turn;
 		this->actionCounter = o.actionCounter;
 		return *this;
@@ -179,7 +184,8 @@ namespace pan{
 	bool PlayerData::operator==(const PlayerData& o) const
 	{
 		bool equal = (occupiedRoles == o.occupiedRoles && 
-					stage == o.stage && turn == o.turn
+					stage == o.stage && prevStage == o.prevStage
+					&& turn == o.turn
 					&& actionCounter == o.actionCounter);
 		if (!equal)
 			return false;

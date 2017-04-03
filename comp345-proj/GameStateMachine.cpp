@@ -325,32 +325,56 @@ namespace pan{
 #pragma message("Add validations")
 	void GameStateMachine::setPlayerStage(PlayerStage stage)
 	{
+		playerData.prevStage = playerData.stage;
 		playerData.stage = stage;
 	}
 
 	void GameStateMachine::playerDidAct(PlayerIndex index, ActionType type)
 	{
-		if (type == ActionType::Draw){
+		// If the action was invalid to begin with
+		if (!playerCanAct(index, type))
+			return;
+		// The stage is Draw and the action is Draw action
+		if (playerData.stage == PlayerStage::Draw && type == ActionType::Draw){
 			if (playerData.players[index]->getCards().size() > gameData.settings.playerHandMax)
 				setPlayerStage(PlayerStage::Discard);
 			else
 				setPlayerStage(PlayerStage::Infect);
 		}
-		else if (type == ActionType::Regular){
-			if (isPlayersTurn(index) && playerData.stage == PlayerStage::Act) {
-				playerData.actionCounter = (playerData.actionCounter + 1) % 4;
-				if (playerData.actionCounter == 0){
-					setPlayerStage(PlayerStage::Draw);
-				}
+		// The stage is Act and the action is of regular type
+		else if (playerData.stage == PlayerStage::Act && type == ActionType::Regular){
+			// Increment the action counter
+			playerData.actionCounter = (playerData.actionCounter + 1) % 4;
+			// If the player has more cards than required, change to discard stage
+			if (playerData.players[index]->getCards().size() > gameData.settings.playerHandMax)
+				setPlayerStage(PlayerStage::Discard);
+			else if (playerData.actionCounter == 0){
+				setPlayerStage(PlayerStage::Draw);
 			}
 		}
+		// We can go back to Act stage only from infect
 		else if (type == ActionType::Infect){
 			playerData.turn = (playerData.turn + 1) % playerData.players.size();
 			setPlayerStage(PlayerStage::Act);
 		}
 		else if (type == ActionType::Discard){
-			if (playerData.players[index]->getCards().size() == gameData.settings.playerHandMax)
-				setPlayerStage(PlayerStage::Infect);
+			// Can switch the state only if the player has less
+			// than the maximum allowed number of cards
+			if (playerData.players[index]->getCards().size() <= gameData.settings.playerHandMax){
+				// If the player has still actions to be done switch to Act mode
+				if (playerData.actionCounter < 4)
+					setPlayerStage(PlayerStage::Act);
+				else {
+					// If the discard action was caused due to draw action
+					// switch to infect stage
+					if (playerData.prevStage == PlayerStage::Draw)
+						setPlayerStage(PlayerStage::Infect);
+					// the discard stage was caused due to 
+					// the last player action
+					else
+						setPlayerStage(PlayerStage::Draw);
+				}
+			}
 		}
 	}
 
@@ -359,9 +383,26 @@ namespace pan{
 		return playerData.turn == i;
 	}
 
-	bool GameStateMachine::playerCanAct(PlayerIndex i) const
+	bool GameStateMachine::playerCanAct(PlayerIndex i, ActionType type) const
 	{
-		return isPlayersTurn(i) && playerData.stage == PlayerStage::Act && playerData.actionCounter < 4;
+		// If it is not the player's turn or the game is not in progress
+		// the player cannot act
+		if (!isPlayersTurn(i) || gameData.state != GameState::InProgress)
+			return false;
+		// If the player is in act state, check the action counter
+		if (playerData.stage == PlayerStage::Act && type == ActionType::Regular)
+			return playerData.actionCounter < 4;
+		// If the stage is discard, the player can act only if he has more then max cards
+		if (playerData.stage == PlayerStage::Discard && type == ActionType::Discard)
+			return (playerData.players[i]->getCards().size() > gameData.settings.playerHandMax);
+		// If the stage is infect
+		if (playerData.stage == PlayerStage::Infect && type == ActionType::Infect)
+			return true;
+		// If the stage is draw
+		if (playerData.stage == PlayerStage::Draw && type == ActionType::Draw)
+			return true;
+		// False otherwise
+		return false;
 	}
 
 	void GameStateMachine::movePlayer(PlayerIndex player, CityIndex target){
