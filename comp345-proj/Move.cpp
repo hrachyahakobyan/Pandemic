@@ -3,7 +3,7 @@
 
 namespace pan{
 	Move::Move(PlayerIndex player, CityIndex city) :
-	ActionImpl(ActionType::Regular),
+	ActionImpl(ActionType::Move),
 	player(player), targetCity(city)
 	{
 	}

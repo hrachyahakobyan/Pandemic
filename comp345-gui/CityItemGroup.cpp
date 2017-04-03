@@ -3,6 +3,22 @@
 #include "Resources.h"
 #include <math.h>
 
+
+CityItemGroup::CityItemGroup() :
+stationItem(NULL)
+{
+}
+
+CityItemGroup::~CityItemGroup()
+{
+	for (auto item : playerPawns){
+		this->removeFromGroup(item);
+		delete item;
+	}
+	if (stationItem)
+		delete stationItem;
+}
+
 QRectF CityItemGroup::boundingRect() const
 {
 	return QRectF(0, 0, 75, 75);
@@ -60,12 +76,24 @@ void CityItemGroup::update(const pan::City& city)
 		QPixmap pawnPix = Resources::pawnForRole(player->getRole().role);
 		QGraphicsPixmapItem* item = new QGraphicsPixmapItem(pawnPix);
 		this->addToGroup(item);
-		QPointF pos = center;
-		pos.setX(pos.x() + bRect.width() / 4 * std::cos(angle));
-		pos.setY(pos.y() + bRect.height() / 4 * std::sin(angle));
+		QPointF p = pos();
+		p.setX(p.x() + bRect.width() / 4 * std::cos(angle));
+		p.setY(p.y() + bRect.height() / 4 * std::sin(angle));
 		playerPawns.push_back(item);
-		item->setPos(pos);
+		item->setPos(p);
 		angle += increment;
+	}
+	if (city.researchStation){
+		if (stationItem == NULL){
+			stationItem = new QGraphicsPixmapItem(Resources::stationPawnPixmap().scaled(bRect.width(), bRect.height(), Qt::KeepAspectRatio));
+		}
+		this->addToGroup(stationItem);
+		stationItem->setPos(pos());
+	}
+	else {
+		if (stationItem){
+			this->removeFromGroup(stationItem);
+		}
 	}
 	QGraphicsItem::update();
 }

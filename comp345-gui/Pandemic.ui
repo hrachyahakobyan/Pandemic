@@ -199,7 +199,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
@@ -258,6 +258,11 @@
        <attribute name="title">
         <string>Actions</string>
        </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="ActionSelectView" name="actionSelectView" native="true"/>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -383,6 +388,12 @@
    <class>PlayerHandView</class>
    <extends>QWidget</extends>
    <header>PlayerHandView.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ActionSelectView</class>
+   <extends>QWidget</extends>
+   <header>ActionSelectView.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -10,6 +10,7 @@ public:
 	static QPixmap infectionPixmap();
 	static QPixmap outbreakPixmap();
 	static QPixmap stationPixmap();
+	static QPixmap stationPawnPixmap();
 	static QPixmap pawnForRole(pan::Roles r);
 	static QPixmap cardForRole(pan::Roles r);
 	static QPixmap avatarForRole(pan::Roles r);
@@ -32,5 +33,6 @@ private:
 	static std::unique_ptr<QPixmap> infection;
 	static std::unique_ptr<QPixmap> outbreak;
 	static std::unique_ptr<QPixmap> station;
+	static std::unique_ptr<QPixmap> stationPawn;
 };
 

@@ -3,9 +3,12 @@
 
 namespace pan{
 	enum class ActionType{
-		Regular = 0, Event, Special, Draw, Discard, Infect
+		Move = 0, CharterFlight, DirectFlight, ShuttleFlight,
+		BuildStation, TreatDisease, ShareKnowledge, DiscoverCure, Draw, Discard,
+		Infect, Outbreak, Epidemic
 	};
 
+	bool isRegular(ActionType type);
 	/**
 	*	@brief Top level abstraction of the Action entity.
 	*	Store the Command in the Command pattern. All actions that modify the state
@@ -20,6 +23,7 @@ namespace pan{
 		virtual bool execute(ActionHandler& h) const = 0;
 		virtual ActionBase* clone() const = 0;
 		ActionType getActionType() const { return type; }
+		bool isRegularAction() const;
 	protected:
 		ActionType type;
 	};

@@ -3,7 +3,7 @@
 
 namespace pan{
 	CharterFlight::CharterFlight(PlayerIndex player, CityIndex city) :
-	ActionImpl(ActionType::Regular),
+	ActionImpl(ActionType::CharterFlight),
 	player(player),
 	targetCity(city)
 	{

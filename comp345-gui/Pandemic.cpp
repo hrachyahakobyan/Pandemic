@@ -3,6 +3,7 @@
 #include "MapView.h"
 #include "CityDetailsView.h"
 #include "Resources.h"
+#include "ActionSelectView.h"
 
 Pandemic::Pandemic(QWidget *parent)
 	: QMainWindow(parent)
@@ -10,6 +11,7 @@ Pandemic::Pandemic(QWidget *parent)
 	ui.setupUi(this);
 	this->setStyleSheet("background-color:#0d0238;");
 	connect(ui.mapView, SIGNAL(cityItemSelected(pan::CityIndex)), this, SLOT(on_cityItemSelected(pan::CityIndex)));
+	connect(ui.actionSelectView, SIGNAL(actionSelected(pan::ActionType)), this, SLOT(on_actionSelectViewSelected(pan::ActionType)));
 }
 
 void Pandemic::update(pan::Game&& game)
@@ -22,6 +24,11 @@ void Pandemic::update(pan::Game&& game)
 
 void Pandemic::on_cityItemSelected(pan::CityIndex index)
 {
+}
+
+void Pandemic::on_actionSelectViewSelected(pan::ActionType type)
+{
+
 }
 
 void Pandemic::updateActiveUser()

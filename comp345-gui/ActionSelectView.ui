@@ -18,7 +18,7 @@
     <number>3</number>
    </property>
    <item>
-    <widget class="QWidget" name="widget_3" native="true">
+    <widget class="QWidget" name="driveWidget" native="true">
      <layout class="QGridLayout" name="gridLayout_3">
       <property name="leftMargin">
        <number>1</number>
@@ -46,7 +46,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="widget" native="true">
+    <widget class="QWidget" name="dFlightWidget" native="true">
      <layout class="QGridLayout" name="gridLayout">
       <property name="leftMargin">
        <number>1</number>
@@ -74,7 +74,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="widget_7" native="true">
+    <widget class="QWidget" name="cFlightWidget" native="true">
      <layout class="QGridLayout" name="gridLayout_7">
       <property name="leftMargin">
        <number>1</number>
@@ -102,7 +102,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="widget_6" native="true">
+    <widget class="QWidget" name="sFlightWidget" native="true">
      <layout class="QGridLayout" name="gridLayout_6">
       <property name="leftMargin">
        <number>1</number>
@@ -130,7 +130,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="widget_5" native="true">
+    <widget class="QWidget" name="bResearchWidget" native="true">
      <layout class="QGridLayout" name="gridLayout_5">
       <property name="leftMargin">
        <number>1</number>
@@ -158,7 +158,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="widget_4" native="true">
+    <widget class="QWidget" name="tDiseaseWidget" native="true">
      <layout class="QGridLayout" name="gridLayout_4">
       <property name="leftMargin">
        <number>1</number>
@@ -186,7 +186,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="widget_2" native="true">
+    <widget class="QWidget" name="dCureWidget" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
       <property name="leftMargin">
        <number>1</number>

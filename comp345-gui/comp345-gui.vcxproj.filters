@@ -26,15 +26,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_MapView.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="CityItem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_CityItem.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_CityItem.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="CityDetailsView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -186,9 +177,6 @@
     </CustomBuild>
     <CustomBuild Include="MapView.ui">
       <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="CityItem.h">
-      <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="CityDetailsView.h">
       <Filter>Header Files</Filter>

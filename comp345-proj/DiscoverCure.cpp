@@ -3,7 +3,7 @@
 
 namespace pan{
 	DiscoverCure::DiscoverCure(PlayerIndex player, DiseaseType dType) :
-	ActionImpl(ActionType::Regular),
+	ActionImpl(ActionType::DiscoverCure),
 	player(player), diseaseType(dType)
 	{
 	}

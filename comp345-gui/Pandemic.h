@@ -12,6 +12,7 @@ public:
 	void update(pan::Game&& game);
 public Q_SLOTS:
 	void on_cityItemSelected(pan::CityIndex);
+	void on_actionSelectViewSelected(pan::ActionType);
 private:
 	Ui::PandemicClass ui;
 	pan::Game game;

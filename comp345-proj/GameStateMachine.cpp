@@ -342,7 +342,7 @@ namespace pan{
 				setPlayerStage(PlayerStage::Infect);
 		}
 		// The stage is Act and the action is of regular type
-		else if (playerData.stage == PlayerStage::Act && type == ActionType::Regular){
+		else if (playerData.stage == PlayerStage::Act && isRegular(type)){
 			// Increment the action counter
 			playerData.actionCounter = (playerData.actionCounter + 1) % 4;
 			// If the player has more cards than required, change to discard stage
@@ -390,7 +390,7 @@ namespace pan{
 		if (!isPlayersTurn(i) || gameData.state != GameState::InProgress)
 			return false;
 		// If the player is in act state, check the action counter
-		if (playerData.stage == PlayerStage::Act && type == ActionType::Regular)
+		if (playerData.stage == PlayerStage::Act && isRegular(type))
 			return playerData.actionCounter < 4;
 		// If the stage is discard, the player can act only if he has more then max cards
 		if (playerData.stage == PlayerStage::Discard && type == ActionType::Discard)

@@ -6,6 +6,8 @@ class CityItemGroup : public QObject, public QGraphicsItemGroup
 {
 	Q_OBJECT
 public:
+	CityItemGroup();
+	~CityItemGroup();
 	QRectF boundingRect() const;
 	void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0);
 	void update(const pan::City& city);
@@ -24,4 +26,5 @@ private:
 	QPainterPath circle(QPointF center, int radius) const;
 	QVector<QPainterPath> diseaseCircles;
 	QVector<QGraphicsPixmapItem*> playerPawns;
+	QGraphicsPixmapItem* stationItem;
 };

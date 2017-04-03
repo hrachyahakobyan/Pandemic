@@ -3,7 +3,7 @@
 
 namespace pan{
 	ShuttleFlight::ShuttleFlight(PlayerIndex player, CityIndex city) :
-	ActionImpl(ActionType::Regular),
+	ActionImpl(ActionType::ShuttleFlight),
 	player(player), targetCity(city)
 	{
 	}

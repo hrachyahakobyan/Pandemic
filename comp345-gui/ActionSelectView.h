@@ -11,9 +11,12 @@ class ActionSelectView : public QWidget
 public:
 	ActionSelectView(QWidget *parent = 0);
 	~ActionSelectView();
-
+	void mousePressEvent(QMouseEvent *event);
+Q_SIGNALS:
+	void actionSelected(pan::ActionType type);
 private:
 	Ui::ActionSelectView ui;
+	QMap<QWidget*, pan::ActionType> widgetActions;
 };
 
 #endif // ACTIONSELECTVIEW_H

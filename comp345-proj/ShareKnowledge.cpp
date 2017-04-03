@@ -3,7 +3,7 @@
 
 namespace pan{
 	ShareKnowledge::ShareKnowledge(PlayerIndex player, PlayerIndex target, int cardIndex) :
-	ActionImpl(ActionType::Regular),
+	ActionImpl(ActionType::ShareKnowledge),
 	player(player), target(target), cardIndex(cardIndex){
 	}
 }

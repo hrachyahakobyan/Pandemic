@@ -3,7 +3,7 @@
 
 namespace pan{
 	Epidemic::Epidemic() :
-	ActionImpl(ActionType::Regular)
+	ActionImpl(ActionType::Epidemic)
 	{
 	}
 }

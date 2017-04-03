@@ -6,7 +6,7 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
 	::testing::InitGoogleTest(&argc, argv);
-	::testing::GTEST_FLAG(filter) = "StateMachineTest*";
+	//::testing::GTEST_FLAG(filter) = "StateMachineTest*";
 	RUN_ALL_TESTS();
 	int a;
 	std::cin >> a;

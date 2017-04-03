@@ -15,7 +15,7 @@ std::unique_ptr<QPixmap> Resources::pandemicCard;
 std::unique_ptr<QPixmap> Resources::infection;
 std::unique_ptr<QPixmap> Resources::outbreak;
 std::unique_ptr<QPixmap> Resources::station;
-
+std::unique_ptr<QPixmap> Resources::stationPawn;
 
 Resources::Resources()
 {
@@ -260,6 +260,14 @@ QPixmap Resources::stationPixmap()
 		station.reset(new QPixmap("Resources\\station.png"));
 	}
 	return *station.get();
+}
+
+QPixmap Resources::stationPawnPixmap()
+{
+	if (stationPawn == nullptr){
+		stationPawn.reset(new QPixmap("Resources\\station_pawn.png"));
+	}
+	return *stationPawn.get();
 }
 
 #pragma message("Add cards...")

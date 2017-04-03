@@ -4,7 +4,7 @@
 
 namespace pan{
 	DirectFlight::DirectFlight(PlayerIndex player, CityIndex city) :
-	ActionImpl(ActionType::Regular),
+	ActionImpl(ActionType::DirectFlight),
 	player(player), 
 	targetCity(city)
 	{

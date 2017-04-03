@@ -2,7 +2,6 @@
 #define MAPVIEW_H
 
 #include "ui_MapView.h"
-#include "CityItem.h"
 #include "CityItemGroup.h"
 
 class CityDetailsView;

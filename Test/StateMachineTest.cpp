@@ -16,25 +16,23 @@ namespace pan{
 		ASSERT_EQ(machine.gameData.state, GameState::InProgress);
 		ASSERT_EQ(machine.playerData.stage, PlayerStage::Act);
 
-		ASSERT_FALSE(machine.playerCanAct(p2, ActionType::Regular));
+		ASSERT_FALSE(machine.playerCanAct(p2, ActionType::Move));
 		ASSERT_FALSE(machine.playerCanAct(p2, ActionType::Draw));
 		ASSERT_FALSE(machine.playerCanAct(p2, ActionType::Discard));
 		ASSERT_FALSE(machine.playerCanAct(p2, ActionType::Infect));
-		ASSERT_FALSE(machine.playerCanAct(p2, ActionType::Special));
 
 		ASSERT_FALSE(machine.playerCanAct(p1, ActionType::Draw));
 		ASSERT_FALSE(machine.playerCanAct(p1, ActionType::Discard));
 		ASSERT_FALSE(machine.playerCanAct(p1, ActionType::Infect));
-		ASSERT_FALSE(machine.playerCanAct(p1, ActionType::Special));
 
-		ASSERT_TRUE(machine.playerCanAct(p1, ActionType::Regular));
+		ASSERT_TRUE(machine.playerCanAct(p1, ActionType::Move));
 
-		machine.playerDidAct(p1, ActionType::Regular);
-		machine.playerDidAct(p1, ActionType::Regular);
-		machine.playerDidAct(p1, ActionType::Regular);
+		machine.playerDidAct(p1, ActionType::Move);
+		machine.playerDidAct(p1, ActionType::Move);
+		machine.playerDidAct(p1, ActionType::Move);
 		ASSERT_EQ(machine.playerData.stage, PlayerStage::Act);
 
-		machine.playerDidAct(p1, ActionType::Regular);
+		machine.playerDidAct(p1, ActionType::Move);
 		ASSERT_EQ(machine.playerData.stage, PlayerStage::Draw);
 
 		machine.playerDidAct(p1, ActionType::Draw);
