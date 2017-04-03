@@ -68,9 +68,10 @@ namespace pan{
 		/**
 		*	Find out if the specified player is allowed to act.
 		*	@param i the index of the player to be checked
+		*	@param type the type of the action to be checked against
 		*	@return true of the player is allowed to perform an action
 		*/
-		bool playerCanAct(PlayerIndex i) const;
+		bool playerCanAct(PlayerIndex i, ActionType type) const;
 		/**
 		*	Find out if it is the specified player's turn to play
 		*	@param i the index of the player to be checked

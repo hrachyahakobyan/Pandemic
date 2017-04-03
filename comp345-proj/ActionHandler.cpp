@@ -30,7 +30,7 @@ namespace pan{
 		// Check if parameters are valid
 		if (!game.stateMachine.getMap().cityExists(m.targetCity) ||
 			!game.stateMachine.playerExists(m.player) ||
-			!game.stateMachine.playerCanAct(m.player)){
+			!game.stateMachine.playerCanAct(m.player, m.getActionType())){
 			return false;
 		}
 		// Check if the player is already in the target city
@@ -57,7 +57,7 @@ namespace pan{
 		// Check if parameters are valid
 		if (!game.stateMachine.getMap().cityExists(m.targetCity) ||
 			!game.stateMachine.playerExists(m.player) || 
-			!game.stateMachine.playerCanAct(m.player)){
+			!game.stateMachine.playerCanAct(m.player, m.getActionType())){
 			return false;
 		}
 		// Check if the player is already in the target city
@@ -89,7 +89,7 @@ namespace pan{
 		// Check if parameters are valid
 		if (!game.stateMachine.getMap().cityExists(m.targetCity) ||
 			!game.stateMachine.playerExists(m.player) ||
-			!game.stateMachine.playerCanAct(m.player)){
+			!game.stateMachine.playerCanAct(m.player, m.getActionType())){
 			return false;
 		}
 		// Check if the player is already in the target city
@@ -121,7 +121,7 @@ namespace pan{
 		// Check if parameters are valid
 		if (!game.stateMachine.getMap().cityExists(m.targetCity) ||
 			!game.stateMachine.playerExists(m.player) ||
-			!game.stateMachine.playerCanAct(m.player)){
+			!game.stateMachine.playerCanAct(m.player, m.getActionType())){
 			return false;
 		}
 		// Check if the player is already in the target city
@@ -149,7 +149,7 @@ namespace pan{
 	bool ActionHandler::validate<BuildResearchStation>(const BuildResearchStation& m) const{
 		// Check if parameters are valid
 		if (!game.stateMachine.playerExists(m.player)
-			|| !game.stateMachine.playerCanAct(m.player)){
+			|| !game.stateMachine.playerCanAct(m.player, m.getActionType())){
 			return false;
 		}
 		// Check if maximum research stations is reached
@@ -182,7 +182,7 @@ namespace pan{
 	bool ActionHandler::validate<TreatDisease>(const TreatDisease& m) const{
 		// Check if parameters are valid
 		if (!game.stateMachine.playerExists(m.player) ||
-			!game.stateMachine.playerCanAct(m.player)){
+			!game.stateMachine.playerCanAct(m.player, m.getActionType())){
 			return false;
 		}
 		const PlayerBase& player = game.getPlayer(m.player);
@@ -220,12 +220,13 @@ namespace pan{
 	*	3. The initiating player is located in a city that has a research station
 	*	4. The initiating player has enough city cards of the same color as the disease
 	*	he/she attempts to cure.
+	*	5. The disease is not already cured.
 	*/
 	template<>
 	bool ActionHandler::validate<DiscoverCure>(const DiscoverCure& m) const{
 		// Check if parameters are valid
 		if (!game.stateMachine.playerExists(m.player) ||
-			!game.stateMachine.playerCanAct(m.player)){
+			!game.stateMachine.playerCanAct(m.player, m.getActionType())){
 			return false;
 		}
 		// Check if the disease is already cured
@@ -262,8 +263,7 @@ namespace pan{
 	template<>
 	bool ActionHandler::validate<DrawPlayerCards>(const DrawPlayerCards& a) const{
 		return (game.stateMachine.playerExists(a.player) && 
-			    game.stateMachine.isPlayersTurn(a.player) &&
-				game.stateMachine.getPlayerData().stage == PlayerStage::Draw);
+			    game.stateMachine.playerCanAct(a.player, a.getActionType()));
 	}
 
 	template<>
@@ -276,8 +276,10 @@ namespace pan{
 		if (game.stateMachine.getGameData().state == GameState::Defeat)
 			return true;
 		PlayerBase& player = game.stateMachine.getPlayer(a.player);
+		bool encounteredEpidemic = false;
 		for (const auto& card : cards){
 			if (card->type == CardType::Epidemic){
+				encounteredEpidemic = true;
 				Epidemic e;
 				e.execute(*this);
 				// If after the execution the game is over, no point to continue
@@ -285,7 +287,7 @@ namespace pan{
 					return true;
 			}
 			// Add the card to the player deck
-			else {
+			else if (!encounteredEpidemic) {
 				player.getCards().push(card);
 			}
 		}
@@ -303,8 +305,7 @@ namespace pan{
 	template<>
 	bool ActionHandler::validate<PlayerInfect>(const PlayerInfect& a) const{
 		return (game.stateMachine.playerExists(a.player) &&
-			game.stateMachine.isPlayersTurn(a.player) &&
-			game.stateMachine.getPlayerData().stage == PlayerStage::Infect);
+			game.stateMachine.playerCanAct(a.player, a.getActionType()));
 	}
 
 	template<>
@@ -326,7 +327,7 @@ namespace pan{
 	}
 
 	/**
-	*	@brief validates DiscardCard action
+	*	validates DiscardCard action
 	*	The action is valid if the following hold.
 	*	1. The initiating player exists.
 	*	2. It is the initiating player's turn.
@@ -336,8 +337,7 @@ namespace pan{
 	template<>
 	bool ActionHandler::validate<DiscardCard>(const DiscardCard& a) const{
 		if (!(game.stateMachine.playerExists(a.player) &&
-			game.stateMachine.isPlayersTurn(a.player) &&
-			game.stateMachine.getPlayerData().stage == PlayerStage::Discard))
+			game.stateMachine.playerCanAct(a.player, a.getActionType())))
 			return false;
 		const PlayerBase& p = game.getPlayer(a.player);
 		return p.getCards().size() > a.index;
@@ -355,6 +355,53 @@ namespace pan{
 		cards.erase(cards.begin() + a.index);
 		// Check if the player has the required number of cards
 		game.stateMachine.playerDidAct(a.player, a.getActionType());
+		return true;
+	}
+
+	/**
+	*	Validates Share knowledge action
+	*	The action is valid if the following hold.
+	*	1. The initiating player exists.
+	*	2. The target player exists
+	*	3. It is the initiating player's turn.
+	*	4. The current stage is act
+	*	5. Both players must be in the same city
+	*	6. The card index is a valid city card in the target player's hand
+	*	7. The city index of the card in the target player's hand matches his location
+	*/
+	template<>
+	bool ActionHandler::validate<ShareKnowledge>(const ShareKnowledge& a) const{
+		if (!(game.stateMachine.playerExists(a.player) &&
+			game.stateMachine.playerExists(a.target) &&
+			game.stateMachine.playerCanAct(a.player, a.getActionType()) &&
+			game.stateMachine.getPlayer(a.player).getLocation() == 
+			game.stateMachine.getPlayer(a.target).getLocation()))
+			return false;
+		// check the card index validity
+		const PlayerBase& p = game.getPlayer(a.target);
+		if (a.cardIndex < 0 || a.cardIndex >= int(p.getCards().size()))
+			return false;
+		// check the card type validity
+		const CardBase& card = *p.getCards()[a.cardIndex];
+		if (card.type != CardType::City)
+			return false;
+		// Check the card validity
+		return static_cast<const CityCard&>(card).cityIndex == p.getLocation();
+	}
+
+	template<>
+	bool ActionHandler::execute<ShareKnowledge>(const ShareKnowledge& a){
+		if (!a.validate(*this)){
+			return false;
+		}
+		// Remove the card to the discard pile
+		PlayerBase& player = game.stateMachine.getPlayer(a.player);
+		PlayerBase& target = game.stateMachine.getPlayer(a.target);
+		auto& cards = target.getCards();
+		auto card = cards[a.cardIndex];
+		cards.erase(cards.begin() + a.cardIndex);
+		player.getCards().push(card);
+
 		return true;
 	}
 

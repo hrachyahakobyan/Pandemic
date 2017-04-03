@@ -64,4 +64,7 @@ namespace pan{
 	FRIEND_TEST(PlayerTest, compares); \
 	FRIEND_TEST(PlayerTest, serializes); \
 	FRIEND_TEST(PlayerTest, serializesContainer); \
+	FRIEND_TEST(StateMachineTest, Test1); \
+	FRIEND_TEST(StateMachineTest, Test2); \
+	FRIEND_TEST(StateMachineTest, Test3); \
 	friend class ActionTest;

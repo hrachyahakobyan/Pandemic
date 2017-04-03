@@ -12,3 +12,4 @@
 #include "PlayerInfect.h"
 #include "ShuttleFlight.h"
 #include "TreatDisease.h"
+#include "ShareKnowledge.h"
