@@ -9,6 +9,7 @@ namespace pan{
 	*/
 	class TreatDisease : public ActionImpl<TreatDisease, ActionBase>{
 	public:
+		TreatDisease();
 		TreatDisease(PlayerIndex player, DiseaseType dType);
 		PlayerIndex player;
 		DiseaseType diseaseType;

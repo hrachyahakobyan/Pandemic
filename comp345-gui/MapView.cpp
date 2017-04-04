@@ -39,8 +39,7 @@ void MapView::update(const pan::Map& map)
 	}
 	for (auto lines : cityConnections){
 		for (auto line : lines){
-			mapScene->removeItem(line);
-			delete line;
+			mapScene->removeItem(line.get());
 		}
 	}
 	cityConnections.clear();
@@ -48,13 +47,7 @@ void MapView::update(const pan::Map& map)
 	Map::CityIndexIterator ai, ai_end;
 	for (boost::tie(ai, ai_end) = map.cities(); ai != ai_end; ++ai){
 		const City& c = map[*ai];
-		CityItemGroup* item = new CityItemGroup();
-		item->setIndex(*ai);
-		mapScene->addItem(item);
-		cityItems[*ai] = item;
-		item->update(c);
-		item->setPos(mapImage.size().width() * c.getXpos(), mapImage.size().height() * c.getYpos());
-		connect(item, SIGNAL(cityItemSelected(pan::CityIndex)), this, SLOT(on_cityItemSelected(pan::CityIndex)));
+		addItem(c, *ai);
 	}
 
 	Map::ConnectionIterator ei, ei_end;
@@ -64,12 +57,35 @@ void MapView::update(const pan::Map& map)
 		CityItemGroup* sourceItem = cityItems[sourceIndex];
 		CityItemGroup* targetItem = cityItems[targetIndex];
 		QLineF line(sourceItem->center(), targetItem->center());
-		QGraphicsLineItem* lineItem = new QGraphicsLineItem(line);
+		std::shared_ptr<QGraphicsLineItem> lineItem(new QGraphicsLineItem(line));
 		lineItem->setPen(QPen(QBrush(Qt::gray), 3.0));
-		mapScene->addItem(lineItem);
+		mapScene->addItem(lineItem.get());
 		cityConnections[sourceIndex].push_back(lineItem);
 		cityConnections[targetIndex].push_back(lineItem);
 	}
+}
+
+void MapView::update(const pan::City& city, pan::CityIndex index)
+{
+	auto oldItem = cityItems.find(index);
+	if (oldItem == cityItems.end()){
+		addItem(city, index); 
+	}
+	else{
+		oldItem.value()->update(city);
+		oldItem.value()->setIndex(index);
+	}
+}
+
+void MapView::addItem(const pan::City& city, pan::CityIndex index)
+{
+	CityItemGroup* item = new CityItemGroup();
+	item->setIndex(index);
+	mapScene->addItem(item);
+	cityItems[index] = item;
+	item->update(city);
+	item->setPos(mapImage.size().width() * city.getXpos(), mapImage.size().height() * city.getYpos());
+	connect(item, SIGNAL(cityItemSelected(pan::CityIndex)), this, SLOT(on_cityItemSelected(pan::CityIndex)));
 }
 
 void MapView::deselectCity()

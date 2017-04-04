@@ -27,4 +27,5 @@ private:
 	QVector<QPainterPath> diseaseCircles;
 	QVector<QGraphicsPixmapItem*> playerPawns;
 	QGraphicsPixmapItem* stationItem;
+	void clearAll();
 };

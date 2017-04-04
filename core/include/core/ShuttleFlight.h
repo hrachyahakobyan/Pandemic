@@ -8,6 +8,7 @@ namespace pan{
 	*/
 	class ShuttleFlight : public ActionImpl<ShuttleFlight, ActionBase>{
 	public:
+		ShuttleFlight();
 		ShuttleFlight(PlayerIndex player, CityIndex city);
 		PlayerIndex player;
 		CityIndex targetCity;

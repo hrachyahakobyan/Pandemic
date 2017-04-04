@@ -363,6 +363,7 @@ namespace pan{
 	*	The action is valid if the following hold.
 	*	1. The initiating player exists.
 	*	2. The target player exists
+	*	2.5. The players are not the same
 	*	3. It is the initiating player's turn.
 	*	4. The current stage is act
 	*	5. Both players must be in the same city
@@ -373,6 +374,7 @@ namespace pan{
 	bool ActionHandler::validate<ShareKnowledge>(const ShareKnowledge& a) const{
 		if (!(game.stateMachine.playerExists(a.player) &&
 			game.stateMachine.playerExists(a.target) &&
+			a.player != a.target && 
 			game.stateMachine.playerCanAct(a.player, a.getActionType()) &&
 			game.stateMachine.getPlayer(a.player).getLocation() == 
 			game.stateMachine.getPlayer(a.target).getLocation()))
@@ -430,7 +432,7 @@ namespace pan{
 		// If the disease was eradicated, simply discard
 		if (game.stateMachine.getGameData().diseases[a.diseaseType].getIsEradicated())
 			return true;
-		auto& city = game.stateMachine.getMap()[a.city];
+		const auto& city = game.stateMachine.getMap()[a.city];
 		std::size_t currentCubes = city.getCubes(a.diseaseType);
 		std::size_t canTake = 3 - currentCubes;	
 		std::size_t cubesLeft = game.stateMachine.getGameData().diseaseCubes[a.diseaseType];

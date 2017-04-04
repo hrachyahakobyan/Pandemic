@@ -97,6 +97,8 @@ namespace pan
 		*/
 		void addAction(const ActionBase& action);
 
+		inline bool validate(const ActionBase& action) const;
+
 		/**
 		*	Executes actions in the action queue.
 		*	If the game is not initialized or is over, the method will have no effect.
@@ -182,6 +184,11 @@ namespace pan
 	bool Game::isInitialized() const
 	{
 		return stateMachine.getGameData().initialized;
+	}
+
+	bool Game::validate(const ActionBase& action) const
+	{
+		return action.validate(actionHandler);
 	}
 
 	bool Game::isOver() const

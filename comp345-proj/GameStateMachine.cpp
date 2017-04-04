@@ -177,6 +177,7 @@ namespace pan{
 		playerData.occupiedRoles[static_cast<std::underlying_type<Roles>::type>(role)] = true;
 		PlayerIndex index = static_cast<PlayerIndex>(playerData.players.size());
 		playerData.players.push_back(player(role, index, name));
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new PlayerDataUpdateNotification(playerData)));
 		return index;
 	}
 
@@ -187,6 +188,7 @@ namespace pan{
 			return;
 		}
 		gameData.infectionRateMarker++;
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new GameDataUpdateNotification(gameData)));
 	}
 
 	void GameStateMachine::increaseOutbreakMarker()
@@ -199,6 +201,7 @@ namespace pan{
 		if (gameData.outbreakMarker == gameData.settings.outbreakMarkerMax){
 			setGameState(GameState::Defeat);
 		}
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new GameDataUpdateNotification(gameData)));
 	}
 
 	detail::Deck<CardBasePtr> GameStateMachine::drawPlayerDeckTop(std::size_t count)
@@ -208,6 +211,7 @@ namespace pan{
 			setGameState(GameState::Defeat);
 			return detail::Deck<CardBasePtr>();
 		}
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new DeckDataUpdateNotification(deckData)));
 		return deckData.playerDeck.deal(count);
 	}
 
@@ -218,6 +222,7 @@ namespace pan{
 		auto card = deckData.infectionDeck.top();
 		deckData.infectionDeck.pop();
 		deckData.infectionDiscardDeck.push(card);
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new DeckDataUpdateNotification(deckData)));
 		return card;
 	}
 
@@ -228,18 +233,21 @@ namespace pan{
 		auto card = deckData.infectionDeck.bottom();
 		deckData.infectionDeck.pop_bottom();
 		deckData.infectionDiscardDeck.push(card);
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new DeckDataUpdateNotification(deckData)));
 		return card;
 	}
 
 	void GameStateMachine::discardPlayerCard(CardBasePtr card)
 	{
 		deckData.playerDiscardDeck.push(card);
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new DeckDataUpdateNotification(deckData)));
 	}
 
 	detail::Deck<std::shared_ptr<InfectionCard>> GameStateMachine::drawInfectionDeckTop(std::size_t count)
 	{
 		auto cards = deckData.infectionDeck.deal(count);
 		deckData.infectionDiscardDeck.push(cards);
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new DeckDataUpdateNotification(deckData)));
 		return cards;
 	}
 
@@ -249,6 +257,7 @@ namespace pan{
 		srand(static_cast<unsigned int>(time(NULL)));
 		discardedCards.shuffle();
 		deckData.infectionDeck.push(discardedCards);
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new DeckDataUpdateNotification(deckData)));
 	}
 
 	void GameStateMachine::cureDisease(DiseaseType type)
@@ -257,6 +266,7 @@ namespace pan{
 		// Check if the disease is eradicated
 		if (gameData.removedDiseasesCubes[type] == gameData.settings.diseaseCubesPerDisease)
 			gameData.diseases[type].setIsEradicated(true);
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new GameDataUpdateNotification(gameData)));
 	}
 
 	void GameStateMachine::removeDiseaseCubesOfType(DiseaseType type, std::size_t toRemove, CityIndex cIndex)
@@ -274,6 +284,8 @@ namespace pan{
 			gameData.settings.diseaseCubesPerDisease){
 			gameData.diseases[type].setIsEradicated(true);
 		}
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new GameDataUpdateNotification(gameData)));
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new CityUpdateNotification(city, cIndex)));
 	}
 
 	void GameStateMachine::addDiseaseCubesOfType(DiseaseType type, std::size_t toAdd, CityIndex cIndex)
@@ -293,12 +305,14 @@ namespace pan{
 		// automatically the game is lost.
 		if (willTake > cubesLeft){
 			setGameState(GameState::Defeat);
+			detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new GameDataUpdateNotification(gameData)));
 			return;
 		}
 		// Take cubes from the city
 		city.setCubes(type, currentCubes + willTake);
 		// Add the cubes to the removed cubes 
 		gameData.diseaseCubes[type] -= willTake;
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new GameDataUpdateNotification(gameData)));
 	}
 
 	void GameStateMachine::setGameState(GameState state)
@@ -319,6 +333,7 @@ namespace pan{
 			return false;
 		map[city].researchStation = true;
 		gameData.researchStations++;
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new GameDataUpdateNotification(gameData)));
 		return true;
 	}
 
@@ -376,6 +391,7 @@ namespace pan{
 				}
 			}
 		}
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new PlayerDataUpdateNotification(playerData)));
 	}
 
 	bool GameStateMachine::isPlayersTurn(PlayerIndex i) const
@@ -408,10 +424,14 @@ namespace pan{
 	void GameStateMachine::movePlayer(PlayerIndex player, CityIndex target){
 		PlayerBase& playerRef = getPlayer(player);
 		// Remove from previous city
-		map[playerRef.getLocation()].removePlayer(playerData.players[player]);
+		CityIndex oldLocation = playerRef.getLocation();
+		map[oldLocation].removePlayer(playerData.players[player]);
 		// Add to the target city
 		map[target].addPlayer(playerData.players[player]);
 		// Update the player's location
 		playerRef.setLocation(target);
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new PlayerUpdateNotification(playerRef)));
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new CityUpdateNotification(map[oldLocation], oldLocation)));
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new CityUpdateNotification(map[target], target)));
 	}
 }

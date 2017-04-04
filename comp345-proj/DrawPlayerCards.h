@@ -9,6 +9,7 @@ namespace pan{
 	*/
 	class DrawPlayerCards : public ActionImpl<DrawPlayerCards, ActionBase>{
 	public:
+		DrawPlayerCards();
 		DrawPlayerCards(PlayerIndex player);
 		PlayerIndex player;
 	};

@@ -6,7 +6,7 @@ DiseaseDetailsView::DiseaseDetailsView(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	this->setStyleSheet("background-color:#0d0238;");
+	//this->setStyleSheet("background-color:#0d0238;");
 	vialLabels.push_back(ui.d0Vial);
 	vialLabels.push_back(ui.d1Vial);
 	vialLabels.push_back(ui.d2Vial);

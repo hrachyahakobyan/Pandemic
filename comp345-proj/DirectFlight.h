@@ -8,6 +8,7 @@ namespace pan{
 	*/
 	class DirectFlight : public ActionImpl<DirectFlight, ActionBase>{
 	public:
+		DirectFlight();
 		DirectFlight(PlayerIndex player, CityIndex city);
 		PlayerIndex player;
 		CityIndex targetCity;

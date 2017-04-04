@@ -11,12 +11,20 @@ stationItem(NULL)
 
 CityItemGroup::~CityItemGroup()
 {
+	clearAll();
+}
+
+void CityItemGroup::clearAll()
+{
 	for (auto item : playerPawns){
 		this->removeFromGroup(item);
 		delete item;
 	}
-	if (stationItem)
+	playerPawns.clear();
+	if (stationItem){
 		delete stationItem;
+		stationItem = NULL;
+	}
 }
 
 QRectF CityItemGroup::boundingRect() const
@@ -51,6 +59,7 @@ void CityItemGroup::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 
 void CityItemGroup::update(const pan::City& city)
 {
+	clearAll();
 	this->city = city;
 	diseaseCircles.clear();
 	std::size_t cubes = city.getCubes(city.getRegion());
@@ -65,18 +74,13 @@ void CityItemGroup::update(const pan::City& city)
 		diseaseCircles.push_back(circle(pos, bRect.width() / 4));
 		angle += increment;
 	}
-	for (auto item : playerPawns){
-		this->removeFromGroup(item);
-		delete item;
-	}
-	playerPawns.clear();
 	angle = double(qrand() % 360) * 2 * M_PI / 360.0;
 	increment = M_PI * 2 / city.getPlayers().size();
 	for (const auto& player : city.getPlayers()){
 		QPixmap pawnPix = Resources::pawnForRole(player->getRole().role);
 		QGraphicsPixmapItem* item = new QGraphicsPixmapItem(pawnPix);
 		this->addToGroup(item);
-		QPointF p = pos();
+		QPointF p = center;
 		p.setX(p.x() + bRect.width() / 4 * std::cos(angle));
 		p.setY(p.y() + bRect.height() / 4 * std::sin(angle));
 		playerPawns.push_back(item);
@@ -88,7 +92,7 @@ void CityItemGroup::update(const pan::City& city)
 			stationItem = new QGraphicsPixmapItem(Resources::stationPawnPixmap().scaled(bRect.width(), bRect.height(), Qt::KeepAspectRatio));
 		}
 		this->addToGroup(stationItem);
-		stationItem->setPos(pos());
+		stationItem->setPos(center);
 	}
 	else {
 		if (stationItem){

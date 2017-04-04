@@ -5,6 +5,7 @@
 #include "detail\Graph.h"
 
 namespace pan{
+
 	/**
 	*	@brief A class representing the game Map, i.e. the board.
 	*	Note, by the rules of the game the Map requries at least one Region.

@@ -8,9 +8,10 @@ namespace pan{
 	*/
 	class ShareKnowledge : public ActionImpl<ShareKnowledge, ActionBase>{
 	public:
+		ShareKnowledge();
 		ShareKnowledge(PlayerIndex player, PlayerIndex target, int cardIndex);
 		PlayerIndex player;
 		PlayerIndex target;
-		int cardIndex;;
+		int cardIndex;
 	};
 }

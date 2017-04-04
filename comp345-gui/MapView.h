@@ -15,6 +15,7 @@ public:
 	~MapView();
 
 	void update(const pan::Map& map);
+	void update(const pan::City& city, pan::CityIndex index);
 	void mouseMoveEvent(QMouseEvent *event);
 	void mousePressEvent(QMouseEvent *event);
 public Q_SLOTS:
@@ -27,10 +28,11 @@ private:
 	QImage mapImage;
 	std::size_t currentCity;
 	QMap<pan::CityIndex, CityItemGroup*> cityItems;
-	QMap<pan::CityIndex, QVector<QGraphicsLineItem*>> cityConnections;
+	QMap<pan::CityIndex, QVector<std::shared_ptr<QGraphicsLineItem>>> cityConnections;
 	pan::CityIndex selectedCityIndex;
 	CityDetailsView* cityDetailsView;
 	void deselectCity();
+	void addItem(const pan::City& c, pan::CityIndex index);
 };
 
 #endif // MAPVIEW_H

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>509</width>
+    <width>550</width>
     <height>167</height>
    </rect>
   </property>
@@ -16,6 +16,18 @@
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
     <number>3</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
    </property>
    <item>
     <widget class="QWidget" name="driveWidget" native="true">
@@ -151,6 +163,25 @@
         </property>
         <property name="text">
          <string>BResearch</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="drawWidget" native="true">
+     <layout class="QGridLayout" name="gridLayout_8">
+      <item row="0" column="0">
+       <widget class="QLabel" name="drawLabel">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Draw</string>
         </property>
        </widget>
       </item>

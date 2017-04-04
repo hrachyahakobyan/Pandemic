@@ -6,7 +6,7 @@ GameDataView::GameDataView(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	this->setStyleSheet("background-color:#0d0238;");
+	//this->setStyleSheet("background-color:#0d0238;");
 	ui.region1Image->setPixmap(Resources::pixmapForRegion(0).scaled(ui.region1Image->width(), ui.region1Image->height(), Qt::KeepAspectRatio));
 	ui.region2Image->setPixmap(Resources::pixmapForRegion(1).scaled(ui.region2Image->width(), ui.region2Image->height(), Qt::KeepAspectRatio));
 	ui.region3Image->setPixmap(Resources::pixmapForRegion(2).scaled(ui.region3Image->width(), ui.region3Image->height(), Qt::KeepAspectRatio));

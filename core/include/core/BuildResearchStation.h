@@ -8,6 +8,7 @@ namespace pan{
 	*/
 	class BuildResearchStation : public ActionImpl<BuildResearchStation, ActionBase>{
 	public:
+		BuildResearchStation();
 		BuildResearchStation(PlayerIndex player);
 		PlayerIndex player;
 	};

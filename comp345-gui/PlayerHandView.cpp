@@ -5,7 +5,7 @@ PlayerHandView::PlayerHandView(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	this->setStyleSheet("background-color:#0d0238;");
+	//this->setStyleSheet("background-color:#0d0238;");
 	cardViews.push_back(ui.card0);
 	cardViews.push_back(ui.card1);
 	cardViews.push_back(ui.card2);

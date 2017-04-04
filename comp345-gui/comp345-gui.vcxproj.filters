@@ -92,6 +92,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_ActionSelectView.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="ActionBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
@@ -160,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_ActionSelectView.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionBuilder.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

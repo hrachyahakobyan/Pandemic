@@ -189,6 +189,9 @@
     <ClInclude Include="ShareKnowledge.h">
       <Filter>Header Files\actions</Filter>
     </ClInclude>
+    <ClInclude Include="Notifications.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

@@ -10,6 +10,7 @@ namespace pan{
 	*/
 	class PlayerInfect : public ActionImpl<PlayerInfect, ActionBase>{
 	public:
+		PlayerInfect();
 		PlayerInfect(PlayerIndex player);
 		PlayerIndex player;
 	};

@@ -12,7 +12,9 @@ ActionSelectView::ActionSelectView(QWidget *parent)
 	widgetActions[ui.tDiseaseWidget] = pan::ActionType::TreatDisease;
 	widgetActions[ui.driveWidget] = pan::ActionType::Move;
 	widgetActions[ui.sFlightWidget] = pan::ActionType::ShuttleFlight;
+	widgetActions[ui.drawWidget] = pan::ActionType::Draw;
 }
+
 
 ActionSelectView::~ActionSelectView()
 {

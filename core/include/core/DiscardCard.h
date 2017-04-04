@@ -9,6 +9,7 @@ namespace pan{
 	*/
 	class DiscardCard : public ActionImpl<DiscardCard, ActionBase>{
 	public:
+		DiscardCard();
 		DiscardCard(PlayerIndex player, unsigned int index);
 		PlayerIndex player;
 		unsigned int index;

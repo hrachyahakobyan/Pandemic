@@ -2,6 +2,8 @@
 #include "Data.h"
 #include "Map.h"
 #include "ActionBase.h"
+#include "Notifications.h"
+#include "detail\NotificationCenter.h"
 
 namespace pan{
 	class Game;
@@ -154,6 +156,7 @@ namespace pan{
 	void GameStateMachine::discardPlayerCards(const detail::Deck<T>& cards)
 	{
 		deckData.playerDiscardDeck.push(cards);
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new DeckDataUpdateNotification(deckData)));
 	}
 
 	template<Roles R>
@@ -169,6 +172,7 @@ namespace pan{
 		PlayerIndex index = static_cast<PlayerIndex>(playerData.players.size());
 		auto player = std::shared_ptr<PlayerBase>(new Player<R>(index, name));
 		playerData.players.push_back(player);
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new PlayerDataUpdateNotification(playerData)));
 		return index;
 	}
 }

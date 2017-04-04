@@ -8,6 +8,7 @@ namespace pan{
 	*/
 	class CharterFlight : public ActionImpl<CharterFlight, ActionBase>{
 	public:
+		CharterFlight();
 		CharterFlight(PlayerIndex player, CityIndex city);
 		PlayerIndex player;
 		CityIndex targetCity;

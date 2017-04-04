@@ -122,6 +122,7 @@
     <ClInclude Include="InfectionCard.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Move.h" />
+    <ClInclude Include="Notifications.h" />
     <ClInclude Include="Outbreak.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBase.h" />

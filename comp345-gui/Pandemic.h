@@ -2,20 +2,27 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_Pandemic.h"
+#include "ActionBuilder.h"
 
 class Pandemic : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	Pandemic(QWidget *parent = Q_NULLPTR); 
-	void update(pan::Game&& game);
+	Pandemic(pan::Game&& game, QWidget *parent = Q_NULLPTR);
 public Q_SLOTS:
 	void on_cityItemSelected(pan::CityIndex);
 	void on_actionSelectViewSelected(pan::ActionType);
 private:
 	Ui::PandemicClass ui;
 	pan::Game game;
-
+	ActionBuilder actionBuilder;
 	void updateActiveUser();
+	void executeAction();
+
+	void handleCityUpdateNotification(std::shared_ptr<pan::CityUpdateNotification>);
+	void handleGameDataUpdateNotification(std::shared_ptr<pan::GameDataUpdateNotification>);
+	void handleDeckDataUpdateNotification(std::shared_ptr<pan::DeckDataUpdateNotification>);
+	void handlePlayerDataUpdateNotification(std::shared_ptr<pan::PlayerDataUpdateNotification>);
+	void handlePlayerUpdateNotification(std::shared_ptr<pan::PlayerUpdateNotification>);
 };
