@@ -39,7 +39,7 @@ void CityDetailsView::update(const pan::City& city)
 	ui.stationLabelImage->setPixmap(city.researchStation ? researchOkPixmap : researchNoPixamp);
 	std::size_t index = 0;
 	for (const auto& p : city.getPlayers()){
-		avatarLabels[index]->setPixmap(Resources::avatarForRole(p->getRole().role).scaled(avatarLabels[index]->width(), avatarLabels[index]->height(), Qt::KeepAspectRatio));
+		avatarLabels[index]->setPixmap(Resources::avatarForRole(p->getRole().role).scaled(avatarLabels[index]->width(), avatarLabels[index]->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 		index++;
 	}
 }
