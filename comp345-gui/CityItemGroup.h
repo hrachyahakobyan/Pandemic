@@ -17,6 +17,7 @@ public:
 	QPointF center() const;
 Q_SIGNALS:
 	void cityItemSelected(pan::CityIndex index);
+	void cityDetailsSelected(pan::CityIndex index);
 protected:
 	void mousePressEvent(QGraphicsSceneMouseEvent* event);
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);

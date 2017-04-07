@@ -18,6 +18,9 @@ MapView::MapView(QWidget *parent)
 	cityDetailsView->hide();
 }
 
+MapView::~MapView()
+{
+}
 
 void MapView::mouseMoveEvent(QMouseEvent *event)
 {
@@ -86,6 +89,7 @@ void MapView::addItem(const pan::City& city, pan::CityIndex index)
 	item->update(city);
 	item->setPos(mapImage.size().width() * city.getXpos(), mapImage.size().height() * city.getYpos());
 	connect(item, SIGNAL(cityItemSelected(pan::CityIndex)), this, SLOT(on_cityItemSelected(pan::CityIndex)));
+	connect(item, SIGNAL(cityDetailsSelected(pan::CityIndex)), this, SLOT(on_cityDetailsSelected(pan::CityIndex)));
 }
 
 void MapView::deselectCity()
@@ -105,11 +109,12 @@ void MapView::on_cityItemSelected(pan::CityIndex index)
 		line->setPen(QPen(QBrush(Qt::green), 8.0));
 	}
 	Q_EMIT cityItemSelected(index);
+}
+
+void MapView::on_cityDetailsSelected(pan::CityIndex index)
+{
 	cityDetailsView->update(cityItems[index]->getCity());
 	cityDetailsView->setWindowFlags(Qt::WindowStaysOnTopHint);
 	cityDetailsView->show();
 }
 
-MapView::~MapView()
-{
-}

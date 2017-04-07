@@ -201,6 +201,11 @@ namespace pan
 		return stateMachine.getGameData().state;
 	}
 
+	PlayerStage Game::getStage() const
+	{
+		return stateMachine.getPlayerData().stage;
+	}
+
 	const Map& Game::getMap() const
 	{
 		return stateMachine.getMap();;

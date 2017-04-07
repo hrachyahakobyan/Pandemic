@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "PlayerHandView.h"
+#include "Resources.h"
 
 PlayerHandView::PlayerHandView(QWidget *parent)
 	: QWidget(parent)
@@ -23,7 +24,40 @@ PlayerHandView::~PlayerHandView()
 
 void PlayerHandView::update(const pan::detail::Deck<pan::CardBasePtr>& deck)
 {
+	for (auto card : cardViews){
+		card->clear();
+	}
+	indexMap.clear();
 	for (std::size_t i = 0; i < std::min(int(deck.size()), cardViews.size()); i++){
-		cardViews[i]->update(*deck[i]);
+		cardViews[i]->setPixmap(Resources::pixmapForCard(*deck[i]).scaled(cardViews[i]->width(), cardViews[i]->height(), Qt::KeepAspectRatio));
+		indexMap[cardViews[i]] = int(i);
+	}
+}
+
+
+void PlayerHandView::mousePressEvent(QMouseEvent *event)
+{
+	for (auto w : cardViews){
+		QPointF localpos = event->localPos();
+		QRect g = w->geometry();
+		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
+		if (contains && indexMap.find(w) != indexMap.end()){
+			w->setStyleSheet("border: 3px solid green");
+			Q_EMIT cardSelected(indexMap[w]);
+			return;
+		}
+	}
+}
+
+void PlayerHandView::mouseReleaseEvent(QMouseEvent *event)
+{
+	for (auto key : cardViews){
+		QPointF localpos = event->localPos();
+		QRect g = key->geometry();
+		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
+		if (contains){
+			key->setStyleSheet("border: 0px solid green");
+			return;
+		}
 	}
 }

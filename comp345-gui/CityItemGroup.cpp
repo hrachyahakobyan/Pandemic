@@ -49,7 +49,10 @@ void CityItemGroup::paint(QPainter * painter, const QStyleOptionGraphicsItem * o
 
 void CityItemGroup::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
-	Q_EMIT cityItemSelected(index);
+	if (event->button() == Qt::LeftButton)
+		Q_EMIT cityItemSelected(index);
+	else if (event->button() == Qt::RightButton)
+		Q_EMIT cityDetailsSelected(index);
 }
 
 void CityItemGroup::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
@@ -65,7 +68,7 @@ void CityItemGroup::update(const pan::City& city)
 	std::size_t cubes = city.getCubes(city.getRegion());
 	QRectF bRect = boundingRect();
 	QPointF center = bRect.center();
-	double angle = double(qrand() % 360) * 2 * M_PI / 360.0;
+	double angle = 0.0;
 	double increment = M_PI * 2 / cubes;
 	for (std::size_t i = 0; i < cubes; i++){
 		QPointF pos = center;
@@ -74,7 +77,7 @@ void CityItemGroup::update(const pan::City& city)
 		diseaseCircles.push_back(circle(pos, bRect.width() / 4));
 		angle += increment;
 	}
-	angle = double(qrand() % 360) * 2 * M_PI / 360.0;
+	angle = 0.0;
 	increment = M_PI * 2 / city.getPlayers().size();
 	for (const auto& player : city.getPlayers()){
 		QPixmap pawnPix = Resources::pawnForRole(player->getRole().role);

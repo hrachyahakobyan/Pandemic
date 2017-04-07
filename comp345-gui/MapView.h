@@ -20,6 +20,7 @@ public:
 	void mousePressEvent(QMouseEvent *event);
 public Q_SLOTS:
 	void on_cityItemSelected(pan::CityIndex);
+	void on_cityDetailsSelected(pan::CityIndex);
 Q_SIGNALS:
 	void cityItemSelected(pan::CityIndex index);
 private:

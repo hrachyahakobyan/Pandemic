@@ -16,10 +16,14 @@ public:
 	~PlayerHandView();
 
 	void update(const pan::detail::Deck<pan::CardBasePtr>&);
-
+	void mousePressEvent(QMouseEvent *event);
+	void mouseReleaseEvent(QMouseEvent *event);
+Q_SIGNALS:
+	void cardSelected(int index);
 private:
 	Ui::PlayerHandView ui;
-	QVector<CardView*> cardViews;
+	QVector<QLabel*> cardViews;
+	QMap<QLabel*, int> indexMap;
 };
 
 #endif // PLAYERHANDVIEW_H

@@ -199,7 +199,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideRight</enum>
@@ -270,7 +270,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
-         <widget class="QWidget" name="widget_3" native="true"/>
+         <widget class="TeamView" name="teamView" native="true"/>
         </item>
        </layout>
       </widget>
@@ -367,6 +367,27 @@
          </property>
         </widget>
        </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Stage:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="stageLabel">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
@@ -404,6 +425,12 @@
    <class>ActionSelectView</class>
    <extends>QWidget</extends>
    <header>ActionSelectView.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TeamView</class>
+   <extends>QWidget</extends>
+   <header>TeamView.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

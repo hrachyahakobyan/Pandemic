@@ -13,6 +13,8 @@ public:
 public Q_SLOTS:
 	void on_cityItemSelected(pan::CityIndex);
 	void on_actionSelectViewSelected(pan::ActionType);
+	void on_teamViewPlayerSelected(pan::PlayerIndex);
+	void on_handViewCardSelected(int);
 private:
 	Ui::PandemicClass ui;
 	pan::Game game;
@@ -25,4 +27,6 @@ private:
 	void handleDeckDataUpdateNotification(std::shared_ptr<pan::DeckDataUpdateNotification>);
 	void handlePlayerDataUpdateNotification(std::shared_ptr<pan::PlayerDataUpdateNotification>);
 	void handlePlayerUpdateNotification(std::shared_ptr<pan::PlayerUpdateNotification>);
+
+	QString playerStageToString(pan::PlayerStage s) const;
 };

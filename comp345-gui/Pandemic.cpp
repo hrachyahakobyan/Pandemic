@@ -13,8 +13,11 @@ Pandemic::Pandemic(pan::Game&& g, QWidget *parent)
 	//this->setStyleSheet("background-color:#0d0238;");
 	connect(ui.mapView, SIGNAL(cityItemSelected(pan::CityIndex)), this, SLOT(on_cityItemSelected(pan::CityIndex)));
 	connect(ui.actionSelectView, SIGNAL(actionSelected(pan::ActionType)), this, SLOT(on_actionSelectViewSelected(pan::ActionType)));
+	connect(ui.teamView, SIGNAL(playerSelected(pan::PlayerIndex)), this, SLOT(on_teamViewPlayerSelected(pan::PlayerIndex)));
+	connect(ui.handView, SIGNAL(cardSelected(int)), this, SLOT(on_handViewCardSelected(int)));
 	ui.mapView->update(this->game.getMap());
 	ui.gameDataView->update(this->game.getGameData());
+	ui.teamView->update(game.getPlayerData().players);
 	updateActiveUser();
 
 	pan::detail::Observer<Pandemic, pan::CityUpdateNotification> cityObserver(*this, &Pandemic::handleCityUpdateNotification);
@@ -35,12 +38,25 @@ void Pandemic::on_cityItemSelected(pan::CityIndex index)
 	executeAction();
 }
 
+void Pandemic::on_teamViewPlayerSelected(pan::PlayerIndex index)
+{
+	actionBuilder.selectPlayer(index);
+	executeAction();
+}
+
+void Pandemic::on_handViewCardSelected(int card)
+{
+	actionBuilder.selectCard(card);
+	executeAction();
+}
+
 void Pandemic::updateActiveUser()
 {
 	ui.activeUserAvatar->setPixmap(Resources::avatarForRole(game.getActivePlayer().getRole().role).scaled(ui.activeUserAvatar->width(), ui.activeUserAvatar->height(), Qt::KeepAspectRatio));
 	ui.activeUserActions->setText(QString::fromStdString(std::to_string(game.getPlayerData().actionCounter)));
 	ui.activeUserName->setText(QString::fromStdString(game.getActivePlayer().getName()));
 	ui.handView->update(this->game.getPlayer(0).getCards());
+	ui.stageLabel->setText(playerStageToString(game.getStage()));
 }
 
 void Pandemic::on_actionSelectViewSelected(pan::ActionType type)
@@ -84,4 +100,16 @@ void Pandemic::handlePlayerUpdateNotification(std::shared_ptr<pan::PlayerUpdateN
 	if (n->player.index == game.getActivePlayerIndex()){
 		this->updateActiveUser();
 	}
+}
+
+QString Pandemic::playerStageToString(pan::PlayerStage s) const
+{
+	using pan::PlayerStage;
+	if (s == PlayerStage::Act)
+		return QString("Act");
+	if (s == PlayerStage::Discard)
+		return QString("Discard");
+	if (s == PlayerStage::Draw)
+		return QString("Draw");
+	return QString("Infect");
 }
