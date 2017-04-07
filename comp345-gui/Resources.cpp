@@ -280,8 +280,7 @@ QPixmap Resources::pixmapForCard(const pan::CardBase& c)
 		auto pix = cityCardsMap.find(index);
 		if (pix != cityCardsMap.end())
 			return *pix;
-		std::string fileName = "Resources\\city_card_" + std::to_string(index) + ".png";
-		fileName = "Resources\\CARD.png";
+		std::string fileName = "Resources\\CityCards\\" + std::to_string(index) + ".png";
 		QPixmap pixMap(fileName.c_str());
 		cityCardsMap[index] = pixMap;
 		return pixMap;
@@ -302,8 +301,7 @@ QPixmap Resources::pixmapForCard(const pan::CardBase& c)
 		auto pix = infectionCardsMap.find(index);
 		if (pix != infectionCardsMap.end())
 			return *pix;
-		std::string fileName = "Resources\\infection_card_" + std::to_string(index) + ".png";
-		fileName = "Resources\\CARD.png";
+		std::string fileName = "Resources\\CityCards\\" + std::to_string(index) + ".png";
 		QPixmap pixMap(fileName.c_str());
 		infectionCardsMap[index] = pixMap;
 		return pixMap;

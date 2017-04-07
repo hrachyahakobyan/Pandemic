@@ -29,7 +29,7 @@ void PlayerHandView::update(const pan::detail::Deck<pan::CardBasePtr>& deck)
 	}
 	indexMap.clear();
 	for (std::size_t i = 0; i < std::min(int(deck.size()), cardViews.size()); i++){
-		cardViews[i]->setPixmap(Resources::pixmapForCard(*deck[i]).scaled(cardViews[i]->width(), cardViews[i]->height(), Qt::KeepAspectRatio));
+		cardViews[i]->setPixmap(Resources::pixmapForCard(*deck[i]).scaled(cardViews[i]->width(), cardViews[i]->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 		indexMap[cardViews[i]] = int(i);
 	}
 }

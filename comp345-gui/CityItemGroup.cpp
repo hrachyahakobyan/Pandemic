@@ -5,7 +5,7 @@
 
 
 CityItemGroup::CityItemGroup() :
-stationItem(NULL)
+stationItem(NULL), nameItem(NULL)
 {
 }
 
@@ -24,6 +24,10 @@ void CityItemGroup::clearAll()
 	if (stationItem){
 		delete stationItem;
 		stationItem = NULL;
+	}
+	if (nameItem){
+		delete nameItem;
+		nameItem = NULL;
 	}
 }
 
@@ -77,31 +81,41 @@ void CityItemGroup::update(const pan::City& city)
 		diseaseCircles.push_back(circle(pos, bRect.width() / 4));
 		angle += increment;
 	}
-	angle = 0.0;
-	increment = M_PI * 2 / city.getPlayers().size();
-	for (const auto& player : city.getPlayers()){
-		QPixmap pawnPix = Resources::pawnForRole(player->getRole().role);
-		QGraphicsPixmapItem* item = new QGraphicsPixmapItem(pawnPix);
-		this->addToGroup(item);
-		QPointF p = center;
-		p.setX(p.x() + bRect.width() / 4 * std::cos(angle));
-		p.setY(p.y() + bRect.height() / 4 * std::sin(angle));
-		playerPawns.push_back(item);
-		item->setPos(p);
-		angle += increment;
-	}
 	if (city.researchStation){
 		if (stationItem == NULL){
-			stationItem = new QGraphicsPixmapItem(Resources::stationPawnPixmap().scaled(bRect.width(), bRect.height(), Qt::KeepAspectRatio));
+			stationItem = new QGraphicsPixmapItem(Resources::stationPawnPixmap().scaled(bRect.width(), bRect.height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 		}
 		this->addToGroup(stationItem);
-		stationItem->setPos(center);
+		stationItem->setPos(bRect.topLeft());
 	}
 	else {
 		if (stationItem){
 			this->removeFromGroup(stationItem);
 		}
 	}
+	angle = 0.0;
+	increment = M_PI * 2 / city.getPlayers().size();
+	for (const auto& player : city.getPlayers()){
+		QPixmap pawnPix = Resources::pawnForRole(player->getRole().role).scaled(bRect.width(), bRect.height(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+		QGraphicsPixmapItem* item = new QGraphicsPixmapItem(pawnPix);
+		this->addToGroup(item);
+		QPointF p = center;
+		p.setX(p.x() + bRect.width() / 4 * std::cos(angle));
+		p.setY(p.y() + bRect.height() / 4 * std::sin(angle));
+		playerPawns.push_back(item);
+		item->setPos(QPointF(p.x() - bRect.width() / 2, p.y() - bRect.height() /2));
+		angle += increment;
+	}
+	
+	if (!nameItem){
+		nameItem = new QGraphicsTextItem();
+		this->addToGroup(nameItem);
+		//nameItem->setTextWidth(bRect.width());
+		nameItem->setFont(QFont("Times", 12, QFont::Bold));
+		nameItem->setDefaultTextColor(QColor(255, 255, 255));
+		nameItem->setPos(bRect.bottomLeft());
+	}
+	nameItem->setPlainText(QString::fromStdString(city.getName()));
 	QGraphicsItem::update();
 }
 

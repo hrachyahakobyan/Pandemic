@@ -4,7 +4,6 @@
 #include <QWidget>
 #include <core\detail\Deck.h>
 #include <core\Cards.h>
-#include "CardView.h"
 #include "ui_PlayerHandView.h"
 
 class PlayerHandView : public QWidget

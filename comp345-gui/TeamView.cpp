@@ -25,7 +25,7 @@ void TeamView::update(const std::vector<pan::PlayerPtr>& players)
 	}
 	for (int i = 0; i < players.size(); i++){
 		indexMap[playerWidgets[i].first] = players[i]->index;
-		playerWidgets[i].second->setPixmap(Resources::avatarForRole(players[i]->getRole().role).scaled(100, 100, Qt::KeepAspectRatio));
+		playerWidgets[i].second->setPixmap(Resources::avatarForRole(players[i]->getRole().role).scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	}
 }
 

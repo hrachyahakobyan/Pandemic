@@ -74,15 +74,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_PlayerHandView.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_CardView.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_CardView.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="CardView.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ActionSelectView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -222,9 +213,6 @@
     </CustomBuild>
     <CustomBuild Include="PlayerHandView.ui">
       <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="CardView.h">
-      <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="CardView.ui">
       <Filter>Form Files</Filter>
