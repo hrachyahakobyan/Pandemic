@@ -52,7 +52,7 @@ void Pandemic::on_handViewCardSelected(int card)
 
 void Pandemic::updateActiveUser()
 {
-	ui.activeUserAvatar->setPixmap(Resources::avatarForRole(game.getActivePlayer().getRole().role).scaled(ui.activeUserAvatar->width(), ui.activeUserAvatar->height(), Qt::KeepAspectRatio));
+	ui.activeUserAvatar->setPixmap(Resources::avatarForRole(game.getActivePlayer().getRole().role).scaled(ui.activeUserAvatar->width(), ui.activeUserAvatar->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	ui.activeUserActions->setText(QString::fromStdString(std::to_string(game.getPlayerData().actionCounter)));
 	ui.activeUserName->setText(QString::fromStdString(game.getActivePlayer().getName()));
 	ui.handView->update(this->game.getPlayer(0).getCards());

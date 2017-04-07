@@ -16,5 +16,5 @@ CardView::~CardView()
 void CardView::update(const pan::CardBase& card)
 {
 	this->card.reset(card.clone());
-	ui.cardImage->setPixmap(Resources::pixmapForCard(card).scaled(100,150, Qt::KeepAspectRatio));
+	ui.cardImage->setPixmap(Resources::pixmapForCard(card).scaled(ui.cardImage->width(), ui.cardImage->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
