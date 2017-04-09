@@ -13,4 +13,9 @@ namespace pan{
 	player(player)
 	{
 	}
+
+	std::string PlayerInfect::description() const
+	{
+		return ActionBase::description() + "\nPlayer: " + std::to_string(player);
+	}
 }

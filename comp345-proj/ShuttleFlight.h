@@ -12,5 +12,7 @@ namespace pan{
 		ShuttleFlight(PlayerIndex player, CityIndex city);
 		PlayerIndex player;
 		CityIndex targetCity;
+
+		std::string description() const;
 	};
 }

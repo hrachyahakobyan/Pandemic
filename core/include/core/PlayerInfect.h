@@ -13,5 +13,7 @@ namespace pan{
 		PlayerInfect();
 		PlayerInfect(PlayerIndex player);
 		PlayerIndex player;
+
+		std::string description() const;
 	};
 }

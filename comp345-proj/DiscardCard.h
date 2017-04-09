@@ -13,5 +13,6 @@ namespace pan{
 		DiscardCard(PlayerIndex player, unsigned int index);
 		PlayerIndex player;
 		unsigned int index;
+		std::string description() const;
 	};
 }

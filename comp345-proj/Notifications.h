@@ -5,6 +5,7 @@
 #include "Disease.h"
 #include "Data.h"
 #include "common.h"
+#include "ActionBase.h"
 
 namespace pan{
 	class CityUpdateNotification : public detail::Notification{

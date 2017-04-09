@@ -12,5 +12,7 @@ namespace pan{
 		CharterFlight(PlayerIndex player, CityIndex city);
 		PlayerIndex player;
 		CityIndex targetCity;
+
+		std::string description() const;
 	};
 }

@@ -13,5 +13,7 @@ namespace pan{
 		PlayerIndex player;
 		PlayerIndex target;
 		int cardIndex;
+
+		std::string description() const;
 	};
 }

@@ -8,6 +8,22 @@ namespace pan{
 		Infect, Outbreak, Epidemic
 	};
 
+	static const std::map<ActionType, std::string> ActionTypeDescriptions{
+		{ ActionType::BuildStation, "Build Research Station" },
+		{ ActionType::CharterFlight, "Charter Flight" },
+		{ ActionType::DirectFlight, "Direct Flight" },
+		{ ActionType::Discard, "Discard cards" },
+		{ ActionType::DiscoverCure, "Discover cure" },
+		{ ActionType::Draw, "Draw cards" },
+		{ ActionType::Epidemic, "Epidemic" },
+		{ ActionType::Infect, "Infect" },
+		{ ActionType::Move, "Drive/Ferry" },
+		{ ActionType::Outbreak, "Outbreak" },
+		{ActionType::ShareKnowledge, "Share Knowledge"},
+		{ActionType::ShuttleFlight, "Shuttle Flight"},
+		{ ActionType::TreatDisease, "Treat disease" }
+	};
+
 	bool isRegular(ActionType type);
 	/**
 	*	@brief Top level abstraction of the Action entity.
@@ -24,6 +40,7 @@ namespace pan{
 		virtual ActionBase* clone() const = 0;
 		ActionType getActionType() const { return type; }
 		bool isRegularAction() const;
+		virtual std::string description() const;
 	protected:
 		ActionType type;
 	};

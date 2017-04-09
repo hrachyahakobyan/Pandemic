@@ -10,5 +10,10 @@ namespace pan{
 	ActionImpl(ActionType::ShareKnowledge),
 	player(player), target(target), cardIndex(cardIndex){
 	}
+
+	std::string ShareKnowledge::description() const
+	{
+		return ActionBase::description() + "\nPlayer: " + std::to_string(player) + "\nTarget: " + std::to_string(target) + "\nCard index: " + std::to_string(cardIndex);
+	}
 }
 

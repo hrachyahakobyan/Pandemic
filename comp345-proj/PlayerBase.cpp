@@ -100,7 +100,7 @@ namespace pan{
 
 	std::string PlayerBase::description() const
 	{
-		std::string result = "Player: " + name + "\nRole: " + getRole().description() +
+		std::string result = "Player: " + name + "\nIndex: " + std::to_string(index) + "\nRole: " + getRole().description() +
 			"\nLocation: " + std::to_string(this->location) + "\nCards:\n";
 		for (const auto& c : cards._Get_container()){
 			result += c->description() + '\n';

@@ -45,6 +45,10 @@ namespace pan{
 		*/
 		std::vector<std::string> allFiles(const std::string& path) const;
 
+		boost::filesystem::path outputPath() const;
+		bool createInputStream(const boost::filesystem::path& file, std::ifstream& stream) const;
+		bool createOutputStream(const boost::filesystem::path& file, std::ofstream& stream, bool overwrite = false) const;
+		bool createDirectory(const boost::filesystem::path& dir) const;
 	private:
 #ifdef _DEBUG
 #ifndef DISABLE_TESTS
@@ -55,7 +59,6 @@ namespace pan{
 		FileManager(const FileManager&) = delete;
 		FileManager& operator=(const FileManager&) = delete;
 		void initialize() const;
-		boost::filesystem::path outputPath() const;
 		std::string outputFolder;
 
 		template<typename T>
@@ -63,10 +66,6 @@ namespace pan{
 
 		template<typename T>
 		bool read(std::ifstream& file, T& t) const;
-
-		bool createInputStream(const boost::filesystem::path& file, std::ifstream& stream) const;
-		bool createOutputStream(const boost::filesystem::path& file, std::ofstream& stream, bool overwrite = false) const;
-		bool createDirectory(const boost::filesystem::path& dir) const;
 		bool removeFile(const boost::filesystem::path& file) const;
 		bool fileExists(const boost::filesystem::path& file) const;
 		bool directoryExists(const boost::filesystem::path& dir) const;

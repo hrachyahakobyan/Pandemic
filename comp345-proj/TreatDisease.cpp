@@ -12,4 +12,9 @@ namespace pan{
 	player(player), diseaseType(dType)
 	{
 	}
+
+	std::string TreatDisease::description() const
+	{
+		return ActionBase::description() + "\nPlayer: " + std::to_string(player) + "\nDisease type: " + std::to_string(diseaseType);
+	}
 }

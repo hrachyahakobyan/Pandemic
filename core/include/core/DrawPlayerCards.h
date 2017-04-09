@@ -12,5 +12,7 @@ namespace pan{
 		DrawPlayerCards();
 		DrawPlayerCards(PlayerIndex player);
 		PlayerIndex player;
+
+		std::string description() const;
 	};
 }

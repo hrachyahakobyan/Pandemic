@@ -21,6 +21,7 @@ private:
 	ActionBuilder actionBuilder;
 	void updateActiveUser();
 	void executeAction();
+	std::shared_ptr<pan::LoggerBase> logger;
 
 	void handleCityUpdateNotification(std::shared_ptr<pan::CityUpdateNotification>);
 	void handleGameDataUpdateNotification(std::shared_ptr<pan::GameDataUpdateNotification>);

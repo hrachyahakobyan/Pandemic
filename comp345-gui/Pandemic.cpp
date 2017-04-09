@@ -9,6 +9,7 @@
 Pandemic::Pandemic(pan::Game&& g, QWidget *parent)
 	: QMainWindow(parent), game(std::move(g))
 {
+	using namespace pan;
 	ui.setupUi(this);
 	//this->setStyleSheet("background-color:#0d0238;");
 	connect(ui.mapView, SIGNAL(cityItemSelected(pan::CityIndex)), this, SLOT(on_cityItemSelected(pan::CityIndex)));
@@ -30,6 +31,8 @@ Pandemic::Pandemic(pan::Game&& g, QWidget *parent)
 	pan::detail::NotificationCenter::defaultCenter().addObserver(gameObserver);
 	pan::detail::NotificationCenter::defaultCenter().addObserver(playersObserver);
 	pan::detail::NotificationCenter::defaultCenter().addObserver(playerObserver);
+
+	logger.reset(new GlobalLogger("log.txt"));
 }
 
 void Pandemic::on_cityItemSelected(pan::CityIndex index)

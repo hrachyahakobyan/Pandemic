@@ -11,5 +11,7 @@ namespace pan{
 		BuildResearchStation();
 		BuildResearchStation(PlayerIndex player);
 		PlayerIndex player;
+
+		std::string description() const;
 	};
 }

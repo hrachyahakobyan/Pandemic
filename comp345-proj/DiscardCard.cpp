@@ -13,4 +13,9 @@ namespace pan{
 	player(player), index(index)
 	{
 	}
+
+	std::string DiscardCard::description() const
+	{
+		return ActionBase::description() + "\nPlayer: " + std::to_string(player) + "\nCard index: " + std::to_string(index);
+	}
 }

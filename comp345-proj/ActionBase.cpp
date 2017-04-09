@@ -19,4 +19,9 @@ namespace pan{
 	{
 		return isRegular(type);
 	}
+
+	std::string ActionBase::description() const
+	{
+		return ActionTypeDescriptions.at(type);
+	}
 }

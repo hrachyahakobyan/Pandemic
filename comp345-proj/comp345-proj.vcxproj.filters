@@ -43,6 +43,12 @@
     <Filter Include="Source Files\actions">
       <UniqueIdentifier>{69b571e8-ec9d-4e22-84b9-6fd8f2916188}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Log">
+      <UniqueIdentifier>{f14baf11-2b97-4f7b-af0a-dd3eb73ba131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Log">
+      <UniqueIdentifier>{a8f113cb-5d63-424f-ba32-cf2cce800da4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -192,6 +198,18 @@
     <ClInclude Include="Notifications.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LoggerBase.h">
+      <Filter>Header Files\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerLogger.h">
+      <Filter>Header Files\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionLogger.h">
+      <Filter>Header Files\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalLogger.h">
+      <Filter>Header Files\Log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -310,6 +328,18 @@
     </ClCompile>
     <ClCompile Include="ShareKnowledge.cpp">
       <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerLogger.cpp">
+      <Filter>Source Files\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="LoggerBase.cpp">
+      <Filter>Source Files\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionLogger.cpp">
+      <Filter>Source Files\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalLogger.cpp">
+      <Filter>Source Files\Log</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

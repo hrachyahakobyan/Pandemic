@@ -90,6 +90,7 @@
   <ItemGroup>
     <ClInclude Include="ActionBase.h" />
     <ClInclude Include="ActionHandler.h" />
+    <ClInclude Include="ActionLogger.h" />
     <ClInclude Include="Actions.h" />
     <ClInclude Include="BuildResearchStation.h" />
     <ClInclude Include="Card.h" />
@@ -118,8 +119,10 @@
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameStateMachine.h" />
+    <ClInclude Include="GlobalLogger.h" />
     <ClInclude Include="Infect.h" />
     <ClInclude Include="InfectionCard.h" />
+    <ClInclude Include="LoggerBase.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Notifications.h" />
@@ -127,6 +130,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerBase.h" />
     <ClInclude Include="PlayerInfect.h" />
+    <ClInclude Include="PlayerLogger.h" />
     <ClInclude Include="ReferenceCard.h" />
     <ClInclude Include="Region.h" />
     <ClInclude Include="Role.h" />
@@ -140,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="ActionBase.cpp" />
     <ClCompile Include="ActionHandler.cpp" />
+    <ClCompile Include="ActionLogger.cpp" />
     <ClCompile Include="BuildResearchStation.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CharterFlight.cpp" />
@@ -161,14 +166,17 @@
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameStateMachine.cpp" />
+    <ClCompile Include="GlobalLogger.cpp" />
     <ClCompile Include="Infect.cpp" />
     <ClCompile Include="InfectionCard.cpp" />
+    <ClCompile Include="LoggerBase.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="Outbreak.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBase.cpp" />
     <ClCompile Include="PlayerInfect.cpp" />
+    <ClCompile Include="PlayerLogger.cpp" />
     <ClCompile Include="ReferenceCard.cpp" />
     <ClCompile Include="Region.cpp" />
     <ClCompile Include="Role.cpp" />

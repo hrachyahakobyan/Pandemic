@@ -35,3 +35,6 @@
 #include "Actions.h"
 #include "Player.h"
 #include "Notifications.h"
+#include "ActionLogger.h"
+#include "GlobalLogger.h"
+#include "PlayerLogger.h"

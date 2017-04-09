@@ -12,4 +12,9 @@ namespace pan{
 	player(player)
 	{
 	}
+
+	std::string DrawPlayerCards::description() const
+	{
+		return ActionBase::description() + "\nPlayer: " + std::to_string(player);
+	}
 }

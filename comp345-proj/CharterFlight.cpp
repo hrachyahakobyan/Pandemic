@@ -13,4 +13,9 @@ namespace pan{
 	targetCity(city)
 	{
 	}
+
+	std::string CharterFlight::description() const
+	{
+		return ActionBase::description() + "\nPlayer: " + std::to_string(player) + "\nTarget city: " + std::to_string(targetCity);
+	}
 }
