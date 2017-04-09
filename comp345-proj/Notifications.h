@@ -37,4 +37,10 @@ namespace pan{
 		PlayerDataUpdateNotification(const PlayerData& d) : data(d){}
 		const PlayerData& data;
 	};
+
+	class ActionNotification : public detail::Notification{
+	public:
+		ActionNotification(const ActionBase& a) : action(a.clone()){}
+		std::shared_ptr<ActionBase> action;
+	};
 }

@@ -101,8 +101,10 @@ namespace pan{
 		auto action = actionData.actionQueue.front();
 		actionData.actionQueue.pop();
 		// If the action was valid, add it to the completed actions
-		if (action->execute(actionHandler))
+		if (action->execute(actionHandler)){
 			actionData.completedActions.push(action);
+			detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new ActionNotification(*action)));
+		}
 	}
 
 	void Game::executeAll()
