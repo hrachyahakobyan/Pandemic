@@ -730,7 +730,7 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<name>HoChiMinhCity</name>
+					<name>Ho Chi Minh City</name>
 					<population>8426000</population>
 					<researchStation>0</researchStation>
 					<players>
@@ -749,7 +749,7 @@
 			</vertex_property>
 			<vertex_property>
 				<property_value>
-					<name>HongKong</name>
+					<name>Hong Kong</name>
 					<population>7188000</population>
 					<researchStation>0</researchStation>
 					<players>
