@@ -1,6 +1,0 @@
-<map id="pan::detail::Graph::vertexExists" name="pan::detail::Graph::vertexExists">
-<area shape="rect" id="node2" href="$classpan_1_1_map.html#a77ed23ea9d62aac2c4a82065eabb9506" title="pan::Map::removeCity" alt="" coords="179,5,327,32"/>
-<area shape="rect" id="node3" href="$classpan_1_1_map.html#a331d27d9fe199aea61b6ed76b4950d55" title="pan::Map::cityExists" alt="" coords="181,56,324,83"/>
-<area shape="rect" id="node4" href="$classpan_1_1_action_handler.html#a3e2fc1b454ace0dd42b3b4bacc22eb0d" title="pan::ActionHandler\l::validate" alt="" coords="375,19,507,61"/>
-<area shape="rect" id="node5" href="$classpan_1_1_map.html#a0afa3368bc2f5fbd85b4b2c3205f0996" title="pan::Map::serialize" alt="" coords="375,85,507,112"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="pan::Player&lt; R &gt;" name="pan::Player&lt; R &gt;">
-<area shape="rect" id="node2" href="$classpan_1_1_player_base.html" title="Base class for player objects. " alt="" coords="167,829,285,1112"/>
-<area shape="rect" id="node3" href="$classpan_1_1_object.html" title="Abstract parent class to all entities directly connected with the game state that have to be serializ..." alt="" coords="5,5,111,127"/>
-<area shape="rect" id="node4" href="$classpan_1_1_role_base.html" title="A class to represent the Role entity in the game. The RoleBase is a the same as the Role card in the ..." alt="" coords="65,403,171,539"/>
-<area shape="rect" id="node5" href="$classpan_1_1_reference_card.html" title="Class representing the ReferenceCard. Note it is not derived from the base Card class since it does n..." alt="" coords="195,425,331,517"/>
-<area shape="rect" id="node6" href="$classpan_1_1detail_1_1_deck.html" title="{pan::detail::Deck\&lt;\l std::shared_ptr\&lt; pan\l::CardBase \&gt; \&gt;\n|&#45; deck\l|+ Deck()\l+ Deck()\l+ Deck()\l+ Deck()\l+ Deck()\l+ operator=()\l+ operator=()\l+ ~Deck()\l+ serialize()\l+ operator==()\l+ operator!=()\l+ operator[]()\l+ operator[]()\l+ begin()\l+ begin()\l+ end()\l+ end()\l+ operator+=()\l+ operator+=()\l+ size()\l+ empty()\l+ clear()\l+ _Get_container()\l+ top()\l+ pop()\l+ bottom()\l+ pop_bottom()\l+ erase()\l+ push()\l+ push()\l+ push()\l+ deal()\l+ shuffle()\l+ insert()\l}" alt="" coords="355,176,502,767"/>
-</map>

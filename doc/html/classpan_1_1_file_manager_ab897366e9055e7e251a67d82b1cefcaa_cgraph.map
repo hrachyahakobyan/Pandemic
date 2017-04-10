@@ -1,9 +1,0 @@
-<map id="pan::FileManager::save" name="pan::FileManager::save">
-<area shape="rect" id="node2" href="$classpan_1_1_file_manager.html#a60d96d40ae8dd600397a819c269906b2" title="pan::FileManager::outputPath" alt="" coords="209,5,403,32"/>
-<area shape="rect" id="node3" href="$classpan_1_1_file_manager.html#a9e99ba269178d9891e9e7400e5ceed5c" title="pan::FileManager::directory\lExists" alt="" coords="451,78,631,119"/>
-<area shape="rect" id="node4" href="$classpan_1_1_file_manager.html#ac532c61bac0eaa1ea533cc67c41330fe" title="pan::FileManager::create\lDirectory" alt="" coords="223,107,389,149"/>
-<area shape="rect" id="node5" href="$classpan_1_1_file_manager.html#a8161cc9a9bdda20c76f5d0113c101792" title="pan::FileManager::fileExists" alt="" coords="215,173,397,200"/>
-<area shape="rect" id="node6" href="$classpan_1_1_file_manager.html#a56843183cfbaa19d6d8217afc284c45b" title="pan::FileManager::create\lOutputStream" alt="" coords="223,225,389,266"/>
-<area shape="rect" id="node7" href="$classpan_1_1_file_manager.html#a2f5d0b6203dcd54bd3dcfaf9fc10988f" title="pan::FileManager::write" alt="" coords="227,291,385,317"/>
-<area shape="rect" id="node8" href="$misc_8h.html#a589f5ec7cd58630eb03918e5065270dc" title="registerTypes" alt="" coords="491,291,591,317"/>
-</map>

@@ -72,6 +72,7 @@ namespace pan{
 				// Get top card
 				auto cardPtr = stateMachine.drawInfectionDeckTop();
 				// The disease type
+				int size = stateMachine.getMap().numCities();
 				DiseaseType type = stateMachine.getMap()[cardPtr->cityIndex].getRegion();
 				// Infect
 				Infect infect(cardPtr->cityIndex, type, cubes);

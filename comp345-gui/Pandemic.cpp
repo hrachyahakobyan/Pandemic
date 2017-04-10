@@ -34,7 +34,9 @@ Pandemic::Pandemic(pan::Game&& g, QWidget *parent)
 	pan::detail::NotificationCenter::defaultCenter().addObserver(playersObserver);
 	pan::detail::NotificationCenter::defaultCenter().addObserver(playerObserver);
 
-	logger.reset(new GlobalLogger("log.txt"));
+	std::unique_ptr<LoggerBase> actionLogger(new ActionLogger(std::set<ActionType>{ActionType::Move}));
+	logger.reset(new PlayerLogger(0, "log.txt", std::move(actionLogger)));
+	//logger.reset(new GlobalLogger("log.txt"));
 }
 
 void Pandemic::on_cityItemSelected(pan::CityIndex index)
@@ -99,6 +101,7 @@ void Pandemic::handleCityUpdateNotification(std::shared_ptr<pan::CityUpdateNotif
 void Pandemic::handleGameDataUpdateNotification(std::shared_ptr<pan::GameDataUpdateNotification> n)
 {
 	ui.gameDataView->update(n->data);
+	ui.diseaseDetailsView->update(n->data.diseases);
 }
 
 void Pandemic::handleDeckDataUpdateNotification(std::shared_ptr<pan::DeckDataUpdateNotification> data)

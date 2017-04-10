@@ -101,7 +101,6 @@ namespace pan{
 		// Construct the disease cubes
 		for (std::size_t i = 0; i < gameData.diseases.size(); i++){
 			gameData.diseaseCubes.push_back(gameData.settings.diseaseCubesPerDisease);
-			gameData.removedDiseasesCubes.push_back(0);
 		}
 	}
 
@@ -264,8 +263,15 @@ namespace pan{
 	{
 		gameData.diseases[type].setIsCured(true);
 		// Check if the disease is eradicated
-		if (gameData.removedDiseasesCubes[type] == gameData.settings.diseaseCubesPerDisease)
+		if (gameData.diseaseCubes[type] == gameData.settings.diseaseCubesPerDisease)
 			gameData.diseases[type].setIsEradicated(true);
+		bool allCured = false;
+		for (const auto& d : gameData.diseases){
+			allCured = allCured && d.getIsCured();
+		}
+		if (allCured){
+			setGameState(GameState::Victory);
+		}
 		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new GameDataUpdateNotification(gameData)));
 	}
 
@@ -277,10 +283,10 @@ namespace pan{
 		// Take cubes from the city
 		city.setCubes(type, cityCubes - willRemove);
 		// Add the cubes to the removed cubes 
-		gameData.removedDiseasesCubes[type] += willRemove;
+		gameData.diseaseCubes[type] += willRemove;
 		bool isCured = gameData.diseases[type].getIsCured();
 		// Check if the disease was eradicated
-		if (isCured && gameData.removedDiseasesCubes[type] ==
+		if (isCured && gameData.diseaseCubes[type] ==
 			gameData.settings.diseaseCubesPerDisease){
 			gameData.diseases[type].setIsEradicated(true);
 		}

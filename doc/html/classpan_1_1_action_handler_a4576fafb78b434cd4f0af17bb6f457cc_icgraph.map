@@ -1,7 +1,0 @@
-<map id="pan::ActionHandler::isPlayersTurn" name="pan::ActionHandler::isPlayersTurn">
-<area shape="rect" id="node2" href="$classpan_1_1_action_handler.html#a6e4ee30f39708e81fa435d13d3b27919" title="validates DrawplayerCards action the action is valid if the following hold " alt="" coords="185,5,317,47"/>
-<area shape="rect" id="node3" href="$classpan_1_1_action_handler.html#a5e5f0f3652084d544c2c2dd601522051" title="Tells whether the given player can act, i.e. perform one of 4 actions. A player can perform an action..." alt="" coords="185,71,317,112"/>
-<area shape="rect" id="node5" href="$classpan_1_1_action_handler.html#ac44f90fd4129b3791aaf343fb074002f" title="commits a player action. If its the turn of the player in question, the current stage is Act the acti..." alt="" coords="185,136,317,177"/>
-<area shape="rect" id="node4" href="$classpan_1_1_action_handler.html#a3e2fc1b454ace0dd42b3b4bacc22eb0d" title="pan::ActionHandler\l::validate" alt="" coords="365,71,497,112"/>
-<area shape="rect" id="node6" href="$classpan_1_1_action_handler.html#a97f0f5801dedcbc42396f185686083bb" title="pan::ActionHandler\l::execute" alt="" coords="365,136,497,177"/>
-</map>

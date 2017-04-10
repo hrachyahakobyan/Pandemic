@@ -1,8 +1,0 @@
-<map id="pan::player" name="pan::player">
-<area shape="rect" id="node2" href="$classpan_1_1_action_handler.html#a3e2fc1b454ace0dd42b3b4bacc22eb0d" title="pan::ActionHandler\l::validate" alt="" coords="174,5,306,47"/>
-<area shape="rect" id="node3" href="$classpan_1_1_action_handler.html#a97f0f5801dedcbc42396f185686083bb" title="pan::ActionHandler\l::execute" alt="" coords="174,71,306,112"/>
-<area shape="rect" id="node4" href="$classpan_1_1_game.html#a4295ba95e119f42a135b68ac62ca8c79" title="pan::Game::initCards" alt="" coords="167,137,313,163"/>
-<area shape="rect" id="node6" href="$classpan_1_1_game.html#adce8b415591cac36cf8f39602f0736c4" title="pan::Game::addRandomPlayer" alt="" coords="140,187,340,214"/>
-<area shape="rect" id="node7" href="$classpan_1_1_game.html#a0a475cd974dc0de461f7fabc80ab9dce" title="pan::Game::addPlayer" alt="" coords="164,238,316,265"/>
-<area shape="rect" id="node5" href="$classpan_1_1_game.html#a164829a91c20f0f1f7b2d32e76e370f2" title="pan::Game::initialize" alt="" coords="388,137,529,163"/>
-</map>

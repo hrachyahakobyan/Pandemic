@@ -1,8 +1,0 @@
-<map id="pan::CardBase" name="pan::CardBase">
-<area shape="rect" id="node3" href="$classpan_1_1_card_impl.html" title="{pan::CardImpl\&lt; T \&gt;\n||}" alt="" coords="5,432,139,509"/>
-<area shape="rect" id="node4" href="$classpan_1_1_card_impl_3_01_card_type_1_1_city_01_4.html" title="Represents the City card entity. " alt="" coords="163,388,333,553"/>
-<area shape="rect" id="node5" href="$classpan_1_1_card_impl_3_01_card_type_1_1_epidemic_01_4.html" title="Represents the Epidemic card entity. " alt="" coords="357,395,526,546"/>
-<area shape="rect" id="node6" href="$classpan_1_1_card_impl_3_01_card_type_1_1_event_01_4.html" title="Represents the Event Card entity. " alt="" coords="550,388,719,553"/>
-<area shape="rect" id="node7" href="$classpan_1_1_card_impl_3_01_card_type_1_1_infection_01_4.html" title="Represents the Infection card entity. " alt="" coords="743,388,913,553"/>
-<area shape="rect" id="node2" href="$classpan_1_1_object.html" title="Abstract parent class to all entities directly connected with the game state that have to be serializ..." alt="" coords="389,5,494,127"/>
-</map>

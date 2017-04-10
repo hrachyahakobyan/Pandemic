@@ -35,9 +35,11 @@ void DiseaseDetailsView::update(const std::vector<pan::Disease>& diseases)
 		auto label = std::get<1>(labels[index]);
 		auto vial = std::get<2>(labels[index]);
 		label->setPixmap(Resources::diseaseIcon(type).scaled(label->width(), label->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
-		vial->setPixmap(d.getIsEradicated() ? Resources::diseaseVialEradicated(type).scaled(vial->width(),
-			vial->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation)
-			: Resources::diseaseVialCured(type).scaled(vial->width(), vial->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+		if (d.getIsCured()){
+			vial->setPixmap(d.getIsEradicated() ? Resources::diseaseVialEradicated(type).scaled(vial->width(),
+				vial->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation)
+				: Resources::diseaseVialCured(type).scaled(vial->width(), vial->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+		}
 		index++;
 	}
 }

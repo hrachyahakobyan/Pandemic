@@ -29,8 +29,7 @@ namespace pan{
 		outbreakMarker(o.outbreakMarker),
 		researchStations(o.researchStations),
 		diseases(o.diseases),
-		diseaseCubes(o.diseaseCubes),
-		removedDiseasesCubes(o.removedDiseasesCubes)
+		diseaseCubes(o.diseaseCubes)
 	{
 	}
 
@@ -48,7 +47,6 @@ namespace pan{
 		this->researchStations = o.researchStations;
 		this->diseases = o.diseases;
 		this->diseaseCubes = o.diseaseCubes;
-		this->removedDiseasesCubes = o.removedDiseasesCubes;
 		return *this;
 	}
 
@@ -60,8 +58,7 @@ namespace pan{
 		outbreakMarker(o.outbreakMarker),
 		researchStations(o.researchStations),
 		diseases(std::move(o.diseases)),
-		diseaseCubes(std::move(o.diseaseCubes)),
-		removedDiseasesCubes(std::move(o.removedDiseasesCubes))
+		diseaseCubes(std::move(o.diseaseCubes))
 	{
 	}
 
@@ -75,7 +72,6 @@ namespace pan{
 		this->researchStations = o.researchStations;
 		this->diseases = std::move(o.diseases);
 		this->diseaseCubes = std::move(o.diseaseCubes);
-		this->removedDiseasesCubes = std::move(o.removedDiseasesCubes);
 		return *this;
 	}
 
@@ -88,8 +84,7 @@ namespace pan{
 			&& outbreakMarker == o.outbreakMarker
 			&& researchStations == o.researchStations
 			&& diseases.size() == o.diseases.size()
-			&& diseaseCubes == o.diseaseCubes
-			&& removedDiseasesCubes == o.removedDiseasesCubes);
+			&& diseaseCubes == o.diseaseCubes);
 		if (!equal) return false;
 		for (std::size_t i = 0; i < diseases.size(); i++){
 			if (diseases[i] != o.diseases[i])
@@ -119,10 +114,6 @@ namespace pan{
 		for (std::size_t i = 0; i < diseaseCubes.size(); i++){
 			res += "DiseaseType: " + std::to_string(i) + " cubes: " + std::to_string(diseaseCubes[i]) + '\n';
 		}
-		res += "RemovedCubes:\n";
-			for (std::size_t i = 0; i < removedDiseasesCubes.size(); i++){
-				res += "DiseaseType: " + std::to_string(i) + " cubes: " + std::to_string(removedDiseasesCubes[i]) + '\n';
-			}
 		return res;
 	}
 

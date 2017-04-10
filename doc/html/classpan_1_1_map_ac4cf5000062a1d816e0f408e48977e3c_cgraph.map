@@ -1,7 +1,0 @@
-<map id="pan::Map::addCity" name="pan::Map::addCity">
-<area shape="rect" id="node2" href="$classpan_1_1detail_1_1_graph.html#a3848d9e9acbfeff14634de5cc0395614" title="pan::detail::Graph\l::addVertex" alt="" coords="210,5,335,47"/>
-<area shape="rect" id="node3" href="$classpan_1_1_map.html#a35927b7ea4f92726a97ec52f0896348e" title="pan::Map::addRegion" alt="" coords="200,71,345,98"/>
-<area shape="rect" id="node4" href="$classpan_1_1_map.html#ab87f2eb064c76f265c30738a59ddbd7b" title="pan::Map::addCityToRegion" alt="" coords="181,122,364,149"/>
-<area shape="rect" id="node5" href="$classpan_1_1_map.html#aa39642daa76646a3229fd5f92572b242" title="pan::Map::numCities" alt="" coords="412,122,555,149"/>
-<area shape="rect" id="node6" href="$classpan_1_1detail_1_1_graph.html#acf43df485b16aa0eb0f22f1ce30dffaf" title="pan::detail::Graph\l::numVertices" alt="" coords="603,115,728,156"/>
-</map>

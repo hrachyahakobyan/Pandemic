@@ -84,7 +84,7 @@ namespace pan{
 
 	detail::Deck<std::shared_ptr<CityCard>> PlayerBase::removeCardsMatchingRegion(RegionIndex region, std::size_t count){
 		detail::Deck<std::shared_ptr<CityCard>> removedCards;
-		for (auto iter = cards.begin(); iter != cards.end();) {
+		for (auto iter = cards.begin(); iter != cards.end(); ++iter) {
 			if (removedCards.size() == count)
 				return removedCards;
 			if ((*iter)->type == CardType::City){
@@ -92,6 +92,8 @@ namespace pan{
 				if (cityCard->regionIndex == region){
 					removedCards.push(cityCard);
 					iter = cards.erase(iter);
+					if (iter == cards.end())
+						break;
 				}
 			}
 		}

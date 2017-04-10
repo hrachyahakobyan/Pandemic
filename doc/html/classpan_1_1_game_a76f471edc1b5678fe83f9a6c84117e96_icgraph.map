@@ -1,7 +1,0 @@
-<map id="pan::Game::changeState" name="pan::Game::changeState">
-<area shape="rect" id="node2" href="$classpan_1_1_action_handler.html#adcbd9a954dcbaa6b968facd6395797a6" title="pan::ActionHandler\l::execute" alt="" coords="220,5,352,47"/>
-<area shape="rect" id="node3" href="$classpan_1_1_action_handler.html#a4bdc7875e69d983aca2e10cbc2a83b08" title="pan::ActionHandler\l::infectImpl" alt="" coords="220,123,352,164"/>
-<area shape="rect" id="node4" href="$classpan_1_1_action_handler.html#ab5dff5eb62d07940c6643226b18ceeb0" title="pan::ActionHandler\l::outBreakImpl" alt="" coords="400,93,532,135"/>
-<area shape="rect" id="node6" href="$classpan_1_1_action_handler.html#ade755aaadb764489a68634811314bee2" title="pan::ActionHandler\l::execute" alt="" coords="400,159,532,200"/>
-<area shape="rect" id="node5" href="$classpan_1_1_action_handler.html#ad2119c276b50e56a42553671fc6e1e70" title="pan::ActionHandler\l::execute" alt="" coords="580,93,712,135"/>
-</map>

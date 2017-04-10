@@ -1,6 +1,0 @@
-var searchData=
-[
-  ['load',['load',['../classpan_1_1_file_manager.html#ac0112a350779701a11110042bd053458',1,'pan::FileManager::load()'],['../classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c',1,'pan::Game::load()']]],
-  ['load_5fconstruct_5fdata',['load_construct_data',['../namespaceboost_1_1serialization.html#ae9c831b8f31fae23f351ac8fb5ce6bae',1,'boost::serialization::load_construct_data(Archive &amp;ar, pan::CardImpl&lt; pan::CardType::City &gt; *p, const unsigned int file_version)'],['../namespaceboost_1_1serialization.html#a9d377eba228f523e12084976fe9a094a',1,'boost::serialization::load_construct_data(Archive &amp;ar, pan::CardImpl&lt; pan::CardType::Event &gt; *p, const unsigned int file_version)'],['../namespaceboost_1_1serialization.html#a89dc559f1a8d84e022a738288cdfea24',1,'boost::serialization::load_construct_data(Archive &amp;ar, pan::CardImpl&lt; pan::CardType::Infection &gt; *p, const unsigned int file_version)'],['../namespaceboost_1_1serialization.html#a3847d195920e64d3cc539225f4fe261b',1,'boost::serialization::load_construct_data(Archive &amp;ar, pan::PlayerBase *p, const unsigned int file_version)']]],
-  ['location',['location',['../classpan_1_1_player_base.html#ad5b88869afb5740cf34f226fe36c5f27',1,'pan::PlayerBase']]]
-];

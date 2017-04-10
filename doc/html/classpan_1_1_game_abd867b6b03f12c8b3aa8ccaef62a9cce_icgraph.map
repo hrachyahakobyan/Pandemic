@@ -1,5 +1,0 @@
-<map id="pan::Game::playerCount" name="pan::Game::playerCount">
-<area shape="rect" id="node2" href="$classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="250,5,382,47"/>
-<area shape="rect" id="node3" href="$classpan_1_1_game.html#adce8b415591cac36cf8f39602f0736c4" title="pan::Game::addRandomPlayer" alt="" coords="216,71,416,98"/>
-<area shape="rect" id="node4" href="$classpan_1_1_game.html#a0a475cd974dc0de461f7fabc80ab9dce" title="pan::Game::addPlayer" alt="" coords="240,122,392,149"/>
-</map>

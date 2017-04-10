@@ -1,5 +1,0 @@
-<map id="pan::Game::initCards" name="pan::Game::initCards">
-<area shape="rect" id="node2" href="$classpan_1_1_map.html#aa39642daa76646a3229fd5f92572b242" title="pan::Map::numCities" alt="" coords="199,13,341,39"/>
-<area shape="rect" id="node4" href="$namespacepan.html#a9cba06f35904752ede423c15355cf307" title="pan::player" alt="" coords="227,63,313,90"/>
-<area shape="rect" id="node3" href="$classpan_1_1detail_1_1_graph.html#acf43df485b16aa0eb0f22f1ce30dffaf" title="pan::detail::Graph\l::numVertices" alt="" coords="389,5,515,47"/>
-</map>

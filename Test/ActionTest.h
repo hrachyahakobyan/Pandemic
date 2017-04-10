@@ -15,7 +15,6 @@ namespace pan{
 			// Construct the disease cubes
 			for (std::size_t i = 0; i < game.stateMachine.getGameData().diseases.size(); i++){
 				game.stateMachine.gameData.diseaseCubes.push_back(game.stateMachine.getGameData().settings.diseaseCubesPerDisease);
-				game.stateMachine.gameData.removedDiseasesCubes.push_back(0);
 			}
 		}
 

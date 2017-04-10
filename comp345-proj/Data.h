@@ -58,10 +58,6 @@ namespace pan{
 		*	The available disease cubes
 		*/
 		std::vector<RegionIndex> diseaseCubes;
-		/**
-		*	The disease cubes that have been removed from the game
-		*/
-		std::vector<RegionIndex> removedDiseasesCubes;
 	};
 
 	/**
@@ -154,7 +150,6 @@ namespace boost {
 			ar & BOOST_SERIALIZATION_NVP(g.researchStations);
 			ar & BOOST_SERIALIZATION_NVP(g.diseases);
 			ar & BOOST_SERIALIZATION_NVP(g.diseaseCubes);
-			ar & BOOST_SERIALIZATION_NVP(g.removedDiseasesCubes);
 			ar & BOOST_SERIALIZATION_NVP(g.state);
 			ar & BOOST_SERIALIZATION_NVP(g.initialized);
 		}

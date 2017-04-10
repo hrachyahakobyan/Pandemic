@@ -1,4 +1,0 @@
-<map id="pan::CardImpl&lt; T &gt;" name="pan::CardImpl&lt; T &gt;">
-<area shape="rect" id="node2" href="$classpan_1_1_card_base.html" title="Abstract class to represent Card entity in the game. Cards contain an enum to differentiate their typ..." alt="" coords="18,175,126,340"/>
-<area shape="rect" id="node3" href="$classpan_1_1_object.html" title="Abstract parent class to all entities directly connected with the game state that have to be serializ..." alt="" coords="19,5,125,127"/>
-</map>

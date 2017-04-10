@@ -1,8 +1,0 @@
-<map id="pan::ActionHandler::execute" name="pan::ActionHandler::execute">
-<area shape="rect" id="node2" href="$classpan_1_1_game.html#a76f471edc1b5678fe83f9a6c84117e96" title="pan::Game::changeState" alt="" coords="185,5,352,32"/>
-<area shape="rect" id="node4" href="$classpan_1_1_game.html#aa662e441f8910685ef4eb61f76f22354" title="pan::Game::isOver" alt="" coords="414,56,545,83"/>
-<area shape="rect" id="node5" href="$namespacepan.html#a9cba06f35904752ede423c15355cf307" title="pan::player" alt="" coords="225,107,312,133"/>
-<area shape="rect" id="node6" href="$classpan_1_1_game.html#a23838df4cde7e8be5273ec5de03c152d" title="pan::Game::getPlayer" alt="" coords="194,157,343,184"/>
-<area shape="rect" id="node7" href="$classpan_1_1_action_impl.html#a14d72469bea6d60603d49e4815accb54" title="pan::ActionImpl::execute" alt="" coords="185,208,352,235"/>
-<area shape="rect" id="node3" href="$classpan_1_1_game.html#a145be880607e15e9ca91ceb36a012de1" title="pan::Game::isInitialized" alt="" coords="400,5,559,32"/>
-</map>

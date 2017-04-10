@@ -1,7 +1,0 @@
-<map id="pan::Map::regionForCity" name="pan::Map::regionForCity">
-<area shape="rect" id="node2" href="$classpan_1_1_action_handler.html#a148408970391d77cc793b5e33fe55789" title="validates the discover cure action The action is valid if the following hold " alt="" coords="220,5,352,47"/>
-<area shape="rect" id="node3" href="$classpan_1_1_action_handler.html#aa39cbd76ffdebb15c21890730a79606d" title="pan::ActionHandler\l::execute" alt="" coords="220,71,352,112"/>
-<area shape="rect" id="node4" href="$classpan_1_1_game.html#ac354a110f4b6ef67295d587892b6d810" title="pan::Game::initInfect" alt="" coords="215,137,357,163"/>
-<area shape="rect" id="node6" href="$classpan_1_1_map.html#a0afa3368bc2f5fbd85b4b2c3205f0996" title="pan::Map::serialize" alt="" coords="220,187,352,214"/>
-<area shape="rect" id="node5" href="$classpan_1_1_game.html#a164829a91c20f0f1f7b2d32e76e370f2" title="pan::Game::initialize" alt="" coords="405,137,547,163"/>
-</map>

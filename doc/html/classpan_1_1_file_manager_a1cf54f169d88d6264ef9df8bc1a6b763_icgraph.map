@@ -1,9 +1,0 @@
-<map id="pan::FileManager::createInputStream" name="pan::FileManager::createInputStream">
-<area shape="rect" id="node2" href="$classpan_1_1_file_manager.html#ac0112a350779701a11110042bd053458" title="pan::FileManager::load" alt="" coords="220,56,375,83"/>
-<area shape="rect" id="node3" href="$classpan_1_1_file_manager.html#a9c6dc615236819bad04dc9db880db6f6" title="pan::FileManager::getInstance" alt="" coords="423,56,620,83"/>
-<area shape="rect" id="node6" href="$classpan_1_1_game.html#a3e462af43777e6159bd7ff4c3ca0815c" title="pan::Game::load" alt="" coords="691,5,810,32"/>
-<area shape="rect" id="node7" href="$classpan_1_1_map.html#afc16b42064eca43b341cd4a555bed092" title="pan::Map::pandemicMap" alt="" coords="668,107,833,133"/>
-<area shape="rect" id="node4" href="$classpan_1_1_game.html#a3ed8021afce3a331ede74826bf9742b6" title="pan::Game::save" alt="" coords="691,56,811,83"/>
-<area shape="rect" id="node5" href="$classpan_1_1_action_handler.html#a1ebea9d9a8bb894945e1ad0ecc7821c9" title="pan::ActionHandler\l::execute" alt="" coords="881,45,1013,86"/>
-<area shape="rect" id="node8" href="$comp345-proj_8cpp.html#a353674c5af92be7fb389265cde4e5e03" title="_tmain" alt="" coords="917,111,978,137"/>
-</map>
