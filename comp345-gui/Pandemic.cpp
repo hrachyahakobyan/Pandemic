@@ -6,8 +6,8 @@
 #include "ActionSelectView.h"
 #include <core\detail\Observer.h>
 
-Pandemic::Pandemic(pan::Game&& g, QWidget *parent)
-	: QMainWindow(parent), game(std::move(g))
+Pandemic::Pandemic(QWidget *parent)
+	: QMainWindow(parent)
 {
 	using namespace pan;
 	ui.setupUi(this);
@@ -17,6 +17,12 @@ Pandemic::Pandemic(pan::Game&& g, QWidget *parent)
 	connect(ui.teamView, SIGNAL(playerSelected(pan::PlayerIndex)), this, SLOT(on_teamViewPlayerSelected(pan::PlayerIndex)));
 	connect(ui.handView, SIGNAL(cardSelected(int)), this, SLOT(on_handViewCardSelected(int)));
 	connect(ui.diseaseDetailsView, SIGNAL(diseaseSelected(pan::DiseaseType)), this, SLOT(on_diseaseViewDiseaseSelected(pan::DiseaseType)));
+}
+
+void Pandemic::update(pan::Game&& g)
+{
+	using namespace pan;
+	game = std::move(g);
 	ui.mapView->update(this->game.getMap());
 	ui.gameDataView->update(this->game.getGameData());
 	ui.gameDataView->update(this->game.getDeckData());

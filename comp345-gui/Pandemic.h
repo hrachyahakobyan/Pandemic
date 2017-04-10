@@ -9,7 +9,8 @@ class Pandemic : public QMainWindow
 	Q_OBJECT
 
 public:
-	Pandemic(pan::Game&& game, QWidget *parent = Q_NULLPTR);
+	Pandemic(QWidget *parent = Q_NULLPTR);
+	void update(pan::Game&&);
 public Q_SLOTS:
 	void on_cityItemSelected(pan::CityIndex);
 	void on_actionSelectViewSelected(pan::ActionType);

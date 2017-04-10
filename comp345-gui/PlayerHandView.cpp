@@ -15,6 +15,8 @@ PlayerHandView::PlayerHandView(QWidget *parent)
 	cardViews.push_back(ui.card5);
 	cardViews.push_back(ui.card6);
 	cardViews.push_back(ui.card7);
+	cardViews.push_back(ui.card8);
+	cardViews.push_back(ui.card9);
 }
 
 PlayerHandView::~PlayerHandView()

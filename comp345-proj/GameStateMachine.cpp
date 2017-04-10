@@ -210,8 +210,9 @@ namespace pan{
 			setGameState(GameState::Defeat);
 			return detail::Deck<CardBasePtr>();
 		}
+		auto cards = deckData.playerDeck.deal(count);
 		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new DeckDataUpdateNotification(deckData)));
-		return deckData.playerDeck.deal(count);
+		return cards;
 	}
 
 	std::shared_ptr<InfectionCard> GameStateMachine::drawInfectionDeckTop()
