@@ -30,12 +30,12 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>120</width>
-       <height>150</height>
+       <width>100</width>
+       <height>125</height>
       </size>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
    </item>
@@ -49,12 +49,12 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>120</width>
-       <height>150</height>
+       <width>100</width>
+       <height>125</height>
       </size>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
    </item>
@@ -68,12 +68,12 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>120</width>
-       <height>150</height>
+       <width>100</width>
+       <height>125</height>
       </size>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
    </item>
@@ -87,12 +87,12 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>120</width>
-       <height>150</height>
+       <width>100</width>
+       <height>125</height>
       </size>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
    </item>
@@ -106,12 +106,12 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>120</width>
-       <height>150</height>
+       <width>100</width>
+       <height>125</height>
       </size>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
    </item>
@@ -125,12 +125,12 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>120</width>
-       <height>150</height>
+       <width>100</width>
+       <height>125</height>
       </size>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
    </item>
@@ -144,12 +144,12 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>120</width>
-       <height>150</height>
+       <width>100</width>
+       <height>125</height>
       </size>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
    </item>
@@ -163,12 +163,31 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>120</width>
-       <height>150</height>
+       <width>100</width>
+       <height>125</height>
       </size>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="card8">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>125</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </item>
@@ -180,7 +199,6 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <zorder>label</zorder>
     </widget>
    </item>
   </layout>

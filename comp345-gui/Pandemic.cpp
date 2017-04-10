@@ -16,8 +16,10 @@ Pandemic::Pandemic(pan::Game&& g, QWidget *parent)
 	connect(ui.actionSelectView, SIGNAL(actionSelected(pan::ActionType)), this, SLOT(on_actionSelectViewSelected(pan::ActionType)));
 	connect(ui.teamView, SIGNAL(playerSelected(pan::PlayerIndex)), this, SLOT(on_teamViewPlayerSelected(pan::PlayerIndex)));
 	connect(ui.handView, SIGNAL(cardSelected(int)), this, SLOT(on_handViewCardSelected(int)));
+	connect(ui.diseaseDetailsView, SIGNAL(diseaseSelected(pan::DiseaseType)), this, SLOT(on_diseaseViewDiseaseSelected(pan::DiseaseType)));
 	ui.mapView->update(this->game.getMap());
 	ui.gameDataView->update(this->game.getGameData());
+	ui.gameDataView->update(this->game.getDeckData());
 	ui.teamView->update(game.getPlayerData().players);
 	updateActiveUser();
 
@@ -37,6 +39,7 @@ Pandemic::Pandemic(pan::Game&& g, QWidget *parent)
 
 void Pandemic::on_cityItemSelected(pan::CityIndex index)
 {
+	qDebug() << "Selected city index " << index;
 	actionBuilder.selectCity(index);
 	executeAction();
 }
@@ -44,12 +47,14 @@ void Pandemic::on_cityItemSelected(pan::CityIndex index)
 void Pandemic::on_teamViewPlayerSelected(pan::PlayerIndex index)
 {
 	actionBuilder.selectPlayer(index);
+	qDebug() << "Selected player index " << index;
 	executeAction();
 }
 
 void Pandemic::on_handViewCardSelected(int card)
 {
 	actionBuilder.selectCard(card);
+	qDebug() << "Selected card " << card;
 	executeAction();
 }
 
@@ -58,7 +63,7 @@ void Pandemic::updateActiveUser()
 	ui.activeUserAvatar->setPixmap(Resources::avatarForRole(game.getActivePlayer().getRole().role).scaled(ui.activeUserAvatar->width(), ui.activeUserAvatar->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	ui.activeUserActions->setText(QString::fromStdString(std::to_string(game.getPlayerData().actionCounter)));
 	ui.activeUserName->setText(QString::fromStdString(game.getActivePlayer().getName()));
-	ui.handView->update(this->game.getPlayer(0).getCards());
+	ui.handView->update(this->game.getActivePlayer().getCards());
 	ui.stageLabel->setText(playerStageToString(game.getStage()));
 }
 
@@ -66,6 +71,14 @@ void Pandemic::on_actionSelectViewSelected(pan::ActionType type)
 {
 	actionBuilder.selectAction(type);
 	actionBuilder.selectPlayer(game.getActivePlayerIndex());
+	qDebug() << "Selected action " << pan::ActionTypeDescriptions.at(type).c_str();
+	executeAction();
+}
+
+void Pandemic::on_diseaseViewDiseaseSelected(pan::DiseaseType type)
+{
+	actionBuilder.selectDisease(type);
+	qDebug() << "Selected disease " << type;
 	executeAction();
 }
 
@@ -88,9 +101,9 @@ void Pandemic::handleGameDataUpdateNotification(std::shared_ptr<pan::GameDataUpd
 	ui.gameDataView->update(n->data);
 }
 
-void Pandemic::handleDeckDataUpdateNotification(std::shared_ptr<pan::DeckDataUpdateNotification>)
+void Pandemic::handleDeckDataUpdateNotification(std::shared_ptr<pan::DeckDataUpdateNotification> data)
 {
-
+	ui.gameDataView->update(data->data);
 }
 
 void Pandemic::handlePlayerDataUpdateNotification(std::shared_ptr<pan::PlayerDataUpdateNotification>)

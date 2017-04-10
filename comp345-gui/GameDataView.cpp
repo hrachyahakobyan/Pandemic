@@ -14,6 +14,8 @@ GameDataView::GameDataView(QWidget *parent)
 	ui.outbreakImage->setPixmap(Resources::outbreakPixmap().scaled(ui.outbreakImage->width(), ui.outbreakImage->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	ui.infectionImage->setPixmap(Resources::infectionPixmap().scaled(ui.infectionImage->width(), ui.infectionImage->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	ui.stationImage->setPixmap(Resources::stationPixmap().scaled(ui.stationImage->width(), ui.stationImage->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	ui.playerCard->setPixmap(Resources::getPlayerCardBack().scaled(ui.playerCard->width(), ui.playerCard->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	ui.infectionCard->setPixmap(Resources::getInfectionCardBack().scaled(ui.infectionCard->width(), ui.infectionCard->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
 
 GameDataView::~GameDataView()
@@ -29,4 +31,10 @@ void GameDataView::update(const pan::GameData& data)
 	ui.region2Label->setText(QString::fromStdString(std::to_string(data.diseaseCubes[1])));
 	ui.region3Label->setText(QString::fromStdString(std::to_string(data.diseaseCubes[2])));
 	ui.region4Label->setText(QString::fromStdString(std::to_string(data.diseaseCubes[3])));
+}
+
+void GameDataView::update(const pan::DeckData& data)
+{
+	ui.playerCardLabel->setText(QString::fromStdString(std::to_string(data.playerDeck.size())));
+	ui.infectionCardLabel->setText(QString::fromStdString(std::to_string(data.infectionDeck.size())));
 }

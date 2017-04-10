@@ -158,9 +158,6 @@
     <ClInclude Include="GeneratedFiles\ui_PlayerHandView.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_CardView.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_ActionSelectView.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -212,9 +209,6 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="PlayerHandView.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="CardView.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="ActionSelectView.h">

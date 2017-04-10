@@ -184,7 +184,7 @@ namespace pan{
 	void GameStateMachine::increaseInfectionRateMarker()
 	{
 		// If already maxed out
-		if (gameData.infectionRateMarker == gameData.settings.infectionRates.size()){
+		if (gameData.infectionRateMarker == gameData.settings.infectionRates.size() - 1){
 			return;
 		}
 		gameData.infectionRateMarker++;
@@ -312,6 +312,7 @@ namespace pan{
 		city.setCubes(type, currentCubes + willTake);
 		// Add the cubes to the removed cubes 
 		gameData.diseaseCubes[type] -= willTake;
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new CityUpdateNotification(city, cIndex)));
 		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new GameDataUpdateNotification(gameData)));
 	}
 
@@ -333,6 +334,7 @@ namespace pan{
 			return false;
 		map[city].researchStation = true;
 		gameData.researchStations++;
+		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new CityUpdateNotification(map[city], city)));
 		detail::NotificationCenter::defaultCenter().postNotification(std::shared_ptr<detail::Notification>(new GameDataUpdateNotification(gameData)));
 		return true;
 	}
@@ -346,9 +348,6 @@ namespace pan{
 
 	void GameStateMachine::playerDidAct(PlayerIndex index, ActionType type)
 	{
-		// If the action was invalid to begin with
-		if (!playerCanAct(index, type))
-			return;
 		// The stage is Draw and the action is Draw action
 		if (playerData.stage == PlayerStage::Draw && type == ActionType::Draw){
 			if (playerData.players[index]->getCards().size() > gameData.settings.playerHandMax)
@@ -376,18 +375,20 @@ namespace pan{
 			// Can switch the state only if the player has less
 			// than the maximum allowed number of cards
 			if (playerData.players[index]->getCards().size() <= gameData.settings.playerHandMax){
-				// If the player has still actions to be done switch to Act mode
-				if (playerData.actionCounter < 4)
-					setPlayerStage(PlayerStage::Act);
-				else {
-					// If the discard action was caused due to draw action
-					// switch to infect stage
-					if (playerData.prevStage == PlayerStage::Draw)
-						setPlayerStage(PlayerStage::Infect);
-					// the discard stage was caused due to 
-					// the last player action
-					else
+				// The previous stage was act
+				if (playerData.prevStage == PlayerStage::Act){
+					// The last action performed by the player forced to discard a card (e.g. Share Knowledge)
+					if (playerData.actionCounter == 0){
 						setPlayerStage(PlayerStage::Draw);
+					}
+					// The player has still actions to do
+					else {
+						setPlayerStage(PlayerStage::Act);
+					}
+				}
+				else {
+					// The player has to infect
+					setPlayerStage(PlayerStage::Infect);
 				}
 			}
 		}

@@ -16,6 +16,8 @@ std::unique_ptr<QPixmap> Resources::infection;
 std::unique_ptr<QPixmap> Resources::outbreak;
 std::unique_ptr<QPixmap> Resources::station;
 std::unique_ptr<QPixmap> Resources::stationPawn;
+std::unique_ptr<QPixmap> Resources::playerCardBack;
+std::unique_ptr<QPixmap> Resources::infectionCardBack;
 
 Resources::Resources()
 {
@@ -270,8 +272,6 @@ QPixmap Resources::stationPawnPixmap()
 	return *stationPawn.get();
 }
 
-#pragma message("Add cards...")
-
 QPixmap Resources::pixmapForCard(const pan::CardBase& c)
 {
 	using namespace pan;
@@ -314,4 +314,20 @@ QPixmap Resources::pixmapForCard(const pan::CardBase& c)
 		pandemicCard.reset(new QPixmap(fileName.c_str()));
 		return *pandemicCard.get();
 	}
+}
+
+QPixmap Resources::getInfectionCardBack()
+{
+	if (infectionCardBack == nullptr){
+		infectionCardBack.reset(new QPixmap("Resources\\infection_card_back.png"));
+	}
+	return *infectionCardBack.get();
+}
+
+QPixmap Resources::getPlayerCardBack()
+{
+	if (playerCardBack == nullptr){
+		playerCardBack.reset(new QPixmap("Resources\\player_card_back.png"));
+	}
+	return *playerCardBack.get();
 }

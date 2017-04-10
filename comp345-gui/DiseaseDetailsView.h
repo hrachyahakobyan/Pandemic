@@ -12,9 +12,13 @@ public:
 	DiseaseDetailsView(QWidget *parent = 0);
 	~DiseaseDetailsView();
 	void update(const std::vector<pan::Disease>&);
+	void mousePressEvent(QMouseEvent *event);
+	void mouseReleaseEvent(QMouseEvent *event);
+Q_SIGNALS:
+	void diseaseSelected(pan::DiseaseType type);
 private:
 	Ui::DiseaseDetailsView ui;
-	QVector<QLabel*> vialLabels;
+	QVector<std::tuple<pan::DiseaseType,QLabel*, QLabel*>> labels;
 };
 
 #endif // DISEASEDETAILSVIEW_H

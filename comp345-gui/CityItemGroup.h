@@ -25,9 +25,10 @@ private:
 	pan::CityIndex index;
 	pan::City city;
 	QPainterPath circle(QPointF center, int radius) const;
-	QVector<QPainterPath> diseaseCircles;
+	QVector<QRect> diseaseCircleRects;
 	QVector<QGraphicsPixmapItem*> playerPawns;
 	QGraphicsPixmapItem* stationItem;
 	QGraphicsTextItem* nameItem;
 	void clearAll();
+	void drawPie(QPainter* painter, QRect rect, std::vector<bool> diseases);
 };

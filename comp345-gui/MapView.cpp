@@ -66,6 +66,7 @@ void MapView::update(const pan::Map& map)
 		cityConnections[sourceIndex].push_back(lineItem);
 		cityConnections[targetIndex].push_back(lineItem);
 	}
+	mapScene->update();
 }
 
 void MapView::update(const pan::City& city, pan::CityIndex index)
@@ -78,6 +79,7 @@ void MapView::update(const pan::City& city, pan::CityIndex index)
 		oldItem.value()->update(city);
 		oldItem.value()->setIndex(index);
 	}
+	mapScene->update();
 }
 
 void MapView::addItem(const pan::City& city, pan::CityIndex index)

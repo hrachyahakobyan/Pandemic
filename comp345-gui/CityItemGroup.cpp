@@ -38,6 +38,7 @@ QRectF CityItemGroup::boundingRect() const
 
 void CityItemGroup::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 {
+	QGraphicsItemGroup::paint(painter, option, widget);
 	QRectF rect = boundingRect();
 	QBrush brush(RegionColors[city.getRegion()]);
 	QRectF bRect = boundingRect();
@@ -45,8 +46,57 @@ void CityItemGroup::paint(QPainter * painter, const QStyleOptionGraphicsItem * o
 	QPainterPath ellipsePath = circle(center, bRect.width() / 2);
 	painter->fillPath(ellipsePath, QBrush(RegionColors[city.getRegion()]));
 	painter->drawEllipse(center, bRect.width() / 2, bRect.height() / 2);
-	for (const auto& c : diseaseCircles){
-		painter->fillPath(c, QBrush(RegionColors[city.getRegion()]));
+
+	int d0 = city.getCubes(0);
+	int d1 = city.getCubes(1);
+	int d2 = city.getCubes(2);
+	int d3 = city.getCubes(3);
+
+	int circles = std::max(std::max(d0, d1), std::max(d2, d3));
+
+	for (int i = 0; i < circles; i++){
+		std::vector<bool> diseases(4);
+		if (d0 > 0) {
+			diseases[0] = true;
+			d0--;
+		}
+		if (d1 > 0){
+			diseases[1] = true;
+			d1--;
+		}
+		if (d2 > 0) {
+			diseases[2] = true;
+			d2--;
+		}
+		if (d3 > 0){
+			diseases[3] = true;
+			d3--;
+		}
+		drawPie(painter, diseaseCircleRects[i], diseases);
+	}
+}
+
+void CityItemGroup::drawPie(QPainter* painter, QRect rect, std::vector<bool> diseases)
+{
+	int sum = 0;
+	for (auto d : diseases){
+		sum += int(d);
+	}
+	double jump = 360.0 / sum;
+	double angle = 0.0;
+	for (std::size_t i = 0; i < sum; i++){
+		pan::DiseaseType current = 0;
+		for (std::size_t j = 0; j < diseases.size(); j++){
+			if (diseases[j]){
+				current = static_cast<pan::DiseaseType>(j);
+				diseases[j] = false;
+				break;
+			}
+		}
+		painter->setPen(QPen(RegionColors[current]));
+		painter->setBrush(QBrush(RegionColors[current]));
+		painter->drawPie(rect, int(angle) * 16, int(jump) * 16);
+		angle += jump;
 	}
 }
 
@@ -68,17 +118,21 @@ void CityItemGroup::update(const pan::City& city)
 {
 	clearAll();
 	this->city = city;
-	diseaseCircles.clear();
-	std::size_t cubes = city.getCubes(city.getRegion());
+	diseaseCircleRects.clear();
+	std::size_t cubes0 = city.getCubes(0);
+	std::size_t cubes1 = city.getCubes(1);
+	std::size_t cubes2 = city.getCubes(2);
+	std::size_t cubes3 = city.getCubes(3);
+	std::size_t cubes = std::max(std::max(cubes0, cubes1), std::max(cubes2, cubes3));
 	QRectF bRect = boundingRect();
 	QPointF center = bRect.center();
 	double angle = 0.0;
 	double increment = M_PI * 2 / cubes;
 	for (std::size_t i = 0; i < cubes; i++){
-		QPointF pos = center;
-		pos.setX(pos.x() + 3 * bRect.width() / 4 * std::cos(angle));
-		pos.setY(pos.y() + 3 * bRect.width() / 4 * std::sin(angle));
-		diseaseCircles.push_back(circle(pos, bRect.width() / 4));
+		QPoint pos(center.x(), center.y());
+		pos.setX(pos.x() + 3 * bRect.width() / 4 * std::cos(angle) - bRect.width() / 4);
+		pos.setY(pos.y() + 3 * bRect.width() / 4 * std::sin(angle) - bRect.width() / 4);
+		diseaseCircleRects.push_back(QRect(pos, QSize(bRect.width() / 2, bRect.width() / 2)));
 		angle += increment;
 	}
 	if (city.researchStation){
@@ -116,7 +170,7 @@ void CityItemGroup::update(const pan::City& city)
 		nameItem->setPos(bRect.bottomLeft());
 	}
 	nameItem->setPlainText(QString::fromStdString(city.getName()));
-	QGraphicsItem::update();
+	//QGraphicsItem::update();
 }
 
 void CityItemGroup::setIndex(pan::CityIndex index)

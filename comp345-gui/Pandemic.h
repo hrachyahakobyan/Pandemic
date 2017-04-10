@@ -15,6 +15,7 @@ public Q_SLOTS:
 	void on_actionSelectViewSelected(pan::ActionType);
 	void on_teamViewPlayerSelected(pan::PlayerIndex);
 	void on_handViewCardSelected(int);
+	void on_diseaseViewDiseaseSelected(pan::DiseaseType);
 private:
 	Ui::PandemicClass ui;
 	pan::Game game;

@@ -13,7 +13,7 @@ public:
 	~GameDataView();
 
 	void update(const pan::GameData& data);
-
+	void update(const pan::DeckData& data);
 private:
 	Ui::GameDataView ui;
 };
