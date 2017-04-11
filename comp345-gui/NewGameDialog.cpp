@@ -7,6 +7,7 @@ NewGameDialog::NewGameDialog(QWidget *parent)
 {
 	ui.setupUi(this);
 	this->on_beginnerButton_clicked();
+	ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 	roleLabels.push_back(qMakePair(pan::Roles::CPlanner, ui.role1));
 	roleLabels.push_back(qMakePair(pan::Roles::Dispatcher, ui.role2));
 	roleLabels.push_back(qMakePair(pan::Roles::Medic, ui.role3));
@@ -101,6 +102,9 @@ void NewGameDialog::selectedRole(pan::Roles role)
 			return;
 	}
 	players.push_back(std::make_pair("", role));
+	if (players.size() > 1){
+		ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+	}
 	updatePlayerLabels();
 }
 
