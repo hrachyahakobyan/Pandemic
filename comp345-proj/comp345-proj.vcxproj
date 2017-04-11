@@ -62,7 +62,7 @@
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)\Debug\comp345-proj.lib" "$(SolutionDir)\core\lib\comp345-proj.lib" /s /i /y</Command>
+      <Command>ECHO F|xcopy "$(SolutionDir)\Debug\comp345-proj.lib" "$(SolutionDir)\core\lib\comp345-proj.lib" /s /i /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
