@@ -7,7 +7,7 @@
 #include <core\detail\Observer.h>
 
 Pandemic::Pandemic(QWidget *parent)
-	: QMainWindow(parent)
+	: QMainWindow(parent), menu(NULL), initialized(false)
 {
 	using namespace pan;
 	ui.setupUi(this);
@@ -19,10 +19,34 @@ Pandemic::Pandemic(QWidget *parent)
 	connect(ui.diseaseDetailsView, SIGNAL(diseaseSelected(pan::DiseaseType)), this, SLOT(on_diseaseViewDiseaseSelected(pan::DiseaseType)));
 }
 
-void Pandemic::update(pan::Game&& g)
+Pandemic::~Pandemic()
 {
+	if (menu)
+		delete menu;
+}
+
+void Pandemic::start()
+{
+	menu = new MainMenu(this);
+	connect(menu, SIGNAL(constructedGame(pan::Game&)), this, SLOT(on_mainMenuConstructedGame(pan::Game&)));
+	int status = menu->exec();
+	delete menu;
+	menu = NULL;
+}
+
+void Pandemic::on_mainMenuConstructedGame(pan::Game& g)
+{
+	initialize(std::move(g));
+}
+
+void Pandemic::initialize(pan::Game&& g)
+{
+	if (initialized)
+		return;
+	initialized = true;
 	using namespace pan;
 	game = std::move(g);
+	game.initialize();
 	ui.mapView->update(this->game.getMap());
 	ui.gameDataView->update(this->game.getGameData());
 	ui.gameDataView->update(this->game.getDeckData());
@@ -39,10 +63,7 @@ void Pandemic::update(pan::Game&& g)
 	pan::detail::NotificationCenter::defaultCenter().addObserver(gameObserver);
 	pan::detail::NotificationCenter::defaultCenter().addObserver(playersObserver);
 	pan::detail::NotificationCenter::defaultCenter().addObserver(playerObserver);
-
-	std::unique_ptr<LoggerBase> actionLogger(new ActionLogger(std::set<ActionType>{ActionType::Move}));
-	logger.reset(new PlayerLogger(0, "log.txt", std::move(actionLogger)));
-	//logger.reset(new GlobalLogger("log.txt"));
+	logger.reset(new GlobalLogger("log.txt"));
 }
 
 void Pandemic::on_cityItemSelected(pan::CityIndex index)
@@ -137,4 +158,19 @@ QString Pandemic::playerStageToString(pan::PlayerStage s) const
 	if (s == PlayerStage::Draw)
 		return QString("Draw");
 	return QString("Infect");
+}
+
+void Pandemic::closeEvent(QCloseEvent *event)
+{
+	QMessageBox::StandardButton resBtn = QMessageBox::question(this, "Pandemic",
+		tr("Are you sure?\n"),
+		QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
+		QMessageBox::Yes);
+	if (resBtn != QMessageBox::Yes) {
+		event->ignore();
+	}
+	else {
+		game.save("Autosave");
+		event->accept();
+	}
 }

@@ -130,4 +130,29 @@ namespace pan{
 	{
 		return stateMachine.addRandomPlayer(name);
 	}
+
+	PlayerIndex Game::addPlayer(pan::Roles role, const std::string& name)
+	{
+		switch (role){
+		case Roles::CPlanner:
+			return stateMachine.addPlayer<Roles::CPlanner>(name);
+		case Roles::Dispatcher:
+			return stateMachine.addPlayer<Roles::Dispatcher>(name);
+		case Roles::Medic:
+			return stateMachine.addPlayer<Roles::Medic>(name);
+		case Roles::OperationsExpert:
+			return stateMachine.addPlayer<Roles::OperationsExpert>(name);
+		case Roles::QSpecialist:
+			return stateMachine.addPlayer<Roles::QSpecialist>(name);
+		case Roles::Researcher:
+			return stateMachine.addPlayer<Roles::Researcher>(name);
+		default:
+			return stateMachine.addPlayer<Roles::Scientist>(name);
+		}
+	}
+
+	std::vector<std::string> Game::allSavedGames()
+	{
+		return FileManager::getInstance().allFiles("save");
+	}
 }

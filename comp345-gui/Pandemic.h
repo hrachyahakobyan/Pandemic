@@ -3,6 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_Pandemic.h"
 #include "ActionBuilder.h"
+#include "MainMenu.h"
 
 class Pandemic : public QMainWindow
 {
@@ -10,14 +11,19 @@ class Pandemic : public QMainWindow
 
 public:
 	Pandemic(QWidget *parent = Q_NULLPTR);
-	void update(pan::Game&&);
+	~Pandemic();
+	void start();
+	void closeEvent(QCloseEvent *event);
 public Q_SLOTS:
 	void on_cityItemSelected(pan::CityIndex);
 	void on_actionSelectViewSelected(pan::ActionType);
 	void on_teamViewPlayerSelected(pan::PlayerIndex);
 	void on_handViewCardSelected(int);
 	void on_diseaseViewDiseaseSelected(pan::DiseaseType);
+	void on_mainMenuConstructedGame(pan::Game& g);
 private:
+	void initialize(pan::Game&&);
+	bool initialized;
 	Ui::PandemicClass ui;
 	pan::Game game;
 	ActionBuilder actionBuilder;
@@ -32,4 +38,6 @@ private:
 	void handlePlayerUpdateNotification(std::shared_ptr<pan::PlayerUpdateNotification>);
 
 	QString playerStageToString(pan::PlayerStage s) const;
+
+	MainMenu* menu;
 };

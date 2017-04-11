@@ -15,6 +15,6 @@ int main(int argc, char *argv[])
 	game.initialize();
 	Pandemic w;
 	w.show();
-	w.update(std::move(game));
+	w.start();
 	return a.exec();
 }

@@ -134,12 +134,18 @@ namespace pan
 		*/
 		PlayerIndex addRandomPlayer(const std::string& name = "");
 
+		PlayerIndex addPlayer(pan::Roles role, const std::string& name = "");
+
 		/**
 		*	Saves the game with given a save file name
 		*	@param name the name under which to save the game
 		*	@return true if the save was successful
 		*/
 		bool save(const std::string& name) const;
+
+		/**
+		*/
+		static std::vector<std::string> allSavedGames();
 
 	private:
 		struct ActionData{
