@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "ActionSelectView.h"
+#include "Resources.h"
 
 ActionSelectView::ActionSelectView(QWidget *parent)
 	: QWidget(parent)
@@ -15,6 +16,15 @@ ActionSelectView::ActionSelectView(QWidget *parent)
 	widgetActions[ui.drawWidget] = qMakePair(ui.drawLabel, pan::ActionType::Draw);
 	widgetActions[ui.infectWidget] = qMakePair(ui.infectLabel, pan::ActionType::Infect);
 	widgetActions[ui.discardWidget] = qMakePair(ui.discardLabel, pan::ActionType::Discard);
+
+	for (auto p : widgetActions){
+		p.first->setPixmap(Resources::getPixmapForAction(p.second).scaled(p.first->width(), p.first->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	}
+
+	QPalette pal = palette();
+	pal.setColor(QPalette::Background, Qt::darkBlue);
+	this->setAutoFillBackground(true);
+	this->setPalette(pal);
 }
 
 

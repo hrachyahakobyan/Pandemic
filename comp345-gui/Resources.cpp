@@ -11,6 +11,8 @@ QMap<pan::DiseaseType, QPixmap> Resources::diseaseVialsEradicated;
 QMap<pan::CityIndex, QPixmap> Resources::cityCardsMap;
 QMap<pan::CityIndex, QPixmap> Resources::infectionCardsMap;
 QMap<pan::EventType, QPixmap> Resources::eventCardsMap;
+QMap<pan::ActionType, QPixmap> Resources::actionMap;
+QMap<pan::RegionIndex, QPixmap> Resources::cityMap;
 std::unique_ptr<QPixmap> Resources::pandemicCard;
 std::unique_ptr<QPixmap> Resources::infection;
 std::unique_ptr<QPixmap> Resources::outbreak;
@@ -36,22 +38,22 @@ QPixmap Resources::pixmapForRegion(pan::RegionIndex r)
 		return *pix;
 	Qt::GlobalColor c = RegionColors[r];
 	if (c == Qt::black){
-		auto pixMap = QPixmap("Resources\\region_black.png");
+		auto pixMap = QPixmap("Resources\\Diseases\\disease_black.png");
 		regionPixmaps[c] = pixMap;
 		return pixMap;
 	}
 	else if (c == Qt::blue){
-		auto pixMap = QPixmap("Resources\\region_blue.png");
+		auto pixMap = QPixmap("Resources\\Diseases\\disease_blue.png");
 		regionPixmaps[c] = pixMap;
 		return pixMap;
 	}
 	else if (c == Qt::yellow){
-		auto pixMap = QPixmap("Resources\\region_yellow.png");
+		auto pixMap = QPixmap("Resources\\Diseases\\disease_yellow.png");
 		regionPixmaps[c] = pixMap;
 		return pixMap;
 	}
 	else {
-		auto pixMap = QPixmap("Resources\\region_red.png");
+		auto pixMap = QPixmap("Resources\\Diseases\\disease_red.png");
 		regionPixmaps[c] = pixMap;
 		return pixMap;
 	}
@@ -66,25 +68,25 @@ QPixmap Resources::pawnForRole(pan::Roles r)
 	std::string fileName;
 	switch (r){
 	case Roles::CPlanner:
-		fileName = "Resources\\cplanner_pawn.png";
+		fileName = "Resources\\Pawns\\cplanner_pawn.png";
 		break;
 	case Roles::Dispatcher:
-		fileName = "Resources\\dispatcher_pawn.png";
+		fileName = "Resources\\Pawns\\dispatcher_pawn.png";
 		break;
 	case Roles::OperationsExpert:
-		fileName = "Resources\\opexpert_pawn.png";
+		fileName = "Resources\\Pawns\\opexpert_pawn.png";
 		break;
 	case Roles::Scientist:
-		fileName = "Resources\\scientist_pawn.png";
+		fileName = "Resources\\Pawns\\scientist_pawn.png";
 		break;
 	case Roles::Medic:
-		fileName = "Resources\\medic_pawn.png";
+		fileName = "Resources\\Pawns\\medic_pawn.png";
 		break;
 	case Roles::QSpecialist:
-		fileName = "Resources\\qspecialist_pawn.png";
+		fileName = "Resources\\Pawns\\qspecialist_pawn.png";
 		break;
 	default:
-		fileName = "Resources\\researcher_pawn.png";
+		fileName = "Resources\\Pawns\\researcher_pawn.png";
 		break;
 	}
 	QPixmap p(fileName.c_str());
@@ -101,25 +103,25 @@ QPixmap Resources::cardForRole(pan::Roles r)
 	std::string fileName;
 	switch (r){
 	case Roles::CPlanner:
-		fileName = "Resources\\cplanner_card.png";
+		fileName = "Resources\\RoleCards\\cplanner_card.png";
 		break;
 	case Roles::Dispatcher:
-		fileName = "Resources\\dispatcher_card.png";
+		fileName = "Resources\\RoleCards\\dispatcher_card.png";
 		break;
 	case Roles::OperationsExpert:
-		fileName = "Resources\\opexpert_card.png";
+		fileName = "Resources\\RoleCards\\opexpert_card.png";
 		break;
 	case Roles::Scientist:
-		fileName = "Resources\\scientist_card.png";
+		fileName = "Resources\\RoleCards\\scientist_card.png";
 		break;
 	case Roles::Medic:
-		fileName = "Resources\\medic_card.png";
+		fileName = "Resources\\RoleCards\\medic_card.png";
 		break;
 	case Roles::QSpecialist:
-		fileName = "Resources\\qspecialist_card.png";
+		fileName = "Resources\\RoleCards\\qspecialist_card.png";
 		break;
 	default:
-		fileName = "Resources\\researcher_card.png";
+		fileName = "Resources\\RoleCards\\researcher_card.png";
 		break;
 	}
 	QPixmap p(fileName.c_str());
@@ -136,25 +138,25 @@ QPixmap Resources::avatarForRole(pan::Roles r)
 	std::string fileName;
 	switch (r){
 	case Roles::CPlanner:
-		fileName = "Resources\\cplanner_ava.png";
+		fileName = "Resources\\Avatars\\cplanner_ava.png";
 		break;
 	case Roles::Dispatcher:
-		fileName = "Resources\\dispatcher_ava.png";
+		fileName = "Resources\\Avatars\\dispatcher_ava.png";
 		break;
 	case Roles::OperationsExpert:
-		fileName = "Resources\\opexpert_ava.png";
+		fileName = "Resources\\Avatars\\opexpert_ava.png";
 		break;
 	case Roles::Scientist:
-		fileName = "Resources\\scientist_ava.png";
+		fileName = "Resources\\Avatars\\scientist_ava.png";
 		break;
 	case Roles::Medic:
-		fileName = "Resources\\medic_ava.png";
+		fileName = "Resources\\Avatars\\medic_ava.png";
 		break;
 	case Roles::QSpecialist:
-		fileName = "Resources\\qspecialist_ava.png";
+		fileName = "Resources\\Avatars\\qspecialist_ava.png";
 		break;
 	default:
-		fileName = "Resources\\researcher_ava.png";
+		fileName = "Resources\\Avatars\\researcher_ava.png";
 		break;
 	}
 	QPixmap p(fileName.c_str());
@@ -171,16 +173,16 @@ QPixmap Resources::diseaseIcon(pan::DiseaseType d)
 	std::string fileName;
 	switch (d){
 	case RegionDiseaseBlack:
-		fileName = "Resources\\disease_black.png";
+		fileName = "Resources\\Diseases\\disease_black.png";
 		break;
 	case RegionDiseaseYellow:
-		fileName = "Resources\\disease_yellow.png";
+		fileName = "Resources\\Diseases\\disease_yellow.png";
 		break;
 	case RegionDiseaseRed:
-		fileName = "Resources\\disease_red.png";
+		fileName = "Resources\\Diseases\\disease_red.png";
 		break;
 	default:
-		fileName = "Resources\\disease_blue.png";
+		fileName = "Resources\\Diseases\\disease_blue.png";
 		break;
 	}
 	QPixmap p(fileName.c_str());
@@ -197,16 +199,16 @@ QPixmap Resources::diseaseVialCured(pan::DiseaseType d)
 	std::string fileName;
 	switch (d){
 	case RegionDiseaseBlack:
-		fileName = "Resources\\disease_black_vial_cured.png";
+		fileName = "Resources\\Diseases\\disease_black_vial_cured.png";
 		break;
 	case RegionDiseaseYellow:
-		fileName = "Resources\\disease_yellow_vial_cured.png";
+		fileName = "Resources\\Diseases\\disease_yellow_vial_cured.png";
 		break;
 	case RegionDiseaseRed:
-		fileName = "Resources\\disease_red_vial_cured.png";
+		fileName = "Resources\\Diseases\\disease_red_vial_cured.png";
 		break;
 	default:
-		fileName = "Resources\\disease_blue_vial_cured.png";
+		fileName = "Resources\\Diseases\\disease_blue_vial_cured.png";
 		break;
 	}
 	QPixmap p(fileName.c_str());
@@ -223,16 +225,16 @@ QPixmap Resources::diseaseVialEradicated(pan::DiseaseType d)
 	std::string fileName;
 	switch (d){
 	case RegionDiseaseBlack:
-		fileName = "Resources\\disease_black_vial_eradicated.png";
+		fileName = "Resources\\Diseases\\disease_black_vial_eradicated.png";
 		break;
 	case RegionDiseaseYellow:
-		fileName = "Resources\\disease_yellow_vial_eradicated.png";
+		fileName = "Resources\\Diseases\\disease_yellow_vial_eradicated.png";
 		break;
 	case RegionDiseaseRed:
-		fileName = "Resources\\disease_red_vial_eradicated.png";
+		fileName = "Resources\\Diseases\\disease_red_vial_eradicated.png";
 		break;
 	default:
-		fileName = "Resources\\disease_blue_vial_eradicated.png";
+		fileName = "Resources\\Diseases\\disease_blue_vial_eradicated.png";
 		break;
 	}
 	QPixmap p(fileName.c_str());
@@ -330,4 +332,76 @@ QPixmap Resources::getPlayerCardBack()
 		playerCardBack.reset(new QPixmap("Resources\\player_card_back.png"));
 	}
 	return *playerCardBack.get();
+}
+
+QPixmap Resources::getPixmapForAction(pan::ActionType a)
+{
+	using pan::ActionType;
+	auto pix = actionMap.find(a);
+	if (pix != actionMap.end())
+		return *pix;
+	std::string fileName;
+	switch (a){
+	case ActionType::BuildStation:
+		fileName = "Resources\\Actions\\BuildStation.png";
+		break;
+	case ActionType::CharterFlight:
+		fileName = "Resources\\Actions\\CharterFlight.png";
+		break;
+	case ActionType::DirectFlight:
+		fileName = "Resources\\Actions\\DirectFlight.png";
+		break;
+	case ActionType::Discard:
+		fileName = "Resources\\Actions\\DiscardCard.png";
+		break;
+	case ActionType::DiscoverCure:
+		fileName = "Resources\\Actions\\DiscoverCure.png";
+		break;
+	case ActionType::Draw:
+		fileName = "Resources\\Actions\\DrawCard.png";
+		break;
+	case ActionType::ShuttleFlight:
+		fileName = "Resources\\Actions\\ShuttleFlight.png";
+		break;
+	case ActionType::Move:
+		fileName = "Resources\\Actions\\Drive.png";
+		break;
+	case ActionType::TreatDisease:
+		fileName = "Resources\\Actions\\TreatDisease.png";
+		break;
+	case ActionType::Infect:
+		fileName = "Resources\\Actions\\Infect.png";
+		break;
+	default:
+		fileName = "Resources\\Actions\\ShareKnowledge.png";
+		break;
+	}
+	QPixmap p(fileName.c_str());
+	actionMap[a] = p;
+	return p;
+}
+
+QPixmap Resources::getCityIconForRegion(pan::RegionIndex r)
+{
+	auto pix = cityMap.find(r);
+	if (pix != cityMap.end())
+		return *pix;
+	std::string fileName;
+	switch (r){
+	case RegionDiseaseBlack:
+		fileName = "Resources\\city_marker_black.png";
+		break;
+	case RegionDiseaseYellow:
+		fileName = "Resources\\city_marker_yellow.png";
+		break;
+	case RegionDiseaseRed:
+		fileName = "Resources\\city_marker_red.png";
+		break;
+	default:
+		fileName = "Resources\\city_marker_blue.png";
+		break;
+	}
+	QPixmap p(fileName.c_str());
+	cityMap[r] = p;
+	return p;
 }

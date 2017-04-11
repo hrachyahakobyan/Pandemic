@@ -5,7 +5,7 @@
 
 
 CityItemGroup::CityItemGroup() :
-stationItem(NULL), nameItem(NULL)
+stationItem(NULL), nameItem(NULL), cityIcon(NULL)
 {
 }
 
@@ -29,6 +29,10 @@ void CityItemGroup::clearAll()
 		delete nameItem;
 		nameItem = NULL;
 	}
+	if (cityIcon){
+		delete cityIcon;
+		cityIcon = NULL;
+	}
 }
 
 QRectF CityItemGroup::boundingRect() const
@@ -43,9 +47,6 @@ void CityItemGroup::paint(QPainter * painter, const QStyleOptionGraphicsItem * o
 	QBrush brush(RegionColors[city.getRegion()]);
 	QRectF bRect = boundingRect();
 	QPointF center = bRect.center();
-	QPainterPath ellipsePath = circle(center, bRect.width() / 2);
-	painter->fillPath(ellipsePath, QBrush(RegionColors[city.getRegion()]));
-	painter->drawEllipse(center, bRect.width() / 2, bRect.height() / 2);
 
 	int d0 = city.getCubes(0);
 	int d1 = city.getCubes(1);
@@ -118,14 +119,22 @@ void CityItemGroup::update(const pan::City& city)
 {
 	clearAll();
 	this->city = city;
+	QRectF bRect = boundingRect();
+	QPointF center = bRect.center();
+
+	if (!cityIcon){
+		cityIcon = new QGraphicsPixmapItem();
+		this->addToGroup(cityIcon);
+	}
+	cityIcon->setPixmap(Resources::getCityIconForRegion(city.getRegion()).scaled(bRect.width(), bRect.height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	cityIcon->setPos(bRect.topLeft());
 	diseaseCircleRects.clear();
 	std::size_t cubes0 = city.getCubes(0);
 	std::size_t cubes1 = city.getCubes(1);
 	std::size_t cubes2 = city.getCubes(2);
 	std::size_t cubes3 = city.getCubes(3);
 	std::size_t cubes = std::max(std::max(cubes0, cubes1), std::max(cubes2, cubes3));
-	QRectF bRect = boundingRect();
-	QPointF center = bRect.center();
+
 	double angle = 0.0;
 	double increment = M_PI * 2 / cubes;
 	for (std::size_t i = 0; i < cubes; i++){

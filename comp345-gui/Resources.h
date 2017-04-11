@@ -20,6 +20,8 @@ public:
 	static QPixmap pixmapForCard(const pan::CardBase& c);
 	static QPixmap getInfectionCardBack();
 	static QPixmap getPlayerCardBack();
+	static QPixmap getPixmapForAction(pan::ActionType);
+	static QPixmap getCityIconForRegion(pan::RegionIndex);
 private:
 	static QMap<pan::RegionIndex, QPixmap> regionPixmaps;
 	static QMap<pan::Roles, QPixmap> pawnPixmaps;
@@ -31,6 +33,8 @@ private:
 	static QMap<pan::CityIndex, QPixmap> cityCardsMap;
 	static QMap<pan::CityIndex, QPixmap> infectionCardsMap;
 	static QMap<pan::EventType, QPixmap> eventCardsMap;
+	static QMap<pan::ActionType, QPixmap> actionMap;
+	static QMap<pan::RegionIndex, QPixmap> cityMap;
 	static std::unique_ptr<QPixmap> pandemicCard;
 	static std::unique_ptr<QPixmap> infection;
 	static std::unique_ptr<QPixmap> outbreak;

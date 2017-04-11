@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 	game.addRandomPlayer("Player 2");
 	game.initialize();
 	Pandemic w;
+	w.setWindowState(Qt::WindowState::WindowFullScreen);
 	w.show();
 	w.start();
 	return a.exec();

@@ -62,7 +62,7 @@
       </property>
       <property name="minimumSize">
        <size>
-        <width>90</width>
+        <width>110</width>
         <height>180</height>
        </size>
       </property>
@@ -247,7 +247,7 @@
           </font>
          </property>
          <property name="text">
-          <string>TextLabel</string>
+          <string/>
          </property>
         </widget>
        </item>

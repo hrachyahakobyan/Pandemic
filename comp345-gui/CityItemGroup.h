@@ -28,6 +28,7 @@ private:
 	QVector<QRect> diseaseCircleRects;
 	QVector<QGraphicsPixmapItem*> playerPawns;
 	QGraphicsPixmapItem* stationItem;
+	QGraphicsPixmapItem* cityIcon;
 	QGraphicsTextItem* nameItem;
 	void clearAll();
 	void drawPie(QPainter* painter, QRect rect, std::vector<bool> diseases);

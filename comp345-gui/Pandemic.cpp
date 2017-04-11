@@ -11,7 +11,21 @@ Pandemic::Pandemic(QWidget *parent)
 {
 	using namespace pan;
 	ui.setupUi(this);
-	//this->setStyleSheet("background-color:#0d0238;");
+	QPalette pal = palette();
+	pal.setColor(QPalette::Background, Qt::darkBlue);
+	this->setAutoFillBackground(true);
+	this->setPalette(pal);
+	ui.tabWidget->setPalette(pal);
+	ui.tabWidget->tabBar()->setTabTextColor(0, Qt::white);
+	ui.tabWidget->tabBar()->setTabTextColor(1, Qt::white);
+	ui.tabWidget->tabBar()->setTabTextColor(2, Qt::white);
+	QPalette labelPal = palette();
+	labelPal.setColor(QPalette::WindowText, Qt::white);
+	ui.activeUserName->setPalette(labelPal);
+	ui.activeUserActions->setPalette(labelPal);
+	ui.stageLabel->setPalette(labelPal);
+	ui.label->setPalette(labelPal);
+	ui.label_2->setPalette(labelPal);
 	connect(ui.mapView, SIGNAL(cityItemSelected(pan::CityIndex)), this, SLOT(on_cityItemSelected(pan::CityIndex)));
 	connect(ui.actionSelectView, SIGNAL(actionSelected(pan::ActionType)), this, SLOT(on_actionSelectViewSelected(pan::ActionType)));
 	connect(ui.teamView, SIGNAL(playerSelected(pan::PlayerIndex)), this, SLOT(on_teamViewPlayerSelected(pan::PlayerIndex)));
@@ -160,6 +174,13 @@ QString Pandemic::playerStageToString(pan::PlayerStage s) const
 	return QString("Infect");
 }
 
+void Pandemic::keyPressEvent(QKeyEvent *event)
+{
+	if (event->key() == Qt::Key::Key_Escape){
+		this->close();
+	}
+}
+
 void Pandemic::closeEvent(QCloseEvent *event)
 {
 	QMessageBox::StandardButton resBtn = QMessageBox::question(this, "Pandemic",
@@ -170,7 +191,8 @@ void Pandemic::closeEvent(QCloseEvent *event)
 		event->ignore();
 	}
 	else {
-		game.save("Autosave");
+		if (game.isInitialized() && !game.isOver())
+			game.save("Autosave");
 		event->accept();
 	}
 }

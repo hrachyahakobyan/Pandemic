@@ -14,6 +14,8 @@ public:
 	~Pandemic();
 	void start();
 	void closeEvent(QCloseEvent *event);
+	void keyPressEvent(QKeyEvent *event);
+
 public Q_SLOTS:
 	void on_cityItemSelected(pan::CityIndex);
 	void on_actionSelectViewSelected(pan::ActionType);

@@ -26,6 +26,9 @@
    <string>DiseaseDetailsView</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="horizontalSpacing">
+    <number>10</number>
+   </property>
    <item row="0" column="0">
     <widget class="QLabel" name="d0Image">
      <property name="sizePolicy">

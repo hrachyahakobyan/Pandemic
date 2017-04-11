@@ -50,7 +50,7 @@
          </size>
         </property>
         <property name="text">
-         <string>DFlight</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -90,7 +90,7 @@
          </size>
         </property>
         <property name="text">
-         <string>CFlight</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -130,7 +130,7 @@
          </size>
         </property>
         <property name="text">
-         <string>BResearch</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -170,7 +170,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Discover</string>
+         <string/>
         </property>
        </widget>
       </item>
