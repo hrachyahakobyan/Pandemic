@@ -22,6 +22,7 @@ public:
 	static QPixmap getPlayerCardBack();
 	static QPixmap getPixmapForAction(pan::ActionType);
 	static QPixmap getCityIconForRegion(pan::RegionIndex);
+	static QPixmap getAvatarBlank();
 private:
 	static QMap<pan::RegionIndex, QPixmap> regionPixmaps;
 	static QMap<pan::Roles, QPixmap> pawnPixmaps;
@@ -42,5 +43,6 @@ private:
 	static std::unique_ptr<QPixmap> stationPawn;
 	static std::unique_ptr<QPixmap> playerCardBack;
 	static std::unique_ptr<QPixmap> infectionCardBack;
+	static std::unique_ptr<QPixmap> avatarBlank;
 };
 

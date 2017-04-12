@@ -20,6 +20,7 @@ std::unique_ptr<QPixmap> Resources::station;
 std::unique_ptr<QPixmap> Resources::stationPawn;
 std::unique_ptr<QPixmap> Resources::playerCardBack;
 std::unique_ptr<QPixmap> Resources::infectionCardBack;
+std::unique_ptr<QPixmap> Resources::avatarBlank;
 
 Resources::Resources()
 {
@@ -321,7 +322,7 @@ QPixmap Resources::pixmapForCard(const pan::CardBase& c)
 QPixmap Resources::getInfectionCardBack()
 {
 	if (infectionCardBack == nullptr){
-		infectionCardBack.reset(new QPixmap("Resources\\infection_card_back.png"));
+		infectionCardBack.reset(new QPixmap("Resources\\InfectionCards\\back.png"));
 	}
 	return *infectionCardBack.get();
 }
@@ -329,9 +330,18 @@ QPixmap Resources::getInfectionCardBack()
 QPixmap Resources::getPlayerCardBack()
 {
 	if (playerCardBack == nullptr){
-		playerCardBack.reset(new QPixmap("Resources\\player_card_back.png"));
+		playerCardBack.reset(new QPixmap("Resources\\CityCards\\back.png"));
 	}
 	return *playerCardBack.get();
+}
+
+
+QPixmap Resources::getAvatarBlank()
+{
+	if (avatarBlank == nullptr){
+		avatarBlank.reset(new QPixmap("Resources\\Avatars\\blank_ava.png"));
+	}
+	return *avatarBlank.get();
 }
 
 QPixmap Resources::getPixmapForAction(pan::ActionType a)

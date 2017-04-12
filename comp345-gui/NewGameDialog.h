@@ -31,5 +31,6 @@ private:
 	GameDifficulty difficulty;
 
 	void selectedRole(pan::Roles role);
+	void deselectedPlayer(std::size_t index);
 	void updatePlayerLabels();
 };

@@ -1,1 +1,1061 @@
+20170411T203847:DECK DATA UPDATE
+Player Deck:
+City Card 0 0
+City Card 9 0
+Event Card Forecast
+Epidemic Card
+City Card 15 2
+City Card 10 0
+City Card 6 0
+City Card 13 2
+City Card 8 0
+City Card 44 3
+City Card 4 0
+City Card 46 3
+City Card 12 2
+Epidemic Card
+City Card 39 3
+City Card 20 2
+City Card 37 3
+City Card 14 2
+City Card 38 3
+Epidemic Card
+City Card 25 1
+Event Card Airlift
+City Card 19 2
+City Card 40 3
+City Card 27 1
+City Card 1 0
+City Card 35 1
+City Card 24 1
+City Card 22 2
+City Card 47 3
+City Card 29 1
+City Card 17 2
+City Card 23 2
+City Card 11 0
+Epidemic Card
+City Card 42 3
+City Card 3 0
+City Card 2 0
+Epidemic Card
+City Card 34 1
+Event Card Resilient Population
+Event Card One quiet night
+City Card 18 2
+City Card 7 0
+City Card 16 2
+Event Card Government Grant
+Epidemic Card
+City Card 21 2
+City Card 28 1
+City Card 30 1
+City Card 5 0
+Player Discard Deck:
+City Card 31 1
+Infection Deck:
+Infection Card 28
+Infection Card 30
+Infection Card 33
+Infection Card 21
+Infection Card 5
+Infection Card 34
+Infection Card 16
+Infection Card 7
+Infection Card 18
+Infection Card 2
+Infection Card 45
+Infection Card 31
+Infection Card 3
+Infection Card 24
+Infection Card 11
+Infection Card 29
+Infection Card 17
+Infection Card 47
+Infection Card 42
+Infection Card 22
+Infection Card 23
+Infection Card 40
+Infection Card 26
+Infection Card 35
+Infection Card 1
+Infection Card 27
+Infection Card 38
+Infection Card 19
+Infection Card 25
+Infection Card 12
+Infection Card 4
+Infection Card 44
+Infection Card 14
+Infection Card 37
+Infection Card 39
+Infection Card 20
+Infection Card 46
+Infection Card 32
+Infection Card 10
+Infection Discard Deck:
+Infection Card 36
+Infection Card 41
+Infection Card 43
+Infection Card 15
+Infection Card 0
+Infection Card 6
+Infection Card 13
+Infection Card 8
+Infection Card 9
+
+
+20170411T203847: GAME DATA UPDATE
+Settings: Initial cards: 2
+ Epidemic Card Count: 6
+ Player Count: 4
+ Cards required to discover a cure: 1
+ Maximum allowed cards in a hand: 7
+Initialized 1
+State In Progress
+Infection Rate Marker: 0
+Outbreak Marker: 0
+Research Stations: 1
+Diseases:
+Disease type: 0. Is Cured: 0. Is eradicated: 0
+Disease type: 1. Is Cured: 1. Is eradicated: 1
+Disease type: 2. Is Cured: 0. Is eradicated: 0
+Disease type: 3. Is Cured: 0. Is eradicated: 0
+DiseaseCubes:
+DiseaseType: 0 cubes: 18
+DiseaseType: 1 cubes: 24
+DiseaseType: 2 cubes: 21
+DiseaseType: 3 cubes: 15
+
+
+20170411T203847: PLAYER DATA UPDATE
+Players:
+Player: 
+Index: 0
+Role: Dispatcher
+Location: 0
+Cards:
+City Card 32 1
+
+Player: 
+Index: 1
+Role: Contingency Planner
+Location: 0
+Cards:
+City Card 33 1
+City Card 45 3
+
+Player: 
+Index: 2
+Role: Medic
+Location: 0
+Cards:
+City Card 36 3
+City Card 26 1
+
+Player: 
+Index: 3
+Role: Operations Expert
+Location: 0
+Cards:
+City Card 43 3
+City Card 41 3
+
+Turn: 0
+
+20170411T203847: ACTION UPDATE
+Discover cure
+Player: 0
+Disease type: 1
+
+20170411T203913:DECK DATA UPDATE
+Player Deck:
+City Card 0 0
+City Card 9 0
+Event Card Forecast
+Epidemic Card
+City Card 15 2
+City Card 10 0
+City Card 6 0
+City Card 13 2
+City Card 8 0
+City Card 44 3
+City Card 4 0
+City Card 46 3
+City Card 12 2
+Epidemic Card
+City Card 39 3
+City Card 20 2
+City Card 37 3
+City Card 14 2
+City Card 38 3
+Epidemic Card
+City Card 25 1
+Event Card Airlift
+City Card 19 2
+City Card 40 3
+City Card 27 1
+City Card 1 0
+City Card 35 1
+City Card 24 1
+City Card 22 2
+City Card 47 3
+City Card 29 1
+City Card 17 2
+City Card 23 2
+City Card 11 0
+Epidemic Card
+City Card 42 3
+City Card 3 0
+City Card 2 0
+Epidemic Card
+City Card 34 1
+Event Card Resilient Population
+Event Card One quiet night
+City Card 18 2
+City Card 7 0
+City Card 16 2
+Event Card Government Grant
+Epidemic Card
+City Card 21 2
+City Card 28 1
+City Card 30 1
+City Card 5 0
+Player Discard Deck:
+City Card 31 1
+City Card 32 1
+Infection Deck:
+Infection Card 28
+Infection Card 30
+Infection Card 33
+Infection Card 21
+Infection Card 5
+Infection Card 34
+Infection Card 16
+Infection Card 7
+Infection Card 18
+Infection Card 2
+Infection Card 45
+Infection Card 31
+Infection Card 3
+Infection Card 24
+Infection Card 11
+Infection Card 29
+Infection Card 17
+Infection Card 47
+Infection Card 42
+Infection Card 22
+Infection Card 23
+Infection Card 40
+Infection Card 26
+Infection Card 35
+Infection Card 1
+Infection Card 27
+Infection Card 38
+Infection Card 19
+Infection Card 25
+Infection Card 12
+Infection Card 4
+Infection Card 44
+Infection Card 14
+Infection Card 37
+Infection Card 39
+Infection Card 20
+Infection Card 46
+Infection Card 32
+Infection Card 10
+Infection Discard Deck:
+Infection Card 36
+Infection Card 41
+Infection Card 43
+Infection Card 15
+Infection Card 0
+Infection Card 6
+Infection Card 13
+Infection Card 8
+Infection Card 9
+
+
+20170411T203913: CITY UPDATE
+City: Atlanta.
+Region 0.
+Population: 447841
+Research station: 1
+Cubes: 	 Region: 0 cubes: 2
+
+Players: 	Player: 
+Index: 1
+Role: Contingency Planner
+Location: 0
+Cards:
+City Card 33 1
+City Card 45 3
+
+	Player: 
+Index: 3
+Role: Operations Expert
+Location: 0
+Cards:
+City Card 43 3
+City Card 41 3
+
+	Player: 
+Index: 2
+Role: Medic
+Location: 0
+Cards:
+City Card 36 3
+City Card 26 1
+
+
+
+20170411T203913: CITY UPDATE
+City: Lagos.
+Region 1.
+Population: 21000000
+Research station: 0
+Cubes: 
+Players: 	Player: 
+Index: 0
+Role: Dispatcher
+Location: 32
+Cards:
+
+
+
+20170411T203913: PLAYER DATA UPDATE
+Players:
+Player: 
+Index: 0
+Role: Dispatcher
+Location: 32
+Cards:
+
+Player: 
+Index: 1
+Role: Contingency Planner
+Location: 0
+Cards:
+City Card 33 1
+City Card 45 3
+
+Player: 
+Index: 2
+Role: Medic
+Location: 0
+Cards:
+City Card 36 3
+City Card 26 1
+
+Player: 
+Index: 3
+Role: Operations Expert
+Location: 0
+Cards:
+City Card 43 3
+City Card 41 3
+
+Turn: 0
+
+20170411T203913: ACTION UPDATE
+Direct Flight
+Player: 0
+Target city: 32
+
+20170411T203916: CITY UPDATE
+City: Lagos.
+Region 1.
+Population: 21000000
+Research station: 0
+Cubes: 
+Players: 
+
+20170411T203916: CITY UPDATE
+City: Kinshasa.
+Region 1.
+Population: 10120000
+Research station: 0
+Cubes: 
+Players: 	Player: 
+Index: 0
+Role: Dispatcher
+Location: 33
+Cards:
+
+
+
+20170411T203916: PLAYER DATA UPDATE
+Players:
+Player: 
+Index: 0
+Role: Dispatcher
+Location: 33
+Cards:
+
+Player: 
+Index: 1
+Role: Contingency Planner
+Location: 0
+Cards:
+City Card 33 1
+City Card 45 3
+
+Player: 
+Index: 2
+Role: Medic
+Location: 0
+Cards:
+City Card 36 3
+City Card 26 1
+
+Player: 
+Index: 3
+Role: Operations Expert
+Location: 0
+Cards:
+City Card 43 3
+City Card 41 3
+
+Turn: 0
+
+20170411T203916: ACTION UPDATE
+Drive/Ferry
+Player: 0
+Target city: 33
+
+20170411T203918: CITY UPDATE
+City: Kinshasa.
+Region 1.
+Population: 10120000
+Research station: 0
+Cubes: 
+Players: 
+
+20170411T203918: CITY UPDATE
+City: Khartoum.
+Region 1.
+Population: 5185000
+Research station: 0
+Cubes: 
+Players: 	Player: 
+Index: 0
+Role: Dispatcher
+Location: 35
+Cards:
+
+
+
+20170411T203918: PLAYER DATA UPDATE
+Players:
+Player: 
+Index: 0
+Role: Dispatcher
+Location: 35
+Cards:
+
+Player: 
+Index: 1
+Role: Contingency Planner
+Location: 0
+Cards:
+City Card 33 1
+City Card 45 3
+
+Player: 
+Index: 2
+Role: Medic
+Location: 0
+Cards:
+City Card 36 3
+City Card 26 1
+
+Player: 
+Index: 3
+Role: Operations Expert
+Location: 0
+Cards:
+City Card 43 3
+City Card 41 3
+
+Turn: 0
+
+20170411T203918: ACTION UPDATE
+Drive/Ferry
+Player: 0
+Target city: 35
+
+20170411T203927:DECK DATA UPDATE
+Player Deck:
+City Card 0 0
+City Card 9 0
+Event Card Forecast
+Epidemic Card
+City Card 15 2
+City Card 10 0
+City Card 6 0
+City Card 13 2
+City Card 8 0
+City Card 44 3
+City Card 4 0
+City Card 46 3
+City Card 12 2
+Epidemic Card
+City Card 39 3
+City Card 20 2
+City Card 37 3
+City Card 14 2
+City Card 38 3
+Epidemic Card
+City Card 25 1
+Event Card Airlift
+City Card 19 2
+City Card 40 3
+City Card 27 1
+City Card 1 0
+City Card 35 1
+City Card 24 1
+City Card 22 2
+City Card 47 3
+City Card 29 1
+City Card 17 2
+City Card 23 2
+City Card 11 0
+Epidemic Card
+City Card 42 3
+City Card 3 0
+City Card 2 0
+Epidemic Card
+City Card 34 1
+Event Card Resilient Population
+Event Card One quiet night
+City Card 18 2
+City Card 7 0
+City Card 16 2
+Event Card Government Grant
+Epidemic Card
+City Card 21 2
+City Card 28 1
+Player Discard Deck:
+City Card 31 1
+City Card 32 1
+Infection Deck:
+Infection Card 28
+Infection Card 30
+Infection Card 33
+Infection Card 21
+Infection Card 5
+Infection Card 34
+Infection Card 16
+Infection Card 7
+Infection Card 18
+Infection Card 2
+Infection Card 45
+Infection Card 31
+Infection Card 3
+Infection Card 24
+Infection Card 11
+Infection Card 29
+Infection Card 17
+Infection Card 47
+Infection Card 42
+Infection Card 22
+Infection Card 23
+Infection Card 40
+Infection Card 26
+Infection Card 35
+Infection Card 1
+Infection Card 27
+Infection Card 38
+Infection Card 19
+Infection Card 25
+Infection Card 12
+Infection Card 4
+Infection Card 44
+Infection Card 14
+Infection Card 37
+Infection Card 39
+Infection Card 20
+Infection Card 46
+Infection Card 32
+Infection Card 10
+Infection Discard Deck:
+Infection Card 36
+Infection Card 41
+Infection Card 43
+Infection Card 15
+Infection Card 0
+Infection Card 6
+Infection Card 13
+Infection Card 8
+Infection Card 9
+
+
+20170411T203927: PLAYER DATA UPDATE
+Players:
+Player: 
+Index: 0
+Role: Dispatcher
+Location: 35
+Cards:
+City Card 30 1
+City Card 5 0
+
+Player: 
+Index: 1
+Role: Contingency Planner
+Location: 0
+Cards:
+City Card 33 1
+City Card 45 3
+
+Player: 
+Index: 2
+Role: Medic
+Location: 0
+Cards:
+City Card 36 3
+City Card 26 1
+
+Player: 
+Index: 3
+Role: Operations Expert
+Location: 0
+Cards:
+City Card 43 3
+City Card 41 3
+
+Turn: 0
+
+20170411T203927: ACTION UPDATE
+Draw cards
+Player: 0
+
+20170411T203929:DECK DATA UPDATE
+Player Deck:
+City Card 0 0
+City Card 9 0
+Event Card Forecast
+Epidemic Card
+City Card 15 2
+City Card 10 0
+City Card 6 0
+City Card 13 2
+City Card 8 0
+City Card 44 3
+City Card 4 0
+City Card 46 3
+City Card 12 2
+Epidemic Card
+City Card 39 3
+City Card 20 2
+City Card 37 3
+City Card 14 2
+City Card 38 3
+Epidemic Card
+City Card 25 1
+Event Card Airlift
+City Card 19 2
+City Card 40 3
+City Card 27 1
+City Card 1 0
+City Card 35 1
+City Card 24 1
+City Card 22 2
+City Card 47 3
+City Card 29 1
+City Card 17 2
+City Card 23 2
+City Card 11 0
+Epidemic Card
+City Card 42 3
+City Card 3 0
+City Card 2 0
+Epidemic Card
+City Card 34 1
+Event Card Resilient Population
+Event Card One quiet night
+City Card 18 2
+City Card 7 0
+City Card 16 2
+Event Card Government Grant
+Epidemic Card
+City Card 21 2
+City Card 28 1
+Player Discard Deck:
+City Card 31 1
+City Card 32 1
+Infection Deck:
+Infection Card 28
+Infection Card 30
+Infection Card 33
+Infection Card 21
+Infection Card 5
+Infection Card 34
+Infection Card 16
+Infection Card 7
+Infection Card 18
+Infection Card 2
+Infection Card 45
+Infection Card 31
+Infection Card 3
+Infection Card 24
+Infection Card 11
+Infection Card 29
+Infection Card 17
+Infection Card 47
+Infection Card 42
+Infection Card 22
+Infection Card 23
+Infection Card 40
+Infection Card 26
+Infection Card 35
+Infection Card 1
+Infection Card 27
+Infection Card 38
+Infection Card 19
+Infection Card 25
+Infection Card 12
+Infection Card 4
+Infection Card 44
+Infection Card 14
+Infection Card 37
+Infection Card 39
+Infection Card 20
+Infection Card 46
+Infection Discard Deck:
+Infection Card 36
+Infection Card 41
+Infection Card 43
+Infection Card 15
+Infection Card 0
+Infection Card 6
+Infection Card 13
+Infection Card 8
+Infection Card 9
+Infection Card 32
+Infection Card 10
+
+
+20170411T203929: CITY UPDATE
+City: Milan.
+Region 0.
+Population: 1251000
+Research station: 0
+Cubes: 	 Region: 0 cubes: 1
+
+Players: 
+
+20170411T203929: GAME DATA UPDATE
+Settings: Initial cards: 2
+ Epidemic Card Count: 6
+ Player Count: 4
+ Cards required to discover a cure: 1
+ Maximum allowed cards in a hand: 7
+Initialized 1
+State In Progress
+Infection Rate Marker: 0
+Outbreak Marker: 0
+Research Stations: 1
+Diseases:
+Disease type: 0. Is Cured: 0. Is eradicated: 0
+Disease type: 1. Is Cured: 1. Is eradicated: 1
+Disease type: 2. Is Cured: 0. Is eradicated: 0
+Disease type: 3. Is Cured: 0. Is eradicated: 0
+DiseaseCubes:
+DiseaseType: 0 cubes: 17
+DiseaseType: 1 cubes: 24
+DiseaseType: 2 cubes: 21
+DiseaseType: 3 cubes: 15
+
+
+20170411T203929: PLAYER DATA UPDATE
+Players:
+Player: 
+Index: 0
+Role: Dispatcher
+Location: 35
+Cards:
+City Card 30 1
+City Card 5 0
+
+Player: 
+Index: 1
+Role: Contingency Planner
+Location: 0
+Cards:
+City Card 33 1
+City Card 45 3
+
+Player: 
+Index: 2
+Role: Medic
+Location: 0
+Cards:
+City Card 36 3
+City Card 26 1
+
+Player: 
+Index: 3
+Role: Operations Expert
+Location: 0
+Cards:
+City Card 43 3
+City Card 41 3
+
+Turn: 1
+
+20170411T203929: ACTION UPDATE
+Infect
+Player: 0
+
+20170411T203936:DECK DATA UPDATE
+Player Deck:
+City Card 0 0
+City Card 9 0
+Event Card Forecast
+Epidemic Card
+City Card 15 2
+City Card 10 0
+City Card 6 0
+City Card 13 2
+City Card 8 0
+City Card 44 3
+City Card 4 0
+City Card 46 3
+City Card 12 2
+Epidemic Card
+City Card 39 3
+City Card 20 2
+City Card 37 3
+City Card 14 2
+City Card 38 3
+Epidemic Card
+City Card 25 1
+Event Card Airlift
+City Card 19 2
+City Card 40 3
+City Card 27 1
+City Card 1 0
+City Card 35 1
+City Card 24 1
+City Card 22 2
+City Card 47 3
+City Card 29 1
+City Card 17 2
+City Card 23 2
+City Card 11 0
+Epidemic Card
+City Card 42 3
+City Card 3 0
+City Card 2 0
+Epidemic Card
+City Card 34 1
+Event Card Resilient Population
+Event Card One quiet night
+City Card 18 2
+City Card 7 0
+City Card 16 2
+Event Card Government Grant
+Epidemic Card
+City Card 21 2
+City Card 28 1
+Player Discard Deck:
+City Card 31 1
+City Card 32 1
+City Card 45 3
+Infection Deck:
+Infection Card 28
+Infection Card 30
+Infection Card 33
+Infection Card 21
+Infection Card 5
+Infection Card 34
+Infection Card 16
+Infection Card 7
+Infection Card 18
+Infection Card 2
+Infection Card 45
+Infection Card 31
+Infection Card 3
+Infection Card 24
+Infection Card 11
+Infection Card 29
+Infection Card 17
+Infection Card 47
+Infection Card 42
+Infection Card 22
+Infection Card 23
+Infection Card 40
+Infection Card 26
+Infection Card 35
+Infection Card 1
+Infection Card 27
+Infection Card 38
+Infection Card 19
+Infection Card 25
+Infection Card 12
+Infection Card 4
+Infection Card 44
+Infection Card 14
+Infection Card 37
+Infection Card 39
+Infection Card 20
+Infection Card 46
+Infection Discard Deck:
+Infection Card 36
+Infection Card 41
+Infection Card 43
+Infection Card 15
+Infection Card 0
+Infection Card 6
+Infection Card 13
+Infection Card 8
+Infection Card 9
+Infection Card 32
+Infection Card 10
+
+
+20170411T203936: GAME DATA UPDATE
+Settings: Initial cards: 2
+ Epidemic Card Count: 6
+ Player Count: 4
+ Cards required to discover a cure: 1
+ Maximum allowed cards in a hand: 7
+Initialized 1
+State In Progress
+Infection Rate Marker: 0
+Outbreak Marker: 0
+Research Stations: 1
+Diseases:
+Disease type: 0. Is Cured: 0. Is eradicated: 0
+Disease type: 1. Is Cured: 1. Is eradicated: 1
+Disease type: 2. Is Cured: 0. Is eradicated: 0
+Disease type: 3. Is Cured: 1. Is eradicated: 0
+DiseaseCubes:
+DiseaseType: 0 cubes: 17
+DiseaseType: 1 cubes: 24
+DiseaseType: 2 cubes: 21
+DiseaseType: 3 cubes: 15
+
+
+20170411T203937: PLAYER DATA UPDATE
+Players:
+Player: 
+Index: 0
+Role: Dispatcher
+Location: 35
+Cards:
+City Card 30 1
+City Card 5 0
+
+Player: 
+Index: 1
+Role: Contingency Planner
+Location: 0
+Cards:
+City Card 33 1
+
+Player: 
+Index: 2
+Role: Medic
+Location: 0
+Cards:
+City Card 36 3
+City Card 26 1
+
+Player: 
+Index: 3
+Role: Operations Expert
+Location: 0
+Cards:
+City Card 43 3
+City Card 41 3
+
+Turn: 1
+
+20170411T203937: ACTION UPDATE
+Discover cure
+Player: 1
+Disease type: 3
+
+20170411T203949: CITY UPDATE
+City: Atlanta.
+Region 0.
+Population: 447841
+Research station: 1
+Cubes: 	 Region: 0 cubes: 2
+
+Players: 	Player: 
+Index: 3
+Role: Operations Expert
+Location: 0
+Cards:
+City Card 43 3
+City Card 41 3
+
+	Player: 
+Index: 2
+Role: Medic
+Location: 0
+Cards:
+City Card 36 3
+City Card 26 1
+
+
+
+20170411T203949: CITY UPDATE
+City: Miami.
+Region 1.
+Population: 417650
+Research station: 0
+Cubes: 
+Players: 	Player: 
+Index: 1
+Role: Contingency Planner
+Location: 26
+Cards:
+City Card 33 1
+
+
+
+20170411T203949: PLAYER DATA UPDATE
+Players:
+Player: 
+Index: 0
+Role: Dispatcher
+Location: 35
+Cards:
+City Card 30 1
+City Card 5 0
+
+Player: 
+Index: 1
+Role: Contingency Planner
+Location: 26
+Cards:
+City Card 33 1
+
+Player: 
+Index: 2
+Role: Medic
+Location: 0
+Cards:
+City Card 36 3
+City Card 26 1
+
+Player: 
+Index: 3
+Role: Operations Expert
+Location: 0
+Cards:
+City Card 43 3
+City Card 41 3
+
+Turn: 1
+
+20170411T203949: ACTION UPDATE
+Drive/Ferry
+Player: 1
+Target city: 26
+
 END OF LOGFILE

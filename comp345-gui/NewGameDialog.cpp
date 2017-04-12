@@ -7,7 +7,6 @@ NewGameDialog::NewGameDialog(QWidget *parent)
 {
 	ui.setupUi(this);
 	this->on_beginnerButton_clicked();
-	ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 	roleLabels.push_back(qMakePair(pan::Roles::CPlanner, ui.role1));
 	roleLabels.push_back(qMakePair(pan::Roles::Dispatcher, ui.role2));
 	roleLabels.push_back(qMakePair(pan::Roles::Medic, ui.role3));
@@ -26,6 +25,7 @@ NewGameDialog::NewGameDialog(QWidget *parent)
 	for (auto p : roleLabels){
 		p.second->setPixmap(Resources::avatarForRole(p.first).scaled(p.second->width(), p.second->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	}
+	updatePlayerLabels();
 }
 
 NewGameDialog::~NewGameDialog()
@@ -92,6 +92,19 @@ void NewGameDialog::mousePressEvent(QMouseEvent *event)
 			return;
 		}
 	}
+
+	for (std::size_t i = 0; i < playerLabels.size(); i++){
+		QPointF localpos = event->localPos();
+		QPoint ptOuter = ui.widget_3->mapFromParent(QPoint(localpos.x(), localpos.y()));
+		auto label = playerLabels[i];
+		QPoint ptInner = label->parentWidget()->mapFromParent(ptOuter);
+		QRect g = label->geometry();
+		bool contains = g.contains(ptInner);
+		if (contains){
+			deselectedPlayer(i);
+			return;
+		}
+	}
 }
 
 void NewGameDialog::selectedRole(pan::Roles role)
@@ -108,10 +121,19 @@ void NewGameDialog::selectedRole(pan::Roles role)
 	updatePlayerLabels();
 }
 
+void NewGameDialog::deselectedPlayer(std::size_t index)
+{
+	if (index >= players.size()) return;
+	players.erase(players.begin() + index);
+	updatePlayerLabels();
+}
+
 void NewGameDialog::updatePlayerLabels()
 {
-	for (auto l : playerLabels){
-		l->clear();
+	ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(players.size() > 1);
+	for (std::size_t i = players.size(); i < playerLabels.size(); i++){
+		QLabel* p = playerLabels[i];
+		p->setPixmap(Resources::getAvatarBlank().scaled(p->width(), p->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	}
 	for (std::size_t i = 0; i < std::min(std::size_t(playerLabels.size()), players.size()); i++){
 		playerLabels[i]->setPixmap(Resources::avatarForRole(players[i].second).scaled(playerLabels[i]->width(), playerLabels[i]->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
