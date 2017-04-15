@@ -6,7 +6,10 @@ DiseaseDetailsView::DiseaseDetailsView(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	//this->setStyleSheet("background-color:#0d0238;");
+	selectedPalette = palette();
+	deselectedPalette = palette();
+	selectedPalette.setColor(QPalette::Background, Qt::blue);
+	deselectedPalette.setColor(QPalette::Background, Qt::darkBlue);
 	labels.push_back(std::make_tuple(0, ui.d0Image, ui.d0Vial));
 	labels.push_back(std::make_tuple(1, ui.d1Image, ui.d1Vial));
 	labels.push_back(std::make_tuple(2, ui.d2Image, ui.d2Vial));
@@ -26,6 +29,7 @@ void DiseaseDetailsView::update(const std::vector<pan::Disease>& diseases)
 {
 	for (auto t : labels){
 		std::get<1>(t)->clear();
+		std::get<1>(t)->setAutoFillBackground(true);
 		std::get<2>(t)->clear();
 	}
 	std::size_t index = 0;
@@ -52,7 +56,7 @@ void DiseaseDetailsView::mousePressEvent(QMouseEvent *event)
 		QRect g = label->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains){
-			label->setStyleSheet("border: 3px solid green");
+			label->setPalette(selectedPalette);
 			Q_EMIT diseaseSelected(std::get<0>(t));
 			return;
 		}
@@ -67,7 +71,7 @@ void DiseaseDetailsView::mouseReleaseEvent(QMouseEvent *event)
 		QRect g = label->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains){
-			label->setStyleSheet("border: 0px solid green");
+			label->setPalette(deselectedPalette);
 			return;
 		}
 	}

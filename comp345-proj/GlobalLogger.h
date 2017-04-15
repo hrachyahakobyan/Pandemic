@@ -3,6 +3,10 @@
 #include "Notifications.h"
 
 namespace pan{
+	/**
+	*	@brief A logger that logs all possible events.
+	*	@author Hrachya Hakobyan
+	*/
 	class GlobalLogger : public LoggerBase
 	{
 	public:

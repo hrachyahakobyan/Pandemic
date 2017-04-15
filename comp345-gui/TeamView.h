@@ -20,6 +20,8 @@ private:
 	Ui::TeamView ui;
 	QMap<QWidget*, pan::PlayerIndex> indexMap;
 	QVector<QPair<QWidget*, QLabel*>> playerWidgets;
+	QPalette selectedPalette;
+	QPalette deselectedPalette;
 };
 
 #endif // TEAMVIEW_H

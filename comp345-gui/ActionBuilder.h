@@ -4,7 +4,6 @@ class ActionBuilder
 public:
 	ActionBuilder();
 	~ActionBuilder();
-
 	void reset();
 	void selectAction(pan::ActionType type);
 	void selectCity(pan::CityIndex index);

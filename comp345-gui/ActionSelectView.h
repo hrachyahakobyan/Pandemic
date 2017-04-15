@@ -18,6 +18,8 @@ Q_SIGNALS:
 private:
 	Ui::ActionSelectView ui;
 	QMap<QWidget*, QPair<QLabel*, pan::ActionType>> widgetActions;
+	QPalette selectedPalette;
+	QPalette deselectedPalette;
 };
 
 #endif // ACTIONSELECTVIEW_H

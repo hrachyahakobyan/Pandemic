@@ -266,7 +266,7 @@ namespace pan{
 		// Check if the disease is eradicated
 		if (gameData.diseaseCubes[type] == gameData.settings.diseaseCubesPerDisease)
 			gameData.diseases[type].setIsEradicated(true);
-		bool allCured = false;
+		bool allCured = true;
 		for (const auto& d : gameData.diseases){
 			allCured = allCured && d.getIsCured();
 		}

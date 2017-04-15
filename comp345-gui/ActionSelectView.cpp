@@ -6,6 +6,10 @@ ActionSelectView::ActionSelectView(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	selectedPalette = palette();
+	deselectedPalette = palette();
+	selectedPalette.setColor(QPalette::Background, Qt::blue);
+	deselectedPalette.setColor(QPalette::Background, Qt::darkBlue);
 	widgetActions[ui.bResearchWidget] = qMakePair(ui.buildResearchLabel, pan::ActionType::BuildStation);
 	widgetActions[ui.cFlightWidget] = qMakePair(ui.charterFlightLabel, pan::ActionType::CharterFlight);
 	widgetActions[ui.dCureWidget] = qMakePair(ui.discoverLabel, pan::ActionType::DiscoverCure);
@@ -18,6 +22,7 @@ ActionSelectView::ActionSelectView(QWidget *parent)
 	widgetActions[ui.discardWidget] = qMakePair(ui.discardLabel, pan::ActionType::Discard);
 
 	for (auto p : widgetActions){
+		p.first->setAutoFillBackground(true);
 		p.first->setPixmap(Resources::getPixmapForAction(p.second).scaled(p.first->width(), p.first->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	}
 
@@ -40,7 +45,7 @@ void ActionSelectView::mousePressEvent(QMouseEvent *event)
 		QRect g = key->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains){
-			widgetActions[key].first->setStyleSheet("border: 3px solid green");
+			widgetActions[key].first->setPalette(selectedPalette);
 			Q_EMIT actionSelected(widgetActions[key].second);
 			return;
 		}
@@ -54,7 +59,7 @@ void ActionSelectView::mouseReleaseEvent(QMouseEvent *event)
 		QRect g = key->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains){
-			widgetActions[key].first->setStyleSheet("border: 0px solid green");
+			widgetActions[key].first->setPalette(deselectedPalette);
 			return;
 		}
 	}

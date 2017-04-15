@@ -3,6 +3,10 @@
 #include "Notifications.h"
 
 namespace pan{
+	/**
+	*	@brief A logger that logs all events connected to a specific player
+	*	@author Hrachya Hakobyan
+	*/
 	class PlayerLogger : public LoggerBase
 	{
 	public:

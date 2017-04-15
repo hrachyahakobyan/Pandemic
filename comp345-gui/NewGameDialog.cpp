@@ -6,6 +6,10 @@ NewGameDialog::NewGameDialog(QWidget *parent)
 	: QDialog(parent)
 {
 	ui.setupUi(this);
+	QPalette pal = palette();
+	pal.setColor(QPalette::Background, Qt::darkBlue);
+	this->setAutoFillBackground(true);
+	this->setPalette(pal);
 	this->on_beginnerButton_clicked();
 	roleLabels.push_back(qMakePair(pan::Roles::CPlanner, ui.role1));
 	roleLabels.push_back(qMakePair(pan::Roles::Dispatcher, ui.role2));
@@ -24,6 +28,9 @@ NewGameDialog::NewGameDialog(QWidget *parent)
 	lineEdits.push_back(ui.player4Name);
 	for (auto p : roleLabels){
 		p.second->setPixmap(Resources::avatarForRole(p.first).scaled(p.second->width(), p.second->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	}
+	for (auto l : lineEdits){
+		l->setMaxLength(10);
 	}
 	updatePlayerLabels();
 }

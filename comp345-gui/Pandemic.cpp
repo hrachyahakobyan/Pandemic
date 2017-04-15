@@ -7,7 +7,7 @@
 #include <core\detail\Observer.h>
 
 Pandemic::Pandemic(QWidget *parent)
-	: QMainWindow(parent), menu(NULL), initialized(false)
+	: QMainWindow(parent), menu(NULL), gameOverView(NULL), initialized(false)
 {
 	using namespace pan;
 	ui.setupUi(this);
@@ -37,15 +37,17 @@ Pandemic::~Pandemic()
 {
 	if (menu)
 		delete menu;
+	if (gameOverView)
+		delete gameOverView;
 }
 
 void Pandemic::start()
 {
-	menu = new MainMenu(this);
-	connect(menu, SIGNAL(constructedGame(pan::Game&)), this, SLOT(on_mainMenuConstructedGame(pan::Game&)));
+	if (!menu){
+		menu = new MainMenu(this);
+		connect(menu, SIGNAL(constructedGame(pan::Game&)), this, SLOT(on_mainMenuConstructedGame(pan::Game&)));
+	}
 	int status = menu->exec();
-	delete menu;
-	menu = NULL;
 }
 
 void Pandemic::on_mainMenuConstructedGame(pan::Game& g)
@@ -59,6 +61,7 @@ void Pandemic::initialize(pan::Game&& g)
 		return;
 	initialized = true;
 	using namespace pan;
+	actionBuilder.reset();
 	game = std::move(g);
 	game.initialize();
 	ui.mapView->update(this->game.getMap());
@@ -77,11 +80,20 @@ void Pandemic::initialize(pan::Game&& g)
 	pan::detail::NotificationCenter::defaultCenter().addObserver(gameObserver);
 	pan::detail::NotificationCenter::defaultCenter().addObserver(playersObserver);
 	pan::detail::NotificationCenter::defaultCenter().addObserver(playerObserver);
-	logger.reset(new GlobalLogger("log.txt"));
+	std::string dateString = pan::LoggerBase::getDateString();
+	std::string fileName = "log_" + dateString + ".log";
+	try{
+		logger.reset();
+		logger.reset(new GlobalLogger(fileName));
+	}
+	catch (...){
+		qDebug() << "Failed to create a logger ";
+	}
 }
 
 void Pandemic::on_cityItemSelected(pan::CityIndex index)
 {
+	if (!game.isInitialized() || game.isOver()) return;
 	qDebug() << "Selected city index " << index;
 	actionBuilder.selectCity(index);
 	executeAction();
@@ -89,6 +101,7 @@ void Pandemic::on_cityItemSelected(pan::CityIndex index)
 
 void Pandemic::on_teamViewPlayerSelected(pan::PlayerIndex index)
 {
+	if (!game.isInitialized() || game.isOver()) return;
 	actionBuilder.selectPlayer(index);
 	qDebug() << "Selected player index " << index;
 	executeAction();
@@ -96,6 +109,7 @@ void Pandemic::on_teamViewPlayerSelected(pan::PlayerIndex index)
 
 void Pandemic::on_handViewCardSelected(int card)
 {
+	if (!game.isInitialized() || game.isOver()) return;
 	actionBuilder.selectCard(card);
 	qDebug() << "Selected card " << card;
 	executeAction();
@@ -112,6 +126,7 @@ void Pandemic::updateActiveUser()
 
 void Pandemic::on_actionSelectViewSelected(pan::ActionType type)
 {
+	if (!game.isInitialized() || game.isOver()) return;
 	actionBuilder.selectAction(type);
 	actionBuilder.selectPlayer(game.getActivePlayerIndex());
 	qDebug() << "Selected action " << pan::ActionTypeDescriptions.at(type).c_str();
@@ -120,6 +135,7 @@ void Pandemic::on_actionSelectViewSelected(pan::ActionType type)
 
 void Pandemic::on_diseaseViewDiseaseSelected(pan::DiseaseType type)
 {
+	if (!game.isInitialized() || game.isOver()) return;
 	actionBuilder.selectDisease(type);
 	qDebug() << "Selected disease " << type;
 	executeAction();
@@ -143,6 +159,27 @@ void Pandemic::handleGameDataUpdateNotification(std::shared_ptr<pan::GameDataUpd
 {
 	ui.gameDataView->update(n->data);
 	ui.diseaseDetailsView->update(n->data.diseases);
+	if (n->data.state == pan::GameState::Victory || n->data.state == pan::GameState::Defeat){
+		if (!gameOverView){
+			gameOverView = new GaveOverView();
+			connect(gameOverView, SIGNAL(gameOverViewSelected(bool)), this, SLOT(on_gameOverViewSelected(bool)));
+		}
+		if (gameOverView->isActiveWindow())
+			return;
+		gameOverView->setStatus(n->data.state == pan::GameState::Victory ? true : false);
+		gameOverView->show();
+	}
+}
+
+void Pandemic::on_gameOverViewSelected(bool newGame)
+{
+	if (newGame){
+		initialized = false;
+		this->start();
+	}
+	else {
+		this->close();
+	}
 }
 
 void Pandemic::handleDeckDataUpdateNotification(std::shared_ptr<pan::DeckDataUpdateNotification> data)
@@ -176,7 +213,7 @@ QString Pandemic::playerStageToString(pan::PlayerStage s) const
 
 void Pandemic::keyPressEvent(QKeyEvent *event)
 {
-	if (event->key() == Qt::Key::Key_Escape){
+	if (this->isVisible() && event->key() == Qt::Key::Key_Escape){
 		this->close();
 	}
 }
@@ -191,8 +228,11 @@ void Pandemic::closeEvent(QCloseEvent *event)
 		event->ignore();
 	}
 	else {
-		if (game.isInitialized() && !game.isOver())
-			game.save("Autosave");
+		if (game.isInitialized() && !game.isOver()){
+			std::string date = pan::LoggerBase::getDateString();
+			std::string fileName = "autosave_" + date + ".pan";
+			game.save(fileName);
+		}
 		event->accept();
 	}
 }

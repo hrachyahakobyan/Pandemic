@@ -6,6 +6,10 @@ TeamView::TeamView(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	selectedPalette = palette();
+	deselectedPalette = palette();
+	selectedPalette.setColor(QPalette::Background, Qt::blue);
+	deselectedPalette.setColor(QPalette::Background, Qt::darkBlue);
 	playerWidgets.push_back(qMakePair(ui.p1Widget, ui.p1Label));
 	playerWidgets.push_back(qMakePair(ui.p2Widget, ui.p2Label));
 	playerWidgets.push_back(qMakePair(ui.p3Widget, ui.p3Label));
@@ -22,6 +26,7 @@ void TeamView::update(const std::vector<pan::PlayerPtr>& players)
 	indexMap.clear();
 	for (auto pair : playerWidgets){
 		pair.second->clear();
+		pair.second->setAutoFillBackground(true);
 	}
 	for (int i = 0; i < players.size(); i++){
 		indexMap[playerWidgets[i].first] = players[i]->index;
@@ -36,7 +41,7 @@ void TeamView::mousePressEvent(QMouseEvent *event)
 		QRect g = widget.first->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains && indexMap.find(widget.first) != indexMap.end()){
-			widget.second->setStyleSheet("border: 3px solid green");
+			widget.second->setPalette(selectedPalette);
 			Q_EMIT playerSelected(indexMap[widget.first]);
 			return;
 		}
@@ -50,7 +55,7 @@ void TeamView::mouseReleaseEvent(QMouseEvent *event)
 		QRect g = widget.first->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains && indexMap.find(widget.first) != indexMap.end()){
-			widget.second->setStyleSheet("border: 0px solid black");
+			widget.second->setPalette(deselectedPalette);
 			return;
 		}
 	}

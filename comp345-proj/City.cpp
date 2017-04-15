@@ -117,7 +117,7 @@ namespace pan{
 		for (std::size_t i = 0; i < cubes.size(); i++){
 			result += "\t Region: " + std::to_string(i) + " cubes: " + std::to_string(cubes[i]) + '\n';
 		}
-		result += "\nPlayers: ";
+		result += "\nPlayers: \n";
 		for (const auto& p : players){
 			result += "\t" + p->description() + '\n';
 		}

@@ -21,6 +21,8 @@ std::unique_ptr<QPixmap> Resources::stationPawn;
 std::unique_ptr<QPixmap> Resources::playerCardBack;
 std::unique_ptr<QPixmap> Resources::infectionCardBack;
 std::unique_ptr<QPixmap> Resources::avatarBlank;
+std::unique_ptr<QPixmap> Resources::victoryIcon;
+std::unique_ptr<QPixmap> Resources::defeatIcon;
 
 Resources::Resources()
 {
@@ -414,4 +416,20 @@ QPixmap Resources::getCityIconForRegion(pan::RegionIndex r)
 	QPixmap p(fileName.c_str());
 	cityMap[r] = p;
 	return p;
+}
+
+QPixmap Resources::getVictoryIcon()
+{
+	if (victoryIcon == nullptr){
+		victoryIcon.reset(new QPixmap("Resources\\Avatars\\victory.png"));
+	}
+	return *victoryIcon.get();
+}
+
+QPixmap Resources::getDefeatIcon()
+{
+	if (defeatIcon == nullptr){
+		defeatIcon.reset(new QPixmap("Resources\\Avatars\\defeat.png"));
+	}
+	return *defeatIcon.get();
 }

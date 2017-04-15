@@ -23,6 +23,8 @@ private:
 	Ui::PlayerHandView ui;
 	QVector<QLabel*> cardViews;
 	QMap<QLabel*, int> indexMap;
+	QPalette selectedPalette;
+	QPalette deselectedPalette;
 };
 
 #endif // PLAYERHANDVIEW_H

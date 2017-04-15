@@ -4,6 +4,7 @@
 #include "ui_Pandemic.h"
 #include "ActionBuilder.h"
 #include "MainMenu.h"
+#include "GaveOverView.h"
 
 class Pandemic : public QMainWindow
 {
@@ -23,6 +24,7 @@ public Q_SLOTS:
 	void on_handViewCardSelected(int);
 	void on_diseaseViewDiseaseSelected(pan::DiseaseType);
 	void on_mainMenuConstructedGame(pan::Game& g);
+	void on_gameOverViewSelected(bool newGame);
 private:
 	void initialize(pan::Game&&);
 	bool initialized;
@@ -42,4 +44,5 @@ private:
 	QString playerStageToString(pan::PlayerStage s) const;
 
 	MainMenu* menu;
+	GaveOverView* gameOverView;
 };

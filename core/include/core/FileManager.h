@@ -107,12 +107,12 @@ namespace pan{
 	template<typename T>
 	bool FileManager::read(std::ifstream& file, T& t) const
 	{
-		boost::archive::xml_iarchive ia(file);
 		try{
+			boost::archive::xml_iarchive ia(file);
 			ia >> boost::serialization::make_nvp("object", t);
 		}
-		catch (boost::archive::archive_exception& e){
-			std::cout << e.what() << std::endl;
+		catch (...){
+			std::cout << "Error reading file " << std::endl;
 			file.close();
 			return false;
 		}
@@ -123,12 +123,12 @@ namespace pan{
 	template<typename T>
 	bool FileManager::write(const T& t, std::ofstream& file) const
 	{
-		boost::archive::xml_oarchive oa(file);
 		try{
+			boost::archive::xml_oarchive oa(file);
 			oa << boost::serialization::make_nvp("object", t);
 		}
-		catch (boost::archive::archive_exception& e){
-			std::cout << e.what() << std::endl;
+		catch (...){
+			std::cout << "Error writing file " << std::endl;
 			file.close();
 			return false;
 		}

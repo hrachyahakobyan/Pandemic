@@ -38,14 +38,14 @@ namespace pan{
 	{
 		if (stream && stream.get()){
 			if (stream.use_count() == 1){
-				*stream << "END OF LOGFILE";
+				*stream << "-------END OF LOGFILE-------";
 				stream->close();
 			}
 			stream.reset();
 		}
 	}
 
-	std::string LoggerBase::getDateString() const
+	std::string LoggerBase::getDateString() 
 	{
 		return boost::posix_time::to_iso_string(boost::posix_time::second_clock::local_time());
 	}

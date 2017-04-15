@@ -4,6 +4,10 @@
 #include "ActionBase.h"
 
 namespace pan{
+	/**
+	*	@brief A logger clas that logs actions of specified types
+	*	@author Hrachya Hakobyan
+	*/
 	class ActionLogger : public LoggerBase
 	{
 	public:

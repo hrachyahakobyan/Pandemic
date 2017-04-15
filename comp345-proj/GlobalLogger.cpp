@@ -31,43 +31,55 @@ namespace pan{
 	void GlobalLogger::handleCityUpdateNotification(std::shared_ptr<pan::CityUpdateNotification> n)
 	{
 		if (!stream || !stream.get()) return;
-		*stream <<  getDateString() << ": CITY UPDATE" << std::endl;
+		*stream <<  getDateString() << "\n------CITY UPDATE------" << std::endl;
 		*stream << n->city.description() << std::endl << std::endl;
+		if (stream.use_count() != 1)
+			stream->flush();
 	}
 
 	void GlobalLogger::handleGameDataUpdateNotification(std::shared_ptr<pan::GameDataUpdateNotification> n)
 	{
 		if (!stream || !stream.get()) return;
-		*stream << getDateString() << ": GAME DATA UPDATE" << std::endl;
+		*stream << getDateString() << "\n------GAME DATA UPDATE------" << std::endl;
 		*stream << n->data.description() << std::endl << std::endl;
+		if (stream.use_count() != 1)
+			stream->flush();
 	}
 
 	void GlobalLogger::handleDeckDataUpdateNotification(std::shared_ptr<pan::DeckDataUpdateNotification> deck)
 	{
 		if (!stream || !stream.get()) return;
-		*stream << getDateString() << ":DECK DATA UPDATE" << std::endl;
+		*stream << getDateString() << "\n-------DECK DATA UPDATE-------" << std::endl;
 		*stream << deck->data.description() << std::endl << std::endl;
+		if (stream.use_count() != 1)
+			stream->flush();
 	}
 
 	void GlobalLogger::handlePlayerDataUpdateNotification(std::shared_ptr<pan::PlayerDataUpdateNotification> not)
 	{
 		if (!stream || !stream.get()) return;
-		*stream << getDateString() << ": PLAYER DATA UPDATE" << std::endl;
+		*stream << getDateString() << "\n------PLAYER DATA UPDATE------" << std::endl;
 		*stream << not->data.description() << std::endl << std::endl;
+		if (stream.use_count() != 1)
+			stream->flush();
 	}
 
 	void GlobalLogger::handlePlayerUpdateNotification(std::shared_ptr<pan::PlayerUpdateNotification> n)
 	{
 		if (!stream || !stream.get()) return;
-		*stream << getDateString() << ": PLAYER UPDATE" << std::endl;
+		*stream << getDateString() << "\n------PLAYER UPDATE------" << std::endl;
 		*stream << n->player.description() << std::endl << std::endl;
+		if (stream.use_count() != 1)
+			stream->flush();
 	}
 
 	void GlobalLogger::handleActionNotification(std::shared_ptr<ActionNotification> not)
 	{
 		if (!stream || !stream.get()) return;
-		*stream << getDateString() << ": ACTION UPDATE" << std::endl;
+		*stream << getDateString() << "\n------ACTION UPDATE------" << std::endl;
 		*stream << not->action->description() << std::endl << std::endl;
+		if (stream.use_count() != 1)
+			stream->flush();
 	}
 }
 

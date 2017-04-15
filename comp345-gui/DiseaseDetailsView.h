@@ -19,6 +19,8 @@ Q_SIGNALS:
 private:
 	Ui::DiseaseDetailsView ui;
 	QVector<std::tuple<pan::DiseaseType,QLabel*, QLabel*>> labels;
+	QPalette selectedPalette;
+	QPalette deselectedPalette;
 };
 
 #endif // DISEASEDETAILSVIEW_H

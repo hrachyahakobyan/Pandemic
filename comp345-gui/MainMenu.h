@@ -13,6 +13,7 @@ class MainMenu : public QDialog
 public:
 	MainMenu(QWidget *parent = 0);
 	~MainMenu();
+	void reject();
 public Q_SLOTS:
 	void on_newButton_clicked();
 	void on_continueButton_clicked();

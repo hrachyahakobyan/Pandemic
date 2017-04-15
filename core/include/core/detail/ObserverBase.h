@@ -3,6 +3,10 @@
 namespace pan{
 	namespace detail{
 		class Notification;
+		/**
+		*	@brief a base class for all Observers
+		*	@author Hrachya Hakobyan
+		*/
 		class ObserverBase
 		{
 		public:

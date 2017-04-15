@@ -27,7 +27,9 @@ namespace pan{
 		if (not == nullptr) return;
 		const auto& p = not->player;
 		if (p.index != index) return;
-		*stream << getDateString() << ": PLAYER UPDATE" << std::endl;
+		*stream << getDateString() << "\n-------PLAYER UPDATE-------" << std::endl;
 		*stream << p.description() << std::endl << std::endl;
+		if (stream.use_count() != 1)
+			stream->flush();
 	}
 }

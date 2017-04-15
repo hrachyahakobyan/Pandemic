@@ -5,6 +5,10 @@ SavedGamesDialog::SavedGamesDialog(QWidget *parent)
 	: QDialog(parent)
 {
 	ui.setupUi(this);
+	QPalette pal = palette();
+	pal.setColor(QPalette::Background, Qt::darkBlue);
+	this->setAutoFillBackground(true);
+	this->setPalette(pal);
 	selectedRow = 0;
 	stringModel = new QStringListModel(this);
 	auto files = pan::Game::allSavedGames();

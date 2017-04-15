@@ -6,7 +6,10 @@ PlayerHandView::PlayerHandView(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	//this->setStyleSheet("background-color:#0d0238;");
+	selectedPalette = palette();
+	deselectedPalette = palette();
+	selectedPalette.setColor(QPalette::Background, Qt::blue);
+	deselectedPalette.setColor(QPalette::Background, Qt::darkBlue);
 	cardViews.push_back(ui.card0);
 	cardViews.push_back(ui.card1);
 	cardViews.push_back(ui.card2);
@@ -27,6 +30,7 @@ void PlayerHandView::update(const pan::detail::Deck<pan::CardBasePtr>& deck)
 {
 	for (auto card : cardViews){
 		card->clear();
+		card->setAutoFillBackground(true);
 	}
 	indexMap.clear();
 	for (std::size_t i = 0; i < std::min(int(deck.size()), cardViews.size()); i++){
@@ -43,7 +47,7 @@ void PlayerHandView::mousePressEvent(QMouseEvent *event)
 		QRect g = w->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains && indexMap.find(w) != indexMap.end()){
-			w->setStyleSheet("border: 3px solid green");
+			w->setPalette(selectedPalette);
 			Q_EMIT cardSelected(indexMap[w]);
 			return;
 		}
@@ -57,7 +61,7 @@ void PlayerHandView::mouseReleaseEvent(QMouseEvent *event)
 		QRect g = key->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains){
-			key->setStyleSheet("border: 0px solid green");
+			key->setPalette(deselectedPalette);
 			return;
 		}
 	}

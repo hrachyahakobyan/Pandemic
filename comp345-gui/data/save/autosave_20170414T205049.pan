@@ -14,113 +14,8 @@
 							<population>447841</population>
 							<researchStation>1</researchStation>
 							<players class_id="7" tracking_level="0" version="0">
-								<count>3</count>
+								<count>0</count>
 								<item_version>1</item_version>
-								<item class_id="8" tracking_level="0" version="1">
-									<px class_id="9" class_name="pan::Player&lt;pan::Roles::QSpecialist&gt;" tracking_level="1" version="0" object_id="_2">
-										<index>2</index>
-										<name></name>
-										<PlayerBase class_id="10" tracking_level="1" version="0" object_id="_3">
-											<name></name>
-											<location>0</location>
-											<cards class_id="12" tracking_level="1" version="0" object_id="_4">
-												<deck class_id="17" tracking_level="0" version="0">
-													<count>2</count>
-													<item_version>1</item_version>
-													<item class_id="18" tracking_level="0" version="1">
-														<px class_id="16" tracking_level="1" version="0" object_id="_5">
-															<cityIndex>13</cityIndex>
-															<regionIndex>2</regionIndex>
-															<CardBase class_id="11" tracking_level="1" version="0" object_id="_6"></CardBase>
-															<cityIndex>13</cityIndex>
-															<regionIndex>2</regionIndex>
-														</px>
-													</item>
-													<item>
-														<px class_id_reference="16" object_id="_7">
-															<cityIndex>16</cityIndex>
-															<regionIndex>2</regionIndex>
-															<CardBase object_id="_8"></CardBase>
-															<cityIndex>16</cityIndex>
-															<regionIndex>2</regionIndex>
-														</px>
-													</item>
-												</deck>
-											</cards>
-											<index>2</index>
-										</PlayerBase>
-									</px>
-								</item>
-								<item>
-									<px class_id="19" class_name="pan::Player&lt;pan::Roles::Researcher&gt;" tracking_level="1" version="0" object_id="_9">
-										<index>3</index>
-										<name></name>
-										<PlayerBase object_id="_10">
-											<name></name>
-											<location>0</location>
-											<cards object_id="_11">
-												<deck>
-													<count>2</count>
-													<item_version>1</item_version>
-													<item>
-														<px class_id_reference="16" object_id="_12">
-															<cityIndex>21</cityIndex>
-															<regionIndex>2</regionIndex>
-															<CardBase object_id="_13"></CardBase>
-															<cityIndex>21</cityIndex>
-															<regionIndex>2</regionIndex>
-														</px>
-													</item>
-													<item>
-														<px class_id_reference="16" object_id="_14">
-															<cityIndex>37</cityIndex>
-															<regionIndex>3</regionIndex>
-															<CardBase object_id="_15"></CardBase>
-															<cityIndex>37</cityIndex>
-															<regionIndex>3</regionIndex>
-														</px>
-													</item>
-												</deck>
-											</cards>
-											<index>3</index>
-										</PlayerBase>
-									</px>
-								</item>
-								<item>
-									<px class_id="20" class_name="pan::Player&lt;pan::Roles::OperationsExpert&gt;" tracking_level="1" version="0" object_id="_16">
-										<index>1</index>
-										<name></name>
-										<PlayerBase object_id="_17">
-											<name></name>
-											<location>0</location>
-											<cards object_id="_18">
-												<deck>
-													<count>2</count>
-													<item_version>1</item_version>
-													<item>
-														<px class_id_reference="16" object_id="_19">
-															<cityIndex>28</cityIndex>
-															<regionIndex>1</regionIndex>
-															<CardBase object_id="_20"></CardBase>
-															<cityIndex>28</cityIndex>
-															<regionIndex>1</regionIndex>
-														</px>
-													</item>
-													<item>
-														<px class_id_reference="16" object_id="_21">
-															<cityIndex>26</cityIndex>
-															<regionIndex>1</regionIndex>
-															<CardBase object_id="_22"></CardBase>
-															<cityIndex>26</cityIndex>
-															<regionIndex>1</regionIndex>
-														</px>
-													</item>
-												</deck>
-											</cards>
-											<index>1</index>
-										</PlayerBase>
-									</px>
-								</item>
 							</players>
 							<cubes>
 								<count>0</count>
@@ -130,7 +25,7 @@
 							<ypos>4.17163289630512520e-001</ypos>
 							<region>0</region>
 						</property_value>
-						<property_base class_id="22" tracking_level="0" version="0"></property_base>
+						<property_base class_id="9" tracking_level="0" version="0"></property_base>
 					</vertex_property>
 					<vertex_property>
 						<property_value>
@@ -142,8 +37,9 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>0</count>
+								<count>1</count>
 								<item_version>0</item_version>
+								<item>2</item>
 							</cubes>
 							<xpos>1.43763213530655380e-001</xpos>
 							<ypos>3.92133492252681740e-001</ypos>
@@ -218,8 +114,9 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>0</count>
+								<count>1</count>
 								<item_version>0</item_version>
+								<item>3</item>
 							</cubes>
 							<xpos>3.02325581395348820e-001</xpos>
 							<ypos>3.81406436233611420e-001</ypos>
@@ -237,8 +134,9 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>0</count>
+								<count>1</count>
 								<item_version>0</item_version>
+								<item>1</item>
 							</cubes>
 							<xpos>4.36222692036645540e-001</xpos>
 							<ypos>2.97973778307508930e-001</ypos>
@@ -256,9 +154,8 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>1</count>
+								<count>0</count>
 								<item_version>0</item_version>
-								<item>1</item>
 							</cubes>
 							<xpos>4.20718816067653270e-001</xpos>
 							<ypos>4.11203814064362350e-001</ypos>
@@ -272,13 +169,71 @@
 							<population>2244000</population>
 							<researchStation>0</researchStation>
 							<players>
-								<count>0</count>
+								<count>1</count>
 								<item_version>1</item_version>
+								<item class_id="10" tracking_level="0" version="1">
+									<px class_id="11" class_name="pan::Player&lt;pan::Roles::Medic&gt;" tracking_level="1" version="0" object_id="_2">
+										<index>1</index>
+										<name></name>
+										<PlayerBase class_id="12" tracking_level="1" version="0" object_id="_3">
+											<name></name>
+											<location>8</location>
+											<cards class_id="14" tracking_level="1" version="0" object_id="_4">
+												<deck class_id="19" tracking_level="0" version="0">
+													<count>5</count>
+													<item_version>1</item_version>
+													<item class_id="20" tracking_level="0" version="1">
+														<px class_id="17" tracking_level="1" version="0" object_id="_5">
+															<eventType>3</eventType>
+															<CardBase class_id="13" tracking_level="1" version="0" object_id="_6"></CardBase>
+															<eventType>3</eventType>
+														</px>
+													</item>
+													<item>
+														<px class_id="18" tracking_level="1" version="0" object_id="_7">
+															<cityIndex>11</cityIndex>
+															<regionIndex>0</regionIndex>
+															<CardBase object_id="_8"></CardBase>
+															<cityIndex>11</cityIndex>
+															<regionIndex>0</regionIndex>
+														</px>
+													</item>
+													<item>
+														<px class_id_reference="18" object_id="_9">
+															<cityIndex>5</cityIndex>
+															<regionIndex>0</regionIndex>
+															<CardBase object_id="_10"></CardBase>
+															<cityIndex>5</cityIndex>
+															<regionIndex>0</regionIndex>
+														</px>
+													</item>
+													<item>
+														<px class_id_reference="17" object_id="_11">
+															<eventType>0</eventType>
+															<CardBase object_id="_12"></CardBase>
+															<eventType>0</eventType>
+														</px>
+													</item>
+													<item>
+														<px class_id_reference="18" object_id="_13">
+															<cityIndex>21</cityIndex>
+															<regionIndex>2</regionIndex>
+															<CardBase object_id="_14"></CardBase>
+															<cityIndex>21</cityIndex>
+															<regionIndex>2</regionIndex>
+														</px>
+													</item>
+												</deck>
+											</cards>
+											<index>1</index>
+										</PlayerBase>
+									</px>
+								</item>
 							</players>
 							<cubes>
 								<count>1</count>
 								<item_version>0</item_version>
-								<item>2</item>
+								<item>3</item>
 							</cubes>
 							<xpos>4.87667371388301630e-001</xpos>
 							<ypos>3.77830750893921320e-001</ypos>
@@ -315,8 +270,9 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>0</count>
+								<count>1</count>
 								<item_version>0</item_version>
+								<item>1</item>
 							</cubes>
 							<xpos>5.14446793516560970e-001</xpos>
 							<ypos>3.67103694874851010e-001</ypos>
@@ -334,8 +290,9 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>0</count>
+								<count>1</count>
 								<item_version>0</item_version>
+								<item>3</item>
 							</cubes>
 							<xpos>5.56025369978858320e-001</xpos>
 							<ypos>2.88438617401668650e-001</ypos>
@@ -372,11 +329,8 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>3</count>
+								<count>0</count>
 								<item_version>0</item_version>
-								<item>0</item>
-								<item>0</item>
-								<item>3</item>
 							</cubes>
 							<xpos>6.01127554615926710e-001</xpos>
 							<ypos>4.31466030989272940e-001</ypos>
@@ -413,11 +367,8 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>3</count>
+								<count>0</count>
 								<item_version>0</item_version>
-								<item>0</item>
-								<item>0</item>
-								<item>1</item>
 							</cubes>
 							<xpos>7.30796335447498220e-001</xpos>
 							<ypos>5.87604290822407620e-001</ypos>
@@ -530,11 +481,8 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>3</count>
+								<count>0</count>
 								<item_version>0</item_version>
-								<item>0</item>
-								<item>0</item>
-								<item>3</item>
 							</cubes>
 							<xpos>6.90627202255109210e-001</xpos>
 							<ypos>5.24433849821215770e-001</ypos>
@@ -624,8 +572,52 @@
 							<population>417650</population>
 							<researchStation>0</researchStation>
 							<players>
-								<count>0</count>
+								<count>1</count>
 								<item_version>1</item_version>
+								<item>
+									<px class_id="21" class_name="pan::Player&lt;pan::Roles::OperationsExpert&gt;" tracking_level="1" version="0" object_id="_15">
+										<index>0</index>
+										<name></name>
+										<PlayerBase object_id="_16">
+											<name></name>
+											<location>26</location>
+											<cards object_id="_17">
+												<deck>
+													<count>3</count>
+													<item_version>1</item_version>
+													<item>
+														<px class_id_reference="18" object_id="_18">
+															<cityIndex>4</cityIndex>
+															<regionIndex>0</regionIndex>
+															<CardBase object_id="_19"></CardBase>
+															<cityIndex>4</cityIndex>
+															<regionIndex>0</regionIndex>
+														</px>
+													</item>
+													<item>
+														<px class_id_reference="18" object_id="_20">
+															<cityIndex>7</cityIndex>
+															<regionIndex>0</regionIndex>
+															<CardBase object_id="_21"></CardBase>
+															<cityIndex>7</cityIndex>
+															<regionIndex>0</regionIndex>
+														</px>
+													</item>
+													<item>
+														<px class_id_reference="18" object_id="_22">
+															<cityIndex>33</cityIndex>
+															<regionIndex>1</regionIndex>
+															<CardBase object_id="_23"></CardBase>
+															<cityIndex>33</cityIndex>
+															<regionIndex>1</regionIndex>
+														</px>
+													</item>
+												</deck>
+											</cards>
+											<index>0</index>
+										</PlayerBase>
+									</px>
+								</item>
 							</players>
 							<cubes>
 								<count>0</count>
@@ -647,8 +639,10 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>0</count>
+								<count>2</count>
 								<item_version>0</item_version>
+								<item>0</item>
+								<item>2</item>
 							</cubes>
 							<xpos>2.60747004933051420e-001</xpos>
 							<ypos>5.87604290822407620e-001</ypos>
@@ -717,34 +711,10 @@
 						<property_value>
 							<name>Sao Pauolo</name>
 							<population>12040000</population>
-							<researchStation>1</researchStation>
+							<researchStation>0</researchStation>
 							<players>
-								<count>1</count>
+								<count>0</count>
 								<item_version>1</item_version>
-								<item>
-									<px class_id="23" class_name="pan::Player&lt;pan::Roles::Medic&gt;" tracking_level="1" version="0" object_id="_23">
-										<index>0</index>
-										<name></name>
-										<PlayerBase object_id="_24">
-											<name></name>
-											<location>31</location>
-											<cards object_id="_25">
-												<deck>
-													<count>1</count>
-													<item_version>1</item_version>
-													<item>
-														<px class_id="15" tracking_level="1" version="0" object_id="_26">
-															<eventType>1</eventType>
-															<CardBase object_id="_27"></CardBase>
-															<eventType>1</eventType>
-														</px>
-													</item>
-												</deck>
-											</cards>
-											<index>0</index>
-										</PlayerBase>
-									</px>
-								</item>
 							</players>
 							<cubes>
 								<count>0</count>
@@ -823,8 +793,10 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>0</count>
+								<count>2</count>
 								<item_version>0</item_version>
+								<item>0</item>
+								<item>1</item>
 							</cubes>
 							<xpos>5.58139534883720920e-001</xpos>
 							<ypos>5.61382598331346850e-001</ypos>
@@ -842,8 +814,12 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>0</count>
+								<count>4</count>
 								<item_version>0</item_version>
+								<item>0</item>
+								<item>0</item>
+								<item>0</item>
+								<item>1</item>
 							</cubes>
 							<xpos>7.78717406624383380e-001</xpos>
 							<ypos>5.41120381406436260e-001</ypos>
@@ -861,12 +837,8 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>4</count>
+								<count>0</count>
 								<item_version>0</item_version>
-								<item>0</item>
-								<item>0</item>
-								<item>0</item>
-								<item>3</item>
 							</cubes>
 							<xpos>7.72374911909795680e-001</xpos>
 							<ypos>2.75327771156138270e-001</ypos>
@@ -945,12 +917,8 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>4</count>
+								<count>0</count>
 								<item_version>0</item_version>
-								<item>0</item>
-								<item>0</item>
-								<item>0</item>
-								<item>1</item>
 							</cubes>
 							<xpos>8.71740662438336810e-001</xpos>
 							<ypos>5.73301549463647200e-001</ypos>
@@ -968,12 +936,8 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>4</count>
+								<count>0</count>
 								<item_version>0</item_version>
-								<item>0</item>
-								<item>0</item>
-								<item>0</item>
-								<item>2</item>
 							</cubes>
 							<xpos>8.88653981677237530e-001</xpos>
 							<ypos>4.39809296781883190e-001</ypos>
@@ -1029,8 +993,12 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>0</count>
+								<count>4</count>
 								<item_version>0</item_version>
+								<item>0</item>
+								<item>0</item>
+								<item>0</item>
+								<item>3</item>
 							</cubes>
 							<xpos>9.04157857646229690e-001</xpos>
 							<ypos>7.54469606674612600e-001</ypos>
@@ -1048,8 +1016,12 @@
 								<item_version>1</item_version>
 							</players>
 							<cubes>
-								<count>0</count>
+								<count>4</count>
 								<item_version>0</item_version>
+								<item>0</item>
+								<item>0</item>
+								<item>0</item>
+								<item>3</item>
 							</cubes>
 							<xpos>8.68921775898520040e-001</xpos>
 							<ypos>4.68414779499404080e-001</ypos>
@@ -1352,12 +1324,12 @@
 					<graph_property></graph_property>
 				</container>
 			</graph>
-			<regionMap class_id="24" tracking_level="0" version="0">
+			<regionMap class_id="22" tracking_level="0" version="0">
 				<count>4</count>
 				<item_version>0</item_version>
-				<item class_id="25" tracking_level="0" version="0">
+				<item class_id="23" tracking_level="0" version="0">
 					<first>0</first>
-					<second class_id="26" tracking_level="0" version="0">
+					<second class_id="24" tracking_level="0" version="0">
 						<name></name>
 					</second>
 				</item>
@@ -1381,25 +1353,19 @@
 				</item>
 			</regionMap>
 		</map>
-		<playerData class_id="27" tracking_level="0" version="0">
+		<playerData class_id="25" tracking_level="0" version="0">
 			<g.actionCounter>0</g.actionCounter>
 			<g.turn>0</g.turn>
-			<g.stage>1</g.stage>
-			<g.prevStage>0</g.prevStage>
+			<g.stage>0</g.stage>
+			<g.prevStage>2</g.prevStage>
 			<g.players class_id="31" tracking_level="0" version="0">
-				<count>4</count>
+				<count>2</count>
 				<item_version>1</item_version>
 				<item>
-					<px class_id_reference="23" object_id_reference="_23"></px>
+					<px class_id_reference="21" object_id_reference="_15"></px>
 				</item>
 				<item>
-					<px class_id_reference="20" object_id_reference="_16"></px>
-				</item>
-				<item>
-					<px class_id_reference="9" object_id_reference="_2"></px>
-				</item>
-				<item>
-					<px class_id_reference="19" object_id_reference="_9"></px>
+					<px class_id_reference="11" object_id_reference="_2"></px>
 				</item>
 			</g.players>
 			<g.occupiedRoles>
@@ -1407,17 +1373,17 @@
 				<item>1</item>
 				<item>0</item>
 				<item>0</item>
-				<item>1</item>
-				<item>1</item>
+				<item>0</item>
+				<item>0</item>
 				<item>1</item>
 				<item>0</item>
 			</g.occupiedRoles>
 		</playerData>
 		<gameData class_id="33" tracking_level="0" version="0">
-			<g.settings class_id="34" tracking_level="1" version="0" object_id="_28">
-				<initialCards>2</initialCards>
-				<playerCount>4</playerCount>
-				<epidemicCardCount>4</epidemicCardCount>
+			<g.settings class_id="34" tracking_level="1" version="0" object_id="_24">
+				<initialCards>4</initialCards>
+				<playerCount>2</playerCount>
+				<epidemicCardCount>5</epidemicCardCount>
 				<playerDrawCount>2</playerDrawCount>
 				<discoverCureCardCount>1</discoverCureCardCount>
 				<playerHandMax>7</playerHandMax>
@@ -1435,40 +1401,40 @@
 					<item>4</item>
 				</infectionRates>
 			</g.settings>
-			<g.infectionRateMarker>0</g.infectionRateMarker>
+			<g.infectionRateMarker>1</g.infectionRateMarker>
 			<g.outbreakMarker>0</g.outbreakMarker>
-			<g.researchStations>2</g.researchStations>
+			<g.researchStations>1</g.researchStations>
 			<g.diseases class_id="36" tracking_level="0" version="0">
 				<count>4</count>
 				<item_version>0</item_version>
-				<item class_id="35" tracking_level="1" version="0" object_id="_29">
+				<item class_id="35" tracking_level="1" version="0" object_id="_25">
 					<diseaseType>0</diseaseType>
-					<isCured>0</isCured>
+					<isCured>1</isCured>
 					<isEradicated>0</isEradicated>
 				</item>
-				<item object_id="_30">
+				<item object_id="_26">
 					<diseaseType>1</diseaseType>
 					<isCured>0</isCured>
 					<isEradicated>0</isEradicated>
 				</item>
-				<item object_id="_31">
+				<item object_id="_27">
 					<diseaseType>2</diseaseType>
-					<isCured>0</isCured>
-					<isEradicated>0</isEradicated>
+					<isCured>1</isCured>
+					<isEradicated>1</isEradicated>
 				</item>
-				<item object_id="_32">
+				<item object_id="_28">
 					<diseaseType>3</diseaseType>
-					<isCured>0</isCured>
+					<isCured>1</isCured>
 					<isEradicated>0</isEradicated>
 				</item>
 			</g.diseases>
 			<g.diseaseCubes>
 				<count>4</count>
 				<item_version>0</item_version>
+				<item>11</item>
 				<item>21</item>
 				<item>24</item>
-				<item>17</item>
-				<item>16</item>
+				<item>15</item>
 			</g.diseaseCubes>
 			<g.state>0</g.state>
 			<g.initialized>1</g.initialized>
@@ -1476,786 +1442,779 @@
 		<deckData class_id="37" tracking_level="0" version="0">
 			<g.infectionDeck class_id="38" tracking_level="0" version="0">
 				<deck class_id="39" tracking_level="0" version="0">
-					<count>39</count>
+					<count>46</count>
 					<item_version>1</item_version>
 					<item class_id="40" tracking_level="0" version="1">
-						<px class_id="13" tracking_level="1" version="0" object_id="_33">
-							<cityIndex>35</cityIndex>
+						<px class_id="15" tracking_level="1" version="0" object_id="_29">
+							<cityIndex>33</cityIndex>
+							<CardBase object_id="_30"></CardBase>
+							<cityIndex>33</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_31">
+							<cityIndex>24</cityIndex>
+							<CardBase object_id="_32"></CardBase>
+							<cityIndex>24</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_33">
+							<cityIndex>14</cityIndex>
 							<CardBase object_id="_34"></CardBase>
+							<cityIndex>14</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_35">
+							<cityIndex>16</cityIndex>
+							<CardBase object_id="_36"></CardBase>
+							<cityIndex>16</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_37">
+							<cityIndex>3</cityIndex>
+							<CardBase object_id="_38"></CardBase>
+							<cityIndex>3</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_39">
+							<cityIndex>21</cityIndex>
+							<CardBase object_id="_40"></CardBase>
+							<cityIndex>21</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_41">
+							<cityIndex>40</cityIndex>
+							<CardBase object_id="_42"></CardBase>
+							<cityIndex>40</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_43">
+							<cityIndex>7</cityIndex>
+							<CardBase object_id="_44"></CardBase>
+							<cityIndex>7</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_45">
+							<cityIndex>37</cityIndex>
+							<CardBase object_id="_46"></CardBase>
+							<cityIndex>37</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_47">
+							<cityIndex>25</cityIndex>
+							<CardBase object_id="_48"></CardBase>
+							<cityIndex>25</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_49">
+							<cityIndex>18</cityIndex>
+							<CardBase object_id="_50"></CardBase>
+							<cityIndex>18</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_51">
+							<cityIndex>23</cityIndex>
+							<CardBase object_id="_52"></CardBase>
+							<cityIndex>23</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_53">
+							<cityIndex>22</cityIndex>
+							<CardBase object_id="_54"></CardBase>
+							<cityIndex>22</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_55">
+							<cityIndex>17</cityIndex>
+							<CardBase object_id="_56"></CardBase>
+							<cityIndex>17</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_57">
+							<cityIndex>2</cityIndex>
+							<CardBase object_id="_58"></CardBase>
+							<cityIndex>2</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_59">
+							<cityIndex>39</cityIndex>
+							<CardBase object_id="_60"></CardBase>
+							<cityIndex>39</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_61">
+							<cityIndex>28</cityIndex>
+							<CardBase object_id="_62"></CardBase>
+							<cityIndex>28</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_63">
+							<cityIndex>12</cityIndex>
+							<CardBase object_id="_64"></CardBase>
+							<cityIndex>12</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_65">
+							<cityIndex>41</cityIndex>
+							<CardBase object_id="_66"></CardBase>
+							<cityIndex>41</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_67">
+							<cityIndex>44</cityIndex>
+							<CardBase object_id="_68"></CardBase>
+							<cityIndex>44</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_69">
+							<cityIndex>20</cityIndex>
+							<CardBase object_id="_70"></CardBase>
+							<cityIndex>20</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_71">
+							<cityIndex>32</cityIndex>
+							<CardBase object_id="_72"></CardBase>
+							<cityIndex>32</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_73">
+							<cityIndex>15</cityIndex>
+							<CardBase object_id="_74"></CardBase>
+							<cityIndex>15</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_75">
+							<cityIndex>34</cityIndex>
+							<CardBase object_id="_76"></CardBase>
+							<cityIndex>34</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_77">
+							<cityIndex>43</cityIndex>
+							<CardBase object_id="_78"></CardBase>
+							<cityIndex>43</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_79">
+							<cityIndex>9</cityIndex>
+							<CardBase object_id="_80"></CardBase>
+							<cityIndex>9</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_81">
+							<cityIndex>42</cityIndex>
+							<CardBase object_id="_82"></CardBase>
+							<cityIndex>42</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_83">
+							<cityIndex>31</cityIndex>
+							<CardBase object_id="_84"></CardBase>
+							<cityIndex>31</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_85">
+							<cityIndex>0</cityIndex>
+							<CardBase object_id="_86"></CardBase>
+							<cityIndex>0</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_87">
+							<cityIndex>47</cityIndex>
+							<CardBase object_id="_88"></CardBase>
+							<cityIndex>47</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_89">
+							<cityIndex>30</cityIndex>
+							<CardBase object_id="_90"></CardBase>
+							<cityIndex>30</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_91">
+							<cityIndex>26</cityIndex>
+							<CardBase object_id="_92"></CardBase>
+							<cityIndex>26</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_93">
+							<cityIndex>29</cityIndex>
+							<CardBase object_id="_94"></CardBase>
+							<cityIndex>29</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_95">
+							<cityIndex>4</cityIndex>
+							<CardBase object_id="_96"></CardBase>
+							<cityIndex>4</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_97">
+							<cityIndex>13</cityIndex>
+							<CardBase object_id="_98"></CardBase>
+							<cityIndex>13</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_99">
+							<cityIndex>19</cityIndex>
+							<CardBase object_id="_100"></CardBase>
+							<cityIndex>19</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_101">
+							<cityIndex>10</cityIndex>
+							<CardBase object_id="_102"></CardBase>
+							<cityIndex>10</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_103">
+							<cityIndex>45</cityIndex>
+							<CardBase object_id="_104"></CardBase>
+							<cityIndex>45</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_105">
+							<cityIndex>36</cityIndex>
+							<CardBase object_id="_106"></CardBase>
+							<cityIndex>36</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_107">
+							<cityIndex>11</cityIndex>
+							<CardBase object_id="_108"></CardBase>
+							<cityIndex>11</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_109">
+							<cityIndex>46</cityIndex>
+							<CardBase object_id="_110"></CardBase>
+							<cityIndex>46</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_111">
+							<cityIndex>1</cityIndex>
+							<CardBase object_id="_112"></CardBase>
+							<cityIndex>1</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="15" object_id="_113">
+							<cityIndex>35</cityIndex>
+							<CardBase object_id="_114"></CardBase>
 							<cityIndex>35</cityIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="13" object_id="_35">
-							<cityIndex>31</cityIndex>
-							<CardBase object_id="_36"></CardBase>
-							<cityIndex>31</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_37">
-							<cityIndex>22</cityIndex>
-							<CardBase object_id="_38"></CardBase>
-							<cityIndex>22</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_39">
-							<cityIndex>25</cityIndex>
-							<CardBase object_id="_40"></CardBase>
-							<cityIndex>25</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_41">
-							<cityIndex>44</cityIndex>
-							<CardBase object_id="_42"></CardBase>
-							<cityIndex>44</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_43">
-							<cityIndex>28</cityIndex>
-							<CardBase object_id="_44"></CardBase>
-							<cityIndex>28</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_45">
-							<cityIndex>19</cityIndex>
-							<CardBase object_id="_46"></CardBase>
-							<cityIndex>19</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_47">
-							<cityIndex>30</cityIndex>
-							<CardBase object_id="_48"></CardBase>
-							<cityIndex>30</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_49">
-							<cityIndex>47</cityIndex>
-							<CardBase object_id="_50"></CardBase>
-							<cityIndex>47</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_51">
-							<cityIndex>17</cityIndex>
-							<CardBase object_id="_52"></CardBase>
-							<cityIndex>17</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_53">
-							<cityIndex>12</cityIndex>
-							<CardBase object_id="_54"></CardBase>
-							<cityIndex>12</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_55">
-							<cityIndex>29</cityIndex>
-							<CardBase object_id="_56"></CardBase>
-							<cityIndex>29</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_57">
-							<cityIndex>4</cityIndex>
-							<CardBase object_id="_58"></CardBase>
-							<cityIndex>4</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_59">
-							<cityIndex>18</cityIndex>
-							<CardBase object_id="_60"></CardBase>
-							<cityIndex>18</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_61">
-							<cityIndex>20</cityIndex>
-							<CardBase object_id="_62"></CardBase>
-							<cityIndex>20</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_63">
-							<cityIndex>27</cityIndex>
-							<CardBase object_id="_64"></CardBase>
-							<cityIndex>27</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_65">
-							<cityIndex>34</cityIndex>
-							<CardBase object_id="_66"></CardBase>
-							<cityIndex>34</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_67">
-							<cityIndex>46</cityIndex>
-							<CardBase object_id="_68"></CardBase>
-							<cityIndex>46</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_69">
-							<cityIndex>0</cityIndex>
-							<CardBase object_id="_70"></CardBase>
-							<cityIndex>0</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_71">
-							<cityIndex>26</cityIndex>
-							<CardBase object_id="_72"></CardBase>
-							<cityIndex>26</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_73">
-							<cityIndex>40</cityIndex>
-							<CardBase object_id="_74"></CardBase>
-							<cityIndex>40</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_75">
-							<cityIndex>16</cityIndex>
-							<CardBase object_id="_76"></CardBase>
-							<cityIndex>16</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_77">
-							<cityIndex>3</cityIndex>
-							<CardBase object_id="_78"></CardBase>
-							<cityIndex>3</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_79">
-							<cityIndex>10</cityIndex>
-							<CardBase object_id="_80"></CardBase>
-							<cityIndex>10</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_81">
-							<cityIndex>45</cityIndex>
-							<CardBase object_id="_82"></CardBase>
-							<cityIndex>45</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_83">
-							<cityIndex>11</cityIndex>
-							<CardBase object_id="_84"></CardBase>
-							<cityIndex>11</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_85">
-							<cityIndex>14</cityIndex>
-							<CardBase object_id="_86"></CardBase>
-							<cityIndex>14</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_87">
-							<cityIndex>33</cityIndex>
-							<CardBase object_id="_88"></CardBase>
-							<cityIndex>33</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_89">
-							<cityIndex>5</cityIndex>
-							<CardBase object_id="_90"></CardBase>
-							<cityIndex>5</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_91">
-							<cityIndex>24</cityIndex>
-							<CardBase object_id="_92"></CardBase>
-							<cityIndex>24</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_93">
-							<cityIndex>32</cityIndex>
-							<CardBase object_id="_94"></CardBase>
-							<cityIndex>32</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_95">
-							<cityIndex>1</cityIndex>
-							<CardBase object_id="_96"></CardBase>
-							<cityIndex>1</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_97">
-							<cityIndex>39</cityIndex>
-							<CardBase object_id="_98"></CardBase>
-							<cityIndex>39</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_99">
+						<px class_id_reference="15" object_id="_115">
 							<cityIndex>6</cityIndex>
-							<CardBase object_id="_100"></CardBase>
+							<CardBase object_id="_116"></CardBase>
 							<cityIndex>6</cityIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="13" object_id="_101">
-							<cityIndex>43</cityIndex>
-							<CardBase object_id="_102"></CardBase>
-							<cityIndex>43</cityIndex>
+						<px class_id_reference="15" object_id="_117">
+							<cityIndex>27</cityIndex>
+							<CardBase object_id="_118"></CardBase>
+							<cityIndex>27</cityIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="13" object_id="_103">
-							<cityIndex>36</cityIndex>
-							<CardBase object_id="_104"></CardBase>
-							<cityIndex>36</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_105">
-							<cityIndex>9</cityIndex>
-							<CardBase object_id="_106"></CardBase>
-							<cityIndex>9</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_107">
-							<cityIndex>23</cityIndex>
-							<CardBase object_id="_108"></CardBase>
-							<cityIndex>23</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_109">
-							<cityIndex>2</cityIndex>
-							<CardBase object_id="_110"></CardBase>
-							<cityIndex>2</cityIndex>
+						<px class_id_reference="15" object_id="_119">
+							<cityIndex>5</cityIndex>
+							<CardBase object_id="_120"></CardBase>
+							<cityIndex>5</cityIndex>
 						</px>
 					</item>
 				</deck>
 			</g.infectionDeck>
 			<g.infectionDiscardDeck>
 				<deck>
-					<count>9</count>
+					<count>2</count>
 					<item_version>1</item_version>
 					<item>
-						<px class_id_reference="13" object_id="_111">
-							<cityIndex>13</cityIndex>
-							<CardBase object_id="_112"></CardBase>
-							<cityIndex>13</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_113">
-							<cityIndex>37</cityIndex>
-							<CardBase object_id="_114"></CardBase>
-							<cityIndex>37</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_115">
-							<cityIndex>21</cityIndex>
-							<CardBase object_id="_116"></CardBase>
-							<cityIndex>21</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_117">
-							<cityIndex>8</cityIndex>
-							<CardBase object_id="_118"></CardBase>
-							<cityIndex>8</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_119">
-							<cityIndex>42</cityIndex>
-							<CardBase object_id="_120"></CardBase>
-							<cityIndex>42</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_121">
+						<px class_id_reference="15" object_id="_121">
 							<cityIndex>38</cityIndex>
 							<CardBase object_id="_122"></CardBase>
 							<cityIndex>38</cityIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="13" object_id="_123">
-							<cityIndex>7</cityIndex>
+						<px class_id_reference="15" object_id="_123">
+							<cityIndex>8</cityIndex>
 							<CardBase object_id="_124"></CardBase>
-							<cityIndex>7</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_125">
-							<cityIndex>15</cityIndex>
-							<CardBase object_id="_126"></CardBase>
-							<cityIndex>15</cityIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="13" object_id="_127">
-							<cityIndex>41</cityIndex>
-							<CardBase object_id="_128"></CardBase>
-							<cityIndex>41</cityIndex>
+							<cityIndex>8</cityIndex>
 						</px>
 					</item>
 				</deck>
 			</g.infectionDiscardDeck>
-			<g.playerDeck object_id="_129">
+			<g.playerDeck object_id="_125">
 				<deck>
-					<count>49</count>
+					<count>46</count>
 					<item_version>1</item_version>
 					<item>
-						<px class_id_reference="16" object_id="_130">
-							<cityIndex>7</cityIndex>
+						<px class_id_reference="18" object_id="_126">
+							<cityIndex>10</cityIndex>
 							<regionIndex>0</regionIndex>
+							<CardBase object_id="_127"></CardBase>
+							<cityIndex>10</cityIndex>
+							<regionIndex>0</regionIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_128">
+							<cityIndex>35</cityIndex>
+							<regionIndex>1</regionIndex>
+							<CardBase object_id="_129"></CardBase>
+							<cityIndex>35</cityIndex>
+							<regionIndex>1</regionIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_130">
+							<cityIndex>19</cityIndex>
+							<regionIndex>2</regionIndex>
 							<CardBase object_id="_131"></CardBase>
-							<cityIndex>7</cityIndex>
-							<regionIndex>0</regionIndex>
+							<cityIndex>19</cityIndex>
+							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_132">
-							<cityIndex>38</cityIndex>
-							<regionIndex>3</regionIndex>
+						<px class_id="16" tracking_level="1" version="0" object_id="_132">
 							<CardBase object_id="_133"></CardBase>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_134">
+							<cityIndex>38</cityIndex>
+							<regionIndex>3</regionIndex>
+							<CardBase object_id="_135"></CardBase>
 							<cityIndex>38</cityIndex>
 							<regionIndex>3</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_134">
-							<cityIndex>15</cityIndex>
-							<regionIndex>2</regionIndex>
-							<CardBase object_id="_135"></CardBase>
-							<cityIndex>15</cityIndex>
-							<regionIndex>2</regionIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="16" object_id="_136">
-							<cityIndex>41</cityIndex>
-							<regionIndex>3</regionIndex>
+						<px class_id_reference="17" object_id="_136">
+							<eventType>2</eventType>
 							<CardBase object_id="_137"></CardBase>
-							<cityIndex>41</cityIndex>
-							<regionIndex>3</regionIndex>
+							<eventType>2</eventType>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_138">
-							<cityIndex>9</cityIndex>
+						<px class_id_reference="18" object_id="_138">
+							<cityIndex>8</cityIndex>
 							<regionIndex>0</regionIndex>
 							<CardBase object_id="_139"></CardBase>
-							<cityIndex>9</cityIndex>
+							<cityIndex>8</cityIndex>
 							<regionIndex>0</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_140">
-							<cityIndex>2</cityIndex>
+						<px class_id_reference="18" object_id="_140">
+							<cityIndex>6</cityIndex>
 							<regionIndex>0</regionIndex>
 							<CardBase object_id="_141"></CardBase>
-							<cityIndex>2</cityIndex>
+							<cityIndex>6</cityIndex>
 							<regionIndex>0</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_142">
-							<cityIndex>6</cityIndex>
-							<regionIndex>0</regionIndex>
+						<px class_id_reference="18" object_id="_142">
+							<cityIndex>36</cityIndex>
+							<regionIndex>3</regionIndex>
 							<CardBase object_id="_143"></CardBase>
-							<cityIndex>6</cityIndex>
-							<regionIndex>0</regionIndex>
+							<cityIndex>36</cityIndex>
+							<regionIndex>3</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_144">
-							<cityIndex>36</cityIndex>
-							<regionIndex>3</regionIndex>
+						<px class_id_reference="18" object_id="_144">
+							<cityIndex>27</cityIndex>
+							<regionIndex>1</regionIndex>
 							<CardBase object_id="_145"></CardBase>
-							<cityIndex>36</cityIndex>
-							<regionIndex>3</regionIndex>
+							<cityIndex>27</cityIndex>
+							<regionIndex>1</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id="14" tracking_level="1" version="0" object_id="_146">
+						<px class_id_reference="18" object_id="_146">
+							<cityIndex>31</cityIndex>
+							<regionIndex>1</regionIndex>
 							<CardBase object_id="_147"></CardBase>
+							<cityIndex>31</cityIndex>
+							<regionIndex>1</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_148">
-							<cityIndex>23</cityIndex>
-							<regionIndex>2</regionIndex>
+						<px class_id_reference="18" object_id="_148">
+							<cityIndex>47</cityIndex>
+							<regionIndex>3</regionIndex>
 							<CardBase object_id="_149"></CardBase>
-							<cityIndex>23</cityIndex>
-							<regionIndex>2</regionIndex>
+							<cityIndex>47</cityIndex>
+							<regionIndex>3</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_150">
-							<cityIndex>8</cityIndex>
-							<regionIndex>0</regionIndex>
+						<px class_id_reference="17" object_id="_150">
+							<eventType>4</eventType>
 							<CardBase object_id="_151"></CardBase>
-							<cityIndex>8</cityIndex>
-							<regionIndex>0</regionIndex>
+							<eventType>4</eventType>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_152">
-							<cityIndex>43</cityIndex>
-							<regionIndex>3</regionIndex>
+						<px class_id_reference="18" object_id="_152">
+							<cityIndex>29</cityIndex>
+							<regionIndex>1</regionIndex>
 							<CardBase object_id="_153"></CardBase>
-							<cityIndex>43</cityIndex>
-							<regionIndex>3</regionIndex>
+							<cityIndex>29</cityIndex>
+							<regionIndex>1</regionIndex>
 						</px>
 					</item>
 					<item>
 						<px class_id_reference="16" object_id="_154">
-							<cityIndex>42</cityIndex>
-							<regionIndex>3</regionIndex>
 							<CardBase object_id="_155"></CardBase>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="17" object_id="_156">
+							<eventType>1</eventType>
+							<CardBase object_id="_157"></CardBase>
+							<eventType>1</eventType>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_158">
+							<cityIndex>42</cityIndex>
+							<regionIndex>3</regionIndex>
+							<CardBase object_id="_159"></CardBase>
 							<cityIndex>42</cityIndex>
 							<regionIndex>3</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_156">
-							<cityIndex>32</cityIndex>
+						<px class_id_reference="18" object_id="_160">
+							<cityIndex>30</cityIndex>
 							<regionIndex>1</regionIndex>
-							<CardBase object_id="_157"></CardBase>
-							<cityIndex>32</cityIndex>
-							<regionIndex>1</regionIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="16" object_id="_158">
-							<cityIndex>10</cityIndex>
-							<regionIndex>0</regionIndex>
-							<CardBase object_id="_159"></CardBase>
-							<cityIndex>10</cityIndex>
-							<regionIndex>0</regionIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="16" object_id="_160">
-							<cityIndex>14</cityIndex>
-							<regionIndex>2</regionIndex>
 							<CardBase object_id="_161"></CardBase>
-							<cityIndex>14</cityIndex>
+							<cityIndex>30</cityIndex>
+							<regionIndex>1</regionIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_162">
+							<cityIndex>26</cityIndex>
+							<regionIndex>1</regionIndex>
+							<CardBase object_id="_163"></CardBase>
+							<cityIndex>26</cityIndex>
+							<regionIndex>1</regionIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_164">
+							<cityIndex>0</cityIndex>
+							<regionIndex>0</regionIndex>
+							<CardBase object_id="_165"></CardBase>
+							<cityIndex>0</cityIndex>
+							<regionIndex>0</regionIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_166">
+							<cityIndex>20</cityIndex>
+							<regionIndex>2</regionIndex>
+							<CardBase object_id="_167"></CardBase>
+							<cityIndex>20</cityIndex>
 							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_162">
-							<cityIndex>3</cityIndex>
-							<regionIndex>0</regionIndex>
-							<CardBase object_id="_163"></CardBase>
-							<cityIndex>3</cityIndex>
-							<regionIndex>0</regionIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="15" object_id="_164">
-							<eventType>0</eventType>
-							<CardBase object_id="_165"></CardBase>
-							<eventType>0</eventType>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="16" object_id="_166">
-							<cityIndex>24</cityIndex>
-							<regionIndex>1</regionIndex>
-							<CardBase object_id="_167"></CardBase>
-							<cityIndex>24</cityIndex>
-							<regionIndex>1</regionIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="14" object_id="_168">
+						<px class_id_reference="18" object_id="_168">
+							<cityIndex>41</cityIndex>
+							<regionIndex>3</regionIndex>
 							<CardBase object_id="_169"></CardBase>
+							<cityIndex>41</cityIndex>
+							<regionIndex>3</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_170">
-							<cityIndex>11</cityIndex>
-							<regionIndex>0</regionIndex>
+						<px class_id_reference="18" object_id="_170">
+							<cityIndex>43</cityIndex>
+							<regionIndex>3</regionIndex>
 							<CardBase object_id="_171"></CardBase>
-							<cityIndex>11</cityIndex>
-							<regionIndex>0</regionIndex>
+							<cityIndex>43</cityIndex>
+							<regionIndex>3</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_172">
-							<cityIndex>33</cityIndex>
-							<regionIndex>1</regionIndex>
+						<px class_id_reference="18" object_id="_172">
+							<cityIndex>9</cityIndex>
+							<regionIndex>0</regionIndex>
 							<CardBase object_id="_173"></CardBase>
-							<cityIndex>33</cityIndex>
-							<regionIndex>1</regionIndex>
+							<cityIndex>9</cityIndex>
+							<regionIndex>0</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_174">
-							<cityIndex>5</cityIndex>
-							<regionIndex>0</regionIndex>
+						<px class_id_reference="18" object_id="_174">
+							<cityIndex>12</cityIndex>
+							<regionIndex>2</regionIndex>
 							<CardBase object_id="_175"></CardBase>
-							<cityIndex>5</cityIndex>
-							<regionIndex>0</regionIndex>
+							<cityIndex>12</cityIndex>
+							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_176">
-							<cityIndex>39</cityIndex>
+						<px class_id_reference="18" object_id="_176">
+							<cityIndex>44</cityIndex>
 							<regionIndex>3</regionIndex>
 							<CardBase object_id="_177"></CardBase>
-							<cityIndex>39</cityIndex>
+							<cityIndex>44</cityIndex>
 							<regionIndex>3</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_178">
-							<cityIndex>1</cityIndex>
-							<regionIndex>0</regionIndex>
+						<px class_id_reference="18" object_id="_178">
+							<cityIndex>32</cityIndex>
+							<regionIndex>1</regionIndex>
 							<CardBase object_id="_179"></CardBase>
-							<cityIndex>1</cityIndex>
-							<regionIndex>0</regionIndex>
+							<cityIndex>32</cityIndex>
+							<regionIndex>1</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_180">
-							<cityIndex>45</cityIndex>
-							<regionIndex>3</regionIndex>
+						<px class_id_reference="18" object_id="_180">
+							<cityIndex>34</cityIndex>
+							<regionIndex>1</regionIndex>
 							<CardBase object_id="_181"></CardBase>
-							<cityIndex>45</cityIndex>
-							<regionIndex>3</regionIndex>
+							<cityIndex>34</cityIndex>
+							<regionIndex>1</regionIndex>
 						</px>
 					</item>
 					<item>
 						<px class_id_reference="16" object_id="_182">
-							<cityIndex>18</cityIndex>
-							<regionIndex>2</regionIndex>
 							<CardBase object_id="_183"></CardBase>
-							<cityIndex>18</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_184">
+							<cityIndex>15</cityIndex>
+							<regionIndex>2</regionIndex>
+							<CardBase object_id="_185"></CardBase>
+							<cityIndex>15</cityIndex>
 							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_184">
-							<cityIndex>34</cityIndex>
-							<regionIndex>1</regionIndex>
-							<CardBase object_id="_185"></CardBase>
-							<cityIndex>34</cityIndex>
-							<regionIndex>1</regionIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="16" object_id="_186">
-							<cityIndex>29</cityIndex>
-							<regionIndex>1</regionIndex>
+						<px class_id_reference="18" object_id="_186">
+							<cityIndex>17</cityIndex>
+							<regionIndex>2</regionIndex>
 							<CardBase object_id="_187"></CardBase>
-							<cityIndex>29</cityIndex>
-							<regionIndex>1</regionIndex>
+							<cityIndex>17</cityIndex>
+							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_188">
-							<cityIndex>40</cityIndex>
-							<regionIndex>3</regionIndex>
+						<px class_id_reference="18" object_id="_188">
+							<cityIndex>23</cityIndex>
+							<regionIndex>2</regionIndex>
 							<CardBase object_id="_189"></CardBase>
-							<cityIndex>40</cityIndex>
-							<regionIndex>3</regionIndex>
+							<cityIndex>23</cityIndex>
+							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 					<item>
 						<px class_id_reference="16" object_id="_190">
-							<cityIndex>17</cityIndex>
-							<regionIndex>2</regionIndex>
 							<CardBase object_id="_191"></CardBase>
-							<cityIndex>17</cityIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_192">
+							<cityIndex>39</cityIndex>
+							<regionIndex>3</regionIndex>
+							<CardBase object_id="_193"></CardBase>
+							<cityIndex>39</cityIndex>
+							<regionIndex>3</regionIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_194">
+							<cityIndex>25</cityIndex>
+							<regionIndex>1</regionIndex>
+							<CardBase object_id="_195"></CardBase>
+							<cityIndex>25</cityIndex>
+							<regionIndex>1</regionIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_196">
+							<cityIndex>18</cityIndex>
+							<regionIndex>2</regionIndex>
+							<CardBase object_id="_197"></CardBase>
+							<cityIndex>18</cityIndex>
 							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="15" object_id="_192">
-							<eventType>2</eventType>
-							<CardBase object_id="_193"></CardBase>
-							<eventType>2</eventType>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="14" object_id="_194">
-							<CardBase object_id="_195"></CardBase>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="16" object_id="_196">
-							<cityIndex>0</cityIndex>
-							<regionIndex>0</regionIndex>
-							<CardBase object_id="_197"></CardBase>
-							<cityIndex>0</cityIndex>
-							<regionIndex>0</regionIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="16" object_id="_198">
-							<cityIndex>27</cityIndex>
-							<regionIndex>1</regionIndex>
+						<px class_id_reference="18" object_id="_198">
+							<cityIndex>37</cityIndex>
+							<regionIndex>3</regionIndex>
 							<CardBase object_id="_199"></CardBase>
-							<cityIndex>27</cityIndex>
-							<regionIndex>1</regionIndex>
+							<cityIndex>37</cityIndex>
+							<regionIndex>3</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_200">
-							<cityIndex>20</cityIndex>
+						<px class_id_reference="18" object_id="_200">
+							<cityIndex>22</cityIndex>
 							<regionIndex>2</regionIndex>
 							<CardBase object_id="_201"></CardBase>
-							<cityIndex>20</cityIndex>
+							<cityIndex>22</cityIndex>
 							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_202">
-							<cityIndex>12</cityIndex>
-							<regionIndex>2</regionIndex>
+						<px class_id_reference="18" object_id="_202">
+							<cityIndex>2</cityIndex>
+							<regionIndex>0</regionIndex>
 							<CardBase object_id="_203"></CardBase>
-							<cityIndex>12</cityIndex>
-							<regionIndex>2</regionIndex>
+							<cityIndex>2</cityIndex>
+							<regionIndex>0</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_204">
-							<cityIndex>46</cityIndex>
-							<regionIndex>3</regionIndex>
+						<px class_id_reference="18" object_id="_204">
+							<cityIndex>28</cityIndex>
+							<regionIndex>1</regionIndex>
 							<CardBase object_id="_205"></CardBase>
-							<cityIndex>46</cityIndex>
-							<regionIndex>3</regionIndex>
+							<cityIndex>28</cityIndex>
+							<regionIndex>1</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_206">
-							<cityIndex>4</cityIndex>
+						<px class_id_reference="18" object_id="_206">
+							<cityIndex>3</cityIndex>
 							<regionIndex>0</regionIndex>
 							<CardBase object_id="_207"></CardBase>
-							<cityIndex>4</cityIndex>
+							<cityIndex>3</cityIndex>
 							<regionIndex>0</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="14" object_id="_208">
+						<px class_id_reference="18" object_id="_208">
+							<cityIndex>45</cityIndex>
+							<regionIndex>3</regionIndex>
 							<CardBase object_id="_209"></CardBase>
+							<cityIndex>45</cityIndex>
+							<regionIndex>3</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_210">
-							<cityIndex>35</cityIndex>
-							<regionIndex>1</regionIndex>
+						<px class_id_reference="18" object_id="_210">
+							<cityIndex>16</cityIndex>
+							<regionIndex>2</regionIndex>
 							<CardBase object_id="_211"></CardBase>
-							<cityIndex>35</cityIndex>
-							<regionIndex>1</regionIndex>
+							<cityIndex>16</cityIndex>
+							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_212">
-							<cityIndex>47</cityIndex>
+						<px class_id_reference="18" object_id="_212">
+							<cityIndex>40</cityIndex>
 							<regionIndex>3</regionIndex>
 							<CardBase object_id="_213"></CardBase>
-							<cityIndex>47</cityIndex>
+							<cityIndex>40</cityIndex>
 							<regionIndex>3</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_214">
-							<cityIndex>25</cityIndex>
-							<regionIndex>1</regionIndex>
+						<px class_id_reference="18" object_id="_214">
+							<cityIndex>14</cityIndex>
+							<regionIndex>2</regionIndex>
 							<CardBase object_id="_215"></CardBase>
-							<cityIndex>25</cityIndex>
-							<regionIndex>1</regionIndex>
+							<cityIndex>14</cityIndex>
+							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 					<item>
-						<px class_id_reference="16" object_id="_216">
-							<cityIndex>22</cityIndex>
-							<regionIndex>2</regionIndex>
+						<px class_id_reference="18" object_id="_216">
+							<cityIndex>24</cityIndex>
+							<regionIndex>1</regionIndex>
 							<CardBase object_id="_217"></CardBase>
-							<cityIndex>22</cityIndex>
-							<regionIndex>2</regionIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="15" object_id="_218">
-							<eventType>3</eventType>
-							<CardBase object_id="_219"></CardBase>
-							<eventType>3</eventType>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="15" object_id="_220">
-							<eventType>4</eventType>
-							<CardBase object_id="_221"></CardBase>
-							<eventType>4</eventType>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="16" object_id="_222">
-							<cityIndex>44</cityIndex>
-							<regionIndex>3</regionIndex>
-							<CardBase object_id="_223"></CardBase>
-							<cityIndex>44</cityIndex>
-							<regionIndex>3</regionIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="16" object_id="_224">
-							<cityIndex>19</cityIndex>
-							<regionIndex>2</regionIndex>
-							<CardBase object_id="_225"></CardBase>
-							<cityIndex>19</cityIndex>
-							<regionIndex>2</regionIndex>
-						</px>
-					</item>
-					<item>
-						<px class_id_reference="16" object_id="_226">
-							<cityIndex>30</cityIndex>
-							<regionIndex>1</regionIndex>
-							<CardBase object_id="_227"></CardBase>
-							<cityIndex>30</cityIndex>
+							<cityIndex>24</cityIndex>
 							<regionIndex>1</regionIndex>
 						</px>
 					</item>
 				</deck>
 			</g.playerDeck>
-			<g.playerDiscardDeck object_id="_228">
+			<g.playerDiscardDeck object_id="_218">
 				<deck>
-					<count>1</count>
+					<count>3</count>
 					<item_version>1</item_version>
 					<item>
-						<px class_id_reference="16" object_id="_229">
-							<cityIndex>31</cityIndex>
-							<regionIndex>1</regionIndex>
-							<CardBase object_id="_230"></CardBase>
-							<cityIndex>31</cityIndex>
-							<regionIndex>1</regionIndex>
+						<px class_id_reference="18" object_id="_219">
+							<cityIndex>46</cityIndex>
+							<regionIndex>3</regionIndex>
+							<CardBase object_id="_220"></CardBase>
+							<cityIndex>46</cityIndex>
+							<regionIndex>3</regionIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_221">
+							<cityIndex>1</cityIndex>
+							<regionIndex>0</regionIndex>
+							<CardBase object_id="_222"></CardBase>
+							<cityIndex>1</cityIndex>
+							<regionIndex>0</regionIndex>
+						</px>
+					</item>
+					<item>
+						<px class_id_reference="18" object_id="_223">
+							<cityIndex>13</cityIndex>
+							<regionIndex>2</regionIndex>
+							<CardBase object_id="_224"></CardBase>
+							<cityIndex>13</cityIndex>
+							<regionIndex>2</regionIndex>
 						</px>
 					</item>
 				</deck>
@@ -2263,3 +2222,5 @@
 		</deckData>
 	</stateMachine>
 </object>
+</boost_serialization>
+

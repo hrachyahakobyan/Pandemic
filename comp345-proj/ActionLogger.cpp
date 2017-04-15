@@ -27,7 +27,9 @@ namespace pan{
 		auto action = not->action;
 		if (types.find(action->getActionType()) == types.end())
 			return;
-		*stream << getDateString() << ": ACTION UPDATE" << std::endl;
+		*stream << getDateString() << "\n-------ACTION UPDATE-------" << std::endl;
 		*stream << action->description() << std::endl << std::endl;
+		if (stream.use_count() != 1)
+			stream->flush();
 	}
 }

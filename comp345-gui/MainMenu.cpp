@@ -2,9 +2,20 @@
 #include "MainMenu.h"
 
 MainMenu::MainMenu(QWidget *parent)
-	: QDialog(parent), savedGamesDialog(NULL), newGameDialog(NULL)
+	: QDialog(parent, Qt::CustomizeWindowHint | Qt::WindowTitleHint), savedGamesDialog(NULL), newGameDialog(NULL)
 {
 	ui.setupUi(this);
+	QPalette pal = palette();
+	pal.setColor(QPalette::Background, Qt::blue);
+	this->setAutoFillBackground(true);
+	this->setPalette(pal);
+	QPalette buttonPal = palette();
+	buttonPal.setColor(QPalette::ButtonText, Qt::white);
+	buttonPal.setColor(QPalette::Button, Qt::darkBlue);
+	ui.newButton->setAutoFillBackground(true);
+	ui.continueButton->setAutoFillBackground(true);
+	ui.newButton->setPalette(buttonPal);
+	ui.continueButton->setPalette(buttonPal);
 }
 
 MainMenu::~MainMenu()
@@ -44,21 +55,24 @@ void MainMenu::on_savedGamesDialogSelectedGame(const QString& file)
 	qDebug() << "Saved games dialog selected " << file;
 	using namespace pan;
 	Game g;
-	if (Game::load(file.toStdString(), g)){
+	if (Game::load(file.toStdString(), g) && !g.isOver()){
 		delete savedGamesDialog;
 		savedGamesDialog = NULL;
 		QDialog::accept();
 		Q_EMIT constructedGame(g);
-	}{
-#pragma message("Show some error message")
+	} else {
+		QMessageBox msgBox;
+		msgBox.setWindowTitle("Oops!");
+		msgBox.setText("The save file seems corrupt... :(");
+		msgBox.exec();
 	}
 }
 
 void MainMenu::on_newGameDialogSelectedSettingsAndPlayers(const pan::Settings& s, const std::vector<std::pair<std::string, pan::Roles>>& p)
 {
+#pragma message("Remove this")
 	qDebug() << "New game dialog selected " << s.description().c_str() << '\n' << "Player count: " << std::to_string(p.size()).c_str();
 	using namespace pan;
-#pragma message("Remove this")
 	Settings _s = s;
 	_s.discoverCureCardCount = 1;
 	Game g(_s, Map::pandemicMap());
@@ -69,4 +83,9 @@ void MainMenu::on_newGameDialogSelectedSettingsAndPlayers(const pan::Settings& s
 	newGameDialog = NULL;
 	QDialog::accept();
 	Q_EMIT constructedGame(g);
+}
+
+void MainMenu::reject()
+{
+
 }

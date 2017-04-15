@@ -101,8 +101,8 @@ namespace pan{
 	std::string GameData::description() const
 	{
 		std::string res = "Settings: " + settings.description() +
-			"\nInitialized " + std::to_string(initialized) +
-			"\nState " + GameStateDescriptions.at(state) + 
+			"\nInitialized: " + std::to_string(initialized) +
+			"\nState: " + GameStateDescriptions.at(state) + 
 			"\nInfection Rate Marker: " + std::to_string(infectionRateMarker) +
 			"\nOutbreak Marker: " + std::to_string(outbreakMarker) +
 			"\nResearch Stations: " + std::to_string(researchStations) +

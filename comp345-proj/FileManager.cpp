@@ -72,7 +72,7 @@ namespace pan{
 		for (; iter != end; ++iter)
 		{
 			if (is_regular_file(*iter)){
-				saveFiles.push_back((*iter).path().stem().string());
+				saveFiles.push_back((*iter).path().filename().string());
 			}
 		}
 		return saveFiles;

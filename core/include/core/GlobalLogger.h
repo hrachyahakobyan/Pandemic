@@ -3,11 +3,17 @@
 #include "Notifications.h"
 
 namespace pan{
+	/**
+	*	@brief A logger that logs all possible events.
+	*	@author Hrachya Hakobyan
+	*/
 	class GlobalLogger : public LoggerBase
 	{
 	public:
 		GlobalLogger (const std::string& filename, std::unique_ptr<LoggerBase> logger = nullptr);
 		virtual ~GlobalLogger();
+		GlobalLogger(const GlobalLogger&) = delete;
+		GlobalLogger& operator=(const GlobalLogger&) = delete;
 		void handleActionNotification(std::shared_ptr<ActionNotification> not);
 		void handleCityUpdateNotification(std::shared_ptr<pan::CityUpdateNotification>);
 		void handleGameDataUpdateNotification(std::shared_ptr<pan::GameDataUpdateNotification>);
