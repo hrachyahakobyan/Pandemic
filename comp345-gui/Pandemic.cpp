@@ -47,11 +47,16 @@ void Pandemic::start()
 		menu = new MainMenu(this);
 		connect(menu, SIGNAL(constructedGame(pan::Game&)), this, SLOT(on_mainMenuConstructedGame(pan::Game&)));
 	}
+	QGraphicsBlurEffect* blur = new QGraphicsBlurEffect();
+	blur->setBlurRadius(10);
+	blur->setBlurHints(QGraphicsBlurEffect::PerformanceHint);
+	this->setGraphicsEffect(blur);
 	int status = menu->exec();
 }
 
 void Pandemic::on_mainMenuConstructedGame(pan::Game& g)
 {
+	this->setGraphicsEffect(NULL);
 	initialize(std::move(g));
 }
 
@@ -166,8 +171,14 @@ void Pandemic::handleGameDataUpdateNotification(std::shared_ptr<pan::GameDataUpd
 		}
 		if (gameOverView->isActiveWindow())
 			return;
-		gameOverView->setStatus(n->data.state == pan::GameState::Victory ? true : false);
+		if (this->graphicsEffect() == NULL){
+			QGraphicsBlurEffect* blur = new QGraphicsBlurEffect();
+			blur->setBlurRadius(10);
+			blur->setBlurHints(QGraphicsBlurEffect::PerformanceHint);
+			this->setGraphicsEffect(blur);
+		}
 		gameOverView->show();
+		gameOverView->setStatus(n->data.state == pan::GameState::Victory ? true : false);
 	}
 }
 

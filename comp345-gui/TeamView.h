@@ -19,7 +19,7 @@ Q_SIGNALS:
 private:
 	Ui::TeamView ui;
 	QMap<QWidget*, pan::PlayerIndex> indexMap;
-	QVector<QPair<QWidget*, QLabel*>> playerWidgets;
+	QVector<QLabel*> playerWidgets;
 	QPalette selectedPalette;
 	QPalette deselectedPalette;
 };

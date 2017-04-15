@@ -10,10 +10,10 @@ TeamView::TeamView(QWidget *parent)
 	deselectedPalette = palette();
 	selectedPalette.setColor(QPalette::Background, Qt::blue);
 	deselectedPalette.setColor(QPalette::Background, Qt::darkBlue);
-	playerWidgets.push_back(qMakePair(ui.p1Widget, ui.p1Label));
-	playerWidgets.push_back(qMakePair(ui.p2Widget, ui.p2Label));
-	playerWidgets.push_back(qMakePair(ui.p3Widget, ui.p3Label));
-	playerWidgets.push_back(qMakePair(ui.p4Widget, ui.p4Label));
+	playerWidgets.push_back(ui.p1Label);
+	playerWidgets.push_back(ui.p2Label);
+	playerWidgets.push_back(ui.p3Label);
+	playerWidgets.push_back(ui.p4Label);
 }
 
 TeamView::~TeamView()
@@ -25,12 +25,12 @@ void TeamView::update(const std::vector<pan::PlayerPtr>& players)
 {
 	indexMap.clear();
 	for (auto pair : playerWidgets){
-		pair.second->clear();
-		pair.second->setAutoFillBackground(true);
+		pair->clear();
+		pair->setAutoFillBackground(true);
 	}
 	for (int i = 0; i < players.size(); i++){
-		indexMap[playerWidgets[i].first] = players[i]->index;
-		playerWidgets[i].second->setPixmap(Resources::avatarForRole(players[i]->getRole().role).scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+		indexMap[playerWidgets[i]] = players[i]->index;
+		playerWidgets[i]->setPixmap(Resources::cardForRole(players[i]->getRole().role).scaled(playerWidgets[i]->width(), playerWidgets[i]->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	}
 }
 
@@ -38,11 +38,11 @@ void TeamView::mousePressEvent(QMouseEvent *event)
 {
 	for (auto widget : playerWidgets){
 		QPointF localpos = event->localPos();
-		QRect g = widget.first->geometry();
+		QRect g = widget->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
-		if (contains && indexMap.find(widget.first) != indexMap.end()){
-			widget.second->setPalette(selectedPalette);
-			Q_EMIT playerSelected(indexMap[widget.first]);
+		if (contains && indexMap.find(widget) != indexMap.end()){
+			widget->setPalette(selectedPalette);
+			Q_EMIT playerSelected(indexMap[widget]);
 			return;
 		}
 	}
@@ -52,10 +52,10 @@ void TeamView::mouseReleaseEvent(QMouseEvent *event)
 {
 	for (auto widget : playerWidgets){
 		QPointF localpos = event->localPos();
-		QRect g = widget.first->geometry();
+		QRect g = widget->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
-		if (contains && indexMap.find(widget.first) != indexMap.end()){
-			widget.second->setPalette(deselectedPalette);
+		if (contains && indexMap.find(widget) != indexMap.end()){
+			widget->setPalette(deselectedPalette);
 			return;
 		}
 	}

@@ -295,8 +295,8 @@ QPixmap Resources::pixmapForCard(const pan::CardBase& c)
 		auto pix = eventCardsMap.find(type);
 		if (pix != eventCardsMap.end())
 			return *pix;
-		std::string fileName = "Resources\\event_card_" + std::to_string(type) + ".png";
-		fileName = "Resources\\CARD.png";
+		int val = static_cast<std::underlying_type<pan::EventType>::type>(type);
+		std::string fileName = "Resources\\EventCards\\" + std::to_string(val) + ".png";
 		QPixmap pixMap(fileName.c_str());
 		eventCardsMap[type] = pixMap;
 		return pixMap;
@@ -421,7 +421,7 @@ QPixmap Resources::getCityIconForRegion(pan::RegionIndex r)
 QPixmap Resources::getVictoryIcon()
 {
 	if (victoryIcon == nullptr){
-		victoryIcon.reset(new QPixmap("Resources\\Avatars\\victory.png"));
+		victoryIcon.reset(new QPixmap("Resources\\victory.png"));
 	}
 	return *victoryIcon.get();
 }
@@ -429,7 +429,7 @@ QPixmap Resources::getVictoryIcon()
 QPixmap Resources::getDefeatIcon()
 {
 	if (defeatIcon == nullptr){
-		defeatIcon.reset(new QPixmap("Resources\\Avatars\\defeat.png"));
+		defeatIcon.reset(new QPixmap("Resources\\defeat.png"));
 	}
 	return *defeatIcon.get();
 }
