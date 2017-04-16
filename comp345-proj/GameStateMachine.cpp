@@ -111,7 +111,6 @@ namespace pan{
 		for (boost::tie(ci, ci_end) = map.cities(); ci != ci_end; ++ci){
 			deckData.playerDeck.push(CardBasePtr(new CityCard(*ci, map[*ci].getRegion())));
 		}
-
 		for (const auto& event : EventTypeDescriptions){
 			deckData.playerDeck.push(CardBasePtr(new EventCard(event.first)));
 		}
@@ -382,10 +381,11 @@ namespace pan{
 			else
 				setPlayerStage(PlayerStage::Act);
 		}
-		else if (type == ActionType::Discard){
+		else if ((type == ActionType::Discard || isEvent(type)) && playerData.stage == PlayerStage::Discard){
 			// Can switch the state only if the player has less
 			// than the maximum allowed number of cards
 			if (playerData.players[index]->getCards().size() <= gameData.settings.playerHandMax){
+				// The player played an event card or discarded a card and is in the Discard
 				// The previous stage was act
 				if (playerData.prevStage == PlayerStage::Act){
 					// The last action performed by the player forced to discard a card (e.g. Share Knowledge)
@@ -432,6 +432,9 @@ namespace pan{
 			return true;
 		// If the stage is draw
 		if (playerData.stage == PlayerStage::Draw && type == ActionType::Draw)
+			return true;
+		// Events can be played anytime during the player's turn
+		if (isEvent(type))
 			return true;
 		// False otherwise
 		return false;

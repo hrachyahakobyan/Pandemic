@@ -92,6 +92,7 @@
     <ClInclude Include="ActionHandler.h" />
     <ClInclude Include="ActionLogger.h" />
     <ClInclude Include="Actions.h" />
+    <ClInclude Include="AirliftAction.h" />
     <ClInclude Include="BuildResearchStation.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="Cards.h" />
@@ -120,6 +121,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameStateMachine.h" />
     <ClInclude Include="GlobalLogger.h" />
+    <ClInclude Include="GovGrantAction.h" />
     <ClInclude Include="Infect.h" />
     <ClInclude Include="InfectionCard.h" />
     <ClInclude Include="LoggerBase.h" />
@@ -145,6 +147,7 @@
     <ClCompile Include="ActionBase.cpp" />
     <ClCompile Include="ActionHandler.cpp" />
     <ClCompile Include="ActionLogger.cpp" />
+    <ClCompile Include="AirliftAction.cpp" />
     <ClCompile Include="BuildResearchStation.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="CharterFlight.cpp" />
@@ -167,6 +170,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameStateMachine.cpp" />
     <ClCompile Include="GlobalLogger.cpp" />
+    <ClCompile Include="GovGrantAction.cpp" />
     <ClCompile Include="Infect.cpp" />
     <ClCompile Include="InfectionCard.cpp" />
     <ClCompile Include="LoggerBase.cpp" />

@@ -79,7 +79,6 @@ namespace pan{
 			ar & BOOST_SERIALIZATION_NVP(infectionRates);
 		}
 	};
-#pragma message("Change the number of epidemic cards")
 	Settings Settings::Beginner(unsigned int players)
 	{
 		assert(players >= 2 && players <= 4 && "Invalid player count");

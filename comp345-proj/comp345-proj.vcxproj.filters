@@ -210,6 +210,12 @@
     <ClInclude Include="GlobalLogger.h">
       <Filter>Header Files\Log</Filter>
     </ClInclude>
+    <ClInclude Include="GovGrantAction.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
+    <ClInclude Include="AirliftAction.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -340,6 +346,12 @@
     </ClCompile>
     <ClCompile Include="GlobalLogger.cpp">
       <Filter>Source Files\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="GovGrantAction.cpp">
+      <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="AirliftAction.cpp">
+      <Filter>Source Files\actions</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

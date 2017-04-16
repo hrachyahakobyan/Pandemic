@@ -34,6 +34,8 @@ namespace pan{
 		const ReferenceCard referenceCard;
 
 		bool hasCityCard(CityIndex) const;
+		bool hasEventCard(EventType type) const;
+		std::shared_ptr<EventCard> removeEventCard(EventType type);
 		std::shared_ptr<CityCard> removeCityCard(CityIndex index);
 		std::size_t countCardsMatching(const CardBase& card) const;
 		std::size_t countCardsMatchingRegion(RegionIndex index) const;

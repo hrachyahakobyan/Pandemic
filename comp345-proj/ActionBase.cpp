@@ -15,6 +15,11 @@ namespace pan{
 			type == ActionType::DiscoverCure);
 	}
 
+	bool isEvent(ActionType type)
+	{
+		return (type == ActionType::GovGrant || type == ActionType::Airlift);
+	}
+
 	bool ActionBase::isRegularAction() const
 	{
 		return isRegular(type);

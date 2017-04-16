@@ -79,6 +79,7 @@ void Pandemic::initialize(pan::Game&& g)
 	ui.teamView->update(game.getPlayerData().players);
 	ui.diseaseDetailsView->update(game.getGameData().diseases);
 	selectedUser = game.getActivePlayerIndex();
+	actionBuilder.setActivePlayer(selectedUser);
 	updateSelectedUser();
 
 	static bool registeredNotifications = false;
@@ -125,23 +126,14 @@ void Pandemic::on_teamViewPlayerSelected(pan::PlayerIndex index)
 	executeAction();
 }
 
-void Pandemic::on_handViewCardSelected(int card)
+void Pandemic::on_handViewCardSelected(int index)
 {
 	if (!game.isInitialized() || game.isOver()) return;
 	if (selectedUser != game.getActivePlayerIndex()) return;
-	actionBuilder.selectCard(card);
-	qDebug() << "Selected card " << card;
+	const pan::CardBase& card = *game.getActivePlayer().getCards()[index];
+	actionBuilder.selectCard(index, card);
+	qDebug() << "Selected card " << index;
 	executeAction();
-}
-
-void Pandemic::updateSelectedUser()
-{
-	bool isActive = (selectedUser == game.getActivePlayerIndex());
-	ui.activeUserAvatar->setPixmap(Resources::avatarForRole(game.getPlayer(selectedUser).getRole().role).scaled(ui.activeUserAvatar->width(), ui.activeUserAvatar->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
-	ui.activeUserActions->setText(isActive ? QString::fromStdString(std::to_string(game.getPlayerData().actionCounter)) : QString("-"));
-	ui.activeUserName->setText(QString::fromStdString(game.getPlayer(selectedUser).getName()));
-	ui.handView->update(this->game.getPlayer(selectedUser).getCards());
-	ui.stageLabel->setText(isActive ? playerStageToString(game.getStage()) : QString("-"));
 }
 
 void Pandemic::on_actionSelectViewSelected(pan::ActionType type)
@@ -216,6 +208,7 @@ void Pandemic::handleDeckDataUpdateNotification(std::shared_ptr<pan::DeckDataUpd
 void Pandemic::handlePlayerDataUpdateNotification(std::shared_ptr<pan::PlayerDataUpdateNotification>)
 {
 	this->selectedUser = game.getActivePlayerIndex();
+	actionBuilder.setActivePlayer(this->selectedUser);
 	this->updateSelectedUser();
 }
 
@@ -225,6 +218,17 @@ void Pandemic::handlePlayerUpdateNotification(std::shared_ptr<pan::PlayerUpdateN
 		this->updateSelectedUser();
 	}
 }
+
+void Pandemic::updateSelectedUser()
+{
+	bool isActive = (selectedUser == game.getActivePlayerIndex());
+	ui.activeUserAvatar->setPixmap(Resources::avatarForRole(game.getPlayer(selectedUser).getRole().role).scaled(ui.activeUserAvatar->width(), ui.activeUserAvatar->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	ui.activeUserActions->setText(isActive ? QString::fromStdString(std::to_string(game.getPlayerData().actionCounter)) : QString("-"));
+	ui.activeUserName->setText(QString::fromStdString(game.getPlayer(selectedUser).getName()));
+	ui.handView->update(this->game.getPlayer(selectedUser).getCards());
+	ui.stageLabel->setText(isActive ? playerStageToString(game.getStage()) : QString("-"));
+}
+
 
 QString Pandemic::playerStageToString(pan::PlayerStage s) const
 {

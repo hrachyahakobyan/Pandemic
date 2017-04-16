@@ -17,6 +17,8 @@ next(0)
 	actionStatesMap[ActionType::Infect] = std::vector<SelectionState>{Player};
 	actionStatesMap[ActionType::Draw] = std::vector<SelectionState>{Player};
 	actionStatesMap[ActionType::DiscoverCure] = std::vector<SelectionState>{Player, Disease};
+	actionStatesMap[ActionType::GovGrant] = std::vector<SelectionState>{Player, City};
+	actionStatesMap[ActionType::Airlift] = std::vector<SelectionState>{Player, City, Player};
 }
 
 
@@ -36,25 +38,25 @@ void ActionBuilder::selectAction(pan::ActionType type)
 	using namespace pan;
 	if (type == ActionType::BuildStation)
 		action.reset(new BuildResearchStation());
-	if (type == ActionType::Move)
+	else if (type == ActionType::Move)
 		action.reset(new Move());
-	if (type == ActionType::CharterFlight)
+	else if(type == ActionType::CharterFlight)
 		action.reset(new CharterFlight());
-	if (type == ActionType::Discard)
+	else if(type == ActionType::Discard)
 		action.reset(new DiscardCard());
-	if (type == ActionType::DirectFlight)
+	else if(type == ActionType::DirectFlight)
 		action.reset(new DirectFlight());
-	if (type == ActionType::TreatDisease)
+	else if(type == ActionType::TreatDisease)
 		action.reset(new TreatDisease());
-	if (type == ActionType::ShuttleFlight)
+	else if(type == ActionType::ShuttleFlight)
 		action.reset(new ShuttleFlight());
-	if (type == ActionType::ShareKnowledge)
+	else if(type == ActionType::ShareKnowledge)
 		action.reset(new ShareKnowledge());
-	if (type == ActionType::Infect)
+	else if(type == ActionType::Infect)
 		action.reset(new PlayerInfect());
-	if (type == ActionType::Draw)
+	else if(type == ActionType::Draw)
 		action.reset(new DrawPlayerCards());
-	if (type == ActionType::DiscoverCure)
+	else if(type == ActionType::DiscoverCure)
 		action.reset(new DiscoverCure());
 }
 
@@ -63,17 +65,26 @@ void ActionBuilder::selectCity(pan::CityIndex index)
 	using namespace pan;
 	if (action == nullptr) return;
 	ActionType t = action->getActionType();
-	if (!(t == ActionType::DirectFlight || t == ActionType::CharterFlight || t == ActionType::ShuttleFlight || t == ActionType::Move)) return;
+	if (!(t == ActionType::DirectFlight ||
+		t == ActionType::CharterFlight ||
+		t == ActionType::ShuttleFlight ||
+		t == ActionType::Move ||
+		t == ActionType::GovGrant ||
+		t == ActionType::Airlift)) return;
 	if (next != 1) return;
 	if (t == ActionType::DirectFlight)
 		static_cast<DirectFlight&>(*action).targetCity = index;
-	if (t == ActionType::CharterFlight)
+	else if (t == ActionType::CharterFlight)
 		static_cast<CharterFlight&>(*action).targetCity = index;
-	if (t == ActionType::ShuttleFlight)
+	else if (t == ActionType::ShuttleFlight)
 		static_cast<ShuttleFlight&>(*action).targetCity = index;
-	if (t == ActionType::Move)
+	else if (t == ActionType::Move)
 		static_cast<Move&>(*action).targetCity = index;
-	next = 0;
+	else if (t == ActionType::GovGrant)
+		static_cast<GovGrantAction&>(*action).city = index;
+	else 
+		static_cast<AirliftAction&>(*action).city = index;
+	next = (next + 1) % actionStatesMap[t].size();;
 }
 
 void ActionBuilder::selectPlayer(pan::PlayerIndex player)
@@ -90,6 +101,13 @@ void ActionBuilder::selectPlayer(pan::PlayerIndex player)
 		}
 		next = (next + 1) % actionStatesMap[type].size();
 		return;
+	}
+	else if (type == ActionType::Airlift){
+		if (next == 2){
+			static_cast<AirliftAction&>(*action).target = player;
+			next = (next + 1) % actionStatesMap[type].size();
+			return;
+		}
 	}
 	if (next != 0) return;
 	if (type == ActionType::BuildStation)
@@ -112,6 +130,10 @@ void ActionBuilder::selectPlayer(pan::PlayerIndex player)
 		static_cast<DiscoverCure&>(*action).player = player;
 	else if (type == ActionType::Move)
 		static_cast<Move&>(*action).player = player;
+	else if (type == ActionType::GovGrant)
+		static_cast<GovGrantAction&>(*action).player = player;
+	else 
+		return;
 	next = (next + 1) % actionStatesMap[type].size();
 }
 
@@ -129,19 +151,38 @@ void ActionBuilder::selectDisease(pan::DiseaseType d)
 	next = (next + 1) % actionStatesMap[type].size();
 }
 
-void ActionBuilder::selectCard(int cardIndex)
+void ActionBuilder::selectCard(int index, const pan::CardBase& card)
 {
 	using namespace pan;
-	if (action == nullptr) return;
+	if (action == nullptr && card.type == CardType::Event){
+		reset();
+		EventType type = static_cast<const EventCard&>(card).eventType;
+		if (type == EventType::GovGrant){
+			action.reset(new GovGrantAction());
+			static_cast<GovGrantAction&>(*action).player = activePlayer;
+		}
+		else if (type == EventType::Airlift){
+			action.reset(new AirliftAction());
+			static_cast<AirliftAction&>(*action).player = activePlayer;
+		}
+		next = (next + 1) % actionStatesMap[pan::ActionType::GovGrant].size();
+		return;
+	}
+	else if (action == nullptr) return;
 	ActionType type = action->getActionType();
 	if (type == ActionType::Discard){
 		if (next != 1) return;
-		static_cast<DiscardCard&>(*action).index = cardIndex;
+		static_cast<DiscardCard&>(*action).index = index;
 		next = (next + 1) % actionStatesMap[type].size();
 	}
 	else if (type == ActionType::ShareKnowledge){
 		if (next != 1) return;
-		static_cast<ShareKnowledge&>(*action).cardIndex = cardIndex;
+		static_cast<ShareKnowledge&>(*action).cardIndex = index;
 		next = (next + 1) % actionStatesMap[type].size();
 	}
+}
+
+void ActionBuilder::setActivePlayer(pan::PlayerIndex index)
+{
+	this->activePlayer = index;
 }

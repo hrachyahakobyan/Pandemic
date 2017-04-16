@@ -13,3 +13,5 @@
 #include "ShuttleFlight.h"
 #include "TreatDisease.h"
 #include "ShareKnowledge.h"
+#include "GovGrantAction.h"
+#include "AirliftAction.h"

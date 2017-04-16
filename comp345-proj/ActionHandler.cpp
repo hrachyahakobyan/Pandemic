@@ -520,4 +520,68 @@ namespace pan{
 		game.stateMachine.mergeInfectionDecks();
 		return true;
 	}
+
+	template<>
+	bool ActionHandler::validate<GovGrantAction>(const GovGrantAction& m) const{
+		// Check if parameters are valid
+		if (!game.stateMachine.playerExists(m.player)
+			|| !game.stateMachine.playerCanAct(m.player, m.getActionType())){
+			return false;
+		}
+		// Check if maximum research stations is reached
+		if (game.stateMachine.researchStationsMaxedOut())
+			return false;
+		// Check if the city already has a research station
+		if (game.stateMachine.getMap()[m.city].researchStation)
+			return false;
+		const auto& player = game.getPlayer(m.player);
+		// Check if the player has a matching card to the city he is in
+		return player.hasEventCard(EventType::GovGrant);
+	}
+
+	template<>
+	bool ActionHandler::execute<GovGrantAction>(const GovGrantAction& m){
+		if (!m.validate(*this)){
+			return false;
+		}
+		// Get the player
+		PlayerBase& player = game.stateMachine.getPlayer(m.player);
+		CardBasePtr cardToRemove = player.removeEventCard(EventType::GovGrant);
+		game.stateMachine.discardPlayerCard(cardToRemove);
+		game.stateMachine.addResearchStation(m.city);
+		game.stateMachine.playerDidAct(m.player, m.getActionType());
+		return true;
+	}
+
+	template<>
+	bool ActionHandler::validate<AirliftAction>(const AirliftAction& m) const{
+		// Check if parameters are valid
+		if (!game.stateMachine.getMap().cityExists(m.city) ||
+			!game.stateMachine.playerExists(m.player) ||
+			!game.stateMachine.playerCanAct(m.player, m.getActionType())){
+			return false;
+		}
+		// Check if the player is already in the target city
+		const auto& target = game.getPlayer(m.target);
+		if (target.getLocation() == m.city){
+			return false;
+		}
+		const auto& player = game.getPlayer(m.player);
+		// Check if the player has a matching card to the event type
+		return player.hasEventCard(EventType::Airlift);
+	}
+
+	template<>
+	bool ActionHandler::execute<AirliftAction>(const AirliftAction& m){
+		if (!m.validate(*this)){
+			return false;
+		}
+		// Get the player
+		PlayerBase& player = game.stateMachine.getPlayer(m.player);
+		CardBasePtr cardToRemove = player.removeEventCard(EventType::Airlift);
+		game.stateMachine.discardPlayerCard(cardToRemove);
+		game.stateMachine.movePlayer(m.target, m.city);
+		game.stateMachine.playerDidAct(m.player, m.getActionType());
+		return true;
+	}
 }

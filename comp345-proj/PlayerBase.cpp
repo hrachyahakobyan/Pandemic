@@ -60,6 +60,33 @@ namespace pan{
 		return nullptr;
 	}
 
+	bool PlayerBase::hasEventCard(EventType type) const
+	{
+		for (const auto& c : cards){
+			if (c->type == CardType::Event){
+				const auto card = std::static_pointer_cast<EventCard>(c);
+				if (card->eventType == type){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	std::shared_ptr<EventCard> PlayerBase::removeEventCard(EventType type)
+	{
+		for (std::size_t i = 0; i < cards.size(); i++){
+			if (cards[i]->type == CardType::Event){
+				auto card = std::static_pointer_cast<EventCard>(cards[i]);
+				if (card->eventType == type){
+					cards.erase(cards.begin() + i);
+					return card;
+				}
+			}
+		}
+		return nullptr;
+	}
+
 	std::size_t PlayerBase::countCardsMatching(const CardBase& card) const
 	{
 		std::size_t result = 0;
@@ -84,7 +111,7 @@ namespace pan{
 
 	detail::Deck<std::shared_ptr<CityCard>> PlayerBase::removeCardsMatchingRegion(RegionIndex region, std::size_t count){
 		detail::Deck<std::shared_ptr<CityCard>> removedCards;
-		for (auto iter = cards.begin(); iter != cards.end(); ++iter) {
+		for (auto iter = cards.begin(); iter != cards.end();) {
 			if (removedCards.size() == count)
 				return removedCards;
 			if ((*iter)->type == CardType::City){
@@ -95,6 +122,12 @@ namespace pan{
 					if (iter == cards.end())
 						break;
 				}
+				else {
+					++iter;
+				}
+			}
+			else {
+				++iter;
 			}
 		}
 		return removedCards;

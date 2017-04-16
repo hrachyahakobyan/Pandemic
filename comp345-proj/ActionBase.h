@@ -5,7 +5,7 @@ namespace pan{
 	enum class ActionType{
 		Move = 0, CharterFlight, DirectFlight, ShuttleFlight,
 		BuildStation, TreatDisease, ShareKnowledge, DiscoverCure, Draw, Discard,
-		Infect, Outbreak, Epidemic
+		Infect, Outbreak, Epidemic, GovGrant, Airlift
 	};
 
 	static const std::map<ActionType, std::string> ActionTypeDescriptions{
@@ -21,10 +21,13 @@ namespace pan{
 		{ ActionType::Outbreak, "Outbreak" },
 		{ActionType::ShareKnowledge, "Share Knowledge"},
 		{ActionType::ShuttleFlight, "Shuttle Flight"},
-		{ ActionType::TreatDisease, "Treat disease" }
+		{ ActionType::TreatDisease, "Treat disease" },
+		{ ActionType::GovGrant, "Government Grant" },
+		{ ActionType::Airlift, "Airlift" }
 	};
 
 	bool isRegular(ActionType type);
+	bool isEvent(ActionType type);
 	/**
 	*	@brief Top level abstraction of the Action entity.
 	*	Store the Command in the Command pattern. All actions that modify the state
