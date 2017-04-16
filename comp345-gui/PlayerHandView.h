@@ -19,6 +19,7 @@ public:
 	void mouseReleaseEvent(QMouseEvent *event);
 Q_SIGNALS:
 	void cardSelected(int index);
+	void cardDetailsSelected(int index);
 private:
 	Ui::PlayerHandView ui;
 	QVector<QLabel*> cardViews;

@@ -5,6 +5,7 @@
 #include "ActionBuilder.h"
 #include "MainMenu.h"
 #include "GaveOverView.h"
+#include "CardDetailsView.h"
 
 class Pandemic : public QMainWindow
 {
@@ -25,13 +26,15 @@ public Q_SLOTS:
 	void on_diseaseViewDiseaseSelected(pan::DiseaseType);
 	void on_mainMenuConstructedGame(pan::Game& g);
 	void on_gameOverViewSelected(bool newGame);
+	void on_teamViewPlayerDetailsSelected(pan::PlayerIndex);
+	void on_handViewCardDetailsSelected(int);
 private:
 	void initialize(pan::Game&&);
 	bool initialized;
 	Ui::PandemicClass ui;
 	pan::Game game;
 	ActionBuilder actionBuilder;
-	void updateActiveUser();
+	void updateSelectedUser();
 	void executeAction();
 	std::shared_ptr<pan::LoggerBase> logger;
 
@@ -45,4 +48,6 @@ private:
 
 	MainMenu* menu;
 	GaveOverView* gameOverView;
+	CardDetailsView* cardDetailsView;
+	pan::PlayerIndex selectedUser;
 };

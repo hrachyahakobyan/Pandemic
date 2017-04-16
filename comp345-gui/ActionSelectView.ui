@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1140</width>
+    <width>1264</width>
     <height>167</height>
    </rect>
   </property>
@@ -307,6 +307,31 @@
      <layout class="QGridLayout" name="gridLayout_9">
       <item row="0" column="0">
        <widget class="QLabel" name="infectLabel">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Infect</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="shareWidget" native="true">
+     <layout class="QGridLayout" name="gridLayout_11">
+      <item row="0" column="0">
+       <widget class="QLabel" name="shareLabel">
         <property name="minimumSize">
          <size>
           <width>100</width>

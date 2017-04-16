@@ -41,8 +41,13 @@ void TeamView::mousePressEvent(QMouseEvent *event)
 		QRect g = widget->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains && indexMap.find(widget) != indexMap.end()){
-			widget->setPalette(selectedPalette);
-			Q_EMIT playerSelected(indexMap[widget]);
+			if (event->button() == Qt::RightButton){
+				Q_EMIT playerDetailsSelected(indexMap[widget]);
+			}
+			else {
+				widget->setPalette(selectedPalette);
+				Q_EMIT playerSelected(indexMap[widget]);
+			}
 			return;
 		}
 	}

@@ -15,6 +15,7 @@ MapView::MapView(QWidget *parent)
 	ui.mapGraphicsView->scale(0.5, 0.5);
 	selectedCityIndex = 0;
 	cityDetailsView = new CityDetailsView(this);
+	cityDetailsView->move(QPoint(20, 20));
 	cityDetailsView->hide();
 }
 

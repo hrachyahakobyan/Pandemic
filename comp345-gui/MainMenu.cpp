@@ -70,12 +70,9 @@ void MainMenu::on_savedGamesDialogSelectedGame(const QString& file)
 
 void MainMenu::on_newGameDialogSelectedSettingsAndPlayers(const pan::Settings& s, const std::vector<std::pair<std::string, pan::Roles>>& p)
 {
-#pragma message("Remove this")
 	qDebug() << "New game dialog selected " << s.description().c_str() << '\n' << "Player count: " << std::to_string(p.size()).c_str();
 	using namespace pan;
-	Settings _s = s;
-	_s.discoverCureCardCount = 1;
-	Game g(_s, Map::pandemicMap());
+	Game g(s, Map::pandemicMap());
 	for (const auto& player : p){
 		g.addPlayer(player.second, player.first);
 	}

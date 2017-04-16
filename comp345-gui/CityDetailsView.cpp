@@ -12,7 +12,6 @@ CityDetailsView::CityDetailsView(QWidget *parent)
 	ui.cubes4LabelImage->setPixmap((Resources::pixmapForRegion(3)).scaled(ui.cubes4LabelImage->width(), ui.cubes4LabelImage->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	researchOkPixmap.load("Resources\\station_ok.png");
 	researchNoPixamp.load("Resources\\station_no.png");
-	setStyleSheet("background-color:white;");
 	avatarLabels.push_back(ui.pAvatar1);
 	avatarLabels.push_back(ui.pAvatar2);
 	avatarLabels.push_back(ui.pAvatar3);
@@ -26,8 +25,8 @@ CityDetailsView::~CityDetailsView()
 
 void CityDetailsView::update(const pan::City& city)
 {
-	for (auto avatar : avatarLabels){
-		avatar->clear();
+	for (auto p : avatarLabels){
+		p->setPixmap(Resources::getAvatarBlank().scaled(p->width(), p->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 	}
 	ui.nameLabel->setText(QString::fromStdString(city.getName()));
 	ui.populationLabel->setText(QString::fromStdString(std::to_string(city.population)));

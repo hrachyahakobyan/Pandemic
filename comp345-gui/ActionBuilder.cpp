@@ -13,7 +13,7 @@ next(0)
 	actionStatesMap[ActionType::BuildStation] = std::vector<SelectionState>{Player};
 	actionStatesMap[ActionType::TreatDisease] = std::vector<SelectionState>{Player, Disease};
 	actionStatesMap[ActionType::ShuttleFlight] = std::vector<SelectionState>{Player, City};
-	actionStatesMap[ActionType::ShareKnowledge] = std::vector<SelectionState>{Player, Player, Card};
+	actionStatesMap[ActionType::ShareKnowledge] = std::vector<SelectionState>{Player, Card, Player};
 	actionStatesMap[ActionType::Infect] = std::vector<SelectionState>{Player};
 	actionStatesMap[ActionType::Draw] = std::vector<SelectionState>{Player};
 	actionStatesMap[ActionType::DiscoverCure] = std::vector<SelectionState>{Player, Disease};
@@ -84,12 +84,12 @@ void ActionBuilder::selectPlayer(pan::PlayerIndex player)
 	if (type == ActionType::ShareKnowledge){
 		if (next == 0){
 			static_cast<ShareKnowledge&>(*action).player = player;
-			next = (next + 1) % actionStatesMap[type].size();
 		}
-		else if (next == 1){
+		else if (next == 2){
 			static_cast<ShareKnowledge&>(*action).target = player;
-			next = (next + 1) % actionStatesMap[type].size();
 		}
+		next = (next + 1) % actionStatesMap[type].size();
+		return;
 	}
 	if (next != 0) return;
 	if (type == ActionType::BuildStation)
@@ -140,7 +140,7 @@ void ActionBuilder::selectCard(int cardIndex)
 		next = (next + 1) % actionStatesMap[type].size();
 	}
 	else if (type == ActionType::ShareKnowledge){
-		if (next != 2) return;
+		if (next != 1) return;
 		static_cast<ShareKnowledge&>(*action).cardIndex = cardIndex;
 		next = (next + 1) % actionStatesMap[type].size();
 	}

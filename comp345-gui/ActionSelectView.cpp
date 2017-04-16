@@ -20,6 +20,7 @@ ActionSelectView::ActionSelectView(QWidget *parent)
 	widgetActions[ui.drawWidget] = qMakePair(ui.drawLabel, pan::ActionType::Draw);
 	widgetActions[ui.infectWidget] = qMakePair(ui.infectLabel, pan::ActionType::Infect);
 	widgetActions[ui.discardWidget] = qMakePair(ui.discardLabel, pan::ActionType::Discard);
+	widgetActions[ui.shareWidget] = qMakePair(ui.shareLabel, pan::ActionType::ShareKnowledge);
 
 	for (auto p : widgetActions){
 		p.first->setAutoFillBackground(true);

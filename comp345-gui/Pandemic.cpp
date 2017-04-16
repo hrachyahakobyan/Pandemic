@@ -7,7 +7,11 @@
 #include <core\detail\Observer.h>
 
 Pandemic::Pandemic(QWidget *parent)
-	: QMainWindow(parent), menu(NULL), gameOverView(NULL), initialized(false)
+	: QMainWindow(parent), 
+	menu(NULL),
+	gameOverView(NULL), 
+	cardDetailsView(NULL),
+	initialized(false)
 {
 	using namespace pan;
 	ui.setupUi(this);
@@ -15,6 +19,7 @@ Pandemic::Pandemic(QWidget *parent)
 	pal.setColor(QPalette::Background, Qt::darkBlue);
 	this->setAutoFillBackground(true);
 	this->setPalette(pal);
+	ui.tabWidget->setAutoFillBackground(true);
 	ui.tabWidget->setPalette(pal);
 	ui.tabWidget->tabBar()->setTabTextColor(0, Qt::white);
 	ui.tabWidget->tabBar()->setTabTextColor(1, Qt::white);
@@ -31,14 +36,13 @@ Pandemic::Pandemic(QWidget *parent)
 	connect(ui.teamView, SIGNAL(playerSelected(pan::PlayerIndex)), this, SLOT(on_teamViewPlayerSelected(pan::PlayerIndex)));
 	connect(ui.handView, SIGNAL(cardSelected(int)), this, SLOT(on_handViewCardSelected(int)));
 	connect(ui.diseaseDetailsView, SIGNAL(diseaseSelected(pan::DiseaseType)), this, SLOT(on_diseaseViewDiseaseSelected(pan::DiseaseType)));
+	connect(ui.teamView, SIGNAL(playerDetailsSelected(pan::PlayerIndex)), this, SLOT(on_teamViewPlayerDetailsSelected(pan::PlayerIndex)));
+	connect(ui.handView, SIGNAL(cardDetailsSelected(int)), this, SLOT(on_handViewCardDetailsSelected(int)));
+
 }
 
 Pandemic::~Pandemic()
 {
-	if (menu)
-		delete menu;
-	if (gameOverView)
-		delete gameOverView;
 }
 
 void Pandemic::start()
@@ -73,18 +77,25 @@ void Pandemic::initialize(pan::Game&& g)
 	ui.gameDataView->update(this->game.getGameData());
 	ui.gameDataView->update(this->game.getDeckData());
 	ui.teamView->update(game.getPlayerData().players);
-	updateActiveUser();
+	ui.diseaseDetailsView->update(game.getGameData().diseases);
+	selectedUser = game.getActivePlayerIndex();
+	updateSelectedUser();
 
-	pan::detail::Observer<Pandemic, pan::CityUpdateNotification> cityObserver(*this, &Pandemic::handleCityUpdateNotification);
-	pan::detail::Observer<Pandemic, pan::DeckDataUpdateNotification> deckObserver(*this, &Pandemic::handleDeckDataUpdateNotification);
-	pan::detail::Observer<Pandemic, pan::GameDataUpdateNotification> gameObserver(*this, &Pandemic::handleGameDataUpdateNotification);
-	pan::detail::Observer<Pandemic, pan::PlayerDataUpdateNotification> playersObserver(*this, &Pandemic::handlePlayerDataUpdateNotification);
-	pan::detail::Observer<Pandemic, pan::PlayerUpdateNotification> playerObserver(*this, &Pandemic::handlePlayerUpdateNotification);
-	pan::detail::NotificationCenter::defaultCenter().addObserver(cityObserver);
-	pan::detail::NotificationCenter::defaultCenter().addObserver(deckObserver);
-	pan::detail::NotificationCenter::defaultCenter().addObserver(gameObserver);
-	pan::detail::NotificationCenter::defaultCenter().addObserver(playersObserver);
-	pan::detail::NotificationCenter::defaultCenter().addObserver(playerObserver);
+	static bool registeredNotifications = false;
+	if (!registeredNotifications){
+		pan::detail::Observer<Pandemic, pan::CityUpdateNotification> cityObserver(*this, &Pandemic::handleCityUpdateNotification);
+		pan::detail::Observer<Pandemic, pan::DeckDataUpdateNotification> deckObserver(*this, &Pandemic::handleDeckDataUpdateNotification);
+		pan::detail::Observer<Pandemic, pan::GameDataUpdateNotification> gameObserver(*this, &Pandemic::handleGameDataUpdateNotification);
+		pan::detail::Observer<Pandemic, pan::PlayerDataUpdateNotification> playersObserver(*this, &Pandemic::handlePlayerDataUpdateNotification);
+		pan::detail::Observer<Pandemic, pan::PlayerUpdateNotification> playerObserver(*this, &Pandemic::handlePlayerUpdateNotification);
+		pan::detail::NotificationCenter::defaultCenter().addObserver(cityObserver);
+		pan::detail::NotificationCenter::defaultCenter().addObserver(deckObserver);
+		pan::detail::NotificationCenter::defaultCenter().addObserver(gameObserver);
+		pan::detail::NotificationCenter::defaultCenter().addObserver(playersObserver);
+		pan::detail::NotificationCenter::defaultCenter().addObserver(playerObserver);
+		registeredNotifications = true;
+	}
+
 	std::string dateString = pan::LoggerBase::getDateString();
 	std::string fileName = "log_" + dateString + ".log";
 	try{
@@ -109,24 +120,28 @@ void Pandemic::on_teamViewPlayerSelected(pan::PlayerIndex index)
 	if (!game.isInitialized() || game.isOver()) return;
 	actionBuilder.selectPlayer(index);
 	qDebug() << "Selected player index " << index;
+	selectedUser = index;
+	updateSelectedUser();
 	executeAction();
 }
 
 void Pandemic::on_handViewCardSelected(int card)
 {
 	if (!game.isInitialized() || game.isOver()) return;
+	if (selectedUser != game.getActivePlayerIndex()) return;
 	actionBuilder.selectCard(card);
 	qDebug() << "Selected card " << card;
 	executeAction();
 }
 
-void Pandemic::updateActiveUser()
+void Pandemic::updateSelectedUser()
 {
-	ui.activeUserAvatar->setPixmap(Resources::avatarForRole(game.getActivePlayer().getRole().role).scaled(ui.activeUserAvatar->width(), ui.activeUserAvatar->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
-	ui.activeUserActions->setText(QString::fromStdString(std::to_string(game.getPlayerData().actionCounter)));
-	ui.activeUserName->setText(QString::fromStdString(game.getActivePlayer().getName()));
-	ui.handView->update(this->game.getActivePlayer().getCards());
-	ui.stageLabel->setText(playerStageToString(game.getStage()));
+	bool isActive = (selectedUser == game.getActivePlayerIndex());
+	ui.activeUserAvatar->setPixmap(Resources::avatarForRole(game.getPlayer(selectedUser).getRole().role).scaled(ui.activeUserAvatar->width(), ui.activeUserAvatar->height(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+	ui.activeUserActions->setText(isActive ? QString::fromStdString(std::to_string(game.getPlayerData().actionCounter)) : QString("-"));
+	ui.activeUserName->setText(QString::fromStdString(game.getPlayer(selectedUser).getName()));
+	ui.handView->update(this->game.getPlayer(selectedUser).getCards());
+	ui.stageLabel->setText(isActive ? playerStageToString(game.getStage()) : QString("-"));
 }
 
 void Pandemic::on_actionSelectViewSelected(pan::ActionType type)
@@ -166,7 +181,7 @@ void Pandemic::handleGameDataUpdateNotification(std::shared_ptr<pan::GameDataUpd
 	ui.diseaseDetailsView->update(n->data.diseases);
 	if (n->data.state == pan::GameState::Victory || n->data.state == pan::GameState::Defeat){
 		if (!gameOverView){
-			gameOverView = new GaveOverView();
+			gameOverView = new GaveOverView(this);
 			connect(gameOverView, SIGNAL(gameOverViewSelected(bool)), this, SLOT(on_gameOverViewSelected(bool)));
 		}
 		if (gameOverView->isActiveWindow())
@@ -200,13 +215,14 @@ void Pandemic::handleDeckDataUpdateNotification(std::shared_ptr<pan::DeckDataUpd
 
 void Pandemic::handlePlayerDataUpdateNotification(std::shared_ptr<pan::PlayerDataUpdateNotification>)
 {
-	this->updateActiveUser();
+	this->selectedUser = game.getActivePlayerIndex();
+	this->updateSelectedUser();
 }
 
 void Pandemic::handlePlayerUpdateNotification(std::shared_ptr<pan::PlayerUpdateNotification> n)
 {
-	if (n->player.index == game.getActivePlayerIndex()){
-		this->updateActiveUser();
+	if (n->player.index == this->selectedUser){
+		this->updateSelectedUser();
 	}
 }
 
@@ -246,4 +262,24 @@ void Pandemic::closeEvent(QCloseEvent *event)
 		}
 		event->accept();
 	}
+}
+
+void Pandemic::on_teamViewPlayerDetailsSelected(pan::PlayerIndex index)
+{
+	if (!cardDetailsView){
+		cardDetailsView = new CardDetailsView(this);
+		cardDetailsView->move(QPoint(20, 20));
+	}
+	cardDetailsView->show();
+	cardDetailsView->update(game.getPlayer(index).getRole().role);
+}
+
+void Pandemic::on_handViewCardDetailsSelected(int index)
+{
+	if (!cardDetailsView){
+		cardDetailsView = new CardDetailsView(this);
+		cardDetailsView->move(QPoint(20, 20));
+	}
+	cardDetailsView->show();
+	cardDetailsView->update(*game.getActivePlayer().getCards()[index]);
 }

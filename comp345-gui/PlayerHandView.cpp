@@ -47,8 +47,13 @@ void PlayerHandView::mousePressEvent(QMouseEvent *event)
 		QRect g = w->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains && indexMap.find(w) != indexMap.end()){
-			w->setPalette(selectedPalette);
-			Q_EMIT cardSelected(indexMap[w]);
+			if (event->button() == Qt::RightButton){
+				Q_EMIT cardDetailsSelected(indexMap[w]);
+			}
+			else {
+				w->setPalette(selectedPalette);
+				Q_EMIT cardSelected(indexMap[w]);
+			}
 			return;
 		}
 	}

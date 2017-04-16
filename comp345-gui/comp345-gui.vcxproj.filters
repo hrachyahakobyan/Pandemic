@@ -131,6 +131,15 @@
     <ClCompile Include="GaveOverView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_CardDetailsView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_CardDetailsView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="CardDetailsView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
@@ -215,6 +224,9 @@
     <ClInclude Include="GeneratedFiles\ui_GaveOverView.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_CardDetailsView.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Pandemic.h">
@@ -293,6 +305,12 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="GaveOverView.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CardDetailsView.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CardDetailsView.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
   </ItemGroup>

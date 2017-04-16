@@ -367,8 +367,8 @@ namespace pan{
 	*	3. It is the initiating player's turn.
 	*	4. The current stage is act
 	*	5. Both players must be in the same city
-	*	6. The card index is a valid city card in the target player's hand
-	*	7. The city index of the card in the target player's hand matches his location
+	*	6. The card index is a valid city card in the initiating player's hand
+	*	7. The city index of the card in the initiating player's hand matches his location
 	*/
 	template<>
 	bool ActionHandler::validate<ShareKnowledge>(const ShareKnowledge& a) const{
@@ -380,7 +380,7 @@ namespace pan{
 			game.stateMachine.getPlayer(a.target).getLocation()))
 			return false;
 		// check the card index validity
-		const PlayerBase& p = game.getPlayer(a.target);
+		const PlayerBase& p = game.getPlayer(a.player);
 		if (a.cardIndex < 0 || a.cardIndex >= int(p.getCards().size()))
 			return false;
 		// check the card type validity
@@ -396,14 +396,14 @@ namespace pan{
 		if (!a.validate(*this)){
 			return false;
 		}
-		// Remove the card to the discard pile
+		// Move the card from the initiator's hand to the target player's hand
 		PlayerBase& player = game.stateMachine.getPlayer(a.player);
 		PlayerBase& target = game.stateMachine.getPlayer(a.target);
-		auto& cards = target.getCards();
+		auto& cards = player.getCards();
 		auto card = cards[a.cardIndex];
 		cards.erase(cards.begin() + a.cardIndex);
-		player.getCards().push(card);
-
+		target.getCards().push(card);
+		game.stateMachine.playerDidAct(a.player, a.getActionType());
 		return true;
 	}
 

@@ -16,6 +16,7 @@ public:
 	void mouseReleaseEvent(QMouseEvent *event);
 Q_SIGNALS:
 	void playerSelected(pan::PlayerIndex index);
+	void playerDetailsSelected(pan::PlayerIndex index);
 private:
 	Ui::TeamView ui;
 	QMap<QWidget*, pan::PlayerIndex> indexMap;

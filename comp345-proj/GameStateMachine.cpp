@@ -373,10 +373,14 @@ namespace pan{
 				setPlayerStage(PlayerStage::Draw);
 			}
 		}
-		// We can go back to Act stage only from infect
+		// The player's turn changes. Check if the player has more cards
+		// than the hand, if that is the case, switch to discard stage
 		else if (type == ActionType::Infect){
 			playerData.turn = (playerData.turn + 1) % playerData.players.size();
-			setPlayerStage(PlayerStage::Act);
+			if (playerData.players[playerData.turn]->getCards().size() > gameData.settings.playerHandMax)
+				setPlayerStage(PlayerStage::Discard);
+			else
+				setPlayerStage(PlayerStage::Act);
 		}
 		else if (type == ActionType::Discard){
 			// Can switch the state only if the player has less
@@ -392,6 +396,10 @@ namespace pan{
 					else {
 						setPlayerStage(PlayerStage::Act);
 					}
+				}
+				// The previous stage was infect
+				else if (playerData.prevStage == PlayerStage::Infect){
+					setPlayerStage(PlayerStage::Act);
 				}
 				else {
 					// The player has to infect
