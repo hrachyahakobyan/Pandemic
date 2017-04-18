@@ -107,10 +107,12 @@ void CityItemGroup::mousePressEvent(QGraphicsSceneMouseEvent* event)
 	if (event->button() == Qt::LeftButton)
 	{
 		Q_EMIT cityItemSelected(index);
+		Resources::playClick();
 	}
 	else if (event->button() == Qt::RightButton)
 	{
 		Q_EMIT cityDetailsSelected(index);
+		Resources::playClick();
 	}
 }
 

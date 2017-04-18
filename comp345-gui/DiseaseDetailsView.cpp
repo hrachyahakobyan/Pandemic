@@ -58,6 +58,7 @@ void DiseaseDetailsView::mousePressEvent(QMouseEvent *event)
 		if (contains){
 			label->setPalette(selectedPalette);
 			Q_EMIT diseaseSelected(std::get<0>(t));
+			Resources::playClick();
 			return;
 		}
 	}

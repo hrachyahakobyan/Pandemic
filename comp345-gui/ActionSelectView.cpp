@@ -48,6 +48,7 @@ void ActionSelectView::mousePressEvent(QMouseEvent *event)
 		if (contains){
 			widgetActions[key].first->setPalette(selectedPalette);
 			Q_EMIT actionSelected(widgetActions[key].second);
+			Resources::playClick();
 			return;
 		}
 	}

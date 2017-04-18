@@ -444,7 +444,7 @@ QPixmap Resources::getDefeatIcon()
 void Resources::playSoundtrack(){
 	if (soundtrack == nullptr){
 		playlist.reset(new QMediaPlaylist());
-		playlist->addMedia(QUrl::fromLocalFile("Resources\\Audio\\music.wav"));
+		playlist->addMedia(QUrl::fromLocalFile("Resources\\Audio\\music.mp3"));
 		playlist->setPlaybackMode(QMediaPlaylist::Loop);
 		soundtrack.reset(new QMediaPlayer());
 		soundtrack->setAudioRole(QAudio::MusicRole);
@@ -463,22 +463,28 @@ void Resources::playClick(){
 }
 
 void Resources::playCardDeal(){
-/*	if (cardDeal == nullptr){
-		cardDeal.reset(new QSound("Resources\\Audio\\cardDeal.wav"));
+	if (cardDeal == nullptr){
+		cardDeal.reset(new QMediaPlayer);
+		cardDeal->setAudioRole(QAudio::GameRole);
+		cardDeal->setMedia(QUrl::fromLocalFile("Resources\\Audio\\cardDeal.wav"));
 	}
-	cardDeal->play(); */
+	cardDeal->play();
 }
 
 void Resources::playCardFlip(){
-/*	if (cardFlip == nullptr){
-		cardFlip.reset(new QSound("Resources\\Audio\\cardFlip.wav"));
+	if (cardFlip == nullptr){
+		cardFlip.reset(new QMediaPlayer);
+		cardFlip->setAudioRole(QAudio::GameRole);
+		cardFlip->setMedia(QUrl::fromLocalFile("Resources\\Audio\\cardFlip.wav"));
 	}
-	cardFlip->play(); */
+	cardFlip->play();
 }
 
 void Resources::playMovement(){
-/*	if (movement == nullptr){
-		movement.reset(new QSound("Resources\\Audio\\movement.wav"));
+	if (movement == nullptr){
+		movement.reset(new QMediaPlayer);
+		movement->setAudioRole(QAudio::GameRole);
+		movement->setMedia(QUrl::fromLocalFile("Resources\\Audio\\movement.wav"));
 	}
-	movement->play(); */
+	movement->play();
 }
