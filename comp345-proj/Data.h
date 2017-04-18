@@ -53,6 +53,7 @@ namespace pan{
 		unsigned int infectionRateMarker;
 		unsigned int outbreakMarker;
 		unsigned int researchStations;
+		bool skipNextInfection;
 		std::vector<Disease> diseases;
 		/**
 		*	The available disease cubes
@@ -152,6 +153,7 @@ namespace boost {
 			ar & BOOST_SERIALIZATION_NVP(g.diseaseCubes);
 			ar & BOOST_SERIALIZATION_NVP(g.state);
 			ar & BOOST_SERIALIZATION_NVP(g.initialized);
+			ar & BOOST_SERIALIZATION_NVP(g.skipNextInfection);
 		}
 
 		template<class Archive>

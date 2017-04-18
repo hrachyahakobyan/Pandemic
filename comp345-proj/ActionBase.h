@@ -5,7 +5,7 @@ namespace pan{
 	enum class ActionType{
 		Move = 0, CharterFlight, DirectFlight, ShuttleFlight,
 		BuildStation, TreatDisease, ShareKnowledge, DiscoverCure, Draw, Discard,
-		Infect, Outbreak, Epidemic, GovGrant, Airlift
+		Infect, Outbreak, Epidemic, GovGrant, Airlift, OneQuietNight
 	};
 
 	static const std::map<ActionType, std::string> ActionTypeDescriptions{
@@ -23,7 +23,8 @@ namespace pan{
 		{ActionType::ShuttleFlight, "Shuttle Flight"},
 		{ ActionType::TreatDisease, "Treat disease" },
 		{ ActionType::GovGrant, "Government Grant" },
-		{ ActionType::Airlift, "Airlift" }
+		{ ActionType::Airlift, "Airlift" },
+		{ ActionType::OneQuietNight, "One quiet night" }
 	};
 
 	bool isRegular(ActionType type);

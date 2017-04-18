@@ -7,7 +7,8 @@ namespace pan{
 		state(GameState::InProgress),
 		infectionRateMarker(0),
 		outbreakMarker(0),
-		researchStations(0)
+		researchStations(0),
+		skipNextInfection(false)
 	{
 	}
 
@@ -17,7 +18,8 @@ namespace pan{
 		state(GameState::InProgress),
 		infectionRateMarker(0), 
 		outbreakMarker(0),
-		researchStations(0)
+		researchStations(0),
+		skipNextInfection(false)
 	{
 	}
 
@@ -29,7 +31,8 @@ namespace pan{
 		outbreakMarker(o.outbreakMarker),
 		researchStations(o.researchStations),
 		diseases(o.diseases),
-		diseaseCubes(o.diseaseCubes)
+		diseaseCubes(o.diseaseCubes),
+		skipNextInfection(o.skipNextInfection)
 	{
 	}
 
@@ -47,6 +50,7 @@ namespace pan{
 		this->researchStations = o.researchStations;
 		this->diseases = o.diseases;
 		this->diseaseCubes = o.diseaseCubes;
+		this->skipNextInfection = o.skipNextInfection;
 		return *this;
 	}
 
@@ -58,7 +62,8 @@ namespace pan{
 		outbreakMarker(o.outbreakMarker),
 		researchStations(o.researchStations),
 		diseases(std::move(o.diseases)),
-		diseaseCubes(std::move(o.diseaseCubes))
+		diseaseCubes(std::move(o.diseaseCubes)),
+		skipNextInfection(o.skipNextInfection)
 	{
 	}
 
@@ -72,6 +77,7 @@ namespace pan{
 		this->researchStations = o.researchStations;
 		this->diseases = std::move(o.diseases);
 		this->diseaseCubes = std::move(o.diseaseCubes);
+		this->skipNextInfection = o.skipNextInfection;
 		return *this;
 	}
 
@@ -84,7 +90,8 @@ namespace pan{
 			&& outbreakMarker == o.outbreakMarker
 			&& researchStations == o.researchStations
 			&& diseases.size() == o.diseases.size()
-			&& diseaseCubes == o.diseaseCubes);
+			&& diseaseCubes == o.diseaseCubes
+			&& skipNextInfection == o.skipNextInfection);
 		if (!equal) return false;
 		for (std::size_t i = 0; i < diseases.size(); i++){
 			if (diseases[i] != o.diseases[i])
@@ -106,6 +113,7 @@ namespace pan{
 			"\nInfection Rate Marker: " + std::to_string(infectionRateMarker) +
 			"\nOutbreak Marker: " + std::to_string(outbreakMarker) +
 			"\nResearch Stations: " + std::to_string(researchStations) +
+			"\nSkip next infection: " + std::to_string(skipNextInfection) +
 			"\nDiseases:\n";
 		for (const auto& d : diseases){
 			res += d.description() + '\n';

@@ -3,7 +3,7 @@
 
 namespace pan{
 	/**
-	*	@brief Class representing a direct flight action
+	*	@brief Class representing the share knowledge action
 	*	@author Hrachya Hakobyan
 	*/
 	class ShareKnowledge : public ActionImpl<ShareKnowledge, ActionBase>{

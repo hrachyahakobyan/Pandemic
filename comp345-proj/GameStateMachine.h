@@ -54,6 +54,10 @@ namespace pan{
 		*/
 		void increaseInfectionRateMarker();
 
+		void setSkipNextInfection(bool skip);
+
+		inline bool getSkipNextInfection() const;
+
 		const PlayerData& getPlayerData() const { return playerData; }
 		/**
 		*	Check if a player with the specified index exists
@@ -151,6 +155,11 @@ namespace pan{
 #endif
 #endif
 	};
+
+	bool GameStateMachine::getSkipNextInfection() const
+	{
+		return gameData.skipNextInfection;
+	}
 
 	template<typename T>
 	void GameStateMachine::discardPlayerCards(const detail::Deck<T>& cards)

@@ -313,6 +313,11 @@ namespace pan{
 		if (!a.validate(*this)){
 			return false;
 		}
+		if (game.stateMachine.getSkipNextInfection()){
+			game.stateMachine.setSkipNextInfection(false);
+			game.stateMachine.playerDidAct(a.player, a.getActionType());
+			return true;
+		}
 		auto cards = game.stateMachine.drawInfectionDeckTop(game.stateMachine.getInfectCount());
 		for (const auto& card : cards){
 			Infect inf(card->cityIndex, game.stateMachine.getMap()[card->cityIndex].getRegion(), 1);
@@ -581,6 +586,32 @@ namespace pan{
 		CardBasePtr cardToRemove = player.removeEventCard(EventType::Airlift);
 		game.stateMachine.discardPlayerCard(cardToRemove);
 		game.stateMachine.movePlayer(m.target, m.city);
+		game.stateMachine.playerDidAct(m.player, m.getActionType());
+		return true;
+	}
+
+	template<>
+	bool ActionHandler::validate<OneQuietNightAction>(const OneQuietNightAction& m) const{
+		// Check if parameters are valid
+		if (!game.stateMachine.playerExists(m.player) ||
+			!game.stateMachine.playerCanAct(m.player, m.getActionType())){
+			return false;
+		}
+		const auto& player = game.getPlayer(m.player);
+		// Check if the player has a matching card to the event type
+		return player.hasEventCard(EventType::OneQuietNight);
+	}
+
+	template<>
+	bool ActionHandler::execute<OneQuietNightAction>(const OneQuietNightAction& m){
+		if (!m.validate(*this)){
+			return false;
+		}
+		// Get the player
+		PlayerBase& player = game.stateMachine.getPlayer(m.player);
+		CardBasePtr cardToRemove = player.removeEventCard(EventType::OneQuietNight);
+		game.stateMachine.discardPlayerCard(cardToRemove);
+		game.stateMachine.setSkipNextInfection(true);
 		game.stateMachine.playerDidAct(m.player, m.getActionType());
 		return true;
 	}

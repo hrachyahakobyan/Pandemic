@@ -111,9 +111,19 @@ namespace pan{
 		for (boost::tie(ci, ci_end) = map.cities(); ci != ci_end; ++ci){
 			deckData.playerDeck.push(CardBasePtr(new CityCard(*ci, map[*ci].getRegion())));
 		}
-		for (const auto& event : EventTypeDescriptions){
-			deckData.playerDeck.push(CardBasePtr(new EventCard(event.first)));
+#pragma message("remove this")
+		for (int i = 0; i < 10; i++){
+			deckData.playerDeck.push(CardBasePtr(new EventCard(EventType::OneQuietNight)));
 		}
+		for (int i = 0; i < 10; i++){
+			deckData.playerDeck.push(CardBasePtr(new EventCard(EventType::Airlift)));
+		}
+		for (int i = 0; i < 10; i++){
+			deckData.playerDeck.push(CardBasePtr(new EventCard(EventType::GovGrant)));
+		}
+		//for (const auto& event : EventTypeDescriptions){
+		//	deckData.playerDeck.push(CardBasePtr(new EventCard(event.first)));
+		//}
 		srand(static_cast<unsigned int>(time(NULL)));
 		deckData.playerDeck.shuffle();
 
@@ -159,6 +169,11 @@ namespace pan{
 		playerData.turn = 0;
 		playerData.stage = PlayerStage::Act;
 		playerData.actionCounter = 0;
+	}
+
+	void GameStateMachine::setSkipNextInfection(bool skip)
+	{
+		gameData.skipNextInfection = skip;
 	}
 
 	PlayerIndex GameStateMachine::addRandomPlayer(const std::string& name)
