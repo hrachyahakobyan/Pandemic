@@ -15,6 +15,7 @@ Pandemic::Pandemic(QWidget *parent)
 {
 	using namespace pan;
 	ui.setupUi(this);
+	Resources::playSoundtrack();
 	QPalette pal = palette();
 	pal.setColor(QPalette::Background, Qt::darkBlue);
 	this->setAutoFillBackground(true);
@@ -38,7 +39,6 @@ Pandemic::Pandemic(QWidget *parent)
 	connect(ui.diseaseDetailsView, SIGNAL(diseaseSelected(pan::DiseaseType)), this, SLOT(on_diseaseViewDiseaseSelected(pan::DiseaseType)));
 	connect(ui.teamView, SIGNAL(playerDetailsSelected(pan::PlayerIndex)), this, SLOT(on_teamViewPlayerDetailsSelected(pan::PlayerIndex)));
 	connect(ui.handView, SIGNAL(cardDetailsSelected(int)), this, SLOT(on_handViewCardDetailsSelected(int)));
-
 }
 
 Pandemic::~Pandemic()

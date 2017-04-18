@@ -1,4 +1,5 @@
 #pragma once
+#include <QSound>
 #include <core\Cards.h>
 
 /**
@@ -29,6 +30,7 @@ public:
 	static QPixmap getAvatarBlank();
 	static QPixmap getVictoryIcon();
 	static QPixmap getDefeatIcon();
+	static void playSoundtrack();
 private:
 	static QMap<pan::RegionIndex, QPixmap> regionPixmaps;
 	static QMap<pan::Roles, QPixmap> pawnPixmaps;
@@ -52,5 +54,6 @@ private:
 	static std::unique_ptr<QPixmap> avatarBlank;
 	static std::unique_ptr<QPixmap> victoryIcon;
 	static std::unique_ptr<QPixmap> defeatIcon;
+	static std::unique_ptr<QSound> Resources::soundtrack;
 };
 

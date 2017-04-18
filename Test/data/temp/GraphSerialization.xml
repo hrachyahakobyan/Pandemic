@@ -45,3 +45,5 @@
 		<graph_property></graph_property>
 	</container>
 </object>
+</boost_serialization>
+

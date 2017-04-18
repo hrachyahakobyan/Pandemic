@@ -75,10 +75,6 @@
 				<count>0</count>
 				<item_version>0</item_version>
 			</g.diseaseCubes>
-			<g.removedDiseasesCubes>
-				<count>0</count>
-				<item_version>0</item_version>
-			</g.removedDiseasesCubes>
 			<g.state>0</g.state>
 			<g.initialized>0</g.initialized>
 		</gameData>
@@ -110,3 +106,5 @@
 		</deckData>
 	</stateMachine>
 </object>
+</boost_serialization>
+

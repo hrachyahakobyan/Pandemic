@@ -23,6 +23,8 @@ std::unique_ptr<QPixmap> Resources::infectionCardBack;
 std::unique_ptr<QPixmap> Resources::avatarBlank;
 std::unique_ptr<QPixmap> Resources::victoryIcon;
 std::unique_ptr<QPixmap> Resources::defeatIcon;
+std::unique_ptr<QSound> Resources::soundtrack;
+
 
 Resources::Resources()
 {
@@ -432,4 +434,12 @@ QPixmap Resources::getDefeatIcon()
 		defeatIcon.reset(new QPixmap("Resources\\defeat.png"));
 	}
 	return *defeatIcon.get();
+}
+
+void Resources::playSoundtrack(){
+	if (soundtrack == nullptr){
+		soundtrack.reset(new QSound("Resources\\Audio\\music.wav"));
+	}
+	soundtrack->play();
+	soundtrack->setLoops(QSound::Infinite);
 }

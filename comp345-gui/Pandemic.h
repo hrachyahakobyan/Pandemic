@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QSound>
 #include <QtWidgets/QMainWindow>
 #include "ui_Pandemic.h"
 #include "ActionBuilder.h"
