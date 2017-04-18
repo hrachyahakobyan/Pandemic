@@ -15,3 +15,4 @@
 #include "ShareKnowledge.h"
 #include "GovGrantAction.h"
 #include "AirliftAction.h"
+#include "OneQuietNightAction.h"

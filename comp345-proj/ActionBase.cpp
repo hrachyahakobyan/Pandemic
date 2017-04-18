@@ -17,7 +17,9 @@ namespace pan{
 
 	bool isEvent(ActionType type)
 	{
-		return (type == ActionType::GovGrant || type == ActionType::Airlift);
+		return (type == ActionType::GovGrant || 
+			type == ActionType::Airlift || 
+			type == ActionType::OneQuietNight);
 	}
 
 	bool ActionBase::isRegularAction() const

@@ -36,7 +36,7 @@ namespace pan{
 		/**
 		*	Default number of matching cards required to cure a disease
 		*/
-		unsigned int discoverCureCardCount = 5;
+		unsigned int discoverCureCardCount = 4;
 		/**
 		*	Size of the player hand
 		*/

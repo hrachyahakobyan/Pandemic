@@ -19,6 +19,8 @@ namespace pan{
 		*	The city to build a research station in
 		*/
 		CityIndex city;
+
+		std::string description() const;
 	};
 }
 

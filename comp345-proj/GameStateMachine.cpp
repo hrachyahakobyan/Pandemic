@@ -161,6 +161,11 @@ namespace pan{
 		playerData.actionCounter = 0;
 	}
 
+	void GameStateMachine::setSkipNextInfection(bool skip)
+	{
+		gameData.skipNextInfection = skip;
+	}
+
 	PlayerIndex GameStateMachine::addRandomPlayer(const std::string& name)
 	{
 		if (playerData.players.size() >= gameData.settings.playerCount)

@@ -216,6 +216,9 @@
     <ClInclude Include="AirliftAction.h">
       <Filter>Header Files\actions</Filter>
     </ClInclude>
+    <ClInclude Include="OneQuietNightAction.h">
+      <Filter>Header Files\actions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -352,6 +355,9 @@
     </ClCompile>
     <ClCompile Include="AirliftAction.cpp">
       <Filter>Source Files\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="OneQuietNightAction.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

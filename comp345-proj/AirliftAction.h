@@ -3,7 +3,7 @@
 
 namespace pan{
 	/**
-	*	@brief Encapsulates the parameters of GovGrant event action
+	*	@brief Encapsulates the parameters of Airlift event action
 	*	@author Hrachya Hakobyan
 	*/
 	class AirliftAction : public ActionImpl<AirliftAction, ActionBase>

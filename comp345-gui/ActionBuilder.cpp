@@ -19,6 +19,7 @@ next(0)
 	actionStatesMap[ActionType::DiscoverCure] = std::vector<SelectionState>{Player, Disease};
 	actionStatesMap[ActionType::GovGrant] = std::vector<SelectionState>{Player, City};
 	actionStatesMap[ActionType::Airlift] = std::vector<SelectionState>{Player, City, Player};
+	actionStatesMap[ActionType::OneQuietNight] = std::vector<SelectionState>{Player};
 }
 
 
@@ -136,6 +137,8 @@ void ActionBuilder::selectPlayer(pan::PlayerIndex player)
 		static_cast<Move&>(*action).player = player;
 	else if (type == ActionType::GovGrant)
 		static_cast<GovGrantAction&>(*action).player = player;
+	else if (type == ActionType::OneQuietNight)
+		static_cast<OneQuietNightAction&>(*action).player = player;
 	else 
 		return;
 	next = (next + 1) % actionStatesMap[type].size();
@@ -158,18 +161,25 @@ void ActionBuilder::selectDisease(pan::DiseaseType d)
 void ActionBuilder::selectCard(int index, const pan::CardBase& card)
 {
 	using namespace pan;
-	if (action == nullptr && card.type == CardType::Event){
+	if (card.type == CardType::Event){
 		reset();
 		EventType type = static_cast<const EventCard&>(card).eventType;
 		if (type == EventType::GovGrant){
 			action.reset(new GovGrantAction());
 			static_cast<GovGrantAction&>(*action).player = activePlayer;
+			next = (next + 1) % actionStatesMap[pan::ActionType::GovGrant].size();
 		}
 		else if (type == EventType::Airlift){
 			action.reset(new AirliftAction());
 			static_cast<AirliftAction&>(*action).player = activePlayer;
+			next = (next + 1) % actionStatesMap[pan::ActionType::Airlift].size();
 		}
-		next = (next + 1) % actionStatesMap[pan::ActionType::GovGrant].size();
+		else if (type == EventType::OneQuietNight){
+			action.reset(new OneQuietNightAction());
+			static_cast<OneQuietNightAction&>(*action).player = activePlayer;
+			next = (next + 1) % actionStatesMap[pan::ActionType::OneQuietNight].size();
+		}
+
 		return;
 	}
 	else if (action == nullptr) return;
