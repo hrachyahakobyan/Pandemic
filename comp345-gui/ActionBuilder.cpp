@@ -72,14 +72,18 @@ void ActionBuilder::selectCity(pan::CityIndex index)
 		t == ActionType::GovGrant ||
 		t == ActionType::Airlift)) return;
 	if (next != 1) return;
-	if (t == ActionType::DirectFlight)
+	if (t == ActionType::DirectFlight){
 		static_cast<DirectFlight&>(*action).targetCity = index;
-	else if (t == ActionType::CharterFlight)
+	}
+	else if (t == ActionType::CharterFlight){
 		static_cast<CharterFlight&>(*action).targetCity = index;
-	else if (t == ActionType::ShuttleFlight)
+	}
+	else if (t == ActionType::ShuttleFlight){
 		static_cast<ShuttleFlight&>(*action).targetCity = index;
-	else if (t == ActionType::Move)
+	}
+	else if (t == ActionType::Move){
 		static_cast<Move&>(*action).targetCity = index;
+	}
 	else if (t == ActionType::GovGrant)
 		static_cast<GovGrantAction&>(*action).city = index;
 	else 

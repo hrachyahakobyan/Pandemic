@@ -31,6 +31,11 @@ public:
 	static QPixmap getVictoryIcon();
 	static QPixmap getDefeatIcon();
 	static void playSoundtrack();
+	static void playClick();
+	static void playCardDeal();
+	static void playCardFlip();
+	static void playMovement();
+
 private:
 	static QMap<pan::RegionIndex, QPixmap> regionPixmaps;
 	static QMap<pan::Roles, QPixmap> pawnPixmaps;
@@ -55,5 +60,9 @@ private:
 	static std::unique_ptr<QPixmap> victoryIcon;
 	static std::unique_ptr<QPixmap> defeatIcon;
 	static std::unique_ptr<QSound> Resources::soundtrack;
+	static std::unique_ptr<QSound> Resources::click;
+	static std::unique_ptr<QSound> Resources::cardDeal;
+	static std::unique_ptr<QSound> Resources::cardFlip;
+	static std::unique_ptr<QSound> Resources::movement;
 };
 

@@ -105,9 +105,15 @@ void CityItemGroup::drawPie(QPainter* painter, QRect rect, std::vector<bool> dis
 void CityItemGroup::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
 	if (event->button() == Qt::LeftButton)
+	{
+		Resources::playClick();
 		Q_EMIT cityItemSelected(index);
+	}
 	else if (event->button() == Qt::RightButton)
+	{
+		Resources::playClick();
 		Q_EMIT cityDetailsSelected(index);
+	}
 }
 
 void CityItemGroup::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)

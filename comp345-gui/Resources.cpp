@@ -24,6 +24,10 @@ std::unique_ptr<QPixmap> Resources::avatarBlank;
 std::unique_ptr<QPixmap> Resources::victoryIcon;
 std::unique_ptr<QPixmap> Resources::defeatIcon;
 std::unique_ptr<QSound> Resources::soundtrack;
+std::unique_ptr<QSound> Resources::click;
+std::unique_ptr<QSound> Resources::cardDeal;
+std::unique_ptr<QSound> Resources::cardFlip;
+std::unique_ptr<QSound> Resources::movement;
 
 
 Resources::Resources()
@@ -442,4 +446,32 @@ void Resources::playSoundtrack(){
 	}
 	soundtrack->play();
 	soundtrack->setLoops(QSound::Infinite);
+}
+
+void Resources::playClick(){
+	if (click == nullptr){
+		click.reset(new QSound("Resources\\Audio\\click.wav"));
+	}
+	click->play();
+}
+
+void Resources::playCardDeal(){
+	if (cardDeal == nullptr){
+		cardDeal.reset(new QSound("Resources\\Audio\\cardDeal.wav"));
+	}
+	cardDeal->play();
+}
+
+void Resources::playCardFlip(){
+	if (cardFlip == nullptr){
+		cardFlip.reset(new QSound("Resources\\Audio\\cardFlip.wav"));
+	}
+	cardFlip->play();
+}
+
+void Resources::playMovement(){
+	if (movement == nullptr){
+		movement.reset(new QSound("Resources\\Audio\\movement.wav"));
+	}
+	movement->play();
 }

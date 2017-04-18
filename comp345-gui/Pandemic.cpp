@@ -15,7 +15,6 @@ Pandemic::Pandemic(QWidget *parent)
 {
 	using namespace pan;
 	ui.setupUi(this);
-	Resources::playSoundtrack();
 	QPalette pal = palette();
 	pal.setColor(QPalette::Background, Qt::darkBlue);
 	this->setAutoFillBackground(true);
@@ -47,6 +46,7 @@ Pandemic::~Pandemic()
 
 void Pandemic::start()
 {
+	Resources::playSoundtrack();
 	if (!menu){
 		menu = new MainMenu(this);
 		connect(menu, SIGNAL(constructedGame(pan::Game&)), this, SLOT(on_mainMenuConstructedGame(pan::Game&)));
