@@ -1,6 +1,10 @@
 #pragma once
 #include <core\Cards.h>
 
+/**
+*	@class Resource manager class
+*	@author Hrachya Hakobyan
+*/
 class Resources
 {
 public:

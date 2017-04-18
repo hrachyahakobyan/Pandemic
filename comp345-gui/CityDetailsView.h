@@ -4,6 +4,11 @@
 #include <QWidget>
 #include "ui_CityDetailsView.h"
 
+
+/**
+*	@class A widget to display detailed information about a city
+*	@author Hrachya Hakobyan
+*/
 class CityDetailsView : public QWidget
 {
 	Q_OBJECT

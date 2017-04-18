@@ -4,6 +4,10 @@
 #include <QWidget>
 #include "ui_ActionSelectView.h"
 
+/**
+*	@class A widget to select actions
+*	@author Hrachya Hakobyan
+*/
 class ActionSelectView : public QWidget
 {
 	Q_OBJECT

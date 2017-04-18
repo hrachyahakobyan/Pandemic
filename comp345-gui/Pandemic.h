@@ -7,6 +7,10 @@
 #include "GaveOverView.h"
 #include "CardDetailsView.h"
 
+/**
+*	@class The main window, i.e. the controller
+*	@author Hrachya Hakobyan
+*/
 class Pandemic : public QMainWindow
 {
 	Q_OBJECT

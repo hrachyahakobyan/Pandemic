@@ -6,6 +6,10 @@
 
 class CityDetailsView;
 
+/**
+*	@class A widget to display the game map
+*	@author Hrachya Hakobyan
+*/
 class MapView : public QWidget
 {
 	Q_OBJECT

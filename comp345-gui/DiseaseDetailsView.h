@@ -3,7 +3,10 @@
 
 #include <QWidget>
 #include "ui_DiseaseDetailsView.h"
-
+/**
+*	@class A widget to display information about disease vials
+*	@author Hrachya Hakobyan
+*/
 class DiseaseDetailsView : public QWidget
 {
 	Q_OBJECT

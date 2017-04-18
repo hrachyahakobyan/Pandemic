@@ -2,6 +2,10 @@
 
 #include <QObject>
 
+/**
+*	@class A custom graphics item group that displays a cities information on the map
+*	@author Hrachya Hakobyan
+*/
 class CityItemGroup : public QObject, public QGraphicsItemGroup
 {
 	Q_OBJECT

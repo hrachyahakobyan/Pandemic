@@ -3,6 +3,10 @@
 #include <QDialog>
 #include "ui_GaveOverView.h"
 
+/**
+*	@class A widget to display at the end of the game
+*	@author Hrachya Hakobyan
+*/
 class GaveOverView : public QDialog
 {
 	Q_OBJECT

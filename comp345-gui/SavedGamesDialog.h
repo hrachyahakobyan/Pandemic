@@ -3,6 +3,10 @@
 #include <QDialog>
 #include "ui_SavedGamesDialog.h"
 
+/**
+*	@class A dialog to load a saved game
+*	@author Hrachya Hakobyan
+*/
 class SavedGamesDialog : public QDialog
 {
 	Q_OBJECT

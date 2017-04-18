@@ -1,4 +1,8 @@
 #pragma once
+/**
+*	@brief The class translates user actions to Action objects to apply to the Game
+*	@author Hrachya Hakobyan
+*/
 class ActionBuilder
 {
 public:

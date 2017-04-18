@@ -3,6 +3,11 @@
 #include <QWidget>
 #include "ui_CardDetailsView.h"
 
+
+/**
+*	@class A widget to display details of a specific card
+*	@author Hrachya Hakobyan
+*/
 class CardDetailsView : public QWidget
 {
 	Q_OBJECT

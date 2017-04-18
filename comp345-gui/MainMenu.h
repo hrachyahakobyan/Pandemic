@@ -6,6 +6,10 @@
 #include "SavedGamesDialog.h"
 #include "NewGameDialog.h"
 
+/**
+*	@class A widget to display the main menu of the game
+*	@author Hrachya Hakobyan
+*/
 class MainMenu : public QDialog
 {
 	Q_OBJECT

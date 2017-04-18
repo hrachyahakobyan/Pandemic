@@ -3,6 +3,10 @@
 #include <QDialog>
 #include "ui_NewGameDialog.h"
 
+/**
+*	@class A dialog to select options for a new game
+*	@author Hrachya Hakobyan
+*/
 class NewGameDialog : public QDialog
 {
 	Q_OBJECT

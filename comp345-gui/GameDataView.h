@@ -4,6 +4,10 @@
 #include <QWidget>
 #include "ui_GameDataView.h"
 
+/**
+*	@class A widget to display game related data
+*	@author Hrachya Hakobyan
+*/
 class GameDataView : public QWidget
 {
 	Q_OBJECT

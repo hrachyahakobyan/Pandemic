@@ -4,6 +4,10 @@
 #include <QWidget>
 #include "ui_TeamView.h"
 
+/**
+*	@class A widget to display detailed information about players
+*	@author Hrachya Hakobyan
+*/
 class TeamView : public QWidget
 {
 	Q_OBJECT

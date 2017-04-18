@@ -6,6 +6,10 @@
 #include <core\Cards.h>
 #include "ui_PlayerHandView.h"
 
+/**
+*	@class A widget to display the player's cards
+*	@author Hrachya Hakobyan
+*/
 class PlayerHandView : public QWidget
 {
 	Q_OBJECT
