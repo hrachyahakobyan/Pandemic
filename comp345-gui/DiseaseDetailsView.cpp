@@ -56,7 +56,6 @@ void DiseaseDetailsView::mousePressEvent(QMouseEvent *event)
 		QRect g = label->geometry();
 		bool contains = g.contains(QPoint(localpos.x(), localpos.y()));
 		if (contains){
-			Resources::playClick();
 			label->setPalette(selectedPalette);
 			Q_EMIT diseaseSelected(std::get<0>(t));
 			return;

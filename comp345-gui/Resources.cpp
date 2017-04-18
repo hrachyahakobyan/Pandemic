@@ -23,11 +23,12 @@ std::unique_ptr<QPixmap> Resources::infectionCardBack;
 std::unique_ptr<QPixmap> Resources::avatarBlank;
 std::unique_ptr<QPixmap> Resources::victoryIcon;
 std::unique_ptr<QPixmap> Resources::defeatIcon;
-std::unique_ptr<QSound> Resources::soundtrack;
-std::unique_ptr<QSound> Resources::click;
-std::unique_ptr<QSound> Resources::cardDeal;
-std::unique_ptr<QSound> Resources::cardFlip;
-std::unique_ptr<QSound> Resources::movement;
+std::unique_ptr<QMediaPlayer> Resources::soundtrack;
+std::unique_ptr<QMediaPlaylist> Resources::playlist;
+std::unique_ptr<QMediaPlayer> Resources::click;
+std::unique_ptr<QMediaPlayer> Resources::cardDeal;
+std::unique_ptr<QMediaPlayer> Resources::cardFlip;
+std::unique_ptr<QMediaPlayer> Resources::movement;
 
 
 Resources::Resources()
@@ -442,36 +443,42 @@ QPixmap Resources::getDefeatIcon()
 
 void Resources::playSoundtrack(){
 	if (soundtrack == nullptr){
-		soundtrack.reset(new QSound("Resources\\Audio\\music.wav"));
+		playlist.reset(new QMediaPlaylist());
+		playlist->addMedia(QUrl::fromLocalFile("Resources\\Audio\\music.wav"));
+		playlist->setPlaybackMode(QMediaPlaylist::Loop);
+		soundtrack.reset(new QMediaPlayer());
+		soundtrack->setAudioRole(QAudio::MusicRole);
+		soundtrack->setPlaylist(playlist.get());
 	}
 	soundtrack->play();
-	soundtrack->setLoops(QSound::Infinite);
 }
 
 void Resources::playClick(){
 	if (click == nullptr){
-		click.reset(new QSound("Resources\\Audio\\click.wav"));
+		click.reset(new QMediaPlayer);
+		click->setAudioRole(QAudio::GameRole);
+		click->setMedia(QUrl::fromLocalFile("Resources\\Audio\\click.wav"));
 	}
 	click->play();
 }
 
 void Resources::playCardDeal(){
-	if (cardDeal == nullptr){
+/*	if (cardDeal == nullptr){
 		cardDeal.reset(new QSound("Resources\\Audio\\cardDeal.wav"));
 	}
-	cardDeal->play();
+	cardDeal->play(); */
 }
 
 void Resources::playCardFlip(){
-	if (cardFlip == nullptr){
+/*	if (cardFlip == nullptr){
 		cardFlip.reset(new QSound("Resources\\Audio\\cardFlip.wav"));
 	}
-	cardFlip->play();
+	cardFlip->play(); */
 }
 
 void Resources::playMovement(){
-	if (movement == nullptr){
+/*	if (movement == nullptr){
 		movement.reset(new QSound("Resources\\Audio\\movement.wav"));
 	}
-	movement->play();
+	movement->play(); */
 }

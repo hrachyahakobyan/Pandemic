@@ -1,5 +1,6 @@
 #pragma once
-#include <QSound>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
 #include <core\Cards.h>
 
 /**
@@ -59,10 +60,11 @@ private:
 	static std::unique_ptr<QPixmap> avatarBlank;
 	static std::unique_ptr<QPixmap> victoryIcon;
 	static std::unique_ptr<QPixmap> defeatIcon;
-	static std::unique_ptr<QSound> Resources::soundtrack;
-	static std::unique_ptr<QSound> Resources::click;
-	static std::unique_ptr<QSound> Resources::cardDeal;
-	static std::unique_ptr<QSound> Resources::cardFlip;
-	static std::unique_ptr<QSound> Resources::movement;
+	static std::unique_ptr<QMediaPlayer> Resources::soundtrack;
+	static std::unique_ptr<QMediaPlaylist> Resources::playlist;
+	static std::unique_ptr<QMediaPlayer> Resources::click;
+	static std::unique_ptr<QMediaPlayer> Resources::cardDeal;
+	static std::unique_ptr<QMediaPlayer> Resources::cardFlip;
+	static std::unique_ptr<QMediaPlayer> Resources::movement;
 };
 
